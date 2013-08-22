@@ -32,15 +32,16 @@
                         <a class="{% block home_nav %}{% endblock home_nav %}" href="{% url home %}">Home</a>
                     </li>
                     <li>
+                        <a href="http://kalite.learningequality.org/">KA Lite</a>
+                    </li>
+                    <li>
                         <a class="{% block blog_nav %}{% endblock blog_nav %}" href="{% url radpress-article-list %}">Blog</a>
                     </li>
                 </ul>
             </div> 
         </div>
     </div>
-    <hr>
     {% block contents %}{% endblock contents %}
-    <hr>
     <div class="container-wide" id="footer-container">
         <div class="container">
             <p>&copy; 2013 Foundation for Learning Equality</p>
