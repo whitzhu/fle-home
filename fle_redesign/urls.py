@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('fle_redesign.apps.main.views',
     url(r'^$', 'home', name='home'),
+    url(r'^map/$', 'map', name='map'),   
 )
 
 urlpatterns += patterns('',

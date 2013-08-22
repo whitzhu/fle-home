@@ -15,6 +15,8 @@ def localor(setting_name, default_val):
 DEBUG = localor("DEBUG", True)
 TEMPLATE_DEBUG = localor("TEMPLATE_DEBUG", DEBUG)
 
+GEOIPDAT = localor("GEOIPDAT", '/usr/share/GeoIP/GeoIPCity.dat') or False
+
 ADMINS = (
     # ('Dylan', 'dylan@learningequality.org'),
 )
