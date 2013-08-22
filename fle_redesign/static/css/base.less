@@ -1,0 +1,57 @@
+@font-styles: "Helvetica", Arial, sans-serif;
+
+// Colors
+@white: #ffffff;
+@gray: #cccccc;
+@easy-black: #2f2f2f;
+@black: #000000;
+@header-blue: #336799;
+
+// from color scheme
+@primary-blue: #466C91;
+@primary-purple: #634C99;
+@primary-green: #4DB054;
+@primary-orange: #DFAC62;
+
+// Font sizes
+@large-size: 30px;
+@medium-size: 20px;
+@small-size: 13px;
+
+// Margins & such
+@hr-vertical-padding: 0px;
+
+
+a {
+    color: @white;
+}
+
+#banner {
+    background-color: @header-blue;
+}
+
+.nav {
+    position: relative;
+    top: 55px;
+
+    li {
+        margin-left: 30px;
+
+        a {
+            font-size: @medium-size;
+        }
+    }
+}
+
+#footer-container {
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+hr {
+    padding-top: @hr-vertical-padding;
+    padding-bottom: @hr-vertical-padding;
+}

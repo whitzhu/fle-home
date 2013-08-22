@@ -2,11 +2,21 @@
 
 import os
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+try:
+    from local_settings import *
+    import local_settings
+except ImportError:
+    local_settings = {}
+
+def localor(setting_name, default_val):
+    """Returns local_settings version if it exists (and is non-empty), otherwise uses default value"""
+    return hasattr(local_settings, setting_name) and getattr(local_settings, setting_name) or default_val
+
+DEBUG = localor("DEBUG", True)
+TEMPLATE_DEBUG = localor("TEMPLATE_DEBUG", DEBUG)
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Dylan', 'dylan@learningequality.org'),
 )
 
 MANAGERS = ADMINS
@@ -47,27 +57,14 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+MEDIA_URL      = getattr(local_settings, "MEDIA_URL", "/media/")
+MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", PROJECT_PATH + "/media/")) + "/"
+STATIC_URL     = getattr(local_settings, "STATIC_URL", "/static/")
+# STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT", PROJECT_PATH + "/static/")) + "/"
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    '/Users/dylan/Hacking/fle_redesign/fle_redesign/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -107,6 +104,7 @@ ROOT_URLCONF = 'fle_redesign.urls'
 WSGI_APPLICATION = 'fle_redesign.wsgi.application'
 
 TEMPLATE_DIRS = (
+    os.path.join(PROJECT_PATH, "templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -119,11 +117,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
     'south',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'fle_redesign.apps.main',
 )
 
 # A sample logging configuration. The only tangible logging
