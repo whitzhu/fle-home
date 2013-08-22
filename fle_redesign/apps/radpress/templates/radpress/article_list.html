@@ -10,7 +10,7 @@
   {% for object in object_list %}
     {% include "radpress/partials/entry.html" with summary=1 %}
   {% empty %}
-    <p>{% trans "No posts found." %}</p>
+    <h2 id="no-posts">{% trans "No posts found." %}</h2>
   {% endfor %}
 {% endblock %}
 
