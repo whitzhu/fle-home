@@ -21,35 +21,13 @@
         {% block headjs %}{% endblock headjs %}
 
         {% block extrahead %}{% endblock extrahead %}
-        {% block analytics %}
-        {% endblock analytics %}
+        {% block analytics %}{% endblock analytics %}
     </head>
 
 <body>
-    <div class="container-wide" id="banner">
-    	<div class="container">
-            <div class="masthead">
-                <a class="" href="{% url home %}"><img src="{% static 'img/fle-prov-logo-small.png' %}"></a>
-                <ul class="nav nav-pills pull-right">
-                    <li>
-                        <a class="{% block home_nav %}{% endblock home_nav %}" href="{% url home %}">Home</a>
-                    </li>
-                    <li>
-                        <a href="http://kalite.learningequality.org/">KA Lite</a>
-                    </li>
-                    <li>
-                        <a class="{% block blog_nav %}{% endblock blog_nav %}" href="{% url radpress-article-list %}">Blog</a>
-                    </li>
-                </ul>
-            </div> 
-        </div>
-    </div>
-    {% block contents %}{% endblock contents %}
-    <div class="container-wide" id="footer-container">
-        <div class="container footer">
-            <div class="footer-legal">&copy; 2013 Foundation for Learning Equality</div>
-        </div>
-    </div>
+    {% include "partials/navigation.html" %}
+    {% block bodycontents %}{% endblock bodycontents %}
+    {% include "partials/footer.html" %}
 </body>
 </html>
 

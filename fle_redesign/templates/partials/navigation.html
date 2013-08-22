@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<div class="container-wide" id="banner">
+    <div class="container">
+        <div class="masthead">
+            <a class="" href="{% url home %}"><img src="{% static 'img/fle-prov-logo-small.png' %}"></a>
+            <ul class="nav nav-pills pull-right">
+                <li>
+                    <a class="{% block home_nav %}{% endblock home_nav %}" href="{% url home %}">Home</a>
+                </li>
+                <li>
+                    <a href="http://kalite.learningequality.org/">KA Lite</a>
+                </li>
+                <li>
+                    <a class="{% block blog_nav %}{% endblock blog_nav %}" href="{% url radpress-article-list %}">Blog</a>
+                </li>
+            </ul>
+        </div> 
+    </div>
+</div>
