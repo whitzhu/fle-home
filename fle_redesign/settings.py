@@ -125,9 +125,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django_extensions',
     'south',
-    'fle_redesign.apps.main',
     'easy_thumbnails',
-    'radpress',
+    'fle_redesign.apps.radpress',
+    'fle_redesign.apps.main',
 )
 
 # A sample logging configuration. The only tangible logging

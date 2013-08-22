@@ -37,6 +37,7 @@ Boom!
 
 ## Directory Structure
 
+`
 ├── LICENSE
 ├── README.md
 ├── fle_redesign
@@ -104,4 +105,4 @@ Boom!
 │   └── wsgi.pyc
 ├── manage.py
 └── requirements.txt
-
+`

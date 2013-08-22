@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+<html {% block lanugage %}{% endblock lanugage %}>
     <head>
         
         {% load staticfiles %}
 
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        {% block headmeta %}{% endblock headmeta %}
+
     	 {% block titletag %}
     	 <title>{% block title %}{% endblock title %} | Foundation for Learning Equality</title>
-    	 {% endblock %}
+    	 {% endblock titletag %}
 
         <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" media="all" rel="stylesheet" type="text/css" />
         <link href="{% static 'css/base.less' %}" media="all" rel="stylesheet/less" />
