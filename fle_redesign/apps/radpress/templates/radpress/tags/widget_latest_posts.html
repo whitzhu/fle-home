@@ -3,16 +3,16 @@
 {% load radpress_datetime from radpress_tags %}
 
 <div class="widget recent-posts-widget">
-  <h2 class="widget-title">{% trans "Recent posts" %}</h2>
+  <h4 class="widget-title">{% trans "Recent posts" %}</h4>
 
   <ul>
     {% for object in object_list %}
       <li{% if forloop.last %} class="no-border"{% endif %}>
-        <h3>
+        <h5>
           <a href="{{ object.get_absolute_url }}" title="{{ object.title }}">
             {{ object.title|truncatechars:25 }}
           </a>
-        </h3>
+        </h5>
 
         <p>{% radpress_datetime object.updated_at %}</p>
       </li>
