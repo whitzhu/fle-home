@@ -117,8 +117,7 @@ class Entry(models.Model):
         reader = get_reader(markup=self.markup)
         content_body, metadata = reader(self.content).read()
 
-        if not self.content_body:
-            self.content_body = content_body
+        self.content_body = content_body
 
         if not self.slug:
             self.slug = slugify(self.title)

@@ -12,7 +12,7 @@ class ZenModeAdminMixin(object):
         }
 
 
-class ArticleAdmin(ZenModeAdminMixin, admin.ModelAdmin):
+class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         'title', 'author', 'markup', 'created_at', 'updated_at', 'tag_list',
         'is_published')
