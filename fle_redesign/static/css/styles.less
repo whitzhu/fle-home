@@ -1,0 +1,123 @@
+@import "variables.less"; 
+@import "mixins.less"; 
+
+// Base
+body {
+    background-image:url("../img/subtle_white_feathers.png"); 
+}
+
+hr {
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+a {
+    color: @white;
+}
+
+#banner {
+    background-color: @header-blue;
+}
+
+.nav {
+    position: relative;
+    top: 55px;
+
+    li {
+        margin-left: 30px;
+
+        a {
+            font-size: @medium-size;
+        }
+    }
+}
+
+// Home
+#contents-container {
+    background-color: rgba(102,51,153,0.1);
+    margin-top: 50px;
+    width: 850px;
+}
+
+#map-img {
+    .bump-right;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 778px;
+}
+
+.inner-container {
+    width: 778px;
+    margin-left: 56px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.inner-contents {
+    width: 720px;
+    padding: 10px 25px;
+
+    a {
+        color: @linkcolor;
+    }
+}
+
+.footer-legal {
+    color: #777;
+    margin-bottom: 25px;
+    .bump-down;
+    .center-text;
+}
+
+// Radpress
+.row {
+    a {
+        color: @linkcolor;
+    }
+}
+
+#radpress-container {
+    margin-top: 40px;
+}
+
+.post-container {
+    margin-right: 50px;
+}
+
+#sidebar {
+    margin-left: 25px;
+    margin-top: 22px;
+}
+
+.edit-button {
+    margin-top: 10px;
+}
+
+.spaceme {
+    hr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.recent-posts-widget {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.label {
+    background-color: #D5D5D5;
+}
+
+.tagcloud {
+    a:hover {
+        color: #6287AC;
+    }
+}
+
+#no-posts {
+    margin-top: ;
+}

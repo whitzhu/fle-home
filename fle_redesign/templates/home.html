@@ -6,8 +6,6 @@
 
 {% block home_nav %}selected{% endblock home_nav %}
 
-{% block headcss %}<link href="{% static 'css/home.less' %}" media="all" rel="stylesheet/less"/>{% endblock headcss %}
-
 {% block analytics %}
     
     <script>
@@ -27,7 +25,7 @@
 	<div class="container" id="contents-container">
 		<div class="row">
 			<div class="outer-container center-text">
-				<a href="{% url map %}"><img class="bump-right" id="map-img" src="{% static 'img/main-featured.png' %}" alt="Open access, high quality education for the world."></a>
+				<a href="{% url map %}"><img id="map-img" src="{% static 'img/main-featured.png' %}" alt="Open access, high quality education for the world."></a>
 			</div>
 		</div>
 		<div class="row">
