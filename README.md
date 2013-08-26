@@ -23,6 +23,9 @@ Now, make a virtualenvwrapper to install dependencies:
 Install the dependencies listed in requirements.txt:
 `pip install -r requirements.txt`
 
+Create a local_settings.py file adjacent to the settings.py file. Inside, set DEBUG = True (so static files will load in dev mode): 
+`DEBUG = True`
+
 Set up the database:
 `python manage.py syncdb --migrate`
 
