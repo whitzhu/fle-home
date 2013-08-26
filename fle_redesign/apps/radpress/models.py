@@ -101,8 +101,8 @@ class Entry(models.Model):
     content = models.TextField()
     content_body = models.TextField(editable=False)
     is_published = models.BooleanField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateTimeField(editable=True)
+    updated_at = models.DateTimeField(editable=True)
 
     objects = EntryManager()
 
@@ -121,9 +121,6 @@ class Entry(models.Model):
 
         if not self.slug:
             self.slug = slugify(self.title)
-
-        if not kwargs.pop('skip_updated_at', False):
-            self.updated_at = datetime.datetime.now()
 
         super(Entry, self).save(**kwargs)
 
