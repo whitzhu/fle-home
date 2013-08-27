@@ -12,13 +12,13 @@ Next install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/lat
 `pip install virtualenvwrapper`
 
 Next, clone the repo:
-`git clone git@github.com:dylanjbarth/fle_redesign.git`
+`git clone git@github.com:dylanjbarth/fle_site.git`
 
 Move into the directory:
-`cd fle_redesign`
+`cd fle_site`
 
 Now, make a virtualenvwrapper to install dependencies:
-`mkvirtualenv fle_redesign`
+`mkvirtualenv fle_site`
 
 Install the dependencies listed in requirements.txt:
 `pip install -r requirements.txt`

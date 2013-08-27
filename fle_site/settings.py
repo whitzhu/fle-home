@@ -1,4 +1,4 @@
-# Django settings for fle_redesign project.
+# Django settings for fle_site project.
 
 import os
 
@@ -100,10 +100,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'fle_redesign.urls'
+ROOT_URLCONF = 'fle_site.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'fle_redesign.wsgi.application'
+WSGI_APPLICATION = 'fle_site.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "templates"),
@@ -128,8 +128,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'south',
     'easy_thumbnails',
-    'fle_redesign.apps.radpress',
-    'fle_redesign.apps.main',
+    'fle_site.apps.radpress',
+    'fle_site.apps.main',
 )
 
 # A sample logging configuration. The only tangible logging

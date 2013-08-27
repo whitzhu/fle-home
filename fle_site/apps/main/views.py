@@ -4,7 +4,7 @@ import re
 
 from django.shortcuts import render_to_response
 
-from fle_redesign import settings
+from fle_site import settings
 
 
 # gic = pygeoip.GeoIP(settings.GEOIPDAT)

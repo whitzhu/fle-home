@@ -2,11 +2,11 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 
-from fle_redesign.apps.radpress import urls as radpress_urls
+from fle_site.apps.radpress import urls as radpress_urls
 
 admin.autodiscover()
 
-urlpatterns = patterns('fle_redesign.apps.main.views',
+urlpatterns = patterns('fle_site.apps.main.views',
     url(r'^$', 'home', name='home'),
     url(r'^map/$', 'map', name='map'),   
 )
