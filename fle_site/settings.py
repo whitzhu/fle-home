@@ -15,8 +15,6 @@ def localor(setting_name, default_val):
 DEBUG = localor("DEBUG", False)
 TEMPLATE_DEBUG = localor("TEMPLATE_DEBUG", DEBUG)
 
-GEOIPDAT = localor("GEOIPDAT", '/usr/share/GeoIP/GeoIPCity.dat') or False
-
 ADMINS = (
     # ('Dylan', 'dylan@learningequality.org'),
 )
@@ -24,6 +22,13 @@ ADMINS = (
 MANAGERS = ADMINS
 
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
+
+# To render map, define GEOIPDAT and IPS_FILEPATH in local_settings.py ex: 
+# import os 
+# DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "static/data/")
+# GEOIPDAT = os.path.join(DATA_PATH, "GeoLiteCity.dat")
+# IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
+
 
 DATABASES = {
     'default': {

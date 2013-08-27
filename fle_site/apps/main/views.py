@@ -7,13 +7,12 @@ from django.shortcuts import render_to_response
 from fle_site import settings
 
 
-# gic = pygeoip.GeoIP(settings.GEOIPDAT)
-
 def home(request):
 	return render_to_response("home.html")
 
 def map(request): 
-	ips = open(settings.PROJECT_PATH + "/ips.txt").readlines()
+	gic = pygeoip.GeoIP(settings.GEOIPDAT)
+	ips = open(settings.IPS_FILEPATH).readlines()
 	records = [gic.record_by_addr(item.strip()) for item in ips if item]
 	locations = []
 	existing_locations = set([(0, 0)])
