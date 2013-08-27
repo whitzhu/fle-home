@@ -22,7 +22,7 @@ Arguments:
       {% endif %}
       <h2><a href="{{ object.get_absolute_url }}" title="{{ object.title }}">{{ object.title }}</a></h2>
       <div class="title-meta">
-        <p>by {{ object.author|radpress_full_name }} on {{object.updated_at|date:"F j, Y"}}</p>
+        <p>on {{object.updated_at|date:"F j, Y"}}</p>
       </div>
     </div>
 
