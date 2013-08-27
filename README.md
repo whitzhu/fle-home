@@ -1,10 +1,10 @@
 # FLE Site 
 
-Starting from the ground up with the new FLE site to _make_ _things_ _work_. 
+[http://learningequality.org](http://learningequality.org)
 
 ## Environment Setup 
 
-These steps should get you up and running! Any issues, please ping me :grin:
+These steps should get you up and running in no time! 
 
 First, follow the link and [install pip](https://pypi.python.org/pypi/pip) if you don't have it already. 
 
@@ -12,13 +12,14 @@ Next install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/lat
 `pip install virtualenvwrapper`
 
 Next, clone the repo:
-`git clone git@github.com:dylanjbarth/fle_site.git`
+`git clone git@github.com:learningequality/fle-site.git`
 
 Move into the directory:
-`cd fle_site`
+`cd <dir_name>`
 
 Now, make a virtualenvwrapper to install dependencies:
-`mkvirtualenv fle_site`
+`mkvirtualenv <desired_virtualenv_name>`
+*Linux users, see the footnote below if you have trouble creating a virtualenv with the mkvirtualenv command
 
 Install the dependencies listed in requirements.txt:
 `pip install -r requirements.txt`
@@ -36,6 +37,14 @@ Boom!
 
 When you're done, you can cancel the virutalenv just use the command
 `deactivate`
+
+* Linux users: To get the mkvirtualenv command to work, you may have to add:
+source /usr/local/bin/virtualenvwrapper.sh
+to your .bashrc file (and restart bash)
+
+You may also have to run: 
+sudo apt-get install python-dev
+in order to be able to use pip (inside the virtualenv) to install PIL.
 
 ## Map disclaimer
 The map requires certain data files to use, and you will get an error if you try and view it at /map/ because they haven't been included in the repo. 
