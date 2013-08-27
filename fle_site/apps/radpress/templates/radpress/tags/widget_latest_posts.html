@@ -13,8 +13,7 @@
             {{ object.title|truncatechars:25 }}
           </a>
         </h5>
-
-        <p>{% radpress_datetime object.updated_at %}</p>
+        <p>{{object.updated_at|date:"F j, Y"}}</p>
       </li>
     {% endfor %}
   </ul>
