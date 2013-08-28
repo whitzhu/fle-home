@@ -99,7 +99,7 @@ class Entry(models.Model):
         max_length=20, choices=MARKUP_CHOICES, default=DEFAULT_MARKUP)
     slug = models.SlugField(unique=True)
     content = models.TextField()
-    content_body = models.TextField(editable=False)
+    content_body = models.TextField(editable=True, help_text='Do not edit this field. Your changes will be overwritten when you save.')
     is_published = models.BooleanField()
     created_at = models.DateTimeField(editable=True)
     updated_at = models.DateTimeField(editable=True)

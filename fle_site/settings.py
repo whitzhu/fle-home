@@ -30,7 +30,7 @@ PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 # IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
 
 
-DATABASES = {
+DATABASES = localor("DATABASES", {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': os.path.join(PROJECT_PATH, 'database.sqlite'),                      # Or path to database file if using sqlite3.
@@ -39,7 +39,7 @@ DATABASES = {
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
-}
+}) 
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
