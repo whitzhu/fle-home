@@ -1,5 +1,5 @@
 from django.contrib import admin
-from radpress.models import Article, EntryImage, Menu, Page, Tag
+from radpress.models import Article, EntryImage, Menu, Page, Tag, ArticleTag
 from radpress.forms import PageForm, ZenModeForm
 
 
@@ -12,6 +12,11 @@ class ZenModeAdminMixin(object):
         }
 
 
+class ArticleTagInline(admin.TabularInline):
+    model = ArticleTag
+    extra = 1
+
+    
 class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         'title', 'author', 'markup', 'created_at', 'updated_at', 'tag_list',
@@ -19,6 +24,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_filter = ('is_published', 'created_at', 'tags')
     list_editable = ('is_published',)
     search_fields = ('title', 'content')
+    inlines = (ArticleTagInline,)
 
     def tag_list(self, obj):
         tag_list = [tag.name for tag in obj.tags.all()]

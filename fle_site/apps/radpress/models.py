@@ -39,7 +39,7 @@ class TagManager(models.Manager):
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, editable=True)
     slug = models.SlugField(unique=True)
     objects = TagManager()
 
@@ -126,10 +126,10 @@ class Entry(models.Model):
 
 
 class Article(Entry):
-    author = models.ForeignKey(User, null=True, editable=False)
+    author = models.ForeignKey(User, null=True)
     cover_image = models.ForeignKey(EntryImage, blank=True, null=True)
     tags = models.ManyToManyField(
-        Tag, null=True, blank=True, through='ArticleTag')
+        Tag, null=True, blank=True, editable=True, through='ArticleTag')
 
     @property
     def content_by_more(self):
@@ -143,8 +143,8 @@ class Article(Entry):
 
 
 class ArticleTag(models.Model):
-    tag = models.ForeignKey(Tag)
-    article = models.ForeignKey(Article)
+    tag = models.ForeignKey(Tag, editable=True)
+    article = models.ForeignKey(Article, editable=True)
 
     def __unicode__(self):
         return u"%s - %s" % (self.tag.name, self.article)
