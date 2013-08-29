@@ -167,3 +167,7 @@ LOGGING = {
 }
 
 
+#  radpress settings
+RADPRESS_DISQUS = "learningequality"
+
+
