@@ -1,6 +1,7 @@
 {% comment %}
 Arguments:
 - summary: Default, 0
+- sharing: Default, 1
 {% endcomment %}
 
 {% load blocktrans trans from i18n %}
@@ -38,9 +39,11 @@ Arguments:
     </div>
 
     <div class="post-footer">
+      {% if sharing %}
       <div class="share pull-right">
         {% include "radpress/partials/share.html" %}
       </div>
+      {% endif %} 
 
       {% if object.tags.count %}
         <div class="tags">

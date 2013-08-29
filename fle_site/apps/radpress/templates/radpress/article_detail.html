@@ -7,7 +7,7 @@
 {% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
-  {% include "radpress/partials/entry.html" %}
+  {% include "radpress/partials/entry.html" with sharing=1 %}
 
   {% if RADPRESS_DISQUS %}
     <div id="comments" class="post box">
