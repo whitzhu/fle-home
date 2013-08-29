@@ -12,7 +12,6 @@ from fle_site import settings
 
 
 def home(request):
-	0/0
 	return render_to_response("home.html")
 
 def map(request): 
