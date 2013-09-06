@@ -1,9 +1,25 @@
 @import "variables.less"; 
 @import "mixins.less"; 
 
-// Base
+// --------------------
+// ** Base
+// --------------------
+
 body {
-    background-image:url("../img/subtle_white_feathers.png"); 
+    background-color: @white;
+}
+
+html, span, a, p, h1, h2 , h3, h4, h5, h6 {
+    font-family: @sanserif;
+}
+
+p {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 24px;
 }
 
 hr {
@@ -12,30 +28,52 @@ hr {
 }
 
 a {
-    color: @white;
+    color: @blue;
 }
 
-#banner {
-    background-color: @header-blue;
-}
+// --------------------
+// ** Header
+// --------------------
 
 .masthead {
-    img {
-        margin-left: 52px;
+    height: 75px;
+    background-color: @blue;
+    a {
+        color: @white;
     }
 }
 
-.nav {
+.nav-logo {
+    background: url("../img/fle-text-horiz.png") no-repeat; 
+    display: block;
+    height: 75px;
+    width: 512px;
+}
+
+@media (max-width: 700px) { 
+    .nav-logo {
+        background: url("../img/fle-text-horiz-sm.png") no-repeat;
+        width: 149px;
+    }
+}
+
+
+.nav-list {
     position: relative;
-    top: 55px;
-    right: 43px;
+    top: 20px;
 
     li {
         margin-left: 30px;
-
         a {
-            font-size: @medium-size;
+            font-size: @small-size;
+            &:hover {
+                color: @blue;
+            }
         }
+        text-transform: uppercase;
+        font-family: @sanserif-block;
+        font-weight: 400;
+        letter-spacing: 1px;
     }
 }
 
