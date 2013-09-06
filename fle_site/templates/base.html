@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html {% block lanugage %}{% endblock lanugage %}>
+<html {% block language %}{% endblock language %}>
     <head>
         
         {% load staticfiles %}
@@ -12,10 +12,16 @@
     	 <title>{% block title %}{% endblock title %} | Foundation for Learning Equality</title>
     	 {% endblock titletag %}
 
+         {% block viewport %}
+            <!-- Viewport for responsive design on mobile devices (http://enva.to/A79s3G) -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% endblock viewport %}
+
         <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" media="all" rel="stylesheet" type="text/css" />
         <link href="{% static 'css/styles.less' %}" media="all" rel="stylesheet/less" type="text/css" />
         {% block headcss %}{% endblock headcss %}
 
+        <script src="{% static 'js/jquery-1.10.2.min.js' %}" type="text/javascript" ></script>
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/less.js' %}" type="text/javascript"></script>
         {% block headjs %}{% endblock headjs %}
@@ -35,8 +41,10 @@
     </head>
 
 <body>
-    {% include "partials/navigation.html" %}
-    {% block bodycontents %}{% endblock bodycontents %}
+    <div class="page-content">
+        {% include "partials/navigation.html" %}
+        {% block bodycontents %}{% endblock bodycontents %}
+    </div>
     {% include "partials/footer.html" %}
 </body>
 </html>
