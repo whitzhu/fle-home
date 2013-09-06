@@ -95,7 +95,7 @@ a {
     .no-highlight;
     color: @white;
     position: relative;
-    height: 400px;
+    height: 350px;
     background: url("../img/burma-kids-blur.jpg") fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -104,12 +104,18 @@ a {
 }
 
 .module-description {
-    padding: 100px 0;
     h1 {
         text-transform: uppercase;
         letter-spacing: 3px;
         font-weight: 700;
         font-size: 20px;
+    }
+    .description-box {
+        text-align: justify;
+        padding-top: 14px;
+    }
+    .action-button {
+        .center-text;
     }
 }
 
@@ -129,6 +135,11 @@ a {
     }
 }
 
+.module-description#action-items {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 // --------------------
 // ** Footer
 // --------------------
@@ -146,11 +157,6 @@ a {
 }
 
 // Radpress
-.row {
-    a {
-        color: @linkcolor;
-    }
-}
 
 #radpress-container {
     margin-top: 40px;
