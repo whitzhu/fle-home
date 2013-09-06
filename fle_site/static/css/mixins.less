@@ -1,11 +1,36 @@
-.bump-right {
-	margin-left: 20px;
-}
-
-.bump-down {
-	margin-top: 25px;
-}
-
 .center-text {
 	text-align: center;
+}
+
+.center-block {
+	display: block;
+	margin: 0 auto;
+}
+
+.no-highlight {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.absolute-center {
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.btn {
+    color: @white;
+    background-color: @blue;
+    &:hover {
+        background-color: @darkblue;
+    }
 }

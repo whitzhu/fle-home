@@ -6,71 +6,39 @@
 
 {% block home_nav %}selected{% endblock home_nav %}
 
+{% block extrahead %}
+    <script src="{% static 'js/stellar.js' %}" type="text/javascript" ></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $('window').stellar();
+        }
+    </script>
+{% endblock extrahead %}
+
 {% block bodycontents %}
-<div class="container-wide">
-	<div class="container" id="contents-container">
-		<div class="row">
-			<div class="outer-container center-text">
-				<a href="{% url map %}"><img id="map-img" src="{% static 'img/main-featured.png' %}" alt="Open access, high quality education for the world."></a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="inner-container">
-				<div class="inner-contents">
-					<h3>About</h3>
-					<hr>
-					<p>The Foundation for Learning Equality (FLE), a California-based nonprofit organization, is dedicated to creating tools for the sharing and creation of open-licensed educational content for use by anyone around the world, with special emphasis on reaching the 65% of the world that does not have Internet access, and those with limited or expensive bandwidth.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="inner-container">
-				<div class="inner-contents">
-					<h3>Current Projects</h3>
-					<hr>
-					<div class="row">
-						<div class="span1"></div>
-						<div class="span3">
-							<img src="{% static 'img/KA_Lite-vertical-logo.png' %}" alt="KA Lite: an offline version of Khan Academy that runs on almost anything.">
-						</div>
-						<div class="span5">
-							<div class="row center-text bump-down">
-								<div class="span5">
-									<p class="lead">An offline version of Khan Academy that runs on almost anything.</p>
-								</div>
-							</div>
-							<div class="row center-text">
-								<div class="span5">
-									<a href="http://kalite.learningequality.org/"><button class="btn btn-primary btn-large">Learn More</button></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="inner-container">
-				<div class="inner-contents">
-					<h3>Get Involved with FLE</h3>
-					<hr>
-					<p>To get involved with the Foundation for Learning Equality, send us an email at <a href="mailto:info@learningequality.org">info@learningequality.org</a>.</p>
-					<p>If you'd like to learn about ways to contribute to the KA Lite project, visit the <a href="http://kalitewiki.learningequality.org/">KA Lite wiki</a>.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="inner-container">
-				<div class="inner-contents">
-					<h3>Support Our Mission</h3>
-					<hr>
-					<p>Help support the Foundation for Learning Equality. Your contribution will go towards our mission of making universal education truly universal.</p>
-					<div class="center-text">
-						<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DRYT4JWGGATC6"><button class="btn btn-success btn-large">Give today</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+	<div class="container-wide module-opening">
+        <div class="container center-text">
+            <div class="absolute-center"><h1>Everyone deserves to learn</h1>
+            <p>Open access, high quality education for the world</p></div>
+        </div>
+    </div>
+	<div class="container">
+        <div class="module-description">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>KA Lite</h1>
+                    <img src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+                    <p>KA Lite is an offline version of Khan Academy that runs on almost anything.</p>
+                    <a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large">Learn More</a>
+                </div>
+                <div class="col-sm-6">
+                    
+                    <h1>Support Our Mission</h1>
+                    <img src="http://lorempixel.com/output/people-q-c-310-175-2.jpg" alt="Mission Image" />
+                    <p>Help support the Foundation for Learning Equality! Your contribution will go towards our mission of making universal education truly universal.</p>
+                    <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=9ihcrmiOuzhgcHj_tWvlrFAU_nFRWYbjZMmO791o8gcYDl5FVutHrXRF4pK&dispatch=5885d80a13c0db1f8e263663d3faee8d48a116ba977951b3435308b8c4dd4ef1" class="btn btn-primary btn-large">Give Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock bodycontents %}
