@@ -7,51 +7,53 @@
 {% block home_nav %}selected{% endblock home_nav %}
 
 {% block extrahead %}
-    <script src="{% static 'js/stellar.js' %}" type="text/javascript" ></script>
-    <script>
-        jQuery(document).ready(function ($) {
-            $('window').stellar();
-        }
-    </script>
+<script src="{% static 'js/stellar.js' %}" type="text/javascript" ></script>
+<script>
+jQuery(document).ready(function ($) {
+    $('window').stellar();
+}
+</script>
 {% endblock extrahead %}
 
 {% block bodycontents %}
-	<div class="container-wide module-opening">
-        <div class="container center-text">
-            <div class="absolute-center"><h1>Everyone deserves to learn</h1>
+<div class="container-wide module-opening">
+    <div class="container center-text">
+        <div class="absolute-center"><h1>Everyone deserves to learn</h1>
             <p>Open access, high quality education for the world</p></div>
         </div>
     </div>
-	<div class="container">
+    <div class="container">
         <div class="module-description" id="action-items">
             <div class="row">
-                <div class="col-sm-5 col-sm-offset-1 panel panel-default">
-                	<div class="row panel-body">
-                		<div class="col-sm-6">
-	                		<img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
-	                	</div>
-	                	<div class="col-sm-6 description-box">
-	                		<p>KA Lite is an offline version of Khan Academy that runs on almost anything.</p>
-	                		<div class="action-button">
-	                			<a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large">Learn More</a>	
-	                		</div>
-	                	</div>
-                	</div>
+                <div class="col-sm-6">
+                    <div class="row module-panel">
+                        <div class="col-sm-6">
+                            <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+                        </div>
+                        <div class="col-sm-6 description-box">
+                            <p>KA Lite is an offline version of Khan Academy that runs on almost anything.</p>
+                            <div class="action-button">
+                                <a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large">Learn More</a>  
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-sm-5 panel panel-default">
-                	<div class="row panel-body">
-                		<div class="col-sm-6">
-                			<img id="giving-img" class="img-responsive" src="{% static 'img/giving-team.jpg' %}" alt="Mission Image" />
-                		</div>
-	                	<div class="col-sm-6 description-box">
-	                		<p>Your gift will support the futher development of KA Lite.</p>
-	                		<div class="action-button">
-	                			<a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=9ihcrmiOuzhgcHj_tWvlrFAU_nFRWYbjZMmO791o8gcYDl5FVutHrXRF4pK&dispatch=5885d80a13c0db1f8e263663d3faee8d48a116ba977951b3435308b8c4dd4ef1" class="btn btn-primary btn-large">Give Today</a>
-	                		</div>
-	                	</div>	
-                	</div>
+                <div class="col-sm-6">
+                    <div class="row module-panel ">
+                        <div class="col-sm-6">
+                            <img id="giving-img" class="img-responsive" src="{% static 'img/giving-team.jpg' %}" alt="Mission Image" />
+                        </div>
+                        <div class="col-sm-6 description-box">
+                            <p>Your gift will support the futher development of KA Lite. </p>
+                            <div class="action-button">
+                                <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=9ihcrmiOuzhgcHj_tWvlrFAU_nFRWYbjZMmO791o8gcYDl5FVutHrXRF4pK&dispatch=5885d80a13c0db1f8e263663d3faee8d48a116ba977951b3435308b8c4dd4ef1" class="btn btn-primary btn-large">Give Today</a>
+                            </div>
+                        </div>  
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-{% endblock bodycontents %}
+    {% endblock bodycontents %}
