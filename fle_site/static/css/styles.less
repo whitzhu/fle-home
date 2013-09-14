@@ -1,9 +1,25 @@
 @import "variables.less"; 
 @import "mixins.less"; 
 
-// Base
+// --------------------
+// ** Base
+// --------------------
+
 body {
-    background-image:url("../img/subtle_white_feathers.png"); 
+    background-color: @white;
+}
+
+html, span, a, p, h1, h2 , h3, h4, h5, h6 {
+    font-family: @sanserif;
+}
+
+p {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 24px;
 }
 
 hr {
@@ -12,132 +28,193 @@ hr {
 }
 
 a {
-    color: @white;
+    color: @blue;
 }
 
-#banner {
-    background-color: @header-blue;
-}
+// --------------------
+// ** Header
+// --------------------
 
 .masthead {
-    img {
-        margin-left: 52px;
+    height: 75px;
+    background-color: @blue;
+    a {
+        color: @white;
     }
 }
 
-.nav {
+.nav-logo {
+    background: url("../img/fle-text-horiz.png") no-repeat; 
+    display: block;
+    height: 75px;
+    width: 512px;
+}
+
+@media (max-width: 700px) { 
+    .nav-logo {
+        background: url("../img/fle-text-horiz-sm.png") no-repeat;
+        width: 149px;
+    }
+}
+
+
+.nav-list {
     position: relative;
-    top: 55px;
-    right: 43px;
+    top: 20px;
 
     li {
         margin-left: 30px;
-
         a {
-            font-size: @medium-size;
+            font-size: @small-size;
+            &:hover {
+                color: @blue;
+            }
+        }
+        text-transform: uppercase;
+        font-family: @sanserif-block;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+}
+
+// --------------------
+// ** Home
+// --------------------
+
+.module-opening {
+    h1 {
+        text-transform: uppercase;
+        font-family: @sanserif-block;
+        font-size: 48px;
+        letter-spacing: 2px;
+    }
+    p {
+        font-size: 20px;
+    }
+     text-shadow: 0px 2px 4px @black;
+    .no-highlight;
+    color: @white;
+    position: relative;
+    height: 350px;
+    background: url("../img/burma-kids-blur.jpg") fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.module-description {   
+    .description-box {
+        padding-top: 14px;
+    }
+    .action-button {
+
+        .center-text;
+    }
+}
+
+.module-description#action-items {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    .module-panel{
+        min-height: 220px;
+        background-color: white;
+        border: 1px solid rgb(221, 221, 221);
+        margin:20px 0px;
+        line-height: 1.6;
+        padding:20px;
+        img{
+            max-height: 200px;
         }
     }
 }
 
-// Home
-#contents-container {
-    background-color: rgba(102,51,153,0.1);
-    margin-top: 50px;
-    width: 850px;
-}
-
-#map-img {
-    .bump-right;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 778px;
-}
-
-.inner-container {
-    width: 778px;
-    margin-left: 56px;
-    margin-bottom: 30px;
-    background-color: white;
-}
-
-.inner-contents {
-    width: 720px;
-    padding: 10px 25px;
-
-    a {
-        color: @linkcolor;
+@media (max-width: 700px) { 
+    .module-opening {
+        background: @darkblue;
+        height: 250px;
+        background: url("../img/burma-kids-blur-sm.jpg") fixed; 
+        h1 {
+            font-size: 30px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    .module-description {
+        padding: 50px 0;
     }
 }
 
+#giving-img {
+    margin-top:15px;
+}
+
+// --------------------
+// ** Footer
+// --------------------
+
+.footer {
+    background-color: @darkgray;
+    height: 75px;
+    position: block;
+}
+
 .footer-legal {
-    color: #777;
-    margin-bottom: 25px;
-    .bump-down;
+    color: @white;
+    margin: 25px 0;
     .center-text;
 }
 
 // Radpress
-.row {
-    a {
-        color: @linkcolor;
-    }
-}
-
 #radpress-container {
     margin-top: 40px;
-    .row {
-        .span7 {
-            margin-left: 85px;
+    .post-container {
+        margin-right: 50px;
+        margin-bottom: 80px;
+        margin-left: 15px;
+    }
+    #sidebar {
+        margin-left: 40px;
+        margin-top: 22px;
+        float: right;
+    }
+    .edit-button {
+        margin-top: 10px;
+    }
+    .recent-posts-widget {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
         }
     }
-}
 
-.post-container {
-    margin-right: 50px;
-    margin-bottom: 80px;
-}
-
-#sidebar {
-    margin-left: 40px;
-    margin-top: 22px;
-}
-
-.edit-button {
-    margin-top: 10px;
-}
-
-
-.recent-posts-widget {
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
+    .label {
+        background-color: #D5D5D5;
     }
-}
 
-.label {
-    background-color: #D5D5D5;
-}
-
-.tagcloud {
-    a:hover {
-        color: #6287AC;
+    .tagcloud {
+        a:hover {
+            color: #6287AC;
+        }
     }
-}
 
-#no-posts {
-    margin-top: ;
-}
+    #no-posts {
+        margin-top: ;
+    }
 
-.sharing:hover {
-    text-decoration: none;
-}
+    .sharing:hover {
+        text-decoration: none;
+    }
 
-.blog-embedded-image {
-    border: solid 1px #CCC;
-    -moz-box-shadow: 5px 5px 0px #999;
-    -webkit-box-shadow: 3px 3px 0px #999;
-    box-shadow: 3px 3px 0px #999;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    .blog-embedded-image {
+        border: solid 1px #CCC;
+        -moz-box-shadow: 5px 5px 0px #999;
+        -webkit-box-shadow: 3px 3px 0px #999;
+        box-shadow: 3px 3px 0px #999;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
 }

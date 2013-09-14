@@ -12,7 +12,7 @@
   <div id="wrapper" class="container-wide">
     <div class="container" id="radpress-container">
       <div class="row">
-        <div class="span7">
+        <div class="col-sm-8">
           {% block base_content %}
             <div id="content">
               {% block content %}{% endblock %}
@@ -22,7 +22,7 @@
           {% block extra_content %}{% endblock %}
         </div>
 
-        <div class="span3">
+        <div class="col-sm-3">
           <div id="sidebar">
             {% include "radpress/partials/search_form.html" %}
             {% radpress_widget_latest_posts %}
