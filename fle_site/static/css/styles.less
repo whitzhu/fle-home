@@ -124,6 +124,9 @@ a {
         margin:20px 0px;
         line-height: 1.6;
         padding:20px;
+        p{
+            min-height: 100px;
+        }
         img{
             max-height: 200px;
         }
@@ -131,6 +134,17 @@ a {
 }
 
 @media (max-width: 700px) { 
+    .module-panel{
+        p{
+            min-height: 0px!important;
+            .center-text;
+        }
+        img{ //center the image when mobile
+            float: none; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+    }
     .module-opening {
         background: @darkblue;
         height: 250px;
