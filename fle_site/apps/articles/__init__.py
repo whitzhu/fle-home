@@ -1,6 +1,6 @@
 __version__ = '2.4.1'
 
-from articles.directives import *
+from fle_site.apps.articles.directives import *
 try:
     import listeners
 except ImportError:

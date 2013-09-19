@@ -13,7 +13,7 @@ from django.contrib.sites.models import Site
 from django.core.management.base import BaseCommand
 from django.utils.translation import ugettext_lazy as _
 
-from articles.models import Article, Attachment, MARKUP_HTML, MARKUP_MARKDOWN, MARKUP_REST, MARKUP_TEXTILE
+from fle_site.apps.articles.models import Article, Attachment, MARKUP_HTML, MARKUP_MARKDOWN, MARKUP_REST, MARKUP_TEXTILE
 
 MB_IMAP4 = 'IMAP4'
 MB_POP3 = 'POP3'

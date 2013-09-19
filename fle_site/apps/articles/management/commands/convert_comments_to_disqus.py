@@ -3,7 +3,7 @@ from django.contrib.comments.models import Comment
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.sites.models import Site
 from django.core.management.base import NoArgsCommand
-from articles.models import Article
+from fle_site.apps.articles.models import Article
 import simplejson as json
 import re
 import string

@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 
-from articles import views
-from articles.feeds import TagFeed, LatestEntries, TagFeedAtom, LatestEntriesAtom
+from fle_site.apps.articles import views
+from fle_site.apps.articles.feeds import TagFeed, LatestEntries, TagFeedAtom, LatestEntriesAtom
 
 tag_rss = TagFeed()
 latest_rss = LatestEntries()
@@ -15,7 +15,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('',
-    url(r'^$', views.display_blog_page, name='articles_archive'),
+    url(r'^', views.display_article, {"most_recent": True}, name="articles_display_most_recent"),
+    url(r'^archive/$', views.display_blog_page, name='articles_archive'),
     url(r'^page/(?P<page>\d+)/$', views.display_blog_page, name='articles_archive_page'),
 
     url(r'^tag/(?P<tag>.*)/page/(?P<page>\d+)/$', views.display_blog_page, name='articles_display_tag_page'),

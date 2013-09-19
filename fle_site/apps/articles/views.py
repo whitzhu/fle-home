@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponsePermanentRedirect, Http404, HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
-from articles.models import Article, Tag
+from fle_site.apps.articles.models import Article, Tag
 from datetime import datetime
 
 ARTICLE_PAGINATION = getattr(settings, 'ARTICLE_PAGINATION', 20)
@@ -69,13 +69,18 @@ def display_blog_page(request, tag=None, username=None, year=None, month=None, p
 
     return response
 
-def display_article(request, year, slug, template='articles/article_detail.html'):
+def display_article(request, year=None, slug=None, most_recent=False, template='articles/article_detail.html'):
     """Displays a single article."""
-
-    try:
-        article = Article.objects.live(user=request.user).get(publish_date__year=year, slug=slug)
-    except Article.DoesNotExist:
-        raise Http404
+    if most_recent:
+        try:
+            article = Article.objects.latest('publish_date')
+        except Article.DoesNotExist:
+            raise Http404
+    else:
+        try:
+            article = Article.objects.live(user=request.user).get(publish_date__year=year, slug=slug)
+        except Article.DoesNotExist:
+            raise Http404
 
     # make sure the user is logged in if the article requires it
     if article.login_required and not request.user.is_authenticated():
@@ -88,6 +93,7 @@ def display_article(request, year, slug, template='articles/article_detail.html'
     response = render_to_response(template, variables)
 
     return response
+
 
 def redirect_to_article(request, year, month, day, slug):
     # this is a little snippet to handle URLs that are formatted the old way.

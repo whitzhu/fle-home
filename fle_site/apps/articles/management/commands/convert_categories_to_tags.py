@@ -1,5 +1,5 @@
 from django.core.management.base import NoArgsCommand
-from articles.models import Article, Tag
+from fle_site.apps.articles.models import Article, Tag
 
 class Command(NoArgsCommand):
     help = """Converts our old categories into tags"""
