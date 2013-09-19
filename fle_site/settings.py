@@ -112,6 +112,7 @@ WSGI_APPLICATION = 'fle_site.wsgi.application'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "templates"),
+    os.path.join(PROJECT_PATH, "apps/articles/templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -119,6 +120,8 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
     'django.core.context_processors.request',
 )
 
@@ -130,10 +133,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.humanize',
     'django_extensions',
     'south',
-    'easy_thumbnails',
-    'fle_site.apps.radpress',
+    'fle_site.apps.articles',
     'fle_site.apps.main',
 )
 
@@ -167,7 +170,12 @@ LOGGING = {
 }
 
 
-#  radpress settings
-RADPRESS_DISQUS = "learningequality"
+# Django-articles settings
+DISQUS_USER_API_KEY = "5uORUTZwxh8HB1IbPLW0FFTaH8leP0EbSjKTzOo9mz18oG8sTt0IhoCWzY8Ahd3n"
+DISQUS_FORUM_SHORTNAME = "learningequality"
 
+# ARTICLES_TEASER_LIMIT: The number of words to display in the teaser. Defaults to 75.
+# ARTICLES_AUTO_TAG: Whether or not to automatically tag articles. Defaults to True.
+# ARTICLES_DEFAULT_DB: Database in which to store articles. Defaults to default.
+# ARTICLES_LOOKUP_LINK_TITLE: Whether to fetch the title of remote links or use the local name of the link. Defaults to True.
 
