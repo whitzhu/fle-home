@@ -69,18 +69,13 @@ def display_blog_page(request, tag=None, username=None, year=None, month=None, p
 
     return response
 
-def display_article(request, year=None, slug=None, most_recent=False, template='articles/article_detail.html'):
+def display_article(request, year=None, slug=None, template='articles/article_detail.html'):
     """Displays a single article."""
-    if most_recent:
-        try:
-            article = Article.objects.latest('publish_date')
-        except Article.DoesNotExist:
-            raise Http404
-    else:
-        try:
-            article = Article.objects.live(user=request.user).get(publish_date__year=year, slug=slug)
-        except Article.DoesNotExist:
-            raise Http404
+
+    try:
+        article = Article.objects.live(user=request.user).get(publish_date__year=year, slug=slug)
+    except Article.DoesNotExist:
+        raise Http404
 
     # make sure the user is logged in if the article requires it
     if article.login_required and not request.user.is_authenticated():
@@ -93,6 +88,14 @@ def display_article(request, year=None, slug=None, most_recent=False, template='
     response = render_to_response(template, variables)
 
     return response
+
+
+def redirect_to_latest_post(request):
+    try:
+        article = Article.objects.latest('publish_date')
+    except Article.DoesNotExist:
+        raise Http404
+    return HttpResponsePermanentRedirect(article.get_absolute_url())
 
 
 def redirect_to_article(request, year, month, day, slug):
