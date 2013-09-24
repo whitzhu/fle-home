@@ -16,7 +16,7 @@ html, span, a, p, h1, h2 , h3, h4, h5, h6 {
 
 p {
     padding: 10px 0;
-    font-size: 16px;
+    font-size: @small-size;
 }
 
 h1 {
@@ -228,11 +228,19 @@ a.icon:before {
 // --------------------------------------------------
 
 #blog-container {
+    a {
+        font-size: @small-size;
+    }
     padding: 30px;
     #sidebar {
         top: 25px;
     }
     #main-post-panel{
         margin-top: 25px;
+    }
+    .post-image {
+        margin: 20px;
+        width: 80%;
+        .drop-shadow;
     }
 }
