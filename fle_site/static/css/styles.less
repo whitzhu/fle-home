@@ -16,7 +16,7 @@ html, span, a, p, h1, h2 , h3, h4, h5, h6 {
 
 p {
     padding: 10px 0;
-    font-size: 16px;
+    font-size: @small-size;
 }
 
 h1 {
@@ -224,57 +224,23 @@ a.icon:before {
   font-size: 130%;
 }
 
-
-//Icons
+// Blog
 // --------------------------------------------------
 
-#radpress-container {
-    margin-top: 40px;
-    .post-container {
-        margin-right: 50px;
-        margin-bottom: 80px;
-        margin-left: 15px;
+#blog-container {
+    a {
+        font-size: @small-size;
     }
+    padding: 30px;
     #sidebar {
-        margin-left: 40px;
-        margin-top: 22px;
-        float: right;
+        top: 25px;
     }
-    .edit-button {
-        margin-top: 10px;
+    #main-post-panel{
+        margin-top: 25px;
     }
-    .recent-posts-widget {
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-    }
-
-    .label {
-        background-color: #D5D5D5;
-    }
-
-    .tagcloud {
-        a:hover {
-            color: #6287AC;
-        }
-    }
-
-    #no-posts {
-        margin-top: ;
-    }
-
-    .sharing:hover {
-        text-decoration: none;
-    }
-
-    .blog-embedded-image {
-        border: solid 1px #CCC;
-        -moz-box-shadow: 5px 5px 0px #999;
-        -webkit-box-shadow: 3px 3px 0px #999;
-        box-shadow: 3px 3px 0px #999;
-        margin-bottom: 10px;
-        margin-top: 10px;
+    .post-image {
+        margin: 20px;
+        width: 80%;
+        .drop-shadow;
     }
 }

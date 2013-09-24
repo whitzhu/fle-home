@@ -1,0 +1,5 @@
+{% load i18n %}
+    <li class="list-group-item"><h3><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this post' %}">{{ article.title }}</a></h3>
+<div class="quiet">
+    {% trans 'Posted on' %} {{ article.publish_date|date:"F jS, Y" }}
+</div></li>
