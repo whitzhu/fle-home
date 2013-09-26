@@ -9,7 +9,14 @@ admin.autodiscover()
 urlpatterns = patterns('fle_site.apps.main.views',
     url(r'^$', 'home', name='home'),
     url(r'^map/$', 'map', name='map'),
-    url(r'^about/', 'about', name='about'),  
+)
+
+urlpatterns += patterns('django.views.generic.simple',
+    url(r'^about/$', 'direct_to_template', {'template': 'about/about.html'}, name='about'),
+    url(r'^about/team/$', 'direct_to_template', {'template': 'about/team.html'}, name='about_team'),
+    url(r'^about/board/$', 'direct_to_template', {'template': 'about/board.html'}, name='about_board'),
+    url(r'^about/supporters/$', 'direct_to_template', {'template': 'about/supporters.html'}, name='about_supporters'),
+
 )
 
 urlpatterns += patterns('',

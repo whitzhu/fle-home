@@ -14,9 +14,6 @@ from fle_site import settings
 def home(request):
 	return render_to_response("home.html")
 
-def about(request):
-	return render_to_response("about.html")
-
 def map(request): 
 	gic = pygeoip.GeoIP(settings.GEOIPDAT)
 	ips = open(settings.IPS_FILEPATH).readlines()

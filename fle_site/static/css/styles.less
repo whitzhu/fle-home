@@ -186,12 +186,37 @@ a {
 }
 
 // --------------------
+// ** About base template
+// ---
+
+.sub-menu div {
+    width: 250px;
+    margin-top: 12px;
+}
+
+.sub-menu .affix {
+    top: 3px;
+}
+
+.sub-menu .affix-bottom {
+    position: absolute;
+}
+
+@media(max-width: 970px){
+   .affix {
+     position: static;
+     width: auto;
+     top: 0;
+    }
+}
+
+// --------------------
 // ** About
 // ---
 
-
 .page-header{
     border-bottom: 1px solid rgba(119, 119, 119, 0.21);
+    margin-top: -5px;
 }
 
 .team .row{
@@ -203,9 +228,14 @@ a {
     margin-top: -10px;
 }
 .team img{
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
 }
+
+// .team .col-sm-3{
+//     text-align: center;
+// }
+
 .board .col-sm-2{
 text-align: center;
 }
