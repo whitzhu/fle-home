@@ -9,13 +9,17 @@
 {% block home_nav %}selected{% endblock home_nav %}
 
 {% block extrahead %}
-<style>
+<script>
+$(document).ready(function(){
+    $(".button-popover").popover({ trigger: "hover" });
+});
 
-</style>
+</script>
 
 {% endblock extrahead %}
 
 {% block about_content %}
+
 <div class="team">
   <div class="page-header">
       <h1>Meet the Team</h1>
@@ -23,13 +27,17 @@
 
   <div class="row">
       <div class="col-sm-3">
-        <img class="img-circle" src="https://scontent-a-lax.xx.fbcdn.net/hphotos-prn1/945647_10151770283062018_756218684_n.jpg" >
+          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Guan is qer dfjqrj qerizxcvsdf adfn An Organization is a group of people responsible for administering a set of Zones and Facilities.">
+            <img class="img-circle" src="https://scontent-a-lax.xx.fbcdn.net/hphotos-prn1/945647_10151770283062018_756218684_n.jpg" >
+          </div>
         <h3>Guan Wang</h3>
         <h4>User Experience Lead</h4>
       </div>
 
       <div class="col-sm-3">
-        <img class="img-circle" src="https://scontent-b-pao.xx.fbcdn.net/hphotos-prn2/182600_10150092531396026_447054_n.jpg" >
+         <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Guan is qer dfjqrj qerizxcvsdf adfn An Organization is a group of people responsible for administering a set of Zones and Facilities."title="Jamie Wang">
+          <img class="img-circle" src="https://scontent-b-pao.xx.fbcdn.net/hphotos-prn2/182600_10150092531396026_447054_n.jpg" >
+        </div>
         <h3>Jamie Alexsandra</h3>
         <h4>Software Developer Lead</h4>
       </div>
