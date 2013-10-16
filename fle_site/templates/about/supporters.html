@@ -6,8 +6,6 @@
 
 {% block about_supporters_active %}active{% endblock about_supporters_active %}
 
-{% block home_nav %}selected{% endblock home_nav %}
-
 {% block extrahead %}
 <style>
 
@@ -77,10 +75,10 @@
     </div>
 
     <div class="row supporters">
-     <img src="{%static 'img/supporters/Hewlett_Foundation_logo.png' %}">
-     <img src="{%static 'img/supporters/QFI.png' %}">
-     <img src="{%static 'img/supporters/Rackspace.png' %}">
-     <img src="{%static 'img/supporters/UCSD_logo.png' %}">
+     <a href="http://www.hewlett.org/"><img src="{%static 'img/supporters/Hewlett_Foundation_logo.png' %}"></a>
+     <a href="http://qfi.org/"><img src="{%static 'img/supporters/QFI.png' %}"></a>
+     <a href="http://rackspace.com/"><img src="{%static 'img/supporters/Rackspace.png' %}"></a>
+     <a href="http://ucsd.edu/"><img src="{%static 'img/supporters/UCSD_logo.png' %}"></a>
     </div>
 </div>
 {% endblock about_content %}
