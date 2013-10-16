@@ -1,0 +1,100 @@
+{% extends 'about/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Board of Directors{% endblock title %}
+
+{% block about_board_active %}active{% endblock about_board_active %}
+
+{% block home_nav %}selected{% endblock home_nav %}
+
+{% block extrahead %}
+<style>
+
+</style>
+
+{% endblock extrahead %}
+
+{% block about_content %}
+<div class="board">
+	<div class="page-header">
+      <h1>Our board members</h1>
+  </div>
+
+	<div class="row profile">
+		<div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Mike_Smith.png' %}">
+		</div>
+    <div class="col-sm-9">
+      <h2>Mike Smith</h2>
+      <p>
+        Marshall (Mike) S. Smith is retired and a Visiting Resident Scholar at the Carnegie Foundation for the Advancement of Teaching and a Visiting Scholar in Education at Harvar. His most recent full time assignment was as the Senior Counselor to U.S. Secretary of Education, Arne Duncan, and Director, Office of International Affairs, U.S. Department of Education. Earlier Dr. Smith was the Program Director for Education at The William and Flora Hewlett Foundation.
+      </p>
+    </div>
+  </div>
+
+  <div class="row profile">
+    <div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Sarah.jpg' %}" >
+    </div>
+    <div class="col-sm-9">
+      <h2>Sarah Loos Karnowski</h2>
+      <p>
+        Sarah Loos is a Ph.D. student in the Computer Science Department at Carnegie Mellon University and a Department of Energy Computational Science Graduate Fellow.  In addition to serving on the board of FLE, Sarah is a board trustee for the Anita Borg Institute for Women and Technology and she serves on the ACM-W Council.  
+      </p>
+    </div>
+  </div>
+
+  <div class="row profile">
+    <div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Bilal.jpg' %}" >
+    </div>
+    <div class="col-sm-9">
+      <h2>Bilal Musharraf </h2>
+      <p>
+        Bilal spends his time overcoming the knowledge and digital divide across languages.  He is Dean of Translations at Khan Academy and has previously worked for an international network of private schools, an early stage venture firm and an actuarial consulting company.
+        Bilal has an MBA and MA in education from Stanford University and a BS in Actuarial Science from the University of Illinois at Urbana-Champaign.
+      </p>
+    </div>
+  </div>
+
+  <div class="row profile">
+    <div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Catherine.jpg' %}"  >
+    </div>
+    <div class="col-sm-9">
+      <h2>Catherine Hammack</h2>
+      <p>
+        Catherine began her career practicing tax accounting at Deloitte in Houston and later practiced financial litigation at Bingham McCutchen in New York after law school. Intrigued by entrepreneurship, she joined a friend's startup in the online legal marketing field which then led to her position as an advertising policy strategist with Google in Mountain View.
+      </p>
+    </div>
+  </div>
+
+  <div class="row profile">
+    <div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Chunk.jpg' %}"  >
+    </div>
+    <div class="col-sm-9">
+      <h2>Charles E. Rowe</h2>
+      <p>
+        Mr. Rowe has 41 years of experience as a business attorney.  He has acted as general legal counsel for more than 100 businesses.  He has extensive experience in purchase and sale of business transactions.
+      </p>
+    </div>
+  </div>
+
+    <div class="row profile">
+    <div class="col-sm-3">
+        <img class="img-thumbnail" src="{%static 'img/board/Elman.jpg' %}"  >
+    </div>
+    <div class="col-sm-9">
+      <h2>Jeffrey Elman</h2>
+      <p>
+        Jeffrey Elman is Distinguished Professor of Cognitive Science and Dean of Social Sciences at the University of California, San Diego. He is a well-known psycholinguist and pioneer in the field of neural networks.
+      </p>
+    </div>
+  </div>
+
+
+
+</div>
+{% endblock about_content %}

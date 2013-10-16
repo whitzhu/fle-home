@@ -19,10 +19,6 @@ p {
     font-size: @small-size;
 }
 
-h1 {
-    font-size: 24px;
-}
-
 hr {
     margin-bottom: 10px;
     margin-top: 0px;
@@ -188,6 +184,105 @@ a {
         }
     }
 }
+
+// --------------------
+// ** About base template
+// ---
+
+.sub-menu div {
+    width: 220px;
+    margin-top: 12px;
+}
+
+.sub-menu li.active a,
+.sub-menu li.active a:hover{
+    background-color: darken(#E5E4E2, 10%);
+    color: black;
+}
+
+.sub-menu .affix {
+    top: 3px;
+}
+
+.sub-menu .affix-bottom {
+    position: absolute;
+}
+
+@media(max-width: 970px){
+   .affix {
+     position: static;
+     width: auto;
+     top: 0;
+    }
+}
+
+// --------------------
+// ** About
+// ---
+
+.page-header{
+    border-bottom: 1px solid rgba(119, 119, 119, 0.21);
+    margin-top: -5px;
+}
+
+.about_fle_page p{
+    margin-top: -15px;
+}
+
+.team .row{
+    padding-top: 15px;
+}
+
+.team h4{
+    color: #777;
+    margin-top: -8px;
+    padding-bottom: 15px;
+}
+.team img{
+    width: 160px;
+    height: 160px;
+    margin-bottom: -10px;
+}
+
+// .team .col-sm-3{
+//     text-align: center;
+// }
+
+.board img{
+    width: 160px;
+    height: 180px;
+}
+
+.board .profile{
+    padding-bottom: 20px;
+}
+
+.board h2{
+    margin-top: 0px;
+}
+
+
+.friends-and-supporters .partners img{
+    height: 100px;
+}
+
+
+.supporters img{
+    padding: 15px;
+    max-height: 100px;
+}
+
+.supporters{
+    background-color: white;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.partners img{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 //Icons
 // --------------------------------------------------
