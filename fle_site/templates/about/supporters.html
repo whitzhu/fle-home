@@ -1,0 +1,84 @@
+{% extends 'about/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Friends and Supporters{% endblock title %}
+
+{% block about_supporters_active %}active{% endblock about_supporters_active %}
+
+{% block extrahead %}
+<style>
+
+</style>
+
+{% endblock extrahead %}
+
+{% block about_content %}
+<div class="friends-and-supporters">
+    <div class="page-header">
+        <h1>FLE Friends and Supporters</h1>
+    </div>
+    <p>
+      The Foundation’s current activities are focused around developing this platform further and helping to support its deployment through partner NGOs, as well as individual teachers and schools wanting to make use of the platform with their students. We have been in discussions with hundreds of organizations, schools, and individuals around the world, many of whom are now deploying KA Lite in classrooms and homes, and have several larger pilot programs underway.
+    </p>
+	<div class="page-header">
+        <h1>Our Partners</h1>
+    </div>
+
+    <div class="row partners">
+        <div class="col-sm-6">
+            <img src="http://www.ole.org/sites/ole.drupalgardens.com/files/OLE_logo_0.png">
+            <p>
+                <a href="http://www.ole.org/"><strong>Open Learning Exchange</strong></a>
+                OLE International is committed to removing the barriers to learning so that all of our children enjoy learning that is open, free and meaningful, enabling them to become, in their own ways, productive, life-long learners and leaders which is a requirement for a sustainable world. The Foundation for Learning Equality is collaborating with OLE on ways to help make this shared vision a reality.
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <img src="{%static 'img/supporters/khan_academy_logo.png' %}">
+            <p>
+                <a href="http://www.khanacademy.org"><strong>Khan Academy</strong></a>
+                is a not-for-profit with the goal of changing education for the better by providing a free world-class education for anyone anywhere. The Foundation for Learning Equality is partnering with Khan Academy to play a key role in achieving this mission, by bridging the gap to offline and low-bandwidth communities using <a href="http://kalite.learningequality.org">KA Lite</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="row partners">
+        <div class="col-sm-6">
+            <img src="{%static 'img/supporters/IDOC_logo.png' %}">
+            <p>
+                <a href="http://www.idoc.idaho.gov/"><strong>Idaho Department of Corrections (IDOC)</strong></a>
+                is part of the <a href="http://www.khanidaho.org/">Khan in Idaho</a> program, the FLE has partnered with the NNU Center of Innovation in Teaching and the CCA to bring KA Lite to inmates across 7 facilities of the Idaho Department of Corrections.  This year-long study will examine the efficacy of Khan Academy content, and we hope it might serve as a launching pad to bring KA Lite to prisons across the nation.
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <img src="{%static 'img/supporters/HTH_logo.png' %}">
+            <p>
+                <a href="http://www.hightechhigh.org/"><strong>High Tech High</strong></a>
+                is a public charter school that serves a diverse, lottery-selected student population from around San Diego County.
+            </p>
+        </div>
+    </div>
+
+    <div class="row partners">
+        <div class="col-sm-6">
+            <img src="{%static 'img/supporters/akanksha_logo.gif' %}">
+            <p>
+                <a href="http://www.akanksha.org/"><strong>The Akanksha Foundation</strong></a>
+                is a non-profit organization with the vision to one day equip all students with the education, skills and character they need to lead empowered lives. We are piloting KA Lite in several Akanksha classrooms, with funding for the hardware provided by an Indian family foundation.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="page-header">
+        <h1>Our Sponsors</h1>
+    </div>
+
+    <div class="row supporters">
+     <a href="http://www.hewlett.org/"><img src="{%static 'img/supporters/Hewlett_Foundation_logo.png' %}"></a>
+     <a href="http://qfi.org/"><img src="{%static 'img/supporters/QFI.png' %}"></a>
+     <a href="http://rackspace.com/"><img src="{%static 'img/supporters/Rackspace.png' %}"></a>
+     <a href="http://ucsd.edu/"><img src="{%static 'img/supporters/UCSD_logo.png' %}"></a>
+    </div>
+</div>
+{% endblock about_content %}

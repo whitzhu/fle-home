@@ -1,0 +1,46 @@
+{% extends 'about/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block about_fle_active %}active{% endblock about_fle_active %}
+
+{% block extrahead %}
+<style>
+
+</style>
+
+{% endblock extrahead %}
+
+{% block about_content %}
+<div class="about_fle_page">
+  <div class="page-header">
+    <h1>Our Mission</h1>
+  </div>
+    <p>
+      The Foundation for Learning Equality (FLE) is a California­-based nonprofit organization. We are dedicated to creating tools for the sharing and creation of open-licensed educational content for use by anyone around the world, with a special emphasis on reaching the 65% of the world that does not have Internet access, and those with limited-bandwidth, expensive, or unreliable connections.
+    </p>
+
+  <div class="page-header">
+    <h1>Our Motivation</h1>
+  </div>
+    <p>
+      Over the past few years, the "online learning revolution" has generated a lot of excitement. Organizations, such as Khan Academy, are founded with the mission of making learning accessible for everyone, yet one of the greatest educational barriers in the world today is that and estimated 4.5 billion people still lack Internet access. Countries with the least access are also likely to have fewer educational resources available to learners that those in the developed world take for granted. Although this may be change in a decade or two, we believe that simply waiting around for things to change will leave a generation behind. We have dedicated ourselves to exploring solutions for distributing and hosting open educational resources via low-bandwidth and offline channels by taking advantage of low-cost and low-power hardware or pre-existing infrastructure. 
+    </p>
+
+  <div class="page-header">
+    <h1>Our Solutions</h1>
+  </div>
+    <p>
+      <a href="http://kalite.learningequality.org">KA Lite</a>, our open-source platform for viewing and interacting with Khan Academy videos and exercises, can be used even when no Internet is available. Students can connect to the server from within the classroom, on a laptop, tablet, or desktop computer. It is already seeing widespread global deployment in a variety of scenarios, from correctional facilities in the U.S. to schools in developing communities around the world. Check out this <a href="{% url map %}">map of current installations</a>.
+    </p>
+  <div class="page-header">
+    <h1>Our Direction</h1>
+  </div>
+    <p>
+      A young organization, FLE is still changing every day. The Foundation’s current activities are focused around further developing KA Lite and helping to support its deployment through partner NGOs, as well as individual teachers and schools wanting to make use of the platform with their students. Our direction depends on what resources are available to our team and what problems need solving, but we see plenty of room in our future to continue the offline learning revolution. Please consider continuing your support by contacting us, getting involved, or making a gift so we can continue developing tools that will make learning accessible for today's generation. 
+  </p>
+</div>
+
+{% endblock about_content %}
