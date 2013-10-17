@@ -3,120 +3,50 @@
 {% load staticfiles %}
 
 {% block title %}Meet the Team{% endblock title %}
-
 {% block about_team_active %}active{% endblock about_team_active %}
 
 {% block extrahead %}
 <script>
-$(document).ready(function(){
-    $(".button-popover").popover({ trigger: "hover" });
+$(document).ready(function() {
+    $(".button-popover").popover({
+        trigger: "hover"
+    });
 });
-
 </script>
-
 {% endblock extrahead %}
 
 {% block about_content %}
 
 <div class="team">
-  <div class="page-header">
-      <h1>Meet the Team</h1>
-  </div>
-
-  <div class="row">
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Ben: Hadzabe, Berkshires, Microsoft, UC San Diego, Lateralization, Bicycling, 東京, RedBubble, Family, Sunrise, Evolution, Homeless, Moonset, Calvin, Hobbes, 한글, corpus callosum. Now, Python, KA Lite, and the FLE.  I don’t really like computers, but I know how to use them to get stuff done! A small amount of work by us can make a big difference for others.  Good enough for me--let’s make it happen!">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/BenC.png' %}">
-          </div>
-        <h3>Ben Cipollini</h3>
-        <h4>Software Development Lead, Implementations Liaison</h4>
-      </div>
-
-      <div class="col-sm-3">
-         <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Jamie is a PhD Candidate in Cognitive Science at UC San Diego, and co-founder of several educational technology platforms, including thisCourse, ESL Genie, and KA Lite. He loves taking things apart and putting them back together again, eating delicious vegan food, and thinking about what an awesome world he lives in and how to make it even better. He has crawled through the tunnels of Knossos, but didn’t find the Minotaur.">
-          <img class="img-thumbnail" src="{%static 'img/team-photos/JamieA.png' %}">
+    <div class="page-header">
+        <h1>
+            Meet the Team
+        </h1>
+    </div>
+    
+    <div class="row">
+    {% for person in team %}               
+        
+        <div class="col-sm-3">
+            <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="{{ person.description }}">
+                <img class="img-thumbnail" src="{% static 'img/team-photos/' %}{{ person.image }}">
+            </div>
+            <h3>
+                {{ person.name }}
+            </h3>
+            <h4>
+                {{ person.titles|join:", " }}
+            </h4>
         </div>
-        <h3>Jamie Alexandre</h3>
-        <h4>Software Architecture Lead</h4>
-      </div>
 
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="When he isn’t rocking out in his Prius, you can normally find Dylan doing a little bit of everything - crushing email, drafting documents, on the phone with Chuck (our awesome lawyer), or doing a little hacking (front-end, back-end, doesn’t matter). He tries to smile and travel as much as he possibly can. ">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/DylanB.png' %}">
-      </div>
-        <h3>Dylan Barth</h3>
-        <h4> Operations Lead, Software Developer</h4>
-      </div>
-      
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Guan studies Human-Computer Interaction at UC San Diego. As the first person in his family goes to college, he has always been looking to contribute to the community and support education. He’s also passionate about understanding human behavior and the context around interactions with technology. ">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/GuanW.jpg' %}">
-      </div>
-        <h3>Guan Wang</h3>
-        <h4>User Experience Lead</h4>
-      </div>
-  </div>
+        {% if not forloop.last %}
+            {% if forloop.counter|divisibleby:"4" %}
+                </div><div class="row">
+            {% endif %}
+        {% endif %}
 
- <div class="row">
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Richard enjoys tea, trivia, and teaching. To distract himself from the stresses of juggling life as a PhD student, developing on KA Lite, and teaching, Richard can often be found literally juggling in his office. Richard thinks that learning is the key to unlocking human potential and allowing everyone to flourish, and that making learning fit the learner is the way to achieve this goal.">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/RichardT.png' %}">
-          </div>
-        <h3>Richard Tibbles</h3>
-        <h4>Learning Lead, Software Developer</h4>
-      </div>
-
-      <div class="col-sm-3">
-         <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Part-time student, part-time employee, and full-time explorer, Alexsandra is constantly in pursuit of new life lessons and the perfect cup of coffee. She spends a lot of time meeting kindred spirits who care about educational opportunities and trying to tell the amazing story of FLE. If you think she’s someone you want to know, find her in the twitter-verse or through FLE’s facebook page.">
-          <img class="img-thumbnail" src="{%static 'img/team-photos/AlexsandraM.png' %}">
-        </div>
-        <h3>Alexsandra McMahan</h3>
-        <h4>Martketing Lead</h4>
-      </div>
-
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="As a management student turned computer programmer, Aron is looking for opportunities in changing the world through technology. When not in front of the computer, you can usually find him daydreaming, reading a scifi novel, or chatting with a friend.">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/AronA.png' %}">
-      </div>
-        <h3>Aron Asor</h3>
-        <h4>Software Developer</h4>
-      </div>
-      
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Liz watches out for the Implementations team, which means she works with the inspiring KA Lite users from around the world who share the vision of equal learning opportunities for all.  She comes from a background in and has a love for marine science. Reality TV cooking shows and Ben &amp; Jerry's otherwise earn her undying devotion. ">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/ElizabethV.png' %}">
-      </div>
-        <h3>Elizabeth Vu</h3>
-        <h4>Implementations Architect/Lead </h4>
-      </div>
-  </div>
-
- <div class="row">
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Rui is a Computer Science student at the University of Porto (Portugal). He loves science and technology and through it, he wants to inspire societies to learn, and to dream big to make the world a better place. Through a complicated life background, Rui has learned the value of learning and how knowledge can change your life. Rui believes there is an amazing potential that is being wasted in the world and it is up to us, the ones who can and have access, to fix that by opening the doors to everyone who is willing to learn. ">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/RuiM.png' %}">
-          </div>
-        <h3>Rui Malheiro</h3>
-        <h4>Software Developer</h4>
-      </div>
-
-      <div class="col-sm-3">
-         <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Steve’s background is software development and technical support.   He works full-time in education, and is particularly interested in building students’ confidence with maths.  When not drinking tea, Steve is normally found testing the latest development code, particularly on the Raspberry Pi.">
-          <img class="img-thumbnail" src="{%static 'img/team-photos/SteveA.jpg' %}">
-        </div>
-        <h3>Steve Appleton</h3>
-        <h4>Volunteer Developer</h4>
-      </div>
-
-      <div class="col-sm-3">
-          <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="Kriti, who is currently taking a gap year before attending medical school, is deeply inspired by KA Lite’s vision. If she isn’t shouting out answers at the TV screen when Jeopardy is on, she is most probably experimenting in the kitchen, writing, or solving the daily newspaper’s cryptogram. Her favorite experiences in life include the take-off of a flight (in which a window seat is a must) and any discussion in immunology.">
-            <img class="img-thumbnail" src="{%static 'img/team-photos/KritiG.jpg' %}">
-      </div>
-        <h3>Kriti Gupta</h3>
-        <h4>Deployments Volunteer</h4>
-      </div>
-      
-  </div>
-
+    {% endfor %}
+    </div>
+        
 </div>
 {% endblock about_content %}
