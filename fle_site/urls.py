@@ -10,6 +10,7 @@ urlpatterns = patterns('fle_site.apps.main.views',
     url(r'^$', 'home', name='home'),
     url(r'^map/$', 'map', name='map'),
     url(r'^about/team/$', 'about_team', name='about_team'),
+    url(r'^give/$', 'give', name='give'),
 )
 
 urlpatterns += patterns('django.views.generic.simple',
