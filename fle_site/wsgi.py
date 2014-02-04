@@ -11,9 +11,9 @@ except:
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 # Add the app's directory to the PYTHONPATH
-sys.path.append(os.path.join(PROJECT_PATH, "..")
+sys.path.append(os.path.join(PROJECT_PATH, ".."))
 sys.path.append(PROJECT_PATH)
-sys.path.append(os.path.join(PROJECT_PATH, "apps")
+sys.path.append(os.path.join(PROJECT_PATH, "apps"))
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "fle_site.settings"
 
