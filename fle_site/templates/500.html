@@ -1,14 +1,12 @@
 {% extends "base.html" %}
 
-{% load i18n %}
-
-{% block title %}{% trans "Error" %}{% endblock %}
+{% block title %}500: Internal Server Error{% endblock %}
 
 {% block bodycontents %}
-<h1>{% trans "Error" %}</h1>
+<h1>500: Internal Server Error</h1>
 
-<p><b>{% trans "Sorry, but there was an error while trying to load the page." %}</b></p>
+<p>Oops! Something has gone wrong on our end. Sorry about that. Please feel free to report this error by emailing <a href="mailto:info@learningequality.org">info@learningequality.org</a>. If you do email us, please be sure to include the URL and error in your email.</p>
 
-({{ errortype }}: {{ value }})
+<p>In the meantime, please feel free to use the following links to find your way back to the <a href="{% url home %}">homepage</a>, <a href="{% url about %}">about page</a>, <a href="{% url articles_display_most_recent %}">blog</a>, or <a href="http://forums.learningequality.org/">forums</a>.</p>
 
 {% endblock %}
