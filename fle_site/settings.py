@@ -45,7 +45,7 @@ DATABASES = localor("DATABASES", {
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Los_Angeles'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -86,7 +86,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '@$q_9h45p=b3-wk2zv9oy_8d-13p576dk))p*o=ntyh!_3b16%'
+SECRET_KEY = getattr(local_settings, "SECRET_KEY", "@$=b3-wk2zv9oy_8dk))q_9h45pp*o=ntyh!_3bd-13p5761f%")
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
