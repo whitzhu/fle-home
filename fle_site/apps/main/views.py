@@ -21,6 +21,9 @@ def home(request):
 def give(request):
     return render_to_response("give.html")
 
+def internships(request):
+    return render_to_response("internships.html")
+
 def map(request): 
 	gic = pygeoip.GeoIP(settings.GEOIPDAT)
 	ips = open(settings.IPS_FILEPATH).readlines()
