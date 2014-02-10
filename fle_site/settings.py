@@ -171,13 +171,6 @@ LOGGING = {
     }
 }
 
-
 # Django-articles settings
-DISQUS_USER_API_KEY = "5uORUTZwxh8HB1IbPLW0FFTaH8leP0EbSjKTzOo9mz18oG8sTt0IhoCWzY8Ahd3n"
+DISQUS_USER_API_KEY = localor("DISQUS_USER_API_KEY", "")
 DISQUS_FORUM_SHORTNAME = "learningequality"
-
-# ARTICLES_TEASER_LIMIT: The number of words to display in the teaser. Defaults to 75.
-# ARTICLES_AUTO_TAG: Whether or not to automatically tag articles. Defaults to True.
-# ARTICLES_DEFAULT_DB: Database in which to store articles. Defaults to default.
-# ARTICLES_LOOKUP_LINK_TITLE: Whether to fetch the title of remote links or use the local name of the link. Defaults to True.
-
