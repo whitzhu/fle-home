@@ -29,58 +29,35 @@ a {
 }
 
 // --------------------
-// ** Header
+// ** Navbar
 // --------------------
 
-.masthead {
-    height: 75px;
+#fle-navbar {
     background-color: @blue;
+    border: 0px;
+    border-radius: 0px;
+    
+    .open {
+        background-color: @white;
+        a, a:hover {
+            color: @darkgray;
+        }
+        b.caret {
+            border-top-color: @darkgray;
+            border-bottom-color: @darkgray;
+        } 
+    }
+
     a {
         color: @white;
-    }
-}
-
-.nav-logo {
-    background: url("../img/fle-text-horiz.png") no-repeat; 
-    display: block;
-    height: 75px;
-    width: 512px;
-}
-
-@media (max-width: 990px) { 
-    .nav-logo {
-        background: url("../img/fle-text-horiz-sm.png") no-repeat;
-        width: 149px;
-    }
-}
-
-
-@media (max-width: 600px) { 
-    .nav-logo {
-        display: none;
-    }
-    float: none;
-
-}
-
-
-.nav-list {
-    position: relative;
-    top: 20px;
-
-    li {
-        margin-left: 30px;
-        a {
-            font-size: @small-size;
-            &:hover {
-                color: @blue;
-            }
+        &:hover {
+            color: @off-white;
         }
-        text-transform: uppercase;
-        font-family: @sanserif-block;
-        font-weight: 400;
-        letter-spacing: 1px;
     }
+    b.caret {
+        border-top-color: @white;
+        border-bottom-color: @white;
+    } 
 }
 
 // --------------------
@@ -175,16 +152,11 @@ a {
 // ** Footer
 // --------------------
 
-.footer {
+#footer {
     background-color: @darkgray;
-    height: 75px;
-    position: block;
-}
-
-.footer-legal {
     color: @white;
-    margin: 25px 0;
-    .center-text;
+    padding-top: 30px;
+    margin-bottom: -30px;
     a {
         color: @white;
         text-decoration: none;
@@ -300,17 +272,12 @@ a {
   font-size: 45px;
   position: relative;
   padding: 0px;
+  margin: 0px;
   @media (min-width: 768px) {
       top: -40px;
   }
   @media (max-width: 767px) {
       top: -20px
-  }
-  li a{
-    color:@gray;
-    &:hover{
-      color:@gray;
-    }
   }
 }
 
