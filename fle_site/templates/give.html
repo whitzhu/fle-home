@@ -7,40 +7,56 @@
 {% block give_nav %}selected{% endblock give_nav %}
 
 {% block bodycontents %}
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 pull-right">
-                <h2>Ways to Give</h2>
-                <p>
-                    <strong>Give by mail:</strong> please make checks payable to "Foundation for Learning Equality" and send them, along with your name and email address, to: 
-                    <address>
-                        Attn: Foundation for Learning Equality</br>
-                        4275 Executive Square 11th Floor</br>
-                        La Jolla, CA 92037
-                    </address>
-                    <strong>Give online:</strong> by submitting donations through PayPal giving portal: </br></br> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DRYT4JWGGATC6" class="btn btn-primary btn-large">Donate to FLE through Paypal</a> 
-                </p>
-            </div>
-            <div class="col-sm-6 pull-left">
-                <h2>Why Give to FLE?</h2>
-                <p>
-                    The Foundation for Learning Equality (FLE) actively develops and maintains open-source software that helps thousands of learners all over the world access the same high-quality educational materials available on the Internet that their peers in the developed world take for granted. 
-                </p>
-                <p>
-                    By making a contribution to FLE, you'll be supporting the further development of KA Lite, and future tools for the sharing and creation of open-licensed educational content for use by anyone around the world. 
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>Important Information</h3>
-                <p>
-                    <strong>For questions: </strong>please don't hesitate to email our team: <a href="mailto:gifts@learningequality.org">gifts@learningequality.org</a>.
-                </p>
-                <p>
-                    Please note that FLE's 501(c)(3) status is currently pending IRS approval. Upon approval, all contributions made to the organization since the date of formation, April 22, 2013, may be treated as tax-deductible contributions retroactively. If you make any contribution, we will be sure to keep you informed via email about the status of our 501(c)(3) application.
-                </p>
-            </div>
+<div class="row">
+    <div class="sub-menu col-md-3 col-sm-3 hidden-xs">
+        <div data-spy="affix" data-offset-top="90">
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#how">How to Give</a></li>
+              <li><a href="#why">Why give to FLE?</a></li>
+              <li><a href="#info">Important Information</a></li>
+            </ul>
         </div>
     </div>
+
+    <div class="col-md-9 col-sm-9 col-xs-12">
+
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs">
+        <div id="how">
+            <h2>How to Give</h2>
+            <p>
+                You can <strong>give by mail</strong> by making checks payable to "Foundation for Learning Equality" and sending them, along with your name and email address, to: 
+                <strong><address>
+                    Attn: Foundation for Learning Equality</br>
+                    4275 Executive Square 11th Floor</br>
+                    La Jolla, CA 92037
+                </address></strong>
+                Alternatively, you can <strong>give online</strong> by submitting donations through our PayPal giving portal: </br></br> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DRYT4JWGGATC6" class="btn btn-primary btn-large">Donate to FLE through Paypal</a> 
+            </p>
+        </div>
+        <div id="why">
+            <h2>Why Give to FLE?</h2>
+            <p>
+                The Foundation for Learning Equality (FLE) actively develops and maintains open-source software that helps thousands of learners all over the world access the same high-quality educational materials available on the Internet that their peers in the developed world take for granted. 
+            </p>
+            <p>
+                By making a contribution to FLE, you'll be supporting the further development of KA Lite, and future tools for the sharing and creation of open-licensed educational content for use by anyone around the world. 
+            </p>
+            <p>
+                
+            </p>
+
+            <img src="{% static 'img/install_map.png' %}" title="Making the earth a pincushion for KA Lite installs" alt="A map of known KA Lite installations" class="img-thumbnail">
+        </div>
+        <div id="info">
+            <h2>Important Information</h2>
+            <p>
+                <strong>For questions: </strong>please don't hesitate to email our team: <a href="mailto:gifts@learningequality.org">gifts@learningequality.org</a>.
+            </p>
+            <p>
+                Please note that FLE's 501(c)(3) status is currently pending IRS approval. Upon approval, all contributions made to the organization since the date of formation, April 22, 2013, may be treated as tax-deductible contributions retroactively. If you make any contribution, we will be sure to keep you informed via email about the status of our 501(c)(3) application.
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock bodycontents %}
