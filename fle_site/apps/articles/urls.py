@@ -15,7 +15,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('',
-    url(r'^$', views.redirect_to_latest_post, name="articles_display_most_recent"),
+    url(r'^$', views.redirect_to_latest_post, name="blog"),
     url(r'^archive/$', views.display_blog_page, name='articles_archive'),
     url(r'^page/(?P<page>\d+)/$', views.display_blog_page, name='articles_archive_page'),
 
