@@ -298,10 +298,16 @@ a {
 .list-icons{
   .horizontal-list;
   font-size: 45px;
-  line-height: 10px;
-
+  position: relative;
+  padding: 0px;
+  @media (min-width: 768px) {
+      top: -40px;
+  }
+  @media (max-width: 767px) {
+      top: -20px
+  }
   li a{
-    color:@white;
+    color:@gray;
     &:hover{
       color:@gray;
     }
