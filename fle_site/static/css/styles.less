@@ -28,6 +28,10 @@ a {
     color: @blue;
 }
 
+.row {
+    margin: 0px;
+}
+
 // --------------------
 // ** Navbar
 // --------------------
@@ -154,9 +158,9 @@ a {
 // ** About base template
 // ---
 
-.sub-menu div {
-    width: 220px;
+.sub-menu{
     margin-top: 12px;
+    padding-left: 30px;
 }
 
 .sub-menu li.active a,
@@ -190,8 +194,11 @@ a {
     margin-top: -5px;
 }
 
-.about_fle_page p{
-    margin-top: -15px;
+.about_fle_page {
+    p, h1 {
+        padding: 0px 10px    
+    }
+    
 }
 
 .team .row{
@@ -208,10 +215,6 @@ a {
     height: 160px;
     margin-bottom: -10px;
 }
-
-// .team .col-sm-3{
-//     text-align: center;
-// }
 
 .board img {
     width: 160px;

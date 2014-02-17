@@ -12,23 +12,22 @@
 {% endblock extrahead %}
 
 {% block bodycontents %}
-<div class="container">
-
-  <div class="sub-menu col-md-3">
-  	<div data-spy="affix" data-offset-top="90">
-	    <ul class="nav nav-pills nav-stacked">
-	      <li class="{% block about_fle_active %}{% endblock %}"><a href="{% url about %}">About FLE</a></li>
-	      <li class="{% block about_team_active %}{% endblock %}"><a href="{% url about_team %}">Our Team</a></li>
-	      <li class="{% block about_board_active %}{% endblock %}"><a href="{% url about_board %}">Board of Directors</a></li>
-	      <li class="{% block about_supporters_active %}{% endblock %}"><a href="{% url about_supporters %}">Friends and Supporters</a></li>
-	    </ul>
+<div class="row">
+    <div class="sub-menu col-md-3 col-sm-3 hidden-xs">
+        <div data-spy="affix" data-offset-top="90">
+            <ul class="nav nav-pills nav-stacked">
+              <li class="{% block about_fle_active %}{% endblock %}"><a href="{% url about %}">About FLE</a></li>
+              <li class="{% block about_team_active %}{% endblock %}"><a href="{% url about_team %}">Our Team</a></li>
+              <li class="{% block about_board_active %}{% endblock %}"><a href="{% url about_board %}">Board of Directors</a></li>
+              <li class="{% block about_supporters_active %}{% endblock %}"><a href="{% url about_supporters %}">Friends and Supporters</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <div class="about_content col-md-9">
-	{% block about_content %}
+    <div class="about_content col-md-9 col-sm-9 col-xs-12">
+        {% block about_content %}
 
-	{% endblock about_content %}
-  </div>
+        {% endblock about_content %}
+    </div>
 </div>
 {% endblock bodycontents %}
