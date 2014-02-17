@@ -36,7 +36,7 @@ a {
     background-color: @blue;
     border: 0px;
     border-radius: 0px;
-    
+    margin-bottom: 0px;
     .open {
         background-color: @white;
         a, a:hover {
@@ -64,12 +64,14 @@ a {
 // ** Home
 // --------------------
 
-.module-opening {
+.main-image {
+    h1, p {
+        position: relative;
+        top: 120px;
+    }
     h1 {
         text-transform: uppercase;
         font-family: @sanserif-block;
-        font-size: 48px;
-        letter-spacing: 2px;
     }
     p {
         font-size: 20px;
@@ -86,66 +88,17 @@ a {
     background-size: cover;
 }
 
-.module-description {   
-    .description-box {
-        padding-top: 14px;
-    }
-    .action-button {
-
-        .center-text;
-    }
-}
-
-.module-description#action-items {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    
-    .module-panel{
-        min-height: 220px;
-        background-color: white;
-        border: 1px solid rgb(221, 221, 221);
-        margin:20px 0px;
-        line-height: 1.6;
-        padding:20px;
-        p{
-            min-height: 100px;
-        }
-        img{
-            max-height: 200px;
-        }
-    }
-}
-
-@media (max-width: 768px) { 
-    .module-panel{
-        p{
-            min-height: 0px!important;
-            .center-text;
-        }
-        img{ //center the image when mobile
-            float: none; 
-            margin-left: auto; 
-            margin-right: auto;
-        }
-    }
-    .module-opening {
-        background: @darkblue;
-        height: 250px;
-        background: url("../img/burma-kids-blur-sm.jpg") fixed; 
-        h1 {
-            font-size: 30px;
-        }
-        p {
-            font-size: 16px;
-        }
-    }
-    .module-description {
-        padding: 50px 0;
-    }
-}
-
 #giving-img {
     margin-top:15px;
+}
+
+#call-out-boxes {
+    margin: 30px 0px;
+
+    .action-button {
+        width: 80%;
+        .center-text;
+    }
 }
 
 // --------------------
