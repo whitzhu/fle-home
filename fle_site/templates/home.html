@@ -24,26 +24,39 @@ jQuery(document).ready(function ($) {
 </div>
 <div class="row" id="call-out-boxes">
     <!-- KA Lite call-out box --> 
-    <div class="col-xs-11 col-xs-offest-1 col-md-5 col-md-offset-1 pull-left">
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="well">
+            <div class="row hidden-sm">
+                <div class="col-xs-12 col-md-6">
+                    <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
+                    <a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large action-button">Learn More</a>
+                </div>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
-                <a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large action-button">Learn More</a>
+            <div class="row visible-sm">
+                <div class="col-sm-6">
+                    <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+                </div>
+                <div class="col-sm-6">
+                    <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
+                    <a href="http://kalite.learningequality.org/" class="btn btn-primary btn-large action-button">Learn More</a>
+                </div>
             </div>
         </div>
     </div>
     <!-- Giving call-out box --> 
-    <div class="col-xs-11 col-md-5 pull-left">
-        <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <img id="giving-img" class="img-responsive" src="{% static 'img/giving-team.jpg' %}" alt="Mission Image" />
-            </div>
-            <div class="col-xs-12 col-md-6">
-                <p>Your gift will support the Foundation for Learning Equality's mission of ensuring that everyone around the world has access to a high quality basic education.</p>
-                <a href="{% url give %}" class="btn btn-primary btn-large action-button">Give Today</a>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <img id="giving-img" class="img-responsive" src="{% static 'img/giving-team.jpg' %}" alt="Mission Image" />
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <p>Your gift will support the Foundation for Learning Equality's mission of ensuring that everyone around the world has access to a high quality basic education.</p>
+                    <a href="{% url give %}" class="btn btn-primary btn-large action-button">Give Today</a>
+                </div>
             </div>
         </div>
     </div>
