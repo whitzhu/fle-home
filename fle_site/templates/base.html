@@ -41,13 +41,13 @@
     </head>
 
 <body>
-    <div id="wrap">
-        <div class="container-fluid">
-            {% include "partials/_navigation.html" %}
+    <div class="container-fluid">
+        {% include "partials/_navigation.html" %}
+        <div id="body-content" class="container-2000x">
             {% block bodycontents %}{% endblock bodycontents %}
             {% include "partials/_contact_modal.html" %}
-            {% include "partials/_footer.html" %}
         </div>
+        {% include "partials/_footer.html" %}
     </div>
 </body>
 </html>
