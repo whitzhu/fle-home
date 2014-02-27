@@ -27,8 +27,8 @@ urlpatterns += patterns('',
 
 # static files (images, css, javascript, etc.)
 urlpatterns += patterns('',
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-    'document_root': settings.MEDIA_ROOT}))
+    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/img/fle.ico'}),
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
 
 
 handler500 = 'fle_site.apps.main.views.handler_500'
