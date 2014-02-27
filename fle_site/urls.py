@@ -27,7 +27,6 @@ urlpatterns += patterns('',
 
 # static files (images, css, javascript, etc.)
 urlpatterns += patterns('',
-    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/img/fle.ico'}),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
 
 
