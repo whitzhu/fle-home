@@ -6,9 +6,21 @@
 // ** Base
 // --------------------
 
-html, body {
-    height: 100%;
+html {
+    position: relative;
+    min-height: 100%;
     background-color: @white;
+}
+
+body {
+    @media (min-width: 990px) {
+        margin-bottom: @footer-height;
+        padding-bottom:@footer-height;
+        }
+    @media (max-width: 989px) {
+        margin-bottom: @footer-height-collapsed;
+        // padding-bottom: @footer-height-collapsed;
+    }  
 }
 
 html, span, a, p, h1, h2 , h3, h4, h5, h6, li {
@@ -27,6 +39,10 @@ hr {
 
 a {
     color: @blue;
+}
+
+#wrap {
+    min-height: 100%;
 }
 
 .container-2000x {
@@ -90,6 +106,52 @@ a {
 }
 
 // --------------------
+// ** Footer
+// --------------------
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: @darkgray;
+    color: @white;
+    padding-top: 20px;
+    @media (min-width: 990px) {
+          height: @footer-height;
+        }
+    @media (max-width: 989px) {
+        height: @footer-height-collapsed;
+    }
+    .row {
+        margin-right: 0px;
+    }
+    a {
+        color: @white;
+        text-decoration: none;
+        &:hover {
+            color: @gray;
+        }
+    }
+    #help_links {
+        z-index: 10;
+    }
+    .list-icons{
+        .horizontal-list;
+        font-size: 45px;
+        position: relative;
+        padding-left: 0px;
+        margin: 0px;
+        z-index: 0;
+        @media (min-width: 990px) {
+          top: -35px;
+        }
+        @media (max-width: 989px) {
+          top: -20px
+        }
+    }
+}
+
+// --------------------
 // ** Home
 // --------------------
 
@@ -127,43 +189,6 @@ a {
     .action-button {
         width: 80%;
         .center-text;
-    }
-}
-
-// --------------------
-// ** Footer
-// --------------------
-
-#footer {
-    background-color: @darkgray;
-    color: @white;
-    padding-top: 20px;
-    .row {
-        margin-right: 0px;
-    }
-    a {
-        color: @white;
-        text-decoration: none;
-        &:hover {
-            color: @gray;
-        }
-    }
-    #help_links {
-        z-index: 10;
-    }
-    .list-icons{
-        .horizontal-list;
-        font-size: 45px;
-        position: relative;
-        padding-left: 0px;
-        margin: 0px;
-        z-index: 0;
-        @media (min-width: 990px) {
-          top: -35px;
-        }
-        @media (max-width: 989px) {
-          top: -20px
-        }
     }
 }
 
