@@ -1,7 +1,5 @@
 import json
-import os
 import pygeoip
-import random
 import re
 import sys
 
@@ -46,13 +44,6 @@ def map(request):
 	# location_info = list(set(location_info) - set([(0, 0)]))
 	return render_to_response('map.html', {"locations": json.dumps(locations)})
 
-@render_to("about/team.html")
-def about_team(request):
-    team = json.load(open(os.path.join(settings.PROJECT_PATH, "data/team.json")))
-    random.shuffle(team)
-    return {
-        "team": team
-    }
 
 def handler_500(request):
     errortype, value, tb = sys.exc_info()
