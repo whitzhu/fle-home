@@ -25,17 +25,17 @@ $(document).ready(function() {
     </div>
     
     <div class="row">
-    {% for person in team %}               
+    {% for p in team_members %}               
         
         <div class="col-sm-3">
-            <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="{{ person.description }}">
-                <img class="img-thumbnail" src="{% static 'img/team-photos/' %}{{ person.image }}">
+            <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="{{ p.bio }}">
+                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ p.picture }}/">
             </div>
             <h3>
-                {{ person.name }}
+                {{ p.name }}
             </h3>
             <h4>
-                {{ person.titles|join:", " }}
+                {{ p.title }}
             </h4>
         </div>
 
