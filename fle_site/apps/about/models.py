@@ -20,3 +20,10 @@ class TeamMember(Person):
 
 class BoardMember(Person):
 	picture = models.ImageField(upload_to="board_pics")
+
+
+class PressArticle(models.Model):
+	title = models.CharField(max_length=200)
+	url = models.URLField(max_length=200)
+	publish_date = models.DateField(auto_now_add=False, auto_now=False)
+	description = MarkupField()

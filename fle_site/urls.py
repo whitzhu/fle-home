@@ -18,6 +18,7 @@ urlpatterns += patterns('fle_site.apps.about.views',
     url(r'^about/team/$', 'team', name='team'),
     url(r'^about/board/$', 'board', name='board'),
     url(r'^about/supporters/$', 'supporters', name='supporters'),
+    url(r'^about/press/$', 'press', name='press'),
 )
 
 urlpatterns += patterns('',

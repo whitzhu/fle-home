@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
-from models import AboutSection, TeamMember, BoardMember
+from models import AboutSection, TeamMember, BoardMember, PressArticle
 
 def mission(request):
 	about_sections = AboutSection.objects.all()
@@ -36,3 +36,11 @@ def board(request):
 
 def supporters(request):
 	return render_to_response("about/supporters.html")
+
+
+def press(request):
+	press_articles = PressArticle.objects.order_by('-publish_date')
+	context = {
+		"press_articles": press_articles
+	}
+	return render(request, "about/press.html", context)
