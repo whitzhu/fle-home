@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
-from models import AboutSection, TeamMember
+from models import AboutSection, TeamMember, BoardMember
 
 def mission(request):
 	about_sections = AboutSection.objects.all()
@@ -26,7 +26,12 @@ def team(request):
 
 
 def board(request):
-	return render_to_response("about/board.html")
+	board_members = list(BoardMember.objects.all())
+	random.shuffle(board_members)
+	context = {
+		"board_members": board_members
+	}
+	return render(request, "about/board.html", context)
 
 
 def supporters(request):
