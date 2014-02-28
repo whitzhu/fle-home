@@ -2,13 +2,18 @@ import json
 import os 
 import random
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
+from models import AboutSection
 
 def mission(request):
-	return render_to_response("about/mission.html")
+	about_sections = AboutSection.objects.all()
+	context = {
+		"about_sections": about_sections
+	}
+	return render(request, "about/mission.html", context)
 
 
 @render_to("about/team.html")
