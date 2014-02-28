@@ -1,12 +1,6 @@
 from django.db import models
 from markupfield.fields import MarkupField
 
-# Create your models here.
-class AboutSection(models.Model):
-	title = models.CharField(max_length=200)
-	body = MarkupField()
-
-
 class Person(models.Model):
 	name = models.CharField(max_length=100)
 	title = models.CharField(max_length=100)

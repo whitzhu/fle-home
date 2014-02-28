@@ -6,14 +6,10 @@ from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
-from models import AboutSection, TeamMember, BoardMember, PressArticle
+from models import TeamMember, BoardMember, PressArticle
 
 def mission(request):
-	about_sections = AboutSection.objects.all()
-	context = {
-		"about_sections": about_sections
-	}
-	return render(request, "about/mission.html", context)
+	return render_to_response("about/mission.html")
 
 
 def team(request):
