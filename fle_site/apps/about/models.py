@@ -3,6 +3,7 @@ from urlparse import urlparse
 from markupfield.fields import MarkupField
 
 from django.db import models
+from django.template.defaultfilters import slugify
 
 class Person(models.Model):
     name = models.CharField(max_length=100)
@@ -34,3 +35,12 @@ class PressArticle(models.Model):
 
     def base_url(self):
         return urlparse(self.url).netloc
+
+class Internship(models.Model):
+    title = models.CharField(max_length=200)
+    active = models.BooleanField(default=True)
+    description = MarkupField(default_markup_type="html")
+    last_updated = models.DateTimeField(auto_now_add=True)
+
+    def slug(self):
+        return slugify(self.title)

@@ -10,7 +10,6 @@ urlpatterns = patterns('fle_site.apps.main.views',
     url(r'^$', 'home', name='home'),
     url(r'^map/$', 'map', name='map'),
     url(r'^give/$', 'give', name='give'),
-    url(r'^internships/$', 'internships', name='internships'),
 )
 
 urlpatterns += patterns('fle_site.apps.about.views',
@@ -19,6 +18,7 @@ urlpatterns += patterns('fle_site.apps.about.views',
     url(r'^about/board/$', 'board', name='board'),
     url(r'^about/supporters/$', 'supporters', name='supporters'),
     url(r'^about/press/$', 'press', name='press'),
+    url(r'^internships/$', 'internships', name='internships'),
 )
 
 urlpatterns += patterns('',

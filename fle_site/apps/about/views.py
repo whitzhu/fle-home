@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
-from models import TeamMember, BoardMember, PressArticle
+from models import TeamMember, BoardMember, PressArticle, Internship
 
 def mission(request):
 	return render_to_response("about/mission.html")
@@ -40,3 +40,11 @@ def press(request):
 		"press_articles": press_articles
 	}
 	return render(request, "about/press.html", context)
+
+
+def internships(request):
+	internships = Internship.objects.all()
+	context = {
+		"internships": internships
+	}
+	return render(request, "about/internships.html", context)
