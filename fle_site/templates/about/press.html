@@ -15,14 +15,31 @@
   <div class="page-header">
       <h1>Press</h1>
   </div>
-  <ul class="list-group">
+  <!-- Visible on XS only --> 
+  <ul class="list-group visible-xs">
     {% for a in press_articles %}
-      <a href="{{ a.url }}" class="list-group-item">
-        <h4 class="list-group-item-heading">{{ a.title }}</h4>
-        <small>{{ a.publish_date }}</small>
-        <p class="list-group-item-text">{{ a.description }}</p>
-      </a>
+      <li class="list-group-item">
+        <img class="press-logo" src="{{ MEDIA_URL }}{{ a.logo.picture }}">
+        <h4><a href="{{ a.url }}">{{ a.title }}</a><br/><small>{{ a.publish_date }}</br>{{a.base_url}}</small></h4>
+      </li>
     {% endfor %}
   </ul>
+
+  <!-- Visible sm-md-lg -->
+  <ul class="list-group hidden-xs">
+    {% for a in press_articles %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="press-logo" src="{{ MEDIA_URL }}{{ a.logo.picture }}">
+          </div>
+          <div class="col-md-10">
+            <h4><a href="{{ a.url }}">{{ a.title }}</a><br/><small>{{ a.publish_date }}&nbsp;|&nbsp;{{a.base_url}}</small></h4>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  
 </div>
 {% endblock about_content %}
