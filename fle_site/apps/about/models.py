@@ -8,8 +8,11 @@ from django.template.defaultfilters import slugify
 class Person(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
-    bio = models.TextField()
+    bio = MarkupField(default_markup_type="html")
     last_updated = models.DateTimeField(auto_now_add=True)
+
+    def slug(self):
+        return slugify(self.name)
 
 
 class TeamMember(Person):

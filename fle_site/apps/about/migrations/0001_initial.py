@@ -13,8 +13,10 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('bio', self.gf('django.db.models.fields.TextField')()),
+            ('bio', self.gf('markupfield.fields.MarkupField')(rendered_field=True)),
+            ('bio_markup_type', self.gf('django.db.models.fields.CharField')(default='html', max_length=30)),
             ('last_updated', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
+            ('_bio_rendered', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal('about', ['Person'])
 
@@ -101,7 +103,9 @@ class Migration(SchemaMigration):
         },
         'about.person': {
             'Meta': {'object_name': 'Person'},
-            'bio': ('django.db.models.fields.TextField', [], {}),
+            '_bio_rendered': ('django.db.models.fields.TextField', [], {}),
+            'bio': ('markupfield.fields.MarkupField', [], {'rendered_field': 'True'}),
+            'bio_markup_type': ('django.db.models.fields.CharField', [], {'default': "'html'", 'max_length': '30'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'last_updated': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),

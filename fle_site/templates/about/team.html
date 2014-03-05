@@ -28,9 +28,10 @@ $(document).ready(function() {
     {% for p in team_members %}               
         
         <div class="col-sm-3">
-            <div class="button-popover" data-toggle="popover" data-placement="auto top" data-content="{{ p.bio }}">
-                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ p.picture }}">
-            </div>
+            <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ p.picture }}">
+            <a href="javascript:$('#{{ p.slug }}').modal('toggle');">
+                <div class="team-img-overlay"></div>
+            </a>
             <h3>
                 {{ p.name }}
             </h3>
@@ -38,6 +39,8 @@ $(document).ready(function() {
                 {{ p.title }}
             </h4>
         </div>
+
+        {% include "partials/_team_modal.html" %}
 
         {% if not forloop.last %}
             {% if forloop.counter|divisibleby:"4" %}
