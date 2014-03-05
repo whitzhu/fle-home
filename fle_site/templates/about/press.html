@@ -1,0 +1,45 @@
+{% extends 'about/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Press{% endblock title %}
+
+{% block about_press_active %}active{% endblock about_press_active %}
+
+{% block extrahead %}
+
+{% endblock extrahead %}
+
+{% block about_content %}
+<div id="press-content">
+  <div class="page-header">
+      <h1>Press</h1>
+  </div>
+  <!-- Visible on XS only --> 
+  <ul class="list-group visible-xs">
+    {% for a in press_articles %}
+      <li class="list-group-item">
+        <img class="press-logo" src="{{ MEDIA_URL }}{{ a.logo.picture }}">
+        <h4><a href="{{ a.url }}">{{ a.title }}</a><br/><small>{{ a.publish_date }}</br>{{a.base_url}}</small></h4>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- Visible sm-md-lg -->
+  <ul class="list-group hidden-xs">
+    {% for a in press_articles %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="press-logo" src="{{ MEDIA_URL }}{{ a.logo.picture }}">
+          </div>
+          <div class="col-md-10">
+            <h4><a href="{{ a.url }}">{{ a.title }}</a><br/><small>{{ a.publish_date }}&nbsp;|&nbsp;{{a.base_url}}</small></h4>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  
+</div>
+{% endblock about_content %}

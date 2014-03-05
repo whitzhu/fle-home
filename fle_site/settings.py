@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     'south',
     'fle_site.apps.articles',
     'fle_site.apps.main',
+    'fle_site.apps.about',
 )
 
 # A sample logging configuration. The only tangible logging

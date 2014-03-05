@@ -12,12 +12,11 @@
 		  	<div data-spy="affix" data-offset-top="90">
 			    <ul class="nav nav-pills nav-stacked">
 			    	<li><h4>Jump to a job description</h4></li>
-					<li><a href="#design_intern">Design Intern</a></li>
-					<li><a href="#web_dev_intern">Front-End Web Development Intern</a></li>
-					<li><a href="#python_intern">Python/Django Engineering Intern</a></li>
-					<li><a href="#research_intern">Research &amp; Implementations Intern</a></li>
-					<li><a href="#social_media_intern">Social Media &amp; Marketing Intern</a></li>
-					<li><a href="#grant_writing_intern">Grant Writing Intern</a></li>
+			    	{% for i in internships %}
+				    	{% if i.active %}
+				    		<li><a href="#{{ i.slug }}">{{ i.title }}</a></li>
+				    	{% endif %}
+			    	{% endfor %}
 					<li><h4>Questions?</h4></li>
 					<li><a href="#faq">FAQ &amp; Help</a></li>
 					<li><h4>Ready to apply?</h4></li>
@@ -70,12 +69,15 @@
 	        </p>
             <h4>Fit the bill? Awesome! Here are the positions we are looking for:</h4>
             
-            {% include "internships/_design_intern.html" %}
-            {% include "internships/_web_dev_intern.html" %}
-            {% include "internships/_python_intern.html" %}
-            {% include "internships/_research_intern.html" %}
-            {% include "internships/_social_media_intern.html" %}
-            {% include "internships/_grant_writing_intern.html" %}
+            {% for i in internships %}
+            	{% if i.active %}
+            		<div class="well" id="{{ i.slug }}">
+						<h5><strong>{{ i.title }}</strong></h5>
+					    {{ i.description }}
+					    <p>Ready to apply? <a href="https://docs.google.com/a/learningequality.org/forms/d/17JgpzI_s9cLS1Ed6qELIfFN2QwQOTL1ygrw4tpc0I3I/viewform">Fill out an application!</a></p>
+					</div>
+            	{% endif %}
+            {% endfor %}
 
             <!-- FAQ --> 
             <h3>Frequently Asked Questions</h3>

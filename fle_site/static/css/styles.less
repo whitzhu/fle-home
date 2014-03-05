@@ -13,6 +13,7 @@ html {
 }
 
 body {
+    background-color: @white;
     @media (min-width: 990px) {
         margin-bottom: @footer-height;
         padding-bottom:@footer-height;
@@ -195,99 +196,103 @@ a {
 
 
 // --------------------
-// ** About base template
+// ** About 
 // ---
 
-.sub-menu{
-    margin-top: 12px;
-    padding-left: 30px;
-}
-
-.sub-menu li.active a,
-.sub-menu li.active a:hover{
-    background-color: darken(#E5E4E2, 10%);
-    color: black;
-}
-
-.sub-menu .affix {
-    top: 3px;
-}
-
-.sub-menu .affix-bottom {
-    position: absolute;
-}
-
-@media(max-width: 970px){
-   .affix {
-     position: static;
-     width: auto;
-     top: 0;
+#about-container {
+    // base template
+    word-wrap: break-word;
+    #about-nav {
+        margin-top: 12px;
+        padding-left: 30px;
+        li.active {
+            a, a:hover {
+                background-color: darken(#E5E4E2, 10%);
+                color: black;
+            }
+        }
+        .affix {
+            top: 20px;
+        }
     }
-}
-
-// --------------------
-// ** About
-// ---
-
-.page-header{
-    border-bottom: 1px solid rgba(119, 119, 119, 0.21);
-    margin-top: -5px;
-}
-
-.about_fle_page {
-    p, h1 {
-        padding: 0px 10px    
+    // shared styles
+    .page-header{
+        border-bottom: 1px solid rgba(119, 119, 119, 0.21);
+        margin-top: -5px;
+        margin-bottom: 5px;
     }
-    
-}
-
-.team .row{
-    padding-top: 15px;
-}
-
-.team h4{
-    color: #777;
-    margin-top: -8px;
-    padding-bottom: 15px;
-}
-.team img{
-    width: 160px;
-    height: 160px;
-    margin-bottom: -10px;
-}
-
-.board img {
-    width: 160px;
-}
-
-.board .profile{
-    padding-bottom: 20px;
-}
-
-.board h2{
-    margin-top: 0px;
-}
-
-
-.friends-and-supporters .partners img{
-    height: 100px;
-}
-
-
-.supporters img{
-    padding: 15px;
-    max-height: 100px;
-}
-
-.supporters{
-    background-color: white;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-}
-
-.partners img{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    // page specific 
+    #mission-content {
+        p {
+            padding-bottom: 30px;
+        }
+    }
+    #team-content {
+        h4{
+            color: #777;
+            margin-top: -8px;
+            padding-bottom: 15px;
+        }
+        img, .team-img-overlay {
+            width: 160px;
+            height: 160px;
+        }
+        img {
+            margin-bottom: -10px;
+        }
+        .team-img-overlay {
+            position: absolute;
+            top: 0; 
+            background-color: white; 
+            border: 1px solid transparent;
+            opacity: 0;
+            &:hover {
+                opacity: 0.5;
+            }           
+        }
+        .row{
+            padding-top: 15px;
+        }
+        .modal-thumbnail {
+            margin-bottom: 15px;
+        }
+    }
+    #board-content {
+        h2{
+            margin-top: 0px;
+        }
+        img {
+            width: 160px;
+        }
+        .profile{
+            padding-bottom: 20px;
+        }
+    }
+    #supporters-content {
+        .partners img{
+            height: 100px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .supporters {
+            background-color: white;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            img {
+                padding: 15px;
+                max-height: 100px;  
+            }
+        }
+    }
+    #press-content {
+        ul {
+            padding-top: 20px;
+        }
+        .press-logo {
+            width: 70px;
+            height: 70px;
+        }
+    }
 }
 
 
