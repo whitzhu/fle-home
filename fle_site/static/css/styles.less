@@ -202,19 +202,6 @@ a {
 #about-container {
     // base template
     word-wrap: break-word;
-    #about-nav {
-        margin-top: 12px;
-        padding-left: 30px;
-        li.active {
-            a, a:hover {
-                background-color: darken(#E5E4E2, 10%);
-                color: black;
-            }
-        }
-        .affix {
-            top: 20px;
-        }
-    }
     // shared styles
     .page-header{
         border-bottom: 1px solid rgba(119, 119, 119, 0.21);
@@ -348,3 +335,18 @@ a.icon:before {
     }
 }
 
+// Shared side nav
+
+.side-nav {
+    margin-top: 12px;
+    padding-left: 30px;
+    li.active {
+        a, a:hover {
+            background-color: darken(#E5E4E2, 10%);
+            color: black;
+        }
+    }
+    .affix {
+        top: 20px;
+    }
+}
