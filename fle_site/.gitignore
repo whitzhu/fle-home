@@ -2,7 +2,6 @@
 *.sublime-project
 *.sublime-workspace
 *.sqlite*
-media/*
 local_settings.py
 ips.txt
 GeoLiteCity.dat
