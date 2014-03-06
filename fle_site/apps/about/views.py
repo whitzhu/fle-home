@@ -48,3 +48,6 @@ def internships(request):
 		"internships": internships
 	}
 	return render(request, "about/internships.html", context)
+
+def ka_lite(request):
+	return render_to_response("ka-lite/what-is-ka-lite.html")
