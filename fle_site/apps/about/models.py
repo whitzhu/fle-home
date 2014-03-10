@@ -26,6 +26,7 @@ class BoardMember(Person):
 class PressLogo(models.Model):
     title = models.CharField(max_length=150)
     picture = models.ImageField(upload_to="press_logos", help_text="Please only upload images 70x70!")
+    
     def __str__(self):
         return self.title
 
@@ -39,6 +40,7 @@ class PressArticle(models.Model):
     def base_url(self):
         return urlparse(self.url).netloc
 
+
 class Internship(models.Model):
     title = models.CharField(max_length=200)
     active = models.BooleanField(default=True)
@@ -47,3 +49,18 @@ class Internship(models.Model):
 
     def slug(self):
         return slugify(self.title)
+
+
+class OrganizationType(models.Model):
+    title = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.title
+
+
+class SupportingOrganization(models.Model):
+    name = models.CharField(max_length=200)
+    url = models.URLField(max_length=200)
+    picture = picture = models.ImageField(upload_to="supporting_orgs", default=None, blank=True)
+    description = MarkupField(default_markup_type="html")
+    organization_type = models.ForeignKey(OrganizationType, default=None, blank=True)

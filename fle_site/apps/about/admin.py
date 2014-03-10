@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 
-from models import TeamMember, BoardMember, PressArticle, PressLogo, Internship
+from models import TeamMember, BoardMember, PressArticle, PressLogo, Internship, SupportingOrganization, OrganizationType
 
 
 class TeamMemberAdmin(admin.ModelAdmin):
@@ -20,9 +20,16 @@ class PressLogoAdmin(admin.ModelAdmin):
 class InternshipAdmin(admin.ModelAdmin):
 	list_display = ('title', 'last_updated')
 
+class SupportingOrganizationAdmin(admin.ModelAdmin):
+	list_display = ('name', 'organization_type')
+
+class OrganizationTypeAdmin(admin.ModelAdmin):
+	list_display = ('title',)
+
 admin.site.register(TeamMember, TeamMemberAdmin)
 admin.site.register(BoardMember, BoardMemberAdmin)
 admin.site.register(PressArticle, PressArticleAdmin)
 admin.site.register(PressLogo, PressLogoAdmin)
-admin.site.register(Internship, InternshipAdmin)
+admin.site.register(SupportingOrganization, SupportingOrganizationAdmin)
+admin.site.register(OrganizationType, OrganizationTypeAdmin)
 
