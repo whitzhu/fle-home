@@ -10,6 +10,7 @@ urlpatterns = patterns('fle_site.apps.main.views',
     url(r'^$', 'home', name='home'),
     url(r'^map/$', 'map', name='map'),
     url(r'^give/$', 'give', name='give'),
+    url(r'^directions/$', 'directions', name='directions'),
 )
 
 urlpatterns += patterns('fle_site.apps.about.views',
