@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Directions{% endblock title %}
+
+{% block give_nav %}selected{% endblock give_nav %}
+
+{% block bodycontents %}
+<div class="row">
+    {# Medium and small screens #}
+    <div class="col-sm-5 col-sm-offset-1 hidden-xs">
+        <h1>How to Get to FLE</h1>
+        <p>
+            The FLE team offices out of <a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&ll=32.8842,-117.235107&spn=0.719624,1.352692&hq=richard+c+atkinson+hall&hnear=San+Diego,+California&t=h&z=10">Richard C. Atkinson Hall</a> on the UCSD Campus.
+        </p>
+        <p>
+            The most convenient to place to park would be lot the parking lot across from Richard C. Atkinson Hall on UCSD's campus. It's $1 per 45 minutes for parking. If that lot is full, you will likely be able to find space in <a href="https://maps.google.com/maps?q=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&hl=en&sll=32.8842,-117.235107&sspn=0.719624,1.352692&oq=hopkins&t=h&hq=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&z=16">Hopkins Parking Structure</a> which is just up the hill.
+        </p>
+        <p>
+            When you arrive, please contact the FLE team member that you are scheduled to meet with to receive further directions.
+        </p>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+         {# Iframe of Atkinson Hall on Map #}
+        <iframe id="directions-map" width="425" height="300" frameborder="0" scrolling="no" marginheight="1" marginwidth="0" src="https://maps.google.com/maps?q=richard+c+atkinson+hall&amp;ie=UTF8&amp;hq=richard+c+atkinson+hall&amp;hnear=San+Diego,+California&amp;ll=32.882881,-117.235044&amp;spn=0.719624,1.352692&amp;t=h&amp;z=10&amp;iwloc=A&amp;cid=9401992713551534210&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&amp;ie=UTF8&amp;hq=richard+c+atkinson+hall&amp;hnear=San+Diego,+California&amp;ll=32.882881,-117.235044&amp;spn=0.719624,1.352692&amp;t=h&amp;z=10&amp;iwloc=A&amp;cid=9401992713551534210&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+    </div>
+
+    {# On phones #}
+    <div class="visible-xs col-xs-12">
+        <h1>How to Get to FLE</h1>
+        <p>
+            The FLE team offices out of <a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&ll=32.8842,-117.235107&spn=0.719624,1.352692&hq=richard+c+atkinson+hall&hnear=San+Diego,+California&t=h&z=10">Richard C. Atkinson Hall</a> on the UCSD Campus.
+        </p>
+        <p>
+            The most convenient to place to park would be lot the parking lot across from Richard C. Atkinson Hall on UCSD's campus. It's $1 per 45 minutes for parking. If that lot is full, you will likely be able to find space in <a href="https://maps.google.com/maps?q=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&hl=en&sll=32.8842,-117.235107&sspn=0.719624,1.352692&oq=hopkins&t=h&hq=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&z=16">Hopkins Parking Structure</a> which is just up the hill.
+        </p>
+        <p>
+            When you arrive, please contact the FLE team member that you are scheduled to meet with to receive further directions.
+        </p>
+    </div>
+</div>
+{% endblock bodycontents %}
