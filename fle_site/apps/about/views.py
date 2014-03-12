@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from fle_site import settings
-from models import TeamMember, BoardMember, PressArticle, Internship
+from models import TeamMember, BoardMember, PressArticle, Internship, SupportingOrganization
 
 def mission(request):
 	return render_to_response("about/mission.html")
@@ -30,10 +30,6 @@ def board(request):
 	return render(request, "about/board.html", context)
 
 
-def supporters(request):
-	return render_to_response("about/supporters.html")
-
-
 def press(request):
 	press_articles = PressArticle.objects.order_by('-publish_date')
 	context = {
@@ -48,3 +44,14 @@ def internships(request):
 		"internships": internships
 	}
 	return render(request, "about/internships.html", context)
+
+
+
+def supporters(request):
+	sponsors = SupportingOrganization.objects.filter(organization_type__title="sponsor")
+	partners = SupportingOrganization.objects.filter(organization_type__title="partner")
+	context = {
+		"sponsors": sponsors,
+		"partners": partners
+	}
+	return render(request, "about/supporters.html", context)
