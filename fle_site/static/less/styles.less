@@ -70,8 +70,11 @@ a {
     margin-bottom: 0px;
     .open {
         background-color: @white;
-        a, a:hover {
+        a {
             color: @darkgray;
+            &:hover {
+                color: @white;
+            }
         }
         b.caret {
             border-top-color: @darkgray;
@@ -340,4 +343,8 @@ a.icon:before {
     .affix {
         top: 20px;
     }
+}
+
+#directions-map {
+    margin-top: 30px;
 }
