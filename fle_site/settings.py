@@ -12,8 +12,8 @@ def localor(setting_name, default_val):
     """Returns local_settings version if it exists (and is non-empty), otherwise uses default value"""
     return hasattr(local_settings, setting_name) and getattr(local_settings, setting_name) or default_val
 
-DEBUG = localor("DEBUG", False)
-TEMPLATE_DEBUG = localor("TEMPLATE_DEBUG", DEBUG)
+DEBUG          = getattr(local_settings, "DEBUG", False)
+TEMPLATE_DEBUG = getattr(local_settings, "TEMPLATE_DEBUG", DEBUG)
 
 ADMINS = (
     # ('Dylan', 'dylan@learningequality.org'),
@@ -40,6 +40,9 @@ DATABASES = localor("DATABASES", {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }) 
+
+
+INTERNAL_IPS   = getattr(local_settings, "INTERNAL_IPS", ("127.0.0.1",))
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -121,6 +124,7 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',

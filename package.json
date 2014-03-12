@@ -1,0 +1,26 @@
+{
+  "name": "fle-site",
+  "version": "0.0.0",
+  "description": "The Foundation for Learning Equality's website",
+  "main": "grunt.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dylanjbarth/fle-site.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/fle-internal/fle-site/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.6.4"
+  }
+}
