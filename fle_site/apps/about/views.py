@@ -2,56 +2,41 @@ import json
 import os 
 import random
 
-from django.shortcuts import render_to_response, render
+import settings
+
 from annoying.decorators import render_to
 
-from fle_site import settings
 from models import TeamMember, BoardMember, PressArticle, Internship, SupportingOrganization
 
-def mission(request):
-	return render_to_response("about/mission.html")
-
-
+@render_to("about/team.html")
 def team(request):
-	team_members = list(TeamMember.objects.all())
-	random.shuffle(team_members)
-	context = {
-		"team_members": team_members
+	return {
+		"team_members": TeamMember.objects.order_by("?")
 	}
-	return render(request, "about/team.html", context)
 
-
+@render_to("about/board.html")
 def board(request):
-	board_members = list(BoardMember.objects.all())
-	random.shuffle(board_members)
-	context = {
-		"board_members": board_members
+	return {
+		"board_members": BoardMember.objects.order_by("?")
 	}
-	return render(request, "about/board.html", context)
 
-
+@render_to("about/press.html")
 def press(request):
-	press_articles = PressArticle.objects.order_by('-publish_date')
-	context = {
-		"press_articles": press_articles
+	return {
+		"press_articles": PressArticle.objects.order_by('-publish_date')
 	}
-	return render(request, "about/press.html", context)
 
-
+@render_to("about/internships.html")
 def internships(request):
-	internships = Internship.objects.all()
-	context = {
-		"internships": internships
+	return {
+		"internships": Internship.objects.all()
 	}
-	return render(request, "about/internships.html", context)
 
-
-
+@render_to("about/supporters.html")
 def supporters(request):
 	sponsors = SupportingOrganization.objects.filter(organization_type__title="sponsor")
 	partners = SupportingOrganization.objects.filter(organization_type__title="partner")
-	context = {
+	return {
 		"sponsors": sponsors,
 		"partners": partners
 	}
-	return render(request, "about/supporters.html", context)
