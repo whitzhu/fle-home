@@ -1,6 +1,6 @@
 # FLE Site 
 
-This is the code for the Foundation for Learning Equality's homepage: [http://learningequality.org](http://learningequality.org)
+This is the code for the Foundation for Learning Equality's homepage: [https://learningequality.org](https://learningequality.org)
 
 ## Environment Setup 
 
