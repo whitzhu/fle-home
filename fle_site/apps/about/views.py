@@ -4,7 +4,6 @@ import random
 
 import settings
 
-from django.shortcuts import render_to_response, render
 from annoying.decorators import render_to
 
 from models import TeamMember, BoardMember, PressArticle, Internship

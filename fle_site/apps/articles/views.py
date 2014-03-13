@@ -6,7 +6,7 @@ from django.core.cache import cache
 from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
 from django.http import HttpResponsePermanentRedirect, Http404, HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.template import RequestContext
 from fle_site.apps.articles.models import Article, Tag
 from datetime import datetime
@@ -65,7 +65,7 @@ def display_blog_page(request, tag=None, username=None, year=None, month=None, p
     context.update({'paginator': paginator,
                     'page_obj': page})
     variables = RequestContext(request, context)
-    response = render_to_response(template, variables)
+    response = render(request, template, variables)
 
     return response
 
@@ -85,7 +85,7 @@ def display_article(request, year=None, slug=None, template='articles/article_de
         'article': article,
         'disqus_forum': getattr(settings, 'DISQUS_FORUM_SHORTNAME', None),
     })
-    response = render_to_response(template, variables)
+    response = render(request, template, variables)
 
     return response
 

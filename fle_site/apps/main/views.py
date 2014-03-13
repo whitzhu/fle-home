@@ -5,7 +5,6 @@ import sys
 
 import settings
 
-from django.shortcuts import render_to_response
 from django.http import HttpResponseServerError
 from django.template.loader import render_to_string
 from django.template import RequestContext
