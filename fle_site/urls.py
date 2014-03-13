@@ -18,7 +18,7 @@ urlpatterns += patterns('fle_site.apps.about.views',
     url(r'^about/$', direct_to_template, {'template': 'about/mission.html'}, name='mission'),
     url(r'^about/team/$', 'team', name='team'),
     url(r'^about/board/$', 'board', name='board'),
-    url(r'^about/supporters/$', direct_to_template, {'template': 'about/supporters.html'}, name='supporters'),
+    url(r'^about/supporters/$', 'supporters', name='supporters'),
     url(r'^about/press/$', 'press', name='press'),
     url(r'^internships/$', 'internships', name='internships'),
 )
