@@ -1,83 +1,10 @@
 {# Scenario 1 -- Personal Edition #}
-<div class="content-block content-block-hidden" id="scenario-1">
-    <div class="row">
-        <div class="span12 centered">
-        <h1>KA Lite Personal Edition</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="span3"></div>
-        <div class="span6">
-            <p>You're almost there! Just fill out the form below and choose a download option to get started using KA Lite!</p>
-            {# Options Form #}
-            <form class="form-horizontal">
-              <!--div class="control-group">
-                <label class="control-label" for="inputName">Name</label>
-                <div class="controls">
-                  <input type="text" id="inputName" placeholder="Name">
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" for="inputEmail">Email</label>
-                <div class="controls">
-                  <input type="text" id="inputEmail" placeholder="Email">
-                </div>
-              </div-->
-              <div class="control-group">
-                <label class="control-label" for="inputOS">Operating System</label>
-                <div class="controls">
-                  <select id="inputOS">
-                    {# Could detect this, but do we want to? #}
-                      <option>Windows</option>
-                      <option>Mac</option>
-                      <option>Linux</option>
-                      <option>Raspian</option>
-                      <option>Android</option>
-                    </select>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label" for="inputCountry">Country</label>
-                <div class="controls">
-                    <select id="inputCountry">
-                        {% for country in country_list %}
-                            <option value="{{ country.code }}" {% if country.code == record.country_code %}selected{% endif %}>{{ country.name }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label" for="inputLanguage">Language(s)</label>
-                <div class="controls">
-                  <select id="inputLanguage" multiple="multiple">
-                      <option>Lanugage One</option>
-                      <option>Lanugage Two</option>
-                      <option>Lanugage 99</option>
-                      <option>(seewhatididthere)</option>
-                  </select>
-                  <span class="help-block">Use CTRL + select to pick more than one.</span>
-                </div>
-              </div>
-            </form>
-
-            <div class="control-group">
-              <p>KA Lite is always free, but we need your financial support to support
-              important content and software updates.</p>
-
-              <p>
-              An average donation of $5 could help
-              us sustain this project.</p>
-              <div class="row">
-                <div class="span3"></div>
-                <div class="span6 centered">
-                    <p><a href="#" class="button--large">Donate &amp; Download</a></p>
-                    <p>&nbsp;</p>
-                    <p><a href="#" >No thanks, just Download</a></p>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
+<div class="display-none well" id="scenario-1">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>KA Lite Personal Edition</h1>
+			<p>You're almost there! Just fill out the form below and choose a download option to get started using KA Lite!</p>
+		</div>
+	</div>
+	{% include "partials/ka-lite/forms/_scenario-1-form.html" %}
 </div> {# END Scenario 1 -- Personal Edition #}
