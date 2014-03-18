@@ -1,6 +1,7 @@
 @import "variables.less"; 
 @import "mixins.less"; 
 @import "fonts.less";
+@import "../bootstrap/less/variables.less";
 
 // --------------------
 // ** Base
@@ -29,7 +30,6 @@ html, span, a, p, h1, h2 , h3, h4, h5, h6, li {
 }
 
 p {
-    padding: 10px 0;
     font-size: @small-size;
 }
 
@@ -208,14 +208,6 @@ a {
     // shared styles
     .page-header{
         border-bottom: 1px solid rgba(119, 119, 119, 0.21);
-        margin-top: -5px;
-        margin-bottom: 5px;
-    }
-    // page specific 
-    #mission-content {
-        p {
-            padding-bottom: 30px;
-        }
     }
     #team-content {
         h4{
@@ -348,3 +340,57 @@ a.icon:before {
 #directions-map {
     margin-top: 30px;
 }
+
+
+// KA Lite styles
+
+.ka-lite-headline-large {
+    text-align: center;
+    .fluid-inline-image {
+        img {
+            margin-left: 1%;
+            margin-right: 1%;
+            width: 25%;
+            display: inline;
+        }
+    }
+    .fluid-text {
+        position: relative;
+        top: 12px;
+    }
+
+    // for md display
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+        .fluid-text {
+            font-size: .75em;
+        }
+    }
+
+    // for sm display
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+        .fluid-text {
+            font-size: .5em;
+        }
+    }
+}
+
+.ka-lite-headline-small {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    img {
+        width: 50%;
+        display: inline;
+    }
+}
+
+.zig-zag-content {
+    .text-blurb {
+        h3 {
+            padding-top: 15px;
+        }
+    }
+}
+
+
+
