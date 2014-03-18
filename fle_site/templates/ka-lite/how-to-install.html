@@ -1,0 +1,90 @@
+{% extends 'ka-lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Install KA Lite{% endblock title %}
+
+{% block ka_lite_install_active %}active{% endblock ka_lite_install_active %}
+
+{% block extrahead %}
+<style>
+  .install-scenario img {
+      width: 80%;
+      cursor: pointer;
+  }
+
+  .install-scenario img:hover {
+      opacity: 0.7;
+  }
+</style>
+
+<script>
+  // Show and hide based on initial selection
+  $(function() {
+
+      $(".install-scenario img").click(function() {
+          // highlight the clicked image, and de-emphasize the others
+          $(this).css("width", "90%").css("opacity", "1");
+          $(".install-scenario img").not(this).css("opacity", "0.5").css("width", "80%");
+
+          // hide the current content block, and show the newly selected one
+          $(".display-none").hide(); // reset all
+          var new_content_block = $("#" + $(this).attr("for"));
+          $(".install-scenario-short-description").hide();
+          new_content_block.show();
+
+      });
+  });
+</script>
+{% endblock extrahead %}
+
+{% block ka_lite_content %}
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Install KA Lite: Which of these 3 scenarios best describes your needs?</h1>
+  </div>
+</div>
+
+{# 3 server installation options #}
+<div class="row">
+  {# Personal Edition #}
+  <div class="col-xs-4 install-scenario">
+    <img src="{% static 'img/ka-lite/1-standalone.png' %}" for="scenario-1">
+  </div>
+
+  {# Single Server Edition #}
+  <div class="col-xs-4 install-scenario">
+    <img src="{% static 'img/ka-lite/2-single-server.png' %}" for="scenario-2">
+  </div>
+
+  {# School Edition #}
+  <div class="col-xs-4 install-scenario">
+    <img src="{% static 'img/ka-lite/3-multi-server.png' %}" for="scenario-3">
+  </div>
+</div>
+
+{# Server descriptions #}
+<div class="row install-scenario-short-description">
+  <div class="col-xs-4">
+    <h2>Personal Edition</h2>
+    <p>Install KA Lite directly to a single computer for offline use.</p>
+  </div>
+  <div class="col-xs-4">
+    <h2>Classroom Edition</h2>
+    <p>Install KA Lite to an offline server, for multiple client devices to connect to.</p>
+  </div>
+  <div class="col-xs-4">
+    <h2>School Edition</h2>
+    <p>Larger multi-server deployment, with options for syncing data between servers.</p>
+  </div>
+</div>
+
+{# Personal Edition = #scenario-1 #}
+{% include "partials/ka-lite/_scenario-1.html" %}
+{# Classroom Edition = #scenario-2 #}
+{% include "partials/ka-lite/_scenario-2.html" %}
+{# School Edition = #scenario-3 #}
+{% include "partials/ka-lite/_scenario-3.html" %}
+
+{% endblock ka_lite_content %}
