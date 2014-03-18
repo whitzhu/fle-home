@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}KA Lite{% endblock title %}
+
+{% block ka_lite %}selected{% endblock ka_lite %}
+
+{% block extrahead %}
+
+
+{% endblock extrahead %}
+
+{% block bodycontents %}
+<div id="about-container">
+  <div class="row">
+      <div class="col-md-3 col-sm-3 hidden-xs side-nav">
+          <div data-spy="affix" data-offset-top="90">
+              <ul class="nav nav-pills nav-stacked">
+                <li class="active">
+                  <a href="#">What is KA Lite?</a>
+                </li>
+                <li>
+                  <a href="#">Getting Started: Tutorial</a>
+                </li>
+                <li>
+                  <a href="#">How can I help?</a>
+                </li>
+                <li>
+                  <a href="#">Who is using it?</a>
+                </li>
+                <li>
+                  <a href="#">FAQ &amp; Help</a>
+                </li>
+              </ul>
+          </div>
+      </div>
+
+      <div id="about-body" class="col-md-9 col-sm-9 col-xs-12">
+          {% block ka_lite_content %}
+
+          {% endblock ka_lite_content %}
+      </div>
+  </div>
+</div>
+{% endblock bodycontents %}
