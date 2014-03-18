@@ -40,6 +40,3 @@ def supporters(request):
 		"sponsors": sponsors,
 		"partners": partners
 	}
-
-def ka_lite(request):
-	return render_to_response("ka-lite/what-is-ka-lite.html")
