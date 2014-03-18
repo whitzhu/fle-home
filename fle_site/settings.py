@@ -41,6 +41,10 @@ DATABASES = localor("DATABASES", {
     }
 }) 
 
+#GEO IP Data
+GEO_IP_DOWNLOAD_URL = getattr(local_settings, "GEO_IP_DOWNLOAD_URL", "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz")
+GEO_IP_DATA_PATH = getattr(local_settings, "GEO_IP_DATA_PATH", os.path.join(PROJECT_PATH, "data", "GeoLiteCity.dat"))
+ISO_COUNTRY_LIST_DATA_PATH = getattr(local_settings, "ISO_COUNTRY_LIST_DATA_PATH", os.path.join(PROJECT_PATH, "data", "country-list-iso-codes.txt"))
 
 INTERNAL_IPS   = getattr(local_settings, "INTERNAL_IPS", ("127.0.0.1",))
 
