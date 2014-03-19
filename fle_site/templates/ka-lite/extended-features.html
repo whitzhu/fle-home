@@ -10,9 +10,55 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <h1>Extended Features</h1>
+    <h1><span class="fluid-inline-image"><img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive" alt="KA Lite"></span>Extended Features</h1>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-xs-12 well">
+    <!-- Bootstrap Nav tabs -->
+    <ul class="nav nav-tabs" id="extended-features-tabs">
+      <li class="active"><a href="#online-tools" data-toggle="tab">Online Tools</a></li>
+      <li><a href="#custom-branding" data-toggle="tab">Custom Branding</a></li>
+      <li><a href="#custom-content" data-toggle="tab">Custom Content</a></li>
+      <li><a href="#rct-testing" data-toggle="tab">RCT &amp; A/B Testing</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="online-tools">
+        <h2>Online Tools</h2>
+      </div>
+
+      <div class="tab-pane" id="custom-branding">
+        <h2>Custom Branding</h2>
+      </div>
+
+      <div class="tab-pane" id="custom-content">
+        <h2>Custom Content</h2>
+      </div>
+
+      <div class="tab-pane" id="rct-testing">
+        <h2>RCT Testing &amp; A/B Testing</h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+  $(function () {
+    $('#extended-features-tabs a:first').tab('show');
+  });
+
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    e.target // activated tab
+    e.relatedTarget // previous tab
+  })
+</script>
+
 
 
 {% endblock ka_lite_content %}
