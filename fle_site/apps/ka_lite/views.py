@@ -14,6 +14,14 @@ from fle_site.utils.utils import get_request_ip
 def what(request):
 	return {}
 
+@render_to("ka-lite/extended-features.html")
+def features(request):
+	return {}
+
+@render_to("ka-lite/partner-with-us.html")
+def partner(request):
+	return {}
+
 @render_to("ka-lite/how-to-install.html")
 def install(request):
 	try:

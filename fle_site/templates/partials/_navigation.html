@@ -18,52 +18,83 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fle-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li class="{% block about_fle_active %}{% endblock %}"><a href="{% url mission %}">About FLE</a></li>
-              <li class="{% block about_team_active %}{% endblock %}"><a href="{% url team %}">Our Team</a></li>
-              <li class="{% block about_board_active %}{% endblock %}"><a href="{% url board %}">Board of Directors</a></li>
-              <li class="{% block about_supporters_active %}{% endblock %}"><a href="{% url supporters %}">Friends and Supporters</a></li>
-              <li><a href="{% url press %}">Press</a></li>
-            </ul>
-          </li>
-          <li class="blog_active">
-              <a href="{% url blog %}">Blog</a>
-          </li>
-          <li class="give_active">
-              <a href="{% url give %}">Give</a>
-          </li>
+          <!-- KA Lite dropdown -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">KA Lite <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li>
-                <a href="{% url ka_lite_what %}" class="{% block ka_lite_what_active %}{% endblock ka_lite_what_active %}">
-                  What is KA Lite?
+                <a href="{% url ka_lite_what %}">
+                  Learn About KA Lite
                 </a>
               </li>
               <li>
-                <a href="{% url ka_lite_install %}" class="{% block ka_lite_install_active %}{% endblock ka_lite_install_active %}">
+                <a href="{% url ka_lite_features %}">
+                  Extended Features
+                </a>
+              </li>
+              <li>
+                <a href="{% url ka_lite_partner %}">
+                  Partner With Us
+                </a>
+              </li>
+              <li>
+                <a href="{% url ka_lite_install %}">
                   How do I install?
                 </a>
               </li>
               <li>
-                <a href="{% url ka_lite_who %}" class="{% block ka_lite_who_active %}{% endblock ka_lite_who_active %}">
+                <a href="{% url ka_lite_who %}">
                   Who is using it?
                 </a>
               </li>
               <li>
-                <a href="{% url ka_lite_contribute %}" class="{% block ka_lite_contribute_active %}{% endblock ka_lite_contribute_active %}">
+                <a href="{% url ka_lite_contribute %}">
                   Can I contribute?
                 </a>
               </li>
               <li>
-                <a href="{% url ka_lite_help %}" class="{% block ka_lite_help_active %}{% endblock ka_lite_help_active %}">
+                <a href="{% url ka_lite_help %}">
                   FAQ &amp; Help
                 </a>
               </li>
             </ul>
-
+          </li><!-- End ka-lite dropdown -->
+          <!-- About Dropdown --> 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="{% url mission %}">
+                  About FLE
+                </a>
+              </li>
+              <li>
+                <a href="{% url team %}">
+                  Our Team
+                </a>
+              </li>
+              <li>
+                <a href="{% url board %}">
+                  Board of Directors
+                </a>
+              </li>
+              <li>
+                <a href="{% url supporters %}">
+                  Friends and Supporters
+                </a>
+              </li>
+              <li>
+                <a href="{% url press %}">
+                  Press
+                </a>
+              </li>
+            </ul>
+          </li> <!-- End About Dropdown --> 
+          <li>
+              <a href="{% url give %}">Give</a>
+          </li>
+          <li>
+              <a href="{% url blog %}">Blog</a>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->

@@ -25,6 +25,8 @@ urlpatterns += patterns('fle_site.apps.about.views',
 
 urlpatterns += patterns('fle_site.apps.ka_lite.views',
     url(r'^ka-lite/what-is-it$', 'what', name='ka_lite_what'),
+    url(r'^ka-lite/extended-features$', 'features', name='ka_lite_features'),
+    url(r'^ka-lite/partner-with-us$', 'partner', name='ka_lite_partner'),
     url(r'^ka-lite/how-to-install$', 'install', name='ka_lite_install'),
     url(r'^ka-lite/who-is-using-it$', 'who', name='ka_lite_who'),
     url(r'^ka-lite/can-i-contribute$', 'contribute', name='ka_lite_contribute'),
