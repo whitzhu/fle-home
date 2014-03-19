@@ -1,3 +1,15 @@
+{% block scenario_js %}
+    <script type="text/javascript">
+    $(function() {
+        $(".scenario-2-option").click(function() {
+            $("#scenario-2").hide();
+            $("#" + $(this).attr("for")).show();
+        });
+    });
+
+    </script>
+{% endblock scenario_js %}
+
 {# Scenario 2 -- Classroom Edition #}
 <div class="display-none well" id="scenario-2">
 
@@ -75,10 +87,10 @@
                             {# Leaving empty #}
                         </td>
                         <td>
-                            <a href="#" class="btn btn-large btn-success">Show me the "One-Click" Options</a>
+                            <button for="scenario-1-form-hidden" class="btn btn-large btn-success scenario-2-option">Show me the "One-Click" Options</button>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-large btn-success">Show me the Syncing Options</a>
+                            <button class="btn btn-large btn-success scenario-2-option">Show me the Syncing Options</a>
                         </td>
                     </tr>
                 </tbody>
@@ -86,3 +98,12 @@
         </div>
     </div>
 </div>{# END Option 2 -- classroom edition / single server & multiple users #}
+
+
+<div class="display-none" id="scenario-1-form-hidden">
+    <div class="row">
+        <h1>One-Click Classroom Edition</h1>
+        <p>You're almost there! Just fill out the form below to access your download!</p>
+    </div>
+    {% include "partials/ka-lite/forms/_scenario-1-form.html" %}
+</div>

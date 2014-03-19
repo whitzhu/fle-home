@@ -7,21 +7,10 @@
 {% block ka_lite_install_active %}active{% endblock ka_lite_install_active %}
 
 {% block extrahead %}
-<style>
-  .install-scenario img {
-      width: 80%;
-      cursor: pointer;
-  }
-
-  .install-scenario img:hover {
-      opacity: 0.7;
-  }
-</style>
-
 <script>
   // Show and hide based on initial selection
   $(function() {
-
+    
       $(".install-scenario img").click(function() {
           // highlight the clicked image, and de-emphasize the others
           $(this).css("width", "90%").css("opacity", "1");
@@ -37,6 +26,8 @@
   });
 </script>
 {% endblock extrahead %}
+
+{% block scenario_js %}{% endblock scenario_js %}
 
 {% block ka_lite_content %}
 
