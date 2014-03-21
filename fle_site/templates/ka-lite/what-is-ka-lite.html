@@ -11,44 +11,56 @@
 {% endblock extrahead %}
 
 {% block ka_lite_content %}
+  
+  {# Sub nav #}
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav-tabs nav-justified">
+        <li class="active"><a href="#">About</a></li>
+        <li><a href="#">Product Comparison</a></li>
+        <li><a href="#">Add Ons</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  
 
-
-    {# For larger displays, we show it inline #}
-    <div class="hidden-xs">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="ka-lite-headline-large">
-            <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
-            <span class="fluid-text"> is an off-line version of </span>
-            <a href="http://khanacademy.org"><img src='{% static "img/ka-lite/khan-academy-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="Khan Academy"></a>
-            </br><small class="fluid-text">and it runs on pretty much everything.</small>
-          </h1>
-        </div>
-      </div>
-    </div> {# end visible-lg #}
-    {# For smaller displays we show it stacked #}
-    <div class="visible-xs ka-lite-headline-small">
-      <div class="row">
-        <div class="col-md-12">
+  {# For larger displays, we show it inline #}
+  <div class="hidden-xs">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="ka-lite-headline-large">
           <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
-        </div>
+          <span class="fluid-text"> is an off-line version of </span>
+          <a href="http://khanacademy.org"><img src='{% static "img/ka-lite/khan-academy-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="Khan Academy"></a>
+          </br><small class="fluid-text">and it runs on pretty much everything.</small>
+        </h1>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3>is an offline version of</h3>
-        </div>
+    </div>
+  </div> {# end visible-lg #}
+  {# For smaller displays we show it stacked #}
+  <div class="visible-xs ka-lite-headline-small">
+    <div class="row">
+      <div class="col-md-12">
+        <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <a href="http://khanacademy.org"><img src='{% static "img/ka-lite/khan-academy-logo-horizontal.png" %}' class="img-rounded img-responsive" alt="Khan Academy"></a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>is an offline version of</h3>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3><small>and it runs on pretty much everything.</small></h3>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a href="http://khanacademy.org"><img src='{% static "img/ka-lite/khan-academy-logo-horizontal.png" %}' class="img-rounded img-responsive" alt="Khan Academy"></a>
       </div>
-    </div> {# end hidden-lg #}
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3><small>and it runs on pretty much everything.</small></h3>
+      </div>
+    </div>
+  </div> {# end hidden-lg #}
 
   <div class="responsive-spacer"></div>
 

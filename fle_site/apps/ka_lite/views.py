@@ -42,13 +42,10 @@ def install(request):
 		"record": record,
 	}
 
-@render_to("ka-lite/who-is-using-it.html")
-def who(request):
+@render_to("ka-lite/join-community.html")
+def community(request):
 	return {}
 
-@render_to("ka-lite/can-i-contribute.html")
-def contribute(request):
-	return {}
 
 @render_to("ka-lite/faq-and-help.html")
 def help(request):

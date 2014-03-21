@@ -22,41 +22,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">KA Lite <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li>
-                <a href="{% url ka_lite_what %}">
-                  Learn About KA Lite
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_features %}">
-                  Extended Features
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_partner %}">
-                  Partner With Us
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_install %}">
-                  How do I install?
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_who %}">
-                  Who is using it?
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_contribute %}">
-                  Can I contribute?
-                </a>
-              </li>
-              <li>
-                <a href="{% url ka_lite_help %}">
-                  FAQ &amp; Help
-                </a>
-              </li>
+              {% include "partials/ka-lite/_ka-lite-navigation.html" %}
             </ul>
           </li><!-- End ka-lite dropdown -->
           <!-- About Dropdown --> 
