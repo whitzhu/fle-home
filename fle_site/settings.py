@@ -119,10 +119,6 @@ ROOT_URLCONF = 'fle_site.urls'
 WSGI_APPLICATION = 'fle_site.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, "apps/articles/templates"),
-    os.path.join(PROJECT_PATH, "apps/about/templates"),
-    os.path.join(PROJECT_PATH, "apps/main/templates"),
-    os.path.join(PROJECT_PATH, "apps/ka_lite/templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -130,10 +126,10 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'fle_site.custom_context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'fle_site.apps.main.custom_context_processors.debug',
 )
 
 INSTALLED_APPS = (
