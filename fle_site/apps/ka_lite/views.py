@@ -9,19 +9,6 @@ from annoying.decorators import render_to
 from fle_site.utils.utils import get_request_ip
 
 
-
-@render_to("ka_lite/what-is-ka-lite.html")
-def what(request):
-	return {}
-
-@render_to("ka_lite/extended-features.html")
-def features(request):
-	return {}
-
-@render_to("ka_lite/partner-with-us.html")
-def partner(request):
-	return {}
-
 @render_to("ka_lite/how-to-install.html")
 def install(request):
 	try:
@@ -41,14 +28,3 @@ def install(request):
 		"country_list": country_list,
 		"record": record,
 	}
-
-@render_to("ka_lite/join-community.html")
-def community(request):
-	return {}
-
-
-@render_to("ka_lite/faq-and-help.html")
-def help(request):
-	return {}
-
-

@@ -1,46 +1,45 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
+from django.core.urlresolvers import reverse
+from django.http import HttpResponseRedirect
 from django.views.generic.simple import direct_to_template
 
-from fle_site.apps.articles import urls as articles_urls
+import fle_site.apps.about.urls
+import fle_site.apps.articles.urls
+import fle_site.apps.ka_lite.urls
+import fle_site.apps.main.urls
 
 admin.autodiscover()
 
-urlpatterns = patterns('fle_site.apps.main.views',
-    url(r'^$', direct_to_template, {'template': 'main/home.html'}, name='home'),
-    url(r'^map/$', 'map', name='map'),
-    url(r'^give/$', direct_to_template, {'template': 'main/give.html'}, name='give'),
-    url(r'^directions/$', direct_to_template, {'template': 'main/directions.html'}, name='directions'),
-)
-
-urlpatterns += patterns('fle_site.apps.about.views',
-    url(r'^about/$', direct_to_template, {'template': 'about/mission.html'}, name='mission'),
-    url(r'^about/team/$', 'team', name='team'),
-    url(r'^about/board/$', 'board', name='board'),
-    url(r'^about/supporters/$', 'supporters', name='supporters'),
-    url(r'^about/press/$', 'press', name='press'),
-    url(r'^internships/$', 'internships', name='internships'),
-)
-
-urlpatterns += patterns('fle_site.apps.ka_lite.views',
-    url(r'^ka-lite/what-is-it$', 'what', name='ka_lite_what'),
-    url(r'^ka-lite/partner-with-us$', 'partner', name='ka_lite_partner'),
-    url(r'^ka-lite/how-to-install$', 'install', name='ka_lite_install'),
-    url(r'^ka-lite/join-community$', 'community', name='ka_lite_community'),
-    url(r'^ka-lite/faq-and-help$', 'help', name='ka_lite_help'),
-)
-
-
-
-urlpatterns += patterns('',
-	url(r'^blog/', include(articles_urls)),
+urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 )
 
+urlpatterns += patterns('',
+    url(r'^about/', include(fle_site.apps.about.urls)),
+    url(r'^internships/', lambda request: HttpResponseRedirect(reverse('internships'))),
+)
+
+urlpatterns += patterns('',
+    url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
+)
+
+urlpatterns += patterns('',
+    url(r'^blog/', include(fle_site.apps.articles.urls)),
+)
+
+urlpatterns += patterns('s',
+    url(r'^', include(fle_site.apps.main.urls)),
+
+)
+
+
 # static files (images, css, javascript, etc.)
 urlpatterns += patterns('',
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
+    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+)
 
 
 handler500 = 'fle_site.apps.main.views.handler_500'
+#handler404 = 'fle_site.apps.main.views.handler_404'
