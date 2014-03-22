@@ -21,18 +21,20 @@ This is the code for the Foundation for Learning Equality's homepage: [https://l
 
 6. Set up the database: `python manage.py syncdb --migrate`
 
-7. Run the server: `python manage.py runserver`
+7. If you'd like to see the about page in all of it's glory, you need to load a few (not current, but usable) fixtures: `python manage.py loaddata fle_site/apps/fixtures/*`
 
-When you're done, you can cancel the virutalenv with the command: 
+8. Run the server: `python manage.py runserver`
+
+
+Final notes:
+
+* When you're done, you can cancel the virutalenv with the command: 
 `deactivate`
-
-## Map disclaimer (localhost:8000/map/)
-The map requires certain data files to use, and you will get an error if you try and view it at /map/ because they haven't been included in the repo. 
-
-## Blog
-The blog won't work until you add at least one post to it. 
+* The map requires certain data files to use, and you will get an error if you try and view it at /map/ because they haven't been included in the repo. 
+* The blog won't work until you add at least one post to it. (needs fixing up...)
 
 
-## Issues & style guide
-Check out the Issues page for known issues. Use the Wiki for style guide references. 
+## Dev
+* Check out the Issues page for known issues. 
+* Use the Wiki for style guide references. If there are none there, it means Dylan was a little overzealous. 
 
