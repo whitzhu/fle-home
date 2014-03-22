@@ -1,4 +1,4 @@
-{% extends 'ka-lite/base.html' %}
+{% extends 'ka_lite/base.html' %}
 
 {% load staticfiles %}
 
@@ -10,7 +10,7 @@
 <script>
   // Show and hide based on initial selection
   $(function() {
-    
+
       $(".install-scenario img").click(function() {
           // highlight the clicked image, and de-emphasize the others
           $(this).css("width", "90%").css("opacity", "1");
@@ -72,10 +72,10 @@
 </div>
 
 {# Personal Edition = #scenario-1 #}
-{% include "ka-lite/partials/_scenario-1.html" %}
+{% include "ka_lite/partials/_scenario-1.html" %}
 {# Classroom Edition = #scenario-2 #}
-{% include "ka-lite/partials/_scenario-2.html" %}
+{% include "ka_lite/partials/_scenario-2.html" %}
 {# School Edition = #scenario-3 #}
-{% include "ka-lite/partials/_scenario-3.html" %}
+{% include "ka_lite/partials/_scenario-3.html" %}
 
 {% endblock ka_lite_content %}

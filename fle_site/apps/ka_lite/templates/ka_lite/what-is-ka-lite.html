@@ -1,4 +1,4 @@
-{% extends 'ka-lite/base.html' %}
+{% extends 'ka_lite/base.html' %}
 
 {% load staticfiles %}
 
@@ -11,7 +11,7 @@
 {% endblock extrahead %}
 
 {% block ka_lite_content %}
-  
+
   {# KA Lite About Page Nav #}
   <div class="row">
     <div class="col-xs-12 well">
@@ -25,13 +25,13 @@
 
     <div class="tab-content">
       <div class="tab-pane active" id="about-ka-lite">
-        {% include "ka-lite/partials/about-ka-lite-tabs/_about-ka-lite-tab.html" %}
+        {% include "ka_lite/partials/about-ka-lite-tabs/_about-ka-lite-tab.html" %}
       </div>
       <div class="tab-pane" id="product-comparison">
-        {% include "ka-lite/partials/about-ka-lite-tabs/_product-comparison.html" %}
+        {% include "ka_lite/partials/about-ka-lite-tabs/_product-comparison.html" %}
       </div>
       <div class="tab-pane" id="add-ons">
-        {% include "ka-lite/partials/about-ka-lite-tabs/_add-ons.html" %}
+        {% include "ka_lite/partials/about-ka-lite-tabs/_add-ons.html" %}
       </div>
     </div>
   </div>
@@ -47,5 +47,5 @@
     e.relatedTarget // previous tab
   })
 </script>
-  
+
 {% endblock ka_lite_content %}

@@ -11,8 +11,8 @@ from django.template import RequestContext
 
 from annoying.decorators import render_to
 
-@render_to("map.html")
-def map(request): 
+@render_to("main/map.html")
+def map(request):
     gic = pygeoip.GeoIP(settings.GEOIPDAT)
     ips = open(settings.IPS_FILEPATH).readlines()
     records = [gic.record_by_addr(item.strip()) for item in ips if item]
@@ -42,4 +42,5 @@ def handler_500(request):
         "errortype": errortype.__name__,
         "value": str(value),
     }
-    return HttpResponseServerError(render_to_string("500.html", context, context_instance=RequestContext(request)))
+    return HttpResponseServerError(render_to_string("main/500.html", context, context_instance=RequestContext(request)))
+

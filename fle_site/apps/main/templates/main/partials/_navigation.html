@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<!-- Responsive nav bar based on: http://getbootstrap.com/components/#navbar -->  
+<!-- Responsive nav bar based on: http://getbootstrap.com/components/#navbar -->
 
 <nav class="navbar navbar-default" id="fle-navbar" role="navigation">
   <div class="container-fluid">
@@ -22,10 +22,10 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">KA Lite <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              {% include "ka-lite/partials/_ka-lite-navigation.html" %}
+              {% include "ka_lite/partials/_ka-lite-navigation.html" %}
             </ul>
           </li><!-- End ka-lite dropdown -->
-          <!-- About Dropdown --> 
+          <!-- About Dropdown -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
                 </a>
               </li>
             </ul>
-          </li> <!-- End About Dropdown --> 
+          </li> <!-- End About Dropdown -->
           <li>
               <a href="{% url give %}">Give</a>
           </li>

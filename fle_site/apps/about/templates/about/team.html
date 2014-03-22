@@ -23,10 +23,10 @@ $(document).ready(function() {
             Meet the Team
         </h1>
     </div>
-    
+
     <div class="row">
-    {% for p in team_members %}               
-        
+    {% for p in team_members %}
+
         <div class="col-sm-3">
             <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ p.picture }}">
             <a href="javascript:$('#{{ p.slug }}').modal('toggle');">
@@ -40,7 +40,7 @@ $(document).ready(function() {
             </h4>
         </div>
 
-        {% include "partials/_team_modal.html" %}
+        {% include "about/partials/_team_modal.html" %}
 
         {% if not forloop.last %}
             {% if forloop.counter|divisibleby:"4" %}
@@ -50,6 +50,6 @@ $(document).ready(function() {
 
     {% endfor %}
     </div>
-        
+
 </div>
 {% endblock about_content %}

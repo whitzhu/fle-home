@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        
+
         {% load staticfiles %}
 
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
+
         {% block headmeta %}{% endblock headmeta %}
 
     	 {% block titletag %}
@@ -46,18 +46,18 @@
 
             ga('create', 'UA-36937407-2', 'learningequality.org');
             ga('send', 'pageview');
-        </script>   
+        </script>
         {% endblock analytics %}
     </head>
 
 <body>
     <div class="container-fluid" id="wrap">
-        {% include "partials/_navigation.html" %}
+        {% include "main/partials/_navigation.html" %}
         <div id="body-content" class="container-2000x">
             {% block bodycontents %}{% endblock bodycontents %}
-            {% include "partials/_contact_modal.html" %}
+            {% include "main/partials/_contact_modal.html" %}
         </div>
-        {% include "partials/_footer.html" %}
+        {% include "main/partials/_footer.html" %}
     </div>
 </body>
 </html>

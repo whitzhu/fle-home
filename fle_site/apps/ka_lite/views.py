@@ -1,5 +1,5 @@
-import json 
-import os 
+import json
+import os
 import random
 import pygeoip
 
@@ -10,19 +10,19 @@ from fle_site.utils.utils import get_request_ip
 
 
 
-@render_to("ka-lite/what-is-ka-lite.html")
+@render_to("ka_lite/what-is-ka-lite.html")
 def what(request):
 	return {}
 
-@render_to("ka-lite/extended-features.html")
+@render_to("ka_lite/extended-features.html")
 def features(request):
 	return {}
 
-@render_to("ka-lite/partner-with-us.html")
+@render_to("ka_lite/partner-with-us.html")
 def partner(request):
 	return {}
 
-@render_to("ka-lite/how-to-install.html")
+@render_to("ka_lite/how-to-install.html")
 def install(request):
 	try:
 		geo_ip_data = pygeoip.GeoIP(settings.GEO_IP_DATA_PATH)
@@ -42,12 +42,12 @@ def install(request):
 		"record": record,
 	}
 
-@render_to("ka-lite/join-community.html")
+@render_to("ka_lite/join-community.html")
 def community(request):
 	return {}
 
 
-@render_to("ka-lite/faq-and-help.html")
+@render_to("ka_lite/faq-and-help.html")
 def help(request):
 	return {}
 

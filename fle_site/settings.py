@@ -23,8 +23,8 @@ MANAGERS = ADMINS
 
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
-# To render map, define GEOIPDAT and IPS_FILEPATH in local_settings.py ex: 
-# import os 
+# To render map, define GEOIPDAT and IPS_FILEPATH in local_settings.py ex:
+# import os
 # DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "static/data/")
 # GEOIPDAT = os.path.join(DATA_PATH, "GeoLiteCity.dat")
 # IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
@@ -39,7 +39,7 @@ DATABASES = localor("DATABASES", {
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
-}) 
+})
 
 #GEO IP Data
 GEO_IP_DOWNLOAD_URL = getattr(local_settings, "GEO_IP_DOWNLOAD_URL", "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz")
@@ -119,8 +119,10 @@ ROOT_URLCONF = 'fle_site.urls'
 WSGI_APPLICATION = 'fle_site.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, "templates"),
     os.path.join(PROJECT_PATH, "apps/articles/templates"),
+    os.path.join(PROJECT_PATH, "apps/about/templates"),
+    os.path.join(PROJECT_PATH, "apps/main/templates"),
+    os.path.join(PROJECT_PATH, "apps/ka_lite/templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
