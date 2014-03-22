@@ -1,5 +1,6 @@
 **/*.pyc
 **/.DS_Store
+_static_cache/*
 database.sqlite
 data/*
 node_modules/*
