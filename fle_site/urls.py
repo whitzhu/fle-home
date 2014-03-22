@@ -8,10 +8,10 @@ from fle_site.apps.articles import urls as articles_urls
 admin.autodiscover()
 
 urlpatterns = patterns('fle_site.apps.main.views',
-    url(r'^$', direct_to_template, {'template': 'home.html'}, name='home'),
+    url(r'^$', direct_to_template, {'template': 'main/home.html'}, name='home'),
     url(r'^map/$', 'map', name='map'),
-    url(r'^give/$', direct_to_template, {'template': 'give.html'}, name='give'),
-    url(r'^directions/$', direct_to_template, {'template': 'directions.html'}, name='directions'),
+    url(r'^give/$', direct_to_template, {'template': 'main/give.html'}, name='give'),
+    url(r'^directions/$', direct_to_template, {'template': 'main/directions.html'}, name='directions'),
 )
 
 urlpatterns += patterns('fle_site.apps.about.views',
@@ -28,7 +28,7 @@ urlpatterns += patterns('fle_site.apps.ka_lite.views',
     url(r'^ka-lite/partner-with-us$', 'partner', name='ka_lite_partner'),
     url(r'^ka-lite/how-to-install$', 'install', name='ka_lite_install'),
     url(r'^ka-lite/join-community$', 'community', name='ka_lite_community'),
-    url(r'^ka-lite/faq-and-help$', 'help', name='ka_lite_help'),   
+    url(r'^ka-lite/faq-and-help$', 'help', name='ka_lite_help'),
 )
 
 
