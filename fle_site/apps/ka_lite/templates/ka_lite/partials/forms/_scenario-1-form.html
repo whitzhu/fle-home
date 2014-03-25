@@ -1,57 +1,57 @@
 {# The form for the personal edition #}
 <div class="row">
-	<div class="col-xs-12">
-		{# Options Form #}
-		<form role="form">
-			<div class="form-group">
-				<label for="" class="control-label">Operating System</label>
-				<span class="help-block">The operating system of the computer you are going to run KA Lite on (which potentially might not the computer you are using right now). Hold CTRL and click to pick more than one.</span>
-				<select class="form-control" id="inputOS" multiple="multiple">
-				{# Could detect this, but do we want to? #}
-				  <option>Windows</option>
-				  <option>Mac</option>
-				  <option>Linux</option>
-				  <option>Raspian</option>
-				  <option>Android</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label class="control-label" for="inputCountry">Country</label>
-				<select class="form-control" id="inputCountry">
-					{% for country in country_list %}
-						<option value="{{ country.code }}" {% if country.code == record.country_code %}selected{% endif %}>{{ country.name }}</option>
-					{% endfor %}
-				</select>
-			</div>
-			<div class="form-group">
-				<label class="control-label" for="inputLanguage">Language(s)</label>
-				<select class="form-control" id="inputLanguage" multiple="multiple">
-				  <option>Lanugage One</option>
-				  <option>Lanugage Two</option>
-				  <option>Lanugage 99</option>
-				  <option>(seewhatididthere)</option>
-			    </select>
-			    <span class="help-block">Hold CTRL and click to pick more than one.</span>
-			</div>
-			<div class="form-group">
-				<label for="" class="control-label">Email</label>
-				<input type="email" class="form-control" id="#" placeholder="Email">
-			</div>
-			<div class="checkbox">
-			  <label>
-			    <input type="checkbox" value="">
-			    Yes, please subscribe me to FLE's Monthly Newsletter! 
-			  </label>
-			</div>
+    <div class="col-xs-12">
+        {# Options Form #}
+        <form role="form">
+            <div class="form-group">
+                <label for="" class="control-label">Operating System</label>
+                <span class="help-block">The operating system of the computer you are going to run KA Lite on (which potentially might not the computer you are using right now). Hold CTRL and click to pick more than one.</span>
+                <select class="form-control" id="inputOS" multiple="multiple">
+                {# Could detect this, but do we want to? #}
+                  <option>Windows</option>
+                  <option>Mac</option>
+                  <option>Linux</option>
+                  <option>Raspian</option>
+                  <option>Android</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputCountry">Country</label>
+                <select class="form-control" id="inputCountry">
+                    {% for country in country_list %}
+                        <option value="{{ country.code }}" {% if country.code == record.country_code %}selected{% endif %}>{{ country.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="inputLanguage">Language(s)</label>
+                <select class="form-control" id="inputLanguage" multiple="multiple">
+                  <option>Lanugage One</option>
+                  <option>Lanugage Two</option>
+                  <option>Lanugage 99</option>
+                  <option>(seewhatididthere)</option>
+                </select>
+                <span class="help-block">Hold CTRL and click to pick more than one.</span>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label">Email</label>
+                <input type="email" class="form-control" id="#" placeholder="Email">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="">
+                Yes, please subscribe me to FLE's Monthly Newsletter!
+              </label>
+            </div>
 
-			<div class="form-group">
-				<label class="control-label" for="inputDonate">Optional Donation</label>
-				<span class="help-block">KA Lite is always free, but we need your financial support to support important content and software updates. An average donation of $5 could help us sustain this project.</span>
-				<a href="#" class="btn btn-large btn-success">Donate &amp; Download</a>
-				<div class="responsive-spacer"></div>
-				<a href="#" class="btn btn-large btn-default">No thanks, just download</a>
-			</div>
+            <div class="form-group">
+                <label class="control-label" for="inputDonate">Optional Donation</label>
+                <span class="help-block">KA Lite is always free, but we need your financial support to support important content and software updates. An average donation of $5 could help us sustain this project.</span>
+                <a href="#" class="btn btn-large btn-success">Donate &amp; Download</a>
+                <div class="responsive-spacer"></div>
+                <a href="#" class="btn btn-large btn-default">No thanks, just download</a>
+            </div>
 
-		</form>
-	</div>
+        </form>
+    </div>
 </div>

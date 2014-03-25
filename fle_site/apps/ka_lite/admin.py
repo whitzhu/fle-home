@@ -15,16 +15,16 @@ from django.contrib.auth.models import User
 #     list_display = ('title', 'url', 'publish_date',)
 
 # class PressLogoAdmin(admin.ModelAdmin):
-# 	list_display = ('title',)
+#     list_display = ('title',)
 
 # class InternshipAdmin(admin.ModelAdmin):
-# 	list_display = ('title', 'last_updated')
+#     list_display = ('title', 'last_updated')
 
 # class SupportingOrganizationAdmin(admin.ModelAdmin):
-# 	list_display = ('name', 'organization_type')
+#     list_display = ('name', 'organization_type')
 
 # class OrganizationTypeAdmin(admin.ModelAdmin):
-# 	list_display = ('title',)
+#     list_display = ('title',)
 
 # admin.site.register(TeamMember, TeamMemberAdmin)
 # admin.site.register(BoardMember, BoardMemberAdmin)

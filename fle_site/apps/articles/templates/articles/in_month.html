@@ -5,9 +5,9 @@
 
 {% block articles-content %}
 <div class="panel panel-default" id="main-post-panel">
-	<div class="panel-heading">
-		<h2>{% trans 'Posts From' %} {{ month|date:"F Y" }}{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}</h2>
-	</div>
+    <div class="panel-heading">
+        <h2>{% trans 'Posts From' %} {{ month|date:"F Y" }}{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}</h2>
+    </div>
 
 {% for article in page_obj.object_list %}
 {% include 'articles/_articles.html' %}
