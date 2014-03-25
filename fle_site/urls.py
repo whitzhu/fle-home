@@ -3,7 +3,6 @@ from django.contrib import admin
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.views.generic.simple import direct_to_template
 
 import fle_site.apps.about.urls
 import fle_site.apps.articles.urls

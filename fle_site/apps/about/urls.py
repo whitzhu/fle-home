@@ -1,8 +1,9 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
+
 
 urlpatterns = patterns('fle_site.apps.about.views',
-    url(r'^$', direct_to_template, {'template': 'about/mission.html'}, name='mission'),
+    url(r'^$', TemplateView.as_view(template_name='about/mission.html'), name='mission'),
     url(r'^team/$', 'team', name='team'),
     url(r'^board/$', 'board', name='board'),
     url(r'^supporters/$', 'supporters', name='supporters'),

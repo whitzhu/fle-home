@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
-                    <a href="https://kalite.learningequality.org/" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
+                    <a href="{% url 'ka_lite_what' %}" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
                 </div>
             </div>
             <div class="row visible-sm">
@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
                 </div>
                 <div class="col-sm-6">
                     <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
-                    <a href="https://kalite.learningequality.org/" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
+                    <a href="{% url 'ka_lite_what' %}" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@ jQuery(document).ready(function ($) {
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <p>Your gift will support the Foundation for Learning Equality's mission of ensuring that everyone around the world has access to a high quality basic education.</p>
-                    <a href="{% url give %}" class="btn btn-primary btn-large action-button fle-btn">Give Today</a>
+                    <a href="{% url 'give' %}" class="btn btn-primary btn-large action-button fle-btn">Give Today</a>
                 </div>
             </div>
             <div class="row visible-sm">
@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
                 </div>
                 <div class="col-sm-6">
                     <p>Your gift will support the Foundation for Learning Equality's mission of ensuring that everyone around the world has access to a high quality basic education.</p>
-                    <a href="{% url give %}" class="btn btn-primary btn-large action-button fle-btn">Give Today</a>
+                    <a href="{% url 'give' %}" class="btn btn-primary btn-large action-button fle-btn">Give Today</a>
                 </div>
             </div>
         </div>
