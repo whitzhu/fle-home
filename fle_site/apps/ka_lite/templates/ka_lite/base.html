@@ -1,39 +1,83 @@
 {% extends base_template %}
-
 {% load staticfiles %}
 
 {% block title %}KA Lite{% endblock title %}
 
 {% block ka_lite %}selected{% endblock ka_lite %}
 
-{% block extrahead %}
-
-
-{% endblock extrahead %}
+{% block headcss %}{{ block.super }}
+    <style>
+        .submenu { padding-left: 24px; white-space: nowrap; }
+    </style>
+{% endblock headcss %}
 
 {% block bodycontents %}
 <div id="about-container">
+
   <div class="row">
+    {% block ka_lite_sidenav %}
+    {% block ka_lite_sidenav_large %}
       {# Using side-nav for tablets and above #}
-      <div class="col-md-3 col-sm-3 hidden-xs side-nav">
+      <div class="col-md-2 col-sm-2 hidden-xs side-nav">
           <div data-spy="affix" data-offset-top="90">
               <ul class="nav nav-pills nav-stacked">
                 {% include "ka_lite/partials/_ka-lite-navigation.html" %}
               </ul>
           </div>
       </div>
+    {% endblock ka_lite_sidenav_large %}
 
+    {% block ka_lite_sidenav_small %}
       {# Using top level tabs for mobile #}
       <div class="col-xs-12 visible-xs">
         <ul class="nav nav-tabs nav-justified">
           {% include "ka_lite/partials/_ka-lite-navigation.html" %}
         </ul>
       </div>
+    {% endblock ka_lite_sidenav_small %}
+    {% endblock ka_lite_sidenav %}
 
       <div id="about-body" class="col-md-9 col-sm-9 col-xs-12">
-          {% block ka_lite_content %}
 
+          {% block ka_lite_content_header %}
+          {% block ka_lite_content_header_large %}
+             {# For larger displays, we show it inline #}
+                  <div class="hidden-xs row">
+                    <div class="col-lg-12">
+                      <h1>
+                        <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
+                        <span class="fluid-text">{% block ka_lite_content_title %}{{ title }}{% endblock %}</span>
+                      </h1>
+                    </div>
+                  </div>
+            {% endblock ka_lite_content_header_large %}
+            {% block ka_lite_content_header_small %}
+                {# For smaller displays we show it stacked #}
+                <div class="visible-xs ka-lite-headline-small">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h1>{% block ka_lite_content_title_small %}{{ title }}{% endblock %}</h1>
+                    </div>
+                  </div>
+                </div> {# end hidden-lg #}
+            {% endblock ka_lite_content_header_small %}
+          {% endblock ka_lite_content_header %}
+
+        <div class="col-md-12 well ka-lite-content">
+          {% block ka_lite_content %}
+          {% block ka_lite_content_large %}
+            Override this content!
+          {% endblock ka_lite_content_large %}
+          {% block ka_lite_content_small %}
+            Override this content!
+          {% endblock ka_lite_content_small %}
           {% endblock ka_lite_content %}
+        </div>
       </div>
   </div>
 </div>

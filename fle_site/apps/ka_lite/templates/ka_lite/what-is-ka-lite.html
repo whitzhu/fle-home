@@ -1,51 +1,33 @@
 {% extends 'ka_lite/base.html' %}
-
 {% load staticfiles %}
+{% load repeatblock %}
 
-{% block title %}What is KA Lite?{% endblock title %}
-
-{% block ka_lite_what_active %}active{% endblock ka_lite_what_active %}
-
-{% block extrahead %}
-
-{% endblock extrahead %}
+{% block headjs %}{{ block.super }}
+    <script>
+        $(function() {
+            $('#ka-lite-about-tabs ');
+        });
+    </script>
+{% endblock headjs %}
 
 {% block ka_lite_content %}
 
   {# KA Lite About Page Nav #}
   <div class="row">
-    <div class="col-xs-12 well">
-      <ul class="nav nav-tabs nav-justified" id="ka-lite-about-tabs">
-        <li class="active"><a href="#about-ka-lite" data-toggle="tab">About KA Lite</a></li>
-        <li><a href="#product-comparison" data-toggle="tab">Product Comparison</a></li>
-        <li><a href="#add-ons" data-toggle="tab">Add-Ons &amp; Services</a></li>
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs nav-justified visible-xs" id="ka-lite-about-tabs">
+        <li class=""><a href="#about-ka-lite" data-toggle="tab">About KA Lite</a></li>
+        <li class=""><a href="#product-comparison" data-toggle="tab">Product Comparison</a></li>
+        <li class=""><a href="#add-ons" data-toggle="tab">Add-Ons &amp; Services</a></li>
       </ul>
 
     <div class="responsive-spacer"></div>
 
     <div class="tab-content">
-      <div class="tab-pane active" id="about-ka-lite">
-        {% include "ka_lite/partials/about-ka-lite-tabs/_about-ka-lite-tab.html" %}
-      </div>
-      <div class="tab-pane" id="product-comparison">
-        {% include "ka_lite/partials/about-ka-lite-tabs/_product-comparison.html" %}
-      </div>
-      <div class="tab-pane" id="add-ons">
-        {% include "ka_lite/partials/about-ka-lite-tabs/_add-ons.html" %}
-      </div>
+        {% block tab_content %}
+        tab content
+        {% endblock tab_content %}
     </div>
   </div>
 </div>
-
-<script>
-  $(function () {
-    $('#about-ka-lite-tabs a:first').tab('show');
-  });
-
-  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    e.target // activated tab
-    e.relatedTarget // previous tab
-  })
-</script>
-
 {% endblock ka_lite_content %}

@@ -1,6 +1,6 @@
 @import "../bootstrap/less/variables.less";
-@import "variables.less"; 
-@import "mixins.less"; 
+@import "variables.less";
+@import "mixins.less";
 @import "fonts.less";
 
 // --------------------
@@ -22,7 +22,7 @@ body {
     @media (max-width: 989px) {
         margin-bottom: @footer-height-collapsed;
         // padding-bottom: @footer-height-collapsed;
-    }  
+    }
 }
 
 html, span, a, p, h1, h2 , h3, h4, h5, h6, li {
@@ -80,7 +80,7 @@ a {
         b.caret {
             border-top-color: @darkgray;
             border-bottom-color: @darkgray;
-        } 
+        }
     }
 
     a {
@@ -92,7 +92,7 @@ a {
     b.caret {
         border-top-color: @white;
         border-bottom-color: @white;
-    } 
+    }
     .fle-logo {
         font-size: 20px;
         letter-spacing: 1px;
@@ -162,7 +162,7 @@ a {
 
 .main-image {
     h1, p {
-        position: relative;  
+        position: relative;
         top: 350/3px;
     }
     h1 {
@@ -177,7 +177,7 @@ a {
     color: @white;
     position: relative;
     height: 350px;
-    background: url("../img/burma-kids-blur.jpg") fixed; 
+    background: url("../img/burma-kids-blur.jpg") fixed;
     background-position: 50% 10%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -200,7 +200,7 @@ a {
 
 
 // --------------------
-// ** About 
+// ** About
 // ---
 
 #about-container {
@@ -225,13 +225,13 @@ a {
         }
         .team-img-overlay {
             position: absolute;
-            top: 0; 
-            background-color: white; 
+            top: 0;
+            background-color: white;
             border: 1px solid transparent;
             opacity: 0;
             &:hover {
                 opacity: 0.5;
-            }           
+            }
         }
         .row{
             padding-top: 15px;
@@ -353,7 +353,11 @@ a.icon:before {
     }
     width: 70%;
     display: inline;
+}
 
+.ka-lite-about-img {
+    background: #fff;
+    padding: 10px;
 }
 
 .ka-lite-headline-large {
@@ -364,20 +368,18 @@ a.icon:before {
     }
 
     // for md display
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
         .fluid-text {
             font-size: .75em;
         }
     }
 
     // for sm display
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
         .fluid-text {
             font-size: .5em;
         }
     }
-    border-bottom: 1px @gray solid;
-    padding-bottom: 40px;
 }
 
 .ka-lite-headline-small {
@@ -388,13 +390,18 @@ a.icon:before {
     margin-bottom: 50px;
 }
 
-.install-scenario img {
+.ka-lite-content {
+    margin: 25px;
+    padding: 25px;
+}
+
+.download-scenario img {
       width: 80%;
       cursor: pointer;
       &:hover {
         opacity: 0.7;
-    } 
-} 
+    }
+}
 
 
 

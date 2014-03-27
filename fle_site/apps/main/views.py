@@ -3,13 +3,13 @@ import pygeoip
 import re
 import sys
 
-import settings
-
+from django.conf import settings
 from django.http import HttpResponseServerError
 from django.template.loader import render_to_string
 from django.template import RequestContext
 
 from annoying.decorators import render_to
+
 
 @render_to("main/map.html")
 def map(request):
@@ -35,6 +35,7 @@ def map(request):
     return {
         "locations": json.dumps(locations)
     }
+
 
 def handler_500(request):
     errortype, value, tb = sys.exc_info()

@@ -1,3 +1,4 @@
+import copy
 import json
 import os
 import random
@@ -9,8 +10,8 @@ from annoying.decorators import render_to
 from fle_site.utils.utils import get_request_ip
 
 
-@render_to("ka_lite/how-to-install.html")
-def install(request):
+@render_to("ka_lite/how-to-download.html")
+def download_wizard(request, **kwargs):
     try:
         geo_ip_data = pygeoip.GeoIP(settings.GEO_IP_DATA_PATH)
     except IOError:
@@ -24,7 +25,11 @@ def install(request):
         record = geo_ip_data.record_by_addr(ip.strip())
     else:
         record = None
-    return {
+
+    full_context = copy.copy(kwargs)
+    full_context.update({
         "country_list": country_list,
         "record": record,
-    }
+    })
+
+    return full_context

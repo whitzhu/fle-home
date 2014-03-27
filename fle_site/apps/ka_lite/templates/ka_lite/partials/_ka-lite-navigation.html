@@ -1,24 +1,26 @@
-<style>
-.submenu { padding-left: 36px; }
-</style>
-<li class="{% block ka_lite_what_active %}{% endblock ka_lite_what_active %}">
-  <a href="{% url 'ka_lite_what' %}">What is KA Lite?</a>
-    <li class="submenu">
+<li class="{% block ka_lite_what_active %}{% endblock %}">
+    <a href="{% url 'ka_lite_what' %}">What is KA Lite?</a>
+    <li class="submenu hidden-xs {% block ka_lite_product_comparison %}{% endblock %}">
       <a href="{% url 'ka_lite_product_comparison' %}">Product Comparison</a>
     </li>
-    <li class="submenu">
+    <li class="submenu hidden-xs {% block ka_lite_extended_features %}{% endblock %}">
       <a href="{% url 'ka_lite_extended_features' %}">Extended Features</a>
     </li>
 </li>
-<li class="{% block ka_lite_install_active %}{% endblock ka_lite_install_active %}">
-  <a href="{% url 'ka_lite_install' %}">Install Now</a>
+
+<li class="{% block ka_lite_get_it %}{% endblock %}">
+    <a href="{% url 'ka_lite_get_it' %}">How do I get KA Lite?</a>
+    <li class="submenu hidden-xs {% block ka_lite_download_active %}{% endblock %}">
+      <a href="{% url 'ka_lite_download' %}">Download Now!</a>
+    </li>
+    <li class="submenu hidden-xs {% block ka_lite_partner_active %}{% endblock %}">
+      <a href="{% url 'ka_lite_partner' %}">Partner With Us</a>
+    </li>
+
+<li class="{% block ka_lite_community_active %}{% endblock %}">
+    <a href="{% url 'ka_lite_community' %}">Join Our Community</a>
 </li>
-<li class="{% block ka_lite_community_active %}{% endblock ka_lite_community_active %}">
-  <a href="{% url 'ka_lite_community' %}">Join Our Community</a>
-</li>
-<li class="{% block ka_lite_partner_active %}{% endblock ka_lite_partner_active %}">
-  <a href="{% url 'ka_lite_partner' %}">Partner With Us</a>
-</li>
+
 <li class="{% block ka_lite_help_active %}{% endblock ka_lite_help_active %}">
   <a href="#">FAQ &amp; Help</a>
 </li>
