@@ -1,10 +1,130 @@
-{% extends 'ka_lite/what-is-ka-lite.html' %}
+{% extends 'ka_lite/base.html' %}
 {% load staticfiles %}
 
 {% block ka_lite_what_active %}active{% endblock %}
 
-{% block tab_content %}
+{% block section_title %}Product Comparison{% endblock section_title %}
+{% block ka_lite_bodycontents %}
     <div class="row">
-        product comparison
+        <div class="col-xs-12">
+            <table class="table table-bordered table-responsive center-text">
+                <thead>
+                    <tr>
+                        <td>
+                            <h2>Features</h2>
+                        </td>
+                        <td>
+                            <h2>KA Lite</h2>
+                        </td>
+                        <td>
+                            <h2>Khan Academy on a Stick</h2>
+                        </td>
+                        <td>
+                            <h2>KA-Pi</h2>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>Watch Khan Videos Offline</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Do Khan Exercises Offline</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Individual Student, Teacher, &amp; Admin Logins</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Progress Tracking on Videos &amp; Exercises</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Coach Reporting Tools</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Ability to Sync Usage Data with Online Repository</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Create local WiFi hotspot for KA Lite content</p>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    	</div>
     </div>
-{% endblock tab_content %}
+{% endblock ka_lite_bodycontents %}

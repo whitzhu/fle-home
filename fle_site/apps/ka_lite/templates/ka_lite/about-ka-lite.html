@@ -3,12 +3,12 @@
 
 {% block ka_lite_what_active %}active{% endblock %}
 
-{% block ka_lite_content_header_large %}
+{% block ka_lite_header %}
     {# KA Lite headline section #}
     {# For larger displays, we show it inline #}
     <div class="hidden-xs">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 page-header">
           <h1 class="ka-lite-headline-large">
             <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">
             <span class="fluid-text"> is an off-line version of </span>
@@ -18,9 +18,7 @@
         </div>
       </div>
     </div> {# end visible-lg #}
-{% endblock ka_lite_content_header_large %}
 
-{% block ka_lite_content_header_small %}
     {# For smaller displays we show it stacked #}
     <div class="visible-xs ka-lite-headline-small">
       <div class="row">
@@ -44,9 +42,9 @@
         </div>
       </div>
     </div> {# end hidden-lg #}
-{% endblock ka_lite_content_header_small %}
+{% endblock ka_lite_header %}
 
-{% block tab_content %}
+{% block ka_lite_bodycontents %}
 {# Using zig zag formation #}
   <!-- High-level overview >> Image | Paragraph -->
   <div class="row">
@@ -97,4 +95,4 @@
       <p>Students can work their way through the content at their own pace, so that advanced learners aren't being held back, and less-advanced learners aren't being left behind. Teachers and parents can view student reports, so that class time can be used focusing on the individual learner's needs, rather than teaching to the middle.</p>
     </div>
   </div>
-{% endblock tab_content %}
+{% endblock ka_lite_bodycontents %}
