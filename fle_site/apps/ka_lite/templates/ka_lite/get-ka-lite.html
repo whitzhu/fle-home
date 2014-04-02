@@ -5,25 +5,27 @@
 {% endblock section_title %}
 
 {% block ka_lite_bodycontents %}
-    <p>
-    KA Lite is a free, open-source project.
-    </p>
-
-    <p>
-    To get KA Lite:
-        <ul>
-            <li>Simply follow our <a href="{% url 'ka_lite_download' %}">download and installation</a> instructions!</li>
-            <li>For larger deployments and potential grants, read about <a href="{% url 'ka_lite_partner' %}">partnership opportunities</a>.</li>
-        </ul>
-    </p>
-
-    <p>
-        Once you get KA Lite, <a href="{% url 'ka_lite_community' %}">join our community</a>
-        to:
-        <ul>
-            <li> view documentation</li>
-            <li>troubleshooting help</li>
-            <li>and to discuss deployments with other KA Lite users!</li>
-        </ul>
-    </p>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>
+                KA Lite is a free and open-source project, so you can get started using it right now! 
+            </p>
+            <p>
+                To get KA Lite:
+                <ul>
+                    <li>Simply follow our <a href="{% url 'ka_lite_download' %}">download and installation</a> instructions!</li>
+                    <li>For larger deployments and potential grants, read about <a href="{% url 'ka_lite_partner' %}">partnership opportunities</a>.</li>
+                </ul>
+            </p>
+            <p>
+                Once you get KA Lite, <a href="{% url 'ka_lite_community' %}">join our community</a>
+                to:
+                <ul>
+                    <li> view documentation</li>
+                    <li>troubleshooting help</li>
+                    <li>and to discuss deployments with other KA Lite users!</li>
+                </ul>
+            </p>
+        </div>
+    </div>
 {% endblock ka_lite_bodycontents %}
