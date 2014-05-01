@@ -29,6 +29,7 @@ PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 # GEOIPDAT = os.path.join(DATA_PATH, "GeoLiteCity.dat")
 # IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
 
+LOCATIONS_JSONP_URL = "https://kalite.learningequality.org/media/locations.jsonp"
 
 DATABASES = localor("DATABASES", {
     'default': {

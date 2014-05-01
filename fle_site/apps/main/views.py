@@ -1,6 +1,3 @@
-import json
-import pygeoip
-import re
 import sys
 
 import settings
@@ -13,28 +10,7 @@ from annoying.decorators import render_to
 
 @render_to("map.html")
 def map(request): 
-    gic = pygeoip.GeoIP(settings.GEOIPDAT)
-    ips = open(settings.IPS_FILEPATH).readlines()
-    records = [gic.record_by_addr(item.strip()) for item in ips if item]
-    locations = []
-    existing_locations = set([(0, 0)])
-    for record in records:
-        if record:
-            if (record['latitude'], record['longitude']) not in existing_locations:
-                name = [record['city'], record['region_name'], record['country_name']]
-                name = filter(lambda x: not re.match("^\d*$", x), name)
-                name = ", ".join(name)
-                locations.append({
-                    "latitude": record['latitude'],
-                    "longitude": record['longitude'],
-                    "name": name,
-                })
-                existing_locations.add((record['latitude'], record['longitude']))
-    # remove duplicates and remove null coordinates
-    # location_info = list(set(location_info) - set([(0, 0)]))
-    return {
-        "locations": json.dumps(locations)
-    }
+    return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
 def handler_500(request):
     errortype, value, tb = sys.exc_info()
