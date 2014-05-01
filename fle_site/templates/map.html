@@ -7,7 +7,45 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
         </script>
         <script>
-        
+            window.mapLoadedDeferred = $.Deferred();
+
+            function display_locations(locations) {
+
+                setTimeout(function() {
+                    mapLoadedDeferred.done(function(map) {
+
+                        var infowindow = new google.maps.InfoWindow();
+
+                        var i = 0;
+
+                        var pinPopinInterval = setInterval(function() {
+                            var item = locations[i];
+
+                            if (!item) {
+                                clearInterval(pinPopinInterval);
+                                return;
+                            }
+
+                            var marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(item.latitude, item.longitude),
+                                map: map
+                            });
+                            google.maps.event.addListener(marker, 'mouseover', function() {
+                                // replace info window content and position
+                                infowindow.setContent(item.name);
+                                infowindow.setPosition(marker.position);
+                                infowindow.open(map);
+                            });
+
+                            i++;
+
+                        }, 15);
+                    });
+                }, 500);
+            }
+
+            $.getScript("{{ LOCATIONS_JSONP_URL }}");
+
         </script>
         <script>
         function initialize()
@@ -29,41 +67,8 @@
                                 new google.maps.LatLng(70, -100),
                                 new google.maps.LatLng(-60, 100));
                                 map.fitBounds(defaultBounds);
-            
-            var infowindow = new google.maps.InfoWindow();
 
-            // $.getJSON("?callback=display_locations", "", function(locations) {
-
-            window.display_locations = function(locations) {
-
-                $(locations).each(function(i, item) {
-                    var marker = new google.maps.Marker({
-                        position: new google.maps.LatLng(item.latitude, item.longitude),
-                        map: map,
-                        // draggable: true,
-                        // clickable: true,
-                    });
-                    // listen for click event
-                    google.maps.event.addListener(marker, 'mouseover', function() {
-                        // replace info window content and position
-                        infowindow.setContent(item.name);
-                        infowindow.setPosition(marker.position);
-                        infowindow.open(map);
-                    });
-                    // var circle = new google.maps.Circle({
-                    //     center: new google.maps.LatLng(item[0], item[1]),
-                    //     radius: 200000,
-                    //     map: map,
-                    //     strokeColor: "#FF0000",
-                    //     strokeOpacity: 0.3,
-                    //     strokeWeight: 2,
-                    //     fillColor: "#FF0000",
-                    //     fillOpacity: 0.5
-                    // });
-                });
-            }
-
-            $.getScript("{{ LOCATIONS_JSONP_URL }}");
+            mapLoadedDeferred.resolve(map);
             
         }
 
