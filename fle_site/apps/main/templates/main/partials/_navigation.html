@@ -29,31 +29,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li>
-                <a href="{% url 'mission' %}">
-                  About FLE
-                </a>
-              </li>
-              <li>
-                <a href="{% url 'team' %}">
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a href="{% url 'board' %}">
-                  Board of Directors
-                </a>
-              </li>
-              <li>
-                <a href="{% url 'supporters' %}">
-                  Friends and Supporters
-                </a>
-              </li>
-              <li>
-                <a href="{% url 'press' %}">
-                  Press
-                </a>
-              </li>
+              {% include "about/partials/_about-navigation.html" %}
             </ul>
           </li> <!-- End About Dropdown -->
           <li>

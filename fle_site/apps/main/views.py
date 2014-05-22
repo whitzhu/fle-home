@@ -7,7 +7,8 @@ from django.template import RequestContext
 
 from annoying.decorators import render_to
 
-@render_to("map.html")
+
+@render_to("main/map.html")
 def map(request): 
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
