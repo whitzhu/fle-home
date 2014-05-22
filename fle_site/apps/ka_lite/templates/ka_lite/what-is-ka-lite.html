@@ -1,0 +1,32 @@
+{% extends 'ka_lite/base.html' %}
+{% load staticfiles %}
+
+{% block headjs %}{{ block.super }}
+    <script>
+        $(function() {
+            $('#ka-lite-about-tabs ');
+        });
+    </script>
+{% endblock headjs %}
+
+{% block ka_lite_content %}
+
+  {# KA Lite About Page Nav #}
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs nav-justified visible-xs" id="ka-lite-about-tabs">
+        <li class=""><a href="#about-ka-lite" data-toggle="tab">About KA Lite</a></li>
+        <li class=""><a href="#product-comparison" data-toggle="tab">Product Comparison</a></li>
+        <li class=""><a href="#add-ons" data-toggle="tab">Add-Ons &amp; Services</a></li>
+      </ul>
+
+    <div class="responsive-spacer"></div>
+
+    <div class="tab-content">
+        {% block tab_content %}
+        tab content
+        {% endblock tab_content %}
+    </div>
+  </div>
+</div>
+{% endblock ka_lite_content %}

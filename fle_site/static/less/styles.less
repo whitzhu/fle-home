@@ -1,5 +1,6 @@
-@import "variables.less"; 
-@import "mixins.less"; 
+@import "../bootstrap/less/variables.less";
+@import "variables.less";
+@import "mixins.less";
 @import "fonts.less";
 
 // --------------------
@@ -21,7 +22,7 @@ body {
     @media (max-width: 989px) {
         margin-bottom: @footer-height-collapsed;
         // padding-bottom: @footer-height-collapsed;
-    }  
+    }
 }
 
 html, span, a, p, h1, h2 , h3, h4, h5, h6, li {
@@ -29,7 +30,6 @@ html, span, a, p, h1, h2 , h3, h4, h5, h6, li {
 }
 
 p {
-    padding: 10px 0;
     font-size: @small-size;
 }
 
@@ -80,7 +80,7 @@ a {
         b.caret {
             border-top-color: @darkgray;
             border-bottom-color: @darkgray;
-        } 
+        }
     }
 
     a {
@@ -92,7 +92,7 @@ a {
     b.caret {
         border-top-color: @white;
         border-bottom-color: @white;
-    } 
+    }
     .fle-logo {
         font-size: 20px;
         letter-spacing: 1px;
@@ -162,7 +162,7 @@ a {
 
 .main-image {
     h1, p {
-        position: relative;  
+        position: relative;
         top: 350/3px;
     }
     h1 {
@@ -177,7 +177,7 @@ a {
     color: @white;
     position: relative;
     height: 350px;
-    background: url("../img/burma-kids-blur.jpg") fixed; 
+    background: url("../img/burma-kids-blur.jpg") fixed;
     background-position: 50% 10%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -200,23 +200,15 @@ a {
 
 
 // --------------------
-// ** About 
+// ** About
 // ---
 
-#about-container {
+#about-body {
     // base template
     word-wrap: break-word;
     // shared styles
     .page-header{
         border-bottom: 1px solid rgba(119, 119, 119, 0.21);
-        margin-top: -5px;
-        margin-bottom: 5px;
-    }
-    // page specific 
-    #mission-content {
-        p {
-            padding-bottom: 30px;
-        }
     }
     #team-content {
         h4{
@@ -233,13 +225,13 @@ a {
         }
         .team-img-overlay {
             position: absolute;
-            top: 0; 
-            background-color: white; 
+            top: 0;
+            background-color: white;
             border: 1px solid transparent;
             opacity: 0;
             &:hover {
                 opacity: 0.5;
-            }           
+            }
         }
         .row{
             padding-top: 15px;
@@ -333,7 +325,7 @@ a.icon:before {
 // Shared side nav
 
 .side-nav {
-    margin-top: 12px;
+    margin-top: 45px;
     padding-left: 30px;
     li.active {
         a, a:hover {
@@ -346,6 +338,87 @@ a.icon:before {
     }
 }
 
+.side-nav-body-border {
+    border-left: 1px solid @gray;
+    margin-top: 40px;
+}
+
+.side-nav-body-content {
+    margin-top: -30px;
+}
+
 #directions-map {
     margin-top: 30px;
 }
+
+
+// KA Lite styles
+.ka-lite-inline-img {
+    @media (min-width: @screen-sm-min) {
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 22%;
+    }
+    width: 70%;
+    display: inline;
+}
+
+.ka-lite-about-img {
+    background: #fff;
+    padding: 10px;
+}
+
+.ka-lite-headline-large {
+    text-align: center;
+    .fluid-text {
+        position: relative;
+        top: 12px;
+    }
+
+    // for md display
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        .fluid-text {
+            font-size: .75em;
+        }
+    }
+
+    // for sm display
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        .fluid-text {
+            font-size: .5em;
+        }
+    }
+}
+
+.ka-lite-headline-small {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    border-bottom: 1px @gray solid;
+    margin-bottom: 50px;
+}
+
+.ka-lite-content {
+    margin: 25px;
+    padding: 25px;
+}
+
+.download-scenario img {
+      width: 80%;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+    }
+}
+
+#product-comparison-table {
+    .glyphicon-ok {
+        color: green;
+    }
+    .glyphicon-remove {
+        color: red;
+    }
+}
+
+
+

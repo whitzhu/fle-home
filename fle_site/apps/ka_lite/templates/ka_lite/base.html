@@ -1,0 +1,46 @@
+{% extends base_template %}
+{% load staticfiles %}
+
+{% block title %}KA Lite{% endblock title %}
+
+{% block ka_lite %}selected{% endblock ka_lite %}
+
+{% block headcss %}{{ block.super }}
+    <style>
+        .submenu { padding-left: 24px; white-space: nowrap; }
+    </style>
+{% endblock headcss %}
+
+{% block bodycontents %}
+<div class="row">
+  {# This block for tablet viewports and above #}
+  <div class="col-sm-3 hidden-xs side-nav">
+      <div data-spy="affix" data-offset-top="90">
+          <ul class="nav nav-pills nav-stacked">
+            {% include "ka_lite/partials/_ka-lite-navigation.html" %}
+          </ul>
+      </div>
+  </div> {# End tablet and up viewport sidenav #}
+  {# This block for mobile viewports only #}
+  <div class="col-xs-12 visible-xs">
+    <ul class="nav nav-tabs nav-justified">
+      {% include "ka_lite/partials/_ka-lite-navigation.html" %}
+    </ul>
+  </div> {# End block for mobile viewports only #}
+
+  {# Content section #}
+  <div class="col-sm-9 col-xs-12 side-nav-body-border">
+    <div class="side-nav-body-content">
+      {% block ka_lite_header %}
+        {# Useful for all pages but the about page #}
+        <div class="row">
+          <div class="col-xs-12">
+            <h1><img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' class="img-rounded img-responsive ka-lite-inline-img" alt="KA Lite">&nbsp;{% block section_title %}{% endblock section_title %}</h1> 
+          </div>
+        </div>
+      {% endblock ka_lite_header %}
+      {% block ka_lite_bodycontents %}{% endblock ka_lite_bodycontents %}
+    </div>
+  </div>
+</div>
+{% endblock bodycontents %}

@@ -23,8 +23,8 @@ MANAGERS = ADMINS
 
 PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
-# To render map, define GEOIPDAT and IPS_FILEPATH in local_settings.py ex: 
-# import os 
+# To render map, define GEOIPDAT and IPS_FILEPATH in local_settings.py ex:
+# import os
 # DATA_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), "static/data/")
 # GEOIPDAT = os.path.join(DATA_PATH, "GeoLiteCity.dat")
 # IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
@@ -34,14 +34,18 @@ LOCATIONS_JSONP_URL = "https://kalite.learningequality.org/media/locations.jsonp
 DATABASES = localor("DATABASES", {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': os.path.join(PROJECT_PATH, 'database.sqlite'),                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(PROJECT_PATH, '..', 'database.sqlite'),                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
-}) 
+})
 
+#GEO IP Data
+GEO_IP_DOWNLOAD_URL = getattr(local_settings, "GEO_IP_DOWNLOAD_URL", "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz")
+GEO_IP_DATA_PATH = getattr(local_settings, "GEO_IP_DATA_PATH", os.path.join(PROJECT_PATH, "..", "data", "GeoLiteCity.dat"))
+ISO_COUNTRY_LIST_DATA_PATH = getattr(local_settings, "ISO_COUNTRY_LIST_DATA_PATH", os.path.join(PROJECT_PATH, "..", "data", "country-list-iso-codes.txt"))
 
 INTERNAL_IPS   = getattr(local_settings, "INTERNAL_IPS", ("127.0.0.1",))
 
@@ -69,9 +73,9 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL      = getattr(local_settings, "MEDIA_URL", "/media/")
-MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", PROJECT_PATH + "/media/")) + "/"
+MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.join(PROJECT_PATH, "..", "media"))) + "/"
 STATIC_URL     = getattr(local_settings, "STATIC_URL", "/static/")
-# STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT", PROJECT_PATH + "/static/")) + "/"
+STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT",os.path.join(PROJECT_PATH, "..", "_static_cache"))) + "/"
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -116,8 +120,6 @@ ROOT_URLCONF = 'fle_site.urls'
 WSGI_APPLICATION = 'fle_site.wsgi.application'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_PATH, "templates"),
-    os.path.join(PROJECT_PATH, "apps/articles/templates"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -125,10 +127,10 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'fle_site.custom_context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'fle_site.apps.main.custom_context_processors.debug',
 )
 
 INSTALLED_APPS = (
@@ -146,6 +148,7 @@ INSTALLED_APPS = (
     'fle_site.apps.articles',
     'fle_site.apps.main',
     'fle_site.apps.about',
+    'fle_site.apps.ka_lite',
 )
 
 # A sample logging configuration. The only tangible logging

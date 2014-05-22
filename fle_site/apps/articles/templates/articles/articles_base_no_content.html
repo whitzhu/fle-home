@@ -5,14 +5,14 @@
     <div class="container" id="blog-container">
     <div class="row">
         <div class="col-sm-8 col-xs-12 pull-left">
-            {% block content %}{% endblock %}  
+            {% block content %}{% endblock %}
         </div>
         <div class="col-sm-4 col-xs-12 pull-right" id="sidebar">
             {% block sidebar %}
                 {% block recent_articles %}
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h2>Recent Posts</h2>    
+                            <h2>Recent Posts</h2>
                         </div>
                         <div class="list-group">
                             {% get_articles 10 as recent %}
@@ -25,22 +25,22 @@
                 <!--{% block article_tags %}
                      <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h2>Tag Cloud</h2>    
+                            <h2>Tag Cloud</h2>
                         </div>
                         {% tag_cloud %}
-                    </div> 
-                {% endblock %} --> 
+                    </div>
+                {% endblock %} -->
                 <div id="article-archives" class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="title">Post Archives</h2>    
+                        <h2 class="title">Post Archives</h2>
                     </div>
                     {% get_article_archives as archives %}
                     <div class="list-group">
-                        
+
                     </div>
                     {% for year in archives %}
                             {% for month in year.1 %}
-                                <a class="list-group-item" href="{% url articles_in_month month.year,month.month %}" title="{% trans 'View articles posted in this month' %}">{{ month|date:"F" }}&nbsp;{{ year.0 }}</a>
+                                <a class="list-group-item" href="{% url 'articles_in_month' month.year,month.month %}" title="{% trans 'View articles posted in this month' %}">{{ month|date:"F" }}&nbsp;{{ year.0 }}</a>
                             {% endfor %}
                     {% endfor %}
                 </div>
