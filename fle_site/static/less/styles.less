@@ -363,10 +363,19 @@ a.icon:before {
     }
 }
 
-#ka_inner_nav {
+.ka-lite-section:before {
+    display: block; 
+    content: " "; 
+    margin-top: -90px; 
+    height: 90px; 
+    visibility: hidden; 
+}
+
+#ka-inner-nav {
+    background-color: white;
     .navbar-brand {
         img {
-            width: 225px;
+            height: 40px;
         }
     }
     &.affix {
@@ -378,10 +387,15 @@ a.icon:before {
     .nav {
         top: 30px;
         position: relative;
+        &.navbar-nav .active a {
+            background-color: inherit;
+            color: inherit;
+            text-decoration: underline; 
+        }
     }
 }
 
-#overview-contents {
+#overview {
     .row {
         padding-top: 40px;
         padding-bottom: 40px;

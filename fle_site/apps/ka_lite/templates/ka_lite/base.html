@@ -3,8 +3,6 @@
 
 {% block title %}KA Lite{% endblock title %}
 
-{% block ka_lite %}selected{% endblock ka_lite %}
-
 {% block bodycontents %}
   <!-- Blue header --> 
   <div class="container-fluid" id="ka-lite-header">
@@ -20,5 +18,17 @@
   <!-- KA Lite fixed in-page nav --> 
   {% include "ka_lite/partials/_inner_nav.html" %}
   {% block pagecontents %}{% endblock pagecontents %}
+
+<!-- Script for smooth scrolling --> 
+<script type="text/javascript">
+  var $root = $('html, body');
+  $('a').click(function(){
+    console.log("blah")
+    $root.animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+    return false;
+  });
+</script>
 
 {% endblock bodycontents %}
