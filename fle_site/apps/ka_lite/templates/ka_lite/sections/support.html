@@ -1,39 +1,36 @@
 {% load staticfiles %}
 <div class="text-center"><h2>SUPPORT</h2></div>
 
-
-<!-- FAQ -->
+<div class="container">
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<h4>FAQ</h4>
-		Chances are, somebody already had the same question!  Check out our FAQ pages to find an answer.
-		<div class="btnwrapper">
-		<button type="button" class="btn btn-default btn-lg">FAQ</button>
-		</div>
+<!-- FAQ -->
+	<div class="col-md-4">
+		<img src="{% static 'img/ka-lite/faq.png' %}" class="supportimg">
+		<h3>FAQ</h3>
+			<div class="supportwrapper">
+				<p>Chances are, somebody already had the same question!  Check out our <a href="https://kalite.learningequality.org/faq/">FAQ pages</a> to find an answer.</p>
+			</div>
 	</div>
-</div>
 <!-- End FAQ -->
 
 <!-- Forum -->
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<h4>Forum</h4>
-		If your question hasn't already been answered by the FAQ, check out our forums.  The forums contain video tutorials, assistance on installation and use, as well as general discussions about KA Lite.
-		<div class="btnwrapper">
-		<button type="button" class="btn btn-default btn-lg">Forums</button>
-		</div>
+	<div class="col-md-4">
+	<img src="{% static 'img/ka-lite/forum.png' %}" class="supportimg">
+		<h3>Forum</h3>
+			<div class="supportwrapper">
+				<p>If your question hasn't already been answered by the FAQ, it may be up for discussion in the <a href="https://forums.learningequality.org/">forums</a>. The forums contain video tutorials, assistance on installation and use, as well as general discussions about KA Lite.</p>
+			</div>
 	</div>
-</div>
 <!-- End Forum -->
 
 <!-- Github -->
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<h4>Github</h4>
-		You can create a new issue on Github. Just go to https://github.com/learningequality/ka-lite/issues and click the green new issue button.
-		<div class="btnwrapper">
-		<button type="button" class="btn btn-default btn-lg">Github</button>
-		</div>
+	<div class="col-md-4">
+		<img src="{% static 'img/ka-lite/github.png' %}" class="supportimg"><h3>Github</h3>
+			<div class="supportwrapper">
+				<p>If you can't find the answer to your question, it may be a bug.  See our <a href="https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues">Github</a> for directions on how to log an issue, and our developers will work on solving it.</p>
+			</div>
 	</div>
-</div>
 <!--End Github -->
+</div>
+</div>
+</div>
