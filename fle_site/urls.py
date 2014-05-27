@@ -7,7 +7,6 @@ from django.views.generic.base import TemplateView
 
 import fle_site.apps.about.urls
 import fle_site.apps.articles.urls
-import fle_site.apps.ka_lite.urls
 import fle_site.apps.main.urls
 
 admin.autodiscover()
