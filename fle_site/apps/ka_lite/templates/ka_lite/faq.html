@@ -4,25 +4,35 @@
 
 {% block title %}FAQ{% endblock title %}
 
-{% block extrahead %}
-
-{% endblock extrahead %}
-
 {% block bodycontents %}
-<div class="container-fluid" id="ka-lite-header">
+<div class="container-fluid white">
 	<div class="container">
 	  <div class="row">
 	    <div class="col-md-12">
-	      <h1>KA LITE FAQ</h1>
+	      <h1 id="faq_top">KA LITE FAQ</h1>
 	      {% for topic, questions in faq.items %}
 		      <h3>{{ topic.name }}</h3>
 		      {% for q in questions %}
-	          <h4><strong>{{ q.text }}</strong></h4>
-	          <p>{{ q.answer }}</p>
+		      	<div id="question_{{ q.slug }}">
+	          	<h4><strong><a href="#answer_{{q.slug}}">{{ q.text }}</a></strong></h4>
+	          </div>
+		      {% endfor %}
+		      {% for q in questions %}
+		      	<div id="answer_{{ q.slug }}">
+		      		<h4><strong>{{ q.text }}</strong></h4>
+		      		<p>{{ q.answer }}</p>
+		      	</div>
 		      {% endfor %}
 			  {% endfor %}
 	    </div>
 	  </div>
 	</div>
 </div>
+
+<div id="faq-nav">
+	<div class="affix-top faq-nav-container" data-spy="affix" data-offset-top="60">
+		<p><a class="btn btn-sm btn-primary" href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a>&nbsp;<a class="btn btn-sm btn-default" href="#faq_top">&#8593; Back to Top</a></p>
+	</div>
+</div>
+
 {% endblock bodycontents %}

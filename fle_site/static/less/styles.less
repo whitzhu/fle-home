@@ -401,8 +401,8 @@ a.icon:before {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-    .off-white {
-        background-color: #f6f6f6;
+    .light-gray {
+        background-color: @light-gray;
     }
     .white {
         background-color: #fff;
@@ -483,4 +483,28 @@ a.icon:before {
 .support-img {
     height:35px;
     display:inline
+}
+
+#faq-nav {
+    .faq-nav-container {
+        border: 1px solid @gray;
+        padding: 10px;
+        padding-bottom: 0px;
+        border-radius: 5px;
+        background-color: @light-gray;
+    }
+    .affix-top {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        opacity: 1;
+    }
+    .affix {
+        opacity: 0.3;
+        top: 15%;
+        right: 10%;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
