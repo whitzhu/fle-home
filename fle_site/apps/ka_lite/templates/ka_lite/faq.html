@@ -19,26 +19,27 @@
 		      	</div>
 		      	<div class="list-group">
 		      	{% for q in questions %}
-			      	<a name="faq-question-{{ q.slug }}" href="#faq-question-{{ q.slug }}" class="list-group-item">{{ q.text }}</a></strong></h4>
+			      	<a name="faq-question-{{ q.slug }}" href="#faq-question-{{ q.slug }}" class="list-group-item"><h4>{{ q.text }}</h4></a>
 			      {% endfor %}
 			     	</div>
 			    </div>
-
-		      <!-- Answers section -->
-		      <div class="panel panel-default">
-		      	<div class="panel-heading">
-		      		<h3 class="panel-title">Answers</h3>
-		      	</div>
-		      	<div class="list-group" id="faq-answers">
-		      		{% for q in questions %}
-				      	<div id="faq-question-{{ q.slug }}" class="list-group-item">
-				      		<h4 class="list-group-item-heading">{{ q.text }}</h4>
-				      		<p class="list-group-item-text">{{ q.answer }}</p>
-				      	</div>
-				      {% endfor %}
-	      		</div>
+			  {% endfor %}
+			  <!-- Answers section -->
+	      <div class="panel panel-default">
+	      	<div class="panel-heading">
+	      		<h3 class="panel-title">Answers</h3>
 	      	</div>
-	      {% endfor %}
+	      	<div class="list-group" id="faq-answers">
+			  	{% for topic, questions in faq.items %}
+		      	{% for q in questions %}
+			      	<div id="faq-question-{{ q.slug }}" class="list-group-item">
+			      		<h4 class="list-group-item-heading"><strong>{{ q.text }}</strong></h4>
+			      		<p class="list-group-item-text">{{ q.answer | safe }}</p>
+			      	</div>
+			      {% endfor %}
+			    {% endfor %}
+      		</div>
+      	</div>
 	    </div>
 	  </div>
 	</div>
