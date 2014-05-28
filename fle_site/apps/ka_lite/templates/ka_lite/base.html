@@ -22,7 +22,7 @@
 <!-- Script for smooth scrolling --> 
 <script type="text/javascript">
   var $root = $('html, body');
-  $('a').click(function(){
+  $('a').not('#this-carousel-id a').click(function(){
     console.log("blah")
     $root.animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top

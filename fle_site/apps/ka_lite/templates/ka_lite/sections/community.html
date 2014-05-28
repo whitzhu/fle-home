@@ -1,4 +1,9 @@
 {% load staticfiles %}
+<script type="text/javascript" >
+            $(document).ready(function() {        
+        $('.carousel').carousel()
+            });
+</script>
 
 <!-- Contribute header section --> 
 <div class="container-fluid">
@@ -90,9 +95,45 @@
 		<div class="row">
 			<!-- Deployments --> 
 			<div class="col-md-12 text-center">
-				<img src="{% static 'img/ka-lite/usage_map.jpg' %}">
-				<h3>Are you using KA Lite?</br><small>If so, please tell us about it, and send pictures!</small></h3>
-				<a href="https://docs.google.com/forms/d/1DgmiU4Rc3T9C8acPRd3uSSHe5RRnuoKLzY6F33lbQdY/viewform" class="btn btn-primary btn-large">Share Your Story</a>
+
+				<!-- Carousel -->
+				<div id="this-carousel-id" class="carousel slide">
+					<!-- class of slide for animation -->
+  						<div class="carousel-inner">
+    						<div class="item active">
+    							<!-- class of active since it's the first item -->
+      							<img src="{% static 'img/ka-lite/Burma.jpg' %}">
+      							<!-- <div class="carousel-caption">
+        							<p>Burma</p>
+							    </div> -->
+							</div>
+    						<div class="item">
+				      			<img src="{% static 'img/ka-lite/Nalanda.jpg' %}">
+				      			<!-- <div class="carousel-caption">
+				        			<p>Nalanda</p>
+				      			</div> -->
+				    		</div>
+					    	<div class="item">
+					      		<img src="{% static 'img/ka-lite/Washington.jpg' %}">
+					      		<!-- <div class="carousel-caption">
+					        		<p>Callam Bay Corrections Center</p>
+					      		</div> -->
+					    	</div>
+				  		</div>
+				  		<!-- /.carousel-inner -->
+				  <!--  Next and Previous controls below
+				        href values must reference the id for this carousel -->
+				    <a class="carousel-control left" href="#this-carousel-id" data-slide="prev"></a>
+				    <a class="carousel-control right" href="#this-carousel-id" data-slide="next"></a>
+				</div>
+				<!-- /.carousel -->
+
+				<div id="carousel-overlay-well" class="well">
+					<div id="carousel-overlay">
+							<h3 class="overlay-text">Are you using KA Lite?</br><small class="overlay-text">If so, please tell us about it, and send pictures!</small></h3>
+						<a href ="https://docs.google.com/forms/d/1DgmiU4Rc3T9C8acPRd3uSSHe5RRnuoKLzY6F33lbQdY/viewform" class="btn btn-primary btn-large">Share Your Story</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
