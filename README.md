@@ -17,7 +17,7 @@ This is the code for the Foundation for Learning Equality's homepage: [https://l
 
 4. Install the dependencies listed in requirements.txt: `pip install -r requirements.txt`
 
-	- *Windows users: You may run into an error "Unable to find vcvarsall.bat" when trying to install Pillow. If this occurs, run `easy_install pillow` after all other requirements have installed.
+	- *Windows users: You may run into an error "Unable to find vcvarsall.bat" when trying to install Pillow. If this occurs, delete the Pillow requirement from requirements.txt and run `easy_install pillow` after all other requirements have installed.
 
 5. Create a local_settings.py file as a sibling to the settings.py file. Inside, set DEBUG = True (so static files will load in dev mode).
 
