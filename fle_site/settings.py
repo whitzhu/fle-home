@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'django.contrib.redirects',
     'django_extensions',
     'south',
+    'fack',
     'fle_site.apps.articles',
     'fle_site.apps.main',
     'fle_site.apps.about',

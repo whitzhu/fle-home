@@ -1,0 +1,28 @@
+{% extends 'ka_lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}FAQ{% endblock title %}
+
+{% block extrahead %}
+
+{% endblock extrahead %}
+
+{% block bodycontents %}
+<div class="container-fluid" id="ka-lite-header">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-12">
+	      <h1>KA LITE FAQ</h1>
+	      {% for topic, questions in faq.items %}
+		      <h3>{{ topic.name }}</h3>
+		      {% for q in questions %}
+	          <h4><strong>{{ q.text }}</strong></h4>
+	          <p>{{ q.answer }}</p>
+		      {% endfor %}
+			  {% endfor %}
+	    </div>
+	  </div>
+	</div>
+</div>
+{% endblock bodycontents %}
