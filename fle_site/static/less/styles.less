@@ -374,6 +374,11 @@ a.icon:before {
 
 #ka-inner-nav {
     background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+    border-radius: 0px;
+    font-size: 15px;
+    color: #757575;
     .navbar-brand {
         img {
             height: 40px;
@@ -389,11 +394,13 @@ a.icon:before {
         top: 30px;
         position: relative;
         &.navbar-nav .active a {
+            font-size: inherit;
             background-color: inherit;
             color: inherit;
             text-decoration: underline; 
         }
     }
+
 }
 
 #overview {
