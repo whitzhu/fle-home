@@ -21,7 +21,8 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('fle_site.apps.ka_lite.views',
-    url(r'^ka-lite$', TemplateView.as_view(template_name='ka_lite/ka-lite.html'), name='ka_lite'),
+    url(r'^ka-lite/$', TemplateView.as_view(template_name='ka_lite/ka-lite.html'), name='ka_lite'),
+    url(r'^ka-lite/faq/$', 'faq', name="faq")
 )
 
 urlpatterns += patterns('',
@@ -30,7 +31,6 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('',
     url(r'^', include(fle_site.apps.main.urls)),
-
 )
 
 

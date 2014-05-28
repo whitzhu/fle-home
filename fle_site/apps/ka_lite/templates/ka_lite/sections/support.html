@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<div class="container-fluid off-white">
+<div class="container-fluid light-gray">
 	<div class="container" id="support">
 		<div class="row text-center">
 			<div class="col-md-12">
@@ -12,7 +12,7 @@
 			<div class="col-md-4">
 				<h3><img src="{% static 'img/ka-lite/faq.png' %}" class="support-img">&nbsp;FAQ</h3>
 					<div class="support-section">
-						<p>Chances are, somebody already had the same question!  Check out our <a href="https://kalite.learningequality.org/faq/">FAQ pages</a> to find an answer.</p>
+						<p>Chances are, somebody already had the same question!  Check out our <a href="{% url 'faq' %}">FAQ pages</a> to find an answer.</p>
 					</div>
 			</div><!-- End FAQ -->
 
