@@ -8,7 +8,7 @@ This is the code for the Foundation for Learning Equality's homepage: [https://l
     - [install pip](https://pypi.python.org/pypi/pip) if you don't have it already. 
     - install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/en/latest/): `pip install virtualenvwrapper`
 
-2. Get the codebase: `git clone git@github.com:learningequality/fle-site.git`
+2. Get the codebase: `git clone git@github.com:fle-internal/fle-home.git`
 
 3. Make a virtualenv to install dependencies: 
     - `cd <dir_name>`
