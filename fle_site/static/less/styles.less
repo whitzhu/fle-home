@@ -408,8 +408,8 @@ a.icon:before {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-    .off-white {
-        background-color: #f6f6f6;
+    .light-gray {
+        background-color: @light-gray;
     }
     .white {
         background-color: #fff;
@@ -482,16 +482,74 @@ a.icon:before {
     color: #FFFFFF;
     
 }
+
+#carousel-overlay-well{
+    background-color: rgba(245, 245, 245, 0.7);
+    position:relative;
+    top: -155px;
+    &.well{
+        border-radius:0px;
+    }
+}
+
 .caption-content{
     margin-top: 100px;
 }
 
-.support-section {
-    height:150px;
-    padding-bottom:30px;
+.overlay-text{
+    color: #3f3f3f;
+    font-weight:bold;
 }
 
-.support-img {
-    height:35px;
-    display:inline
+#support {
+    .col-md-4 {
+        padding-bottom:30px;
+        img {
+            height:35px;
+            display:inline
+        }
+    }
+}
+
+#faq-nav {
+    .affix-top {
+        position: absolute;
+        top: 80px;
+        right: 120px;
+        opacity: 1;
+    }
+    .affix {
+        opacity: 0.3;
+        top: 30px;
+        right: 120px;
+        &:hover {
+            opacity: 1;
+        }
+        z-index: 10;
+    }
+}
+
+.list-group-item.active .list-group-item-text a {
+    color: #003557;
+}
+
+//Community
+//--------------------------------------
+#contribute {
+    .col-md-4 {
+        display: inline-block;
+        padding: 0px 10px;
+        text-align: center;
+        img {
+            height: 100px;
+            width: auto;
+            margin-bottom: 25px;
+        }
+        p {
+            text-align: left;
+            padding: 0px 45px;
+            left: 20px;
+            position: relative;
+        }
+    }
 }

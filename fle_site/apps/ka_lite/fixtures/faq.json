@@ -1,0 +1,559 @@
+[
+  {
+    "pk": 5,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": -100,
+      "name": "General",
+      "slug": "general"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Compatibility",
+      "slug": "compatibility"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Deployment",
+      "slug": "deployment"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Installation",
+      "slug": "installation"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Internationalization",
+      "slug": "internationalization"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Progress Tracking",
+      "slug": "progress-tracking"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 0,
+      "name": "Syncing",
+      "slug": "syncing"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 3,
+      "name": "Administration",
+      "slug": "administration"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "fack.topic",
+    "fields": {
+      "sort_order": 100,
+      "name": "Contributing",
+      "slug": "contributing"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Do I need the internet to run KA Lite?",
+      "created_by": 1,
+      "topic": 2,
+      "created_on": "2013-01-23T13:55:21",
+      "protected": false,
+      "answer": "No. The only time you need an internet connection is for the initial download of the content (either to the target device, or to a USB stick that can then be carried or mailed). After installation, you can serve the content from a local server or use it directly on the server device without an internet connection.",
+      "updated_on": "2013-01-24T18:06:52",
+      "sort_order": 0,
+      "slug": "internet"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What sort of processing power is required for KA Lite?",
+      "created_by": 1,
+      "topic": 3,
+      "created_on": "2013-01-24T14:10:57",
+      "protected": false,
+      "answer": "KA Lite has very low processing requirements, and can be run as a server on devices with processors as low-powered as the $35 Raspberry Pi, using about 100MB of RAM. There is also low processing power required for client devices as well, and any browser that supports HTML5 video with h264 encoding or Flash Player should be able to function as a client device. ",
+      "updated_on": "2013-03-12T21:13:52",
+      "sort_order": 0,
+      "slug": "requirements"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Who maintains the KA Lite project?",
+      "created_by": 1,
+      "topic": 5,
+      "created_on": "2013-01-28T17:47:08",
+      "protected": false,
+      "answer": "KA Lite is created, maintained, and operated by the <a href=\"http://learningequality.org/\">Foundation for Learning Equality, Inc</a>, a California-based nonprofit organization, with the help of an international <a href=\"https://github.com/learningequality/ka-lite/graphs/contributors\" target=\"_blank\">team of volunteers</a>. Current developers are in the United States, Portugal, Slovakia, Australia, Spain, and England, but we're always looking for <a href=\"http://kalitewiki.learningequality.org/contribute\" target=\"_blank\">more help</a>!",
+      "updated_on": "2014-02-12T08:26:54",
+      "sort_order": 0,
+      "slug": "maintainers"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What is KA Lite's affiliation with Khan Academy?",
+      "created_by": 1,
+      "topic": 5,
+      "created_on": "2013-01-29T10:50:59",
+      "protected": false,
+      "answer": "KA Lite is an independent, open-source project maintained by a distributed team of volunteers, and is not officially affiliated with Khan Academy, although they are (unofficially) very supportive of the KA Lite project.",
+      "updated_on": "2013-01-29T10:55:36",
+      "sort_order": 0,
+      "slug": "affiliation"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What languages is KA Lite available in?",
+      "created_by": 1,
+      "topic": 6,
+      "created_on": "2013-01-31T14:03:26",
+      "protected": false,
+      "answer": "KA Lite was <a href=\"https://learningequality.org/blog/2014/i18n-released/\">released with internationalization support on 2014/03/07</a>, including support for a translated interface, dubbed videos, subtitles, and translated exercises.\r\n\r\nCurrently we have varying levels of support Portuguese, Danish, French, Polish, Spanish.\r\n\r\nPlease <a href=\"https://learningequality.org/blog/2014/i18n-released/\">visit our blog</a> for the latest information about language support.",
+      "updated_on": "2014-03-28T06:56:11",
+      "sort_order": 0,
+      "slug": "translated_interface"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Can I contribute to KA Lite as a developer?",
+      "created_by": 1,
+      "topic": 7,
+      "created_on": "2013-01-31T14:57:38",
+      "protected": false,
+      "answer": "Yes! KA Lite is an <a href=\"https://github.com/learningequality/ka-lite/\">open source project</a>, and developers are encouraged to contribute! If you are interested in developing for KA Lite, check out the <a href=\"https://github.com/learningequality/ka-lite/wiki/Getting%20started\">instructions for getting started</a>.",
+      "updated_on": "2014-05-16T17:01:14",
+      "sort_order": 0,
+      "slug": "contribute_developer"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "fack.question",
+    "fields": {
+      "status": 0,
+      "updated_by": 1,
+      "text": "Are dubbed videos available on KA Lite?",
+      "created_by": 1,
+      "topic": 6,
+      "created_on": "2013-02-01T00:20:35",
+      "protected": false,
+      "answer": "Dubbed videos are almost available on KA Lite, as you can read <a href=\"https://learningequality.org/blog/2014/ka-lite-internationalization-coming-soon/\">here</a>. Any translation of Khan Academy content is managed by Khan Academy. Subtitles are currently available, and are also managed by Khan Academy. If you would like to learn more about their efforts in this area, information is available on the <a href=\"http://www.khanacademy.org/contribute\">Khan Academy contribute page</a>.",
+      "updated_on": "2014-03-28T06:55:08",
+      "sort_order": 0,
+      "slug": "dubbed"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "fack.question",
+    "fields": {
+      "status": 0,
+      "updated_by": 1,
+      "text": "Are translated exercises available on KA Lite?",
+      "created_by": 1,
+      "topic": 6,
+      "created_on": "2013-02-01T00:40:25",
+      "protected": false,
+      "answer": "This feature is almost available, as you can read <a href=\"https://learningequality.org/blog/2014/ka-lite-internationalization-coming-soon/\">here</a>.  Any translation of Khan Academy videos and exercises is handled by Khan Academy. Those who wish to learn more can do so at the <a href=\"http://www.khanacademy.org/contribute\">Khan Academy contribute page</a>. ",
+      "updated_on": "2014-03-28T06:54:45",
+      "sort_order": 0,
+      "slug": "translated_exercises"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Can I contribute to KA Lite as a translator?",
+      "created_by": 1,
+      "topic": 7,
+      "created_on": "2013-02-01T00:42:48",
+      "protected": false,
+      "answer": "Yes, absolutely! If you would like to contribute to KA Lite as a translator, you can get started over on our <a href=\"https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations\">translations and internationalization page</a> on our GitHub Wiki! ",
+      "updated_on": "2014-05-16T17:02:12",
+      "sort_order": 0,
+      "slug": "contribute_translator"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What are the operating system (OS) and software requirements for running KA Lite?",
+      "created_by": 1,
+      "topic": 3,
+      "created_on": "2013-02-05T03:15:54",
+      "protected": false,
+      "answer": "KA Lite can run on almost any major operating system: Windows, Linux, and Mac/OSX. The only software dependency is the <a href=\"http://www.python.org/download/releases/2.7.3/#download\" target=\"_blank\">Python runtime</a>.",
+      "updated_on": "2013-02-05T03:20:10",
+      "sort_order": 0,
+      "slug": "software"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How can local curriculum be generated?",
+      "created_by": 1,
+      "topic": 5,
+      "created_on": "2013-02-20T01:11:13",
+      "protected": false,
+      "answer": "Local content creation is something that KA Lite intends to pursue in the future. This feature is not available at this time, but steps are being taken, as you can read about <a href=\"https://learningequality.org/blog/2013/bringing-ka-lite-gitwe/\">here</a>.  If you would like to be notified when it is available, subscribe for updates <a href=\"http://kalite.learningequality.org/\">on our home page</a>, or if you would like to fund this project, please click <a href=\"https://learningequality.org/give/\">here</a>. \r\n\r\n\r\n",
+      "updated_on": "2014-05-16T16:57:38",
+      "sort_order": 0,
+      "slug": "localcontent"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What can be done with progress tracking during offline usage?",
+      "created_by": 1,
+      "topic": 8,
+      "created_on": "2013-02-20T01:23:08",
+      "protected": false,
+      "answer": "KA Lite's built-in coach reports are meant to provide teachers and administrators access to progress tracking offline. When a student connects back up to the server that they sync with, all of their progress data will be uploaded for teachers and administrators to evaluate.",
+      "updated_on": "2013-02-20T01:28:31",
+      "sort_order": 0,
+      "slug": "offlineprogresstracking"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Is KA Lite involved in getting devices into the hands of students, families, and communities?",
+      "created_by": 1,
+      "topic": 2,
+      "created_on": "2013-03-01T00:08:46",
+      "protected": false,
+      "answer": "Currently, KA Lite does not distribute any devices. We are working with partner organizations who do directly distribute devices to local students and communities, and KA Lite is open to any organization who would like to help in this regard. If your organization wants to help KA Lite distribute devices, you can contact us at <a href=\"mailto:info@learningequality.org\">info@learningequality.org</a>.",
+      "updated_on": "2014-05-16T16:58:34",
+      "sort_order": 0,
+      "slug": "distribution"
+    }
+  },
+  {
+    "pk": 17,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How do I install KA Lite?",
+      "created_by": 1,
+      "topic": 1,
+      "created_on": "2013-03-01T01:22:47",
+      "protected": false,
+      "answer": "Information on installing KA Lite is available on the <a href=\"http://kalitewiki.learningequality.org/installation\">installation page</a> of the <a href=\"http://kalitewiki.learningequality.org/\">KA Lite documentation</a>. ",
+      "updated_on": "2014-02-14T05:50:07",
+      "sort_order": 0,
+      "slug": "how_to_install"
+    }
+  },
+  {
+    "pk": 19,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How do you operate in the field?\r\n",
+      "created_by": 1,
+      "topic": 2,
+      "created_on": "2014-02-14T17:40:28",
+      "protected": false,
+      "answer": "First, everyone and anyone can download KA Lite since it is an open-source project.  As you can see on this <a href=\"https://learningequality.org/map/\">map</a>, people in 85 countries have done just that.  So go ahead and install KA Lite, and please send stories@learningequality.org your stories and pictures of how you use it in your classrooms--wherever they may be!\r\n\r\nSecond, we also partner with <a href=\"https://learningequality.org/about/supporters/\">organizations</a> like the Akanksha Foundation and Idaho Department of Corrections to establish deployments that reach different populations in a variety of scenarios.\r\n\r\n",
+      "updated_on": "2014-02-14T17:46:47",
+      "sort_order": 0,
+      "slug": "fieldwork"
+    }
+  },
+  {
+    "pk": 20,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What are the typical deployment scenarios?",
+      "created_by": 1,
+      "topic": 2,
+      "created_on": "2014-02-14T17:48:48",
+      "protected": false,
+      "answer": "A typical school deployment varies depending on whether or not a school already has a computer lab.\r\n\r\nSchool with an existing computer lab: In this case, KA Lite would be deployed as a server on one of the existing computers. Students would connect using client devices over the local intranet. \r\n\r\nSchool with no existing computer lab: For schools that do not have an existing computer lab, a KA Lite deployment would involve obtaining a device that can run as a KA Lite server (most computers) and other devices to be used as clients. One common configuration is using a Raspberry Pi or other inexpensive computer as a server and relatively cheap tablets as client devices.\r\n",
+      "updated_on": "2014-02-14T17:51:16",
+      "sort_order": 0,
+      "slug": "scenarios"
+    }
+  },
+  {
+    "pk": 21,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How much does KA Lite cost to install?",
+      "created_by": 1,
+      "topic": 1,
+      "created_on": "2014-02-14T17:51:33",
+      "protected": false,
+      "answer": "It is FREE.",
+      "updated_on": "2014-02-14T17:52:43",
+      "sort_order": 0,
+      "slug": "cost"
+    }
+  },
+  {
+    "pk": 22,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How do I report a problem?",
+      "created_by": 1,
+      "topic": 1,
+      "created_on": "2014-02-14T17:53:41",
+      "protected": false,
+      "answer": "Please follow the instructions on our <a href=\"https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues\">Github Wiki</a> for reporting bugs.\r\n\r\n",
+      "updated_on": "2014-05-16T17:00:09",
+      "sort_order": 0,
+      "slug": "reportproblem"
+    }
+  },
+  {
+    "pk": 23,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How does FLE measure the impact of KA Lite?",
+      "created_by": 1,
+      "topic": 8,
+      "created_on": "2014-02-14T18:00:07",
+      "protected": false,
+      "answer": "<p>\r\nBecause KA Lite is freely available and designed to run offline, we are not in contact with many of our deployments, and collecting impact data can be challenging.\r\n</p>\r\n\r\n<p>\r\nKA Lite is capable to synchronize data with our central data repository when an online connection exists.\r\n</p>\r\n\r\n<p>\r\nFor the deployments in which we do have direct involvement, we receive updates from the administrator’s with quantitative data from the built-in coach reports and attain qualitative data from our on-site visits.  For example, we know that 20 out of 20 students in the Idaho Department of Corrections deployment have passed their GED using KA Lite.\r\n</p>\r\n\r\n<p>\r\nWe are also developing RCTs to start in June for a deployment in India. \r\n</p>",
+      "updated_on": "2014-03-28T07:21:46",
+      "sort_order": 0,
+      "slug": "impact"
+    }
+  },
+  {
+    "pk": 24,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Can I contribute even if I don’t know how to code? ",
+      "created_by": 1,
+      "topic": 7,
+      "created_on": "2014-02-14T18:06:28",
+      "protected": false,
+      "answer": "Yes!  <a href=\"https://sites.google.com/a/learningequality.org/kalite/contribute?pli=1\">There are many ways!</a>\r\n\r\n",
+      "updated_on": "2014-05-16T17:02:53",
+      "sort_order": 0,
+      "slug": "support"
+    }
+  },
+  {
+    "pk": 25,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How do I find out more?",
+      "created_by": 1,
+      "topic": 7,
+      "created_on": "2014-02-14T18:21:15",
+      "protected": false,
+      "answer": "To stay up-to-date on all our activities, follow our <a href=\"https://learningequality.org/blog\">blog</a>,  <a href=\"https://twitter.com/LearnEQ\">Twitter</a>, and <a href=\"https://www.facebook.com/learningequality\">Facebook</a>!\r\n",
+      "updated_on": "2014-02-14T18:23:15",
+      "sort_order": 0,
+      "slug": "moreinformation"
+    }
+  },
+  {
+    "pk": 26,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What is data syncing?",
+      "created_by": 1,
+      "topic": 4,
+      "created_on": "2014-03-28T06:37:10",
+      "protected": false,
+      "answer": "KA Lite is capable to share your student progress data with a central data repository when you are online.  This enables the system to have an online backup of your data, allows you to view your student progress online, and to share your data across multiple KA Lite installations.",
+      "updated_on": "2014-03-28T06:39:46",
+      "sort_order": 0,
+      "slug": "what-is-it"
+    }
+  },
+  {
+    "pk": 27,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Backing up data: is there any easy way to do it locally?",
+      "created_by": 1,
+      "topic": 9,
+      "created_on": "2014-03-28T08:59:57",
+      "protected": false,
+      "answer": "<p>\r\nYes!  Just copy the file <pre>ka-lite/kalite/database/data.sqlite</pre> to a secure location.  To restore, simply copy the backup data file to the same location.  If you have changed versions, please run <pre>python kalite/manage.py migrate --merge</pre> to guarantee your database is compatible with the current version of KA Lite you have installed!\r\n</p>\r\n\r\n<p>\r\nNote that online data back-ups occur if you \"register\" your KA Lite installation with an online account on our website.\r\n</p>\r\n",
+      "updated_on": "2014-03-28T09:03:11",
+      "sort_order": 0,
+      "slug": "backup"
+    }
+  },
+  {
+    "pk": 28,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Is there somewhere I can find Spanish language content organized by topic?",
+      "created_by": 1,
+      "topic": 1,
+      "created_on": "2014-05-22T10:13:52",
+      "protected": false,
+      "answer": "Yes! Thanks to the efforts of an awesome volunteer deploying KA Lite and other OER in the Sacred Valley in Peru, you can download blocks of Spanish Lanugage content from his <a href=\"https://drive.google.com/#folders/0B5qtw8M1ijVVMTF5NU40VVZMbk0\">public Google Drive folder</a>.\r\n\r\nYou can also follow his deployment at <a href=\"http://www.huacamayu.org/\">http://www.huacamayu.org/</a>.  \r\n\r\n",
+      "updated_on": "2014-05-22T10:18:39",
+      "sort_order": 0,
+      "slug": "spanish-language-content"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "I would like to download the videos for KA Lite via BitTorrent, is this possible?",
+      "created_by": 1,
+      "topic": 1,
+      "created_on": "2013-01-22T14:37:28",
+      "protected": false,
+      "answer": "<p>\r\nWe have transitioned from using standard BitTorrent to using <a href=\"http://www.bittorrent.com/sync\">BitTorrent Sync</a>, as this allows us to add new videos or fix problems without issuing a whole new torrent file and then having seeders split between the old and new torrent files. Here are the steps to set this up:\r\n<ol>\r\n<li><a href=\"http://www.bittorrent.com/sync/downloads\">Download and install BitTorrent Sync</a></li>\r\n<li>Run BT Sync. On some platforms, this will bring up a graphical interface. On Linux, you will need to then load <a href=\"http://127.0.0.1:8888/\">http://127.0.0.1:8888/</a> to get the interface.</li>\r\n<li>Add a folder, using \"BT7AOITNAIP3X3CSLE2EPQJFXJXMXVGQI\" (no quotes) as the secret, and the \"content\" folder inside your KA Lite installation as the \"path\" (unless you want the videos going somewhere else).</li>\r\n<li>Allow the videos to sync in there from your peers! It may take a while for now, as we don't yet have many seeders on it. On that note -- <b>please help seed by keeping it running even after you've got all the videos</b>, if you have the bandwidth to spare! This to will make it easier for others to download the content as well!</li>\r\n</ol>\r\n</p>\r\n<p>Please note that these are resized videos. All in all, this will take just over 20GB of space.</p> \r\n\r\n<p> \r\nOnce you have the videos, you need to tell KA Lite where to find them by following <a href=\"http://kalitewiki.learningequality.org/user-s-manual/using-ka-lite/admins/customizing-the-configuration/using-downloaded-videos-from-outside-your-ka-lite-directory\">the instructions on our wiki.</a>\r\n</p>",
+      "updated_on": "2014-04-28T09:19:44",
+      "sort_order": 1,
+      "slug": "bittorrent"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "Does KA Lite support peer to peer synchronization?",
+      "created_by": 1,
+      "topic": 4,
+      "created_on": "2013-01-23T13:45:17",
+      "protected": false,
+      "answer": "Not yet. Peer to peer sync is a priority for KA Lite in the near future, but is not available yet. If you would like to know when P2P syncing is integrated into KA Lite, subscribe for updates on our <a href=\"/\">home page</a>.",
+      "updated_on": "2014-03-28T06:40:45",
+      "sort_order": 1,
+      "slug": "p2p"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "What are some possible hardware configurations for deploying KA Lite?",
+      "created_by": 1,
+      "topic": 2,
+      "created_on": "2013-02-05T03:21:29",
+      "protected": false,
+      "answer": "You will need:<br/>\r\n(1) A computer that is running the KA Lite software (e.g. a desktop computer, laptop, or Raspberry Pi).<br/>\r\n(2) One or more client devices that have web browsers (laptops, tablets, desktop computers, etc)<br/>\r\n<br/>\r\nNote that for a single-user deployment (1) and (2) can be the same computer, with the browser connecting to the locally running KA Lite server software. To make the software accessible to multiple client devices, you will need to put them on the same local network as  the KA Lite device (1), e.g. through a router.",
+      "updated_on": "2013-02-05T03:57:16",
+      "sort_order": 1,
+      "slug": "hardware-configurations"
+    }
+  },
+  {
+    "pk": 18,
+    "model": "fack.question",
+    "fields": {
+      "status": 1,
+      "updated_by": 1,
+      "text": "How is it possible to compress the content into KA Lite?",
+      "created_by": 1,
+      "topic": 5,
+      "created_on": "2014-02-14T16:28:43",
+      "protected": false,
+      "answer": "First, users are able to select the amount of videos and exercises they wish to download on the user-interface, allowing the users to customize the size of the files.  \r\n\r\nAlso, we have resized much of the content, and approximately 4,000 videos are around 25 GB if downloaded via BitTorrent and around 70 GB via the user-interface.  \r\n",
+      "updated_on": "2014-02-14T17:31:38",
+      "sort_order": 3,
+      "slug": "compress"
+    }
+  }
+]

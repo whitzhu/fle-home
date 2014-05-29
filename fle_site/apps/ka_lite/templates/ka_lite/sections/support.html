@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<div class="container-fluid off-white">
+<div class="container-fluid light-gray">
 	<div class="container" id="support">
 		<div class="row text-center">
 			<div class="col-md-12">
@@ -10,26 +10,23 @@
 		<div class="row">
 			<!-- FAQ -->
 			<div class="col-md-4">
-				<h3><img src="{% static 'img/ka-lite/faq.png' %}" class="support-img">&nbsp;FAQ</h3>
-					<div class="support-section">
-						<p>Chances are, somebody already had the same question!  Check out our <a href="https://kalite.learningequality.org/faq/">FAQ pages</a> to find an answer.</p>
-					</div>
+				<h3><img src="{% static 'img/ka-lite/faq.png' %}">&nbsp;FAQ</h3>
+				<p>Have a question? Chances are, you aren't the only one!</p>
+				<a class="btn btn-primary btn-lg" href="{% url 'faq' %}">Check the FAQ!</a>
 			</div><!-- End FAQ -->
 
 			<!-- Forum -->
 			<div class="col-md-4">
-				<h3><img src="{% static 'img/ka-lite/forum.png' %}" class="support-img">&nbsp;Forum</h3>
-				<div class="support-section">
-					<p>If your question hasn't already been answered by the FAQ, it may be up for discussion in the <a href="https://forums.learningequality.org/">forums</a>. The forums contain video tutorials, assistance on installation and use, as well as general discussions about KA Lite.</p>
-				</div>
+				<h3><img src="{% static 'img/ka-lite/forum.png' %}">&nbsp;Discuss on the Forums!</h3>
+				<p>Question not in the FAQ? It may be up for discussion in the forums. The forums contain video tutorials, assistance on installation and use, as well as general discussions about KA Lite.</p>
+				<a class="btn btn-primary btn-lg" href="https://forums.learningequality.org/">Check the forums!</a>
 			</div><!-- End Forum -->
 
 			<!-- Github -->
 			<div class="col-md-4">
-				<h3><img src="{% static 'img/ka-lite/github.png' %}" class="support-img">&nbsp;Github</h3>
-				<div class="support-section">
-					<p>If you can't find the answer to your question, it may be a bug.  See our <a href="https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues">Github</a> for directions on how to log an issue, and our developers will work on solving it.</p>
-				</div>
+				<h3><img src="{% static 'img/ka-lite/github.png' %}">&nbsp;Report a Bug!</h3>
+				<p>If your question hasn't been answered by the FAQ, you may have found a bug! See our directions on how to report bugs, and our developers will work on solving it.</p>
+				<a class="btn btn-primary btn-lg" href="https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues">Report a bug!</a>
 			</div><!--End Github -->
 		</div>
 	</div>

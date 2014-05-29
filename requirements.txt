@@ -1,10 +1,11 @@
 Django==1.5.1
-Pillow==2.3.1
 Pygments==1.6
 South==0.8.2
 Werkzeug==0.9.4
+argparse==1.2.1
 django-annoying==0.7.7
 django-extensions==1.1.1
+django-fack==1.1
 django-markupfield==1.2.0
 docutils==0.11
 humanize==0.5
