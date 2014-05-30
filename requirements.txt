@@ -2,13 +2,13 @@ Django==1.5.1
 Pygments==1.6
 South==0.8.2
 Werkzeug==0.9.4
-argparse==1.2.1
 django-annoying==0.7.7
 django-extensions==1.1.1
 django-fack==1.1
 django-markupfield==1.2.0
 docutils==0.11
 humanize==0.5
+pillow==2.4.0
 pygeoip==0.2.7
 six==1.5.2
 wsgiref==0.1.2
