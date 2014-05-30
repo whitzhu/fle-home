@@ -47,9 +47,9 @@ a {
     min-height: 100%;
 }
 
-.container-2000x {
+.max-container {
     margin: 0 auto;
-    max-width: 2000px;
+    max-width: 1220px;
 }
 
 #body-content {
@@ -102,7 +102,7 @@ a {
         .logo-font-thin {
             font-weight: 100;
         }
-        @media (max-width: 820px) {
+        @media (max-width: 830px) {
             font-size: 15px;
         }
         @media (max-width: 420px) {
@@ -374,6 +374,11 @@ a.icon:before {
 
 #ka-inner-nav {
     background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+    border-radius: 0px;
+    font-size: 15px;
+    color: #757575;
     .navbar-brand {
         img {
             height: 40px;
@@ -389,11 +394,13 @@ a.icon:before {
         top: 30px;
         position: relative;
         &.navbar-nav .active a {
+            font-size: inherit;
             background-color: inherit;
             color: inherit;
             text-decoration: underline; 
         }
     }
+
 }
 
 #overview {
@@ -498,13 +505,19 @@ div#download-row .row {
 #community-banner {
     min-height: 300px;
     background-image: url('/static/img/ka-lite/get_involved.jpg');
+    min-height: 380px;
+    background: url('/static/img/ka-lite/get_involved.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0 auto;
 }
 #community-banner h2{
     color: #FFFFFF;
 }
-#community-banner small{
+#community-banner h3{
     color: #FFFFFF;
-    font-size: 70%;
+    
 }
 
 #carousel-overlay-well{
