@@ -17,7 +17,7 @@ body {
     background-color: @white;
     @media (min-width: 990px) {
         margin-bottom: @footer-height;
-        padding-bottom:@footer-height;
+        padding-bottom: 0px;
         }
     @media (max-width: 989px) {
         margin-bottom: @footer-height-collapsed;
@@ -481,18 +481,19 @@ div.comm-btns.row {
 
 .download-content {
     background-color:#E7EFF4;
-    min-height: 692px;
-    h2 {
+    min-height: 661px;
+    width:50%;
+        h2 {
         font-size: 40px;
         padding-bottom: 5%;
         font-weight: bold;
     }
-    ul {
-    text-align:justify;
-    padding-bottom: 6%;
-    color: #999;
-    padding-left: 10%;
-    }
+        ul {
+        text-align:justify;
+        padding-bottom: 6%;
+        color: #999;
+        padding-left: 10%;
+        }
 
     p {
         padding-left: 6%;
@@ -506,8 +507,12 @@ div.row.download-row{
     padding-top: 0px !important;
     margin-top: 80px;
     padding-bottom: 0px !important;
+    margin-left:0px !important;
 }
 
+#download-container {
+    max-width:100%;
+}
 #community-banner {
     min-height: 300px;
     background-image: url('/static/img/ka-lite/get_involved.jpg');
