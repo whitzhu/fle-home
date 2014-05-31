@@ -11,8 +11,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center caption-content">
-					<h2>Get Involved</h2>>
-					<h3>Bringing free education around the world depends on participation from people like you.</h3>
+					<h2>Community</h2>
+					<br><h3>Bringing free education around the world depends on participation from people like you.</h3>
 				</div>
 			</div>
 		</div>
@@ -26,25 +26,35 @@
 			<div class="col-md-4">
 				<img src="{% static 'img/ka-lite/python-powered.png' %}">
 				<h2>Development</h2>
-				<p>KA Lite is an open source project, and interested developers are encouraged to get involved. We welcome those at any proficiency level, from novice to expert, as long as you have a passion for providing free universal education and a desire to learn.</p>
-				<a href="https://github.com/learningequality/ka-lite/wiki"><button type="button" class="btn btn-primary">Github Wiki</button></a>
+				<p>KA Lite is an open source project and welcomes devlopers of any proficiency level with a passion for providing free universal education, and a desire to learn.</p>
 			</div>
 
 			<!-- Testing --> 
 			<div class="col-md-4">
 				<img src="{% static 'img/ka-lite/studentuser_laptop.png' %}">
 				<h2>Testing</h2>
-				<p>It is crucial to test various features of KA Lite on many different platforms in order to ensure that everything is running smoothly. If you would like to get involved by helping in this regard, you will first want to check out our <a href="https://groups.google.com/a/learningequality.org/forum/#!forum/dev">Google groups page</a> and also download and set up KA Lite.</p>
-				<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code"><button type="button" class="btn btn-primary">Start Testing</button></a>
+				<p>It is crucial to test various features to ensure that everything is running smoothly. If you would like to get involved, you will first want to check out our <a href="https://groups.google.com/a/learningequality.org/forum/#!forum/dev">Google groups page</a>.</p>
 			</div
 			<!-- Bittorent --> 
 			<div class="col-md-4">
 				<img src="{% static 'img/ka-lite/cloud_server.gif' %}">
 				<h2>Seeding content</h2>
 				<p>One of the downloading options for KA Lite is BitTorrent, and we are always looking for individuals who would be willing to seed the torrent download.</p>
-				<button type="button" class="btn btn-primary">Seed</button>
 			</div>
 		</div>
+
+		<div class="row comm-btns">
+			<div class="col-md-4">
+				<a href="https://github.com/learningequality/ka-lite/wiki"><button type="button" class="btn btn-primary">Github Wiki</button></a>
+			</div>
+			<div class="col-md-4">
+				<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code"><button type="button" class="btn btn-primary">Start Testing</button></a>
+			</div>
+			<div class="col-md-4">
+				<a href="https://kalite.learningequality.org/faq/installation/bittorrent/"><button type="button" class="btn btn-primary">Seed</button></a>
+			</div>
+		</div>	
+
 
 			<!-- Translations --> 
 		<div class="row">
@@ -52,7 +62,6 @@
 				<img src="{% static 'img/ka-lite/translate.png' %}">
 				<h2>Translations</h2>
 				<p>KA Lite now supports internationalization, and we rely on a worldwide network of translators for support.</p>
-				<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button type="button" class="btn btn-primary">Help Us Translate</button></a>
 			</div>
 
 			<!-- Social media --> 
@@ -60,18 +69,28 @@
 				<img src="{% static 'img/ka-lite/facebook.png' %}">
 				<h2>Social Media</h2>
 				<p>Follow us on <a href="https://www.facebook.com/learningequality">Facebook</a> and <a href="https://twitter.com/LearnEQ">Twitter</a> to keep up with all the latest news and updates!</p>
-				<button type="button" class="btn btn-primary">Facebook</button>
-				<button type="button" class="btn btn-primary">Twitter</button>
 			</div>
 
 			<!--- Donate -->
 			<div class="col-md-4">
 				<img src="{% static 'img/ka-lite/donate.png' %}">
 				<h2>Donate</h2>
-				<p>As a non-profit organization, to support our developers, hosting costs, and other overhead, we rely on donations from people like you. Thanks for your support!</p>
-				<a href="{% url 'give' %}"><button type="button" class="btn btn-primary">Donate</button></a>
+				<p>As a non-profit organization, we rely on donations from people like you. Thanks for your support!</p>
 			</div>
 		</div>
+
+		<!-- Buttons -->
+		<div class="comm-btns row">
+			<div class="col-md-4">
+				<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button type="button" class="btn btn-primary">Help Us Translate</button></a>
+			</div>
+			<div class="col-md-4">
+				<a href="https://www.facebook.com/learningequality"><button type="button" class="btn btn-primary">Facebook</button></a>
+				<a href="https://twitter.com/LearnEQ"><button type="button" class="btn btn-primary">Twitter</button></a>
+			</div>
+			<div class="col-md-4">
+				<a href="{% url 'give' %}"><button type="button" class="btn btn-primary">Donate</button></a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -82,7 +101,7 @@
 	<div class="container">
 		<div class="row">
 			<!-- Deployments --> 
-			<div class="col-md-12 text-center">
+			<div class="col-md-12 text-center" id="carousel-container">
 
 				<!-- Carousel -->
 				<div id="this-carousel-id" class="carousel slide">
