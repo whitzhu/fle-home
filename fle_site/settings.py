@@ -77,7 +77,7 @@ MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.
 STATIC_URL     = getattr(local_settings, "STATIC_URL", "/static/")
 STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT",os.path.join(PROJECT_PATH, "..", "_static_cache"))) + "/"
 
-ALLOWED_HOSTS = ["*.learningequality.org", "learningequality.org"]
+ALLOWED_HOSTS = [".learningequality.org"]
 
 # Additional locations of static files
 STATICFILES_DIRS = (
