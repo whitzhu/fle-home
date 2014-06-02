@@ -39,6 +39,12 @@ urlpatterns += patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 )
 
-
-handler500 = 'fle_site.apps.main.views.handler_500'
-#handler404 = 'fle_site.apps.main.views.handler_404'
+if settings.DEBUG:
+    print "DEBUG is True"
+    urlpatterns += patterns('',
+        (r'^500/$', 'fle_site.apps.main.views.handler_500'),
+        (r'^404/$', TemplateView.as_view(template_name='main/404.html')),
+    )
+else: 
+    handler500 = 'fle_site.apps.main.views.handler_500'
+    handler404 = TemplateView.as_view(template_name='main/404.html')
