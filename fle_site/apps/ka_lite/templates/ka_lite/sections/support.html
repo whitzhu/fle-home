@@ -1,34 +1,38 @@
 {% load staticfiles %}
 
-<div class="container-fluid light-gray">
+<div class="container-fluid white">
 	<div class="container" id="support">
 		<div class="row text-center">
 			<div class="col-md-12">
 				<h2>SUPPORT</h2>
 			</div>
 		</div>
+		<div class="support-content">
 		<div class="row">
 			<!-- FAQ -->
 			<div class="col-md-4">
 				<h3><img src="{% static 'img/ka-lite/faq.png' %}">&nbsp;Read the FAQ!</h3>
 				<p>Have a question? Chances are, you aren't the only one!  Our FAQ pages are the first place you should check to find a solution.  We have help on installations, deployments, tracking, and more.</p>
+				<p><a class="btn btn-primary btn-lg visible-sm visible-xs" href="{% url 'faq' %}">Check the FAQ!</a></p>
 			</div><!-- End FAQ -->
 
 			<!-- Forum -->
 			<div class="col-md-4">
 				<h3><img src="{% static 'img/ka-lite/forum.png' %}">&nbsp;Discuss on the Forums!</h3>
 				<p>Question not in the FAQ? It may be up for discussion in the forums. The forums contain video tutorials, assistance on installation and use, as well as general discussions about KA Lite.</p>
+				<p><a class="btn btn-primary btn-lg visible-sm visible-xs" href="https://forums.learningequality.org/">Check the forums!</a></p>
 			</div><!-- End Forum -->
 
 			<!-- Github -->
 			<div class="col-md-4">
 				<h3><img src="{% static 'img/ka-lite/github.png' %}">&nbsp;Report a Bug!</h3>
 				<p>If something doesn't seem to be working, you may have found a bug! Follow these instructions to report a bug, and our developers will get to work on solving it!</p>
+				<p><a class="btn btn-primary btn-lg visible-sm visible-xs" href="https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues">Report a bug!</a></p>
 			</div><!--End Github -->
 		</div>
 
 
-		<div class="row comm-btns">
+		<div class="row comm-btns visible-md visible-lg">
 			<div class="col-md-4">
 				<a class="btn btn-primary btn-lg" href="{% url 'faq' %}">Check the FAQ!</a>
 			</div>
@@ -45,5 +49,6 @@
 				<p>If you find that your query isn't answered by our <a href="{% url 'faq' %}">FAQ</a>, you aren't here to discuss KA Lite deployment ideas and best practices with other users on our <a href="https://forums.learningequality.org/">forums</a>, and you don't need to <a href="https://github.com/learningequality/ka-lite/wiki/Report%20Bugs%20by%20Creating%20Issues">report a bug</a>, you can try <a href="mailto:support@learningequality.org">emailing</a> our support team. We'll do our best to get back to you as soon as we can.</p>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>

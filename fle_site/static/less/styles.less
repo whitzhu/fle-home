@@ -405,7 +405,7 @@ a.icon:before {
 
 .horizontal-divider {
   margin: 50px auto;
-  width: 850px; 
+  width: 80%; 
   position:relative; 
   
   .mask { 
@@ -421,6 +421,9 @@ a.icon:before {
   
 }
 
+.white {
+        background-color: #fff;
+    }
 
 #overview {
     p {
@@ -529,8 +532,7 @@ div.comm-btns.row {
 
 .download-content {
     background-color:#E7EFF4;
-    min-height: 661px;
-    width:50%;
+    min-height: 586px;
         h2 {
         font-size: 40px;
         padding-bottom: 5%;
@@ -547,29 +549,24 @@ div.comm-btns.row {
         padding-left: 6%;
         padding-right: 6%;
         padding-bottom: 6%;
-        text-align: justify;
     }
 }
 
-div.row.download-row{
-    padding-top: 0px !important;
-    margin-top: 80px;
-    padding-bottom: 0px !important;
-    margin-left:0px !important;
-}
 
 #download-container {
     max-width:100%;
+    background-color:#E7EFF4;
 }
 #community-banner {
     min-height: 300px;
     background-image: url('/static/img/ka-lite/get_involved.jpg');
-    min-height: 380px;
+    min-height: 300px;
     background: url('/static/img/ka-lite/get_involved.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     overflow: hidden;
     margin: 0 auto;
+    padding-bottom:5%;
 }
 #community-banner h2{
     color: #FFFFFF;
@@ -591,6 +588,7 @@ div.row.download-row{
 }
 
 #carousel-container{
+    margin-top: 100px;
     margin-bottom: -100px;
 }
 
@@ -613,7 +611,10 @@ div.row.download-row{
 }
 
 #support {
+    padding-top: 2%;
+
     .col-md-4 {
+
         h3 { 
            text-align: center; 
         }
@@ -625,6 +626,12 @@ div.row.download-row{
             color: #666666;
         }
     }
+}
+
+.support-content {
+    padding-top: 2%;
+    padding-bottom: 6%;
+
 }
 
 #faq-nav {
