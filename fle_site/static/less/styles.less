@@ -426,6 +426,9 @@ a.icon:before {
     }
 
 #overview {
+    p {
+        color: #666666;
+    }
     .row {
         padding-top: 20px;
         padding-bottom: 20px;
@@ -441,9 +444,10 @@ a.icon:before {
         &.right-100 {
             margin-left: 100px;
             height: auto;
-            width: 275px;
+            width: 400px;
             position: relative;
             top: 30px;
+            box-shadow: 0 0 10px #ccc;
         }
     }
     .customize{
@@ -460,6 +464,19 @@ a.icon:before {
     .action-icons {
         width: 80px;
         height: 80px;
+    }
+    #language, .language-border {
+        font-weight: bold;
+    }
+    .language-border {
+        border-right: 1px solid #ccc;
+        margin: 0px 15px 60px -50px;
+    }
+    .language-margin {
+        margin-bottom: 60px;
+    }
+    .multiple-languages {
+        margin-left: 4%;
     }
     .track-column {
         margin-top: 35px;
@@ -501,6 +518,9 @@ div.comm-btns.row {
     .download-icon {
         padding-bottom: 15px;
         width: 100px;
+    }
+    p {
+        color: #666666;
     }
 }
 
@@ -605,6 +625,10 @@ div.comm-btns.row {
     font-weight:bold;
 }
 
+#personal img {
+    height: 150px;
+}
+
 #support {
     padding-top: 2%;
 
@@ -616,6 +640,9 @@ div.comm-btns.row {
         img {
             height: 35px;
             display:inline
+        }
+        p, h3 {
+            color: #666666;
         }
     }
 }
@@ -665,6 +692,7 @@ div.comm-btns.row {
             padding: 0px 45px;
             left: 20px;
             position: relative;
+            color: #666666;
         }
     }
 }
