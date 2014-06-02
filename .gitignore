@@ -4,3 +4,4 @@ _static_cache/*
 database.sqlite
 data/*
 node_modules/*
+local_settings_secrets.py

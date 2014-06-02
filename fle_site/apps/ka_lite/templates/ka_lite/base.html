@@ -23,7 +23,7 @@
     <!-- Script for smooth scrolling --> 
     <script type="text/javascript">
       var $root = $('html, body');
-      $('a').click(function(){
+      $('a').not('#this-carousel-id a').click(function(){
         $root.animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top
         }, 500);
@@ -33,3 +33,4 @@
   {% endblock extra_footer %}
 
 {% endblock bodycontents %}
+
