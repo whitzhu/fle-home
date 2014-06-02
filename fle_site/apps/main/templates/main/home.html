@@ -33,17 +33,17 @@ jQuery(document).ready(function ($) {
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
-                        <a href="#" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
+                        <a href="{% url 'ka_lite' %}" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
                     </div>
                 </div>
-                <div class="row visible-sm">
-                    <div class="col-sm-6">
-                        <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
-                    </div>
-                    <div class="col-sm-6">
-                        <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
-                        <a href="#" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
-                    </div>
+            </div>
+            <div class="row visible-sm">
+                <div class="col-sm-6">
+                    <img class="img-responsive" src="{%static 'img/KA_Lite-vertical-logo-transp.png' %}" alt="KA Lite Logo" />
+                </div>
+                <div class="col-sm-6">
+                    <p>KA Lite is a freely downloadable platform that can be run offline on almost any device, enabling access to Khan Academy's educational videos, exercises, and progress tracking.</p>
+                    <a href="{% url 'ka_lite' %}" class="btn btn-primary btn-large action-button fle-btn">Learn More</a>
                 </div>
             </div>
         </div>

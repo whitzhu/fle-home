@@ -17,7 +17,7 @@ body {
     background-color: @white;
     @media (min-width: 990px) {
         margin-bottom: @footer-height;
-        padding-bottom:@footer-height;
+        padding-bottom: 0px;
         }
     @media (max-width: 989px) {
         margin-bottom: @footer-height-collapsed;
@@ -49,7 +49,7 @@ a {
 
 .max-container {
     margin: 0 auto;
-    max-width: 1220px;
+    max-width: 1170px;
 }
 
 #body-content {
@@ -187,7 +187,7 @@ a {
 }
 
 #giving-img {
-    margin-top:15px;
+    margin-top: 15px;
 }
 
 #call-out-boxes {
@@ -356,8 +356,8 @@ a.icon:before {
 // KA Lite styles
 #ka-lite-header {
     background-color: #C4D7E3;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 130px;
+    padding-bottom: 130px;
     .headerimg {
         width: 400px;
         padding-bottom: 20px;
@@ -375,9 +375,9 @@ a.icon:before {
 #ka-inner-nav {
     background-color: white;
     border: none;
-    border-bottom: 1px solid #eee;
     border-radius: 0px;
-    font-size: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,.2);
+    font-size: large;
     color: #757575;
     .navbar-brand {
         img {
@@ -396,12 +396,31 @@ a.icon:before {
         &.navbar-nav .active a {
             font-size: inherit;
             background-color: inherit;
-            color: inherit;
-            text-decoration: underline; 
+            color: #000;
+            text-decoration: none; 
         }
     }
 
 }
+
+.horizontal-divider {
+  margin: 50px auto;
+  width: 850px; 
+  position:relative; 
+  
+  .mask { 
+    overflow:hidden; height:20px; 
+    &:after { 
+      content:''; 
+      display:block; margin:-25px auto 0;
+      width:100%; height:25px;  
+      border-radius:125px / 12px;  
+      box-shadow:0 0 8px #b5b5b5;
+    }
+  }
+  
+}
+
 
 #overview {
     .row {
@@ -415,7 +434,7 @@ a.icon:before {
         background-color: #fff;
     }
     .overview-pic {
-        height: 350px;
+        height: 400px;
         &.right-100 {
             margin-left: 100px;
             height: auto;
@@ -423,6 +442,13 @@ a.icon:before {
             position: relative;
             top: 30px;
         }
+    }
+    .customize{
+        margin-top: -70px;
+    }
+    .customize p{
+        max-width: 760px;
+        margin: 0 auto;
     }
     .customizable-pic {
         height: 300px;
@@ -438,6 +464,7 @@ a.icon:before {
         height: 220px;
         p {
             padding: 10px 40px;
+            text-align: left;
         }
     }
 
@@ -454,6 +481,13 @@ a.icon:before {
     }
 }
 
+div.comm-btns.row {
+    margin-top: 10px;
+    padding-top: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 #deployment {
     img {
         width: 1100px;
@@ -467,7 +501,49 @@ a.icon:before {
     }
 }
 
+#downloadpic {
+    width: 50%;
+    float: left;
+    margin-bottom: -100px;
+}
+
+.download-content {
+    background-color:#E7EFF4;
+    min-height: 661px;
+    width:50%;
+        h2 {
+        font-size: 40px;
+        padding-bottom: 5%;
+        font-weight: bold;
+    }
+        ul {
+        text-align:justify;
+        padding-bottom: 6%;
+        color: #999;
+        padding-left: 10%;
+        }
+
+    p {
+        padding-left: 6%;
+        padding-right: 6%;
+        padding-bottom: 6%;
+        text-align: justify;
+    }
+}
+
+div.row.download-row{
+    padding-top: 0px !important;
+    margin-top: 80px;
+    padding-bottom: 0px !important;
+    margin-left:0px !important;
+}
+
+#download-container {
+    max-width:100%;
+}
 #community-banner {
+    min-height: 300px;
+    background-image: url('/static/img/ka-lite/get_involved.jpg');
     min-height: 380px;
     background: url('/static/img/ka-lite/get_involved.jpg') no-repeat;
     background-position: center;
@@ -488,12 +564,23 @@ a.icon:before {
     position:relative;
     top: -155px;
     &.well{
-        border-radius:0px;
+        border-radius: 0px;
+        max-width: 65%;
+        margin: 0 auto;
     }
 }
 
+#carousel-container{
+    margin-bottom: -100px;
+}
+
+#this-carousel-id{
+    max-width: 65%;
+    margin: 0 auto;
+}
+
 .caption-content{
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .overlay-text{
@@ -507,9 +594,11 @@ a.icon:before {
 
 #support {
     .col-md-4 {
-        padding-bottom:30px;
+        h3 { 
+           text-align: center; 
+        }
         img {
-            height:35px;
+            height: 35px;
             display:inline
         }
     }
