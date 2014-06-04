@@ -33,3 +33,11 @@
     </div> <!-- /.container-2000x -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script type="text/javascript">
+ //Dynamically set data offset on page load for inner nav
+  $(function(){
+    var headerHeight = $('#fle-navbar').outerHeight() + $('#ka-lite-header').outerHeight();
+    $('#ka-lite-inner-nav').attr("data-offset-top", headerHeight);
+  });
+</script>

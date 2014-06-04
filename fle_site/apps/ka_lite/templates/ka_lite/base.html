@@ -23,11 +23,11 @@
     <!-- Script for smooth scrolling --> 
     <script type="text/javascript">
       $('a').not('#this-carousel-id a').click(function(){
-        var bump = $("#ka-inner-nav").hasClass("affix-top") ? 110 : 0;
+        var bump = $("#ka-inner-nav").hasClass("affix-top") ? 90 : 0;
         var $root = $('html, body');
         $root.animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top - bump
-        }, 700);
+        }, 600);
         return false;
       });
     </script>
