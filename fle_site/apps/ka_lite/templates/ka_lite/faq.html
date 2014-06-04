@@ -8,13 +8,41 @@
 <div class="container-fluid white">
 	<div class="container">
 	  <div class="row">
-	    <div class="col-md-12">
-	      <h2 id="faq_top">KA Lite Frequently Asked Questions </h2>
-	      <div class="pull-right" id="back_kalite" ><a class="btn btn-sm btn-default" href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a></div>
-	      <div class="clearfix"></div>
+	  	<div class="col-md-3 hidden-sm hidden-xs">
+	  		<div id="faq-nav" class="affix-top" data-spy="affix" data-offset-top="50">
+	  			<div class="panel panel-default">
+	  				<div class="panel-heading">
+	  					<h3 class="panel-title">
+	  						<a href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a>
+	  					</h3>
+	  				</div>
+	  				<div class="panel-body">
+	  					<ul>
+	  						{% for topic, questions in faq.items %}
+	  							<li><a href="#{{ topic.slug }}">{{ topic.name }}</a></li>
+	  						{% endfor %}
+	  					</ul>
+	  				</div>
+	  				<div class="panel-footer">
+	  					<h3 class="panel-title">
+	  						<a href="#" class="scroll-to-top" title="Back to top of page">&#8593; Back to Top</a>
+	  					</h3>
+	  				</div>
+	  			</div>
+	  			
+	  		</div>
+	  	</div>
+	    <div class="col-md-9 col-sm-12">
+	      <h2>KA Lite Frequently Asked Questions </h2>
+	      <div class="visible-sm visible-xs">
+	      	<h4>
+	      		<a href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a>
+	      	</h4>
+	      	<a href="#" id="back-top-chevron" class="btn btn-primary btn-md scroll-to-top" role="button" title="Back to top page"><span class="glyphicon glyphicon-chevron-up"></span></a>
+	      </div>
 	      <!-- Questions section --> 
 	      {% for topic, questions in faq.items %}
-		      <div class="panel panel-default">
+		      <div class="panel panel-default" id="{{ topic.slug }}">
 		      	<div class="panel-heading">
 		      		<h3 class="panel-title">{{ topic.name }}</h3>
 		      	</div>
@@ -44,7 +72,6 @@
 	    </div>
 	  </div>
 	</div>
-	<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </div>
 
 
@@ -55,29 +82,26 @@
 		$("div[id^='faq-question-'").removeClass('active');
 		$("div[id='" + this.name + "'").addClass('active');
 	});
-</script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-     $(window).scroll(function () {
-            if ($(this).scrollTop() > 200) {
-                $('#back-to-top').fadeIn();
-            } else {
-                $('#back-to-top').fadeOut();
-            }
-        });
-        // scroll body to 0px on click
-        $('#back-to-top').click(function () {
-            $('#back-to-top').tooltip('hide');
-            $('body,html').animate({
-               scrollTop: target.offset().top
-        }, 1000);
-            return false;
-        });
-        
-        $('#back-to-top').tooltip('show');
+	$('a').not('.scroll-to-top').click(function(){
+	    var bump = 50;
+	    var $root = $('html, body');
+	    $root.animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top - bump
+	    }, 600);
+	    return false;
+	  });
 
-});
+	$(document).ready(function(){
+		$(window).scroll(function () {
+	        if ($(this).scrollTop() > 200) {
+	        	console.log("past 200");
+	            $('#back-top-chevron').fadeIn();
+	        } else {
+	            $('#back-top-chevron').fadeOut();
+	        }
+	    });
+	});
 </script>
 
 {% endblock bodycontents %}

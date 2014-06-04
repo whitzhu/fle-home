@@ -45,5 +45,14 @@
     target: '#ka-inner-nav',
     offset: 120
   });
+
+  $('a').not('#this-carousel-id a').not('.scroll-to-top').click(function(){
+    var bump = $("#ka-inner-nav").hasClass("affix-top") ? 90 : 0;
+    var $root = $('html, body');
+    $root.animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top - bump
+    }, 600);
+    return false;
+  });
 </script>
 {% endblock pagecontents %}

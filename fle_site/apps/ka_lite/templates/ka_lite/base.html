@@ -22,12 +22,9 @@
   {% block extra_footer %}
     <!-- Script for smooth scrolling --> 
     <script type="text/javascript">
-      $('a').not('#this-carousel-id a').click(function(){
-        var bump = $("#ka-inner-nav").hasClass("affix-top") ? 90 : 0;
-        var $root = $('html, body');
-        $root.animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top - bump
-        }, 600);
+      // Class to scroll to top
+      $('.scroll-to-top').click(function(){
+        $('html, body').animate({scrollTop : 0}, 600);
         return false;
       });
     </script>

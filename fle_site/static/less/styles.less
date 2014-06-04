@@ -102,10 +102,10 @@ a {
         .logo-font-thin {
             font-weight: 100;
         }
-        @media (max-width: 830px) {
+        @media (max-width: 997px) {
             font-size: 15px;
         }
-        @media (max-width: 420px) {
+        @media (max-width: 432px) {
             font-size: 10px;
         }
     }
@@ -624,55 +624,49 @@ a.icon:before {
 }
 
 #faq-nav {
-    .affix-top {
-        position: absolute;
-        top: 80px;
-        right: 120px;
-        opacity: 1;
+    width: 225px;
+    &.affix-top {
+        margin-top: 62px;
     }
     .affix {
         opacity: 0.3;
         top: 30px;
-        right: 120px;
         &:hover {
             opacity: 1;
         }
         z-index: 10;
     }
+    ul {
+        list-style-type: none;
+        li {
+            margin-bottom: 6px;
+            padding-left: 10px;
+            margin-left: -10px;
+            &:hover {
+                border-left: 1px solid #3a7aa2;
+            }
+            a:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#back-top-chevron {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    display:none;
+    z-index: 10;
 }
 
 .list-group-item.active .list-group-item-text a {
     color: #003557;
 }
 
-.back-to-top {
-    cursor: pointer;
-    position: fixed;
-    bottom: 30px;
-    right:30px;
-    display:none;
-}
-
 .list-group-item p{
     color: #666666;
 }
-
-#back_kalite{
-    margin-top: -40px;
-}
-
-#faq_top {
-    @media (max-width: 680px) {
-        font-size: 20px;
-        }
-    }
-
-#back_kalite{
-    @media (max-width: 510px) {
-        padding-top: 40px;
-        padding-bottom: 10px;
-        }
-    }
 
 //Community
 //--------------------------------------
