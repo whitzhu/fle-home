@@ -9,8 +9,9 @@
 	<div class="container">
 	  <div class="row">
 	    <div class="col-md-12">
-	      <h1 id="faq_top">KA Lite Frequently Asked Questions</h1>
-
+	      <h2 id="faq_top">KA Lite Frequently Asked Questions </h2>
+	      <div class="pull-right" id="back_kalite" ><a class="btn btn-sm btn-default" href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a></div>
+	      <div class="clearfix"></div>
 	      <!-- Questions section --> 
 	      {% for topic, questions in faq.items %}
 		      <div class="panel panel-default">
@@ -45,11 +46,10 @@
 	</div>
 </div>
 
-<div id="faq-nav">
-	<div class="affix-top" data-spy="affix" data-offset-top="60">
-		<p><a class="btn btn-sm btn-default" href="{% url 'ka_lite' %}">&#8592; Back to KA Lite</a>&nbsp;<a class="btn btn-sm btn-default" href="#faq_top">&#8593; Back to Top</a></p>
-	</div>
-</div>
+
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top page" data-toggle="tooltip" data-placement="left"><span class="glyphicon glyphicon-chevron-up"></span></a>
+
 
 <script type="text/javascript">
 	// script to toggle active state of answer box
@@ -57,7 +57,29 @@
 		$("div[id^='faq-question-'").removeClass('active');
 		$("div[id='" + this.name + "'").addClass('active');
 	});
+</script>
 
+<script type="text/javascript">
+$(document).ready(function(){
+     $(window).scroll(function () {
+            if ($(this).scrollTop() > 200) {
+                $('#back-to-top').fadeIn();
+            } else {
+                $('#back-to-top').fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        $('#back-to-top').click(function () {
+            $('#back-to-top').tooltip('hide');
+            $('body,html').animate({
+               scrollTop: target.offset().top
+        }, 1000);
+            return false;
+        });
+        
+        $('#back-to-top').tooltip('show');
+
+});
 </script>
 
 {% endblock bodycontents %}
