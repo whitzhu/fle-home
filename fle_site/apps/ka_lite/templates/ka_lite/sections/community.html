@@ -23,92 +23,104 @@
 <div class="container-fluid" id="contribute">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/python-powered.png' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/python-powered.png' %}" class="img-responsive community-icons">
 				<h2>Development</h2>
 				<p>KA Lite is an open source project and welcomes devlopers of any proficiency level with a passion for providing free universal education, and a desire to learn.</p>
 				<p>
-					<a href="https://github.com/learningequality/ka-lite/wiki" class="btn btn-primary visible-sm visible-xs">Github Wiki</a>
+					<a href="https://github.com/learningequality/ka-lite/wiki" class="btn btn-primary visible-xs">Github Wiki</a>
 				</p>
 			</div>
 
 			<!-- Testing --> 
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/studentuser_laptop.png' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/studentuser_laptop.png' %}" class="img-responsive community-icons">
 				<h2>Testing</h2>
 				<p>It is crucial to test various features to ensure that everything is running smoothly. If you would like to get involved, you will first want to check out our <a href="https://groups.google.com/a/learningequality.org/forum/#!forum/dev">Google groups page</a>.</p>
 				<p>
-					<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code" class="btn btn-primary visible-sm visible-xs">Start Testing</a>
+					<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code" class="btn btn-primary visible-xs">Start Testing</a>
 				</p>
 			</div>
 			<!-- Bittorent --> 
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/cloud_server.gif' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/cloud_server.gif' %}" class="img-responsive community-icons">
 				<h2>Seeding content</h2>
 				<p>One of the downloading options for KA Lite is BitTorrent, and we are always looking for individuals who would be willing to seed the torrent download.</p>
 				<p>
-					<a href="https://learningequality.org/ka-lite/faq/#faq-question-bittorrent" class="btn btn-primary visible-sm visible-xs">Seed</a>
+					<a href="https://learningequality.org/ka-lite/faq/#faq-question-bittorrent" class="btn btn-primary visible-xs">Seed</a>
 				</p>
 			</div>
 		</div>
 
 		<!-- Buttons for desktop -->
-		<div class="row comm-btns visible-md visible-lg">
-			<div class="col-md-4">
-				<a href="https://github.com/learningequality/ka-lite/wiki" class="btn btn-primary">Github Wiki</a>
+		<div class="row comm-btns hidden-xs">
+			<div class="col-sm-4">
+				<p>
+					<a href="https://github.com/learningequality/ka-lite/wiki" class="btn btn-primary">Github Wiki</a>
+				</p>
 			</div>
-			<div class="col-md-4">
-				<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code" class="btn btn-primary">Start Testing</a>
+			<div class="col-sm-4">
+				<p>
+					<a href="https://github.com/learningequality/ka-lite/wiki/Testing-new-code" class="btn btn-primary">Start Testing</a>
+				</p>
 			</div>
-			<div class="col-md-4">
-				<a href="https://learningequality.org/ka-lite/faq/#faq-question-bittorrent" class="btn btn-primary">Seed</a>
+			<div class="col-sm-4">
+				<p>
+					<a href="https://learningequality.org/ka-lite/faq/#faq-question-bittorrent" class="btn btn-primary">Seed</a>
+				</p>
 			</div>
 		</div>	
 
 
 			<!-- Translations --> 
 		<div class="row">
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/translate.png' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/translate.png' %}" class="img-responsive community-icons">
 				<h2>Translations</h2>
 				<p>KA Lite now supports internationalization, and we rely on a worldwide network of translators for support.</p>
 				<p>
-					<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations" class="btn btn-primary visible-sm visible-xs">Help Us Translate</a>
+					<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations" class="btn btn-primary visible-xs">Help Us Translate</a>
 				</p>
 			</div>
 
 			<!-- Social media --> 
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/facebook.png' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/facebook.png' %}" class="img-responsive community-icons">
 				<h2>Social Media</h2>
 				<p>Follow us on <a href="https://www.facebook.com/learningequality">Facebook</a> and <a href="https://twitter.com/LearnEQ">Twitter</a> to keep up with all the latest news and updates!</p>
 				<p>
-					<a href="https://www.facebook.com/learningequality" class="btn btn-primary visible-sm visible-xs">Facebook</a>&nbsp;<a href="https://twitter.com/LearnEQ" class="btn btn-primary visible-sm visible-xs">Twitter</a>
+					<a href="https://www.facebook.com/learningequality" class="btn btn-primary visible-xs">Facebook</a>&nbsp;<a href="https://twitter.com/LearnEQ" class="btn btn-primary visible-xs">Twitter</a>
 				</p>
 			</div>
 
 			<!--- Donate -->
-			<div class="col-md-4">
-				<img src="{% static 'img/ka-lite/donate.png' %}">
+			<div class="col-sm-4">
+				<img src="{% static 'img/ka-lite/donate.png' %}" class="img-responsive community-icons">
 				<h2>Donate</h2>
 				<p>As a non-profit organization, we rely on donations from people like you. Thanks for your support!</p>
 				<p>
-					<a href="{% url 'give' %}" class="btn btn-primary visible-sm visible-xs">Donate</a>
+					<a href="{% url 'give' %}" class="btn btn-primary visible-xs">Donate</a>
 				</p>
 			</div>
 		</div>
 
 		<!-- Buttons for desktop -->
-		<div class="comm-btns row visible-md visible-lg">
-			<div class="col-md-4">
-				<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations" class="btn btn-primary">Help Us Translate</a>
+		<div class="comm-btns row hidden-xs">
+			<div class="col-sm-4">
+				<p>
+					<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations" class="btn btn-primary">Help Us Translate</a>
+				</p>
 			</div>
-			<div class="col-md-4">
-				<a href="https://www.facebook.com/learningequality" class="btn btn-primary">Facebook</a>
-				<a href="https://twitter.com/LearnEQ" class="btn btn-primary">Twitter</a>
+			<div class="col-sm-4">
+				<p id="social-media-contribute-btns">
+					<a href="https://www.facebook.com/learningequality" class="btn btn-primary">Facebook</a>&nbsp;
+					<a href="https://twitter.com/LearnEQ" class="btn btn-primary">Twitter</a>
+				</p>
 			</div>
-			<div class="col-md-4">
-				<a href="{% url 'give' %}" class="btn btn-primary">Donate</a>
+			<div class="col-sm-4">
+				<p>
+					<a href="{% url 'give' %}" class="btn btn-primary">Donate</a>
+				</p>
 			</div>
 		</div>
 	</div>

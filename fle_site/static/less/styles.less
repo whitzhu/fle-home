@@ -408,16 +408,19 @@ a.icon:before {
 }
 
 .horizontal-divider {
-  margin: 50px auto;
+  margin: 5% auto;
   width: 80%; 
   position:relative; 
   
   .mask { 
-    overflow:hidden; height:20px; 
+    overflow:hidden; 
+    height:20px; 
     &:after { 
       content:''; 
-      display:block; margin:-25px auto 0;
-      width:100%; height:25px;  
+      display:block; 
+      margin:-25px auto 0;
+      width:100%; 
+      height:25px;  
       border-radius:125px / 12px;  
       box-shadow:0 0 8px #b5b5b5;
     }
@@ -445,6 +448,7 @@ a.icon:before {
     }
     .overview-pic {
         max-height: 380px;
+        margin: 0 auto;
         &.right-100 {
             margin-left: 100px;
             height: auto;
@@ -454,17 +458,6 @@ a.icon:before {
             box-shadow: 0 0 10px #ccc;
         }
     }
-    .customize{
-        margin-top: -70px;
-    }
-    .customize p{
-        max-width: 760px;
-        margin: 0 auto;
-    }
-    .customizable-pic {
-        height: 300px;
-        padding: 1px;
-    }
     .action-icons {
         width: 80px;
         height: 80px;
@@ -473,9 +466,11 @@ a.icon:before {
         margin-top: 30px;
     }
     .track-column {
-        margin-top: 35px;
-        margin-bottom: 50px;
-        height: 220px;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        @media(min-width:992px){
+            height: 220px;    
+        }
         p {
             padding: 10px 40px;
             text-align: left;
@@ -484,27 +479,6 @@ a.icon:before {
 
     .track-border {
         border-right: 1px solid rgb(218, 218, 218);
-    }
-}
-
-#contribute {
-    img {
-        position: relative;
-        top: 20px;
-        width: 90px;
-    }
-}
-
-div.comm-btns.row {
-    margin-top: 10px;
-    padding-top: 0px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-#deployment {
-    img {
-        width: 1100px;
     }
 }
 
@@ -619,24 +593,16 @@ div.comm-btns.row {
     font-weight:bold;
 }
 
-#personal img {
-    height: 150px;
-}
-
 #support {
-
-    .col-md-4 {
-
-        h3 { 
-           text-align: center; 
-        }
-        img {
-            height: 35px;
-            display:inline
-        }
-        p, h3 {
-            color: #666666;
-        }
+    h3 { 
+       text-align: center; 
+    }
+    img {
+        height: 35px;
+        display:inline
+    }
+    p {
+        color: #666666;
     }
 }
 
@@ -671,14 +637,15 @@ div.comm-btns.row {
 //Community
 //--------------------------------------
 #contribute {
-    .col-md-4 {
+    .col-sm-4 {
         display: inline-block;
         padding: 0px 10px;
         text-align: center;
         img {
-            height: 100px;
-            width: auto;
-            margin-bottom: 25px;
+            max-height: 100px;
+            margin: 0 auto;
+            position: relative;
+            top: 20px;
         }
         p {
             text-align: left;
@@ -687,5 +654,30 @@ div.comm-btns.row {
             position: relative;
             color: #666666;
         }
+    }
+}
+
+div.comm-btns.row {
+    margin-top: 10px;
+    padding-top: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+    a.btn.btn-primary {
+        width: 100%;
+    }
+}
+
+#social-media-contribute-btns {
+    a.btn.btn-primary {
+        width: 45%;
+    }
+}
+
+#deployment {
+    .row {
+        padding-bottom: 10%;
+    }
+    img {
+        width: 1100px;
     }
 }
