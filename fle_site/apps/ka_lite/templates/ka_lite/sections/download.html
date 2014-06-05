@@ -1,11 +1,13 @@
 {% load staticfiles %}
 
 <!-- Download Section -->
-<div class="container-fluid" id="download-container">
+<div class="container-fluid">
   <div class="container">
   <div class=" text-center">
     <div class="row">
-        <img class="visible-md visible-lg" src='{% static "img/ka-lite/nalanda_download.jpg" %}' alt="Download KA Lite" id="downloadpic">
+      <div class="col-md-6 visible-md visible-lg">
+        <img class="img-responsive" id="download-pic" src='{% static "img/ka-lite/nalanda_download.jpg" %}' alt="Download KA Lite">
+      </div>
       <div class="col-md-6 col-sm-12 col-xs-12 download-content">
         <h2>DOWNLOAD</h2>
         <p>KA Lite is an open-source Python project, meaning it is free to download and use. It runs on Linux, Mac, and Windows.</p>

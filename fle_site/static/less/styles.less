@@ -116,18 +116,12 @@ a {
 // --------------------
 
 #footer {
+    width: 100%;
     position: absolute;
     bottom: 0;
-    width: 100%;
     background-color: @darkgray;
     color: @white;
     padding-top: 20px;
-    @media (min-width: 990px) {
-          height: @footer-height;
-        }
-    @media (max-width: 989px) {
-        height: @footer-height-collapsed;
-    }
     .row {
         margin-right: 0px;
     }
@@ -494,6 +488,22 @@ a.icon:before {
 }
 
 #download {
+    background-color:#E7EFF4;
+    margin-bottom: 100px;
+    padding-bottom: 150px;
+    .download-content {
+        h2 {
+            font-size: 40px;
+            padding-bottom: 5%;
+            font-weight: bold;
+        }
+
+        p {
+            padding-left: 6%;
+            padding-right: 6%;
+            padding-bottom: 6%;
+        }
+    }
     .download-icon {
         img {
             margin: 0 auto;
@@ -506,39 +516,6 @@ a.icon:before {
     }
 }
 
-#downloadpic {
-    width: 50%;
-    float: left;
-    margin-bottom: -100px;
-}
-
-.download-content {
-    background-color:#E7EFF4;
-    min-height: 586px;
-        h2 {
-        font-size: 40px;
-        padding-bottom: 5%;
-        font-weight: bold;
-    }
-        ul {
-        text-align:justify;
-        padding-bottom: 6%;
-        color: #999;
-        padding-left: 10%;
-        }
-
-    p {
-        padding-left: 6%;
-        padding-right: 6%;
-        padding-bottom: 6%;
-    }
-}
-
-
-#download-container {
-    max-width:100%;
-    background-color:#E7EFF4;
-}
 #community-banner {
     min-height: 300px;
     background: url('/static/img/ka-lite/get_involved.jpg') no-repeat;
@@ -561,7 +538,7 @@ a.icon:before {
     min-height: 300px;
     background: url('/static/img/ka-lite/supportbanner.jpg') no-repeat;
     background-position: 0% 58%;
-    background-size: 100% auto;
+    background-size: cover;
     overflow: hidden;
     margin: 0 auto;
     padding-bottom:5%;
@@ -624,8 +601,9 @@ a.icon:before {
 }
 
 .support-content {
+    margin-bottom: 6%;
     padding-top: 2%;
-    padding-bottom: 6%;
+    padding-bottom: 15%;
 
 }
 
