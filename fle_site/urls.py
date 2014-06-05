@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, RedirectView
 
 import fle_site.apps.about.urls
 import fle_site.apps.articles.urls
@@ -12,6 +12,7 @@ import fle_site.apps.main.urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', RedirectView.as_view(url=reverse_lazy('ka_lite')), name="home"),
     url(r'^admin/', include(admin.site.urls)),
 )
 
