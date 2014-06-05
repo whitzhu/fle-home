@@ -13,6 +13,7 @@ from django.contrib.sites.models import Site
 from django.core.cache import cache
 from django.conf import settings
 from django.template.defaultfilters import slugify, striptags
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 from decorators import logtime, once_per_instance
@@ -215,7 +216,7 @@ class Article(models.Model):
 
         if self.id:
             # mark the article as inactive if it's expired and still active
-            if self.expiration_date and self.expiration_date <= datetime.now() and self.is_active:
+            if self.expiration_date and self.expiration_date <= timezone.now() and self.is_active:
                 self.is_active = False
                 self.save()
 

@@ -40,7 +40,7 @@
                     </div>
                     {% for year in archives %}
                             {% for month in year.1 %}
-                                <a class="list-group-item" href="{% url 'articles_in_month' month.year,month.month %}" title="{% trans 'View articles posted in this month' %}">{{ month|date:"F" }}&nbsp;{{ year.0 }}</a>
+                                <a class="list-group-item" href="{% url 'articles_in_month' month.year month.month %}" title="{% trans 'View articles posted in this month' %}">{{ month|date:"F" }}&nbsp;{{ year.0 }}</a>
                             {% endfor %}
                     {% endfor %}
                 </div>
