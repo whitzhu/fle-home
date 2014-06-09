@@ -43,9 +43,9 @@ urlpatterns += patterns('',
 if settings.DEBUG:
     print "DEBUG is True"
     urlpatterns += patterns('',
+        (r'^404/$', 'fle_site.apps.main.views.handler_404'),
         (r'^500/$', 'fle_site.apps.main.views.handler_500'),
-        (r'^404/$', TemplateView.as_view(template_name='main/404.html')),
     )
 else: 
+    handler404 = 'fle_site.apps.main.views.handler_404'
     handler500 = 'fle_site.apps.main.views.handler_500'
-    handler404 = TemplateView.as_view(template_name='main/404.html')

@@ -21,3 +21,5 @@ def handler_500(request):
     }
     return HttpResponseServerError(render_to_string("main/500.html", context, context_instance=RequestContext(request)))
 
+def handler_404(request):
+    return HttpResponseServerError(render_to_string("main/404.html", {}, context_instance=RequestContext(request)))
