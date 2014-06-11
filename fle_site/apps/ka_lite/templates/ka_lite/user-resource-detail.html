@@ -1,0 +1,28 @@
+{% extends 'ka_lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ resource.title }}{% endblock title %}
+
+{% block bodycontents %}
+<div class="container-fluid white">
+	<div class="container">
+	  <div class="row">
+	  	<div class="col-xs-12" id="embedded-doc-container">
+	  		<a href="{% url 'user_resources' %}" class="btn btn-primary btn-md" id="embedded-doc-nav"><span class="glyphicon glyphicon-arrow-left"></span> Back to User Resources</a>
+	  		<img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
+	  		<iframe id="embedded-doc" src="{{resource.doc_url}}?embedded=true"></iframe>
+	  	</div>
+	  </div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#embedded-doc').on('load', function () {
+            $('#loading-gif').hide();
+        });
+	});
+</script>
+
+{% endblock bodycontents %}

@@ -1,0 +1,30 @@
+{% extends 'ka_lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}User Resources{% endblock title %}
+
+{% block bodycontents %}
+<div class="container-fluid white">
+	<div class="container">
+	  <div class="row">
+	  	<div class="col-xs-12">
+	  		<h1>KA Lite User Resources</h1>
+	  		{% for r in resources %}
+	  			{% for version, objects in r.items %}
+	  				<h2>Version {{version}}</h2>
+	  				{% for obj in objects %}
+	  					<p>
+	  						<a href="{{obj.slug}}">
+	  							{{obj.title}}
+	  						</a>
+	  					</p>
+	  				{% endfor %}
+	  			{% endfor %}
+	  		{% endfor %}
+	  	</div>
+	  </div>
+	</div>
+</div>
+
+{% endblock bodycontents %}

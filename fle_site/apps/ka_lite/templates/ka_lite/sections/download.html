@@ -11,29 +11,29 @@
       <div class="col-md-6 col-sm-12 col-xs-12 download-content">
         <h2>DOWNLOAD</h2>
         <p>KA Lite is an open-source Python project, meaning it is free to download and use. It runs on Linux, Mac, and Windows.</p>
-        <p>Choose your operating system to find detailed installation instructions.</p>
+        <p>Cick below to read the installation instructions.</p>
         <div class="row center-text">
           <div class="col-xs-4 download-icon">
-            <p><img class="img-responsive" src="{% static 'img/ka-lite/windows.png' %}">
-              <a href="https://sites.google.com/a/learningequality.org/kalite/installation/windows-installation" class="btn btn-primary btn-md">
-                Windows
-              </a>
+            <p>
+              <img class="img-responsive" src="{% static 'img/ka-lite/windows.png' %}">
             </p>
           </div>
           <div class="col-xs-4 download-icon">
-            <p><img class="img-responsive" src="{% static 'img/ka-lite/linux.png' %}">
-              <a href="https://sites.google.com/a/learningequality.org/kalite/installation/linux-installation" class="btn btn-primary btn-md">
-                Linux
-              </a>
+            <p>
+              <img class="img-responsive" src="{% static 'img/ka-lite/linux.png' %}">
             </p>
           </div>
           <div class="col-xs-4 download-icon">
             <p>
               <img class="img-responsive" src="{% static 'img/ka-lite/apple.png' %}">
-              <a href="https://sites.google.com/a/learningequality.org/kalite/installation/mac-installation" class="btn btn-primary btn-md">
-                  Mac
-              </a>
             </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <a href="{% url 'user_resources' %}" class="btn btn-primary btn-md">
+              View Installation Guides
+            </a>  
           </div>
         </div>
       </div>
