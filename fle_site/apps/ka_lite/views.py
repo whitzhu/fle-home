@@ -3,6 +3,7 @@ from collections import OrderedDict
 from fack.models import Question, Topic
 from itertools import groupby
 
+from django.db.models import Max
 from django.shortcuts import get_object_or_404
 
 from .models import UserResource
@@ -37,10 +38,24 @@ def user_guides(request):
 		"user_guides": ordered_versions,
 	}
 
+
 @render_to("ka_lite/user-resource-detail.html")
 def user_guide_detail(request, slug):
 	"""Render detail of user resource"""
 	obj = get_object_or_404(UserResource.objects.filter(slug=slug))
+	related_resources = UserResource.objects.filter(version=obj.version)
+	general_resources = UserResource.objects.filter(version='')
+	return {
+		"resource": obj,
+		"related_resources": related_resources,
+		"general_resources": general_resources
+	}
+
+@render_to("ka_lite/user-resource-detail.html")
+def user_guide_latest(request):
+	"""Render detail of user resource"""
+	latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+	obj = get_object_or_404(UserResource.objects.filter(version=latest_version, category='install_guide'))
 	related_resources = UserResource.objects.filter(version=obj.version)
 	general_resources = UserResource.objects.filter(version='')
 	return {
