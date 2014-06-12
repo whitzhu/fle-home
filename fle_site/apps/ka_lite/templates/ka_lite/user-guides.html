@@ -16,30 +16,32 @@
 		  	<div class="col-xs-12">
 		  		<h1 class="center-text">User Guides</h1>
 		  		<!-- User Guide Panels -->
-		  		{% for version, guides in user_guides.items %}
-			  		<div class="panel panel-default">
-					  <div class="panel-heading">Version {{version}}</div>
-					  <!-- Table -->
-					  <table class="table table-responsive">
-					  	<tbody>
-					  		{% for g in guides %}
-					  			<tr>
-					  				<td class="col-xs-4">
-					  					{{ g.title }}
-					  				</td>
-					  				<td class="col-xs-4 center-text">
-					  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
-					  				</td>
-					  				<td class="col-xs-4">
-					  					<a href="{{ g.pdf_url }}" class="pull-right">
-					  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
-					  					</a>
-					  				</td>
-					  			</tr>
-					  		{% endfor %}
-					  	</tbody>
-					  </table>
-					</div>
+		  		{% for version_resources in user_guides %}
+		  			{% for version, guides in version_resources.items %}
+		  				<div class="panel panel-default">
+						  <div class="panel-heading">Version {{version}}</div>
+						  <!-- Table -->
+						  <table class="table table-responsive">
+						  	<tbody>
+						  		{% for g in guides %}
+						  			<tr>
+						  				<td class="col-xs-4">
+						  					{{ g.title }}
+						  				</td>
+						  				<td class="col-xs-4 center-text">
+						  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+						  				</td>
+						  				<td class="col-xs-4">
+						  					<a href="{{ g.pdf_url }}" class="pull-right">
+						  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
+						  					</a>
+						  				</td>
+						  			</tr>
+						  		{% endfor %}
+						  	</tbody>
+						  </table>
+						</div>
+		  			{% endfor %}
 		  		{% endfor %}
 		  		{% if general_resources %}
 		  			<div class="panel panel-default">

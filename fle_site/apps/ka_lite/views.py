@@ -1,5 +1,6 @@
 from annoying.decorators import render_to
 from collections import OrderedDict
+from distutils.version import StrictVersion
 from fack.models import Question, Topic
 from itertools import groupby
 
@@ -31,7 +32,7 @@ def user_guides(request):
 		user_guides[version] = grouped_items
 
 	# Order versions
-	ordered_versions = OrderedDict(sorted(user_guides.items(), reverse=True))
+	ordered_versions = [{version: group} for version, group in sorted(user_guides.items(), reverse=True, key=lambda k: StrictVersion(k[0]))]
 
 	return {
 		"general_resources": general_resources,
