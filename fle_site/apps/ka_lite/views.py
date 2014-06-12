@@ -42,20 +42,11 @@ def user_guides(request):
 @render_to("ka_lite/user-guide-detail.html")
 def user_guide_detail(request, slug):
 	"""Render detail of user resource"""
-	obj = get_object_or_404(UserResource.objects.filter(slug=slug))
-	related_resources = UserResource.objects.filter(version=obj.version)
-	general_resources = UserResource.objects.filter(version='')
-	return {
-		"resource": obj,
-		"related_resources": related_resources,
-		"general_resources": general_resources
-	}
-
-@render_to("ka_lite/user-guide-detail.html")
-def user_guide_latest(request):
-	"""Render detail of user resource"""
-	latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
-	obj = get_object_or_404(UserResource.objects.filter(version=latest_version, category='install_guide'))
+	if slug=="latest":
+		latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+		obj = get_object_or_404(UserResource.objects.filter(version=latest_version, category='install_guide'))
+	else:
+		obj = get_object_or_404(UserResource.objects.filter(slug=slug))
 	related_resources = UserResource.objects.filter(version=obj.version)
 	general_resources = UserResource.objects.filter(version='')
 	return {

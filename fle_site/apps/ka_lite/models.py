@@ -13,8 +13,8 @@ class UserResource(models.Model):
     doc_url = models.URLField(max_length=200)
     pdf_url = models.URLField(max_length=200, help_text="Publish the PDF to a public Dropbox folder.")
     slug = models.SlugField(max_length=50, unique=True)
-    publish_date = models.DateTimeField(auto_now=False)
-    last_updated = models.DateTimeField(auto_now_add=True)
+    publish_date = models.DateTimeField()
+    last_updated = models.DateTimeField()
 
     def __str__(self):
         return self.title
