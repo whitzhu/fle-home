@@ -50,7 +50,7 @@ def user_guide_detail(request, slug):
 		"general_resources": general_resources
 	}
 
-@render_to("ka_lite/user-resource-detail.html")
+@render_to("ka_lite/user-guide-detail.html")
 def user_guide_latest(request):
 	"""Render detail of user resource"""
 	latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']

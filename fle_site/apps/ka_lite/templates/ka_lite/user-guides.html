@@ -41,30 +41,32 @@
 					  </table>
 					</div>
 		  		{% endfor %}
-	  			<div class="panel panel-default">
-				  <div class="panel-heading">General Resources</div>
-				  <!-- Table -->
-				  <table class="table table-responsive">
-				  	<tbody>
-				  		{% for g in general_resources %}
-			  			<tr>
-			  				<td class="col-xs-4">
-			  					{{ g.title }}
-			  				</td>
-			  				<td class="col-xs-4 center-text">
-			  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
-			  				</td>
-			  				<td class="col-xs-4">
-			  					<a href="{{ g.pdf_url }}" class="pull-right">
-			  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
-			  					</a>
-			  				</td>
-			  			</tr>
-			  			{% endfor %}
-				  	</tbody>
-				  </table>
-				</div>
-		  	</div>
+		  		{% if general_resources %}
+		  			<div class="panel panel-default">
+					  <div class="panel-heading">General Resources</div>
+					  <!-- Table -->
+					  <table class="table table-responsive">
+					  	<tbody>
+					  		{% for g in general_resources %}
+				  			<tr>
+				  				<td class="col-xs-4">
+				  					{{ g.title }}
+				  				</td>
+				  				<td class="col-xs-4 center-text">
+				  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+				  				</td>
+				  				<td class="col-xs-4">
+				  					<a href="{{ g.pdf_url }}" class="pull-right">
+				  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
+				  					</a>
+				  				</td>
+				  			</tr>
+				  			{% endfor %}
+					  	</tbody>
+					  </table>
+					</div>
+			  	</div>
+			  {% endif %}
 	  	</div>
 	</div>
 </div>
