@@ -17,7 +17,7 @@ def faq(request):
 
 	return {"faq": context}
 
-@render_to("ka_lite/user-resources.html")
+@render_to("ka_lite/user-guides.html")
 def user_guides(request):
 	"""Render list of user resources"""
 	general_resources = UserResource.objects.filter(version='')
@@ -37,7 +37,7 @@ def user_guides(request):
 		"user_guides": ordered_versions,
 	}
 
-@render_to("ka_lite/user-resource-detail.html")
+@render_to("ka_lite/user-guide-detail.html")
 def user_guide_detail(request, slug):
 	"""Render detail of user resource"""
 	obj = get_object_or_404(UserResource.objects.filter(slug=slug))
