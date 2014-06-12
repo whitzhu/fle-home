@@ -5,25 +5,67 @@
 {% block title %}User Resources{% endblock title %}
 
 {% block bodycontents %}
-<div class="container-fluid white">
+<div class="container-fluid">
 	<div class="container">
-	  <div class="row">
-	  	<div class="col-xs-12">
-	  		<h1>KA Lite User Resources</h1>
-	  		{% for r in resources %}
-	  			{% for version, objects in r.items %}
-	  				<h2>Version {{version}}</h2>
-	  				{% for obj in objects %}
-	  					<p>
-	  						<a href="{{obj.slug}}">
-	  							{{obj.title}}
-	  						</a>
-	  					</p>
-	  				{% endfor %}
-	  			{% endfor %}
-	  		{% endfor %}
+		<div class="row">
+	        <div class="col-xs-12">
+	          <img src='{% static "img/ka-lite/ka-lite-logo-horizontal.png" %}' alt="KA Lite" class="img-responsive headerimg">
+	        </div>
+      	</div>
+	  	<div class="row">
+		  	<div class="col-xs-12">
+		  		<h1 class="center-text">User Guides</h1>
+		  		<!-- User Guide Panels -->
+		  		{% for version, guides in user_guides.items %}
+			  		<div class="panel panel-default">
+					  <div class="panel-heading">Version {{version}}</div>
+					  <!-- Table -->
+					  <table class="table table-responsive">
+					  	<tbody>
+					  		{% for g in guides %}
+					  			<tr>
+					  				<td class="col-xs-4">
+					  					{{ g.title }}
+					  				</td>
+					  				<td class="col-xs-4">
+					  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+					  				</td>
+					  				<td class="col-xs-4">
+					  					<a href="{{ g.pdf_url }}">
+					  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
+					  					</a>
+					  				</td>
+					  			</tr>
+					  		{% endfor %}
+					  	</tbody>
+					  </table>
+					</div>
+		  		{% endfor %}
+		  		{% for g in general_resources %}
+		  			<div class="panel panel-default">
+					  <div class="panel-heading">General Resources</div>
+					  <!-- Table -->
+					  <table class="table table-responsive">
+					  	<tbody>
+				  			<tr>
+				  				<td class="col-xs-4">
+				  					{{ g.title }}
+				  				</td>
+				  				<td class="col-xs-4">
+				  					<a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+				  				</td>
+				  				<td class="col-xs-4">
+				  					<a href="{{ g.pdf_url }}">
+				  						<span class="glyphicon glyphicon-file"></span>&nbsp;PDF
+				  					</a>
+				  				</td>
+				  			</tr>
+					  	</tbody>
+					  </table>
+					</div>
+		  		{% endfor %}
+		  	</div>
 	  	</div>
-	  </div>
 	</div>
 </div>
 

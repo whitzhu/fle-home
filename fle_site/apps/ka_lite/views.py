@@ -1,6 +1,7 @@
-from itertools import groupby
 from annoying.decorators import render_to
+from collections import OrderedDict
 from fack.models import Question, Topic
+from itertools import groupby
 
 from django.shortcuts import get_object_or_404
 
@@ -17,21 +18,33 @@ def faq(request):
 	return {"faq": context}
 
 @render_to("ka_lite/user-resources.html")
-def user_resources(request):
+def user_guides(request):
 	"""Render list of user resources"""
-	resources = UserResource.objects.all()
-	context = []
+	general_resources = UserResource.objects.filter(version='')
+	versioned_resources = UserResource.objects.exclude(version__exact='')
+	user_guides = {}
+	
 	# Group by versions
-	for version, group in groupby(resources, lambda x: x.version):
+	for version, group in groupby(versioned_resources, lambda x: x.version):
 		grouped_items = [g for g in group]
-		context.append({
-			version: grouped_items,
-		})
+		user_guides[version] = grouped_items
 
-	return {"resources": context}
+	# Order versions
+	ordered_versions = OrderedDict(sorted(user_guides.items(), reverse=True))
+
+	return {
+		"general_resources": general_resources,
+		"user_guides": ordered_versions,
+	}
 
 @render_to("ka_lite/user-resource-detail.html")
-def user_resource_detail(request, slug):
+def user_guide_detail(request, slug):
 	"""Render detail of user resource"""
 	obj = get_object_or_404(UserResource.objects.filter(slug=slug))
-	return {"resource": obj}
+	related_resources = UserResource.objects.filter(version=obj.version)
+	general_resources = UserResource.objects.filter(version='')
+	return {
+		"resource": obj,
+		"related_resources": related_resources,
+		"general_resources": general_resources
+	}
