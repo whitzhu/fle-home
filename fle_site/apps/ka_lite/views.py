@@ -1,5 +1,13 @@
 from annoying.decorators import render_to
+from collections import OrderedDict
+from distutils.version import StrictVersion
 from fack.models import Question, Topic
+from itertools import groupby
+
+from django.db.models import Max
+from django.shortcuts import get_object_or_404
+
+from .models import UserResource
 
 @render_to("ka_lite/faq.html")
 def faq(request):
@@ -10,3 +18,39 @@ def faq(request):
 		context[t] = Question.objects.filter(topic=t).active()
 
 	return {"faq": context}
+
+@render_to("ka_lite/user-guides.html")
+def user_guides(request):
+	"""Render list of user resources"""
+	general_resources = UserResource.objects.filter(version='')
+	versioned_resources = UserResource.objects.exclude(version__exact='')
+	user_guides = {}
+	
+	# Group by versions
+	for version, group in groupby(versioned_resources, lambda x: x.version):
+		grouped_items = [g for g in group]
+		user_guides[version] = grouped_items
+
+	# Order versions
+	ordered_versions = [{version: group} for version, group in sorted(user_guides.items(), reverse=True, key=lambda k: StrictVersion(k[0]))]
+
+	return {
+		"general_resources": general_resources,
+		"user_guides": ordered_versions,
+	}
+
+@render_to("ka_lite/user-guide-detail.html")
+def user_guide_detail(request, slug):
+	"""Render detail of user resource"""
+	if slug=="latest":
+		latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+		obj = get_object_or_404(UserResource.objects.filter(version=latest_version, category='install_guide'))
+	else:
+		obj = get_object_or_404(UserResource.objects.filter(slug=slug))
+	related_resources = UserResource.objects.filter(version=obj.version)
+	general_resources = UserResource.objects.filter(version='')
+	return {
+		"resource": obj,
+		"related_resources": related_resources,
+		"general_resources": general_resources
+	}
