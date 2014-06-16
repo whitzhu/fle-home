@@ -5,9 +5,10 @@
 {% block title %}{{ resource.title }}{% endblock title %}
 
 {% block bodycontents %}
-<div class="container-fluid white">
+<div class="container-fluid">
 	<div class="container">
 	  <div class="row">
+      {# Big nav #}
 	  	<div class="col-md-3 hidden-sm hidden-xs" id="user-guide-nav">
   			<div class="panel panel-default">
   				<div class="panel-heading">
@@ -27,20 +28,36 @@
   								</a>
   							</li>
   						{% endfor %}
-  						<li>
-  							<h3>General</h3>
-  						</li>
-  						{% for resource in general_resources %}
-  							<li>
-  								<a href="{% url 'user_guide_detail' resource.slug %}">
-  									{{ resource.title }}
-  								</a>
-  							</li>
-  						{% endfor %}
+              {% if general_resources %}
+                <li>
+                  <h3>General</h3>
+                </li>
+                {% for resource in general_resources %}
+                  <li>
+                    <a href="{% url 'user_guide_detail' resource.slug %}">
+                      {{ resource.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
   					</ul>
   				</div>
   			</div>
 	  	</div>
+      {# Small nav #}
+      <div class="col-sm-12 col-xs-12 hidden-md hidden-lg">
+        <ol class="breadcrumb user-guide-nav">
+          <li>
+            <a href="{% url 'ka_lite' %}">KA Lite</a>
+          </li>
+          <li>
+            <a href="{% url 'user_guides' %}">
+              User Guides
+            </a>
+          </li>
+          <li class="active">{{resource.title}} ({{resource.version}})</li>
+        </ol>
+      </div>
 	  	<div class="col-md-9 col-sm-12 col-xs-12" id="embedded-doc-container">
 	  		<img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
 	  		<iframe id="embedded-doc" src="{{resource.doc_url}}?embedded=true"></iframe>
