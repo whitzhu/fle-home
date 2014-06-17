@@ -15,6 +15,15 @@
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="center-text">User Guides</h1>
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb user-guide-nav">
+                    <li>
+                        <a href="{% url 'ka_lite' %}">KA Lite</a>
+                    </li>
+                    <li class="active">
+                        User Guides
+                    </li>
+                </ol>
                 <!-- User Guide Panels -->
                 {% for version_resources in user_guides %}
                     {% for version, guides in version_resources.items %}
