@@ -4,12 +4,7 @@
 <div class="container-wide">
     <div class="container" id="blog-container">
     <div class="row">
-        <div class="col-sm-8 col-xs-12 pull-right">
-            {% block articles-content %}{% endblock %}
-        </div>
-        <div class="col-sm-4 col-xs-12 pull-left" id="sidebar">
-            {% block sidebar %}{% endblock %}
-        </div>
+        {% block content %}{% endblock content %}
     </div>
     </div>
 </div>

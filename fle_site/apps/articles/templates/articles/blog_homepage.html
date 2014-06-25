@@ -60,7 +60,26 @@
     </script>
 {% endblock extrahead %}
 
-{% block sidebar %}
+{% block content %}
+<div class="col-sm-8 col-xs-12 pull-right">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="title">{% trans 'All Posts' %}</h2>
+        </div>
+
+        <ul id="post-list" class="list-group">
+            {% for post in posts %}
+                <li id="post-{{post.slug}}" data-id="{% for tag in post.tags.all %}{{ tag.slug }} {% endfor %}" class="list-group-item">
+                    <a href="{{ post.get_absolute_url }}"><h3>{{post.title}}</h3></a>
+                    <p>{{post.description}}</p>
+                    <p>{{post.publish_date}}</p>
+                    <p>{{post.tags.all|join:", "}}</p>    
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="col-sm-4 col-xs-12 pull-left" id="sidebar">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>Filter by tag</h2>
@@ -76,23 +95,5 @@
             <p>Showing <span id="posts-showing">0</span> of <span id="total-posts">0</span> posts.</p>
         </div>
     </div>
-{% endblock sidebar %}
-
-{% block articles-content %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h2 class="title">{% trans 'All Posts' %}</h2>
-    </div>
-
-    <ul id="post-list" class="list-group">
-        {% for post in posts %}
-            <li id="post-{{post.slug}}" data-id="{% for tag in post.tags.all %}{{ tag.slug }} {% endfor %}" class="list-group-item">
-                <h3>{{post.title}}</h3>
-                <p>{{post.description}}</p>
-                <p>{{post.publish_date}}</p>
-                <p>{{post.tags.all|join:", "}}</p>    
-            </li>
-        {% endfor %}
-    </ul>
 </div>
-{% endblock %}
+{% endblock content %}
