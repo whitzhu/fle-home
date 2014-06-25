@@ -15,58 +15,20 @@ ARTICLE_PAGINATION = getattr(settings, 'ARTICLE_PAGINATION', 20)
 
 log = logging.getLogger('articles.views')
 
-def display_blog_page(request, tag=None, username=None, year=None, month=None, page=1):
-    """
-    Handles all of the magic behind the pages that list articles in any way.
-    Yes, it's dirty to have so many URLs go to one view, but I'd rather do that
-    than duplicate a bunch of code.  I'll probably revisit this in the future.
-    """
+def blog_filter_page(request, template='articles/blog_homepage.html'):
+    """Display all blog posts, and filters"""
+    blog_posts = Article.objects.live().order_by('-publish_date')
+    tags = []
+    for post in blog_posts:
+        tags += post.tags.all()
+    tags = set(tags)
 
-    context = {'request': request}
-    if tag:
-        try:
-            tag = get_object_or_404(Tag, slug__iexact=tag)
-        except Http404:
-            # for backwards-compatibility
-            tag = get_object_or_404(Tag, name__iexact=tag)
+    variables = {
+        'posts': blog_posts,
+        'tags': tags,
+    }
 
-        articles = tag.article_set.live(user=request.user).select_related()
-        template = 'articles/display_tag.html'
-        context['tag'] = tag
-
-    elif username:
-        # listing articles by a particular author
-        user = get_object_or_404(User, username=username)
-        articles = user.article_set.live(user=request.user)
-        template = 'articles/by_author.html'
-        context['author'] = user
-
-    elif year and month:
-        # listing articles in a given month and year
-        year = int(year)
-        month = int(month)
-        articles = Article.objects.live(user=request.user).select_related().filter(publish_date__year=year, publish_date__month=month)
-        template = 'articles/in_month.html'
-        context['month'] = datetime(year, month, 1)
-
-    else:
-        # listing articles with no particular filtering
-        articles = Article.objects.live(user=request.user)
-        template = 'articles/article_list.html'
-
-    # paginate the articles
-    paginator = Paginator(articles, ARTICLE_PAGINATION,
-                          orphans=int(ARTICLE_PAGINATION / 4))
-    try:
-        page = paginator.page(page)
-    except EmptyPage:
-        raise Http404
-
-    context.update({'paginator': paginator,
-                    'page_obj': page})
-    variables = RequestContext(request, context)
     response = render(request, template, variables)
-
     return response
 
 def display_article(request, year=None, slug=None, template='articles/article_detail.html'):
@@ -90,19 +52,6 @@ def display_article(request, year=None, slug=None, template='articles/article_de
     return response
 
 
-def redirect_to_latest_post(request):
-    try:
-        article = Article.objects.latest('publish_date')
-    except Article.DoesNotExist:
-        raise Http404
-    return HttpResponsePermanentRedirect(article.get_absolute_url())
-
-
-def redirect_to_article(request, year, month, day, slug):
-    # this is a little snippet to handle URLs that are formatted the old way.
-    article = get_object_or_404(Article, publish_date__year=year, slug=slug)
-    return HttpResponsePermanentRedirect(article.get_absolute_url())
-
 def ajax_tag_autocomplete(request):
     """Offers a list of existing tags that match the specified query"""
 
@@ -121,4 +70,73 @@ def ajax_tag_autocomplete(request):
         return response
 
     return HttpResponse()
+
+
+# def display_blog_page(request, tag=None, username=None, year=None, month=None, page=1):
+#     """
+#     Handles all of the magic behind the pages that list articles in any way.
+#     Yes, it's dirty to have so many URLs go to one view, but I'd rather do that
+#     than duplicate a bunch of code.  I'll probably revisit this in the future.
+#     """
+
+#     context = {'request': request}
+#     if tag:
+#         try:
+#             tag = get_object_or_404(Tag, slug__iexact=tag)
+#         except Http404:
+#             # for backwards-compatibility
+#             tag = get_object_or_404(Tag, name__iexact=tag)
+
+#         articles = tag.article_set.live(user=request.user).select_related()
+#         template = 'articles/display_tag.html'
+#         context['tag'] = tag
+
+#     elif username:
+#         # listing articles by a particular author
+#         user = get_object_or_404(User, username=username)
+#         articles = user.article_set.live(user=request.user)
+#         template = 'articles/by_author.html'
+#         context['author'] = user
+
+#     elif year and month:
+#         # listing articles in a given month and year
+#         year = int(year)
+#         month = int(month)
+#         articles = Article.objects.live(user=request.user).select_related().filter(publish_date__year=year, publish_date__month=month)
+#         template = 'articles/in_month.html'
+#         context['month'] = datetime(year, month, 1)
+
+#     else:
+#         # listing articles with no particular filtering
+#         articles = Article.objects.live(user=request.user)
+#         template = 'articles/article_list.html'
+
+#     # paginate the articles
+#     paginator = Paginator(articles, ARTICLE_PAGINATION,
+#                           orphans=int(ARTICLE_PAGINATION / 4))
+#     try:
+#         page = paginator.page(page)
+#     except EmptyPage:
+#         raise Http404
+
+#     context.update({'paginator': paginator,
+#                     'page_obj': page})
+#     variables = RequestContext(request, context)
+#     response = render(request, template, variables)
+
+#     return response
+
+
+# def redirect_to_latest_post(request):
+#     try:
+#         article = Article.objects.latest('publish_date')
+#     except Article.DoesNotExist:
+#         raise Http404
+#     return HttpResponsePermanentRedirect(article.get_absolute_url())
+
+
+# def redirect_to_article(request, year, month, day, slug):
+#     # this is a little snippet to handle URLs that are formatted the old way.
+#     article = get_object_or_404(Article, publish_date__year=year, slug=slug)
+#     return HttpResponsePermanentRedirect(article.get_absolute_url())
 

@@ -1,0 +1,78 @@
+{% extends 'articles/articles_base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title %}{% trans 'Posts' %}{% endblock %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script>
+        $(function() {
+            // Handle post filtering 
+            $('#tag-filters a.list-group-item').click(function() {
+                $(this).toggleClass("active");
+                // get active filters
+                var activeTags = $('#tag-filters a.list-group-item.active').map(function(){
+                    return $(this).attr("data-id");
+                });
+                // Show & hide the posts that match the tag sets
+                $('li[id^="post-"').each(function() {
+                    // Create list of the post's tags
+                    var postTags = $(this).attr("data-id").split(/[ ]+/);
+                    // show the post if all of it's tags match the activeTags
+                    if (compareLists(activeTags, postTags)) {
+                        $(this).show()
+                    } else {
+                        $(this).hide()
+                    }
+                });
+            });
+        });
+
+        function compareLists(activeTags, postTags) {
+            // Return true if all active tags are also in postTags, otherwise return false
+            truthFlag = true;
+            for (var i=0; i < activeTags.length; i++) {
+                if (postTags.indexOf(activeTags[i]) === -1){
+                    truthFlag = false;
+                    break;
+                }
+            }
+            return truthFlag;
+        }
+    </script>
+{% endblock extrahead %}
+
+{% block sidebar %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Filter by Tag</h2>
+        </div>
+        <div id="tag-filters" class="list-group">
+            {% for tag in tags %}
+                <a href="#" data-id="{{tag.slug}}" class="list-group-item">
+                    {{ tag.name }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock sidebar %}
+
+{% block articles-content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="title">{% trans 'All Posts' %}</h2>
+    </div>
+
+    <ul id="post-list" class="list-group">
+        {% for post in posts %}
+            <li id="post-{{post.slug}}" data-id="{% for tag in post.tags.all %}{{ tag.slug }} {% endfor %}" class="list-group-item">
+                <h3>{{post.title}}</h3>
+                <p>{{post.description}}</p>
+                <p>{{post.publish_date}}</p>
+                <p>{{post.tags.all|join:", "}}</p>    
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
