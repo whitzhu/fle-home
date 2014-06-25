@@ -8,26 +8,43 @@
     {{ block.super }}
     <script>
         $(function() {
+            // onload, update # of total posts
+            var startingPosts = $('li[id^="post-"').length; 
+            updatePostNumbers(startingPosts, startingPosts);
+
+
             // Handle post filtering 
-            $('#tag-filters a.list-group-item').click(function() {
-                $(this).toggleClass("active");
+            $('#tag-filters span.tag-cloud-item a').click(function() {
+                $(this).parent('.tag-cloud-item').toggleClass("active");
                 // get active filters
-                var activeTags = $('#tag-filters a.list-group-item.active').map(function(){
-                    return $(this).attr("data-id");
-                });
+                var activeTags = $('#tag-filters span.tag-cloud-item.active a')
+                    .map(function(){
+                        return $(this).attr("data-id");
+                    });
                 // Show & hide the posts that match the tag sets
-                $('li[id^="post-"').each(function() {
+                var posts = $('li[id^="post-"'); 
+                var totalPosts = posts.length
+                var postsShowing = 0
+                posts.each(function() {
                     // Create list of the post's tags
                     var postTags = $(this).attr("data-id").split(/[ ]+/);
                     // show the post if all of it's tags match the activeTags
                     if (compareLists(activeTags, postTags)) {
                         $(this).show()
+                        postsShowing = postsShowing + 1;
                     } else {
                         $(this).hide()
                     }
                 });
+                // Update the HTML to show how many posts are showing 
+                updatePostNumbers(postsShowing, totalPosts);
             });
         });
+
+        function updatePostNumbers(postsShowing, totalPosts) {
+            $('#posts-showing').html(postsShowing);
+            $('#total-posts').html(totalPosts);
+        }
 
         function compareLists(activeTags, postTags) {
             // Return true if all active tags are also in postTags, otherwise return false
@@ -46,14 +63,17 @@
 {% block sidebar %}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2>Filter by Tag</h2>
+            <h2>Filter by tag</h2>
         </div>
-        <div id="tag-filters" class="list-group">
+        <div id="tag-filters" class="panel-body">
             {% for tag in tags %}
-                <a href="#" data-id="{{tag.slug}}" class="list-group-item">
+                <span class="tag-cloud-item"><a href="#" data-id="{{tag.slug}}">
                     {{ tag.name }}
-                </a>
+                </a></span>
             {% endfor %}
+        </div>
+        <div id="post-numbers">
+            <p>Showing <span id="posts-showing">0</span> of <span id="total-posts">0</span> posts.</p>
         </div>
     </div>
 {% endblock sidebar %}
