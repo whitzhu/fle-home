@@ -1,3 +1,5 @@
+from collections import OrderedDict
+
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.http import Http404, HttpResponseRedirect
@@ -13,9 +15,30 @@ def blog_filter_page(request, template='articles/blog_homepage.html'):
         tags += post.tags.all()
     tags = set(tags)
 
+    # Create a dict of posts by date for filtering by date 
+    sorted_posts = {}
+    for post in blog_posts:
+        year = post.publish_date.year
+        month = post.publish_date.strftime("%B")
+        if not sorted_posts.get(year):
+            sorted_posts[year] = {}
+        if not sorted_posts[year].get(month):
+            sorted_posts[year][month] = []
+
+        sorted_posts[year][month].append(post)
+
+    # Now sort each post list 
+    for year, months in sorted_posts.items():
+        for month in months:
+            sorted_posts[year][month] = sorted(sorted_posts[year][month], key=lambda x: x.publish_date, reverse=True)
+
+    # Finally sort by year 
+    posts_by_date = OrderedDict(sorted(sorted_posts.items(), reverse=True))
+
     variables = {
         'posts': blog_posts,
         'tags': tags,
+        'posts_by_date': posts_by_date,
     }
 
     response = render(request, template, variables)

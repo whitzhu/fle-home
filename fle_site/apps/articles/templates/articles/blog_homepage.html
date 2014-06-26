@@ -15,7 +15,7 @@
             // Handle adding tags to filter 
             $('#tag-filters button').click(function() {
                 // Highlight the tag cloud and any other posts
-                $(this).toggleClass("active").hide();
+                $(this).toggleClass("active").hide("fast");
                 $('button[data-id="post-tag-' + $(this).attr("data-id") + '"]').removeClass("btn-default").addClass("btn-primary");
                 filterPosts();
             });
@@ -27,9 +27,9 @@
                 function() {
                     var tagSlug = $(this).attr('data-id');
                     var filterElement = $('#tag-filters button[data-id="' + tagSlug + '"]');
-                    filterElement.toggleClass("active").show();
+                    filterElement.toggleClass("active").show("fast");
                     $('button[data-id="post-tag-' + tagSlug + '"]').removeClass("btn-primary").addClass("btn-default");
-                    $(this).hide();
+                    $(this).hide("fast");
                     filterPosts();
                 }
             );
@@ -54,10 +54,10 @@
                 var postTags = $(this).attr("data-id").split(/[ ]+/);
                 // show the post if all of it's tags match the activeTagSlugs
                 if (compareLists(activeTagSlugs, postTags)) {
-                    $(this).show()
+                    $(this).show("fast")
                     postsShowing = postsShowing + 1;
                 } else {
-                    $(this).hide()
+                    $(this).hide("fast")
                 }
             });
             // Update HTML to show we are filtering based on tags
@@ -131,6 +131,24 @@
             <p>
                 Showing <span id="posts-showing">0</span> of <span id="total-posts">0</span> posts.
             </p>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>By date</h2>
+        </div>
+        <div id="date-filters" class="panel-body">
+            {% for year, months in posts_by_date.items %}
+                <h3>{{year}}</h3>
+                {% for month, posts in months.items %}
+                    <h4>{{month}}</h4>
+                    <ul>
+                        {% for post in posts %}
+                            <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            {% endfor %}
         </div>
     </div>
 </div>
