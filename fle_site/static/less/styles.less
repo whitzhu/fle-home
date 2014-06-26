@@ -294,13 +294,7 @@ a.icon:before {
 // --------------------------------------------------
 
 #blog-container {
-    a {
-        font-size: @small-size;
-    }
     padding: 30px;
-    #sidebar {
-        top: 25px;
-    }
     #main-post-panel{
         margin-top: 25px;
     }
@@ -311,18 +305,22 @@ a.icon:before {
     }
 }
 
-.tag-cloud-item {
-    float: left;
+.tag-bubble {
     margin: 3px;
-    padding: 3px;
-    border: 1px solid @gray;
-    border-radius: 5px;
-    background-color: @light-gray;
-    &:hover, &.active {
-        background-color: @gray;
-    }
-    a {
-        text-decoration: none;
+    padding: 2px 10px;
+}
+
+.remove-tag-container {
+    position: relative;
+    display: inline-block;
+    .remove-filter {
+        position: absolute;
+        font-size: 9px;
+        right: 5%;
+        top: 0%;
+        a {
+            text-decoration: none;
+        }
     }
 }
 

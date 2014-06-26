@@ -12,45 +12,79 @@
             var startingPosts = $('li[id^="post-"').length; 
             updatePostNumbers(startingPosts, startingPosts);
 
-
-            // Handle post filtering 
-            $('#tag-filters span.tag-cloud-item a').click(function() {
-                $(this).parent('.tag-cloud-item').toggleClass("active");
-                // get active filters
-                var activeTags = $('#tag-filters span.tag-cloud-item.active a')
-                    .map(function(){
-                        return $(this).attr("data-id");
-                    });
-                // Show & hide the posts that match the tag sets
-                var posts = $('li[id^="post-"'); 
-                var totalPosts = posts.length
-                var postsShowing = 0
-                posts.each(function() {
-                    // Create list of the post's tags
-                    var postTags = $(this).attr("data-id").split(/[ ]+/);
-                    // show the post if all of it's tags match the activeTags
-                    if (compareLists(activeTags, postTags)) {
-                        $(this).show()
-                        postsShowing = postsShowing + 1;
-                    } else {
-                        $(this).hide()
-                    }
-                });
-                // Update the HTML to show how many posts are showing 
-                updatePostNumbers(postsShowing, totalPosts);
+            // Handle adding tags to filter 
+            $('#tag-filters button').click(function() {
+                // Highlight the tag cloud and any other posts
+                $(this).toggleClass("active").hide();
+                $('button[data-id="post-tag-' + $(this).attr("data-id") + '"]').removeClass("btn-default").addClass("btn-primary");
+                filterPosts();
             });
+
+            // Handle removal of tags 
+            $(document).on(
+                'click', 
+                '#filtering-header button.remove-tag-container', 
+                function() {
+                    var tagSlug = $(this).attr('data-id');
+                    var filterElement = $('#tag-filters button[data-id="' + tagSlug + '"]');
+                    filterElement.toggleClass("active").show();
+                    $('button[data-id="post-tag-' + tagSlug + '"]').removeClass("btn-primary").addClass("btn-default");
+                    $(this).hide();
+                    filterPosts();
+                }
+            );
         });
+
+        function filterPosts() {
+            // filter posts once we update active filters
+            // get active tag slugs & names 
+            var activeTagSlugs = []
+            var activeTagNames = []
+            $('#tag-filters button.active').each(function(){
+                activeTagSlugs.push($(this).attr("data-id"));
+                activeTagNames.push($(this).text());
+            });
+
+            // Show & hide the posts that match the tag sets
+            var posts = $('li[id^="post-"'); 
+            var totalPosts = posts.length
+            var postsShowing = 0
+            posts.each(function() {
+                // Create list of the post's tags
+                var postTags = $(this).attr("data-id").split(/[ ]+/);
+                // show the post if all of it's tags match the activeTagSlugs
+                if (compareLists(activeTagSlugs, postTags)) {
+                    $(this).show()
+                    postsShowing = postsShowing + 1;
+                } else {
+                    $(this).hide()
+                }
+            });
+            // Update HTML to show we are filtering based on tags
+            if (activeTagSlugs.length > 0) {
+                var filterTags = "<h2>Tags:</h2> ";
+                for (var i = 0; i < activeTagSlugs.length; i++) {
+                    filterTags += "<button class='btn btn-md btn-default tag-bubble remove-tag-container' data-id='" + activeTagSlugs[i] + "'>" + activeTagNames[i] + "<a href='#' class='remove-filter'>x</a></button>"
+                };
+                $('#filtering-header').html(filterTags);    
+            } else {
+                $('#filtering-header').html("<h2>All Posts</h2>");    
+            }
+
+            // finally update post numbers 
+            updatePostNumbers(postsShowing, totalPosts);
+        }
 
         function updatePostNumbers(postsShowing, totalPosts) {
             $('#posts-showing').html(postsShowing);
             $('#total-posts').html(totalPosts);
         }
 
-        function compareLists(activeTags, postTags) {
+        function compareLists(activeTagSlugs, postTags) {
             // Return true if all active tags are also in postTags, otherwise return false
             truthFlag = true;
-            for (var i=0; i < activeTags.length; i++) {
-                if (postTags.indexOf(activeTags[i]) === -1){
+            for (var i=0; i < activeTagSlugs.length; i++) {
+                if (postTags.indexOf(activeTagSlugs[i]) === -1){
                     truthFlag = false;
                     break;
                 }
@@ -64,16 +98,18 @@
 <div class="col-sm-8 col-xs-12 pull-right">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h2 class="title">{% trans 'All Posts' %}</h2>
+            <div id="filtering-header"><h2>All Posts</h2></div>
         </div>
 
         <ul id="post-list" class="list-group">
             {% for post in posts %}
                 <li id="post-{{post.slug}}" data-id="{% for tag in post.tags.all %}{{ tag.slug }} {% endfor %}" class="list-group-item">
-                    <a href="{{ post.get_absolute_url }}"><h3>{{post.title}}</h3></a>
-                    <p>{{post.description}}</p>
-                    <p>{{post.publish_date}}</p>
-                    <p>{{post.tags.all|join:", "}}</p>    
+                    <h3><a href="{{ post.get_absolute_url }}">{{post.title}}</a></br><small>{{post.publish_date|date:"F j, Y" }}</small></h3>
+                    <p>{{post.description|safe}}</p>
+                    <p>{% for tag in post.tags.all %}
+                        <button class="btn btn-md btn-default tag-bubble pull-left" disabled data-id="post-tag-{{tag.slug}}">{{tag.name}}</button> 
+                    {% endfor %}</p>   
+                    <div class="clearfix"></div>
                 </li>
             {% endfor %}
         </ul>
@@ -86,13 +122,15 @@
         </div>
         <div id="tag-filters" class="panel-body">
             {% for tag in tags %}
-                <span class="tag-cloud-item"><a href="#" data-id="{{tag.slug}}">
+                <button class="btn btn-md btn-default tag-bubble pull-left" data-id="{{tag.slug}}">
                     {{ tag.name }}
-                </a></span>
+                </button>
             {% endfor %}
         </div>
         <div id="post-numbers">
-            <p>Showing <span id="posts-showing">0</span> of <span id="total-posts">0</span> posts.</p>
+            <p>
+                Showing <span id="posts-showing">0</span> of <span id="total-posts">0</span> posts.
+            </p>
         </div>
     </div>
 </div>
