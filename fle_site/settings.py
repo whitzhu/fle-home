@@ -73,7 +73,7 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL      = getattr(local_settings, "MEDIA_URL", "/media/")
-MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.join(PROJECT_PATH, "..", "media"))) + "/"
+MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.join(PROJECT_PATH, "media"))) + "/"
 STATIC_URL     = getattr(local_settings, "STATIC_URL", "/static/")
 STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT",os.path.join(PROJECT_PATH, "..", "_static_cache"))) + "/"
 
