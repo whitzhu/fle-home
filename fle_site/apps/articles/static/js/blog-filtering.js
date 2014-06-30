@@ -28,7 +28,7 @@ $(function() {
     );
 
     // Clear all  
-    $(document).on('click', '#clear-all-filters', resetFilters); 
+    $(document).on('click', '.clear-all-filters', resetFilters(ev)); 
 
     // Expand & contract months
     $('.month-expand').click(function(ev) {
@@ -69,10 +69,12 @@ function filterPosts() {
         for (var i = 0; i < activeFilterSlugs.length; i++) {
             filterTags += "<button class='btn btn-md btn-default tag-bubble remove-tag-container' data-id='" + activeFilterSlugs[i] + "'>" + activeFilterNames[i] + "<a href='#' class='remove-filter'>x</a></button>"
         };
-        filterTags += "<a href='' id='clear-all-filters'>Clear All</a>"
+        filterTags += "<a href='' clear='clear-all-filters'>Clear All</a>"
+        $('#post-numbers a.clear-all-filters').show('fast');
         $('#filtering-header').html(filterTags);    
     } else {
-        $('#filtering-header').html("<h2>All Posts</h2>");    
+        $('#filtering-header').html("<h2>All Posts</h2>");
+        $('#post-numbers a.clear-all-filters').hide('fast');    
     }
 
     // update post numbers & disable unusable filters
@@ -141,7 +143,8 @@ function smartFilterDisabling(){
     };
 }
 
-function resetFilters() {
+function resetFilters(ev) {
+    ev.preventDefault();
     // Show all posts & reset highlights
     var posts = $('li[id^="post-"'); 
     posts.each(function(){
