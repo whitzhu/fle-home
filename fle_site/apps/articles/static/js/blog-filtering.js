@@ -29,6 +29,14 @@ $(function() {
 
     // Clear all  
     $(document).on('click', '#clear-all-filters', resetFilters); 
+
+    // Expand & contract months
+    $('.month-expand').click(function(ev) {
+        ev.preventDefault();
+        $(this).toggleClass('dropup');
+        var postList = $(this).next('ul');
+        postList.slideToggle("fast");
+    }); 
 });
 
 function filterPosts() {

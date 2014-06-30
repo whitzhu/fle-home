@@ -56,12 +56,14 @@
             {% for year, months in posts_by_date.items %}
                 <h3>{{year}}</h3>
                 {% for month, posts in months.items %}
-                    <h4>{{month}}</h4>
-                    <ul>
-                        {% for post in posts %}
-                            <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
-                        {% endfor %}
-                    </ul>
+                    <div id="{{month | lower}}">            
+                        <a href="" class="month-expand"><h4>{{month}} <span class="caret"></span></h4></a>
+                        <ul class="month-posts">
+                            {% for post in posts %}
+                                <li><a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endfor %}
             {% endfor %}
         </div>
