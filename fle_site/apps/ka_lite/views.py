@@ -1,13 +1,16 @@
+import json
+
 from annoying.decorators import render_to
 from collections import OrderedDict
 from distutils.version import StrictVersion
 from fack.models import Question, Topic
 from itertools import groupby
 
+from django.core import serializers 
 from django.db.models import Max
 from django.shortcuts import get_object_or_404
 
-from .models import UserResource
+from .models import UserResource, DeploymentStory
 
 @render_to("ka_lite/faq.html")
 def faq(request):
@@ -18,6 +21,14 @@ def faq(request):
 		context[t] = Question.objects.filter(topic=t).active()
 
 	return {"faq": context}
+
+
+@render_to("ka_lite/map.html")
+def map(request):
+	"""Render map of KA Lite installs"""
+	deployments = serializers.serialize('json', DeploymentStory.objects.all())
+	return {"deployments": deployments}
+
 
 @render_to("ka_lite/user-guides.html")
 def user_guides(request):

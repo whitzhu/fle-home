@@ -25,3 +25,10 @@ class UserResource(models.Model):
             raise ValidationError("Items in the General category must have a blank version number.")
         elif self.category != "general" and self.version == '':
             raise ValidationError('Version number cannot be blank if resource is a user manual or install guide.')
+
+
+class DeploymentStory(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    latitude = models.FloatField(help_text="In degrees, South is negative!")
+    longitude = models.FloatField(help_text="In degrees, West is negative!")
