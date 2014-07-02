@@ -30,7 +30,6 @@ class UserResource(models.Model):
 
 class Gallery(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the image.")
     description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.")    
 
     def __str__(self):
@@ -38,7 +37,6 @@ class Gallery(models.Model):
 
 class Picture(models.Model):
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the image.")
     caption = models.CharField(max_length=140, help_text="140 characters or less. Tweet tweet.")
     picture = models.ImageField(upload_to="deployment_pics")
     gallery = models.ForeignKey(Gallery, related_name='photos')

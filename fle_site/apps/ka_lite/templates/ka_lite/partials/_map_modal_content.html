@@ -62,10 +62,32 @@
               </li>
               {% endif %}
               {% if d.photo_gallery %}
-                {% for p in d.photo_gallery.photos.all %}
-                  <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
-                  <p>Caption: {{ p.caption }}</p>
-                {% endfor %}
+                <div id="carousel-{{ d.slug }}" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    {% for counter in d.photo_gallery.photos.all %}
+                      <li data-target="#carousel-{{ d.slug }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                    {% endfor %}
+                  </ol>
+                  <!-- Wrapper for slides --> 
+                  <div class="carousel-inner">
+                    {% for p in d.photo_gallery.photos.all %}
+                      <div class="item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
+                        <div class="carousel-caption">
+                          Caption: {{ p.caption }}    
+                        </div>  
+                      </div>
+                    {% endfor %}
+                  </div>
+                  <!-- Controls --> 
+                  <a class="left carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a class="right carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                </div>
               {% endif %}
             </ul>
         </div>

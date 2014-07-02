@@ -47,10 +47,10 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 	)	
 
 class GalleryAdmin(admin.ModelAdmin):
-	list_display = ('title', 'slug', 'description')
+	list_display = ('title', 'description')
 
 class PictureAdmin(admin.ModelAdmin):
-	list_display = ('title', 'slug', 'gallery')
+	list_display = ('title', 'gallery')
 
 admin.site.register(UserResource, UserResourceAdmin)
 admin.site.register(DeploymentStory, DeploymentStoryAdmin)
