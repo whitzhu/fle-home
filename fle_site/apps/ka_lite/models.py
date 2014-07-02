@@ -65,7 +65,19 @@ class DeploymentStory(models.Model):
         cleaned_data = super(DeploymentStory, self).clean()
         if (self.organization_city or self.organization_country) and not (self.organization_city and self.organization_country):
             raise ValidationError("If you supply an organization city, you must supply the organization_country, and vice versa")
+        # Enforce an org name if URL is provided (but not vice versa b/c some orgs may not have websites)
+        if self.organization_url and not self.organization_name:
+            raise ValidationError("You must provide an organization name if the organization has a website!")
         return cleaned_data
+
+    def linked_org_name(self):
+        """Return HTML anchored org name if URL exists, otherwise just org name"""
+        if self.organization_url:
+            return "<a href='%(url)s'>%(org_name)s</a>" % {'url': self.organization_url, 'org_name': self.organization_name}
+        elif self.organization_name:
+            return self.organization_name
+        else:
+            return False
 
     def age_of_deployment(self):
         """Return total age of deployment by subtracting current date from start date"""

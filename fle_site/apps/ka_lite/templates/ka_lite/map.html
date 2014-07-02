@@ -24,7 +24,7 @@
                                 new google.maps.LatLng(-60, 100));
                                 map.fitBounds(defaultBounds);
 
-            // Add markers 
+            // Add deployment markers 
             var deployments = {{ deployments|jsonify }};
             for (var i = 0; i < deployments.length; i++) {
                 var fields = deployments[i].fields;

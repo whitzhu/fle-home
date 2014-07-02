@@ -7,16 +7,61 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - {{ d.lat_long }}</small></h4>
+        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - {{ d.lat_long }} - Age: {{ d.age_of_deployment }}</small></h4>
       </div>
       <div class="modal-body">
         <div class="row">
             <p>
-              Deployment Age: {{ d.age_of_deployment }}
-            </p>
-            <p>
               {{ d.description }}
             </p>
+            <ul>
+              {% if d.linked_org_name %}
+              <li>
+                Deploying Organization: {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }} 
+              {% endif %}
+              </li>
+              {% endif %}
+              {% if d.num_students %}
+              <li>
+                Number of Students: {{ d.num_students }} 
+              </li>
+              {% endif %}
+              {% if d.student_age_range %}
+              <li>
+                Age range: {{ d.student_age_range }} 
+              </li>
+              {% endif %}
+              {% if d.num_kalite_servers %}
+              <li>
+                # of KA Lite servers: {{ d.num_kalite_servers }} 
+              </li>
+              {% endif %}
+              {% if d.server_os %}
+              <li>
+                Operating System(s): {{ d.server_os }} 
+              </li>
+              {% endif %}
+              {% if d.hardware_setup %}
+              <li>
+                Hardware Setup: {{ d.hardware_setup }} 
+              </li>
+              {% endif %}
+              {% if d.deployment_setting %}
+              <li>
+                Deployment Setting: {{ d.deployment_setting }} 
+              </li>
+              {% endif %}
+              {% if d.pedagogical_model %}
+              <li>
+                Pedagogical Model: {{ d.pedagogical_model }} 
+              </li>
+              {% endif %}
+              {% if d.guest_blog_post %}
+              <li>
+                <a href="{{ d.guest_blog_post }}">Read more</a> 
+              </li>
+              {% endif %}
+            </ul>
         </div>
       </div>
       <div class="modal-footer">

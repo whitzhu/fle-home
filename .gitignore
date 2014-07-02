@@ -2,6 +2,7 @@
 _static_cache/
 database.sqlite
 data/
+media/
 node_modules/
 *.pyc
 *.sublime-project
