@@ -24,11 +24,17 @@ class UserResource(models.Model):
     def get_download_path(self):
         return settings.MEDIA_ROOT + "user_resources/" + self.filename
 
-    def get_embed_url(self):
-        return "https://docs.google.com/document/d/%s/pub?embedded=true" % self.doc_id
+    def get_google_base_url(self):
+        return "https://docs.google.com/document/d/%s/" % self.doc_id
+
+    def get_google_embed_url(self):
+        return self.get_google_base_url() + "pub?embedded=true"
 
     def get_google_download_url(self):
-        return "https://docs.google.com/document/d/%s/export?format=pdf" % self.doc_id
+        return self.get_google_base_url() + "export?format=pdf"
+
+    def get_google_edit_url(self):
+        return self.get_google_base_url() + "edit"
 
     def clean(self):
         """Ensure version is empty if category is general"""
