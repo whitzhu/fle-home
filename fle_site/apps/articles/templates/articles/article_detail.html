@@ -1,20 +1,25 @@
-{% extends 'articles/articles_base_content.html' %}
+{% extends 'articles/articles_base.html' %}
 {% load i18n %}
 
 {% block title %}{% trans article.title %}{% endblock %}
 {% block meta-keywords %}{{ article.keywords|escape }}{% endblock %}
 {% block meta-description %}{{ article.description|escape }}{% endblock %}
-{% block extra-head %}
-{{ block.super }}
-{% for tag in article.tags.all %}
-<link rel="alternate" type="application/rss+xml" title="Blog Posts Tagged '{{ tag.name }}' RSS Feed" href="{% url 'articles_rss_feed_tag' tag.rss_name %}" />
-<link rel="alternate" type="application/atom+xml" title="Blog Posts Tagged '{{ tag.name }}' Atom Feed" href="{% url 'articles_atom_feed_tag' tag.rss_name %}" />{% endfor %}
-{% endblock %}
 
 {% block content %}
+    <div class="col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li class="active">{{ article.title }}</li>
+        </ol>
+    </div>
+    <div class="col-xs-12">
+        <div id="article-content" class="article">
+            <h2 class="title">{% trans article.title %}</br><small>{{ article.publish_date|date:"F j, Y" }}</small></h2>
 
-{% include 'articles/_article_content.html' %}
-{# {% include 'articles/_meta.html' %} #}
-{% include 'articles/_comments.html' %}
+            {{ article.rendered_content|safe }}
+        </div>
+    {# {% include 'articles/_meta.html' %} #}
+        {% include 'articles/_comments.html' %}
+    </div>
 
-{% endblock %}
+{% endblock content %}

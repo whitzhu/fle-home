@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load article_tags i18n %}
+{% block bodycontents %}
+<div class="container-wide">
+    <div class="container" id="blog-container">
+        <div class="row">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+</div>
+{% endblock bodycontents %}
+
+{% block footer %}{% endblock footer %}
+
+{% block extrafooter %}{% endblock extrafooter %}

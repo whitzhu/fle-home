@@ -294,21 +294,66 @@ a.icon:before {
 // --------------------------------------------------
 
 #blog-container {
-    a {
-        font-size: @small-size;
-    }
     padding: 30px;
-    #sidebar {
-        top: 25px;
-    }
     #main-post-panel{
         margin-top: 25px;
     }
     .post-image {
         margin: 20px;
         width: 80%;
-        .drop-shadow;
     }
+    .breadcrumb {
+        background-color: #E6E6E6;
+    }
+}
+
+.tag-bubble {
+    margin: 3px;
+    padding: 2px 10px;
+}
+
+.remove-tag-container {
+    position: relative;
+    display: inline-block;
+    .remove-filter {
+        position: absolute;
+        font-size: 9px;
+        right: 5%;
+        top: 0%;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+#post-numbers {
+    p {
+        font-size: 13px;
+        margin-left: 18px;
+    } 
+    a.clear-all-filters {
+        display: none;
+    }
+}
+
+#date-filters {
+    ul {
+        list-style-type: none;
+        li {
+            margin-left: -38px;
+            padding-bottom: 1em;
+        }
+    }
+}
+
+.month-expand {
+    .caret {
+        border-top-color: #3a7aa2;
+        border-bottom-color: #3a7aa2;
+    }
+}
+
+.month-posts {
+    display: none;
 }
 
 // Internships

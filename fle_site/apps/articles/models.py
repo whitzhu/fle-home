@@ -80,7 +80,7 @@ class Tag(models.Model):
         return self.name
 
     @staticmethod
-    def clean_tag(name):
+    def create_slug(name):
         """Replace spaces with dashes, in case someone adds such a tag manually"""
 
         name = name.replace(' ', '-').encode('ascii', 'ignore')
@@ -90,11 +90,18 @@ class Tag(models.Model):
         log.debug('Cleaned tag "%s" to "%s"' % (name, clean))
         return clean
 
+    @staticmethod
+    def clean_tag(name):
+        """Strip any commas off"""
+        return name.replace(',', '').encode('ascii', 'ignore')
+
     def save(self, *args, **kwargs):
         """Cleans up any characters I don't want in a URL"""
 
+        log.debug('Ensuring "%s" has no commas' % (self,))
+        self.name = Tag.clean_tag(self.name)
         log.debug('Ensuring that tag "%s" has a slug' % (self,))
-        self.slug = Tag.clean_tag(self.name)
+        self.slug = Tag.create_slug(self.name)
         super(Tag, self).save(*args, **kwargs)
 
     @models.permalink
@@ -105,7 +112,7 @@ class Tag(models.Model):
     def cleaned(self):
         """Returns the clean version of the tag"""
 
-        return self.slug or Tag.clean_tag(self.name)
+        return self.slug or Tag.create_slug(self.name)
 
     @property
     def rss_name(self):

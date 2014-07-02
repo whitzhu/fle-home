@@ -1,72 +1,47 @@
-import logging
+from collections import OrderedDict
 
 from django.conf import settings
-from django.contrib.auth.models import User
-from django.core.cache import cache
-from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
-from django.http import HttpResponsePermanentRedirect, Http404, HttpResponseRedirect, HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.http import Http404, HttpResponseRedirect
+from django.shortcuts import render
 from django.template import RequestContext
-from fle_site.apps.articles.models import Article, Tag
-from datetime import datetime
+from fle_site.apps.articles.models import Article
 
-ARTICLE_PAGINATION = getattr(settings, 'ARTICLE_PAGINATION', 20)
+def blog_filter_page(request, template='articles/blog_homepage.html'):
+    """Display all blog posts, and filters"""
+    blog_posts = Article.objects.live().order_by('-publish_date')
+    tags = []
+    for post in blog_posts:
+        tags += post.tags.all()
+    tags = set(tags)
 
-log = logging.getLogger('articles.views')
+    # Create a dict of posts by date for filtering by date 
+    sorted_posts = {}
+    for post in blog_posts:
+        year = post.publish_date.year
+        month = post.publish_date.strftime("%B")
+        if not sorted_posts.get(year):
+            sorted_posts[year] = {}
+        if not sorted_posts[year].get(month):
+            sorted_posts[year][month] = []
 
-def display_blog_page(request, tag=None, username=None, year=None, month=None, page=1):
-    """
-    Handles all of the magic behind the pages that list articles in any way.
-    Yes, it's dirty to have so many URLs go to one view, but I'd rather do that
-    than duplicate a bunch of code.  I'll probably revisit this in the future.
-    """
+        sorted_posts[year][month].append(post)
 
-    context = {'request': request}
-    if tag:
-        try:
-            tag = get_object_or_404(Tag, slug__iexact=tag)
-        except Http404:
-            # for backwards-compatibility
-            tag = get_object_or_404(Tag, name__iexact=tag)
+    # Now sort each post list 
+    for year, months in sorted_posts.items():
+        for month in months:
+            sorted_posts[year][month] = sorted(sorted_posts[year][month], key=lambda x: x.publish_date, reverse=True)
 
-        articles = tag.article_set.live(user=request.user).select_related()
-        template = 'articles/display_tag.html'
-        context['tag'] = tag
+    # Finally sort by year 
+    posts_by_date = OrderedDict(sorted(sorted_posts.items(), reverse=True))
 
-    elif username:
-        # listing articles by a particular author
-        user = get_object_or_404(User, username=username)
-        articles = user.article_set.live(user=request.user)
-        template = 'articles/by_author.html'
-        context['author'] = user
+    variables = {
+        'posts': blog_posts,
+        'tags': tags,
+        'posts_by_date': posts_by_date,
+    }
 
-    elif year and month:
-        # listing articles in a given month and year
-        year = int(year)
-        month = int(month)
-        articles = Article.objects.live(user=request.user).select_related().filter(publish_date__year=year, publish_date__month=month)
-        template = 'articles/in_month.html'
-        context['month'] = datetime(year, month, 1)
-
-    else:
-        # listing articles with no particular filtering
-        articles = Article.objects.live(user=request.user)
-        template = 'articles/article_list.html'
-
-    # paginate the articles
-    paginator = Paginator(articles, ARTICLE_PAGINATION,
-                          orphans=int(ARTICLE_PAGINATION / 4))
-    try:
-        page = paginator.page(page)
-    except EmptyPage:
-        raise Http404
-
-    context.update({'paginator': paginator,
-                    'page_obj': page})
-    variables = RequestContext(request, context)
     response = render(request, template, variables)
-
     return response
 
 def display_article(request, year=None, slug=None, template='articles/article_detail.html'):
@@ -81,6 +56,9 @@ def display_article(request, year=None, slug=None, template='articles/article_de
     if article.login_required and not request.user.is_authenticated():
         return HttpResponseRedirect(reverse('auth_login') + '?next=' + request.path)
 
+    # Render top 5 most recent posts in the sidebar 
+    blog_posts = Article.objects.live().order_by('-publish_date')
+
     variables = RequestContext(request, {
         'article': article,
         'disqus_forum': getattr(settings, 'DISQUS_FORUM_SHORTNAME', None),
@@ -88,37 +66,4 @@ def display_article(request, year=None, slug=None, template='articles/article_de
     response = render(request, template, variables)
 
     return response
-
-
-def redirect_to_latest_post(request):
-    try:
-        article = Article.objects.latest('publish_date')
-    except Article.DoesNotExist:
-        raise Http404
-    return HttpResponsePermanentRedirect(article.get_absolute_url())
-
-
-def redirect_to_article(request, year, month, day, slug):
-    # this is a little snippet to handle URLs that are formatted the old way.
-    article = get_object_or_404(Article, publish_date__year=year, slug=slug)
-    return HttpResponsePermanentRedirect(article.get_absolute_url())
-
-def ajax_tag_autocomplete(request):
-    """Offers a list of existing tags that match the specified query"""
-
-    if 'q' in request.GET:
-        q = request.GET['q']
-        key = 'ajax_tag_auto_%s' % q
-        response = cache.get(key)
-
-        if response is not None:
-            return response
-
-        tags = list(Tag.objects.filter(name__istartswith=q)[:10])
-        response = HttpResponse(u'\n'.join(tag.name for tag in tags))
-        cache.set(key, response, 300)
-
-        return response
-
-    return HttpResponse()
 
