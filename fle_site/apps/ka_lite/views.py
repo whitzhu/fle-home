@@ -1,3 +1,6 @@
+import re
+import urllib2
+
 from annoying.decorators import render_to
 from collections import OrderedDict
 from distutils.version import StrictVersion
@@ -5,6 +8,7 @@ from fack.models import Question, Topic
 from itertools import groupby
 
 from django.db.models import Max
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
 from .models import UserResource
@@ -39,18 +43,28 @@ def user_guides(request):
 		"user_guides": ordered_versions,
 	}
 
+def get_user_resource(slug):
+	if slug == "latest":
+		latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+		return UserResource.objects.get(version=latest_version, category='install_guide')
+	else:
+		return UserResource.objects.get(slug=slug)
+
+def user_guide_detail_embed(request, slug):
+	"""Render embedded HTML for user resource"""
+	obj = get_user_resource(slug)
+	source = urllib2.urlopen(obj.get_google_embed_url()).read()
+	source = re.sub('<a class="(\w+)" href="(http|/)', '<a class="\g<1>" target="_blank" href="\g<2>', source)
+	return HttpResponse(source)
+
 @render_to("ka_lite/user-guide-detail.html")
 def user_guide_detail(request, slug):
 	"""Render detail of user resource"""
-	if slug=="latest":
-		latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
-		obj = get_object_or_404(UserResource.objects.filter(version=latest_version, category='install_guide'))
-	else:
-		obj = get_object_or_404(UserResource.objects.filter(slug=slug))
+	obj = get_user_resource(slug)
 	related_resources = UserResource.objects.filter(version=obj.version)
 	general_resources = UserResource.objects.filter(version='')
 	return {
 		"resource": obj,
 		"related_resources": related_resources,
-		"general_resources": general_resources
+		"general_resources": general_resources,
 	}
