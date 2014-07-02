@@ -1,13 +1,12 @@
 $(function() {
-    // onload, update # of total posts
-    var startingPosts = $('li[id^="post-"').length; 
-    updatePostNumbers(startingPosts, startingPosts);
+    // onload, update # of total posts 
+    updatePostNumbers();
 
     // Filter by tag
     $('#tag-filters button').click(function() {
         // Highlight the tag cloud and any other posts
         $(this).toggleClass("active");
-        animateExplicitly($(this), "hide");
+        animateExplicitly($(this), false);
         $('button[data-id="post-tag-' + $(this).attr("data-id") + '"]').removeClass("btn-default").addClass("btn-primary");
         filterPosts();
     });
@@ -20,9 +19,9 @@ $(function() {
             var tagSlug = $(this).attr('data-id');
             var filterElement = $('#tag-filters button[data-id="' + tagSlug + '"]');
             filterElement.toggleClass("active")
-            animateExplicitly(filterElement, "show");
+            animateExplicitly(filterElement, true);
             $('button[data-id="post-tag-' + tagSlug + '"]').removeClass("btn-primary").addClass("btn-default");
-            animateExplicitly($(this), "hide");
+            animateExplicitly($(this), false);
             filterPosts();
         }
     );
@@ -56,10 +55,10 @@ function filterPosts() {
         var postTags = $(this).attr("data-id").split(/[ ]+/);
         // show the post if all of it's tags match the activeFilter tag slugs
         if (compareLists(activeFilterSlugs, postTags)) {
-            animateExplicitly($(this), "show");
+            animateExplicitly($(this), true);
             postsShowing = postsShowing + 1;
         } else {
-            animateExplicitly($(this), "hide");
+            animateExplicitly($(this), false);
         }
     });
 
@@ -77,8 +76,31 @@ function filterPosts() {
         $('.clear-all-filters').hide();
     }
 
-    // update post numbers & disable unusable filters
-    updatePostNumbers(postsShowing, totalPosts);
+    updatePostNumbers();
+    smartFilterDisabling()
+}
+
+function resetFilters(ev) {
+    ev.preventDefault();
+    // Show all posts & reset highlights
+    var posts = $('li[id^="post-"'); 
+    posts.each(function(){
+        var buttons = $(this).children('button');
+        buttons.removeClass("btn-primary").addClass("btn-default");
+        animateExplicitly($(this), true);
+    });
+    // Show all filters
+    $('#tag-filters').children('button').each(function(){
+        $(this).removeClass("active");
+        animateExplicitly($(this), true);
+    });
+    // Hide all tags
+    animateExplicitly($('#filtering-header').children('button'), false);
+
+    $('#filtering-header').html("<h2>All Posts</h2>");
+    $('.clear-all-filters').hide('fast');
+
+    updatePostNumbers();
     smartFilterDisabling()
 }
 
@@ -108,9 +130,11 @@ function getFilterProperties(filters, property) {
     return filterProps;
 }
 
-function updatePostNumbers(postsShowing, totalPosts) {
-    $('#posts-showing').html(postsShowing);
-    $('#total-posts').html(totalPosts);
+function updatePostNumbers() {
+    var totalPosts = $('li[id^="post-"');
+    var postsShowing = totalPosts.filter(':visible');
+    $('#posts-showing').html(postsShowing.length);
+    $('#total-posts').html(totalPosts.length);
 }
 
 function smartFilterDisabling(){
@@ -143,27 +167,6 @@ function smartFilterDisabling(){
     };
 }
 
-function resetFilters(ev) {
-    ev.preventDefault();
-    // Show all posts & reset highlights
-    var posts = $('li[id^="post-"'); 
-    posts.each(function(){
-        var buttons = $(this).children('button');
-        buttons.removeClass("btn-primary").addClass("btn-default");
-        animateExplicitly($(this), "show");
-    });
-    // Show all filters
-    $('#tag-filters').children('button').each(function(){
-        $(this).removeClass("active");
-        animateExplicitly($(this), "show");
-    });
-    // Hide all tags
-    animateExplicitly($('#filtering-header').children('button'), "hide");
-
-    $('#filtering-header').html("<h2>All Posts</h2>");
-    $('.clear-all-filters').hide('fast');
-}
-
 function compareLists(tagSlugs, postTags) {
     // Return true if all tags are also in postTags, otherwise return false
     truthFlag = true;
@@ -189,14 +192,9 @@ function arrayUnique(array) {
     return a;
 }
 
-function animateExplicitly(element, animation){
+function animateExplicitly(element, visibility){
     // Call jQuery show/hide method after adding an attribute to 
     // indicate visibility (so we can check for it later in the code)
-    if (animation === "show"){
-        element.attr("data-visible", true);
-        element.show("fast")
-    } else if (animation === "hide") {
-        element.attr("data-visible", false);
-        element.hide("fast")
-    }
+    element.attr("data-visible", visibility);
+    element.toggle(visibility);
 }
