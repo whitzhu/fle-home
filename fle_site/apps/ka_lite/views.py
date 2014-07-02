@@ -27,9 +27,7 @@ def faq(request):
 def map(request):
 	"""Render map of KA Lite installs"""
 	deployments = DeploymentStory.objects.all()
-	deployments_json = serializers.serialize('json', deployments)
 	return {
-		"deployments_json": deployments_json,
 		"deployments": deployments,
 	}
 

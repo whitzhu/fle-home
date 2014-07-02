@@ -1,5 +1,6 @@
 {% extends base_template %}
 {% load staticfiles %}
+{% load jsonify %}
 
 {% block extrahead %}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
@@ -24,13 +25,12 @@
                                 map.fitBounds(defaultBounds);
 
             // Add markers 
-            var deployments = $.parseJSON("{{deployments_json}}".replace(/&quot;/g, '"'));
+            var deployments = {{ deployments|jsonify }};
             for (var i = 0; i < deployments.length; i++) {
-                var title = deployments[i].fields.title;
-                var slug = deployments[i].fields.slug;
-                var latitude = deployments[i].fields.latitude;
-                var longitude = deployments[i].fields.longitude;
-                var latLng = new google.maps.LatLng(latitude, longitude);
+                var fields = deployments[i].fields;
+                var title = fields.title;
+                var slug = fields.slug;
+                var latLng = new google.maps.LatLng(fields.latitude, fields.longitude);
                 
                 var marker = new google.maps.Marker({
                     position: latLng,
@@ -38,10 +38,10 @@
                     title: title,
                     slug: slug
                 });
+
                 google.maps.event.addListener(marker, 'click', function() {
                     $('#' + this.slug).modal();
                 });
-
             }
         }
         
@@ -61,27 +61,7 @@
             </div>
         </div>
     </div>
-
-    {# Modals for each pin #}
-    {% for d in deployments %}
-    <div class="modal fade" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">{{ d.title }}</h4>
-          </div>
-          <div class="modal-body">
-            {{ d.description }}
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Request to connect</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+    {% include "ka_lite/partials/_map_modal_content.html" %}
 {% endblock bodycontents %}
     
 

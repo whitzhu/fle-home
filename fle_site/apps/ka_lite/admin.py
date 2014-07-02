@@ -9,7 +9,41 @@ class UserResourceAdmin(admin.ModelAdmin):
 	list_display = ('title', 'version', 'doc_url', 'publish_date',)
 
 class DeploymentStoryAdmin(admin.ModelAdmin):
-	list_display = ('title', 'description')
+	prepopulated_fields = {"slug": ("title", "deployment_city")}
+	list_display = ('title', 'deployment_country', 'contact_name')
+
+	fieldsets = (
+		(None, {
+			'fields': (
+				'title',
+				'slug', 
+				'contact_name', 
+				'contact_email', 
+				'start_date', 
+				'deployment_city', 
+				'deployment_country', 
+				'latitude', 
+				'longitude', 
+				'description', 
+			)
+		}),
+		('Bonus Options (not required)', {
+			'fields': (
+				'organization_name',
+				'organization_url',
+				'organization_city',
+				'organization_country',
+				'num_students',
+				'student_age_range',
+				'num_kalite_servers',
+				'server_os',
+				'hardware_setup',
+				'deployment_setting',
+				'pedagogical_model',
+				'guest_blog_post',
+			)
+		}),
+	)	
 
 admin.site.register(UserResource, UserResourceAdmin)
 admin.site.register(DeploymentStory, DeploymentStoryAdmin)

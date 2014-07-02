@@ -1,0 +1,29 @@
+{% load staticfiles %}
+
+{# Modals for each pin #}
+{% for d in deployments %}
+<div class="modal fade" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - {{ d.lat_long }}</small></h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <p>
+              Deployment Age: {{ d.age_of_deployment }}
+            </p>
+            <p>
+              {{ d.description }}
+            </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Request to connect</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
