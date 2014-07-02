@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 
-from models import UserResource, DeploymentStory
+from models import UserResource, DeploymentStory, Gallery, Picture
 
 
 class UserResourceAdmin(admin.ModelAdmin):
@@ -41,10 +41,19 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 				'deployment_setting',
 				'pedagogical_model',
 				'guest_blog_post',
+				'photo_gallery'
 			)
 		}),
 	)	
 
+class GalleryAdmin(admin.ModelAdmin):
+	list_display = ('title', 'slug', 'description')
+
+class PictureAdmin(admin.ModelAdmin):
+	list_display = ('title', 'slug', 'gallery')
+
 admin.site.register(UserResource, UserResourceAdmin)
 admin.site.register(DeploymentStory, DeploymentStoryAdmin)
+admin.site.register(Gallery, GalleryAdmin)
+admin.site.register(Picture, PictureAdmin)
 

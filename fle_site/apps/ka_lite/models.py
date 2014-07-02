@@ -28,6 +28,24 @@ class UserResource(models.Model):
         elif self.category != "general" and self.version == '':
             raise ValidationError('Version number cannot be blank if resource is a user manual or install guide.')
 
+class Gallery(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the image.")
+    description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.")    
+
+    def __str__(self):
+        return self.title
+
+class Picture(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the image.")
+    caption = models.CharField(max_length=140, help_text="140 characters or less. Tweet tweet.")
+    picture = models.ImageField(upload_to="deployment_pics")
+    gallery = models.ForeignKey(Gallery, related_name='photos')
+
+    def __str__(self):
+        return self.title
+
 class DeploymentStory(models.Model):
     # Required fields
     title = models.CharField(max_length=100, help_text="Descriptive title of the project")
@@ -54,6 +72,7 @@ class DeploymentStory(models.Model):
     deployment_setting = models.CharField(max_length=100, blank=True, help_text='Short decription of where KA Lite is being used e.g. safe-learning space in a slum')
     pedagogical_model = models.CharField(max_length=100, blank=True)
     guest_blog_post = models.URLField(blank=True, help_text='Link to Guest Blog Post')
+    photo_gallery = models.OneToOneField(Gallery, blank=True, null=True)
 
     # pictures!! 
 
@@ -68,6 +87,8 @@ class DeploymentStory(models.Model):
         # Enforce an org name if URL is provided (but not vice versa b/c some orgs may not have websites)
         if self.organization_url and not self.organization_name:
             raise ValidationError("You must provide an organization name if the organization has a website!")
+        if (date.today() - self.start_date).days < 0:
+            raise ValidationError("Start date is in the future! Cannot add a deployment that has not yet begun.")
         return cleaned_data
 
     def linked_org_name(self):
@@ -81,7 +102,7 @@ class DeploymentStory(models.Model):
 
     def age_of_deployment(self):
         """Return total age of deployment by subtracting current date from start date"""
-        return "%d days" % (self.start_date - date.today()).days
+        return "%d days" % (date.today() - self.start_date).days
         
     def lat_long(self):
         return "(%(latitude)f, %(longitude)f)" % {'latitude': self.latitude, 'longitude': self.longitude}

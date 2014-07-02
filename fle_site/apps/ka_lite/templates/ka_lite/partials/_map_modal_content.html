@@ -61,6 +61,12 @@
                 <a href="{{ d.guest_blog_post }}">Read more</a> 
               </li>
               {% endif %}
+              {% if d.photo_gallery %}
+                {% for p in d.photo_gallery.photos.all %}
+                  <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
+                  <p>Caption: {{ p.caption }}</p>
+                {% endfor %}
+              {% endif %}
             </ul>
         </div>
       </div>
