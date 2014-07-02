@@ -26,8 +26,12 @@ def faq(request):
 @render_to("ka_lite/map.html")
 def map(request):
 	"""Render map of KA Lite installs"""
-	deployments = serializers.serialize('json', DeploymentStory.objects.all())
-	return {"deployments": deployments}
+	deployments = DeploymentStory.objects.all()
+	deployments_json = serializers.serialize('json', deployments)
+	return {
+		"deployments_json": deployments_json,
+		"deployments": deployments,
+	}
 
 
 @render_to("ka_lite/user-guides.html")

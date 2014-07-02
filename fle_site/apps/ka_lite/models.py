@@ -29,6 +29,10 @@ class UserResource(models.Model):
 
 class DeploymentStory(models.Model):
     title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True, max_length=50)
     description = models.TextField()
     latitude = models.FloatField(help_text="In degrees, South is negative!")
     longitude = models.FloatField(help_text="In degrees, West is negative!")
+
+    def __str__(self):
+        return self.title
