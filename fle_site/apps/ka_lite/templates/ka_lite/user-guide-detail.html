@@ -18,16 +18,18 @@
   				</div>
   				<div class="panel-body">
   					<ul>
-  						<li>
-  							<h3>Version {{resource.version}}</h3>
-  						</li>
-  						{% for resource in related_resources %}
-  							<li>
-  								<a href="{% url 'user_guide_detail' resource.slug %}">
-  									{{ resource.title }}
-  								</a>
-  							</li>
-  						{% endfor %}
+              {% if resource.version %}
+                <li>
+                  <h3>Version {{ resource.version }}</h3>
+                </li>
+                {% for resource in related_resources %}
+                  <li>
+                    <a href="{% url 'user_guide_detail' resource.slug %}">
+                      {{ resource.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
               {% if general_resources %}
                 <li>
                   <h3>General</h3>

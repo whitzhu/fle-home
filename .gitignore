@@ -12,4 +12,4 @@ local_settings_secrets.py
 ips.txt
 GeoLiteCity.dat
 static/css/*
-media/user_resources/*
+fle_site/media/user_resources/*
