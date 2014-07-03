@@ -29,7 +29,7 @@ PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 # GEOIPDAT = os.path.join(DATA_PATH, "GeoLiteCity.dat")
 # IPS_FILEPATH = os.path.join(DATA_PATH, "ips.txt")
 
-LOCATIONS_JSONP_URL = "https://kalite.learningequality.org/media/locations.jsonp"
+LOCATIONS_JSONP_URL = getattr(local_settings, "LOCATIONS_JSONP_URL", "https://kalite.learningequality.org/media/locations/locations.jsonp")
 
 DATABASES = localor("DATABASES", {
     'default': {
@@ -73,7 +73,7 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL      = getattr(local_settings, "MEDIA_URL", "/media/")
-MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.join(PROJECT_PATH, "..", "media"))) + "/"
+MEDIA_ROOT     = os.path.realpath(getattr(local_settings, "MEDIA_ROOT", os.path.join(PROJECT_PATH, "media"))) + "/"
 STATIC_URL     = getattr(local_settings, "STATIC_URL", "/static/")
 STATIC_ROOT    = os.path.realpath(getattr(local_settings, "STATIC_ROOT",os.path.join(PROJECT_PATH, "..", "_static_cache"))) + "/"
 

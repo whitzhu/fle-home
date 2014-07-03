@@ -41,7 +41,7 @@
                                             <a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
                                         </td>
                                         <td class="col-xs-4">
-                                            <a href="{{ g.pdf_url }}" class="pull-right">
+                                            <a href="{{ g.get_download_url }}" class="pull-right">
                                                 <span class="glyphicon glyphicon-file"></span>&nbsp;PDF
                                             </a>
                                         </td>
@@ -67,7 +67,7 @@
                                     <a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
                                 </td>
                                 <td class="col-xs-4">
-                                    <a href="{{ g.pdf_url }}" class="pull-right">
+                                    <a href="{{ g.get_download_url }}" class="pull-right">
                                         <span class="glyphicon glyphicon-file"></span>&nbsp;PDF
                                     </a>
                                 </td>

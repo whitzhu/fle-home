@@ -18,16 +18,18 @@
   				</div>
   				<div class="panel-body">
   					<ul>
-  						<li>
-  							<h3>Version {{resource.version}}</h3>
-  						</li>
-  						{% for resource in related_resources %}
-  							<li>
-  								<a href="{% url 'user_guide_detail' resource.slug %}">
-  									{{ resource.title }}
-  								</a>
-  							</li>
-  						{% endfor %}
+              {% if resource.version %}
+                <li>
+                  <h3>Version {{ resource.version }}</h3>
+                </li>
+                {% for resource in related_resources %}
+                  <li>
+                    <a href="{% url 'user_guide_detail' resource.slug %}">
+                      {{ resource.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              {% endif %}
               {% if general_resources %}
                 <li>
                   <h3>General</h3>
@@ -59,18 +61,24 @@
         </ol>
       </div>
 	  	<div class="col-md-9 col-sm-12 col-xs-12" id="embedded-doc-container">
+        {% if request.user.is_staff %}
+        <a href="{{ resource.get_google_edit_url }}" target="_blank">Edit!</a>
+        {% endif %}
 	  		<img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
-	  		<iframe id="embedded-doc" src="{{resource.doc_url}}?embedded=true"></iframe>
+        <iframe id="embedded-doc" src="{% url 'user_guide_detail_embed' resource.slug %}" scrolling="no"></iframe>
 	  	</div>
 	  </div>
 	</div>
 </div>
 
+<br/>
+
 <script type="text/javascript">
 	$(function(){
 		$('#embedded-doc').on('load', function () {
-            $('#loading-gif').hide();
-        });
+      $('#loading-gif').hide();
+      $('#embedded-doc').height($('#embedded-doc').contents().height());
+    });
 	});
 </script>
 

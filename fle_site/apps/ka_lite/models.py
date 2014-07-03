@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 
@@ -11,15 +12,31 @@ class UserResource(models.Model):
     )
     title = models.CharField(max_length=100)
     category = models.CharField(max_length=100, choices=category_options) 
-    version = models.CharField(max_length=50, blank=True, help_text="Leave version blank for items categorized as 'General'")
-    doc_url = models.URLField(max_length=200)
-    pdf_url = models.URLField(max_length=200, help_text="Publish the PDF to a public Dropbox folder.")
+    version = models.CharField(max_length=50, blank=True, help_text="Leave version blank for items categorized as 'General'. Otherwise, put the major.minor version (e.g. '0.11')")
+    doc_id = models.CharField(max_length=80, help_text="44-digit ID of the Google Doc")
+    filename = models.CharField(max_length=100)
     slug = models.SlugField(max_length=50, unique=True)
-    publish_date = models.DateTimeField()
-    last_updated = models.DateTimeField()
 
     def __str__(self):
         return self.title
+
+    def get_download_url(self):
+        return settings.MEDIA_URL + "user_resources/" + self.filename
+
+    def get_download_path(self):
+        return settings.MEDIA_ROOT + "user_resources/" + self.filename
+
+    def get_google_base_url(self):
+        return "https://docs.google.com/document/d/%s/" % self.doc_id
+
+    def get_google_embed_url(self):
+        return self.get_google_base_url() + "pub?embedded=true"
+
+    def get_google_download_url(self):
+        return self.get_google_base_url() + "export?format=pdf"
+
+    def get_google_edit_url(self):
+        return self.get_google_base_url() + "edit"
 
     def clean(self):
         """Ensure version is empty if category is general"""

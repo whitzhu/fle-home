@@ -5,8 +5,8 @@ from models import UserResource, DeploymentStory, Gallery, Picture
 
 
 class UserResourceAdmin(admin.ModelAdmin):
-	prepopulated_fields = {"slug": ("title", "version")}
-	list_display = ('title', 'version', 'doc_url', 'publish_date',)
+    prepopulated_fields = {"slug": ("title", "version")}
+    list_display = ('title', 'version', 'doc_id', 'filename')
 
 class DeploymentStoryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug": ("title", "deployment_city")}

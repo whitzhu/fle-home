@@ -6,5 +6,6 @@ urlpatterns = patterns(__package__ + '.views',
     url(r'^faq/$', 'faq', name="faq"),
     url(r'^map/$', 'map', name="map"),
     url(r'^user-guides/$', 'user_guides', name='user_guides'),
-    url(r'^user-guides/(?P<slug>.+)$', 'user_guide_detail', name='user_guide_detail'),
+    url(r'^user-guides/embed/(?P<slug>[^/]+)$', 'user_guide_detail_embed', name='user_guide_detail_embed'),
+    url(r'^user-guides/(?P<slug>[^/]+)$', 'user_guide_detail', name='user_guide_detail'),
 )
