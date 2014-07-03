@@ -2,7 +2,7 @@
 
 {# Modals for each pin #}
 {% for d in deployments %}
-<div class="modal fade" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" aria-hidden="true">
+<div class="modal fade deployment-modal" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,84 +12,79 @@
       <div class="modal-body">
         <div class="row">
             <p>
-              {{ d.description }}
+              {{ d.description }}&nbsp;{% if d.guest_blog_post %}<a href="{{ d.guest_blog_post }}">Read more</a>{% endif %}
             </p>
             <ul>
               {% if d.linked_org_name %}
               <li>
-                Deploying Organization: {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }} 
+                <strong>Deploying Organization:</strong> {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }} 
               {% endif %}
               </li>
               {% endif %}
               {% if d.num_students %}
               <li>
-                Number of Students: {{ d.num_students }} 
+                <strong>Number of Students:</strong> {{ d.num_students }} 
               </li>
               {% endif %}
               {% if d.student_age_range %}
               <li>
-                Age range: {{ d.student_age_range }} 
+                <strong>Age range:</strong> {{ d.student_age_range }} 
               </li>
               {% endif %}
               {% if d.num_kalite_servers %}
               <li>
-                # of KA Lite servers: {{ d.num_kalite_servers }} 
+                <strong># of KA Lite servers:</strong> {{ d.num_kalite_servers }} 
               </li>
               {% endif %}
               {% if d.server_os %}
               <li>
-                Operating System(s): {{ d.server_os }} 
+                <strong>Operating System(s):</strong> {{ d.server_os }} 
               </li>
               {% endif %}
               {% if d.hardware_setup %}
               <li>
-                Hardware Setup: {{ d.hardware_setup }} 
+                <strong>Hardware Setup:</strong> {{ d.hardware_setup }} 
               </li>
               {% endif %}
               {% if d.deployment_setting %}
               <li>
-                Deployment Setting: {{ d.deployment_setting }} 
+                <strong>Deployment Setting:</strong> {{ d.deployment_setting }} 
               </li>
               {% endif %}
               {% if d.pedagogical_model %}
               <li>
-                Pedagogical Model: {{ d.pedagogical_model }} 
+                <strong>Pedagogical Model:</strong> {{ d.pedagogical_model }} 
               </li>
-              {% endif %}
-              {% if d.guest_blog_post %}
-              <li>
-                <a href="{{ d.guest_blog_post }}">Read more</a> 
-              </li>
-              {% endif %}
-              {% if d.photo_gallery %}
-                <div id="carousel-{{ d.slug }}" class="carousel slide" data-ride="carousel">
-                  <!-- Indicators -->
-                  <ol class="carousel-indicators">
-                    {% for counter in d.photo_gallery.photos.all %}
-                      <li data-target="#carousel-{{ d.slug }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
-                    {% endfor %}
-                  </ol>
-                  <!-- Wrapper for slides --> 
-                  <div class="carousel-inner">
-                    {% for p in d.photo_gallery.photos.all %}
-                      <div class="item {% if forloop.first %}active{% endif %}">
-                        <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
-                        <div class="carousel-caption">
-                          Caption: {{ p.caption }}    
-                        </div>  
-                      </div>
-                    {% endfor %}
-                  </div>
-                  <!-- Controls --> 
-                  <a class="left carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                  </a>
-                  <a class="right carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                  </a>
-                </div>
               {% endif %}
             </ul>
+            {% if d.photo_gallery %}
+              <div id="carousel-{{ d.slug }}" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  {% for counter in d.photo_gallery.photos.all %}
+                    <li data-target="#carousel-{{ d.slug }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                  {% endfor %}
+                </ol>
+                <!-- Wrapper for slides --> 
+                <div class="carousel-inner">
+                  {% for p in d.photo_gallery.photos.all %}
+                    <div class="item {% if forloop.first %}active{% endif %}">
+                      <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
+                      <div class="carousel-caption">
+                       {{ p.caption }}    
+                      </div>  
+                    </div>
+                  {% endfor %}
+                </div>
+                <!-- Controls --> 
+                <a class="left carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+              </div>
+            {% endif %}
         </div>
       </div>
       <div class="modal-footer">

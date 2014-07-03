@@ -36,7 +36,7 @@ class Gallery(models.Model):
         return self.title
 
 class Picture(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, help_text="Doubles as the image title tag and the alt tag, so make it appropriate!")
     caption = models.CharField(max_length=140, help_text="140 characters or less. Tweet tweet.")
     picture = models.ImageField(upload_to="deployment_pics")
     gallery = models.ForeignKey(Gallery, related_name='photos')
