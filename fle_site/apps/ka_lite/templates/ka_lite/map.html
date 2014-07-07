@@ -3,6 +3,36 @@
 {% load jsonify %}
 
 {% block extrahead %}
+    <style>
+        /* For the legend */
+        #legend-container {
+            background-color: rgba(255, 255, 255, 0.64);
+            border: 2px solid black;
+            margin-top: 1%;
+            width: 150px;
+            text-align: left;
+        }
+        .legend-row {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 5px;
+        }
+        #deployment-icon {
+            width:35px; 
+            height:35px;
+        }
+        #installation-icon {
+            margin-left:8px;
+        }
+        #deployment-text {
+            position:relative; 
+            top:10px;
+        }
+        #installation-text {
+            margin-left: 6px;
+        }
+
+    </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
     </script>
     <script>
@@ -46,6 +76,14 @@
             }
         }
 
+        function drawLegend(map) {
+            var legend = document.createElement('div');
+            legend.setAttribute('id', 'legend-container');
+            // Set CSS for the control interior.
+            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='http://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
+            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
+        }
+
         function display_locations(locations) {
             // Create map 
             $("#map_canvas").height($(window).height());
@@ -75,6 +113,8 @@
 
                 // Once install pins have been placed, load deployments
                 showDeployments(map);
+                // Finally draw the map legend
+                drawLegend(map);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
