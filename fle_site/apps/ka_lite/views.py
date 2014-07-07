@@ -7,6 +7,7 @@ from distutils.version import StrictVersion
 from fack.models import Question, Topic
 from itertools import groupby
 
+from django.conf import settings
 from django.core import serializers 
 from django.db.models import Max
 from django.http import HttpResponse
@@ -31,6 +32,7 @@ def map(request):
 	deployments = DeploymentStory.objects.all()
 	return {
 		"deployments": deployments,
+		"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,
 	}
 
 
