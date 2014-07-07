@@ -74,7 +74,6 @@
                 // Once install pins have been placed, load deployments
                 showDeployments(map);
             }
-
             setTimeout(placeInstallPins(map, locations), 500);
         }
         
@@ -86,15 +85,14 @@
     Deployments Map
 {% endblock title %}
 
-{% block bodycontents %}
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="map_canvas"></div>            
-            </div>
-        </div>
-    </div>
+{% block bodyoverride %}
+    <div id="map-container">
+        <img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
+        <div id="map_canvas"></div>
+    </div>            
     {% include "ka_lite/partials/_map_modal_content.html" %}
-{% endblock bodycontents %}
+{% endblock bodyoverride %}
     
-
+{% block footeroverride %}
+    {# This page intentionally left blank #}
+{% endblock footeroverride %}
