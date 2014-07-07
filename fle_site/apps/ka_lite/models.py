@@ -55,11 +55,22 @@ class Gallery(models.Model):
 class Picture(models.Model):
     title = models.CharField(max_length=100, help_text="Doubles as the image title tag and the alt tag, so make it appropriate!")
     caption = models.CharField(max_length=140, help_text="140 characters or less. Tweet tweet.")
+    sort_order = models.FloatField(blank=True, default=0, help_text="From 0 to infinity, the order in which you'd like the pictures to be displayed")
     picture = models.ImageField(upload_to="deployment_pics")
     gallery = models.ForeignKey(Gallery, related_name='photos')
 
+    class Meta:
+        ordering = ['sort_order',]
+
     def __str__(self):
         return self.title
+
+
+class DeploymentStoryManager(models.Manager):
+    def published(self):
+        """Retrieve all published DeploymentStories"""
+        return self.get_query_set().filter(published=True)
+
 
 class DeploymentStory(models.Model):
     # Required fields
@@ -73,6 +84,7 @@ class DeploymentStory(models.Model):
     latitude = models.FloatField(help_text="In degrees, South is negative!")
     longitude = models.FloatField(help_text="In degrees, West is negative!")
     description = models.TextField()
+    published = models.BooleanField(default=False, help_text='If checked, this deployment story will display live on the map. Default is false.')
 
     # optional bonus fields
     organization_name = models.CharField(max_length=150, blank=True)
@@ -89,7 +101,7 @@ class DeploymentStory(models.Model):
     guest_blog_post = models.URLField(blank=True, help_text='Link to Guest Blog Post')
     photo_gallery = models.OneToOneField(Gallery, blank=True, null=True)
 
-    # pictures!! 
+    objects = DeploymentStoryManager()
 
     def __str__(self):
         return self.title

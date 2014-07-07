@@ -25,6 +25,7 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 				'latitude', 
 				'longitude', 
 				'description', 
+				'published',
 			)
 		}),
 		('Bonus Options (not required)', {
@@ -46,8 +47,14 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 		}),
 	)	
 
+class PictureInline(admin.TabularInline):
+	model = Picture
+
 class GalleryAdmin(admin.ModelAdmin):
 	list_display = ('title', 'description')
+	inlines = [
+		PictureInline,
+	]
 
 class PictureAdmin(admin.ModelAdmin):
 	list_display = ('title', 'gallery')
