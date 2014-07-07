@@ -7,11 +7,13 @@ from distutils.version import StrictVersion
 from fack.models import Question, Topic
 from itertools import groupby
 
+from django.conf import settings
+from django.core import serializers 
 from django.db.models import Max
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
-from .models import UserResource
+from .models import UserResource, DeploymentStory
 
 @render_to("ka_lite/faq.html")
 def faq(request):
@@ -22,6 +24,17 @@ def faq(request):
 		context[t] = Question.objects.filter(topic=t).active()
 
 	return {"faq": context}
+
+
+@render_to("ka_lite/map.html")
+def map(request):
+	"""Render map of KA Lite installs"""
+	deployments = DeploymentStory.objects.all()
+	return {
+		"deployments": deployments,
+		"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,
+	}
+
 
 @render_to("ka_lite/user-guides.html")
 def user_guides(request):

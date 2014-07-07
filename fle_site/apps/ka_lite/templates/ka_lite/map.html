@@ -1,0 +1,100 @@
+{% extends base_template %}
+{% load staticfiles %}
+{% load jsonify %}
+
+{% block extrahead %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
+    </script>
+    <script>
+        function showDeployments(map) {
+            var defaultBounds = new google.maps.LatLngBounds(
+                                new google.maps.LatLng(70, -100),
+                                new google.maps.LatLng(-60, 100));
+                                map.fitBounds(defaultBounds);
+
+            // Add deployment markers 
+            var deployments = {{ deployments|jsonify }};
+
+            var iconBase = 'http://maps.google.com/mapfiles/kml/shapes/';
+            var iconSize = new google.maps.Size(35, 35);
+
+            for (var i = 0; i < deployments.length; i++) {
+                var fields = deployments[i].fields;
+                var title = fields.title;
+                var slug = fields.slug;
+                var latLng = new google.maps.LatLng(fields.latitude, fields.longitude);
+
+                window.iconSize = iconSize;
+
+                var rangerIcon = {
+                    url: iconBase + 'ranger_station.png',
+                    scaledSize: iconSize
+                };
+                
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: title,
+                    slug: slug,
+                    icon: rangerIcon,
+                    zIndex: 100000000
+                });
+
+                google.maps.event.addListener(marker, 'click', function() {
+                    $('#' + this.slug).modal();
+                });
+            }
+        }
+
+        function display_locations(locations) {
+            // Create map 
+            $("#map_canvas").height($(window).height());
+            var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                mapTypeId: google.maps.MapTypeId.HYBRID,
+                // scrollwheel: false,
+                maxZoom: 20,
+                minZoom: 2,
+                zoomControl: true,
+                panControl: true,
+                streetViewControl: false,
+                zIndex: -100
+            });
+
+            function placeInstallPins(map, locations) {
+
+                for (var i = 0; i < locations.length; i++) {
+                    var item = locations[i]
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(item.latitude, item.longitude),
+                        map: map,
+                        title: item.name +" (installation)"
+                    });
+                }
+
+                // Once install pins have been placed, load deployments
+                showDeployments(map);
+            }
+
+            setTimeout(placeInstallPins(map, locations), 500);
+        }
+        
+        $.getScript("{{ LOCATIONS_JSONP_URL }}");
+    </script>
+{% endblock extrahead %}
+
+{% block title %}
+    Deployments Map
+{% endblock title %}
+
+{% block bodycontents %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="map_canvas"></div>            
+            </div>
+        </div>
+    </div>
+    {% include "ka_lite/partials/_map_modal_content.html" %}
+{% endblock bodycontents %}
+    
+
