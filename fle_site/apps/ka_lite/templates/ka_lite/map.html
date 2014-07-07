@@ -57,7 +57,8 @@
                 zoomControl: true,
                 panControl: true,
                 streetViewControl: false,
-                zIndex: -100
+                zIndex: -100,
+                cursor: 'pointer'
             });
 
             function placeInstallPins(map, locations) {
@@ -67,7 +68,8 @@
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
-                        title: item.name +" (installation)"
+                        title: item.name,
+                        cursor: 'default'
                     });
                 }
 
