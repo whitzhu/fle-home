@@ -14,6 +14,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
 from .models import UserResource, DeploymentStory
+from .forms import DeploymentStoryForm
 
 @render_to("ka_lite/faq.html")
 def faq(request):
@@ -35,6 +36,19 @@ def map(request):
 		"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,
 	}
 
+@render_to("ka_lite/map_add.html")
+def map_add(request):
+    """Render a form to add a new KA Lite deployment story."""
+    if request.method == "POST":
+        deployment_form = DeploymentStoryForm(request.POST)
+        if deployment_form.is_valid():
+            deployment_form.save()
+            return HttpResponseRedirect(reverse("map_add_thankyou"))
+    else:
+        deployment_form = DeploymentStoryForm()
+    return {
+        'deployment_form': deployment_form,
+    }
 
 @render_to("ka_lite/user-guides.html")
 def user_guides(request):

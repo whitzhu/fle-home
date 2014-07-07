@@ -114,7 +114,7 @@ class DeploymentStory(models.Model):
         # Enforce an org name if URL is provided (but not vice versa b/c some orgs may not have websites)
         if self.organization_url and not self.organization_name:
             raise ValidationError("You must provide an organization name if the organization has a website!")
-        if (date.today() - self.start_date).days < 0:
+        if self.start_date and (date.today() - self.start_date).days < 0:
             raise ValidationError("Start date is in the future! Cannot add a deployment that has not yet begun.")
         return cleaned_data
 

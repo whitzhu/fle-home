@@ -1,0 +1,52 @@
+{% extends base_template %}
+{% load staticfiles %}
+
+{% block title %}Add a deployment{% endblock title %}
+
+{% block bodycontents %}
+<div class="container">
+    <div class="col-sm-12">
+
+        {{ deployment_form.non_field_errors }}
+
+        <form action="." method="POST" class="form-horizontal" role="form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <h2>Please tell us more about your deployment!</h2>
+                </div>
+            </div>
+
+            <br/>
+
+            {% for field in deployment_form %}
+                <div class="form-group">
+
+                    <div class="col-sm-3 control-label">
+                        {{ field.label_tag }}{% if field.field.required %} *{% endif %}
+                    </div>
+                    <div class="col-sm-9">
+                        {{ field }}
+                        {{ field.errors }}
+                        {% if field.help_text %}
+                        ({{ field.help_text }})
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="form-group">
+                <div class="col-sm-3 control-label">
+                (* indicates required field)
+                </div>
+                <div class="col-sm-9 text-center">
+                    <input type="submit" value="Submit!" class="btn btn-info" />
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+{% endblock bodycontents %}
