@@ -33,5 +33,4 @@ class PictureForm(ModelForm):
                 field.widget.attrs['class'] = 'form-control'
 
 
-
 PictureFormSet = modelformset_factory(Picture, form=PictureForm, exclude=("sort_order", "gallery", 'title',), extra=5)
