@@ -88,7 +88,7 @@ class DeploymentStory(models.Model):
     # optional bonus fields
     start_date_raw = models.CharField(max_length=100, verbose_name="Starting date", help_text='The date the deployment began.', blank=True)
     start_date = models.DateField(help_text='(copy and format the user-entered date from "start_date_raw" into here)', blank=True, null=True)
-    organization_name = models.CharField(max_length=150, blank=True, help_text='If there is an organization who is funding, supporting, or implementing this project, please enter its name here.')
+    organization_name = models.CharField(max_length=150, blank=True, help_text='The organization who is implementing this project, if any.')
     organization_url = models.URLField(blank=True)
     organization_city = models.CharField(max_length=100, blank=True, help_text='Where this organization is located.')
     organization_country = models.CharField(max_length=100, blank=True)
@@ -96,7 +96,7 @@ class DeploymentStory(models.Model):
     student_age_range = models.CharField(max_length=75, blank=True, verbose_name=u'Age range of students', help_text='The range of ages of students participating in the deployment.')
     num_kalite_servers = models.IntegerField(blank=True, null=True, verbose_name=u'Number of KA Lite servers', help_text='The number of computers where KA Lite has been installed. E.g. 3 Raspberry Pis')
     server_os = models.CharField(max_length=75, blank=True, verbose_name=u'Operating System(s)', help_text='E.g. Windows, Linux, Mac, or Raspian')
-    hardware_setup = models.CharField(max_length=100, blank=True, help_text='Short description of the way the hardware is configured. E.g. 2 RPi running local WiFi content servers.')
+    hardware_setup = models.CharField(max_length=100, blank=True, help_text='E.g. 2 RPi running local WiFi content servers.')
     deployment_setting = models.CharField(max_length=200, blank=True, help_text='Short description of the environment in which KA Lite is being used e.g. "safe-learning space in a slum"')
     pedagogical_model = models.CharField(max_length=100, blank=True, help_text='Examples might include: blended learning or independent learning')
     guest_blog_post = models.URLField(blank=True, help_text='Link to Guest Blog Post')
