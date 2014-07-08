@@ -89,15 +89,10 @@
         }
 
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0">
     </script>
     <script>
         function showDeployments(map) {
-            var defaultBounds = new google.maps.LatLngBounds(
-                                new google.maps.LatLng(70, -100),
-                                new google.maps.LatLng(-60, 100));
-                                map.fitBounds(defaultBounds);
-
             // Add deployment markers 
             var deployments = {{ deployments|jsonify }};
 
@@ -163,11 +158,14 @@
                 mapTypeId: google.maps.MapTypeId.HYBRID,
                 mapTypeControl: false,
                 panControl: false,
-                maxZoom: 20,
-                minZoom: 3,
                 zoomControl: true,
                 streetViewControl: false,
             });
+
+            var defaultBounds = new google.maps.LatLngBounds(
+                                new google.maps.LatLng(70, -100),
+                                new google.maps.LatLng(-60, 100));
+                                map.fitBounds(defaultBounds);
 
             function placeInstallPins(map, locations) {
 
@@ -187,6 +185,7 @@
                 drawLegend(map);
                 drawShareButtons(map);
                 drawTitleBar(map);
+                setTimeout(function(){ map.setZoom(3) }, 500);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
