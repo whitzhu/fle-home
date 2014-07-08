@@ -3,6 +3,66 @@
 {% load jsonify %}
 
 {% block extrahead %}
+    <style>
+        /* Prevent scrolling on this page only */
+        body {
+            overflow: hidden;
+        }
+        /* For the legend */
+        #legend-container, #share-container, #title-container {
+            background-color: rgba(255, 255, 255, 0.64);
+            border: 2px solid black;
+            border-radius: 7px;
+        }
+        #legend-container {
+            text-align: left;
+            margin-top: 1%;
+            width: 150px;
+        }
+        #title-container {
+            margin-top: 1%;
+        }
+        #title-container > h1 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #logo-text {
+            position: relative;
+            top: 10px;
+        }
+        #ka-lite-logo {
+            height: 50px;
+            display: inline;
+        }
+        #share-container{
+            text-align: center;
+            height: 60px;
+            margin-bottom: 1%;
+        }
+        .legend-row {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 5px;
+        }
+        #share-container > a {
+            margin: 10px;
+        }
+        #deployment-icon {
+            width:35px;
+            height:35px;
+        }
+        #installation-icon {
+            margin-left:8px;
+        }
+        #deployment-text {
+            position:relative;
+            top:10px;
+        }
+        #installation-text {
+            margin-left: 6px;
+        }
+
+    </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
     </script>
     <script>
@@ -46,18 +106,41 @@
             }
         }
 
+        function drawLegend(map) {
+            var legend = document.createElement('div');
+            legend.setAttribute('id', 'legend-container');
+            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='http://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
+            map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+        }
+
+        function drawShareButtons(map) {
+            var shareContainer = document.createElement('div');
+            shareContainer.setAttribute('id', 'share-container');
+            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-md'>Add your story!</a>";
+            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-md'>Tweet this map!</a>";
+            shareContainer.innerHTML = storyShareBtn + tweetThisBtn;
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
+        }
+
+        function drawTitleBar(map) {
+            var titleContainer = document.createElement('div');
+            titleContainer.setAttribute('id', 'title-container');
+            var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' id='ka-lite-logo' class='img-responsive'></a><span id='logo-text'>&nbsp;Around the World</span></h1>";
+            titleContainer.innerHTML = bannerContent;
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
+        }
+
         function display_locations(locations) {
             // Create map 
             $("#map_canvas").height($(window).height());
             var map = new google.maps.Map(document.getElementById('map_canvas'), {
                 mapTypeId: google.maps.MapTypeId.HYBRID,
-                // scrollwheel: false,
+                mapTypeControl: false,
+                panControl: false,
                 maxZoom: 20,
-                minZoom: 2,
+                minZoom: 3,
                 zoomControl: true,
-                panControl: true,
                 streetViewControl: false,
-                zIndex: -100
             });
 
             function placeInstallPins(map, locations) {
@@ -67,14 +150,18 @@
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
-                        title: item.name +" (installation)"
+                        title: item.name,
+                        cursor: 'default',
+                        zIndex: 1,
                     });
                 }
 
-                // Once install pins have been placed, load deployments
+                // Once install pins have been placed, draw everything else
                 showDeployments(map);
+                drawLegend(map);
+                drawShareButtons(map);
+                drawTitleBar(map);
             }
-
             setTimeout(placeInstallPins(map, locations), 500);
         }
         
@@ -86,15 +173,20 @@
     Deployments Map
 {% endblock title %}
 
-{% block bodycontents %}
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div id="map_canvas"></div>            
-            </div>
-        </div>
-    </div>
-    {% include "ka_lite/partials/_map_modal_content.html" %}
-{% endblock bodycontents %}
-    
+{% block navigationoverride %}
+    {# This page intentionally left blank #}
+{% endblock navigationoverride %}
 
+{% block bodyoverride %}
+    <div id="map-container">
+        <img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
+        <div id="map_canvas"></div>
+    </div>            
+    {% include "ka_lite/partials/_map_modal_content.html" %}
+{% endblock bodyoverride %}
+
+{% block footerspacing %}{% endblock %}
+    
+{% block footeroverride %}
+    {# This page intentionally left blank #}
+{% endblock footeroverride %}

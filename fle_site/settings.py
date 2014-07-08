@@ -149,6 +149,7 @@ INSTALLED_APPS = (
     'fack',
     'jsonify',
     'south',
+    'file_resubmit',
     'fle_site.apps.articles',
     'fle_site.apps.main',
     'fle_site.apps.about',
@@ -187,3 +188,14 @@ LOGGING = {
 # Django-articles settings
 DISQUS_USER_API_KEY = localor("DISQUS_USER_API_KEY", "")
 DISQUS_FORUM_SHORTNAME = "learningequality"
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+    },
+    "file_resubmit": {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        "LOCATION": '/tmp/file_resubmit/'
+    },
+}

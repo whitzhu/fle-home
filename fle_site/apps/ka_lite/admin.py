@@ -10,7 +10,7 @@ class UserResourceAdmin(admin.ModelAdmin):
 
 class DeploymentStoryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug": ("title", "deployment_city")}
-	list_display = ('title', 'deployment_country', 'contact_name')
+	list_display = ('contact_name', 'title', 'deployment_country', 'contact_name')
 
 	fieldsets = (
 		(None, {
@@ -25,6 +25,7 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 				'latitude', 
 				'longitude', 
 				'description', 
+				'published',
 			)
 		}),
 		('Bonus Options (not required)', {
@@ -46,11 +47,17 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
 		}),
 	)	
 
+class PictureInline(admin.TabularInline):
+	model = Picture
+
 class GalleryAdmin(admin.ModelAdmin):
 	list_display = ('title', 'description')
+	inlines = [
+		PictureInline,
+	]
 
 class PictureAdmin(admin.ModelAdmin):
-	list_display = ('title', 'gallery')
+	list_display = ('caption', 'title', 'gallery')
 
 admin.site.register(UserResource, UserResourceAdmin)
 admin.site.register(DeploymentStory, DeploymentStoryAdmin)

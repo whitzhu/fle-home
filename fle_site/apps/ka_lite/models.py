@@ -47,7 +47,7 @@ class UserResource(models.Model):
 
 class Gallery(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.")    
+    description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.", blank=True)
 
     def __str__(self):
         return self.title
@@ -55,41 +55,54 @@ class Gallery(models.Model):
 class Picture(models.Model):
     title = models.CharField(max_length=100, help_text="Doubles as the image title tag and the alt tag, so make it appropriate!")
     caption = models.CharField(max_length=140, help_text="140 characters or less. Tweet tweet.")
+    sort_order = models.FloatField(blank=True, default=0, help_text="From 0 to infinity, the order in which you'd like the pictures to be displayed")
     picture = models.ImageField(upload_to="deployment_pics")
     gallery = models.ForeignKey(Gallery, related_name='photos')
+
+    class Meta:
+        ordering = ['sort_order',]
 
     def __str__(self):
         return self.title
 
+
+class DeploymentStoryManager(models.Manager):
+    def published(self):
+        """Retrieve all published DeploymentStories"""
+        return self.get_query_set().filter(published=True)
+
+
 class DeploymentStory(models.Model):
     # Required fields
-    title = models.CharField(max_length=100, help_text="Descriptive title of the project")
-    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the deployment.")
+    title = models.CharField(max_length=100, help_text="Descriptive title of the project", blank=True)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the deployment.", blank=True, null=True)
     contact_name = models.CharField(max_length=100)
     contact_email = models.EmailField(max_length=254)
-    start_date = models.DateField(help_text='The date the deployment began')
-    deployment_city = models.CharField(max_length=75)
+    deployment_city = models.CharField(max_length=75, help_text='The city, town, or district where KA Lite is being used')
     deployment_country = models.CharField(max_length=75)
-    latitude = models.FloatField(help_text="In degrees, South is negative!")
-    longitude = models.FloatField(help_text="In degrees, West is negative!")
-    description = models.TextField()
+    latitude = models.FloatField(help_text="In degrees; South is negative!", blank=True, null=True)
+    longitude = models.FloatField(help_text="In degrees; West is negative!", blank=True, null=True)
+    description = models.TextField(help_text='In 2-5 sentences, tell us about this deployment.')
+    published = models.BooleanField(default=False, help_text='If checked, this deployment story will display live on the map. Default is false.')
 
     # optional bonus fields
-    organization_name = models.CharField(max_length=150, blank=True)
+    start_date_raw = models.CharField(max_length=100, verbose_name="Starting date", help_text='The date the deployment began.', blank=True)
+    start_date = models.DateField(help_text='(copy and format the user-entered date from "start_date_raw" into here)', blank=True, null=True)
+    organization_name = models.CharField(max_length=150, blank=True, help_text='The organization who is implementing this project, if any.')
     organization_url = models.URLField(blank=True)
-    organization_city = models.CharField(max_length=100, blank=True)
+    organization_city = models.CharField(max_length=100, blank=True, help_text='Where this organization is located.')
     organization_country = models.CharField(max_length=100, blank=True)
-    num_students = models.CharField(max_length=20, blank=True, verbose_name=u'Number of students', help_text='Range of the number of students')
-    student_age_range = models.CharField(max_length=75, blank=True, verbose_name=u'Age range of students', help_text='Range of age of students')
-    num_kalite_servers = models.IntegerField(blank=True, null=True, verbose_name=u'Number of KA Lite servers')
-    server_os = models.CharField(max_length=75, blank=True, verbose_name=u'Operating System(s)', help_text='The operating system(s) being used in this deployment')
-    hardware_setup = models.CharField(max_length=100, blank=True, help_text='Short description of the way the hardware is configured. E.g. 2 RPi running local WiFi content servers.')
-    deployment_setting = models.CharField(max_length=200, blank=True, help_text='Short decription of where KA Lite is being used e.g. safe-learning space in a slum')
-    pedagogical_model = models.CharField(max_length=100, blank=True)
+    num_students = models.CharField(max_length=20, blank=True, verbose_name=u'Number of students', help_text='Total number of students using KA Lite through this deployment.')
+    student_age_range = models.CharField(max_length=75, blank=True, verbose_name=u'Age range of students', help_text='The range of ages of students participating in the deployment.')
+    num_kalite_servers = models.IntegerField(blank=True, null=True, verbose_name=u'Number of KA Lite servers', help_text='The number of computers where KA Lite has been installed. E.g. 3 Raspberry Pis')
+    server_os = models.CharField(max_length=75, blank=True, verbose_name=u'Operating System(s)', help_text='E.g. Windows, Linux, Mac, or Raspian')
+    hardware_setup = models.CharField(max_length=100, blank=True, help_text='E.g. 2 RPi running local WiFi content servers.')
+    deployment_setting = models.CharField(max_length=200, blank=True, help_text='Short description of the environment in which KA Lite is being used e.g. "safe-learning space in a slum"')
+    pedagogical_model = models.CharField(max_length=100, blank=True, help_text='Examples might include: blended learning or independent learning')
     guest_blog_post = models.URLField(blank=True, help_text='Link to Guest Blog Post')
     photo_gallery = models.OneToOneField(Gallery, blank=True, null=True)
 
-    # pictures!! 
+    objects = DeploymentStoryManager()
 
     def __str__(self):
         return self.title
@@ -102,7 +115,7 @@ class DeploymentStory(models.Model):
         # Enforce an org name if URL is provided (but not vice versa b/c some orgs may not have websites)
         if self.organization_url and not self.organization_name:
             raise ValidationError("You must provide an organization name if the organization has a website!")
-        if (date.today() - self.start_date).days < 0:
+        if self.start_date and (date.today() - self.start_date).days < 0:
             raise ValidationError("Start date is in the future! Cannot add a deployment that has not yet begun.")
         return cleaned_data
 

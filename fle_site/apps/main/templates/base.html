@@ -45,12 +45,19 @@
 
 <body data-spy="scroll" data-target="#ka-inner-nav">
     <div class="container-fluid" id="wrap">
-        {% include "main/partials/_navigation.html" %}
-         <div id="body-content" class="max-container">
-            {% block bodycontents %}{% endblock bodycontents %}
-            {% include "main/partials/_contact_modal.html" %}
-        </div>
-        {% include "main/partials/_footer.html" %}
+        {% block navigationoverride %}
+            {% include "main/partials/_navigation.html" %}
+        {% endblock navigationoverride %}
+        {% block bodyoverride %}
+            <div id="body-content" class="max-container">
+                {% block bodycontents %}{% endblock bodycontents %}
+                {% block footerspacing %}<br/><br/>{% endblock %}
+                {% include "main/partials/_contact_modal.html" %}
+            </div>
+        {% endblock bodyoverride %}
+        {% block footeroverride %}
+            {% include "main/partials/_footer.html" %}
+        {% endblock footeroverride %}
     </div>
     {% block analytics %}
         <script>
