@@ -75,7 +75,7 @@
             // Add deployment markers 
             var deployments = {{ deployments|jsonify }};
 
-            var iconBase = 'http://maps.google.com/mapfiles/kml/shapes/';
+            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
             var iconSize = new google.maps.Size(35, 35);
 
             for (var i = 0; i < deployments.length; i++) {
@@ -109,7 +109,7 @@
         function drawLegend(map) {
             var legend = document.createElement('div');
             legend.setAttribute('id', 'legend-container');
-            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='http://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
+            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='https://maps.google.com/mapfiles/kml/shapes/ranger_station.png' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='https://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
             map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
         }
 
