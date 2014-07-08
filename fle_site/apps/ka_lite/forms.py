@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 from django.forms.models import modelformset_factory
 
 from file_resubmit.admin import AdminResubmitImageWidget
@@ -24,6 +24,7 @@ class PictureForm(ModelForm):
     class Meta:
         widgets = {
             'picture': AdminResubmitImageWidget,
+            'caption': TextInput(attrs={'placeholder': 'Enter a short description of this image...'}),
         }
 
     def __init__(self, *args, **kwargs):
