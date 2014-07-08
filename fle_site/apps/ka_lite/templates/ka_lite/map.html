@@ -17,7 +17,7 @@
         #legend-container {
             text-align: left;
             margin-top: 1%;
-            width: 150px;
+            margin-right: 1%;
         }
         #title-container {
             margin-top: 1%;
@@ -29,15 +29,15 @@
         #logo-text {
             position: relative;
             top: 10px;
-        }
+        }        
         #ka-lite-logo {
             height: 50px;
             display: inline;
         }
         #share-container{
             text-align: center;
-            height: 60px;
             margin-bottom: 1%;
+            margin-right: 1%;
         }
         .legend-row {
             font-family: Arial, sans-serif;
@@ -61,17 +61,38 @@
         #installation-text {
             margin-left: 6px;
         }
+        /* Responsive for phones */
+        @media (max-width: 768px) {
+            #logo-text {
+                display:none;
+            }
+            #ka-lite-logo {
+                height: 30px;
+            }
+            h1 {
+                margin-top: 2px;
+                margin-bottom: 8px;
+            }
+            .btn-responsive {
+                padding:4px 9px;
+                font-size:90%;
+                line-height: 1.2;
+            }
+            #deployment-icon {
+                width:25px;
+                height:25px;
+            }
+            #installation-icon {
+                height: 25px;
+                margin-left: 5px;
+            }
+        }
 
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0&v=3.9&sensor=false&libraries=places">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0">
     </script>
     <script>
         function showDeployments(map) {
-            var defaultBounds = new google.maps.LatLngBounds(
-                                new google.maps.LatLng(70, -100),
-                                new google.maps.LatLng(-60, 100));
-                                map.fitBounds(defaultBounds);
-
             // Add deployment markers 
             var deployments = {{ deployments|jsonify }};
 
@@ -116,8 +137,8 @@
         function drawShareButtons(map) {
             var shareContainer = document.createElement('div');
             shareContainer.setAttribute('id', 'share-container');
-            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-md'>Add your story!</a>";
-            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-md'>Tweet this map!</a>";
+            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-responsive'>Add your story!</a>";
+            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-responsive'>Tweet this map!</a>";
             shareContainer.innerHTML = storyShareBtn + tweetThisBtn;
             map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
         }
@@ -137,11 +158,14 @@
                 mapTypeId: google.maps.MapTypeId.HYBRID,
                 mapTypeControl: false,
                 panControl: false,
-                maxZoom: 20,
-                minZoom: 3,
                 zoomControl: true,
                 streetViewControl: false,
             });
+
+            var defaultBounds = new google.maps.LatLngBounds(
+                                new google.maps.LatLng(70, -100),
+                                new google.maps.LatLng(-60, 100));
+                                map.fitBounds(defaultBounds);
 
             function placeInstallPins(map, locations) {
 
@@ -161,6 +185,7 @@
                 drawLegend(map);
                 drawShareButtons(map);
                 drawTitleBar(map);
+                setTimeout(function(){ map.setZoom(3) }, 500);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
