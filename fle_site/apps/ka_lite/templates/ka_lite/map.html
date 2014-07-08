@@ -5,17 +5,43 @@
 {% block extrahead %}
     <style>
         /* For the legend */
-        #legend-container {
+        #legend-container, #share-container, #title-container {
             background-color: rgba(255, 255, 255, 0.64);
             border: 2px solid black;
+            border-radius: 7px;
+        }
+        #legend-container {
+            text-align: left;
             margin-top: 1%;
             width: 150px;
-            text-align: left;
+        }
+        #title-container {
+            margin-top: 1%;
+        }
+        #title-container > h1 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #logo-text {
+            position: relative;
+            top: 10px;
+        }
+        #ka-lite-logo {
+            height: 50px;
+            display: inline;
+        }
+        #share-container{
+            text-align: center;
+            height: 60px;
+            margin-bottom: 1%;
         }
         .legend-row {
             font-family: Arial, sans-serif;
             font-size: 12px;
             padding: 5px;
+        }
+        #share-container > a {
+            margin: 10px;
         }
         #deployment-icon {
             width:35px; 
@@ -79,9 +105,25 @@
         function drawLegend(map) {
             var legend = document.createElement('div');
             legend.setAttribute('id', 'legend-container');
-            // Set CSS for the control interior.
             legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='http://maps.google.com/mapfiles/kml/shapes/ranger_station.png' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='http://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
-            map.controls[google.maps.ControlPosition.TOP_RIGHT].push(legend);
+            map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+        }
+
+        function drawShareButtons(map) {
+            var shareContainer = document.createElement('div');
+            shareContainer.setAttribute('id', 'share-container');
+            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-md'>Add your story!</a>";
+            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-md'>Tweet this map!</a>";
+            shareContainer.innerHTML = storyShareBtn + tweetThisBtn;
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
+        }
+
+        function drawTitleBar(map) {
+            var titleContainer = document.createElement('div');
+            titleContainer.setAttribute('id', 'title-container');
+            var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' id='ka-lite-logo' class='img-responsive'></a><span id='logo-text'>&nbsp;Around the World</span></h1>";
+            titleContainer.innerHTML = bannerContent;
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }
 
         function display_locations(locations) {
@@ -89,14 +131,12 @@
             $("#map_canvas").height($(window).height());
             var map = new google.maps.Map(document.getElementById('map_canvas'), {
                 mapTypeId: google.maps.MapTypeId.HYBRID,
-                // scrollwheel: false,
+                mapTypeControl: false,
+                panControl: false,
                 maxZoom: 20,
                 minZoom: 2,
                 zoomControl: true,
-                panControl: true,
                 streetViewControl: false,
-                zIndex: -100,
-                cursor: 'pointer'
             });
 
             function placeInstallPins(map, locations) {
@@ -107,14 +147,16 @@
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
                         title: item.name,
-                        cursor: 'default'
+                        cursor: 'default',
+                        zIndex: 1,
                     });
                 }
 
-                // Once install pins have been placed, load deployments
+                // Once install pins have been placed, draw everything else
                 showDeployments(map);
-                // Finally draw the map legend
                 drawLegend(map);
+                drawShareButtons(map);
+                drawTitleBar(map);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
@@ -126,6 +168,10 @@
 {% block title %}
     Deployments Map
 {% endblock title %}
+
+{% block navigationoverride %}
+    {# This page intentionally left blank #}
+{% endblock navigationoverride %}
 
 {% block bodyoverride %}
     <div id="map-container">
