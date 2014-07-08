@@ -45,7 +45,9 @@
 
 <body data-spy="scroll" data-target="#ka-inner-nav">
     <div class="container-fluid" id="wrap">
-        {% include "main/partials/_navigation.html" %}
+        {% block navigationoverride %}
+            {% include "main/partials/_navigation.html" %}
+        {% endblock navigationoverride %}
         {% block bodyoverride %}
             <div id="body-content" class="max-container">
                 {% block bodycontents %}{% endblock bodycontents %}
