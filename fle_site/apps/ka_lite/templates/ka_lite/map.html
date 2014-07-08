@@ -4,6 +4,10 @@
 
 {% block extrahead %}
     <style>
+        /* Prevent scrolling on this page only */
+        body {
+            overflow: hidden; 
+        }
         /* For the legend */
         #legend-container, #share-container, #title-container {
             background-color: rgba(255, 255, 255, 0.64);
@@ -113,7 +117,7 @@
             var shareContainer = document.createElement('div');
             shareContainer.setAttribute('id', 'share-container');
             var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-md'>Add your story!</a>";
-            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-md'>Tweet this map!</a>";
+            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-md'>Tweet this map!</a>";
             shareContainer.innerHTML = storyShareBtn + tweetThisBtn;
             map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
         }
