@@ -6,7 +6,7 @@
 {% block extrahead %}
     <script type="text/javascript">
         $(document).ready(function () {
-        // Code adapted from http://djangosnippets.org/snippets/1389/  
+        // Code adapted from http://djangosnippets.org/snippets/1389/
         function updateElementIndex(el, prefix, ndx) {
             var id_regex = new RegExp('(' + prefix + '-\\d+-)');
             var replacement = prefix + '-' + ndx + '-';
@@ -21,7 +21,7 @@
             if (formCount > 1) {
                 // Delete the item/form
                 $(btn).parents('.pic-form-item').remove();
-                var forms = $('.pic-form-item'); // Get all the forms  
+                var forms = $('.pic-form-item'); // Get all the forms
                 // Update the total number of forms (1 less than before)
                 $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
                 var i = 0;
@@ -41,7 +41,7 @@
         function addForm(btn, prefix) {
             var formCount = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
             console.log(formCount);
-            // You can only submit a maximum of 10 todo items 
+            // You can only submit a maximum of 10 todo items
             if (formCount < 10) {
                 // Clone a form (without event handlers) from the first form
                 var row = $(".pic-form-item:first").clone(false).get(0);
@@ -59,7 +59,7 @@
                     $(this).val("");
                 });
 
-                // Add an event handler for the delete item/form link 
+                // Add an event handler for the delete item/form link
                 $(row).find(".delete").click(function () {
                     return deleteForm(this, prefix);
                 });
@@ -158,7 +158,7 @@
 
                 </div>
             {% endfor %}
-            <p><a id="add" href="#">Add another item</a></p>
+            <p><a id="add" href="#">Add another photo</a></p>
 
             <br/><br/>
 
