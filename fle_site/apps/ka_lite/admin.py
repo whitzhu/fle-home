@@ -10,7 +10,7 @@ class UserResourceAdmin(admin.ModelAdmin):
 
 class DeploymentStoryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {"slug": ("title", "deployment_city")}
-	list_display = ('title', 'deployment_country', 'contact_name')
+	list_display = ('contact_name', 'title', 'deployment_country', 'contact_name')
 
 	fieldsets = (
 		(None, {
@@ -57,7 +57,7 @@ class GalleryAdmin(admin.ModelAdmin):
 	]
 
 class PictureAdmin(admin.ModelAdmin):
-	list_display = ('title', 'gallery')
+	list_display = ('caption', 'title', 'gallery')
 
 admin.site.register(UserResource, UserResourceAdmin)
 admin.site.register(DeploymentStory, DeploymentStoryAdmin)

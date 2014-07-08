@@ -47,7 +47,7 @@ class UserResource(models.Model):
 
 class Gallery(models.Model):
     title = models.CharField(max_length=100)
-    description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.")    
+    description = models.CharField(max_length=200, help_text="200 characters or less. Like a super tweet.", blank=True)
 
     def __str__(self):
         return self.title
@@ -74,29 +74,30 @@ class DeploymentStoryManager(models.Manager):
 
 class DeploymentStory(models.Model):
     # Required fields
-    title = models.CharField(max_length=100, help_text="Descriptive title of the project")
-    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the deployment.")
+    title = models.CharField(max_length=100, help_text="Descriptive title of the project", blank=True)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Auto-generated unique ID for the deployment.", blank=True, null=True)
     contact_name = models.CharField(max_length=100)
     contact_email = models.EmailField(max_length=254)
-    start_date = models.DateField(help_text='The date the deployment began')
-    deployment_city = models.CharField(max_length=75)
+    deployment_city = models.CharField(max_length=75, help_text='The city, town, or district where KA Lite is being used')
     deployment_country = models.CharField(max_length=75)
-    latitude = models.FloatField(help_text="In degrees, South is negative!")
-    longitude = models.FloatField(help_text="In degrees, West is negative!")
+    latitude = models.FloatField(help_text="In degrees; South is negative!", blank=True, null=True)
+    longitude = models.FloatField(help_text="In degrees; West is negative!", blank=True, null=True)
     description = models.TextField()
     published = models.BooleanField(default=False, help_text='If checked, this deployment story will display live on the map. Default is false.')
 
     # optional bonus fields
+    start_date_raw = models.CharField(max_length=100, verbose_name="Starting date", help_text='The date the deployment began', blank=True)
+    start_date = models.DateField(help_text='(copy and format the user-entered date from "start_date_raw" into here)', blank=True, null=True)
     organization_name = models.CharField(max_length=150, blank=True)
     organization_url = models.URLField(blank=True)
     organization_city = models.CharField(max_length=100, blank=True)
     organization_country = models.CharField(max_length=100, blank=True)
-    num_students = models.CharField(max_length=20, blank=True, verbose_name=u'Number of students', help_text='Range of the number of students')
+    num_students = models.CharField(max_length=20, blank=True, verbose_name=u'Number of students', help_text='Total number of students')
     student_age_range = models.CharField(max_length=75, blank=True, verbose_name=u'Age range of students', help_text='Range of age of students')
     num_kalite_servers = models.IntegerField(blank=True, null=True, verbose_name=u'Number of KA Lite servers')
     server_os = models.CharField(max_length=75, blank=True, verbose_name=u'Operating System(s)', help_text='The operating system(s) being used in this deployment')
     hardware_setup = models.CharField(max_length=100, blank=True, help_text='Short description of the way the hardware is configured. E.g. 2 RPi running local WiFi content servers.')
-    deployment_setting = models.CharField(max_length=200, blank=True, help_text='Short decription of where KA Lite is being used e.g. safe-learning space in a slum')
+    deployment_setting = models.CharField(max_length=200, blank=True, help_text='Short description of environment in which KA Lite is being used e.g. "safe-learning space in a slum"')
     pedagogical_model = models.CharField(max_length=100, blank=True)
     guest_blog_post = models.URLField(blank=True, help_text='Link to Guest Blog Post')
     photo_gallery = models.OneToOneField(Gallery, blank=True, null=True)
