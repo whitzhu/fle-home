@@ -1,5 +1,5 @@
 {% extends base_template %}
-{% load staticfiles %}
+{% load staticfiles help_text_as_placeholder %}
 
 {% block title %}Add a deployment{% endblock title %}
 
@@ -24,17 +24,16 @@
                 <h3>Optional fields</h3><br/>
                 {% endif %}
 
-                <div class="form-group">
+                <div class="form-group{% if field.errors %} has-error{% endif %}">
 
                     <div class="col-sm-2 control-label">
                         {{ field.label_tag }}{% if field.field.required %} *{% endif %}
                     </div>
                     <div class="col-sm-10">
-                        {{ field }}
-                        {{ field.errors }}
-                        {% if field.help_text %}
-                        ({{ field.help_text }})
-                        {% endif %}
+                        {{ field|help_text_as_placeholder }}
+                        {% for error in field.errors %}
+                            <div class="help-block">{{ error }}</div>
+                        {% endfor %}
                     </div>
                 </div>
             {% endfor %}
@@ -49,7 +48,7 @@
 
             <h3>Upload photos!</h3><br/>
 
-            <p>We love seeing your photos, and we love <a target="_blank" href="{% url "map" %}">sharing them on the map</a> even more! If you have more photos than will fit here, or want to include videos, etc, please email them to <a href="stories@learningequality.org">stories@learningequality.org</a> instead.</p>
+            <p>We love seeing your photos, and we love <a target="_blank" href="{% url "map" %}">sharing them on the map</a> even more! If you have stories or videos, etc, that you can't submit with this form, please email them to <a href="stories@learningequality.org">stories@learningequality.org</a> instead.</p>
 
             {{ photo_formset.management_form }}
 
@@ -59,14 +58,18 @@
                 {% endfor %}
                 <div class="form-group">
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-3{% if form.picture.errors %} has-error{% endif %}">
                             {{ form.picture }}
-                            {{ form.picture.errors }}
+                            {% for error in form.picture.errors %}
+                                <div class="help-block">{{ error }}</div>
+                            {% endfor %}
                         </div>
 
-                        <div class="col-sm-9">
+                        <div class="col-sm-9{% if form.caption.errors %} has-error{% endif %}">
                             {{ form.caption }}
-                            {{ form.caption.errors }}
+                            {% for error in form.caption.errors %}
+                                <div class="help-block">{{ error }}</div>
+                            {% endfor %}
                         </div>
 
                 </div>
