@@ -169,8 +169,7 @@
 
             function placeInstallPins(map, locations) {
 
-                for (var i = 0; i < locations.length; i++) {
-                    var item = locations[i]
+                _.each(locations, function(item){
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
@@ -178,7 +177,16 @@
                         cursor: 'default',
                         zIndex: 1,
                     });
-                }
+                    var infowindow = new google.maps.InfoWindow({
+                        content: item.name,
+                    });
+                    google.maps.event.addListener(marker, 'mouseover', function() {
+                        infowindow.open(map, marker);
+                    }); 
+                    google.maps.event.addListener(marker, 'mouseout', function() {
+                        infowindow.close();
+                    });
+                });
 
                 // Once install pins have been placed, draw everything else
                 showDeployments(map);
@@ -189,6 +197,7 @@
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
+
         
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
     </script>
