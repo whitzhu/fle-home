@@ -120,8 +120,9 @@
                     icon: rangerIcon,
                     zIndex: 100000000
                 });
-
+                // modal open
                 google.maps.event.addListener(marker, 'click', function() {
+                    window.location.hash = this.slug;
                     $('#' + this.slug).modal();
                 });
             }
@@ -149,6 +150,14 @@
             var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' id='ka-lite-logo' class='img-responsive'></a><span id='logo-text'>&nbsp;Around the World</span></h1>";
             titleContainer.innerHTML = bannerContent;
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
+        }
+
+        function triggerHashModal() {
+            // Trigger modal if hash
+            var hash = window.location.hash;
+            if (hash) {
+                $(hash).modal('show');
+            }
         }
 
         function display_locations(locations) {
@@ -193,13 +202,14 @@
                 drawLegend(map);
                 drawShareButtons(map);
                 drawTitleBar(map);
+                triggerHashModal();
                 setTimeout(function(){ map.setZoom(3) }, 500);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
-
         
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
+
     </script>
 {% endblock extrahead %}
 
