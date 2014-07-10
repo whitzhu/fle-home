@@ -7,85 +7,121 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - {{ d.lat_long }} - Age: {{ d.age_of_deployment }}</small></h4>
+        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - Since: {{ d.start_date|date:"F j, Y"}}</small></h4>
       </div>
       <div class="modal-body">
         <div class="row">
+          <div class="col-xs-12">
             <p>
               {{ d.description }}&nbsp;{% if d.guest_blog_post %}<a href="{{ d.guest_blog_post }}">Read more</a>{% endif %}
             </p>
-            <ul>
+            <p>
               {% if d.linked_org_name %}
-              <li>
-                <strong>Deploying Organization:</strong> {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }} 
+                <strong>Deploying Organization:</strong> {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }}{% endif %}
               {% endif %}
-              </li>
-              {% endif %}
-              {% if d.num_students %}
-              <li>
-                <strong>Number of Students:</strong> {{ d.num_students }} 
-              </li>
-              {% endif %}
-              {% if d.student_age_range %}
-              <li>
-                <strong>Age range:</strong> {{ d.student_age_range }} 
-              </li>
-              {% endif %}
-              {% if d.num_kalite_servers %}
-              <li>
-                <strong># of KA Lite servers:</strong> {{ d.num_kalite_servers }} 
-              </li>
-              {% endif %}
-              {% if d.server_os %}
-              <li>
-                <strong>Operating System(s):</strong> {{ d.server_os }} 
-              </li>
-              {% endif %}
-              {% if d.hardware_setup %}
-              <li>
-                <strong>Hardware Setup:</strong> {{ d.hardware_setup }} 
-              </li>
-              {% endif %}
-              {% if d.deployment_setting %}
-              <li>
-                <strong>Deployment Setting:</strong> {{ d.deployment_setting }} 
-              </li>
-              {% endif %}
-              {% if d.pedagogical_model %}
-              <li>
-                <strong>Pedagogical Model:</strong> {{ d.pedagogical_model }} 
-              </li>
-              {% endif %}
-            </ul>
-            {% if d.photo_gallery %}
-              <div id="carousel-{{ d.slug }}" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  {% for counter in d.photo_gallery.photos.all %}
-                    <li data-target="#carousel-{{ d.slug }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
-                  {% endfor %}
-                </ol>
-                <!-- Wrapper for slides --> 
-                <div class="carousel-inner">
-                  {% for p in d.photo_gallery.photos.all %}
-                    <div class="item {% if forloop.first %}active{% endif %}">
-                      <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
-                      <div class="carousel-caption">
-                       {{ p.caption }}    
-                      </div>  
-                    </div>
-                  {% endfor %}
-                </div>
-                <!-- Controls --> 
-                <a class="left carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-              </div>
-            {% endif %}
+            </p>
+          </div>
         </div>
+        {# Student counts #}
+        {% if d.num_students or d.student_age_range %}
+        <div class="row extra-deployment-info">
+          {# Icon with popover #}
+          <div class="col-xs-1">
+            <a href="#" class="more-info-popover" data-toggle="popover" data-content="{% if d.num_students %}
+              <strong>Number of students:</strong> {{ d.num_students }}</br>
+            {% endif %}
+            {% if d.student_age_range %}
+              <strong>Student Age Range:</strong> {{ d.student_age_range }}  
+            {% endif %}
+            ">
+              <img src="{% static 'img/ka-lite/icons/glyphicons-group.png' %}" alt="Number of students and age range of students">
+            </a> 
+          </div>
+          {# Info #}
+          <div class="col-xs-11 info-section">
+            {% if d.num_students %}
+              {{ d.num_students }} students 
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Device info #}
+        {% if d.num_kalite_servers %}
+        <div class="row extra-deployment-info">
+          {# Icon with popover #}
+          <div class="col-xs-1">
+            <a href="#" class="more-info-popover" data-toggle="popover" data-content="
+              {% if d.num_kalite_servers %}
+                <strong>{{ d.num_kalite_servers }}</strong> devices 
+                {% if d.server_os %}
+                  running <strong>{{ d.server_os }}</strong>
+                {% endif %}
+              {% endif %}">
+                <img src="{% static 'img/ka-lite/icons/glyphicons-display.png' %}" alt="KA Lite server information for this deployment">
+              </a> 
+          </div>
+          {# Info #}
+          <div class="col-xs-11 info-section">
+            {% if d.num_kalite_servers %}
+              {{ d.num_kalite_servers }} devices
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Deployment info #}
+        {% if d.deployment_setting %}
+        <div class="row extra-deployment-info">
+          {# Icon with popover #}
+          <div class="col-xs-1">
+            <a href="#" class="more-info-popover" data-toggle="popover" data-content="
+              <strong>Deployment Setting:</strong> {{ d.deployment_setting }}</br>
+              {% if d.pedagogical_model %}
+                <strong>Pedagogical Model:</strong> {{ d.pedagogical_model }}
+              {% endif %}
+            ">
+              <img src="{% static 'img/ka-lite/icons/glyphicons-home.png' %}" alt="KA Lite deployment setting information">
+            </a>
+          </div>
+          {# Info #}
+          <div class="col-xs-11 info-section ">
+            {{ d.deployment_setting }}
+          </div>
+        </div>
+        {% endif %}
+
+        {# Pics #}
+        {% if d.photo_gallery %}
+          <div id="carousel-{{ d.slug }}" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              {% for counter in d.photo_gallery.photos.all %}
+                <li data-target="#carousel-{{ d.slug }}" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+              {% endfor %}
+            </ol>
+            <!-- Wrapper for slides --> 
+            <div class="carousel-inner">
+              {% for p in d.photo_gallery.photos.all %}
+                <div class="item {% if forloop.first %}active{% endif %}">
+                  <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
+                  <div class="carousel-caption">
+                   {{ p.caption }}    
+                  </div>  
+                </div>
+              {% endfor %}
+            </div>
+            <!-- Controls --> 
+            <a class="left carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-{{ d.slug }}" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        {% endif %}
+        
+        </div> {# End Modal Body #}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -95,3 +131,14 @@
   </div>
 </div>
 {% endfor %}
+
+<script>
+  // prevent hash from being replaced 
+  $('.more-info-popover').on('click', function(e) { e.preventDefault() }); 
+  // trigger popover 
+  $('.more-info-popover').popover({
+    trigger: 'hover',
+    html: true,
+    placement: 'right'
+  });
+</script>
