@@ -120,8 +120,9 @@
                     icon: rangerIcon,
                     zIndex: 100000000
                 });
-
+                // modal open
                 google.maps.event.addListener(marker, 'click', function() {
+                    window.location.hash = this.slug;
                     $('#' + this.slug).modal();
                 });
             }
@@ -151,6 +152,19 @@
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }
 
+        function handleHash(map) {
+            // Trigger modal if hash
+            var hash = window.location.hash;
+            if (hash) {
+                // Center map on deployment
+                var modalObj = $(hash);
+                var longitude = modalObj.attr("data-longitude");
+                var latitude = modalObj.attr("data-latitude");
+                map.setCenter(new google.maps.LatLng(latitude, longitude));
+                $(hash).modal('show');
+            }
+        }
+
         function display_locations(locations) {
             // Create map 
             $("#map_canvas").height($(window).height());
@@ -169,8 +183,7 @@
 
             function placeInstallPins(map, locations) {
 
-                for (var i = 0; i < locations.length; i++) {
-                    var item = locations[i]
+                _.each(locations, function(item){
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
@@ -178,19 +191,30 @@
                         cursor: 'default',
                         zIndex: 1,
                     });
-                }
+                    var infowindow = new google.maps.InfoWindow({
+                        content: item.name,
+                    });
+                    google.maps.event.addListener(marker, 'mouseover', function() {
+                        infowindow.open(map, marker);
+                    }); 
+                    google.maps.event.addListener(marker, 'mouseout', function() {
+                        infowindow.close();
+                    });
+                });
 
                 // Once install pins have been placed, draw everything else
                 showDeployments(map);
                 drawLegend(map);
                 drawShareButtons(map);
                 drawTitleBar(map);
+                handleHash(map);
                 setTimeout(function(){ map.setZoom(3) }, 500);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
         
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
+
     </script>
 {% endblock extrahead %}
 
