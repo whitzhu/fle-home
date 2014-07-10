@@ -2,7 +2,7 @@
 
 {# Modals for each pin #}
 {% for d in deployments %}
-<div class="modal fade deployment-modal" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" aria-hidden="true">
+<div class="modal fade deployment-modal" id="{{ d.slug }}" tabindex="-1" role="dialog" aria-labelledby="{{ d.title }}" data-longitude="{{ d.longitude }}" data-latitude="{{ d.latitude }}" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
