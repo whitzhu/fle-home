@@ -115,12 +115,13 @@
                 var marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
-                    title: title,
                     slug: slug,
                     icon: rangerIcon,
-                    zIndex: 100000000
+                    zIndex: 100000000,
+                    infoWindowContent: title + " (click for more info)",
                 });
-                // modal open
+                createInfoWindow(map, marker);
+                // modal open on click
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.hash = this.slug;
                     $('#' + this.slug).modal();
@@ -160,9 +161,25 @@
                 var modalObj = $(hash);
                 var longitude = modalObj.attr("data-longitude");
                 var latitude = modalObj.attr("data-latitude");
-                map.setCenter(new google.maps.LatLng(latitude, longitude));
+                setTimeout(function() { 
+                    map.setCenter(new google.maps.LatLng(latitude, longitude));
+                    map.setZoom(5) 
+                }, 500);
                 $(hash).modal('show');
             }
+        }
+
+        function createInfoWindow(map, marker) {
+            // Create info window that appears on hover for marker 
+            var infowindow = new google.maps.InfoWindow({
+                content: marker.infoWindowContent,
+            });
+            google.maps.event.addListener(marker, 'mouseover', function() {
+                infowindow.open(map, marker);
+            }); 
+            google.maps.event.addListener(marker, 'mouseout', function() {
+                infowindow.close();
+            });
         }
 
         function display_locations(locations) {
@@ -187,19 +204,11 @@
                     var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
-                        title: item.name,
                         cursor: 'default',
                         zIndex: 1,
+                        infoWindowContent: item.name,
                     });
-                    var infowindow = new google.maps.InfoWindow({
-                        content: item.name,
-                    });
-                    google.maps.event.addListener(marker, 'mouseover', function() {
-                        infowindow.open(map, marker);
-                    }); 
-                    google.maps.event.addListener(marker, 'mouseout', function() {
-                        infowindow.close();
-                    });
+                    createInfoWindow(map, marker);
                 });
 
                 // Once install pins have been placed, draw everything else
@@ -207,8 +216,8 @@
                 drawLegend(map);
                 drawShareButtons(map);
                 drawTitleBar(map);
-                handleHash(map);
                 setTimeout(function(){ map.setZoom(3) }, 500);
+                setTimeout(handleHash(map), 1000);
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
