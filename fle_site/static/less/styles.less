@@ -136,17 +136,18 @@ a {
         z-index: 10;
     }
     .list-icons{
-        .horizontal-list;
-        font-size: 45px;
-        position: relative;
-        padding-left: 0px;
-        margin: 0px;
-        z-index: 0;
-        @media (min-width: 990px) {
-          top: -35px;
+        list-style-type: none;
+        li {
+            display: inline;
+            .fb-like {
+                top: -5px;
+                padding-right: 4px;
+            }
         }
         @media (max-width: 989px) {
-          top: -20px
+            padding-top: 10px;
+            position: relative;
+            left: -7px;
         }
     }
 }
