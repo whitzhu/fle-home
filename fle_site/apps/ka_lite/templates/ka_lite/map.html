@@ -282,8 +282,8 @@
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
         
         $(function() {
-            $('body').on('click', '#about-this-map-btn', function() {
-                console.log("click")
+            $('body').on('click', '#about-this-map-btn' , function() {
+                window.location.hash = 'about-this-map-modal';
                 $('#about-this-map-modal').modal();
             });
         });
