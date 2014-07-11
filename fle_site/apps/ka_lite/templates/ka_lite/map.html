@@ -92,6 +92,17 @@
             border-width: 18px;
             margin-left: -18px;
         }
+        .deployment-carousel-img {
+            height: 350px;
+            position: relative;
+        }
+        .deployment-carousel-img img {
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            max-width: 100%;
+            max-height: 100%;
+        }
         /* Responsive for phones */
         @media (max-width: 768px) {
             #logo-text {
@@ -137,8 +148,6 @@
                 var slug = fields.slug;
                 var latLng = new google.maps.LatLng(fields.latitude, fields.longitude);
 
-                window.fields = fields;
-
                 var iconImage;
                 if (fields.photo_gallery) {
                     iconImage = '{% static "img/ka-lite/icons/ranger_station_pics.png" %}'
@@ -171,7 +180,7 @@
         function drawLegend(map) {
             var legend = document.createElement('div');
             legend.setAttribute('id', 'legend-container');
-            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='{% static 'img/ka-lite/icons/ranger_station.png' %}' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='deployment-icon' src='{% static 'img/ka-lite/icons/ranger_station_pics.png' %}' alt='KA Lite Deployment with Pictures' /><span id='deployment-text'>&nbsp;Contains Pictures</span></div><div class='legend-row'><img id='installation-icon' src='https://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
+            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='{% static 'img/ka-lite/icons/ranger_station.png' %}' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='https://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
             map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
         }
 
