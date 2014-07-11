@@ -190,7 +190,9 @@
         function handleHash(map) {
             // Trigger modal if hash
             var hash = window.location.hash;
-            if (hash) {
+            if (hash === '#about-map') {
+                $('#about-this-map-modal').modal('show');
+            } else if (hash) { 
                 // Center map on deployment
                 var modalObj = $(hash);
                 var longitude = modalObj.attr("data-longitude");
@@ -283,7 +285,7 @@
         
         $(function() {
             $('body').on('click', '#about-this-map-btn' , function() {
-                window.location.hash = 'about-this-map-modal';
+                window.location.hash = 'about-map';
                 $('#about-this-map-modal').modal();
             });
         });

@@ -90,9 +90,14 @@
         </div>
         {% endif %}
       </div> {# End Modal Body #}
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        {# <button type="button" class="btn btn-primary">Request to connect</button> #}
+      <div class="modal-footer request-to-connect">
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+              <small>To <strong>connect with this deployment, <a href="mailto:implementations@learningequality.org?subject=Request+to+connect+with+KA+Lite+Deployment+{{ d.title|urlencode }}+in+{{ d.deployment_location|urlencode }}">email us</a></strong>  information about your background and why you're interested in reaching out, and we'll pass it along to the deployment contact.</small>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
