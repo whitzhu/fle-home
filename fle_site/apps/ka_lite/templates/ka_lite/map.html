@@ -44,7 +44,7 @@
             font-size: 12px;
             padding: 5px;
         }
-        #share-container > a {
+        #share-container > a, #share-container > button {
             margin: 10px;
         }
         #deployment-icon {
@@ -169,12 +169,13 @@
             map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
         }
 
-        function drawShareButtons(map) {
+        function drawActionButtons(map) {
             var shareContainer = document.createElement('div');
             shareContainer.setAttribute('id', 'share-container');
+            var aboutMapButton = "<button id='about-this-map-btn' class='btn btn-primary btn-responsive'>About this Map</button>";
             var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-responsive'>Add your story!</a>";
             var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-responsive'>Tweet this map!</a>";
-            shareContainer.innerHTML = storyShareBtn + tweetThisBtn;
+            shareContainer.innerHTML = aboutMapButton + storyShareBtn + tweetThisBtn;
             map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
         }
 
@@ -211,7 +212,6 @@
                 width: "500px",
                 "text-align": "center",
                 "font-size": "13px"
-                // border: "solid 1px black"
             },
             closeBoxURL: "",
             infoBoxClearance: new google.maps.Size(1, 1),
@@ -271,7 +271,7 @@
                 // Once install pins have been placed, draw everything else
                 showDeployments(map);
                 drawLegend(map);
-                drawShareButtons(map);
+                drawActionButtons(map);
                 drawTitleBar(map);
                 setTimeout(function(){ map.setZoom(3) }, 500);
                 setTimeout(handleHash(map), 1000);
@@ -280,6 +280,14 @@
         }
         
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
+        
+        $(function() {
+            $('body').on('click', '#about-this-map-btn', function() {
+                console.log("click")
+                $('#about-this-map-modal').modal();
+            });
+        });
+        
 
     </script>
 {% endblock extrahead %}
@@ -298,6 +306,7 @@
         <div id="map_canvas"></div>
     </div>            
     {% include "ka_lite/partials/_map_modal_content.html" %}
+    {% include "ka_lite/partials/_about_map_modal.html" %}
 {% endblock bodyoverride %}
 
 {% block footerspacing %}{% endblock %}
