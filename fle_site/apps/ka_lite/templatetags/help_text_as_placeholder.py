@@ -13,7 +13,7 @@ from django import template
 from django.utils.safestring import mark_safe
 register = template.Library()
 
-IGNORE_FIELDS = ['<textarea', '<select']
+IGNORE_FIELDS = ['<select']
 
 
 @register.filter("help_text_as_placeholder")
@@ -26,10 +26,9 @@ def help_text_as_placeholder(field):
 def _get_field_with_placeholder(field, html):
     for ignored_field in IGNORE_FIELDS:
         if (ignored_field not in html):
-            html_parts = html.split("/>")
+            html_parts = html.split(" ")
             placeholder = field.help_text
-            html_parts.append('placeholder="{}"'.format(placeholder))
-            html_parts.append(' />')
+            html_parts.insert(1, 'placeholder="{}"'.format(placeholder))
         else:
             return html
-    return mark_safe(''.join(html_parts))
+    return mark_safe(' '.join(html_parts))

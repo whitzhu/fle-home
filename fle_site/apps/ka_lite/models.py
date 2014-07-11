@@ -86,6 +86,7 @@ class DeploymentStory(models.Model):
     published = models.BooleanField(default=False, help_text='If checked, this deployment story will display live on the map. Default is false.')
 
     # optional bonus fields
+    testimonials = models.TextField(help_text='Please include any quotes from students, teachers, or administrators about their experiences with KA Lite!', blank=True)
     start_date_raw = models.CharField(max_length=100, verbose_name="Starting date", help_text='The date the deployment began.', blank=True)
     start_date = models.DateField(help_text='(copy and format the user-entered date from "start_date_raw" into here)', blank=True, null=True)
     organization_name = models.CharField(max_length=150, blank=True, help_text='The organization who is implementing this project, if any.')
