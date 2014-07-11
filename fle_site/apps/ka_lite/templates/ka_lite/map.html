@@ -61,8 +61,36 @@
         #installation-text {
             margin-left: 6px;
         }
-        .popover {
-            min-width: 200px;
+
+        .infobox {
+            position: relative;
+            background: #fff;
+            border: 4px solid rgba(213, 213, 213, 0.5);
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+        .infobox:after, .infobox:before {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .infobox:after {
+            border-color: rgba(255, 255, 255, 0);
+            border-top-color: #fff;
+            border-width: 12px;
+            margin-left: -12px;
+        }
+        .infobox:before {
+            border-color: rgba(213, 213, 213, 0);
+            border-top-color: rgba(213, 213, 213, 0.5);
+            border-width: 18px;
+            margin-left: -18px;
         }
         /* Responsive for phones */
         @media (max-width: 768px) {
@@ -92,9 +120,11 @@
         }
 
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUVMGp6Uks8OCczFfrWo20zHnmENyW5O0"></script>
+    <script src="{% static 'js/infobox.js' %}"></script>
+
     <script>
+
         function showDeployments(map) {
             // Add deployment markers 
             var deployments = {{ deployments|jsonify }};
@@ -123,7 +153,7 @@
                     zIndex: 100000000,
                     infoWindowContent: title + "</br>(click for more info)"
                 });
-                createInfoWindow(map, marker);
+                createInfoBox(map, marker);
                 // modal open on click
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.hash = this.slug;
@@ -164,26 +194,49 @@
                 var modalObj = $(hash);
                 var longitude = modalObj.attr("data-longitude");
                 var latitude = modalObj.attr("data-latitude");
-                setTimeout(function() { 
+                setTimeout(function() {
                     map.setCenter(new google.maps.LatLng(latitude, longitude));
-                    map.setZoom(5) 
+                    map.setZoom(5)
                 }, 500);
                 $(hash).modal('show');
             }
         }
 
-        function createInfoWindow(map, marker) {
-            // Create info window that appears on hover for marker 
-            var infowindow;
-            google.maps.event.addListener(marker, 'mouseover', function() {
-                infowindow = new google.maps.InfoWindow({
-                    content: marker.infoWindowContent
-                });
-                infowindow.open(map, marker);
-            }); 
-            google.maps.event.addListener(marker, 'mouseout', function() {
-                infowindow.close();
+        var infoBoxDefaults = {
+            disableAutoPan: true,
+            pixelOffset: new google.maps.Size(-250, -70),
+            zIndex: 100000000,
+            boxStyle: {
+                opacity: 0.85,
+                width: "500px",
+                "text-align": "center",
+                "font-size": "13px"
+                // border: "solid 1px black"
+            },
+            closeBoxURL: "",
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
+            pane: "floatPane",
+            enableEventPropagation: false
+        };
+
+        function createInfoBox(map, marker) {
+            // Create info window that appears on hover for marker
+
+            var infoBoxOptions = _.extend({}, infoBoxDefaults, {
+                content: "<span class='infobox'>" + marker.infoBoxContent + "</span>"
             });
+
+            var infobox = new InfoBox(infoBoxOptions);
+
+            google.maps.event.addListener(marker, 'mouseover', function() {
+                infobox.open(map, this);
+            });
+
+            google.maps.event.addListener(marker, 'mouseout', function() {
+                infobox.close();
+            });
+
         }
 
         function display_locations(locations) {
@@ -210,9 +263,9 @@
                         map: map,
                         cursor: 'default',
                         zIndex: 1,
-                        infoWindowContent: item.name
+                        infoBoxContent: item.name
                     });
-                    createInfoWindow(map, marker);
+                    createInfoBox(map, marker);
                 });
 
                 // Once install pins have been placed, draw everything else
