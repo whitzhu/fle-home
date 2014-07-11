@@ -150,7 +150,7 @@
 
                 var iconImage;
                 if (fields.photo_gallery) {
-                    iconImage = '{% static "img/ka-lite/icons/ranger_station_pics.png" %}'
+                    iconImage = '{% static "img/ka-lite/icons/ranger_station_pics.png" %}';
                 } else {
                     iconImage = '{% static "img/ka-lite/icons/ranger_station.png" %}';
                 }
@@ -207,14 +207,14 @@
             var hash = window.location.hash;
             if (hash === '#about-map') {
                 $('#about-this-map-modal').modal('show');
-            } else if (hash) { 
+            } else if (hash) {
                 // Center map on deployment
                 var modalObj = $(hash);
                 var longitude = modalObj.attr("data-longitude");
                 var latitude = modalObj.attr("data-latitude");
                 setTimeout(function() {
                     map.setCenter(new google.maps.LatLng(latitude, longitude));
-                    map.setZoom(5)
+                    map.setZoom(5);
                 }, 500);
                 $(hash).modal('show');
             }
@@ -297,14 +297,14 @@
         }
         
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
-        
+
         $(function() {
             $('body').on('click', '#about-this-map-btn' , function() {
                 window.location.hash = 'about-map';
                 $('#about-this-map-modal').modal();
             });
         });
-        
+
 
     </script>
 {% endblock extrahead %}
