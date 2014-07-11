@@ -26,34 +26,34 @@
         <div class="row popover-buttons">
           {# Student info #}
           <div class="col-xs-4">
-            <img class="more-info-popover" data-toggle="popover"  {% if d.num_students or d.student_age_range %}
+            <img {% if d.num_students or d.student_age_range %} class="has-info-popover"
             data-content="{% if d.num_students %}
-            <strong>Student count:</strong> {{ d.num_students }}</br>
+            <strong>Student Count:</strong> {{ d.num_students }}</br>
             {% endif %}
             {% if d.student_age_range %}
               <strong>Student Ages:</strong> {{ d.student_age_range }}
-            {% endif %}" {% else %} data-content="No student information available for this deployment" {% endif %}
-            src="{% static 'img/ka-lite/icons/glyphicons-group.png' %}" alt="Number of students and age range of students">
+            {% endif %}" {% else %} class="no-info-popover" data-content="No student information available for this deployment" {% endif %}
+            data-toggle="popover" src="{% static 'img/ka-lite/icons/glyphicons-group.png' %}" alt="Number of students and age range of students">
           </div>
           {# Device info #}
           <div class="col-xs-4">
-            <img class="more-info-popover" data-toggle="popover" data-content={% if d.num_kalite_servers %}"
+            <img {% if d.num_kalite_servers %} class="has-info-popover" data-content="
                 <strong>{{ d.num_kalite_servers }}</strong> devices 
                 {% if d.server_os %}
                   (running <strong>{{ d.server_os }}</strong>)
                 {% endif %}"
               {% else %}
-              "No device information available for this deployment"
-              {% endif %} src="{% static 'img/ka-lite/icons/glyphicons-display.png' %}" alt="KA Lite server information for this deployment">
+               class="no-ino-popover" data-content="No device information available for this deployment"
+              {% endif %} data-toggle="popover" src="{% static 'img/ka-lite/icons/glyphicons-display.png' %}" alt="KA Lite server information for this deployment">
           </div>
           {# Deployment info #}
           <div class="col-xs-4">
-            <img class="more-info-popover" data-toggle="popover" data-content={% if d.deployment_setting %}"
+            <img {% if d.deployment_setting %}class="has-info-popover" data-content="
               <strong>Deployment Setting:</strong> {{ d.deployment_setting }}</br>
               {% if d.pedagogical_model %}
                 <strong>Pedagogical Model:</strong> {{ d.pedagogical_model }}
               {% endif %}
-            "{% else %} "No setting or pedagogical information available for this deployment" {% endif %} src="{% static 'img/ka-lite/icons/glyphicons-home.png' %}" alt="KA Lite deployment setting information">
+            "{% else %}class="no-info-popover" data-content="No setting or pedagogical information available for this deployment" {% endif %} data-toggle="popover" src="{% static 'img/ka-lite/icons/glyphicons-home.png' %}" alt="KA Lite deployment setting information">
           </div>
         </div>
         {# Pics #}
@@ -107,9 +107,9 @@
 <script>
   $(function() {
     // prevent hash from being replaced 
-    $('.more-info-popover').on('click', function(e) { e.preventDefault() }); 
+    $("[class$='-info-popover'").on('click', function(e) { e.preventDefault() }); 
     // trigger popover 
-    $('.more-info-popover').popover({
+    $("[class$='-info-popover'").popover({
       trigger: 'hover',
       html: true,
       placement: 'top'
