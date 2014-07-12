@@ -30,9 +30,14 @@
             position: relative;
             top: 10px;
         }        
+        .banner-logo {
+            display: inline;
+        }
         #ka-lite-logo {
             height: 50px;
-            display: inline;
+        }
+        #fle-logo {
+            height: 60px;
         }
         #share-container{
             text-align: center;
@@ -110,6 +115,9 @@
             }
             #ka-lite-logo {
                 height: 30px;
+            }
+            #fle-logo {
+                height: 45px;
             }
             h1 {
                 margin-top: 2px;
@@ -197,7 +205,7 @@
         function drawTitleBar(map) {
             var titleContainer = document.createElement('div');
             titleContainer.setAttribute('id', 'title-container');
-            var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' id='ka-lite-logo' class='img-responsive'></a><span id='logo-text'>&nbsp;Around the World</span></h1>";
+            var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img id='ka-lite-logo' src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' class='img-responsive banner-logo'></a> by <a href='{% url 'mission' %}'><img id='fle-logo' src='{% static 'img/fle-prov-logo-small.png' %}' alt='The Foundation for Learning Equality logo' class='img-responsive banner-logo'/></a></h1>";
             titleContainer.innerHTML = bannerContent;
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }

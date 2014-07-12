@@ -6,7 +6,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">KA Lite Around the World<br/><small>A map of known installations and deployments of KA Lite curated by the FLE team</small></h4>
+        <h4 class="modal-title">KA Lite Around the World<br/><small>A map of known installations and deployments of KA Lite curated by the <a href="{% url 'team' %}">FLE team</a></small></h4>
       </div>
       <div class="modal-body">
         <div class="col-xs-12">
@@ -21,6 +21,9 @@
           </p>
           <p>
             The red pins on the map are individuals or organizations who have downloaded KA Lite, installed it, and registered with our central server. The green houses represent individuals or organizations with whom we have been in contact (by email, phone, or in-person meetings), who have been using KA Lite to enhance educational opportunities for the communities that they serve. The stories and photos included here were generously supplied by these incredible people.
+          </p>
+          <p>
+            Check out the <a href="{% url 'mission' %}">about section </a> of the FLE website to learn more about our our team and mission. Looking for more in depth stories and news? Visit our <a href="{% url 'blog' %}">blog</a>! Don't forget to <a href="{% url 'blog' %}#subscribe">subscribe</a>! 
           </p>
         </div>
       </div> {# End Modal Body #}
