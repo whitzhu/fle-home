@@ -122,6 +122,7 @@ a {
     background-color: @darkgray;
     color: @white;
     padding-top: 20px;
+    padding-bottom: 20px;
     .row {
         margin-right: 0px;
     }
@@ -133,21 +134,31 @@ a {
         }
     }
     #help_links {
-        z-index: 10;
+        @media (max-width: 989px) {
+            text-align: center;
+        }
     }
     .list-icons{
-        .horizontal-list;
-        font-size: 45px;
-        position: relative;
-        padding-left: 0px;
-        margin: 0px;
-        z-index: 0;
-        @media (min-width: 990px) {
-          top: -35px;
+        list-style-type: none;
+        float: right;
+        li {
+            display: inline;
+            .fb-like {
+                top: -5px;
+                padding-right: 4px;
+            }
         }
         @media (max-width: 989px) {
-          top: -20px
+            float: none;
+            text-align: center;
+            padding-top: 10px;
+            position: relative;
+            left: -5px;
         }
+    }
+    #cc-icon {
+        height: 15px;
+        margin-left: 8px;
     }
 }
 
