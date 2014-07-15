@@ -173,7 +173,6 @@
                     map: map,
                     slug: slug,
                     icon: rangerIcon,
-                    zIndex: 100000000,
                     infoBoxContent: title + " (click for more info)"
                 });
                 createInfoBox(map, marker);
@@ -287,7 +286,6 @@
                         position: new google.maps.LatLng(item.latitude, item.longitude),
                         map: map,
                         cursor: 'default',
-                        zIndex: 1,
                         infoBoxContent: item.name
                     });
                     createInfoBox(map, marker);
