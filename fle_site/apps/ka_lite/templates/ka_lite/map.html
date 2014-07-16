@@ -173,7 +173,8 @@
                     map: map,
                     slug: slug,
                     icon: rangerIcon,
-                    infoBoxContent: title + " (click for more info)"
+                    infoBoxContent: title + " (click for more info)",
+                    zIndex: fields.latitude + 1000
                 });
                 createInfoBox(map, marker);
                 // modal open on click
