@@ -183,7 +183,7 @@
                 // modal open on click
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.hash = this.slug;
-                    $('#' + this.slug).modal();
+                    $('#' + this.slug).modal().on('hidden.bs.modal', clearHash);
                 });
             }
         }
@@ -213,11 +213,15 @@
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }
 
+        function clearHash() {
+            window.location.hash = "";
+        }
+
         function handleHash(map) {
             // Trigger modal if hash
             var hash = window.location.hash;
             if (hash === '#about-map') {
-                $('#about-this-map-modal').modal('show');
+                $('#about-this-map-modal').modal('show').on('hidden.bs.modal', clearHash);
             } else if (hash) {
                 // Center map on deployment
                 var modalObj = $(hash);
@@ -227,7 +231,7 @@
                     map.setCenter(new google.maps.LatLng(latitude, longitude));
                     map.setZoom(5);
                 }, 500);
-                $(hash).modal('show');
+                $(hash).modal('show').on('hidden.bs.modal', clearHash);
             }
         }
 
@@ -311,7 +315,7 @@
         $(function() {
             $('body').on('click', '#about-this-map-btn' , function() {
                 window.location.hash = 'about-map';
-                $('#about-this-map-modal').modal();
+                $('#about-this-map-modal').modal().on('hidden.bs.modal', clearHash);
             });
         });
 
