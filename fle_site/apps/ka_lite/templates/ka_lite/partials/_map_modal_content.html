@@ -71,7 +71,7 @@
               <div class="carousel-inner">
                 {% for p in d.photo_gallery.photos.all %}
                   <div class="item {% if forloop.first %}active{% endif %} deployment-carousel-img">
-                    <img src="{{ MEDIA_URL }}{{ p.picture }}" alt="{{ p.title }}" title="{{ p.title }}">
+                    <img src="{% static 'img/ka-lite/loading.gif' %}" alt="{{ p.title }}" title="{{ p.title }}" data-src="{{ MEDIA_URL }}{{ p.picture }}">
                     <div class="carousel-caption">
                      {{ p.caption }}    
                     </div>  

@@ -183,9 +183,21 @@
                 // modal open on click
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.hash = this.slug;
-                    $('#' + this.slug).modal();
+                    // load the pictures for this modal if it has them via AJAX
+                    var deployment = $('#' + this.slug);
+                    loadSlideshow(deployment);
+                    deployment.modal();
                 });
             }
+        }
+
+        function loadSlideshow(modalObj) {
+            // Dynamically load the images for the modal 
+            var imgList = modalObj.find('.carousel-inner .item img');
+            _.each(imgList, function(img) {
+                var imgSrc = $(img).attr("data-src");
+                $(img).attr("src", imgSrc);
+            });
         }
 
         function drawLegend(map) {
@@ -227,6 +239,7 @@
                     map.setCenter(new google.maps.LatLng(latitude, longitude));
                     map.setZoom(5);
                 }, 500);
+                loadSlideshow(modalObj);
                 $(hash).modal('show');
             }
         }
