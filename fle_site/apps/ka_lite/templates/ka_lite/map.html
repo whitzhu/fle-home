@@ -10,7 +10,7 @@
         }
         /* For the legend */
         #legend-container, #share-container, #title-container {
-            background-color: rgba(255, 255, 255, 0.64);
+            background-color: rgba(255, 255, 255, 0.75);
             border: 2px solid black;
             border-radius: 7px;
         }
@@ -20,11 +20,8 @@
             margin-right: 1%;
         }
         #title-container {
-            margin-top: 1%;
-        }
-        #title-container > h1 {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding: 10px;
+            color: #666;
         }
         #logo-text {
             position: relative;
@@ -61,10 +58,12 @@
         }
         #deployment-text {
             position:relative;
-            top:10px;
+            top:5px;
+            font-weight: bold;
         }
         #installation-text {
-            margin-left: 6px;
+            margin-left: 8px;
+            font-weight: bold;
         }
 
         .infobox {
@@ -198,17 +197,17 @@
         function drawActionButtons(map) {
             var shareContainer = document.createElement('div');
             shareContainer.setAttribute('id', 'share-container');
-            var aboutMapButton = "<button id='about-this-map-btn' class='btn btn-primary btn-responsive'>About this Map</button>";
-            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-responsive'>Add your story!</a>";
-            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-responsive'>Tweet this map!</a>";
+            var aboutMapButton = "<button id='about-this-map-btn' class='btn btn-primary btn-responsive'>About this map</button>";
+            var storyShareBtn = "<a href='{% url 'map_add' %}' class='btn btn-primary btn-responsive' target='_blank'>Add your story!</a>";
+            var tweetThisBtn = "<a href='http://twitter.com/home?status=Check%20out%20%40LearnEQ%20%27s%20map%20of%20known%20%40ka_lite%20deployments%20and%20installations%20around%20the%20world!%20https%3A%2F%2Flearningequality.org%2Fka-lite%2Fmap%2F'class='btn btn-primary btn-responsive' target='_blank'>Tweet this map!</a>";
             shareContainer.innerHTML = aboutMapButton + storyShareBtn + tweetThisBtn;
             map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(shareContainer);
         }
 
         function drawTitleBar(map) {
-            var titleContainer = document.createElement('div');
+            var titleContainer = document.createElement('h2');
             titleContainer.setAttribute('id', 'title-container');
-            var bannerContent = "<h1><a href='{% url 'ka_lite' %}'><img id='ka-lite-logo' src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' class='img-responsive banner-logo'></a> by <a href='{% url 'mission' %}'><img id='fle-logo' src='{% static 'img/fle-prov-logo-small.png' %}' alt='The Foundation for Learning Equality logo' class='img-responsive banner-logo'/></a></h1>";
+            var bannerContent = "<a href='{% url 'ka_lite' %}' target='_blank'><img id='ka-lite-logo' src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' class='img-responsive banner-logo'></a> by <a href='{% url 'mission' %}' target='_blank'><img id='fle-logo' src='{% static 'img/fle-prov-logo-small.png' %}' alt='The Foundation for Learning Equality logo' class='img-responsive banner-logo'/></a>";
             titleContainer.innerHTML = bannerContent;
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }
