@@ -156,9 +156,12 @@
                 var slug = fields.slug;
                 var latLng = new google.maps.LatLng(fields.latitude, fields.longitude);
 
+                var zIndex = 10000 - fields.latitude;
+
                 var iconImage;
                 if (fields.photo_gallery) {
                     iconImage = '{% static "img/ka-lite/icons/ranger_station_pics.png" %}';
+                    zIndex += 1000;
                 } else {
                     iconImage = '{% static "img/ka-lite/icons/ranger_station.png" %}';
                 }
@@ -174,7 +177,7 @@
                     slug: slug,
                     icon: rangerIcon,
                     infoBoxContent: title + " (click for more info)",
-                    zIndex: 10000 - fields.latitude
+                    zIndex: zIndex
                 });
                 createInfoBox(map, marker);
                 // modal open on click
