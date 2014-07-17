@@ -2,6 +2,7 @@ from datetime import date
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
 from django.db import models
 
 class UserResource(models.Model):
@@ -146,3 +147,14 @@ class DeploymentStory(models.Model):
             return "%(city)s, %(country)s" % {'city': self.organization_city, 'country': self.organization_country} 
         else:
             return False
+
+    def get_absolute_url(self):
+        if not self.published or not (self.longitude or self.latitude):
+            return ""
+        return "%s#%s" % (reverse("map"), self.slug)
+
+    def has_photos(self):
+        if not self.photo_gallery:
+            return False
+        return self.photo_gallery.photos.count() > 0
+    has_photos.boolean = True
