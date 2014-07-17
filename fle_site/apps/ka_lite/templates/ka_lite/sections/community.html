@@ -161,7 +161,7 @@
 					    	<div class="item">
 					      		<img src="{% static 'img/ka-lite/Washington.jpg' %}">
 					      		<!-- <div class="carousel-caption">
-					        		<p>Callam Bay Corrections Center</p>
+					        		<p>Clallam Bay Corrections Center</p>
 					      		</div> -->
 					    	</div>
 				  		</div>
@@ -176,16 +176,18 @@
 
 				<div id="carousel-overlay-well" class="well">
 					<div id="carousel-overlay">
-							<h3 class="overlay-text">Are you using KA Lite?</br><small class="overlay-text">If so, please tell us about it, and send pictures!</small></h3>
-						<a href ="{% url 'map_add' %}" class="btn btn-primary btn-large">Share Your Story</a>
+							<h3 class="overlay-text">Are you using KA Lite?</br><small class="overlay-text">If so, please tell us about it, and upload pictures!</small></h3>
+						<a href ="{% url 'map_add' %}" class="btn btn-primary btn-large" target="_blank">Share your Story</a>
+						<a href ="{% url 'map' %}" class="btn btn-primary btn-large" target="_blank">View the Map</a>
 					</div>
 				</div>
 			</div> <!-- End desktops and above --> 
 
 			<!-- Call for stories for those on small screens -->
 			<div class="col-md-12 visible-sm visible-xs text-center">
-				<h3>Are you using KA Lite?</br><small>If so, please tell us about it, and send pictures!</small></h3>
-				<a href ="{% url 'map_add' %}" class="btn btn-primary btn-large">Share Your Story</a>
+				<h3>Are you using KA Lite?</br><small>If so, please tell us about it, and upload pictures!</small></h3>
+				<a href ="{% url 'map_add' %}" class="btn btn-primary btn-large">Share your Story</a>
+				<a href ="{% url 'map' %}" class="btn btn-primary btn-large">View the Map</a>
 			</div>
 		</div>
 	</div>
