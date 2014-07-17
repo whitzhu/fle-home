@@ -79,6 +79,12 @@
         $(".delete").click(function () {
             return deleteForm(this, "form");
         });
+
+        $("#submit-story-div input").click(function () {
+            $(this).hide();
+            $('#form-submitted').show();
+            $('#deployment-story-form').submit();
+        })
     });
     </script>
 {% endblock extrahead %}
@@ -89,11 +95,16 @@
 
         {{ deployment_form.non_field_errors }}
 
-        <form action="." enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
+        <form action="." id="deployment-story-form" enctype="multipart/form-data" method="POST" class="form-horizontal" role="form">
             {% csrf_token %}
 
             <div class="form-group">
                 <h2>Please tell us more about your deployment!</h2>
+                {% if deployment_form.errors %}
+                    <p class="text-danger">
+                        Please correct the errors below.
+                    </p>
+                {% endif %}
             </div>
 
             <h3>Required fields</h3><br/>
@@ -167,8 +178,14 @@
             <br/>
 
             <div class="form-group">
-                <div class="col-sm-12 text-center">
+                <div id="submit-story-div" class="col-sm-12 text-center">
                     <input type="submit" value="Submit deployment story!" class="btn btn-info" />
+                    <div id="form-submitted">
+                        <img id='loading-gif' src='{% static 'img/ka-lite/loading.gif' %}'>
+                        <p>
+                            Please wait, upload in progress... This may take a few minutes depending on the number of pictures you have submitted and the speed of your Internet connection.
+                        </p>
+                    </div>
                 </div>
             </div>
 
