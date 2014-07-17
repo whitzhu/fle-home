@@ -7,7 +7,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">{{ d.title }}<br/><small>{{ d.deployment_location }} - Since: {{ d.start_date|date:"F j, Y"}}</small></h4>
+        <h4 class="modal-title">{{ d.title }} <small>{% if request.user.is_staff %}(<a href="{% url 'admin:ka_lite_deploymentstory_change' d.id %}" target="_blank">edit</a>){% endif %}<br/>{{ d.deployment_location }} - Since: {{ d.start_date|date:"F j, Y"}}</small></h4>
       </div>
       <div class="modal-body">
         <div class="row">
