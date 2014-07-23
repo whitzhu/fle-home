@@ -65,6 +65,12 @@
             margin-left: 8px;
             font-weight: bold;
         }
+        #loading-message {
+            position: relative;
+            text-align: center;
+            top: 50px;
+            left: 20px;
+        }
 
         .infobox {
             position: relative;
@@ -183,9 +189,10 @@
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.hash = this.slug;
                     // load the pictures for this modal if it has them via AJAX
-                    var deployment = $('#' + this.slug);
+                    var hash = '#' + this.slug;
+                    var deployment = $(hash);
                     loadSlideshow(deployment);
-                    deployment.modal().on('hidden.bs.modal', clearHash);
+                    showDeploymentModal(hash);
                 });
             }
         }
@@ -244,8 +251,18 @@
                     map.setZoom(5);
                 }, 500);
                 loadSlideshow(modalObj);
-                $(hash).modal('show').on('hidden.bs.modal', clearHash);
+                showDeploymentModal(hash, true);
             }
+        }
+
+        function showDeploymentModal(hash, preloaded) {
+            $(hash).modal('show').on('hidden.bs.modal', clearHash);
+            ga('send', {
+                'hitType': 'event',          // Required.
+                'eventCategory': 'deployment',   // Required.
+                'eventAction': preloaded ? 'preloaded' : 'click',      // Required.
+                'eventLabel': hash
+            });
         }
 
         var infoBoxDefaults = {
@@ -347,7 +364,9 @@
 {% block bodyoverride %}
     <div id="map-container">
         <img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
-        <div id="map_canvas"></div>
+        <div id="map_canvas">
+            <div id="loading-message">Please wait. Awesomeness will be with you shortly...</div>
+        </div>
     </div>            
     {% include "ka_lite/partials/_map_modal_content.html" %}
     {% include "ka_lite/partials/_about_map_modal.html" %}
