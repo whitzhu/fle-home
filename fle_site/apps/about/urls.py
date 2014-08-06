@@ -8,5 +8,6 @@ urlpatterns = patterns('fle_site.apps.about.views',
     url(r'^board/$', 'board', name='board'),
     url(r'^supporters/$', 'supporters', name='supporters'),
     url(r'^press/$', 'press', name='press'),
+    url(r'^jobs/$', 'jobs', name='jobs'),
     url(r'^internships/$', 'internships', name='internships'),
 )
