@@ -29,7 +29,7 @@
                     <h1>Work at FLE</h1>
                     <h3>and help 4.5 BILLION people access a free education</h3>
                 </div>
-                
+
                 <p>We are a group of hackers, educators, and humanitarians that <strong>eat the digital divide for breakfast</strong>. We believe that regardless of their nationality, gender, or social status, everyone around the world should have <strong>access to a free, high-quality education</strong>. And we need your help to make it happen!</p>
 
                 <p>At FLE, you'll work on software platforms that will be used in some of the most remote places on earth. Our offline version of Khan Academy, <a href="{% url 'ka_lite' %}">KA Lite</a>, has been installed in over 120 countries. Hard to believe? Don't worry, we <a href="{% url 'map' %}">mapped them</a>.</p>
@@ -62,7 +62,7 @@
                 {% for j in jobs %}
                     {% if j.active %}
                         <div class="well" id="{{ j.slug }}">
-                            <h5><strong>{{ j.title }}</strong></h5>
+                            <h4><strong>{{ j.title }}</strong></h4>
                             {{ j.description }}
                             <p><a class="btn btn-primary btn-large fle-btn" href="{{ j.apply_url }}">Apply now!</a></p>
                         </div>
