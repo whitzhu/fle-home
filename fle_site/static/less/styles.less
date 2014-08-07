@@ -393,8 +393,21 @@ a.icon:before {
         }
     }
     .affix {
-        width: 180px;
         top: 30px;
+        /* Small devices (tablets, 768px and up) */
+        @media (min-width: @screen-sm-min) {
+            .fixed-el-responsive-width(62px; 3);
+        }
+
+        /* Medium devices (desktops, 992px and up) */
+        @media (min-width: @screen-md-min) {
+            .fixed-el-responsive-width(81px; 3);
+        }
+
+        /* Large devices (large desktops, 1200px and up) */
+        @media (min-width: @screen-lg-min) {
+            .fixed-el-responsive-width(97px; 3);
+        }
     }
 }
 
