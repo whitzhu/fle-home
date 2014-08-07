@@ -74,3 +74,9 @@
 .display-none {
     display: none;
 }
+
+.fixed-el-responsive-width(@col-width; @num-cols) {
+    // col-width = 62 px for sm, 81px for md, and 97px for lg
+    // num-cols = number of columns to calculate for e.g. col-md-3 is 3 
+    width: (2*(@col-width * @num-cols))/3; 
+} 
