@@ -15,6 +15,7 @@ class UserResource(models.Model):
     category = models.CharField(max_length=100, choices=category_options) 
     version = models.CharField(max_length=50, blank=True, help_text="Leave version blank for items categorized as 'General'. Otherwise, put the major.minor version (e.g. '0.11')")
     doc_id = models.CharField(max_length=80, help_text="44-digit ID of the Google Doc")
+    doc_type = models.CharField(max_length=80, default="document")
     filename = models.CharField(max_length=100)
     slug = models.SlugField(max_length=50, unique=True)
 
@@ -28,7 +29,7 @@ class UserResource(models.Model):
         return settings.MEDIA_ROOT + "user_resources/" + self.filename
 
     def get_google_base_url(self):
-        return "https://docs.google.com/document/d/%s/" % self.doc_id
+        return "https://docs.google.com/%s/d/%s/" % (self.doc_type or "document", self.doc_id)
 
     def get_google_embed_url(self):
         return self.get_google_base_url() + "pub?embedded=true"

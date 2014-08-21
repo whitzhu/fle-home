@@ -65,7 +65,7 @@
         <a href="{{ resource.get_google_edit_url }}" target="_blank">Edit!</a>
         {% endif %}
 	  		<img id="loading-gif" src="{% static 'img/ka-lite/loading.gif' %}">
-        <iframe id="embedded-doc" src="{% url 'user_guide_detail_embed' resource.slug %}" scrolling="no"></iframe>
+        <iframe id="embedded-doc" src="{% url 'user_guide_detail_embed' resource.slug %}" scrolling="no" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 	  	</div>
 	  </div>
 	</div>
