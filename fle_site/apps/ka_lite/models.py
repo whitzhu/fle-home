@@ -35,7 +35,10 @@ class UserResource(models.Model):
         return self.get_google_base_url() + "pub?embedded=true"
 
     def get_google_download_url(self):
-        return self.get_google_base_url() + "export?format=pdf"
+        if self.doc_type == "document":
+            return self.get_google_base_url() + "export?format=pdf"
+        else:
+            return self.get_google_base_url() + "export/pdf"
 
     def get_google_edit_url(self):
         return self.get_google_base_url() + "edit"
