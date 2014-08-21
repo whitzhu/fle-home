@@ -51,6 +51,24 @@ class Internship(models.Model):
         return slugify(self.title)
 
 
+class JobManager(models.Manager):
+    def active(self):
+        return super(JobManager, self).get_query_set().filter(active=True)
+
+
+class Job(models.Model):
+    title = models.CharField(max_length=200)
+    active = models.BooleanField(default=False)
+    description = MarkupField(default_markup_type="html")
+    apply_url = models.URLField()
+    last_updated = models.DateTimeField(auto_now_add=True)
+
+    objects = JobManager()
+
+    def slug(self):
+        return slugify(self.title)
+
+
 class OrganizationType(models.Model):
     title = models.CharField(max_length=150)
 

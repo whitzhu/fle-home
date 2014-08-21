@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Jobs{% endblock title %}
+
+{% block jobs %}selected{% endblock jobs %}
+
+{% block bodycontents %}
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="side-nav col-md-3 hidden-sm hidden-xs">
+                  <div data-spy="affix" data-offset-top="90">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><h4>Jump to a job description</h4></li>
+                        {% for j in jobs %}
+                            {% if j.active %}
+                                <li><a href="#{{ j.slug }}">{{ j.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        <li><h4>Questions?</h4></li>
+                        <li><a href="#faq">FAQ &amp; Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
+                <div class="page-header">
+                    <h1>Work at FLE</h1>
+                    <h3>and help 4.5 BILLION people access a free education</h3>
+                </div>
+
+                <p>We are a group of hackers, educators, and humanitarians that <strong>eat the digital divide for breakfast</strong>. We believe that regardless of their nationality, gender, or social status, everyone around the world should have <strong>access to a free, high-quality education</strong>. And we need your help to make it happen!</p>
+
+                <p>At FLE, you'll work on software platforms that will be used in some of the most remote places on earth. Our offline version of Khan Academy, <a href="{% url 'ka_lite' %}">KA Lite</a>, has been installed in over 120 countries. Hard to believe? Don't worry, we <a href="{% url 'map' %}">mapped them</a>.</p>
+                
+                <p>
+                    <a href="{% url 'map' %}">
+                        <img src="{% static 'img/install_map.png' %}" title="Making the earth a pincushion for KA Lite installs" alt="A map of known KA Lite installations" class="img-thumbnail">
+                    </a>
+                </p>
+                <h3>Benefits:</h3>
+                <ol>
+                    <li>
+                        Working and living in sunny San Diego, (aka <a href="http://en.wikipedia.org/wiki/San_Diego">America’s Finest City</a>). We can help out with relocation costs. 
+                    </li>
+                    <li>
+                        Flexible schedule and vacation time.
+                    </li>
+                    <li>
+                        Work on a team guided by a strong set of <a href="{% url 'values' %}">values</a>.
+                    </li>
+                    <li>
+                        Like open source? That’s all we do. Find everything we’ve ever hacked on <a href="https://github.com/learningequality">here</a> and <a href="https://github.com/fle-internal">here</a>. 
+                    </li>
+                    <li>
+                        A bone-deep sense of purpose that rockets you out of bed in the morning.*</br><small>*please note: degree of rocketing in AM may vary by daily caffeine intake</small>
+                    </li>
+                    <li>
+                        And as if that weren’t enough, you’ll also receive a salary, 401(k) matching, and health care options.
+                    </li>
+                </ol>
+                <h3>Here are the positions we are looking for:</h3>
+
+                {% for j in jobs %}
+                    {% if j.active %}
+                        <div class="well" id="{{ j.slug }}">
+                            <h4><strong>{{ j.title }}</strong></h4>
+                            {{ j.description }}
+                            <p><a class="btn btn-primary btn-large fle-btn" href="{{ j.apply_url }}">Apply now!</a></p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                <!-- FAQ -->
+                <h3>Frequently Asked Questions</h3>
+                <dl id="faq">
+                    <dt>How does the application process work?</dt>
+                    <dd>After the application is submitted, we will review your application and be in touch via email within 14 days to schedule an interview and ask specific follow up questions.</dd>
+                    <dt>More questions?</dt>
+                    <dd>Don't hesitate to send us an email at <a href="mailto:jobs@learningequality.org">jobs@learningequality.org</a>.</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock bodycontents %}

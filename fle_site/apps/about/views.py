@@ -6,7 +6,7 @@ import settings
 
 from annoying.decorators import render_to
 
-from models import TeamMember, BoardMember, PressArticle, Internship, SupportingOrganization
+from models import TeamMember, BoardMember, PressArticle, Internship, Job, SupportingOrganization
 
 @render_to("about/team.html")
 def team(request):
@@ -30,6 +30,12 @@ def press(request):
 def internships(request):
     return {
         "internships": Internship.objects.all()
+    }
+
+@render_to("about/jobs.html")
+def jobs(request):
+    return {
+        "jobs": Job.objects.active()
     }
 
 @render_to("about/supporters.html")
