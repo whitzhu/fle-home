@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-xs-12">
             <p>
-              {{ d.description }}&nbsp;{% if d.guest_blog_post %}<a href="{{ d.guest_blog_post }}">Read more</a>{% endif %}
+              {{ d.description|safe }}&nbsp;{% if d.guest_blog_post %}<a href="{{ d.guest_blog_post }}">Read more</a>{% endif %}
             </p>
             <p>
               {% if d.linked_org_name %}
