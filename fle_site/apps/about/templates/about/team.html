@@ -20,35 +20,130 @@ $(document).ready(function() {
 <div id="team-content">
     <div class="page-header">
         <h1>
-            Meet the Team
+            Current Team
         </h1>
     </div>
 
-    <div class="row">
-    {% for p in team_members %}
+    {# For computers and above #}
+    <div class="hidden-sm hidden-xs">
+        <div class="row">
+        {% for tm in team_members %}
+            <div class="col-md-3">
+                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ tm.picture }}">
+                <a href="javascript:$('#{{ tm.slug }}').modal('toggle');">
+                    <div class="team-img-overlay"></div>
+                </a>
+                <h3>
+                    {{ tm.name }}
+                </h3>
+                <h4>
+                    {{ tm.title }}
+                </h4>
+            </div>
 
-        <div class="col-sm-3">
-            <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ p.picture }}">
-            <a href="javascript:$('#{{ p.slug }}').modal('toggle');">
-                <div class="team-img-overlay"></div>
-            </a>
-            <h3>
-                {{ p.name }}
-            </h3>
-            <h4>
-                {{ p.title }}
-            </h4>
-        </div>
+            {% include "about/partials/_team_modal.html" %}
 
-        {% include "about/partials/_team_modal.html" %}
-
-        {% if not forloop.last %}
-            {% if forloop.counter|divisibleby:"4" %}
-                </div><div class="row">
+            {% if not forloop.last %}
+                {% if forloop.counter|divisibleby:"4" %}
+                    </div><div class="row">
+                {% endif %}
             {% endif %}
-        {% endif %}
 
-    {% endfor %}
+        {% endfor %}
+        </div>
+    </div>
+
+    {# For tablets and below #}
+    <div class="visible-sm visible-xs">
+        <div class="row">
+        {% for tm in team_members %}
+            <div class="col-sm-4">
+                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ tm.picture }}">
+                <a href="javascript:$('#{{ tm.slug }}').modal('toggle');">
+                    <div class="team-img-overlay"></div>
+                </a>
+                <h3>
+                    {{ tm.name }}
+                </h3>
+                <h4>
+                    {{ tm.title }}
+                </h4>
+            </div>
+
+            {% include "about/partials/_team_modal.html" %}
+
+            {% if not forloop.last %}
+                {% if forloop.counter|divisibleby:"3" %}
+                    </div><div class="row">
+                {% endif %}
+            {% endif %}
+
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h1>
+            Past contributors
+        </h1>
+    </div>
+
+    {# For computers and above #}
+    <div class="hidden-sm hidden-xs">
+        <div class="row">
+        {% for alum in alumni %}
+            <div class="col-md-3">
+                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ alum.picture }}">
+                <a href="javascript:$('#{{ alum.slug }}').modal('toggle');">
+                    <div class="team-img-overlay"></div>
+                </a>
+                <h3>
+                    {{ alum.name }}
+                </h3>
+                <h4>
+                    {{ alum.title }}
+                </h4>
+            </div>
+
+            {% include "about/partials/_team_modal.html" %}
+
+            {% if not forloop.last %}
+                {% if forloop.counter|divisibleby:"4" %}
+                    </div><div class="row">
+                {% endif %}
+            {% endif %}
+
+        {% endfor %}
+        </div>
+    </div>
+
+    {# For tablets and below #}
+    <div class="visible-sm visible-xs">
+        <div class="row">
+        {% for alum in alumni %}
+            <div class="col-sm-4">
+                <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ alum.picture }}">
+                <a href="javascript:$('#{{ alum.slug }}').modal('toggle');">
+                    <div class="team-img-overlay"></div>
+                </a>
+                <h3>
+                    {{ alum.name }}
+                </h3>
+                <h4>
+                    {{ alum.title }}
+                </h4>
+            </div>
+
+            {% include "about/partials/_team_modal.html" %}
+
+            {% if not forloop.last %}
+                {% if forloop.counter|divisibleby:"3" %}
+                    </div><div class="row">
+                {% endif %}
+            {% endif %}
+
+        {% endfor %}
+        </div>
     </div>
 
 </div>
