@@ -49,6 +49,7 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
         }),
         ('Bonus Options (not required)', {
             'fields': (
+                'testimonials',
                 'organization_name',
                 'organization_url',
                 'organization_city',
@@ -61,7 +62,8 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
                 'deployment_setting',
                 'pedagogical_model',
                 'guest_blog_post',
-                'photo_gallery'
+                'photo_gallery',
+                'internal_notes',
             )
         }),
     )
