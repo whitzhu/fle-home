@@ -10,13 +10,23 @@ class Person(models.Model):
     title = models.CharField(max_length=100)
     bio = MarkupField(default_markup_type="html")
     last_updated = models.DateTimeField(auto_now_add=True)
+    alumni = models.BooleanField(default=False)
+    published = models.BooleanField(default=False)
 
     def slug(self):
         return slugify(self.name)
 
+class TeamMemberManager(models.Manager):
+    def current(self):
+        return super(TeamMemberManager, self).get_query_set().filter(alumni=False, published=True).order_by('?')
+
+    def alumni(self):
+        return super(TeamMemberManager, self).get_query_set().filter(alumni=True, published=True).order_by('?')
 
 class TeamMember(Person):
     picture = models.ImageField(upload_to="team_pics")
+
+    objects = TeamMemberManager()
 
 
 class BoardMember(Person):
