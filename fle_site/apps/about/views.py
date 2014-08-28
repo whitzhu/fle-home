@@ -11,7 +11,8 @@ from models import TeamMember, BoardMember, PressArticle, Internship, Job, Suppo
 @render_to("about/team.html")
 def team(request):
     return {
-        "team_members": TeamMember.objects.order_by("?")
+        "team_members": TeamMember.objects.current(),
+        "alumni": TeamMember.objects.alumni(),
     }
 
 @render_to("about/board.html")
