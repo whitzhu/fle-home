@@ -81,11 +81,14 @@ class DeploymentStoryManager(models.Manager):
         Return all published DeploymentStories excluding object attributes 
         that are not used in the template as a ValuesQuerySet
         """
-        return self.get_query_set().defer(
-            'contact_name',
-            'contact_email',
-            'internal_notes',
-        ).filter(published=True)
+        published_entries = self.published()
+
+        # get rid of internal notes, contact name and contact email 
+        for entry in published_entries:
+            entry.contact_name = ""
+            entry.contact_email = ""
+            entry.internal_notes = ""
+        return published_entries
 
 
 class DeploymentStory(models.Model):

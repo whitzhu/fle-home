@@ -1,6 +1,6 @@
 {% extends base_template %}
 {% load staticfiles %}
-{% load jsonify %}
+{% load jsonify_obj %}
 
 {% block extrahead %}
     <style>
@@ -151,20 +151,20 @@
 
         function showDeployments(map) {
             // Add deployment markers 
-            var deployments = {{ deployments|jsonify }};
+            var deployments = {{ deployments|jsonify_obj|safe }}
 
             var iconSize = new google.maps.Size(35, 35);
 
             for (var i = 0; i < deployments.length; i++) {
-                var fields = deployments[i].fields;
-                var title = fields.title;
-                var slug = fields.slug;
-                var latLng = new google.maps.LatLng(fields.latitude, fields.longitude);
+                var deployment = deployments[i].fields;
+                var title = deployment.title;
+                var slug = deployment.slug;
+                var latLng = new google.maps.LatLng(deployment.latitude, deployment.longitude);
 
-                var zIndex = 10000 - fields.latitude;
+                var zIndex = 10000 - deployment.latitude;
 
                 var iconImage;
-                if (fields.photo_gallery) {
+                if (deployment.photo_gallery) {
                     iconImage = '{% static "img/ka-lite/icons/ranger_station_pics.png" %}';
                     zIndex += 1000;
                 } else {
