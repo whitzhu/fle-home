@@ -76,6 +76,20 @@ class DeploymentStoryManager(models.Manager):
         """Retrieve all published DeploymentStories"""
         return self.get_query_set().filter(published=True)
 
+    def published_display(self):
+        """
+        Return all published DeploymentStories excluding object attributes 
+        that are not used in the template as a ValuesQuerySet
+        """
+        published_entries = self.published()
+
+        # get rid of internal notes, contact name and contact email 
+        for entry in published_entries:
+            entry.contact_name = ""
+            entry.contact_email = ""
+            entry.internal_notes = ""
+        return published_entries
+
 
 class DeploymentStory(models.Model):
     # Required fields

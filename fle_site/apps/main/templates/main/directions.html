@@ -7,37 +7,35 @@
 {% block give_nav %}selected{% endblock give_nav %}
 
 {% block bodycontents %}
-<div class="row">
-    {# Medium and small screens #}
-    <div class="col-sm-5 col-sm-offset-1 hidden-xs">
-        <h1>How to Get to FLE</h1>
-        <p>
-            The FLE team offices out of <a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&ll=32.8842,-117.235107&spn=0.719624,1.352692&hq=richard+c+atkinson+hall&hnear=San+Diego,+California&t=h&z=10">Richard C. Atkinson Hall</a> on the UCSD Campus.
-        </p>
-        <p>
-            The most convenient to place to park would be lot the parking lot across from Richard C. Atkinson Hall on UCSD's campus. It's $1 per 45 minutes for parking. If that lot is full, you will likely be able to find space in <a href="https://maps.google.com/maps?q=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&hl=en&sll=32.8842,-117.235107&sspn=0.719624,1.352692&oq=hopkins&t=h&hq=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&z=16">Hopkins Parking Structure</a> which is just up the hill.
-        </p>
-        <p>
-            When you arrive, please contact the FLE team member that you are scheduled to meet with to receive further directions.
-        </p>
-    </div>
-    <div class="col-sm-6 hidden-xs">
-         {# Iframe of Atkinson Hall on Map #}
-        <iframe id="directions-map" width="425" height="300" frameborder="0" scrolling="no" marginheight="1" marginwidth="0" src="https://maps.google.com/maps?q=richard+c+atkinson+hall&amp;ie=UTF8&amp;hq=richard+c+atkinson+hall&amp;hnear=San+Diego,+California&amp;ll=32.882881,-117.235044&amp;spn=0.719624,1.352692&amp;t=h&amp;z=10&amp;iwloc=A&amp;cid=9401992713551534210&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&amp;ie=UTF8&amp;hq=richard+c+atkinson+hall&amp;hnear=San+Diego,+California&amp;ll=32.882881,-117.235044&amp;spn=0.719624,1.352692&amp;t=h&amp;z=10&amp;iwloc=A&amp;cid=9401992713551534210&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-    </div>
-
-    {# On phones #}
-    <div class="visible-xs col-xs-12">
-        <h1>How to Get to FLE</h1>
-        <p>
-            The FLE team offices out of <a href="https://maps.google.com/maps?q=richard+c+atkinson+hall&ll=32.8842,-117.235107&spn=0.719624,1.352692&hq=richard+c+atkinson+hall&hnear=San+Diego,+California&t=h&z=10">Richard C. Atkinson Hall</a> on the UCSD Campus.
-        </p>
-        <p>
-            The most convenient to place to park would be lot the parking lot across from Richard C. Atkinson Hall on UCSD's campus. It's $1 per 45 minutes for parking. If that lot is full, you will likely be able to find space in <a href="https://maps.google.com/maps?q=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&hl=en&sll=32.8842,-117.235107&sspn=0.719624,1.352692&oq=hopkins&t=h&hq=Hopkins+Parking+Structure,+Voigt+Lane,+San+Diego,+CA&z=16">Hopkins Parking Structure</a> which is just up the hill.
-        </p>
-        <p>
-            When you arrive, please contact the FLE team member that you are scheduled to meet with to receive further directions.
-        </p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Directions to the Learning Equality Offices</h1>
+            <p>
+                The Learning Equality offices are located in the Qualcomm Institute Innovation Space, in Richard C. Atkinson Hall, on the UCSD Campus.
+            </p>
+            <p>
+                Visitors to the UCSD campus are allowed to park in Visitor spaces after purchasing a parking permit from one of the automated machines found at each parking lot ($1 / 45 minutes, $8 for a full-day). Visitor spaces are marked with a white "V". You can read more about parking at UCSD on the <a href="http://blink.ucsd.edu/facilities/transportation/visitor/">Parking &amp; Transportation Website</a>.
+            <p>
+                The most convenient Visitor spots near our offices are on Equality Lane, in Warren College, across from Richard C. Atkinson Hall. A red pin on the map below marks Equality Lane.
+            </p>
+            <p class="center-text">
+                {# Iframe of Atkinson Hall on Map #}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.5612792774114!2d-117.23413960000005!3d32.883325399999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c2e13c546b%3A0x256768a9ce0c471b!2sEquality+Ln%2C+University+of+California+San+Diego%2C+Warren+College%2C+La+Jolla%2C+CA+92093!5e0!3m2!1sen!2sus!4v1409780218123" width="500" height="300" frameborder="0" style="border:1px solid gray"></iframe>
+            </p>
+            <p>
+                If those spaces are full, you should be able to find space in Hopkins Parking Structure which is just up the hill and marked with a red pin in the embedded map below.
+            </p>
+            <p class="center-text">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.5459748437115!2d-117.2395943!3d32.88373019999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc06c1e66ef823%3A0x561dd150caa1a23e!2sHopkins+Parking+Structure%2C+University+of+California+San+Diego%2C+Eleanor+Roosevelt+College%2C+La+Jolla%2C+CA+92093!5e0!3m2!1sen!2sus!4v1409780304598" width="500" height="300" frameborder="0" style="border:1px solid gray"></iframe>
+            </p>
+            <p>
+                Once you have successfully parked, please contact the FLE team member that you are scheduled to meet with and they will either meet you at the base of Atkinson Hall or provide you with further directions. Richard C. Atkinson Hall is marked with a red pin in the embedded map below. 
+            </p>
+            <p class="center-text">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3350.5780806913845!2d-117.23504399999999!3d32.882881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x827a968f200cd882!2sRichard+C.+Atkinson+Hall!5e0!3m2!1sen!2sus!4v1409780961340" width="500" height="300" frameborder="0" style="border:1px solid gray"></iframe>
+            </p>
+        </div>
     </div>
 </div>
 {% endblock bodycontents %}
