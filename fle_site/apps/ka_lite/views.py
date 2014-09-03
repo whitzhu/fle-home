@@ -31,7 +31,7 @@ def faq(request):
 @render_to("ka_lite/map.html")
 def map(request):
     """Render map of KA Lite installs"""
-    deployments = DeploymentStory.objects.published()
+    deployments = DeploymentStory.objects.published_display()
     return {
         "deployments": deployments,
         "LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,

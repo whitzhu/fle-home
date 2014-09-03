@@ -76,6 +76,17 @@ class DeploymentStoryManager(models.Manager):
         """Retrieve all published DeploymentStories"""
         return self.get_query_set().filter(published=True)
 
+    def published_display(self):
+        """
+        Return all published DeploymentStories excluding object attributes 
+        that are not used in the template as a ValuesQuerySet
+        """
+        return self.get_query_set().defer(
+            'contact_name',
+            'contact_email',
+            'internal_notes',
+        ).filter(published=True)
+
 
 class DeploymentStory(models.Model):
     # Required fields
