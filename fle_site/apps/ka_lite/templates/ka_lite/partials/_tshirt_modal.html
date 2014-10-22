@@ -1,0 +1,32 @@
+{% load staticfiles %}
+
+{# Modals for each pin #}
+<div class="modal fade deployment-modal" id="free-tshirt-modal" tabindex="-1" role="dialog" aria-labelledby="free-tshirt" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h1 class="modal-title">You just won a free T-shirt!</h1>
+      </div>
+      <div class="modal-body">
+        <div class="col-xs-12">
+          <p>
+            Congratulations! Check out the T-shirt you just won! 
+          </p>
+          <p>
+            <img class="img img-responsive" src="{% static 'img/ka-lite/tshirt.png' %}">
+          </p>
+          <p>
+            Be sure to inform Liz that you are a winner, and she will give you further directions on how to collect your T-shirt!
+          </p>
+          <p>
+            Thanks for exploring our map of KA Lite deployments and enjoy the rest of your evening!
+          </p>
+        </div>
+      </div> {# End Modal Body #}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

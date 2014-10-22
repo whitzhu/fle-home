@@ -148,7 +148,6 @@
     <script src="{% static 'js/infobox.js' %}"></script>
 
     <script>
-
         function showDeployments(map) {
             // Add deployment markers 
             var deployments = {{ deployments|jsonify_obj|safe }}
@@ -339,7 +338,9 @@
             }
             setTimeout(placeInstallPins(map, locations), 500);
         }
-        
+
+        // Note that this jsonp file passes a list of location objects to 'display_locations' above
+        // so it is what triggers all the action here. 
         $.getScript("{{ LOCATIONS_JSONP_URL }}");
 
         $(function() {
@@ -347,9 +348,16 @@
                 window.location.hash = 'about-map';
                 $('#about-this-map-modal').modal().on('hidden.bs.modal', clearHash);
             });
+
+            $(document).keydown(function(event) {
+                if (event.keyCode == 34) {
+                    // If we hit page down, the user sees a 'free t-shirt' dialog
+                    event.preventDefault()
+                    console.log("The user hath won a t-shirt!")
+                    $('#free-tshirt-modal').modal();
+                } 
+            });
         });
-
-
     </script>
 {% endblock extrahead %}
 
@@ -370,6 +378,7 @@
     </div>            
     {% include "ka_lite/partials/_map_modal_content.html" %}
     {% include "ka_lite/partials/_about_map_modal.html" %}
+    {% include "ka_lite/partials/_tshirt_modal.html" %}    
 {% endblock bodyoverride %}
 
 {% block footerspacing %}{% endblock %}
