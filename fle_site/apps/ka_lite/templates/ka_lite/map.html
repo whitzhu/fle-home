@@ -352,9 +352,9 @@
             $(document).keydown(function(event) {
                 if (event.keyCode == 34) {
                     // If we hit page down, the user sees a 'free t-shirt' dialog
-                    event.preventDefault()
-                    console.log("The user hath won a t-shirt!")
-                    $('#free-tshirt-modal').modal();
+                    var win_song = new Audio('{% static "audio/ka-lite/win.wav" %}');
+                    win_song.play()
+                    $('#free-tshirt-modal').modal()
                 } 
             });
         });
