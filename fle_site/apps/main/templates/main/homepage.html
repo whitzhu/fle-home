@@ -1,0 +1,113 @@
+{% extends 'ka_lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block headcss %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock headcss %}
+
+{% block bodycontents %}
+
+<div class="container-fluid">
+
+		<div class="row landing-screen">
+			<div class="container">
+				<div class="container col-xs-5 col-sm-5 col-md-9 col-lg-8 landing-box">
+					<span id="landing-header">MAKING UNIVERSAL EDUCATION A REALITY</span>
+					<span id="landing-description">We are bridging the global digital divide by bringing the online learning revolution offline.</span>
+				</div>
+				<div class="landing-buttons ">
+					<a href="#learn-more"><button type="button" class="btn btn-success">LEARN MORE</button></a>
+					<button type="button" class="nav btn btn-success">GET INVOLVED</button>
+				</div>
+				<span class="learn-more">V</span>
+			</div>
+		</div>
+
+		<div id="learn-more" class="row mission-screen">
+			<div class="col-xs-10 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 mission-box">
+				<h2 class="mission-header darkblue">Our Mission</h2>
+				<h4 class="mission-state">At <span class="lightblue">Learning Equality</span>, we are committed to enabling universal access to the highest quality open source educational resources, with special attention to disadvantaged communities around the world.</h4>
+				<h6 id="about-us">More about us ></h6>
+				<h5 class="bold">Stay connected with our journey.</h5>
+
+				<form role="form">
+					<input type="email" class="form-control" id="exampleInputEmail" placeholder="me@email.com">
+					<button type="submit" class="btn btn-success">SUBSCRIBE</button>
+				</form>
+
+			</div>
+		</div>
+
+	<nav class="navbar navbar-default affix-top" id="ka-inner-nav" role="navigation" data-spy="affix" data-offset-top="625">
+	  <div class="container-fluid">
+	      <div class="container">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ka-inner-nav-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand scroll-to-top" href="#">LEARNING EQUALITY</a>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	      <div class="collapse navbar-collapse" id="ka-inner-nav-collapse">
+	        <ul class="nav navbar-nav navbar-right">
+	          <li>
+	              <a href="#community">The Divide</a>
+	          </li>
+	          <li>
+	              <a href="#support">The Bridge</a>
+	          </li>
+	          <li>
+	              <a href="#download">Our Impact</a>
+	          </li>
+	        </ul>
+	      </div><!-- /.navbar-collapse -->
+	    </div> <!-- /.container-2000x -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="row divide-screen">
+		<div class="container-fluid	 title-banner">
+			<div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h1>THE DIVIDE</h1>
+				<span>Understand why universal education is our cause.</span>
+			</div>
+			<div class="container divide-section">
+			</div>
+			<div class="container divide-section">
+			</div>
+			<div class="container divide-section">
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+
+<script type="text/javascript">
+$('body').scrollspy({ 
+    target: '',
+    offset: 120
+  });
+ //Dynamically set data offset on page load for inner nav
+  $(function(){
+    var headerHeight = $('#fle-navbar').outerHeight() + $('#ka-lite-header').outerHeight() - $('#fle-inner-nav').height();
+    $('#ka-inner-nav').attr("data-offset-top", headerHeight);
+  });
+
+  // Class to scroll to top
+  $('.scroll-to-top').click(function(){
+    $('html, body').animate({scrollTop : 0}, 600);
+    return false;
+  });
+
+</script>
+
+{% endblock bodycontents %}
