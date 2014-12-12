@@ -58,15 +58,20 @@ a:hover {
 	border-radius: 0;
 	border: none;
 	background: #082133;
+	visibility: hidden;
 }
 #fle-inner-nav.affix {
     position: fixed;
+    display: all;
     top: 0px;
     width: 100%;
-    box-shadow: 1px 0px 5px 5px #000000;
+    box-shadow: 1px 0px 10px 5px #000000;
+    visibility: visible;
 }
-.active a {
+.active a,
+#fle-inner-nav li:hover {
 	background: #557284 !important;
+	box-shadow: inset 0 0 8px #1f1f1f;
 }
 .inner-nav li a,
 .le {
@@ -398,20 +403,82 @@ a:hover {
 	width: 100%;
 	height: 315px;
 }
-.carousel {
-	max-width: 95%;
-	float: none;
-	margin: 5% auto;
+.carousel-box {
+	margin: 6% auto 3% auto;
 }
-.carousel div div img {
-	max-height: 650px;
+.carousel {
+	width: 70%;
+	max-width: 787px;
+	float: left;
+}
+.active-link a {
+	text-decoration: none;
+	color: #f5f5f5;
+	box-shadow: none;
+	background: transparent !important;
+}
+.caption-title {
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	left: 5%;
+	top: 5%;
+	text-align: left;
+	padding: 5px;
+	font-size: 25px;
+	color: #f5f5f5;
+}
+.carousel-caption {
+	width: 90%;
+	background: rgba(0,0,0,0.5);
+	left: 5%;
+	bottom: 10%;
+	text-align: left;
+	padding: 15px 30px;
+	font-size: 18px;
+	color: #f5f5f5;
+}
+.carousel-indicators {
+	bottom: 10px;
+}
+.carousel-inner div img {
+	max-height: 552px;
 }
 .item img {
 	width: 100%;
 }
+.blog-box {
+	width: 30%;
+	margin: none;
+	display: inline-block;
+}
+.blog-box div {
+	display: inline;
+	float: right;
+}
+.blog {
+	background: url(../img/blog.png) no-repeat center center;
+	height: 276px; 
+}
+.news {
+	background: url(../img/news.png) no-repeat center center;
+	height: 276px;
+}
+.blog-box div {
+	width: 100%;
+}
+.blog a h3, 
+.news a h3 {
+	color: white;
+	background: black;
+	padding: 0 15px;
+	letter-spacing: 0.075em;
+}
+.blog a h3:hover,
+.news a h3:hover {
+	border-bottom: 4px solid white;
+}
 .partners,
 .reality,
-.blog-box,
 .involved {
 	float: none;
 	text-align: center;
@@ -422,33 +489,7 @@ a:hover {
 	width: 15%;
 	margin: 3% 3%;
 }
-.blog-box div {
-	margin: auto;
-}
-.blog,
-.news {
-	-webkit-background-size: contain;
-	-moz-background-size: contain;
-	-o-background-size: contain;
-	background-size: contain;
-}
-.news img,
-.blog img {
-	margin: 0 auto 5% auto;
-}
-.blog-box h2 {
-	color: white;
-	position: absolute;
-	bottom: 12%;
-	left: 15%;
-	background: #000000;
-	padding: 0 15px;
-	letter-spacing: 0.075em;
-}
-.blog a h2:hover,
-.news a h2:hover {
-	border-top: 4px solid white;
-}
+
 
 
 
@@ -527,6 +568,9 @@ a:hover {
 	#believe-box {
 		max-width: 350px;
 	}
+	.blog, .news {
+		height: 246.5px;
+	}
 }
 @media (max-width: 991px) {
 	#landing-header {
@@ -559,6 +603,9 @@ a:hover {
 	}
 	.child-pic img {
 		max-width: 200px;
+	}
+	.blog, .news {
+		height: 189px;
 	}
 }
 @media (max-width: 767px) {
@@ -593,6 +640,9 @@ a:hover {
 	}
 	#disconnected {
 		font-size: 20px;
+	}
+	.carousel-inner div img {
+		max-height: 60vh;
 	}
 }
 @media (max-width: 679px) {

@@ -143,7 +143,7 @@
 					<span id="disconnected" class="left bold">ARE DISCONNECTED</span>
 				</div>
 				<div id="divide-outro">
-					<span>This is the divide. The 60% of the world who could benefit the most from this tremendous opportunity lack the resources to tap into it.</span>
+					<span>This is the divide. The 60% of the world who could benefit the most from this tremendous opportunity lack the connectivity needed to access it.</span>
 				</div>
 			</div>
 		</div>
@@ -198,7 +198,7 @@
 					<img src="{% static 'img/ka-lite.png'%}" alt="KA Lite">
 					<div class="ka-lite col-lg-7 col-md-7 col-sm-7">
 						<h2><strong>An offline version of Khan Academy</strong></h2>
-						<p>Installed in more than 120 countries, used by over 100 organizations, and deployed in schools, orphanages, and correctional facilities around the world.</p>
+						<p>Installed in more than 140 countries, used by hundreds of organizations, and deployed in schools, orphanages, refugee camps, community centers, and correctional facilities around the world.</p>
 						<a href="{% url 'ka_lite' %}"><button type="button" class="nav btn btn-success">LEARN MORE</button></a>
 					</div>
 					<div class="ka-lite-vid col-lg-5 col-md-5 col-sm-5">
@@ -209,6 +209,7 @@
 		</div>
 	</div>
 
+	<div class="container carousel-box">
 		<!-- ============= CAROUSEL ================ -->
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <!-- Indicators -->
@@ -220,22 +221,31 @@
 
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
-		  	<div class="item active">
-		      <img src="{% static 'img/washington.png' %}" alt="Washington">
+		  	<div class="item active active-link">
+		      <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills"><img src="{% static 'img/washington.png' %}" id="carousel-img" alt="Washington"></a>
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills">Inspiring Confidence: A guest post from Edward J. Hills</a>
+		      </div>
 		      <div class="carousel-caption">
-		        caption2
+		        <em>"Once Peninsula College implemented computers in the classroom and a program called Khan Academy Lite, it revolutionized the way I see education for myself..."</em> <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills">READ MORE</a>
 		      </div>
 		    </div>
-		    <div class="item">
-		      <img src="{% static 'img/phillipines.png' %}" alt="Phillipines Disaster Relief">
+		    <div class="item active-link">
+		      <img src="{% static 'img/phillipines.png' %}" id="carousel-img" alt="Phillipines Disaster Relief">
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/">KA Lite in Typhoon-Stricken Mangorocoro</a>
+		      </div>
 		      <div class="carousel-caption">
-		        caption
+		         <em>"KA Lite was a godsend in terms of all the materials that could be accessed and shared. I had honestly thought of many, albeit inefficient, ways to get material over there in digital form like getting permissions from texts and scanning etc, but KA Lite was the best way!"</em><a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"> READ MORE</a>
 		      </div>
 		    </div>
-		    <div class="item">
-		      <img src="{% static 'img/liberia.png' %}" alt="Liberia">
+		    <div class="item active-link">
+		      <img src="{% static 'img/liberia.png' %}" id="carousel-img" alt="Liberia">
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/">Samuel Morris Scholars Program: An Unforgettable Impact</a>
+		      </div>
 		      <div class="carousel-caption">
-		        caption
+		         <em>"The initial teamwork and collaboration showed that the students were collectively engaged in the learning process, and willing to help one another as they embarked on this unforgettable learning opportunity..."</em><a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"> READ MORE</a>
 		      </div>
 		    </div>
 		  </div>
@@ -249,28 +259,29 @@
 		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		    <span class="sr-only">Next</span>
 		  </a>
+		  
 		</div>
 		<!-- ============= END CAROUSEL ================ -->
 
 
-	<div class="container blog-box">
-		<div class="blog col-lg-6 col-md-6 col-sm-6">
-			<a href="{% url 'blog' %}"><img src="{% static 'img/blog.png' %}" class="img-responsive" alt="Blog">
-			<h2>READ OUR BLOG</h2></a>
-		</div>
-		<div class="news col-lg-6 col-md-6 col-sm-6">
-			<a href="{% url 'press' %}"><img src="{% static 'img/news.png' %}" class="img-responsive" alt="Press">
- 			<h2>IN THE NEWS</h2></a>
+		<div class="blog-box" id="blog-box">
+			<div class="blog" id="blog">
+				<a href="{% url 'blog' %}"><h3>READ OUR BLOG</h3></a>
+			</div>
+			<div class="news" id="news">
+				<a href="{% url 'press' %}">
+	 			<h3>IN THE NEWS</h3></a>
+			</div>
 		</div>
 	</div>
 
-	<div class="container partners col-lg-12 col-md-12 col-sm-12">
-		<h3><strong>Our Partners</strong></h3>
-		<img src="{% static 'img/unicef.png' %}" alt="UNICEF">
-		<img src="{% static 'img/khan.png' %}" alt="Khan Academy">
-		<img src="{% static 'img/akanksha.png' %}" alt="Akanksha">
-		<img src="{% static 'img/idaho.gif' %}" alt="Idaho Department of Correction">
-	</div>
+		<div class="container partners col-lg-12 col-md-12 col-sm-12">
+			<h3><strong>Our Partners</strong></h3>
+			<img src="{% static 'img/unicef.png' %}" alt="UNICEF">
+			<img src="{% static 'img/khan.png' %}" alt="Khan Academy">
+			<img src="{% static 'img/akanksha.png' %}" alt="Akanksha">
+			<img src="{% static 'img/idaho.gif' %}" alt="Idaho Department of Correction">
+		</div>
 
 <!-- ============= GET INVOLVED ================ -->
 	<div class="row involved-screen">
@@ -288,7 +299,7 @@
 					</div>
 					<div class="subscribe col-lg-6 col-md-6 col-sm-6">
 						<h3>Subscribe</h3>
-						<h5>Stay updated with the awesome things we do.</h5>
+						<h5>Stay updated with all the awesome things going on!</h5>
 						<h6>Name</h6>
 						<input type="text" class="form-control" id="exampleInputEmail" placeholder="First">
 						<input type="text" class="form-control" id="exampleInputEmail" placeholder="Last">
@@ -299,17 +310,17 @@
 				<div class="container involve-links">
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/jobs.png' %}" alt="Jobs">
-						<p>Start your career with us.<br><span id="br">_</span></p>
+						<p>Join the team! Help us design, build, and deploy world-changing tools.</p>
 						<a href="{% url 'jobs' %}"><button class="btn form-button btn-success">JOBS</button></a>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/github.png' %}" alt="Github Wiki">
-						<p>Developers, get to know our open-source codebase.</p>
+						<p>Developers, check out our open-source repositories.</p>
 						<a href="https://github.com/learningequality"><button class="btn form-button btn-success">GITHUB WIKI</button></a>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/translate.png' %}" alt="Translate">
-						<p>Know another language? Help us get other countries involved!</p>
+						<p>Help make our tools available to more learners.</p>
 						<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button class="btn form-button btn-success">TRANSLATE</button></a>
 					</div>
 				</div>
@@ -335,6 +346,15 @@
     var headerHeight = $('#fle-navbar').outerHeight() + $('#fle-header').outerHeight() - $('#fle-inner-nav').height();
     $('#fle-inner-nav').attr("data-offset-top", headerHeight);
   });
+
+  //Dynamically set height of blog/news divs to height of carousel images
+  /*$(function(){
+  	var blognewsHeight = $('.carousel').height()/2 - 1;
+  	$('.blog').attr({ 
+  		height: blognewsHeight
+  	}),
+  	$('.blog-box').attr($('.news').height, blognewsHeight);
+  })*/
 
   // Class to scroll to top
   $('.scroll-to-top').click(function(){
