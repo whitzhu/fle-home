@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^internships/', lambda request: HttpResponseRedirect(reverse('internships'))),
     url(r'^blog/', include(fle_site.apps.articles.urls)),
     url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
-    url(r'^homepage/', include(fle_site.apps.ka_lite.urls)),
+    url(r'^homepage/', lambda request: HttpResponseRedirect(reverse('ka_lite'))),
 )
 
 # static files (images, css, javascript, etc.)
