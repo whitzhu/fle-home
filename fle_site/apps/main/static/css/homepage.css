@@ -157,6 +157,7 @@ a:hover {
 }
 .mission-state {
 	line-height: 1.3em;
+	max-width: 800px;
 }
 #about-us {
 	margin: 5% 0 18% 0;
