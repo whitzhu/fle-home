@@ -13,13 +13,13 @@ import fle_site.apps.main.urls
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', RedirectView.as_view(url=reverse_lazy('ka_lite')), name="home"),
     url(r'^', include(fle_site.apps.main.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^about/', include(fle_site.apps.about.urls)),
     url(r'^internships/', lambda request: HttpResponseRedirect(reverse('internships'))),
     url(r'^blog/', include(fle_site.apps.articles.urls)),
     url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
+    url(r'^homepage/', include(fle_site.apps.ka_lite.urls)),
 )
 
 # static files (images, css, javascript, etc.)
