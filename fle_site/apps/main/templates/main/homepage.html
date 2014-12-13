@@ -24,7 +24,6 @@
 					<a href="#learn-more"><button type="button" class="btn btn-success">LEARN MORE</button></a>
 					<a href="#involved"><button type="button" class="nav btn btn-success">GET INVOLVED</button></a>
 				</div>
-				<span class="learn-more">V</span>
 			</div>
 		</div>
 
@@ -32,8 +31,8 @@
 		<div id="learn-more" class="row mission-screen">
 			<div class="col-xs-10 col-sm-8 col-md-8 col-lg-5 mission-box">
 				<h2 class="mission-header darkblue">Our Mission</h2>
-				<h4 class="mission-state bold">At <span class="lightblue">Learning Equality</span>, we are committed to enabling universal access to high quality open educational resources, and creating tools that empower communities to author and share their own content.</h4>
-				<a href="{% url 'mission' %}"><h6 id="about-us">More about us ></h6></a>
+				<h4 class="mission-state bold">At <a href="{% url 'mission' %}"><span class="lightblue">Learning Equality</span></a>, we are committed to enabling universal access to high quality open educational resources, and creating tools that empower communities to author and share their own content.</h4>
+				<a href="{% url 'mission' %}"><button type="submit" class="btn form-button btn-success" id="about-us">MORE ABOUT US</button></a>
 				<h5 class="bold">Stay connected with our journey.</h5>
 
 				<form role="form">
@@ -150,35 +149,53 @@
 	</div>
 
 <!-- ============= THE BRIDGE ================ -->
-	<div class="row bridge-screen" id="bridge">
+	<div class="row bridge-screen">
 		<div class="container-fluid">
 
-			<div class="title-banner bridge-banner">
+			<div class="title-banner bridge-banner" id="bridge">
 				<h1>THE BRIDGE</h1>
 				<span><em>"Education is the most powerful weapon we can use to change the world."</em></span>
 				<span class="author"><br><em>- Nelson Mandela</em></span>
 			</div>
 			<div class="bridge container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="bridge-intro bold">
-					<span>A universal education means that anyone, online or offline, can access it. We bridge the divide by creating educational tools that are</span>
+					<span>A universal education means that anyone, anywhere -- online or offline -- can access it. We realized the potential emerging out of three converging trends:</span>
+				</div>
+				<div class="bridge-box bbox row">
+					<div class="cost-effective col-lg-4 col-md-4 col-sm-4">
+						<h3 class="bold">Open Educational Resources</h3>
+						<p>IMore and more learning materials are being released under Creative Commons licenses, which allow them to be shared, used, and remixed freely, both online and offline.</p>
+					</div>
+					<div class="collaborate col-lg-4 col-md-4 col-sm-4">
+						<h3 class="bold">Low Cost Computing</h3>
+						<p>The cost of hardware is decreasing much faster than the cost of Internet bandwidth; devices like the Raspberry Pi and low-end Android tablets open up computing to new segments of humanity.</p>
+					</div>
+					<div class="designed col-lg-4 col-md-4 col-sm-4">
+						<h3 class="bold">Sneakernet Sharing</h3>
+						<p>In the absence of Internet connectivity, content and software can be distributed through existing human networks, carried on USB sticks and other portable devices to be shared with others.</p>
+					</div>
+					<!--<button class="btn form-button btn-success">LEARN MORE</button>-->
+				</div>
+				<div class="bridge-intro bold">
+					<span>Leveraging these trends, we build and support educational tools that bridge the digital divide by being:</span>
 				</div>
 				<div class="bridge-box row">
 					<div class="cost-effective col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/low-cost.png'%}" alt="Cost Effective">
-						<h3 class="bold">Low Cost</h3>
-						<p>Powerful, yet lightweight and inexpensive, with the ability to run on a wide variety of low-power and old hardware.</p>
+						<h3 class="bold">Flexible and Lightweight</h3>
+						<p>In order to enable access for as many people as possible, our tools are designed to run on a broad diversity of devices, ranging from old repurposed hardware, to a wide variety of new low-cost devices.</p>
 					</div>
 					<div class="collaborate col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/collaborate.png'%}" alt="Collaborate">
-						<h3 class="bold">Made for Collaboration</h3>
-						<p>Gives students and teachers the agency to collaborate together in the classroom rather than the traditional lecture.</p>
+						<h3 class="bold">Empowering Community</h3>
+						<p>Every person, community, or country knows its own needs and values best, and our role is to collaborate in supporting self-fulfilment, not to dictate solutions. We want to create tools to allow people to learn, teach, create, and share on their own terms.</p>
 					</div>
 					<div class="designed col-lg-4 col-md-4 col-sm-4">
 						<img src="{% static 'img/design.png'%}" alt="Designed for Everyone">
 						<h3 class="bold">Designed for Everyone</h3>
-						<p>Adaptable to different learning needs, preferences, and cultures, empowering people to optimize and personalize their learning experience.</p>
+						<p>Our tools aim to support diverse user needs, in both classrooms and informal learning environments. We work with our partners to understand and support the needs of contexts that range from orphanages, to schools, to prisons, to refugee camps, to homes.</p>
 					</div>
-					<button class="btn form-button btn-success">LEARN MORE</button>
+					<!--<button class="btn form-button btn-success">LEARN MORE</button>-->
 				</div>
 			</div>
 		</div>
@@ -227,25 +244,25 @@
 		      	<a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills">Inspiring Confidence: A guest post from Edward J. Hills</a>
 		      </div>
 		      <div class="carousel-caption">
-		        <em>"Once Peninsula College implemented computers in the classroom and a program called Khan Academy Lite, it revolutionized the way I see education for myself..."</em> <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills">READ MORE</a>
+		        <em>"Once Peninsula College implemented computers in the classroom and a program called Khan Academy Lite, it revolutionized the way I see education for myself..."</em> <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills"><br><strong>READ MORE</strong></a>
 		      </div>
 		    </div>
 		    <div class="item active-link">
-		      <img src="{% static 'img/phillipines.png' %}" id="carousel-img" alt="Phillipines Disaster Relief">
+		      <a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"><img src="{% static 'img/phillipines.png' %}" id="carousel-img" alt="Phillipines Disaster Relief"></a>
 		      <div class="caption-title">
 		      	<a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/">KA Lite in Typhoon-Stricken Mangorocoro</a>
 		      </div>
 		      <div class="carousel-caption">
-		         <em>"KA Lite was a godsend in terms of all the materials that could be accessed and shared. I had honestly thought of many, albeit inefficient, ways to get material over there in digital form like getting permissions from texts and scanning etc, but KA Lite was the best way!"</em><a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"> READ MORE</a>
+		         <em>"KA Lite was a godsend in terms of all the materials that could be accessed and shared."</em><a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"><br><strong>READ MORE</strong></a>
 		      </div>
 		    </div>
 		    <div class="item active-link">
-		      <img src="{% static 'img/liberia.png' %}" id="carousel-img" alt="Liberia">
+		      <a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"><img src="{% static 'img/liberia.png' %}" id="carousel-img" alt="Liberia"></a>
 		      <div class="caption-title">
 		      	<a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/">Samuel Morris Scholars Program: An Unforgettable Impact</a>
 		      </div>
 		      <div class="carousel-caption">
-		         <em>"The initial teamwork and collaboration showed that the students were collectively engaged in the learning process, and willing to help one another as they embarked on this unforgettable learning opportunity..."</em><a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"> READ MORE</a>
+		         <em>"The initial teamwork and collaboration showed that the students were collectively engaged in the learning process, and willing to help one another as they embarked on this unforgettable learning opportunity..."</em><a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"><br><strong>READ MORE</strong></a>
 		      </div>
 		    </div>
 		  </div>
@@ -265,22 +282,22 @@
 
 
 		<div class="blog-box" id="blog-box">
-			<div class="blog" id="blog">
-				<a href="{% url 'blog' %}"><h3>READ OUR BLOG</h3></a>
-			</div>
-			<div class="news" id="news">
-				<a href="{% url 'press' %}">
-	 			<h3>IN THE NEWS</h3></a>
-			</div>
+			<a href="{% url 'blog' %}" class="blog"><div>
+				<h3>READ OUR BLOG</h3>
+			</div></a>
+			<a href="{% url 'press' %}" class="news"><div>
+	 			<h3>IN THE NEWS</h3>
+			</div></a>
 		</div>
 	</div>
 
 		<div class="container partners col-lg-12 col-md-12 col-sm-12">
-			<h3><strong>Our Partners</strong></h3>
+			<h3><strong>Our Partners and Sponsors</strong></h3>
 			<img src="{% static 'img/unicef.png' %}" alt="UNICEF">
 			<img src="{% static 'img/khan.png' %}" alt="Khan Academy">
 			<img src="{% static 'img/akanksha.png' %}" alt="Akanksha">
 			<img src="{% static 'img/idaho.gif' %}" alt="Idaho Department of Correction">
+			<img src="{% static 'img/hewlett.gif' %}" alt="Idaho Department of Correction">
 		</div>
 
 <!-- ============= GET INVOLVED ================ -->
@@ -298,13 +315,24 @@
 						<a href="{% url 'give' %}"><button class="give btn form-button btn-success">DONATE</button></a>
 					</div>
 					<div class="subscribe col-lg-6 col-md-6 col-sm-6">
+					<form role="form" action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=97a379de16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 						<h3>Subscribe</h3>
 						<h5>Stay updated with all the awesome things going on!</h5>
 						<h6>Name</h6>
-						<input type="text" class="form-control" id="exampleInputEmail" placeholder="First">
-						<input type="text" class="form-control" id="exampleInputEmail" placeholder="Last">
-						<input type="email" class="form-control email" id="exampleInputEmail" placeholder="me@email.com">
-						<button type="submit" class="btn form-button btn-success">SUBMIT</button>
+						<input name="NAME" id="mce-NAME" type="text" class="form-control" placeholder="First">
+						<input name="NAME" id="mce-NAME" type="text" class="form-control" placeholder="Last">
+						<input name="EMAIL" id="mce-EMAIL" type="email" class="required form-control email" placeholder="me@email.com">
+						<div id="mce-responses" class="clear">
+		                	<div class="response" id="mce-error-response" style="display:none"></div>
+		                	<div class="response" id="mce-success-response" style="display:none"></div>
+           				 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            			<div style="position: absolute; left: -5000px;">
+            				<input type="text" name="b_023b9af05922dfc7f47a4fffb_97a379de16" tabindex="-1" value="">
+            			</div>
+            			<div class="clear">
+            				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
+            			</div>
+            		</form>
 					</div>
 				</div>
 				<div class="container involve-links">
@@ -338,7 +366,7 @@
  //Scrollspy
 	$('body').scrollspy({ 
     target: '#fle-inner-nav',
-    offset: 120
+    offset: 1000
   });
 
  //Dynamically set data offset on page load for inner nav
@@ -346,15 +374,6 @@
     var headerHeight = $('#fle-navbar').outerHeight() + $('#fle-header').outerHeight() - $('#fle-inner-nav').height();
     $('#fle-inner-nav').attr("data-offset-top", headerHeight);
   });
-
-  //Dynamically set height of blog/news divs to height of carousel images
-  /*$(function(){
-  	var blognewsHeight = $('.carousel').height()/2 - 1;
-  	$('.blog').attr({ 
-  		height: blognewsHeight
-  	}),
-  	$('.blog-box').attr($('.news').height, blognewsHeight);
-  })*/
 
   // Class to scroll to top
   $('.scroll-to-top').click(function(){
