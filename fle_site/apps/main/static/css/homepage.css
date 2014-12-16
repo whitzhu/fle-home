@@ -114,7 +114,7 @@ a:hover {
 	box-shadow: 1px 1px 15px 1px #292929;
 }
 #landing-header {
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: 900;
 	color: white;
 	line-height: 1.5em;
@@ -458,7 +458,7 @@ a:hover {
 	width: 100%;
 }
 .blog-box {
-	width: 30%;
+	width: 28%;
 	margin: none;
 	display: inline-block;
 }
@@ -467,13 +467,13 @@ a:hover {
 	float: right;
 }
 .blog {
-	background: url(../img/blog.png) no-repeat center center;
+	background: url(../img/blog.jpg) no-repeat center center;
 	height: 276px; 
 	width: 350px;
 	max-width: 100%;
 }
 .news {
-	background: url(../img/news.png) no-repeat center center;
+	background: url(../img/news.jpg) no-repeat center center;
 	height: 276px;
 	width: 350px;
 	max-width: 100%;
@@ -549,14 +549,14 @@ a:hover {
 	text-align: left;
 	display: inline-block;
 }
-.subscribe h6 {
-	text-align: left;
+.subscribe h3 {
+	margin-left: 4%;
 }
 .subscribe h5 {
-	max-width: 200px;
-	margin: 2% 0 0 18%;
+	max-width: 240px;
+	margin: 0 0 0 5%;
 	position: relative;
-	top: 18px;
+	top: 10px;
 	font-size: 16px;
 }
 .subscribe h6 {
@@ -590,7 +590,7 @@ a:hover {
 }
 @media (max-width: 991px) {
 	#landing-header {
-		font-size: 25px;
+		font-size: 20px;
 	}
 	#landing-description {
 		font-size: 16px;
@@ -764,7 +764,7 @@ a:hover {
 }
 @media (max-height: 587px) {
 	#landing-header {
-		font-size: 25px;
+		font-size: 20px;
 	}
 	#landing-description,
 	.btn {
