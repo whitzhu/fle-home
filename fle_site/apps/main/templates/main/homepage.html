@@ -28,8 +28,8 @@
 		</div>
 
 <!-- ============= MISSION SCREEN ================ -->
-		<div id="learn-more" class="row mission-screen">
-			<div class="col-xs-10 col-sm-8 col-md-8 col-lg-5 mission-box">
+		<div class="row mission-screen">
+			<div id="learn-more" class="col-xs-10 col-sm-8 col-md-8 col-lg-5 mission-box">
 				<h2 class="mission-header darkblue">Our Mission</h2>
 				<h4 class="mission-state bold">At <a href="{% url 'mission' %}"><span class="lightblue">Learning Equality</span></a>, we are committed to enabling universal access to high quality open educational resources, and creating tools that empower communities to author and share their own content.</h4>
 				<a href="{% url 'mission' %}"><button type="submit" class="btn form-button btn-success" id="about-us">MORE ABOUT US</button></a>
@@ -154,8 +154,8 @@
 
 			<div class="title-banner bridge-banner" id="bridge">
 				<h1>THE BRIDGE</h1>
-				<span><em>"Education is the most powerful weapon we can use to change the world."</em></span>
-				<span class="author"><br><em>- Nelson Mandela</em></span>
+				<p class="quote"><em>"Education is the most powerful weapon we can use to change the world."</em></p>
+				<p class="author"><br><em>- Nelson Mandela</em></p>
 			</div>
 			<div class="bridge container col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="bridge-intro bold">
@@ -211,8 +211,8 @@
 
 			<div class="title-banner impact-banner">
 				<h1>OUR IMPACT</h1>
-				<span><em>"The function of education is to teach one to think intensively and to think critically.<br>Intelligence plus character - that is the goal of true education."</em></span>
-				<span class="author"><em><br>- Martin Luther King Jr.</em></span>
+				<p class="quote"><em>"The function of education is to teach one to think intensively and to think critically.<br>Intelligence plus character - that is the goal of true education."</em></p>
+				<p class="author"><em><br>- Martin Luther King Jr.</em></p>
 			</div>
 			<div class="impact-box container">
 				<div class="impact container col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -232,7 +232,7 @@
 
 	<div class="container carousel-box">
 		<!-- ============= CAROUSEL ================ -->
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7500">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
 		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -319,23 +319,23 @@
 						<a href="{% url 'give' %}"><button class="give btn form-button btn-success">DONATE</button></a>
 					</div>
 					<div class="subscribe col-lg-6 col-md-6 col-sm-6">
-					<form role="form" action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=97a379de16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<h3>Subscribe</h3>
-						<h5>Stay updated with all the awesome things going on!</h5>
-						<input name="NAME" id="mce-NAME" type="text" class="form-control" placeholder="First name">
-						<input name="NAME" id="mce-NAME" type="text" class="form-control" placeholder="Last name">
-						<input name="EMAIL" id="mce-EMAIL" type="email" class="required form-control email" placeholder="me@email.com">
-						<div id="mce-responses" class="clear">
-		                	<div class="response" id="mce-error-response" style="display:none"></div>
-		                	<div class="response" id="mce-success-response" style="display:none"></div>
-           				 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            			<div style="position: absolute; left: -5000px;">
-            				<input type="text" name="b_023b9af05922dfc7f47a4fffb_97a379de16" tabindex="-1" value="">
-            			</div>
-            			<div class="clear">
-            				<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
-            			</div>
-            		</form>
+						<form role="form" action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=97a379de16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<h3>Subscribe</h3>
+							<h5>Stay updated with all the awesome things going on!</h5>
+							<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="First name">
+							<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="Last name">
+							<input name="EMAIL" id="mce-EMAIL" type="email" class="required emaill" placeholder="me@email.com">
+							<div id="mce-responses" class="clear">
+			                	<div class="response" id="mce-error-response" style="display:none"></div>
+			                	<div class="response" id="mce-success-response" style="display:none"></div>
+	           				 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	            			<div style="position: absolute; left: -5000px;">
+	            				<input type="text" name="b_023b9af05922dfc7f47a4fffb_97a379de16" tabindex="-1" value="">
+	            			</div>
+		            		<div class="clear">
+		            			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
+		            		</div>
+	            		</form>
 					</div>
 				</div>
 				<div class="container involve-links">
