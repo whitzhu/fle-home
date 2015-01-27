@@ -80,6 +80,15 @@ a:hover {
 .navbar-header img {
 	max-height: 50px;
 }
+.quote {
+	margin: 0px auto -1%;
+}
+.author {
+	margin: 0 0 0 24%;
+}
+.quote, .author {
+	color: rgb(91, 196, 159);
+}
 .btn {
 	margin: 5px;
 	margin-top: 15px;
@@ -247,7 +256,7 @@ a:hover {
 	box-shadow: 3px 3px 4px 1px #797979;
 }
 .child-number {
-	font-size: 45px;
+	font-size: 44px;
 	color: #D2EEE4;
 }
 .child-exp {
@@ -363,7 +372,6 @@ a:hover {
 	text-align: left;
 }
 .bridge img {
-
  	position: center;
  	max-height: 120px;
 }
@@ -519,35 +527,47 @@ a:hover {
 	background: #0E3049;
 }
 .donate {
-	margin-top: 10%;
+	margin-top: 7%;
 }
 .subscribe {
 	border-left: 1px solid #b2b2b2;
-	margin-top: 3%;
+	margin-top: 7%;
 }
 .give {
-	padding: 18px 35px !important;
+	padding: 28px 50px !important;
+	margin-top: 9% !important;
 }
 .involved h4 {
 	max-width: 300px;
 	margin: auto;
 }
-.email {
+.form-box {
 	display: inline-block;
-	max-width: 300px;
-	width: 100%;
-	height: 34px;
-	padding: 20px 15px;
+	width: 200px;
+	height: 45px;
+	padding: 6px 12px;
+	font-size: 14px;
+	margin-top: 8%;
+	line-height: 1.428571429;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.emaill {
+	display: inline-block;
+	width: 405px;
+	height: 45px;
+	padding: 6px 12px;
+	margin-top: 5px;
 	font-size: 14px;
 	line-height: 1.428571429;
 	color: #555;
 	vertical-align: middle;
 	background-color: #fff;
 	border: 1px solid #ccc;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
-	box-shadow: 1px 2px 2px 1px #bcbcbc;
-	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	border-radius: 4px;
 }
 .subscribe h3,
 .subscribe h5 {
@@ -580,6 +600,10 @@ a:hover {
 }
 #br {
 	color: #f4f5f5;
+}
+#mc-embedded-subscribe:hover {
+	background: #5CB85C;;
+	color: white;
 }
 /*======================================================================*/
 /*======================= RESPONSIVE QUERIES ===========================*/
