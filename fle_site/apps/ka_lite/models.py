@@ -18,7 +18,7 @@ class UserResource(models.Model):
     doc_type = models.CharField(max_length=80, default="document")
     filename = models.CharField(max_length=100)
     slug = models.SlugField(max_length=50, unique=True)
-    is_google_doc = models.BooleanField(help_text="If true, view online using the Google Doc id. If false, view online using external_url field.")
+    is_google_doc = models.BooleanField(default=True, help_text="If true, view online using the Google Doc id. If false, view online using external_url field.")
     external_url = models.URLField(help_text="An external url for the resource if it's not a google doc.", blank=True)
 
     def __str__(self):

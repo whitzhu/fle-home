@@ -10,7 +10,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         # Adding field 'UserResource.is_google_doc'
         db.add_column(u'ka_lite_userresource', 'is_google_doc',
-                      self.gf('django.db.models.fields.BooleanField')(default=False),
+                      self.gf('django.db.models.fields.BooleanField')(default=True),
                       keep_default=False)
 
         # Adding field 'UserResource.external_url'
@@ -82,7 +82,7 @@ class Migration(SchemaMigration):
             'external_url': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'filename': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'is_google_doc': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'is_google_doc': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '50'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'version': ('django.db.models.fields.CharField', [], {'max_length': '50', 'blank': 'True'})
