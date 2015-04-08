@@ -38,7 +38,12 @@
                                             {{ g.title }}
                                         </td>
                                         <td class="col-xs-4 center-text">
-                                            <a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+                                            {% if g.is_google_doc %}
+                                                <a href="{% url 'user_guide_detail' g.slug %}">
+                                            {% else %}
+                                                <a href="{{ g.external_url }}">
+                                            {% endif %}
+                                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
                                         </td>
                                         <td class="col-xs-4">
                                             <a href="{{ g.get_download_url }}" class="pull-right">
