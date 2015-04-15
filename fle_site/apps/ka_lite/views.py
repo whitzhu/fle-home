@@ -89,7 +89,7 @@ def user_guides(request):
 
 def get_user_resource(slug):
     if slug == "latest":
-        latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+        latest_version = UserResource.objects.filter(category='install_guide').aggregate(Max('version'))['version__max']
         return UserResource.objects.get(version=latest_version, category='install_guide')
     else:
         return UserResource.objects.get(slug=slug)
