@@ -7,7 +7,7 @@ try:
     import local_settings
 except ImportError:
     local_settings = {}
-
+                                    
 def localor(setting_name, default_val):
     """Returns local_settings version if it exists (and is non-empty), otherwise uses default value"""
     return hasattr(local_settings, setting_name) and getattr(local_settings, setting_name) or default_val

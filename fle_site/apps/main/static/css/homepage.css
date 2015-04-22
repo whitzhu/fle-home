@@ -594,10 +594,17 @@ a:hover {
 	font-size: 18px;
 	margin-bottom: -2%;
 }
-.involve-links img {
+.involve-links img, i {
 	max-height: 115px;
 	margin: 8% auto;
+	color:#0E3049;
 }
+
+#deploymentIcon{
+	margin-top:15%;
+	margin-bottom:14%;
+}
+
 #br {
 	color: #f4f5f5;
 }
@@ -777,7 +784,9 @@ a:hover {
 	}
 }
 
-
+.piktowrapper-embed{
+	margin: auto;
+}
 
 
 /*========= MOBILE DEVICES FLIPPED ON SIDE ============*/

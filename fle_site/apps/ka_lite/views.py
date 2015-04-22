@@ -37,6 +37,10 @@ def map(request):
         "LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,
     }
 
+@render_to("ka_lite/infographic.html")
+def infographic(request):
+    return {}
+
 @render_to("ka_lite/map_add.html")
 def map_add(request):
     """Render a form to add a new KA Lite deployment story."""

@@ -315,44 +315,55 @@
 			<div class="involved container">
 				<div class="container">
 					<div class="donate col-lg-6 col-md-6 col-sm-6">
-						<h3><strong>Invest in a bright future.</strong></h3>
+						<h3><strong>Invest in a bright future</strong></h3>
 						<a href="{% url 'give' %}"><button class="give btn form-button btn-success">DONATE</button></a>
 					</div>
 					<div class="subscribe col-lg-6 col-md-6 col-sm-6">
-						<form role="form" action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=97a379de16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							<h3>Subscribe</h3>
-							<h5>Stay updated with all the awesome things going on!</h5>
-							<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="First name">
-							<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="Last name">
-							<input name="EMAIL" id="mce-EMAIL" type="email" class="required emaill" placeholder="me@email.com">
-							<div id="mce-responses" class="clear">
-			                	<div class="response" id="mce-error-response" style="display:none"></div>
-			                	<div class="response" id="mce-success-response" style="display:none"></div>
-	           				 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-	            			<div style="position: absolute; left: -5000px;">
-	            				<input type="text" name="b_023b9af05922dfc7f47a4fffb_97a379de16" tabindex="-1" value="">
-	            			</div>
-		            		<div class="clear">
-		            			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
-		            		</div>
-	            		</form>
-					</div>
+					<form role="form" action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=97a379de16" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<h3>Subscribe</h3>
+						<h5>Stay updated with all the awesome things going on!</h5>
+						<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="First name">
+						<input name="NAME" id="mce-NAME" type="text" class="form-box" placeholder="Last name">
+						<input name="EMAIL" id="mce-EMAIL" type="email" class="required emaill" placeholder="me@email.com">
+						<div id="mce-responses" class="clear">
+		                	<div class="response" id="mce-error-response" style="display:none"></div>
+		                	<div class="response" id="mce-success-response" style="display:none"></div>
+           				</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            			<div style="position: absolute; left: -5000px;">
+            				<input type="text" name="b_023b9af05922dfc7f47a4fffb_97a379de16" tabindex="-1" value="">
+            			</div>
+	            		<div class="clear">
+	            			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default">
+	            		</div>
+            		</form>
+				</div>
 				</div>
 				<div class="container involve-links">
-					<div class="col-lg-4 col-md-4 col-sm-4">
-						<img src="{% static 'img/jobs.png' %}" alt="Jobs">
-						<p>Join the team! Help us design, build, and deploy world-changing tools.</p>
-						<a href="{% url 'jobs' %}"><button class="btn form-button btn-success">JOBS</button></a>
+					<div class="container">	
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<i id="deploymentIcon" class="fa fa-paper-plane fa-5x"></i>
+							<p>Join the team! Help us deploy world-changing tools.</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<img src="{% static 'img/github.png' %}" alt="GitHub">
+							<p>Help build world-changing tools! Check out our open-source repositories.</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<img src="{% static 'img/translate.png' %}" alt="Translate">
+							<p>Help make our tools available in more languages!</p>
+						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
-						<img src="{% static 'img/github.png' %}" alt="GitHub">
-						<p>Developers, check out our open-source repositories.</p>
-						<a href="https://github.com/learningequality"><button class="btn form-button btn-success">GITHUB</button></a>
-					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
-						<img src="{% static 'img/translate.png' %}" alt="Translate">
-						<p>Help make our tools available to more learners.</p>
-						<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button class="btn form-button btn-success">TRANSLATE</button></a>
+					<div class="container">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="{% url 'infographic' %}"><button class="btn form-button btn-success">DEPLOY</button> </a>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="https://github.com/learningequality"><button class="btn form-button btn-success">GITHUB</button></a>
+							<a href="{% url 'jobs' %}"><button class="btn form-button btn-success">JOBS</button></a>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button class="btn form-button btn-success">TRANSLATE</button></a>
+						</div>
 					</div>
 				</div>
 			</div>
