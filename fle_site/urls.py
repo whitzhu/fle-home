@@ -9,6 +9,7 @@ import fle_site.apps.about.urls
 import fle_site.apps.articles.urls
 import fle_site.apps.ka_lite.urls
 import fle_site.apps.main.urls
+import fle_site.apps.redirects.urls
 
 admin.autodiscover()
 
@@ -19,6 +20,7 @@ urlpatterns = patterns('',
     url(r'^internships/', lambda request: HttpResponseRedirect(reverse('internships'))),
     url(r'^blog/', include(fle_site.apps.articles.urls)),
     url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
+    url(r'^r/', include(fle_site.apps.redirects.urls)),
     url(r'^homepage/', lambda request: HttpResponseRedirect(reverse('ka_lite'))),
 )
 
