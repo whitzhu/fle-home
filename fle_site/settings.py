@@ -144,7 +144,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.humanize',
-    'django.contrib.redirects',
     'django_extensions',
     'fack',
     'south',
@@ -153,6 +152,7 @@ INSTALLED_APPS = (
     'fle_site.apps.main',
     'fle_site.apps.about',
     'fle_site.apps.ka_lite',
+    'fle_site.apps.redirects',
 )
 
 # A sample logging configuration. The only tangible logging
