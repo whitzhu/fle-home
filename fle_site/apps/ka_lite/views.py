@@ -109,6 +109,8 @@ def user_guide_detail_embed(request, slug):
 def user_guide_detail(request, slug):
     """Render detail of user resource"""
     obj = get_user_resource(slug)
+    if not obj.is_google_doc:
+        return HttpResponseRedirect(obj.external_url)
     related_resources = UserResource.objects.filter(version=obj.version)
     general_resources = UserResource.objects.filter(version='')
     return {
