@@ -1,0 +1,201 @@
+{% extends base_template %}
+
+{% load staticfiles %}
+
+{% block title %}Donate{% endblock title %}
+
+{% block donate_nav %}selected{% endblock donate_nav %}
+
+{% block headcss %}
+{{ block.super }}
+<style>
+    #address-field {
+        width: 450px;
+        height: 100px;
+    }
+
+    #receipt-fields {
+        display: none;
+    }
+
+    #message_container h2 {
+        padding: 0;
+        margin: 0;
+    }
+
+</style>
+{% endblock headcss %}
+
+{% block headjs %}
+{{ block.super }}
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+
+    function show_message(msg_class, msg_text, msg_id) {
+
+        // Avoid duplicating the same message by removing any existing message with the same id
+        if (msg_id) {
+            $("#" + msg_id).remove();
+        }
+
+        if (!msg_text) {
+            return;
+        }
+
+        var x_button = '<a class="close" data-dismiss="alert" href="#">&times;</a>';
+
+        if (msg_class === "error") {
+            msg_class = "danger"
+        }
+
+        var msg_html = "<div class='alert alert-" + msg_class + "'";
+
+        if (msg_id) {
+            msg_html += " id='" + msg_id + "'";
+        }
+
+        msg_html += ">" + x_button + "<h2>" + msg_text + "</h2></div>";
+        $("#message_container").append(msg_html);
+
+    }
+
+    $.fn.serializeObject = function() {
+        var o = Object.create(null),
+            elementMapper = function(element) {
+                element.name = $.camelCase(element.name);
+                return element;
+            },
+            appendToResult = function(i, element) {
+                var node = o[element.name];
+
+                if ('undefined' != typeof node && node !== null) {
+                    o[element.name] = node.push ? node.push(element.value) : [node, element.value];
+                } else {
+                    o[element.name] = element.value;
+                }
+            };
+
+        $.each($.map(this.serializeArray(), elementMapper), appendToResult);
+        return o;
+    };
+
+    $(function() {
+        var handler = StripeCheckout.configure({
+            key: "{{ STRIPE_PUBLISHABLE_API_KEY }}",
+            image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png',
+            token: function(data) {
+
+                _.extend(data, $("#donate-form").serializeObject());
+
+                $.ajax({
+                    method: "POST",
+                    url: "{% url 'process_donation' %}",
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json",
+                    beforeSend: function(xhr, settings) {
+                        xhr.setRequestHeader("X-CSRFToken", data.csrfmiddlewaretoken);
+                    }
+                }).then(function(response) {
+                    show_message(response.status, response.message, "transaction-message");
+                });
+          }
+        });
+
+        $('#donate-form .donate-button').on('click', function(e) {
+
+            var amount = $(e.target).data("amount");
+
+            if (amount == "custom") {
+                amount = $("#donate-form .amount-custom").val().replace(/[^\d\.]+/g, '');
+            }
+
+            amount = Number(amount) * 100;
+
+            if (!amount) {
+                alert("Please enter a valid amount!");
+                return false;
+            }
+
+            $("#donate-form .amount").val(amount);
+
+            handler.open({
+                  name: 'Support Learning Equality',
+                  // description: '2 widgets',
+                  amount: amount,
+                  bitcoin: true,
+                  panelLabel: "Donate {{ amount }}"
+            });
+            return false;
+        });
+
+          // Close Checkout on page navigation
+        $(window).on('popstate', function() {
+            handler.close();
+        });
+    });
+</script>
+{% endblock headjs %}
+
+{% block bodycontents %}
+<div id="give-container" class="container">
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="how">
+            <h2>Help Enable Learning Opportunities for Those in Need</h2>
+
+            <p>
+                Everything that we build is made available under an open license, free of charge, so we rely on grants and donations in order to support the <a href="{% url 'team' %}" target="_blank">team</a> that makes all this possible. The Foundation for Learning Equality is a registered 501(c)(3) nonprofit organization, so donations can be treated as tax-deductible contributions, and we can send you a tax receipt by email or mail as requested.
+            </p>
+
+            <h3>Donate by Credit Card or Bitcoin</h3>
+
+            <form id="donate-form">
+                {% csrf_token %}
+                <input type="hidden" class="amount" name="amount"/>
+                <button class="donate-button btn btn-success" data-amount="10">Donate $10</button>
+                <button class="donate-button btn btn-success" data-amount="25">Donate $25</button>
+                <button class="donate-button btn btn-success" data-amount="50">Donate $50</button>
+                <button class="donate-button btn btn-success" data-amount="100">Donate $100</button>
+                <button class="donate-button btn btn-success" data-amount="custom">Donate other:</button>
+                <input type="text" class="amount-custom" placeholder="Enter amount here...">
+
+                <br/><br/>
+
+                <label for="name-field">If you would like a tax receipt, please enter your name here:</label>
+                <input name="name" placeholder="Enter your full name" id="name-field"/><br/><br/>
+            </form>
+
+            <h3>Donate through Paypal</h3>
+
+            <p>
+                You can also submit donations through our <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DRYT4JWGGATC6">Paypal giving portal</a>.
+            </p>
+
+            <h3>Donate by Check</h3>
+            <p>
+                You can make checks payable to "Foundation for Learning Equality" and send them, along with your name and email address, to:
+            </p>
+            <p>
+                <strong>
+                    <address>
+                        Foundation for Learning Equality</br>9700 Gilman Dr. PMB 323</br>La Jolla, CA 92093
+                    </address>
+                </strong>
+            </p>
+        </div>
+        <div id="amazon">
+            <h3>Amazon Smile</h3>
+            <p>
+                When you shop on <a href="http://smile.amazon.com/ch/46-2676188">Amazon Smile</a>, Amazon will donate a small portion of your purchase price to our organization. It's an easy, simple way to do good while you shop. Simply <a href="http://smile.amazon.com/ch/46-2676188">follow this link</a> to sign up and get started!
+            </p>
+        </div>
+        <div id="questions">
+            <h2>Questions</h2>
+            <p>
+                Please don't hesitate to email our team: <a href="mailto:gifts@learningequality.org">gifts@learningequality.org</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock bodycontents %}

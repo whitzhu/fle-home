@@ -3,6 +3,7 @@
     <head>
 
         {% load staticfiles %}
+        {% load my_filters %}
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         {% block headmeta %}{% endblock headmeta %}
@@ -72,6 +73,19 @@
         {% endblock navigationoverride %}
         {% block bodyoverride %}
             <div id="body-content" class="max-container">
+                <br/>
+                <div class="container" id="message_container">
+                {% for message in messages %}
+                    {% get_twitter_bootstrap_alert_msg_css_name message.tags as alert_tag %}
+                    <div class="alert alert-{{alert_tag}} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                </div>
                 {% block bodycontents %}{% endblock bodycontents %}
                 {% block footerspacing %}<br/><br/>{% endblock %}
                 {% include "main/partials/_contact_modal.html" %}

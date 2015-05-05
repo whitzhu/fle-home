@@ -133,6 +133,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'fle_site.apps.main.custom_context_processors.debug',
+    'django.contrib.messages.context_processors.messages',
 )
 
 INSTALLED_APPS = (
@@ -198,3 +199,8 @@ CACHES = {
         "LOCATION": '/tmp/file_resubmit/'
     },
 }
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+STRIPE_SECRET_API_KEY = getattr(local_settings, "STRIPE_SECRET_API_KEY", "")
+STRIPE_PUBLISHABLE_API_KEY = getattr(local_settings, "STRIPE_PUBLISHABLE_API_KEY", "")
