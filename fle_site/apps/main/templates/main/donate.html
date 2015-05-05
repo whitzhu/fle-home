@@ -28,6 +28,10 @@
         margin-bottom: 0;
     }
 
+    h3 {
+        margin-top: 35px;
+    }
+
 </style>
 {% endblock headcss %}
 
@@ -157,18 +161,18 @@
 
             <form id="donate-form">
                 {% csrf_token %}
+
+                <label for="name-field">If you would like a tax receipt, please enter your name here:</label>
+                <input name="name" placeholder=" Enter your full name" id="name-field"/><br/><br/>
+
                 <input type="hidden" class="amount" name="amount"/>
                 <button class="donate-button btn btn-success" data-amount="10">Donate $10</button>
                 <button class="donate-button btn btn-success" data-amount="25">Donate $25</button>
                 <button class="donate-button btn btn-success" data-amount="50">Donate $50</button>
                 <button class="donate-button btn btn-success" data-amount="100">Donate $100</button>
                 <button class="donate-button btn btn-success" data-amount="custom">Donate other:</button>
-                <input type="text" class="amount-custom" placeholder="Enter amount here...">
+                <input type="text" class="amount-custom" placeholder=" Enter amount here...">
 
-                <br/><br/>
-
-                <label for="name-field">If you would like a tax receipt, please enter your name here:</label>
-                <input name="name" placeholder="Enter your full name" id="name-field"/><br/><br/>
             </form>
 
             <h3>Donate through Paypal</h3>
