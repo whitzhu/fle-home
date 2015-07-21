@@ -1,0 +1,35 @@
+{% extends base_template %}
+{% load staticfiles %}
+{% block title %}Kolibri{% endblock title %}
+
+{% block headcss %}
+    <link rel="stylesheet" href="{% static 'css/kolibri.css' %}">
+{% endblock headcss %}
+
+
+{% block bodycontents %}
+<div class="container-fluid">
+	<!-- Above the fold -->
+	<div id="kolibri-header" class="row">
+		<h3>header goes here</h3>
+	</div>
+
+	<!-- About -->
+	<div id="kolibri-about" class="row">
+		<div class="container">
+			<h3>about goes here</h3>
+		</div>
+	</div>
+
+	<!-- Ecosystem features -->
+	<div id="ecosystem" class="row kolibri-section">
+		{% include "main/sections/ecosystem.html" %}
+	</div>
+
+	<!-- Kolibri platform features -->
+	<div id="kolibri-features" class="row kolibri-section">
+		{% include "main/sections/features.html" %}
+	</div>
+</div>
+
+{% endblock bodycontents %}
