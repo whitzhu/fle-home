@@ -17,3 +17,5 @@ fle_site/media/user_resources/*
 venv/*
 fleSite/*
 Thumbs.db
+scripts/*
+virtualenv/*
