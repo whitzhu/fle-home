@@ -5,21 +5,94 @@ be sure to divide your work into sections on this page. */
 
 
 /* ABOVE THE FOLD */
-
-
+#kolibri-header{
+	background:url("../../static/img/header_placeholder.png")no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 95vh;
+	max-width: 100%;
+}
 
 
 
 /* ABOUT */
+#kolibri-about{
+	font-size:22px;
+	margin-top:10px;
+}
 
+#about-placeholder{
+	margin-top:5%;
+	width:350px;
+	height:250px;
+}
 
+h3{
+	font-size:30px;
+	color:#6F3496
+}
 
+hr{
+	margin-left:5%;
+	margin-right:5%;
+
+}
 
 
 /* "ECOSYSTEM" FEATURES */
 
+#ecosystem{
+	font-size:22px;
+}
 
+#offline-placeholder{
+	margin-top:5%;
+}
+
+
+#vectorization-placeholder{
+	margin-top:5%;
+}
+
+h1{
+	font-size:40px;
+	color:#6F3496
+}
+
+h3{
+	font-size:30px;
+	color:#6F3496
+}
+
+#sneakernet{
+	font-size:20px;
+	color:#6F3496;
+	font-style:bold;
+}
+
+hr{
+	margin-left:5%;
+	margin-right:5%;
+}
+
+#offline {
+	text-align:center;
+}
 
 
 
 /* KOLIBRI PLATFORM FEATURES */
+#features{
+	font-size:22px;
+}
+
+#parallax{
+	font-size:22px;
+}
+
+hr{
+	margin-left:5%;
+	margin-right:5%;
+}
