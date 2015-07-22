@@ -101,7 +101,85 @@ a:hover {
 	letter-spacing: 2px;
 }
 
-
+.email_submit {
+	clear: none !important;
+	float: left !important;
+	height: 55px !important;
+	font-size: 14px !important;
+	margin: 0 !important;
+	box-shadow:none !important;
+	border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+	background-color: #DD2741;
+	width: 15vw !important;
+	max-width: 120px !important;
+	min-width: 80px !important;
+}
+.email_input {
+    clear: none !important;
+    float: left !important;
+    width: 40vw !important;
+    max-width: 250px;
+    background-color: #FBE5E4;
+    /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-weight: 700 !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    border: 3px solid #DD2741 !important;
+    font-size: 18px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    height: 55px !important;  
+}
+.sliding{
+	width: 70vw;
+	max-width: 580px;
+	min-width: 300px;
+	position: fixed;
+	display: inline-block !important;
+	background-color: #F3A9A5;
+	border-radius: 10px;
+    border: 3px solid #DD2741;
+    z-index: 9998 !important;
+    float: right !important;
+    right: -100%;
+    bottom: 0;
+}
+.banner_img {
+	position: relative;
+	width: 30%;
+	float: right;
+    max-width: 180px;
+    z-index: 9999 !important;
+    right: 0;
+}
+.corner_banner {
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+    width: 100%;
+}
+.banner_container {
+	position: relative;
+}
+.sliding .form-control {
+	padding: 0 !important;
+	padding-left: 5px !important;
+}
+.subscribe_success{
+	display: none;
+	position: relative;
+	color: #F3A9A5;
+	font-size: 8vmin;
+	font-weight: 700 !important;
+	text-align: center;
+	float: right !important;
+	bottom: -30px !important;
+	background-color: #DD2741;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+}
 
 /*=========== LANDING SCREEN ===============*/
 
@@ -452,6 +530,7 @@ a:hover {
 	text-decoration: underline;
 }
 .carousel-caption {
+	z-index: 0;
 	width: 90%;
 	background: rgba(0,0,0,0.7);
 	left: 5%;
@@ -615,7 +694,6 @@ a:hover {
 /*======================================================================*/
 /*======================= RESPONSIVE QUERIES ===========================*/
 /*======================================================================*/
-
 @media (max-width: 1199px) {
 	#believe-box {
 		max-width: 350px;
@@ -661,6 +739,17 @@ a:hover {
 	}
 }
 @media (max-width: 767px) {
+	.email_input {
+		margin-left: 15px !important;
+		margin-bottom: 15px !important;
+	}
+	.sliding {
+		width: 90vw;
+	}
+	/*.subscribe_success{
+		top: -15px !important;
+	}*/
+
 	.poverty img {
 		max-width: 175px;
 		margin: 0;
