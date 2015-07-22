@@ -1,0 +1,106 @@
+.email_submit {
+	clear: none !important;
+	float: left !important;
+	height: 55px !important;
+	margin: 0 !important;
+	box-shadow:none !important;
+	border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+	background-color: #3989CA;
+	width: 15vw !important;
+	max-width: 120px !important;
+	min-width: 80px !important;
+	color: white;
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	border:0 !important;
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.email_submit:hover { 
+    background-color: #175079 !important;
+    color: white !important;
+}
+.email_input {
+    clear: none !important;
+    float: left !important;
+    width: 40vw !important;
+    max-width: 250px;
+    /*background-color: #FBE5E4;*/
+    /*font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-weight: 700 !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border: 4px solid #3989CA !important;
+    font-size: 18px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    height: 55px !important;  
+}
+.sliding{
+	width: 70vw;
+	max-width: 580px;
+	min-width: 300px;
+	position: fixed;
+	display: inline-block !important;
+	background-color: #7ABB2A;
+	border-radius: 10px;
+    border: 4px solid #3989CA;
+    z-index: 9998 !important;
+    float: right !important;
+    right: -100%;
+    bottom: 0;
+}
+.banner_img {
+	position: relative;
+	width: 32%;
+	float: right;
+    max-width: 180px;
+    z-index: 9999 !important;
+    right: 0;
+}
+.corner_banner {
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+    width: 100%;
+}
+.banner_container {
+	position: relative;
+}
+.sliding .form-control {
+	padding: 0 !important;
+	padding-left: 5px !important;
+}
+.subscribe_success{
+	display: none;
+	position: relative;
+	color: #7ABB2A;
+	font-size: 8vmin;
+	font-weight: 700 !important;
+	text-align: center;
+	float: right !important;
+	bottom: -30px !important;
+	background-color: #3989CA;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 10px;
+}
+
+/*deal with nav collapse*/
+@media (max-width: 767px) {
+	.email_input {
+		margin-left: 15px !important;
+		margin-bottom: 15px !important;
+	}
+	.sliding {
+		width: 90vw;
+	}
+	/*.subscribe_success{
+		top: -15px !important;
+	}*/
+
+}
