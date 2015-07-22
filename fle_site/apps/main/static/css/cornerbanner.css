@@ -61,6 +61,7 @@
     max-width: 180px;
     z-index: 9999 !important;
     right: 0;
+    cursor:pointer;
 }
 .corner_banner {
 	overflow: hidden;
