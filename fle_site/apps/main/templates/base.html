@@ -28,11 +28,13 @@
         {% block headcss %}
         {% endblock headcss %}
         <script src="{% static 'js/jquery-1.10.2.min.js' %}" type="text/javascript" ></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <script src="{% static 'bootstrap/js/bootstrap3.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/less.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/underscore-min.js' %}" type="text/javascript"></script>
-
+        <!-- kickstarter banner -->
+        <script src="{% static 'js/jquery-ui-min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/corner-banner.js' %}" type="text/javascript"></script>
+        <!-- kickstarter banner -->
         {% block headjs %}{% endblock headjs %}
         <script>
             $(function() {
@@ -58,64 +60,6 @@
                  js.src = "//connect.facebook.net/en_US/sdk.js";
                  fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-
-        // <-- kickstarter banner
-            $(function() {
-                var anima_click = true;
-                var sliding_out = '-100%';
-
-                $('.banner_img').click(function() {
-                    if(anima_click){
-                        anima_click = false;
-                        if(sliding_out == '-100%'){
-                            sliding_out = 0;
-                        }else{
-                            sliding_out = '-100%';
-                        }
-                        $('.sliding').animate({
-                            'right': sliding_out
-                        }, 500, function() {
-                            // Animation complete.
-                            anima_click = true;
-                        });
-                    }
-                });
-
-                $('.email_submit').click(function(){
-                    if(validateEmail($('.email_input').val())){
-                        sliding_out = '-100%';
-                        $('.sliding').animate({
-                            'right': sliding_out
-                        }, 500, function() {
-                            // Animation complete.
-                            $(".subscribe_success").fadeIn(300, function(){
-                                $(this).delay(1000).fadeOut(1000);
-                            });
-                        });
-                    }else{
-                        $('.sliding').effect('shake');
-                    }
-                });
-            });
-            function checkOffset() {
-                if($('.corner_banner').offset().top + $('.corner_banner').height() >= $('#footer').offset().top){
-                    $('.corner_banner').css({'position': 'absolute', 'margin-bottom': '20px'});
-                    $('.sliding').css({'position': 'absolute'});
-                }
-                if($(document).scrollTop() + window.innerHeight < $('#footer').offset().top){
-                    $('.corner_banner').css({'position': 'fixed', 'margin-bottom': '0px'}); // restore when you scroll up
-                }
-            }
-            $(document).scroll(function() {
-                checkOffset();
-            });
-            function validateEmail(email) {
-                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-                return re.test(email);
-            }
-
-        // kickstarter banner -->
-
         </script>
         {% block extrahead %}{% endblock extrahead %}
 
