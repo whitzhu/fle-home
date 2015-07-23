@@ -1,6 +1,14 @@
 $(function() {
     var anima_click = true;
     var sliding_out = '-100%';
+    var sliding_out_cookie = $.cookie("sliding_cookie");
+
+    if(sliding_out_cookie){
+        $('.sliding').css({'right': sliding_out});
+    }else{
+        sliding_out = 0;
+        $('.sliding').css({'right': sliding_out});
+    }
 
     $('.banner_img').click(function() {
         if(anima_click){
@@ -48,6 +56,7 @@ $(function() {
 // fixup for jquery-ui shake animation with certain css attr. -->
     $('.email_submit').click(function(){
         if(validateEmail($('.email_input').val())){
+            $.cookie("sliding_cookie", true, { expires : 30 }); //make corner banner not shown for a month
             sliding_out = '-100%';
             $('.sliding').animate({
                 'right': sliding_out
