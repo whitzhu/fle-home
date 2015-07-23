@@ -4,18 +4,18 @@
 	height: 55px !important;
 	margin: 0 !important;
 	box-shadow:none !important;
-	border-top-right-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 	background-color: #3989CA;
 	width: 15vw !important;
 	max-width: 120px !important;
 	min-width: 80px !important;
 	color: white;
-	font-size: 12px !important;
-	font-weight: 700 !important;
-	border:0 !important;
+	font-size: 12px;
+	font-weight: 700;
+	border:0;
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .email_submit:hover { 
@@ -40,7 +40,7 @@
     box-shadow: none !important;
     height: 55px !important;  
 }
-.sliding{
+.sliding {
 	width: 70vw;
 	max-width: 580px;
 	min-width: 300px;
@@ -76,7 +76,7 @@
 	padding: 0 !important;
 	padding-left: 5px !important;
 }
-.subscribe_success{
+.subscribe_success {
 	display: none;
 	position: relative;
 	color: #7ABB2A;
