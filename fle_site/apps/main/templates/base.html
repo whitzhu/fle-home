@@ -107,6 +107,8 @@
             ga('create', 'UA-36937407-2', 'learningequality.org');
             ga('send', 'pageview');
         </script>
+        <!-- scrolldepth has to place after Google Analytics gets initialized -->
+        <script src="{% static 'js/jquery.scrolldepth.min.js' %}" type="text/javascript"></script>
     {% endblock analytics %}
     {% block extra_footer %}{% endblock extra_footer %}
 </body>

@@ -12,6 +12,7 @@ $(function() {
 
     $('.banner_img').click(function() {
         if(anima_click){
+            ga('send', 'event', 'click', 'banner_img');
             anima_click = false;
             if(sliding_out == '-100%'){
                 sliding_out = 0;
