@@ -528,6 +528,11 @@ a:hover {
 .donate {
 	margin-top: 7%;
 }
+.donate_backgroud_img {
+	margin-top: 4%;
+	width: 35vw;
+	min-width: 300px;
+}
 .subscribe {
 	border-left: 1px solid #b2b2b2;
 	margin-top: 7%;
