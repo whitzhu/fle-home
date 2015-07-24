@@ -3,18 +3,109 @@
 For the sake of organization and to avoid the pain of merge conflicts, 
 be sure to divide your work into sections on this page. */
 
+/* GLOBAL VARIABLES */
+h3, h2{
+	font-size:30px;
+	color:#6F3496;
+}
+h1{
+	font-size:40px;
+	color:#6F3496
+}
+
+hr{
+	margin-left:5%;
+	margin-right:5%;
+}
+
 
 /* ABOVE THE FOLD */
 #kolibri-header{
-	background:url("../../static/img/header_placeholder.png")no-repeat center center; 
+	background: url("../../static/img/header_placeholder.png") no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 95vh;
+	min-height: 95vh;
 	max-width: 100%;
 }
-
+#kolibri-header span {
+	color: white;
+}
+#kolibri-logo {
+	text-align: center;
+	opacity: 0.65;
+}
+#page-title {
+	position: relative;
+	top: -150px;
+	text-align: center;
+	max-width: 300px;
+	margin: auto;
+}
+#kolibri-title {
+	font-size: 93px;
+	line-height: 1.1em;
+}
+.kolibri-title-subtext {
+	font-size: 23px;
+	margin: 0 10px 0 16px;
+}
+#kolibri-pitch {
+	position: relative;
+	top: -125px;
+}
+#kolibri-pitch span {
+	text-align: center;
+	display: block;
+	font-size: 25px;
+	line-height: 1.6em;
+}
+.kolibri-landing-detail {
+	position: relative;
+	top: -75px;
+	margin: auto;
+}
+.kolibri-landing-detail div img {
+	float: left;
+}
+.kolibri-landing-detail div span {
+	font-size: 20px;
+    position: relative;
+    max-width: 250px;
+    left: 20px;
+    top: 10px;
+    float: right;
+}
+#lightbulb {
+	position: relative;
+	top: -10px;
+}
+.kolibri-learnmore-button {
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    padding: 11px 68px;
+    border: 2px solid white;
+    border-radius: 11px;
+    letter-spacing: 0.05em;
+    position: relative;
+    top: -60px;
+    left: 39.5%;
+    -webkit-transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+    transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+}
+.kolibri-learnmore-button:hover {
+	border: 2px solid white;
+	border-radius: 0px;
+	color: white;
+	background: transparent;
+	padding: 13px 70px;
+	left: 39.33%;
+	top: -62px;
+	-webkit-transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+	transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+}
 
 
 /* ABOUT */
@@ -27,17 +118,7 @@ be sure to divide your work into sections on this page. */
 	margin-top:5%;
 	width:350px;
 	height:250px;
-}
-
-h3{
-	font-size:30px;
-	color:#6F3496
-}
-
-hr{
-	margin-left:5%;
-	margin-right:5%;
-
+	opacity: 50%;
 }
 
 
@@ -52,26 +133,12 @@ hr{
 	margin-top:5%;
 }
 
-h1{
-	font-size:40px;
-	color:#6F3496
-}
-
-h3{
-	font-size:30px;
-	color:#6F3496
-}
-
 #sneakernet{
 	font-size:20px;
 	color:#6F3496;
 	font-style:bold;
 }
 
-hr{
-	margin-left:5%;
-	margin-right:5%;
-}
 
 #offline {
 	text-align:center;
@@ -86,9 +153,4 @@ hr{
 
 #parallax{
 	font-size:22px;
-}
-
-hr{
-	margin-left:5%;
-	margin-right:5%;
 }
