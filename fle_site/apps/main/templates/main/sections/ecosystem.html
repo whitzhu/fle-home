@@ -1,19 +1,22 @@
+{% load staticfiles %}
 <div class="container">
 	<h1 id="header">Breaking Down Connectivity Barriers</h1>
 		
-		<div class="col-md-8">
+		<div class="col-md-6">
 			<h3>Open Source Educational Content</h3>
 			<p>This means that all the educational content that Kolibri offers for curation is licensed to be freely distributed and remixed for your own curricular needs.</p>
-		</div>
-		<div class="col-md-8">
+				<br>
 			<h3>Learn, Online or Offline</h3>
 
 			<p>Learners can engage with high-quality educational material from the internet, even when internet connection is unreliable. Kolibri will enable educators to integrate and distribute their unique educational content through an offline server that is accessible through a local network. Content and data is stored on the local server and synced with an online repository once it reaches an internet connection.</p>
 		</div>
 
-		<div class="col-md-4">
-			<img id="offline-placeholder" src="../../static/img/learn-offline.png"></img>
-		</div> <br>
+		<div class="col-md-6">
+			<img id="offline-placeholder" src="{% static 'img/learn-offline-2.png' %}"></img>
+		</div>
+
+		
+		 <br>
 			
 	
 			
@@ -24,7 +27,7 @@
 		<h3>Syncing and Sharing</h3>
 		<p>Here are a few ways that teachers and learners can share data, content, and software updates -- all offline.</p>
 			<br>
-		<img id="offline-placeholder" src="http://placehold.it/750x250">
+		<img id="offline-placeholder" src="{% static 'img/offline-image.png' %}">
 	</div>
 
 	<div class="col-md-6">
@@ -43,7 +46,11 @@
 
 <div class="container">
 	<div class="col-md-4">
+<<<<<<< HEAD
 		<img id="vectorization-placeholder" src="../../static/img/Vectorization-graphics.png"> </img>
+=======
+		<img id="vectorization-placeholder" src="{% static 'img/vectorization-graphics-2.png' %}">
+>>>>>>> created more graphics, inserted them using django syntax, adjusted layout to accomodate for open source section
 	</div>
 
 	<div class="col-md-8">
@@ -63,6 +70,6 @@
 	</div>
 
 	<div class="col-md-4">
-		<img id="vectorization-placeholder" src="http://placehold.it/350x250">
+		<img id="vectorization-placeholder" src="{% static 'img/cross-platform.png' %}">
 	</div>
 </div> <br><hr>
