@@ -110,20 +110,15 @@ hr{
 
 
 /* ABOUT */
-#kolibri-about{
+#kolibri-about {
 	margin-top:3%;
 	background:url("../../static/img/ecosystem-v3.png") no-repeat center center;
-	
-	/*-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;*/
 	min-height: 80vh;
 	max-width: 100%;
 	margin-top:5%;
 }
 
-#bg-img{
+#bg-img {
 	background-color:#957FB3;
 	opacity:.85;
 	-webkit-background-size: cover;
@@ -135,14 +130,14 @@ hr{
 }
 
 
-#kolibri-about h1{
+#kolibri-about h1 {
 	margin-top:5%;
 	color:#ffffff;
 	margin-bottom:2%;
 
 }
 
-#kolibri-about p{
+#kolibri-about p {
 	color:#ffffff;
 	font-size:22px;
 	margin-left:30%;
@@ -150,35 +145,18 @@ hr{
 }
 
 
-/*.img-bg{
-	background:url("../../static/img/ecosystem-v3.png");
-	background-color:#957FB3;
-	opacity:.85;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	min-height: 80vh;
-	max-width: 100%;
-	margin-top:-52%;
-	
-}*/
-
-
-
-
 /* "ECOSYSTEM" FEATURES */
 
-#ecosystem{
+#ecosystem {
 	font-size:22px;
 }
 
 
-#vectorization-placeholder{
+#vectorization-placeholder {
 	margin-top:5%;
 }
 
-#sneakernet{
+#sneakernet {
 	font-size:20px;
 	color:#6F3496;
 	font-style:bold;
@@ -192,10 +170,10 @@ hr{
 
 
 /* KOLIBRI PLATFORM FEATURES */
-#features{
+#features {
 	font-size:22px;
 }
 
-#parallax{
+#parallax {
 	font-size:22px;
 }
