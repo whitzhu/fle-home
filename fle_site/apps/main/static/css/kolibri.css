@@ -119,8 +119,9 @@ hr{
 }
 
 #bg-img {
-	background-color:#957FB3;
-	opacity:.85;
+	/*background-color:#957FB3;
+	opacity:.85;*/
+	background-color: rgba(85, 118, 124, 0.84);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
