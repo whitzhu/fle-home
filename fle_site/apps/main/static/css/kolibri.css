@@ -111,23 +111,47 @@ hr{
 
 /* ABOUT */
 #kolibri-about{
+	margin-top:3%;
+	background:url("../../static/img/ecosystem-v3.png") no-repeat center center;
+	
+	/*-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+	min-height: 80vh;
+	max-width: 100%;
+	margin-top:5%;
+}
+
+#bg-img{
+	background-color:#957FB3;
+	opacity:.85;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top:12%;
+	padding-bottom:17%;
+}
+
+
+#kolibri-about h1{
+	margin-top:5%;
+	color:#ffffff;
+	margin-bottom:2%;
+
+}
+
+#kolibri-about p{
+	color:#ffffff;
 	font-size:22px;
-	margin-top:10px;
+	margin-left:30%;
+	margin-right:30%;
 }
 
-#about-placeholder{
-	margin-top:5%;
-	width:350px;
-	height:250px;
-	opacity: 50%;
-}
 
-.about-img{
-	margin-top:5%;
-	margin-bottom:7%;
-}
-
-.img-bg{
+/*.img-bg{
+	background:url("../../static/img/ecosystem-v3.png");
 	background-color:#957FB3;
 	opacity:.85;
 	-webkit-background-size: cover;
@@ -138,20 +162,9 @@ hr{
 	max-width: 100%;
 	margin-top:-52%;
 	
-}
+}*/
 
-.img-bg h1{
-	margin-top:16%;
-	color:#ffffff;
-	margin-bottom:2%;
-}
 
-.img-bg p{
-	color:#ffffff;
-	font-size:22px;
-	margin-left:30%;
-	margin-right:30%;
-}
 
 
 /* "ECOSYSTEM" FEATURES */
