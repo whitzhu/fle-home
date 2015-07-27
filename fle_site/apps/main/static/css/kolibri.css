@@ -4,8 +4,7 @@ For the sake of organization and to avoid the pain of merge conflicts,
 be sure to divide your work into sections on this page. */
 
 /* GLOBAL VARIABLES */
-h3, h2{
-	font-size:30px;
+h1, h2, h3 {
 	color:#6F3496;
 	margin-top: 5%;
 }
@@ -18,16 +17,23 @@ h1{
 hr{
 	margin:5%;
 }
+p {
+	font-size: 18px;
+	letter-spacing: 0.03em;
+}
+.kolibri-section {
+	margin: 10% auto;
+}
 
 
 /* ABOVE THE FOLD */
-#kolibri-header{
+#kolibri-header {
 	background: url("../../static/img/header_placeholder.png") no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 95vh;
+	min-height: 100vh;
 	max-width: 100%;
 }
 #kolibri-header span {
@@ -36,6 +42,9 @@ hr{
 #kolibri-logo {
 	text-align: center;
 	opacity: 0.65;
+}
+#kolibri-logo img {
+	max-width: 450px;
 }
 #page-title {
 	position: relative;
@@ -90,22 +99,25 @@ hr{
     border: 2px solid white;
     border-radius: 11px;
     letter-spacing: 0.05em;
-    position: relative;
-    top: -60px;
-    left: 39.5%;
-    -webkit-transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
-    transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+    display: block;
+    width: 300px;
+    margin: auto;
+    -webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
+    transition: border 0.5s, padding 0.5s, margin 0.5s;
 }
 .kolibri-learnmore-button:hover {
-	border: 2px solid white;
-	border-radius: 0px;
-	color: white;
-	background: transparent;
+	border: 3px solid white;
 	padding: 13px 70px;
-	left: 39.33%;
-	top: -62px;
-	-webkit-transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
-	transition: border-radius 0.5s, left 0.5s, padding 0.5s, top 0.5s;
+	margin-top: -0.07%;
+	background: transparent;
+	color: white;
+	-webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
+	transition: border 0.5s, padding 0.5s, margin 0.5s;
+}
+.kolibri-header-content {
+	display: block;
+	margin: 2% auto 0 auto;
+	width: 80%;
 }
 
 
@@ -175,7 +187,6 @@ hr{
 	margin-right:30%;
 }
 
-
 /* "ECOSYSTEM" FEATURES */
 
 
@@ -187,10 +198,8 @@ hr{
 	color:#6F3496;
 	font-style:bold;
 }
-
-
 #offline {
-	text-align:center;
+	text-align: center;
 }
 
 
