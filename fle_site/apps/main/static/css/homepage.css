@@ -101,8 +101,6 @@ a:hover {
 	letter-spacing: 2px;
 }
 
-
-
 /*=========== LANDING SCREEN ===============*/
 
 .landing-screen {
@@ -452,6 +450,7 @@ a:hover {
 	text-decoration: underline;
 }
 .carousel-caption {
+	z-index: 0;
 	width: 90%;
 	background: rgba(0,0,0,0.7);
 	left: 5%;
@@ -528,6 +527,11 @@ a:hover {
 }
 .donate {
 	margin-top: 7%;
+}
+.donate_backgroud_img {
+	margin-top: 4%;
+	width: 35vw;
+	min-width: 300px;
 }
 .subscribe {
 	border-left: 1px solid #b2b2b2;
@@ -615,7 +619,6 @@ a:hover {
 /*======================================================================*/
 /*======================= RESPONSIVE QUERIES ===========================*/
 /*======================================================================*/
-
 @media (max-width: 1199px) {
 	#believe-box {
 		max-width: 350px;
