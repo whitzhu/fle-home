@@ -21,6 +21,9 @@ p {
 	font-size: 18px;
 	letter-spacing: 0.03em;
 }
+a {
+	text-decoration: none;
+}
 .kolibri-section {
 	margin: 10% auto;
 }
@@ -102,17 +105,25 @@ p {
     display: block;
     width: 300px;
     margin: auto;
-    -webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
-    transition: border 0.5s, padding 0.5s, margin 0.5s;
+    margin-top: 0;
+    -webkit-transition: border 0.5s, padding 0.5s, margin-top 0.5s;
+    transition: border 0.5s, padding 0.5s, margin-top 0.5s;
+}
+.kolibri-learnmore-button a,
+.kolibri-learnmore-button a:hover,
+.kolibri-learnmore-button a div:hover {
+	color: white;
+	text-decoration: none;
 }
 .kolibri-learnmore-button:hover {
-	border: 3px solid white;
+	border: 2px solid white;
 	padding: 13px 70px;
-	margin-top: -0.07%;
+	margin-top: -0.1%;
 	background: transparent;
 	color: white;
-	-webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
-	transition: border 0.5s, padding 0.5s, margin 0.5s;
+	text-decoration: none;
+	-webkit-transition: border 0.5s, padding 0.5s, margin-top 0.5s;
+	transition: border 0.5s, padding 0.5s, margin-top 0.5s;
 }
 .kolibri-header-content {
 	display: block;
