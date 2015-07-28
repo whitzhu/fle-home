@@ -67,6 +67,12 @@ $(function() {
                     $(this).delay(1000).fadeOut(1000);
                 });
             });
+
+            var google_conversion_id = 946262510;
+            var google_conversion_label = "-PIICObG2F4Q7qObwwM";
+            var image = new Image(1, 1); 
+            image.src = "//www.googleadservices.com/pagead/conversion/" + google_conversion_id + "/?label=" + google_conversion_label + "&script=0";
+
         }else{
             $('.sliding').effect('shake');
         }
