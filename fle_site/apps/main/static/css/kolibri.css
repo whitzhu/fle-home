@@ -111,7 +111,7 @@ hr{
 
 /* ABOUT */
 #kolibri-about {
-	margin-top:3%;
+
 	background:url("../../static/img/ecosystem-v3.png") no-repeat center center;
 	min-height: 80vh;
 	max-width: 100%;
@@ -119,9 +119,7 @@ hr{
 }
 
 #bg-img {
-	/*background-color:#957FB3;
-	opacity:.85;*/
-	background-color: rgba(85, 118, 124, 0.84);
+	background-color: rgba(85, 118, 124, 0.8);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -148,17 +146,12 @@ hr{
 
 /* "ECOSYSTEM" FEATURES */
 
-#ecosystem {
-	font-size:22px;
-}
-
 
 #vectorization-placeholder {
 	margin-top:5%;
 }
 
 #sneakernet {
-	font-size:20px;
 	color:#6F3496;
 	font-style:bold;
 }
@@ -171,10 +164,84 @@ hr{
 
 
 /* KOLIBRI PLATFORM FEATURES */
-#features {
-	font-size:22px;
+
+
+#features-img {
+	margin-top:5%;
+	margin-bottom:5%;
 }
 
-#parallax {
-	font-size:22px;
+
+
+/*======================================================================*/
+/*======================= RESPONSIVE QUERIES ===========================*/
+/*======================================================================*/
+
+/*======ecosystem (about) section=========*/
+/*fixing height of teal bg*/
+@media (max-width: 2255px) {
+	#bg-img {
+		padding-bottom:20%; 
+
+	}
+	#bg-img h1 {
+		margin-top:10%;     /*adjusting placement of header*/ 
+		margin-bottom:10px;/*adding space btwn header and text*/
+	}
 }
+
+@media (max-width: 1962px) {
+	#bg-img {
+		padding-bottom:23%; /*fixing height of teal bg*/
+
+	}
+	#bg-img h1 {
+		margin-top:7%;     /*adjusting placement of header*/ 
+		margin-bottom:10px;/*adding space btwn header and text*/
+	}
+}
+
+@media (max-width: 1728px) {
+	#bg-img {
+		padding-bottom:20%; /*fixing height of teal bg*/
+
+	}
+	#bg-img h1 {
+		margin-top:10%;     /*adjusting placement of header*/ 
+		margin-bottom:10px;/*adding space btwn header and text*/
+	}
+}
+
+@media (max-width: 1700px) {
+	#bg-img {
+		padding-bottom:23%; /*fixing height of teal bg*/
+
+	}
+	#bg-img h1 {
+		margin-top:12%;     /*adjusting placement of header*/ 
+		margin-bottom:10px;/*adding space btwn header and text*/
+	}
+}
+
+@media (max-width: 1477px) {
+	#bg-img {
+		padding-bottom:25%; /*fixing height of teal bg*/
+
+	}
+	#bg-img h1 {
+		margin-top:15%;     /*adjusting placement of header*/ 
+		margin-bottom:10px;/*adding space btwn header and text*/
+	}
+}
+
+
+
+/*Fixing width of text*/
+
+
+@media (max-width: 620px) {
+	#bg-img p {
+		margin:5%;/*adding space btwn header and text*/
+	}
+}
+
