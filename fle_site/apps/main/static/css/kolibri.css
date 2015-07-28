@@ -8,21 +8,16 @@ h1, h2, h3 {
 	color:#6F3496;
 	margin-top: 5%;
 }
-h1{
-	font-size:40px;
-	color:#6F3496;
-	margin-top: 5%;
+h1 {
+	font-size: 40px;
 }
 
-hr{
-	margin:5%;
+hr {
+	margin: 5%;
 }
 p {
 	font-size: 18px;
 	letter-spacing: 0.03em;
-}
-a {
-	text-decoration: none;
 }
 .kolibri-section {
 	margin: 10% auto;
@@ -47,7 +42,8 @@ a {
 	opacity: 0.65;
 }
 #kolibri-logo img {
-	max-width: 450px;
+	max-width: 90%;
+	width: 450px;
 }
 #page-title {
 	position: relative;
@@ -105,25 +101,17 @@ a {
     display: block;
     width: 300px;
     margin: auto;
-    margin-top: 0;
-    -webkit-transition: border 0.5s, padding 0.5s, margin-top 0.5s;
-    transition: border 0.5s, padding 0.5s, margin-top 0.5s;
-}
-.kolibri-learnmore-button a,
-.kolibri-learnmore-button a:hover,
-.kolibri-learnmore-button a div:hover {
-	color: white;
-	text-decoration: none;
+    -webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
+    transition: border 0.5s, padding 0.5s, margin 0.5s;
 }
 .kolibri-learnmore-button:hover {
-	border: 2px solid white;
+	border: 3px solid white;
 	padding: 13px 70px;
-	margin-top: -0.1%;
+	margin-top: -0.07%;
 	background: transparent;
 	color: white;
-	text-decoration: none;
-	-webkit-transition: border 0.5s, padding 0.5s, margin-top 0.5s;
-	transition: border 0.5s, padding 0.5s, margin-top 0.5s;
+	-webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
+	transition: border 0.5s, padding 0.5s, margin 0.5s;
 }
 .kolibri-header-content {
 	display: block;
@@ -142,7 +130,11 @@ a {
 }
 
 #bg-img {
+<<<<<<< HEAD
 	background-color: rgba(85, 118, 124, 0.8);
+=======
+	background-color: rgba(85, 118, 124, 0.84);
+>>>>>>> started responsive fixes for images
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -168,24 +160,44 @@ a {
 
 /* "ECOSYSTEM" FEATURES */
 
+<<<<<<< HEAD
 
+=======
+#ecosystem {
+	font-size:22px;
+}
+>>>>>>> started responsive fixes for images
 #vectorization-placeholder {
 	margin-top:5%;
+	max-width: 90%;
 }
 
 #sneakernet {
 	color:#6F3496;
 	font-style:bold;
+	font-size: 22px;
+}
+.break-barriers h1 {
+	margin-bottom: 5%;
 }
 #offline {
 	text-align: center;
+}
+#offline-placeholder {
+	max-width: 90%;
+	height: auto;
 }
 
 
 
 /* KOLIBRI PLATFORM FEATURES */
 
-
+#curate-img {
+	max-width: 90%;
+}
+#parallax {
+	font-size:22px;
+}
 #features-img {
 	margin-top:5%;
 	margin-bottom:5%;
@@ -196,6 +208,19 @@ a {
 /*======================================================================*/
 /*======================= RESPONSIVE QUERIES ===========================*/
 /*======================================================================*/
+
+@media only screen and (max-width: 1400px) {
+	.kolibri-landing-detail div {
+		text-align: center;
+	}
+	.kolibri-landing-detail div img {
+		float: none;
+		text-align: center;
+	}
+	.kolibri-landing-detail div span {
+		text-align: center;
+	}
+}
 
 /*======ecosystem (about) section=========*/
 /*fixing height of teal bg*/
@@ -264,4 +289,3 @@ a {
 		margin:5%;/*adding space btwn header and text*/
 	}
 }
-
