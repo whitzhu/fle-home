@@ -25,7 +25,7 @@ p {
 
 
 /* ABOVE THE FOLD */
-#kolibri-header {
+#kolibri-header{
 	background: url("../../static/img/header_placeholder.png") no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -122,7 +122,6 @@ p {
 
 /* ABOUT */
 #kolibri-about {
-
 	background:url("../../static/img/ecosystem-v3.png") no-repeat center center;
 	min-height: 80vh;
 	max-width: 100%;
@@ -130,11 +129,7 @@ p {
 }
 
 #bg-img {
-<<<<<<< HEAD
 	background-color: rgba(85, 118, 124, 0.8);
-=======
-	background-color: rgba(85, 118, 124, 0.84);
->>>>>>> started responsive fixes for images
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -142,8 +137,6 @@ p {
 	padding-top:12%;
 	padding-bottom:17%;
 }
-
-
 #kolibri-about h1 {
 	margin-top:5%;
 	color:#ffffff;
@@ -156,10 +149,11 @@ p {
 	font-size:22px;
 	margin-left:30%;
 	margin-right:30%;
+
 }
 
-/* "ECOSYSTEM" FEATURES */
 
+/* "ECOSYSTEM" FEATURES */
 #vectorization-placeholder {
 	margin-top:5%;
 	max-width: 90%;
@@ -180,7 +174,6 @@ p {
 	max-width: 90%;
 	height: auto;
 }
-
 
 
 /* KOLIBRI PLATFORM FEATURES */
@@ -238,7 +231,6 @@ p {
 		margin-bottom:10px;/*adding space btwn header and text*/
 	}
 }
-
 @media (max-width: 1728px) {
 	#bg-img {
 		padding-bottom:20%; /*fixing height of teal bg*/
