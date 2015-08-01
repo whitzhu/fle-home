@@ -1,8 +1,6 @@
 {% extends base_template %}
 
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
 
 {% block title %}Kolibri : A Free, Open Source Education for All{% endblock title%}
 
@@ -15,53 +13,52 @@
 {% endblock headcss %}
 
 {% block bodycontents %}
-<body id="page-top" class="index">
+    <!-- Navigation 
+    <nav class="navbar navbar-default affix" id="kickstarter-nav" role="navigation" data-spy="affix" data-offset-top="500">
+        <div class="container-fluid">
+            <div class="container">
+                 Brand and toggle get grouped for better mobile display 
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top"><img src="{% static 'img/kickstarter/logos/Kolibri.png' %}"></a>
+                </div>
 
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="{% static 'img/kickstarter/logos/Kolibri.png' %}"></a>
+                 Collect the nav links, forms, and other content for toggling 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right kickstarter-inner-nav">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#services">Divide</a>
+                        </li>
+                        <li>
+                            <a classie="page-scroll" href="#portfolio">Kolibri</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#about">Impact</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#team">Team</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#contact">Join Us</a>
+                        </li>
+                    </ul>
+                </div>
+                 /.navbar-collapse 
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Divide</a>
-                    </li>
-                    <li>
-                        <a classie="page-scroll" href="#portfolio">Kolibri</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Impact</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Join Us</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
-    </nav>
+         /.container-fluid 
+    </nav> -->
 
     <!-- Header -->
-    <header>
+    <header id="kickstarter-header">
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in"> An Open Source Project to Bridge the Education Divide</div>
@@ -91,34 +88,6 @@
         {% include "main/partials/_kickstarter_team.html" %}
     </section>
 
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/kickstarter/logos/envato.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/kickstarter/logos/designmodo.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/kickstarter/logos/themeforest.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="{% static 'img/kickstarter/logos/creative-market.jpg' %}" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -137,10 +106,13 @@
                         <div class="e2">
                             <input type="email" value="" name="EMAIL" class="required email email_input" id="mce-EMAIL" placeholder="Email Address">
                             <input type="submit" value="Join the Cause" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl email_submit">
+                
                         </div>
                     </div>
                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_023b9af05922dfc7f47a4fffb_2cff471b25" tabindex="-1" value=""></div>
+                    <div style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_023b9af05922dfc7f47a4fffb_2cff471b25" tabindex="-1" value="">
+                    </div>
                 </form>
             </div>
             <div id="mce-responses" class="clear">
@@ -153,35 +125,10 @@
         </div>
     </section>
 
-    {% block footeroverride %}{% endblock footeroverride %}
-
-    <!-- <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Learning Equality 2015</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Learning Equality</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer> -->
+    <!-- hides the kickstarter mailbox in footer -->
+    {% block footeroverride %}
+        {% include "main/partials/_footer_normal.html" %}
+    {% endblock footeroverride %}
 
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
@@ -364,7 +311,13 @@
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'js/kickstarter.js' %}" type="text/javascript" ></script>
 
-</body>
-{% endblock bodycontents %}
 
-</html>
+    <script type="text/javascript">
+      // Dynamically set offest for inner nav page load
+      $(function() {
+        var headerHeight = $('#fle-navbar').height() + $('#kickstarter-header').height();  
+        $('#kickstarter-nav').attr("data-offset-top", headerHeight);
+      });
+    </script>
+
+{% endblock bodycontents %}
