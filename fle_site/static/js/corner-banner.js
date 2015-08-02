@@ -1,34 +1,27 @@
 $(function() {
 
-    var anima_click = true;
-    var sliding_out = '-100%';
-    var sliding_out_cookie = $.cookie("sliding_cookie");
+    var anim_in_progress = false;
 
-    if (sliding_out_cookie) {
-        $('.sliding').css({'right': sliding_out});
-    } else {
-        sliding_out = 0;
-        $('.sliding').css({'right': sliding_out});
-    }
+    // expand or hide banner initially based on cookie
+    var banner_expanded = $.cookie("banner_hidden") != "true";
+    slide_banner({expand: banner_expanded, duration: 0});
 
     $('.banner_img').click(function() {
-        if (anima_click) {
+        if (!anim_in_progress) {
             ga('send', 'event', 'click', 'banner_img');
-            anima_click = false;
-            if(sliding_out == '-100%'){
-                sliding_out = 0;
-            }else{
-                sliding_out = '-100%';
-            }
-            $('.sliding').animate({
-                'right': sliding_out
-            }, 500, function() {
+
+            anim_in_progress = true;
+
+            banner_expanded = !banner_expanded;
+
+            slide_banner({expand: banner_expanded, callback: function() {
                 // Animation complete.
-                anima_click = true;
-            });
+                anim_in_progress = false;
+            }});
         }
     });
-// <-- fixup for jquery-ui shake animation with certain css attr.
+
+    // <-- fixup for jquery-ui shake animation with certain css attr.
     if ($.ui) {
         (function () {
             var oldEffect = $.fn.effect;
@@ -57,18 +50,15 @@ $(function() {
     }
 
     // fixup for jquery-ui shake animation with certain css attr. -->
-    $('.email_submit').click(function(){
-        if(validateEmail($('.email_input').val())){
-            $.cookie("sliding_cookie", true, {expires: 30}); //make corner banner not shown for a month
-            sliding_out = '-100%';
-            $('.sliding').animate({
-                'right': sliding_out
-            }, 500, function() {
+    $('.email_submit').click(function() {
+        if (validateEmail($('.email_input').val())) {
+
+            slide_banner({expand: false, callback: function() {
                 // Animation complete.
                 $(".subscribe_success").fadeIn(300, function() {
                     $(this).delay(1000).fadeOut(1000);
                 });
-            });
+            }});
 
         } else {
             $('.sliding').effect('shake');
@@ -80,6 +70,21 @@ $(function() {
     });
 
 });
+
+function slide_banner(options) {
+
+    options = $.extend({
+        duration: 500,
+        callback: null,
+        expand: true
+    }, options);
+
+    $('.sliding').animate({
+        'right': options.expand ? 0 : '-100%'
+    }, options.duration, options.callback);
+
+    $.cookie("banner_hidden", !options.expand, {expires: 30});
+}
 
 function checkOffset() {
 
