@@ -11,11 +11,12 @@
 	background-color: #3989CA;
 	width: 15vw;
 	max-width: 120px;
-	min-width: 80px;
 	color: white;
 	font-size: 12px;
 	font-weight: 700;
 	border:0;
+	/*overflow: hidden;*/
+	/*text-overflow: ellipsis;*/
 	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .email_submit:hover { 
@@ -93,6 +94,13 @@
 
 /*deal with nav collapse*/
 @media (max-width: 767px) {
+	.email_submit:before  {
+		line-height: 50%;
+		padding-left: 50%;
+		margin-left: -0.5em;
+  		content: "\27A0   \00a0  \00a0  \00a0  \00a0  \00a0";
+  		font-size: 46px;
+	}
 	.email_input {
 		margin-left: 15px;
 		margin-bottom: 15px;
