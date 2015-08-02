@@ -8,7 +8,7 @@ $(function() {
 
     $('.banner_img').click(function() {
         if (!anim_in_progress) {
-            ga('send', 'event', 'click', 'banner_img');
+            ga('send', 'event', 'banner', 'click', banner_expanded ? "hide" : "show");
 
             anim_in_progress = true;
 
@@ -53,6 +53,8 @@ $(function() {
     $('.email_submit').click(function() {
         if (validateEmail($('.email_input').val())) {
 
+            ga('send', 'event', 'banner', 'signup', $('.email_input').val(), 1);
+
             slide_banner({expand: false, callback: function() {
                 // Animation complete.
                 $(".subscribe_success").fadeIn(300, function() {
@@ -63,6 +65,7 @@ $(function() {
         } else {
             $('.sliding').effect('shake');
         }
+
     });
 
     $(document).scroll(function() {
