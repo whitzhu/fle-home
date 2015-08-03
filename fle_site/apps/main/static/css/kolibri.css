@@ -115,7 +115,6 @@ hr{
 	background:url("../../static/img/ecosystem-v3.png") no-repeat center center;
 	min-height: 80vh;
 	max-width: 100%;
-	margin-top:5%;
 }
 
 #bg-img {
@@ -188,6 +187,7 @@ hr{
 		margin-top:10%;     /*adjusting placement of header*/ 
 		margin-bottom:10px;/*adding space btwn header and text*/
 	}
+
 }
 
 @media (max-width: 1962px) {
