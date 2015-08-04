@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="{% static 'js/fabric.js' %}"></script>
+    <script src="{% static 'js/data.js' %}"></script>
 {% endblock headcss %}
 
 {% block bodycontents %}
@@ -149,7 +151,7 @@
                             <!-- Project Details Go Here -->
                             <h2>Content Curation</h2>
                             <p class="item-intro text-muted">A tool for sharing your knowledge with people in need</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/roundicons-free.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation_modal_img.png' %}" alt="">
                             <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Teachers and organizations have the freedom to combine content from various channels to create unique curriculum that caters to students’ specific needs. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
                             <p class="big"><mark>&#9733 Upload exclusively new content:  </mark>   There might be times when instructors have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, in order to share it with other instructors who may find it useful for their own students.</p>
                             <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Instructors also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p>
@@ -161,7 +163,7 @@
                                 <li>Client: Round Icons</li>
                                 <li>Category: Graphic Design</li>
                             </ul> -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Introducation</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
                     </div>
                 </div>
@@ -184,10 +186,10 @@
                         <div class="modal-body">
                             <h2>Peer to Peer Sync</h2>
                             <p class="item-intro text-muted">Discover new knowledge as you go, even without Internet connection</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/startup-framework-preview.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
                             <p class="center">With the “device discovery” interface, devices can find and directly connect with each other over a local wi-fi network, allowing for easy content sharing and data updates.</p>
                            <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
                     </div>
                 </div>
@@ -211,10 +213,22 @@
                             <!-- Project Details Go Here -->
                             <h2>Video Vectorization</h2>
                             <p class="item-intro text-muted">Achieve a compression ratio no other algorithm comes close, but still with high quality.</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/treehouse-preview.png' %}" alt="">
+                            <center>
+                                <canvas id="canvas" width="690" height="388" style="border:1px solid #000000"></canvas>
+                            </center>
+                            <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
+                            <script src="{% static 'js/action updated.js' %}"></script>
+                            <mark>&#9757 You can select the elements on the vedio with your mouse and change their position and size.</mark>
+                            <br>
+                            <br>
+                            <button class="btn play-btn" onclick="startAnimation()">PLAY</button>
+                            <button class="btn btn-primary" onclick="restartAnimation()">Restart</button>
+                            <button class="btn btn-primary" onclick="pauseAnimation()">Pause</button>
+                            <br>
+                            <br>
                             <p class="center">Make downloading and transferring content a fast and easy process. We found a way to compress hundreds of gigabytes of content into just a few megabytes, and this is done by converting only the necessary parts of content items to scalable components.</p>
                             <!-- <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p> -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
                     </div>
                 </div>
