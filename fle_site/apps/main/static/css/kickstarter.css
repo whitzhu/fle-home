@@ -867,3 +867,17 @@ mark{
   font-weight: 900;
   color: #47B56C;
 }
+.play-btn{
+  background-color: #33CC33;
+  color: white;
+  font-weight: 700;
+  min-width: 100px;
+}
+.play-btn:hover {
+  background-color: #2EB82E;
+  color: white;
+}
+.play-btn:focus,
+.play-btn:active {
+  color: white;
+}
