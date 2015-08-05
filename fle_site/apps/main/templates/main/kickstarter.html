@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="{% static 'js/fabric.js' %}"></script>
     <script src="{% static 'js/data.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
 {% endblock headcss %}
 
 {% block bodycontents %}
@@ -78,6 +79,9 @@
     <!-- Portfolio Grid Section -->
     <section id="portfolio" class="bg-light-gray">
         {% include "main/partials/_kickstarter_pastwork.html" %}
+        <script src="{% static 'js/svg_content_curation.js' %}"></script>
+        <script src="{% static 'js/svg_peer_to_peer.js' %}"></script>
+        <script src="{% static 'js/svg_video_vectorization.js' %}"></script>
     </section>
 
     <!-- About Section -->

@@ -1,56 +1,56 @@
 {% load staticfiles %}
 
 <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">New Features</h2>
-                    <h3 class="section-subheading text-muted">We envision Kolibri as an ecosystem of hardware, software, people, <br>and content that empowers educators of all types to seamlessly bridge the online and offline worlds.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'img/kickstarter/portfolio/content_curation_cover.png' %}" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Content Curation</h4>
-                        <p class="text-muted">Create Custom Curriculum</p>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">New Features</h2>
+            <h3 class="section-subheading text-muted">We envision Kolibri as an ecosystem of hardware, software, people, <br>and content that empowers educators of all types to seamlessly bridge the online and offline worlds.</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'img/kickstarter/portfolio/peer_to_peer_cover.png' %}" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Peer to Peer Sync</h4>
-                        <p class="text-muted">Exchange Content Offline</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{% static 'img/kickstarter/portfolio/video_vectorization_cover.png' %}" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Video Vectorization</h4>
-                        <p class="text-muted">Fit In All Khan Academy Videos</p>
-                    </div>
-                </div>
+                <svg id='svg_content_curation' viewBox="0 0 800 450"></svg>
+            </a>
+            <div class="portfolio-caption">
+                <h4>Content Curation</h4>
+                <p class="text-muted">Create Custom Curriculum</p>
             </div>
         </div>
-
-        
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </div>
+                </div>
+                <svg id='svg_peer_to_peer' viewBox="0 0 800 450"></svg>
+            </a>
+            <div class="portfolio-caption">
+                <h4>Peer to Peer Sync</h4>
+                <p class="text-muted">Exchange Content Offline</p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="glyphicon glyphicon-fullscreen"></i>
+                    </div>
+                </div>
+                <img id="vv_1" src="{% static 'img/kickstarter/portfolio/vv_1.png' %}" style="display:none">
+                <img id="vv_2" src="{% static 'img/kickstarter/portfolio/vv_2.png' %}" style="display:none"><!-- a hack to get the image url -->
+                <svg id='svg_video_vectorization' viewBox="0 0 800 450"></svg>
+            </a>
+            <div class="portfolio-caption">
+                <h4>Video Vectorization</h4>
+                <p class="text-muted">Fit In All Khan Academy Videos</p>
+            </div>
+        </div>
+    </div>
+</div>
