@@ -83,7 +83,7 @@ function slide_banner(options) {
     }, options);
 
     $('.sliding').animate({
-        'right': options.expand ? 0 : '-100%'
+        'right': options.expand ? 0 : '-500%'
     }, options.duration, options.callback);
 
     $.cookie("banner_hidden", !options.expand, {expires: 30});
