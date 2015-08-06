@@ -1,18 +1,9 @@
 var svg_cc = Snap("#svg_content_curation");
 
-// var g_cc = svg_cc.gradient("l(0, 0, 1, 1)#FFCC00-#33CCFF");
-// var tablet_cc_out = svg_cc.rect(100, 100, 200, 300, 20, 20);
-// var tablet_cc_in = svg_cc.rect(120, 120, 160, 250);
-// var tablet_cc_camera = svg_cc.circle(198.5, 110, 3);
-// var tablet_cc_btn = svg_cc.rect(187.5, 380, 25, 10, 5, 5);
-// tablet_cc_camera.attr({fill: 'white'});
-// tablet_cc_btn.attr({fill: 'white'});
-// tablet_cc_in.attr({fill: g_cc});
-
-// var tablet_cc = svg_cc.group(tablet_cc_out, tablet_cc_in, tablet_cc_camera, tablet_cc_btn);
 
 var circle_1 = svg_cc.circle(270, 0, 50);
 circle_1.attr({fill: 'pink', stroke: 'white', strokeWidth: 15});
+// var line_1 = svg_cc.line(400, 230, 270, 0).attr({strokeWidth: 15, stroke: "white"});
 
 var circle_2 = svg_cc.circle(160, 220, 80);
 circle_2.attr({fill: 'yellow', stroke: 'white', strokeWidth: 15});
@@ -35,8 +26,34 @@ center_circle.attr({fill: 'white', "fill-opacity": 0.0, stroke: 'white', strokeW
 var center_text = svg_cc.text(335, 290, "💡");
 center_text.attr({"font-size": "130px"});
 
-animate_concentrate(circle_2);
+console.log('FFFF: ', circle_2.getBBox().cx);
 
-function animate_concentrate(group_element) {
-    group_element.animate({x: 0}, 1000, mina.easein);
+animate_concentrate_center(circle_1, circle_1.getBBox().cx, circle_1.getBBox().cy);
+animate_concentrate(circle_2, circle_2.getBBox().cx, circle_2.getBBox().cy);
+animate_concentrate(circle_3, circle_3.getBBox().cx, circle_3.getBBox().cy);
+animate_concentrate(circle_4, circle_4.getBBox().cx, circle_4.getBBox().cy);
+animate_concentrate(circle_5, circle_5.getBBox().cx, circle_5.getBBox().cy);
+
+function animate_concentrate(element, x, y) {
+    element.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
+        element.attr({opacity: 0});
+        element.animate({cx: x, cy: y}, 1000, function(){
+            element.animate({opacity: 1}, 1000, function(){
+                animate_concentrate(element, x, y);
+            });
+        });
+    });
+}
+
+function animate_concentrate_center(element, x, y) {
+    element.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
+        center_circle.animate({'fill-opacity': 1}, 300, mina.easein);
+        element.attr({opacity: 0});
+        element.animate({cx: x, cy: y}, 1000, function(){
+            center_circle.animate({'fill-opacity': 0}, 500, mina.easeout);
+            element.animate({opacity: 1}, 1000, function(){
+                animate_concentrate_center(element, x, y);
+            });
+        });
+    });
 }
