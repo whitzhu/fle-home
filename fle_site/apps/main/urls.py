@@ -13,4 +13,5 @@ urlpatterns = patterns(__package__ + '.views',
     url(r'^donate/process/$', process_donation, name='process_donation'),
     url(r'^directions/$', TemplateView.as_view(template_name='main/directions.html'), name='directions'),
     url(r'^kickstarter/$', TemplateView.as_view(template_name='main/kickstarter.html'), name='kickstarter'),
+    url(r'^mailchimp/$', TemplateView.as_view(template_name='main/partials/_kickstarter_mailchimp.html'), name='mailchimp'),
 )
