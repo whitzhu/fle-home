@@ -33,24 +33,24 @@ animate_concentrate(circle_5, circle_5.getBBox().cx, circle_5.getBBox().cy, line
 function animate_concentrate(element, x, y, line) {
     line.animate({x2: 400, y2: 230}, 1000, mina.backin);
     element.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
-        expand_count++;
-        if(expand_count ==  5){
-            expand_count = 0;
-            center_circle.animate({'fill': 'white'}, 300, mina.easein);
-            center_text.animate({'fill-opacity': 1}, 300, mina.easein);
-        }
         element.attr({opacity: 0});
         element.animate({cx: x, cy: y}, 1000, function(){
+            line.animate({x2: x, y2: y}, 1000, mina.backin);
+            element.animate({opacity: 1}, 1000, function(){
+                animate_concentrate(element, x, y, line);
+            });
             concentrate_count++;
             if(concentrate_count == 5){
                 concentrate_count = 0;
                 center_circle.animate({'fill': '#8AE65C'}, 500, mina.easeout);
                 center_text.animate({'fill-opacity': 0}, 500, mina.easeout);
             }
-            line.animate({x2: x, y2: y}, 1000, mina.backin);
-            element.animate({opacity: 1}, 1000, function(){
-                animate_concentrate(element, x, y, line);
-            });
         });
+        expand_count++;
+        if(expand_count ==  5){
+            expand_count = 0;
+            center_circle.animate({'fill': 'white'}, 300, mina.easein);
+            center_text.animate({'fill-opacity': 1}, 300, mina.easein);
+        }
     });
 }
