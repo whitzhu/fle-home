@@ -203,14 +203,14 @@ main {
 	text-align: center
 }
     .copy h1 {
-        /*color: #ffffff;*/
+        color: #ffffff;
         font-size: 55px;
         line-height: 48px;
         margin-bottom: 50px;
     }
 	.hsContent h2,
 	.copy h2 {
-		/*color: #ffffff;*/
+		color: #ffffff;
 		font-size: 45px;
 		line-height: 48px;
 		margin-bottom: 12px;
