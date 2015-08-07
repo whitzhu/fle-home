@@ -221,6 +221,7 @@ a{
 #offline-placeholder {
 	max-width: 90%;
 	height: auto;
+	margin-top:4%;
 }
 
 #vectorization-placeholder {
