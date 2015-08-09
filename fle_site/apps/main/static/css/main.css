@@ -150,7 +150,7 @@ main {
 #slide-1 .bcg {background-image:url('../img/kickstarter/about/1.1.jpg')}
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; height: 310px; text-align: center}
+#slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
 #slide-2 .hsContent h2{
     
@@ -163,7 +163,7 @@ main {
 }
 
 /* Slide 3.2 */
-#slide-A .bcg {background-image:url('../img/kickstarter/about/bgdark.jpg'); background-color: #010101; height: 310px; text-align: center}
+#slide-A .bcg {background-image:url('../img/kickstarter/about/bgdark.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
 #slide-A .hsContent h2{
 }
@@ -188,7 +188,7 @@ main {
 	display: table;
 	table-layout: fixed;
 	width: 100%;
-	height: 100%;
+	height: 310px;
 	overflow: hidden;
 	position: relative;
 }
