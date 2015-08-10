@@ -13,6 +13,11 @@ body {
 .text-primary {
   color: #fed136;
 }
+p.slim-text {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+}
 p {
   font-size: 14px;
   line-height: 1.75;

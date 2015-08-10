@@ -151,12 +151,12 @@ main {
 
 /* Slide 2 */
 #slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
-
+#slide-w .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 #slide-2 .hsContent h2{
     
 }
 /* Slide 3 */
-#slide-3 .bcg {background-image:url('../img/kickstarter/about/a.10.jpg')}
+#slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
 
 #slide-3 img{
     width:220%;
