@@ -93,6 +93,7 @@
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
         {% include "main/partials/_kickstarter_pastwork.html" %}
+        <script src="{% static 'js/svg_preconfigure_tablet.js' %}"></script>
         <script src="{% static 'js/svg_content_curation.js' %}"></script>
         <script src="{% static 'js/svg_peer_to_peer.js' %}"></script>
         <script src="{% static 'js/svg_video_vectorization.js' %}"></script>
@@ -136,6 +137,32 @@
 
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 0 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Preconfigured Tablet</h2>
+                            <p class="item-intro text-muted">An affordable Android tablet with enough power to run Kolibri smoothly</p>
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
+                            <p class="center">We tested thoroughly on most affordable tablets to ensure when we start to order the tablet, our software will run snappily on it.</p>
+                           <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
