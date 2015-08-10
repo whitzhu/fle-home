@@ -1,56 +1,56 @@
 var svg_cc = Snap("#svg_content_curation");
 
-var line_1 = svg_cc.line(400, 230, 270, 0).attr({strokeWidth: 15, stroke: "white"});
-var circle_1 = svg_cc.circle(270, 0, 50).attr({fill: 'pink', stroke: 'white', strokeWidth: 15});
+var line_1 = svg_cc.line(400, 230, 270, 0).attr({id:'l', strokeWidth: 15, stroke: "white"});
+var circle_1 = svg_cc.circle(270, 0, 50).attr({id:'c', fill: 'pink', stroke: 'white', strokeWidth: 15});
 
-var line_2 = svg_cc.line(400, 230, 160, 220).attr({strokeWidth: 15, stroke: "white"});
-var circle_2 = svg_cc.circle(160, 220, 80).attr({fill: 'yellow', stroke: 'white', strokeWidth: 15});
+var line_2 = svg_cc.line(400, 230, 160, 220).attr({id:'l', strokeWidth: 15, stroke: "white"});
+var circle_2 = svg_cc.circle(160, 220, 80).attr({id:'c', fill: 'yellow', stroke: 'white', strokeWidth: 15});
 
-var line_3 = svg_cc.line(400, 230, 580, 420).attr({strokeWidth: 15, stroke: "white"});
-var circle_3 = svg_cc.circle(580, 420, 70).attr({fill: '#66CCFF', stroke: 'white', strokeWidth: 15});
+var line_3 = svg_cc.line(400, 230, 580, 420).attr({id:'l', strokeWidth: 15, stroke: "white"});
+var circle_3 = svg_cc.circle(580, 420, 70).attr({id:'c', fill: '#66CCFF', stroke: 'white', strokeWidth: 15});
 
-var line_4 = svg_cc.line(400, 230, 280, 420).attr({strokeWidth: 15, stroke: "white"});
-var circle_4 = svg_cc.circle(280, 420, 50).attr({fill: 'grey', stroke: 'white', strokeWidth: 15});
+var line_4 = svg_cc.line(400, 230, 280, 420).attr({id:'l', strokeWidth: 15, stroke: "white"});
+var circle_4 = svg_cc.circle(280, 420, 50).attr({id:'c', fill: 'grey', stroke: 'white', strokeWidth: 15});
 
-var line_5 = svg_cc.line(400, 230, 600, 20).attr({strokeWidth: 15, stroke: "white"});
-var circle_5 = svg_cc.circle(600, 20, 80).attr({fill: 'orange', stroke: 'white', strokeWidth: 15});
+var line_5 = svg_cc.line(400, 230, 600, 20).attr({id:'l', strokeWidth: 15, stroke: "white"});
+var circle_5 = svg_cc.circle(600, 20, 80).attr({id:'c', fill: 'orange', stroke: 'white', strokeWidth: 15});
 
-// var circle_group = svg_cc.group(circle_1, circle_2, circle_3, circle_4, circle_5);
+var c_set = svg_cc.selectAll('#c');
+var l_set = svg_cc.selectAll('#l');
 
+var c_position = [{cx:270, cy:0}, {cx:160, cy:220}, {cx:580, cy:420}, {cx:280, cy:420}, {cx:600, cy:20}];
 
 var center_circle = svg_cc.circle(400, 230, 100).attr({fill: '#8AE65C', stroke: 'white', strokeWidth: 15});
 var center_text = svg_cc.text(335, 290, "💡").attr({'fill-opacity': 0, "font-size": "130px"});
-var expand_count = 0;
-var concentrate_count = 0;
 
-// animate_concentrate_center(circle_1, circle_1.getBBox().cx, circle_1.getBBox().cy, line_1);
-animate_concentrate(circle_1, circle_1.getBBox().cx, circle_1.getBBox().cy, line_1);
-animate_concentrate(circle_2, circle_2.getBBox().cx, circle_2.getBBox().cy, line_2);
-animate_concentrate(circle_3, circle_3.getBBox().cx, circle_3.getBBox().cy, line_3);
-animate_concentrate(circle_4, circle_4.getBBox().cx, circle_4.getBBox().cy, line_4);
-animate_concentrate(circle_5, circle_5.getBBox().cx, circle_5.getBBox().cy, line_5);
+loop_circle();
 
-function animate_concentrate(element, x, y, line) {
-    line.animate({x2: 400, y2: 230}, 1000, mina.backin);
-    element.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
-        element.attr({opacity: 0});
-        element.animate({cx: x, cy: y}, 1000, function(){
-            line.animate({x2: x, y2: y}, 1000, mina.backin);
-            element.animate({opacity: 1}, 1000, function(){
-                animate_concentrate(element, x, y, line);
-            });
-            concentrate_count++;
-            if(concentrate_count == 5){
-                concentrate_count = 0;
-                center_circle.animate({'fill': '#8AE65C'}, 500, mina.easeout);
-                center_text.animate({'fill-opacity': 0}, 500, mina.easeout);
-            }
+function loop_circle() {
+    l_set.animate({x2: 400, y2: 230}, 1000, mina.backin);
+    c_set.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
+        center_text.animate({'fill-opacity': 1}, 300, mina.easein);
+        center_circle.animate({'fill': 'white'}, 300, mina.easein, function(){
+            setTimeout(function() {
+                reset_circle();
+                l_set.animate(
+                    [{x2: 270, y2: 0}, 1000, mina.backin], 
+                    [{x2: 160, y2: 220}, 1000, mina.backin],
+                    [{x2: 580, y2: 420}, 1000, mina.backin],
+                    [{x2: 280, y2: 420}, 1000, mina.backin],
+                    [{x2: 600, y2: 20}, 1000, mina.backin, function(){
+                        loop_circle();
+                    }]
+                );
+                c_set.animate({opacity: 1}, 1000);
+            }, 1000);
         });
-        expand_count++;
-        if(expand_count ==  5){
-            expand_count = 0;
-            center_circle.animate({'fill': 'white'}, 300, mina.easein);
-            center_text.animate({'fill-opacity': 1}, 300, mina.easein);
-        }
     });
+}
+
+function reset_circle() {
+    c_set.forEach(function(e, index){
+        e.attr({opacity: 0, cx: c_position[index].cx, cy: c_position[index].cy});
+    });
+    center_circle.animate({'fill': '#8AE65C'}, 500, mina.easeout);
+    center_text.animate({'fill-opacity': 0}, 500, mina.easeout);
 }

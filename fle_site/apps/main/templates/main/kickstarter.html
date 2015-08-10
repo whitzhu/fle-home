@@ -75,13 +75,12 @@
                 <div class="intro-heading">A Kickstarter Campaign<br>To Bridge the Divide</div>
                 <!-- <div class="intro-heading">Imagine a world where </div> -->
                 <!-- <div class="intro-lead-in">We're bringing the best online educational content to the offline world</div> -->
-                <img src="{% static 'img/kickstarter/about/header-img.svg' %}">
+                <img src="{% static 'img/kickstarter/about/header-img.png' %}">
                 <!-- <div class="action-button"><a href="#contact" class="page-scroll btn btn-xl">Join the Cause</a></div> -->
             </div>
         </div>
-
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
-        <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
+            <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
         <!-- <div>
             <h2 class="action-button">Scroll through to learn more</h2>
@@ -94,6 +93,7 @@
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
         {% include "main/partials/_kickstarter_pastwork.html" %}
+        <script src="{% static 'js/svg_preconfigure_tablet.js' %}"></script>
         <script src="{% static 'js/svg_content_curation.js' %}"></script>
         <script src="{% static 'js/svg_peer_to_peer.js' %}"></script>
         <script src="{% static 'js/svg_video_vectorization.js' %}"></script>
@@ -116,34 +116,53 @@
                 <h2 class="section-heading">Join our Kickstarter Mailing List!</h2>
                 <!-- <h3 class="section-subheading text-muted">We'll let you know when our September campaign begins.</h3> -->
             </div>
-             <!-- Begin MailChimp Signup Form  -->
-            <div id="mc_embed_signup">
+            <h3 class="mailing_label text-muted">You can be part of the solution</h3>
+            <br>
+
+            <!-- Begin MailChimp Signup Form  -->
+            <!-- <div id="mc_embed_signup">
                 <form action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=2cff471b25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <h3 class="mailing_label text-muted">You can be part of the solution</h3>
-                    <br>
-                    <div class="e1">
-                        <!-- <div class="e2"> -->
-                            <input type="email" value="" name="EMAIL" class="required email email_input_k" id="mce-EMAIL" placeholder="Email Address">
-                            <input type="submit" value="Join the Cause" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl email_submit_k">
-                        <!-- </div> -->
-                    </div>
-                       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups -->
-                    <div style="position: absolute; left: -5000px;">
-                        <input type="text" name="b_023b9af05922dfc7f47a4fffb_2cff471b25" tabindex="-1" value="">
+                    <div class="e2">
+                        <input type="email" value="" name="EMAIL" class="required email email_input_k" id="mce-EMAIL" placeholder="Email Address">
+                        <input type="submit" value="Join the Cause" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl email_submit_k">
                     </div>
                 </form>
-            </div>
-            <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-            </div> 
-            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            </div> -->
+            <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
+                <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
+            </iframe>
             <!-- End mc_embed_signup -->
         </div>
     </section>
 
     <!-- Portfolio Modals -->
     <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 0 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Preconfigured Tablet</h2>
+                            <p class="item-intro text-muted">An affordable Android tablet with enough power to run Kolibri smoothly</p>
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
+                            <p class="center">We tested thoroughly on most affordable tablets to ensure when we start to order the tablet, our software will run snappily on it.</p>
+                           <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Portfolio Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">

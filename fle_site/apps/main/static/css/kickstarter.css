@@ -2,7 +2,6 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: white;
 }
 #footer {
     position: relative;
@@ -122,21 +121,23 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   padding: 20px 40px;
 }
+
+#sign-up {
+  width: 100%;
+}
 .e1 {
-  float: left !important;
-  margin-left: 3%;
+  width: 100%;
+  float: left;
+  margin-left: -300px;
   transform: translateX(50%);
 }
 .email_input_k {
   outline: none;
-  position: relative;
   clear: none !important;
   float: left;
-  /*width: 52%;*/
-  max-width: 350px;
+  width: 350px;
   background-color: white;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /*text-transform: uppercase;*/
   font-weight: 700;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -148,18 +149,39 @@ fieldset[disabled] .btn-primary.active {
   border: 4px solid #fed136 !important;
 }
 .email_submit_k {
-  position: relative;
   clear: none !important;
   float: left;
-  /*width: 27%; */
+  width: 250px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  margin-left: -2px;
-  /*margin-right: 3%;*/
-  border: 3px solid #fed136 !important;
+  /*margin-left: -2px;*/
+  border: 4px solid #fed136 !important;
 }
+@media (max-width: 768px) {
+  .email_input_k {
+    text-align: center;
+    display: block;
+    clear: both;
+    float: none;
+    width: 360px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
+  }
+  .email_submit_k {
+    display: block;
+    clear: both;
+    float: none;
+    width: 360px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+  }
+  .e1 {
+    margin-left: -180px;
+  }
+}
+
 .mailing_label{
   color:grey;
   text-align: center;
@@ -327,7 +349,7 @@ fieldset[disabled] .btn-xl.active {
 
 /* HEADER */
 header {
-  background-image: url('../img/kickstarter/cover.png');
+  background-image: url('../img/kickstarter/cover.jpg');
   background-repeat: none;
   background-attachment: scroll;
   background-position: center center;
@@ -356,9 +378,9 @@ header .intro-text .intro-heading {
   font-weight: 400;
   font-size: 25px;
   line-height: 50px;
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
   position: relative;
-  bottom: 60px;
+  /*bottom: 60px;*/
 }
 .kickstarter-about-title {
   margin-bottom: 7%;
@@ -381,7 +403,6 @@ header .intro-text .intro-heading {
   max-width: 100%;
   position: relative;
   right: 8%;
-  top: -335px;
   z-index: 0;
   opacity: 0.9;
 }
@@ -392,6 +413,9 @@ header .intro-text .intro-heading {
 }
 
 @media (min-width: 768px) {
+  .header-shadow img {
+    top: -15vh;
+  }
   header .intro-text {
     padding: 140px 0 200px 0;
   }
@@ -736,6 +760,8 @@ section#contact {
   background-position: center;
   background-repeat: no-repeat;
   height: 90vh;*/
+  background-color: white;
+  margin-bottom: -60px;
 }
 section#contact .section-heading {
   color: rgb(138, 230, 92);
@@ -899,6 +925,12 @@ mark{
 .play-btn:active {
   color: white;
 }
+#svg_preconfigure {
+  width: 100%;
+  height: 300px;
+  margin-bottom: -5px;
+  background-color: #00E6B8;
+}
 #svg_content_curation {
   width: 100%;
   height: 300px;
@@ -936,17 +968,13 @@ mark{
   width: 100%;
   height: 100%;
   background-color: #ECECEC;
-
+}
 /* MAILCHIMP MODAL */
 .mailing_label {
-  color: white;
+  color: grey;
   position: relative;
   top: 25px;
 }
-#mc_embed_signup input {
-  position: relative;
-  left: 25px;
-}
-#mc_embed_signup h2 {
-  font-size: 28px;
+section {
+  min-width: 0;
 }
