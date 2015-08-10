@@ -124,7 +124,7 @@ h2 {
 	background: url('../img/ico_loading.gif') no-repeat center center;
 }
 section {
-	min-width: 960px;
+	width: 100%;
 	opacity: 0;
 }
 .loaded section,
@@ -347,7 +347,7 @@ main {
     /* Style adjustments for viewports that meet the condition */
 }
 
-@media print,
+@media print {
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 120dpi) {
