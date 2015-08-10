@@ -20,6 +20,29 @@ $('body').scrollspy({
     target: '.navbar-fixed-top'
 })
 
+// Back to top button
+$(document).ready(function() {
+    var offset = $("#kickstarter-header").height() + $("#fle-navbar").height() + $("#parallax").height();
+    console.log(offset);
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(500);
+        } else {
+            $('.back-to-top').fadeOut(500);
+        }
+    });
+    
+    $('.back-to-top').click(function() {
+        $('html, body').animate({
+        	scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 600);
+        return false;
+    })
+});
+
+// Makes scrolling smooth
+
+
 // fade in and out subscribing message
 // $('.email_submit').click(function(){
 //     // $('#mce-responses').show();
