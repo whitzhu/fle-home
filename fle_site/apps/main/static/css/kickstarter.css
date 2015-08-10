@@ -251,10 +251,11 @@ fieldset[disabled] .btn-xl.active {
 }
 
 /* NAV BAR */
+
 #fle-navbar {
   padding: 0;
 }
-#kickstarter-nav {
+/*#kickstarter-nav {
   position: fixed;
   width: 100%;
 }
@@ -281,8 +282,11 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand img:active,
 .navbar-default .navbar-brand img.active {
   color: #fec503;
+}*/
+.navbar-default .navbar-toggle:hover {
+  background: transparent;
 }
-.navbar-default .navbar-collapse {
+/*.navbar-default .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-default .navbar-toggle {
@@ -317,7 +321,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-nav > .active > a:focus {
   color: white;
   background-color: #fec503;
-}
+}*/
 @media (min-width: 768px) {
   .navbar-default {
     background-color: transparent;
@@ -346,6 +350,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 /* END NAV BAR */
+
 
 /* HEADER */
 header {
@@ -400,11 +405,10 @@ header .intro-text .intro-heading {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9*/
 }
 .header-shadow img {
-  max-width: 100%;
+  max-width: 85%;
   position: relative;
   right: 8%;
   z-index: 0;
-  opacity: 0.9;
 }
 #header-mailchimp {
   position: relative;
@@ -414,7 +418,7 @@ header .intro-text .intro-heading {
 
 @media (min-width: 768px) {
   .header-shadow img {
-    top: -15vh;
+    bottom: 40vh;
   }
   header .intro-text {
     padding: 140px 0 200px 0;
