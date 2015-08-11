@@ -240,16 +240,12 @@
     <script src="{% static 'js/classie.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/cbpAnimatedHeader.min.js' %}" type="text/javascript"></script>
     <!-- Contact Form JavaScript -->
-     <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script> 
-     <script src="js/contact_me.js"></script> 
+    <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script> 
 
-     <!-- Custom Theme JavaScript -->
-     <script src="{% static 'js/kickstarter.js' %}" type="text/javascript" ></script> 
-
-     <!-- Smooth scrolling and back to top button -->
-     <script>
-         $(document).ready(function() {
-            var offset = $("#parallax").height() * 3;
+    <!-- Smooth scrolling and back to top button -->
+    <script>
+        $(document).ready(function() {
+            var offset = $("#parallax_or_mobile").height() * 3;
             $(window).scroll(function() {
                 if ($(this).scrollTop() > offset) {
                     $('.back-to-top').fadeIn(500);
@@ -272,7 +268,6 @@
       //   $('#kickstarter-nav').attr("data-offset-top", headerHeight);
       // });
     </script>
-
     <!-- WOW Scrolling JavaScript -->
     <script src="{% static 'js/wow.js' %}"></script>
     <script>
@@ -280,6 +275,7 @@
        /* $(".action-button").fadeIn(5000, function(){
             $('.village').css("background-color", "red");
         });*/
+
     </script>
 </div>
 
