@@ -169,7 +169,7 @@ fieldset[disabled] .btn-primary.active {
     display: block;
     clear: both;
     float: none;
-    width: 360px;
+    width: 340px;
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
@@ -177,7 +177,7 @@ fieldset[disabled] .btn-primary.active {
     display: block;
     clear: both;
     float: none;
-    width: 360px;
+    width: 340px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
   }
