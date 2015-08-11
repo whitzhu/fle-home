@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
 }
 #footer {
@@ -497,11 +497,11 @@ section h2.section-heading {
 }
 section h3.section-subheading {
   line-height: inherit;
-  font-size: 22px;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: none;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   margin-bottom: 75px;
 }
 @media (min-width: 768px) {
@@ -686,11 +686,12 @@ section h3.section-subheading {
   margin-bottom: 0;
 }
 .timeline .timeline-heading h4 {
-  margin-top: 0;
+  margin-top: -60px;
   color: inherit;
+  font-size:2.2em;
 }
 .timeline .timeline-heading h4.subheading {
-  text-transform: none;
+  text-transform: uppercase;
 }
 .timeline .timeline-body > p,
 .timeline .timeline-body > ul {
@@ -786,8 +787,28 @@ section h3.section-subheading {
     padding: 0 100px 20px 20px;
   }
 }
-
-
+#about {
+  background: #8670A1;
+  color:#fff;
+}
+#about h2.section-heading{
+  color: #fff;
+}
+#about .text-muted {
+  color:#fff;
+  font-weight:100;
+  font-size:1.5em;
+  line-height: 1.2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#about .timeline-individual-heading{
+  margin-top:2%;
+  font-size:2.5em;
+  font-weight: 100;
+}
+#about .moreinfo{
+  text-transform: uppercase;
+}
 .team-member {
   text-align: center;
   margin-bottom: 50px;
