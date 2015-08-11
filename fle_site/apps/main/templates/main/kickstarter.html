@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="{% static 'js/fabric.js' %}"></script>
@@ -304,6 +305,15 @@
       //   var headerHeight = $('#fle-navbar').height() + $('#kickstarter-header').height();  
       //   $('#kickstarter-nav').attr("data-offset-top", headerHeight);
       // });
+    </script>
+
+    <!-- WOW Scrolling JavaScript -->
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script>
+        new WOW().init();
+       /* $(".action-button").fadeIn(5000, function(){
+            $('.village').css("background-color", "red");
+        });*/
     </script>
 </div>
 {% endblock bodycontents %}
