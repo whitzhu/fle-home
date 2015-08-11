@@ -6,6 +6,7 @@
         {% load my_filters %}
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block headmeta %}{% endblock headmeta %}
 
          {% block titletag %}
@@ -35,7 +36,6 @@
         <link rel="stylesheet" href="{% static 'css/cornerbanner.css' %}">
         <script src="{% static 'js/jquery-ui-min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/jquery.cookie.js' %}" type="text/javascript"></script>
-        <script src="{% static 'js/corner-banner.js' %}" type="text/javascript"></script>
         <!-- kickstarter banner -->
         {% block headjs %}{% endblock headjs %}
         <script>

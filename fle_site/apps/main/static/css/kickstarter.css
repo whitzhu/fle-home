@@ -8,7 +8,7 @@ body {
     bottom: 0;
 }
 .text-muted {
-  color: #777777;
+  color: #141414;
 }
 .text-primary {
   color: #fed136;
@@ -170,6 +170,8 @@ fieldset[disabled] .btn-primary.active {
     clear: both;
     float: none;
     width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
@@ -178,11 +180,13 @@ fieldset[disabled] .btn-primary.active {
     clear: both;
     float: none;
     width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
   }
   .e1 {
-    margin-left: -150px;
+    margin-left: -160px;
   }
 }
 
@@ -396,7 +400,7 @@ header .intro-text .intro-heading {
   margin-bottom: 7%;
 }
 .not-parallax-section {
-  padding: 200px 0;
+  padding: 100px 0;
 }
 .header-shadow {
   height: 70vh;
@@ -414,7 +418,6 @@ header .intro-text .intro-heading {
   position: relative;
   right: 8%;
   z-index: 0;
-  top: 10vh;
 }
 #header-mailchimp {
   position: relative;
@@ -425,7 +428,7 @@ header .intro-text .intro-heading {
 @media (min-width: 768px) {
   .header-shadow img {
     min-width: 700px;
-    top: -20vh;
+    top: -285px;
   }
   header .intro-text {
     padding: 140px 0 0 0;
@@ -460,6 +463,27 @@ header .intro-text .intro-heading {
     top: 90vh;
   }
 }
+@media (max-width: 1200px) {
+  .header-shadow img {
+    top: -170px;
+  }
+}
+@media (max-width: 767px) {
+  .header-shadow img {
+    top: 0;
+  }
+}
+@media (max-width: 500px) {
+  #header-mailchimp {
+    top: -90px;
+  }
+  header .intro-text .intro-heading {
+    top: -65px
+  }
+  .header-shadow img {
+    top: -55px;
+  }
+}
 /* END HEADER */
 
 
@@ -488,6 +512,9 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
+}
+#portfolio {
+  padding-top: 200px;
 }
 #portfolio .portfolio-item {
   /*margin: 0 0 15px;*/
@@ -542,6 +569,8 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
   margin: 0;
+  font-size: 1.4em;
+  padding-bottom: 5px;
 }
 #portfolio .portfolio-item .portfolio-caption p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -585,7 +614,7 @@ section h3.section-subheading {
   position: absolute;
   content: "";
   width: 2px;
-  background-color: #f1f1f1;
+  background-color: #fed136;
   left: 40px;
   margin-left: -1.5px;
 }
@@ -631,7 +660,7 @@ section h3.section-subheading {
   background-color: #fed136;
   color: white;
   border-radius: 100%;
-  border: 7px solid #f1f1f1;
+  border: 5px solid #fed136;
   text-align: center;
 }
 .timeline > li .timeline-image h4 {
@@ -670,6 +699,25 @@ section h3.section-subheading {
 .timeline .timeline-body > p,
 .timeline .timeline-body > ul {
   margin-bottom: 0;
+  font-family: "Montserrat", "Helvetica Neue";
+}
+.timeline li div p a {
+  background: #fed136;
+  color: black;
+  border: 2px solid black;
+  padding: 5px 8px;
+  font-weight: bold;
+  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+  transition: border 0.3s, background 0.3s, color 0.3s;
+}
+.timeline li div p a:hover {
+  text-decoration: none;
+  background: black;
+  color: #fed136;
+  border: 2px solid black;
+  font-weight: bold;
+  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+  transition: border 0.3s, background 0.3s, color 0.3s;
 }
 @media (min-width: 768px) {
   .timeline:before {
@@ -755,7 +803,6 @@ section h3.section-subheading {
   font-size:1.5em;
   line-height: 1.2;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
 }
 #about .timeline-individual-heading{
   margin-top:2%;
@@ -991,7 +1038,8 @@ mark{
 .feature_text {
   margin: 0;
   text-align: justify;
-  font-size: 24px;
+  font-size: 20px;
+  font-family: "Montserrat", "Helvetica Neue";
 }
 .colored-container {
   margin-bottom: 30px;
@@ -1005,14 +1053,31 @@ mark{
   position: relative;
   top: 25px;
 }
-section {
-  min-width: 0;
+/* BACK TO TOP BUTTON */
+.back-to-top {
+    position: fixed;
+    bottom: 0.5em;
+    right: 10px;
+    text-decoration: none;
+    color: #fed136;
+    background-color: #000000;
+    font-size: 20px;
+    display: none;
+    border: 4px solid black;
+    padding: 13px 0 0 16px;
+    display: none;
+    z-index: 99999;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+    transition: border 0.3s, background 0.3s, color 0.3s;
 }
-#parallax_1 {
-  margin-right: 10%;
-  margin-bottom: 10px;
-}
-#parallax_2 {
-  margin-left: 10%;
-  margin-bottom: 10px;
+
+.back-to-top:hover {    
+    background-color: #fed136;
+    color: black;
+    border: 4px solid black;
+    -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+    transition: border 0.3s, background 0.3s, color 0.3s;
 }
