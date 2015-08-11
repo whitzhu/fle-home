@@ -170,6 +170,8 @@ fieldset[disabled] .btn-primary.active {
     clear: both;
     float: none;
     width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
@@ -178,11 +180,13 @@ fieldset[disabled] .btn-primary.active {
     clear: both;
     float: none;
     width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
   }
   .e1 {
-    margin-left: -150px;
+    margin-left: -160px;
   }
 }
 
@@ -985,15 +989,4 @@ mark{
   color: grey;
   position: relative;
   top: 25px;
-}
-section {
-  min-width: 0;
-}
-#parallax_1 {
-  margin-right: 10%;
-  margin-bottom: 10px;
-}
-#parallax_2 {
-  margin-left: 10%;
-  margin-bottom: 10px;
 }

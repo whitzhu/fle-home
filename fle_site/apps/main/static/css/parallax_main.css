@@ -23,6 +23,17 @@ Enjoy responsibly!
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+section {
+  min-width: 0;
+}
+#parallax_1 {
+  margin-right: 10%;
+  margin-bottom: 10px;
+}
+#parallax_2 {
+  margin-left: 10%;
+  margin-bottom: 10px;
+}
 
 html,
 button,
@@ -123,10 +134,10 @@ h2 {
 .loading {
 	background: url('../img/ico_loading.gif') no-repeat center center;
 }
-section {
+/*section {
 	min-width: 960px;
 	opacity: 0;
-}
+}*/
 .loaded section,
 .no-js section {
 	opacity: 1;
