@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Custom Fonts -->
+
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
     <script src="{% static 'js/fabric.js' %}"></script>
@@ -258,6 +261,20 @@
             }, 1500);
             return false;
         });
+    <script type="text/javascript">
+      // Dynamically set offest for inner nav page load
+      // $(function() {
+      //   var headerHeight = $('#fle-navbar').height() + $('#kickstarter-header').height();  
+      //   $('#kickstarter-nav').attr("data-offset-top", headerHeight);
+      // });
+    </script>
+    <!-- WOW Scrolling JavaScript -->
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script>
+        new WOW().init();
+       /* $(".action-button").fadeIn(5000, function(){
+            $('.village').css("background-color", "red");
+        });*/
 
     </script>
 </div>
