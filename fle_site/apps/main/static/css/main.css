@@ -177,7 +177,7 @@ main {
 .curtainContainer .curtain {width: 300%; height: 1px; background-color: #000000; position: absolute; top: 25%; left: 0; opacity: 0}
 .curtainContainer .copy {position: absolute; bottom: 30%; left: 0; width: 100%; text-align: center;}
 
-#slide-4 .bcg {background-image:url('../img/kickstarter/about/7.2.jpg')}
+#slide-4 .bcg {background-image:url('../img/kickstarter/about/p_last.jpg')}
 
 /* Slide 5 */
 #slide-5 {position: relative;}
