@@ -990,3 +990,20 @@ mark{
   position: relative;
   top: 25px;
 }
+/* BACK TO TOP BUTTON */
+.back-to-top {
+    position: fixed;
+    bottom: 2em;
+    right: 10px;
+    text-decoration: none;
+    color: #fed136;
+    background-color: #000000;
+    font-size: 20px;
+    padding: 1em;
+    display: none;
+}
+
+.back-to-top:hover {    
+    background-color: #fed136;
+    color: black;
+}
