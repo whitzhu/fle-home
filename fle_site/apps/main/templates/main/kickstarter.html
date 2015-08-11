@@ -70,19 +70,12 @@
             <div class="intro-text">
                 <div class="intro-heading">A Kickstarter Campaign<br>To Bridge the Divide</div>
                 <img src="{% static 'img/kickstarter/about/header-img.png' %}">
-                <!-- <div class="intro-heading">Imagine a world where </div> -->
-                <!-- <div class="intro-lead-in">We're bringing the best online educational content to the offline world</div> -->
-                <!-- <img src="{% static 'img/kickstarter/about/header-img.png' %}"> -->
-                <!-- <div class="action-button"><a href="#contact" class="page-scroll btn btn-xl">Join the Cause</a></div> -->
             </div>
         </div>
         <br>
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
             <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
-        <!-- <div>
-            <h2 class="action-button">Scroll through to learn more</h2>
-        </div> -->
     </header>
 
     <!-- Parallax Section -->
@@ -96,7 +89,7 @@
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}");
         }
     </script>
-    <!-- {% include "main/partials/_kickstarter_portfolio.html" %} -->
+    {% include "main/partials/_kickstarter_portfolio.html" %}
 
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
@@ -298,7 +291,7 @@
      <!-- Smooth scrolling and back to top button -->
      <script>
          $(document).ready(function() {
-            var offset = $("#kickstarter-header").height() + $("#fle-navbar").height() + $("#parallax").height();
+            var offset = $("#parallax").height() * 3;
             $(window).scroll(function() {
                 if ($(this).scrollTop() > offset) {
                     $('.back-to-top').fadeIn(500);
