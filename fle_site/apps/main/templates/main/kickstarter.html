@@ -91,17 +91,17 @@
     </header>
 
     <!-- Parallax Section -->
-    <!-- <div class='parallax_or_mobile'></div>
+    <div class='parallax_or_mobile'></div>
     <script type="text/javascript">
         var ua = navigator.userAgent,
         isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-        if (!isMobileWebkit) {
+        if (isMobileWebkit) {
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
         }else{
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}");
         }
-    </script> -->
-    {% include "main/partials/_kickstarter_portfolio.html" %}
+    </script>
+    <!-- {% include "main/partials/_kickstarter_portfolio.html" %} -->
 
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
@@ -287,9 +287,9 @@
     <script src="{% static 'js/classie.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/cbpAnimatedHeader.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/imagesloaded.js' %}"></script>
-    <script src="{% static 'js/skrollr.js' %}"></script>
+    <!-- <script src="{% static 'js/skrollr.js' %}"></script> -->
     <!-- <script src="{% static 'js/main.js' %}"></script> -->
-    <script src="{% static 'js/_main.js' %}"></script>
+    <!-- <script src="{% static 'js/_main.js' %}"></script> -->
     <!-- Contact Form JavaScript -->
     <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script>
     <!-- <script src="js/contact_me.js"></script> -->
