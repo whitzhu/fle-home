@@ -34,6 +34,10 @@ p.big {
 p.center {
   font-size: 20px;
   text-align: center;
+  line-height: 1.5em;
+  text-align: justify;
+  max-width: 690px;
+  margin: auto;
 }
 
 a,
@@ -117,8 +121,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: rgb(138, 230, 92);
+  border-color: rgb(138, 230, 92);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -151,7 +155,7 @@ fieldset[disabled] .btn-primary.active {
   font-size: 18px;
   padding: 20px 40px;
   box-shadow: none;
-  border: 4px solid #fed136 !important;
+  border: 4px solid rgb(138, 230, 92) !important;
 }
 .email_submit_k {
   clear: none !important;
@@ -161,7 +165,7 @@ fieldset[disabled] .btn-primary.active {
   border-bottom-right-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border: 4px solid #fed136 !important;
+  border: 4px solid rgb(138, 230, 92) !important;
 }
 @media (max-width: 768px) {
   .email_input_k {
@@ -227,8 +231,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: rgb(138, 230, 92);
+  border-color: rgb(138, 230, 92);
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -263,102 +267,6 @@ fieldset[disabled] .btn-xl.active {
 #fle-navbar {
   padding: 0;
 }
-/*#kickstarter-nav {
-  position: fixed;
-  width: 100%;
-}
-.kickstarter-inner-nav li {
-  position: relative;
-  top: 11px;
-}
-.navbar {
-  margin-bottom: 0;
-}
-.navbar-default {
-  background-color: #222222;
-  border-color: transparent;
-}
-.navbar-default .navbar-brand img {
-  height: 30px;
-  position: relative;
-  top: 50%;
-  color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-}
-.navbar-default .navbar-brand img:hover,
-.navbar-default .navbar-brand img:focus,
-.navbar-default .navbar-brand img:active,
-.navbar-default .navbar-brand img.active {
-  color: #fec503;
-}*/
-.navbar-default .navbar-toggle:hover {
-  background: transparent;
-}
-/*.navbar-default .navbar-collapse {
-  border-color: rgba(255, 255, 255, 0.02);
-}
-.navbar-default .navbar-toggle {
-  background-color: #fed136;
-  border-color: #fed136;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: white;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #fed136;
-}
-.navbar-default .nav li a {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: white;
-}
-.navbar-default .nav li a:hover,
-.navbar-default .nav li a:focus {
-  color: #fed136;
-  outline: none;
-}
-.navbar-default .navbar-nav > .active > a {
-  border-radius: 0;
-  color: white;
-  background-color: #fed136;
-}
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: white;
-  background-color: #fec503;
-}*/
-@media (min-width: 768px) {
-  .navbar-default {
-    background-color: transparent;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s;
-    border: none;
-  }
-  .navbar-default .navbar-brand img {
-    content:url('../img/kickstarter/logos/Kolibri_white.png');
-    height: 40px;
-    width: auto;
-  }
-  .navbar-default .navbar-nav > .active > a {
-    border-radius: 3px;
-  }
-  .navbar-default.navbar-shrink {
-    background-color: #222222;
-    padding: 10px 0;
-  }
-  .navbar-default.navbar-shrink img{
-    content:url('../img/kickstarter/logos/Kolibri.png');
-  }
-  .navbar-default.navbar-shrink .navbar-brand img {
-    font-size: 1.5em;
-  }
-}
-/* END NAV BAR */
-
 
 /* HEADER */
 header {
@@ -382,7 +290,7 @@ header .intro-text {
 header .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
-  font-size: 22px;
+  font-size: 25px;
   line-height: 22px;
   margin-bottom: 25px;
 }
@@ -390,7 +298,7 @@ header .intro-text .intro-heading {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 32px;
   line-height: 50px;
   /*margin-bottom: 50px;*/
   position: relative;
@@ -422,7 +330,7 @@ header .intro-text .intro-heading {
 #header-mailchimp {
   position: relative;
   top: 10px;
-  z-index: 99999;
+  z-index: 999;
 }
 
 @media (min-width: 768px) {
@@ -465,7 +373,7 @@ header .intro-text .intro-heading {
 }
 @media (max-width: 1200px) {
   .header-shadow img {
-    top: -170px;
+    top: -15vw;
   }
 }
 @media (max-width: 767px) {
@@ -478,10 +386,36 @@ header .intro-text .intro-heading {
     top: -90px;
   }
   header .intro-text .intro-heading {
-    top: -65px
+    top: -65px;
+    line-height: 39px;
   }
   .header-shadow img {
     top: -55px;
+  }
+}
+@media (max-height: 500px) {
+  header .intro-text .intro-heading {
+    font-size: 32px;
+    line-height: 41px;
+    top: -10vw;
+  }
+  .header-shadow img {
+    top: -23vw;
+  }
+  #header-mailchimp {
+    top: -8vw;
+  }
+}
+@media (max-height: 500px) and (max-width: 700px) {
+  .email_input_k {
+    margin-right: -1px;
+    width: 300px;
+  }
+  .email_input_k, .email_submit_k {
+    padding: 10px;
+  }
+  .e1 {
+    margin-top: 2vw;
   }
 }
 /* END HEADER */
@@ -1035,8 +969,9 @@ mark{
 .feature_text {
   margin: 0;
   text-align: justify;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Montserrat", "Helvetica Neue";
+  line-height: 1.4;
 }
 .colored-container {
   margin-bottom: 30px;
@@ -1063,7 +998,7 @@ mark{
     border: 4px solid black;
     padding: 13px 0 0 16px;
     display: none;
-    z-index: 99999;
+    z-index: 999;
     border-radius: 100%;
     width: 60px;
     height: 60px;
@@ -1077,4 +1012,25 @@ mark{
     border: 4px solid black;
     -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
     transition: border 0.3s, background 0.3s, color 0.3s;
+}
+
+/* Vectorized Video */
+@media (max-width: 750px) {
+  #canvas, .upper-canvas, .canvas-container {
+    width: 100vw !important;
+    height: auto !important;
+  }
+  .vector-description {
+    padding: 0 25px !important;
+  }
+  .modal-body {
+    padding: 0 !important;
+  }
+  #button-wrapper {
+    margin-top: 58vw !important;
+  }
+  #mark {
+    position: relative;
+    top: 58vw;
+  }
 }

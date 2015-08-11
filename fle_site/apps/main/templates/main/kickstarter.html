@@ -204,9 +204,9 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div>
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div>
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Video Vectorization</h2>
@@ -216,15 +216,17 @@
                             </center>
                             <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
                             <script src="{% static 'js/action updated.js' %}"></script>
-                            <mark>&#9757 You can select the elements on the vedio with your mouse and change their position and size.</mark>
+                            <mark id="mark">&#9757 You can select the elements on the vedio with your mouse and change their position and size.</mark>
                             <br>
                             <br>
-                            <button class="btn play-btn" onclick="startAnimation()">PLAY</button>
-                            <button class="btn btn-primary" onclick="restartAnimation()">Restart</button>
-                            <button class="btn btn-primary" onclick="pauseAnimation()">Pause</button>
+                            <div id="button-wrapper">
+                                <button class="btn play-btn" onclick="startAnimation()">PLAY</button>
+                                <button class="btn btn-primary" onclick="restartAnimation()">Restart</button>
+                                <button class="btn btn-primary" onclick="pauseAnimation()">Pause</button>
+                            </div>
                             <br>
                             <br>
-                            <p class="center">Make downloading and transferring content a fast and easy process. We found a way to compress hundreds of gigabytes of content into just a few megabytes, and this is done by converting only the necessary parts of content items to scalable components.</p>
+                            <p class="center vector-description">Make downloading and transferring content a fast and easy process. We found a way to compress hundreds of gigabytes of content into just a few megabytes, and this is done by converting only the necessary parts of content items to scalable components.</p>
                             <!-- <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
                         </div>
