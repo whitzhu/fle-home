@@ -91,7 +91,17 @@
     </header>
 
     <!-- Parallax Section -->
-    {% include "main/partials/_kickstarter_portfolio.html" %}
+    <div class='parallax_or_mobile'></div>
+    <script type="text/javascript">
+        var ua = navigator.userAgent,
+        isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
+        if (isMobileWebkit) {
+            $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
+        }else{
+            $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}");
+        }
+    </script>
+    <!-- {% include "main/partials/_kickstarter_portfolio.html" %} -->
 
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
