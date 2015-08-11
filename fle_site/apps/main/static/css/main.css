@@ -123,10 +123,10 @@ h2 {
 .loading {
 	background: url('../img/ico_loading.gif') no-repeat center center;
 }
-section {
+/*section {
 	min-width: 960px;
 	opacity: 0;
-}
+}*/
 .loaded section,
 .no-js section {
 	opacity: 1;
