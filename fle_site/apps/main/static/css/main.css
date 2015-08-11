@@ -153,7 +153,8 @@ main {
 #slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 #slide-w .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 #slide-2 .hsContent h2{
-    
+    font-size: 36px;
+    font-weight: 400;
 }
 /* Slide 3 */
 #slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
