@@ -95,7 +95,7 @@
     <script type="text/javascript">
         var ua = navigator.userAgent,
         isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-        if (isMobileWebkit) {
+        if (!isMobileWebkit) {
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
         }else{
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}");
