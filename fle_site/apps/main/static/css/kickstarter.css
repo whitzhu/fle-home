@@ -990,14 +990,3 @@ mark{
   position: relative;
   top: 25px;
 }
-section {
-  min-width: 0;
-}
-#parallax_1 {
-  margin-right: 10%;
-  margin-bottom: 10px;
-}
-#parallax_2 {
-  margin-left: 10%;
-  margin-bottom: 10px;
-}
