@@ -21,14 +21,16 @@ var l_set = svg_cc.selectAll('#l');
 var c_position = [{cx:270, cy:0}, {cx:160, cy:220}, {cx:580, cy:420}, {cx:280, cy:420}, {cx:600, cy:20}];
 
 var center_circle = svg_cc.circle(400, 230, 100).attr({fill: '#8AE65C', stroke: 'white', strokeWidth: 15});
-var center_text = svg_cc.text(335, 290, "💡").attr({'fill-opacity': 0, "font-size": "130px"});
+
+var cc_bulb_url = document.getElementById("cc_bulb").src;
+var cc_bulb = svg_cc.image(cc_bulb_url, 325, 150, 150, 150);
 
 loop_circle();
 
 function loop_circle() {
     l_set.animate({x2: 400, y2: 230}, 1000, mina.backin);
     c_set.animate({cx: 400, cy: 230}, 1000, mina.backin, function(){
-        center_text.animate({'fill-opacity': 1}, 300, mina.easein);
+        cc_bulb.animate({'opacity': 1}, 300, mina.easein);
         center_circle.animate({'fill': 'white'}, 300, mina.easein, function(){
             setTimeout(function() {
                 reset_circle();
@@ -52,5 +54,5 @@ function reset_circle() {
         e.attr({opacity: 0, cx: c_position[index].cx, cy: c_position[index].cy});
     });
     center_circle.animate({'fill': '#8AE65C'}, 500, mina.easeout);
-    center_text.animate({'fill-opacity': 0}, 500, mina.easeout);
+    cc_bulb.animate({'opacity': 0}, 500, mina.easeout);
 }
