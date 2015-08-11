@@ -123,9 +123,8 @@
         <div class="container">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Join our Kickstarter Mailing List!</h2>
-                <!-- <h3 class="section-subheading text-muted">We'll let you know when our September campaign begins.</h3> -->
             </div>
-            <h3 class="mailing_label text-muted">You can be part of the solution</h3>
+            <h3 class="mailing_label text-muted">See how you can be part of the solution</h3>
             <br>
 
             <!-- Begin MailChimp Signup Form  -->
@@ -137,7 +136,7 @@
                     </div>
                 </form>
             </div> -->
-            <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
+            <iframe src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
                 <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
             </iframe>
             <!-- End mc_embed_signup -->
@@ -310,9 +309,10 @@
             var $root = $('html, body');
             $root.animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
-            }, 1000);
+            }, 1500);
             return false;
         });
+
      </script>
 
 
