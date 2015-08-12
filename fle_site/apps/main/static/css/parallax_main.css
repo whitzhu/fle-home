@@ -27,11 +27,9 @@ section {
   min-width: 0;
 }
 #parallax_1 {
-  margin-right: 10%;
   margin-bottom: 10px;
 }
 #parallax_2 {
-  margin-left: 10%;
   margin-bottom: 10px;
 }
 
@@ -161,6 +159,8 @@ main {
 #slide-2 .hsContent h2{
     font-size: 36px;
     font-weight: 400;
+    max-width: 80%;
+    margin: auto;
 }
 /* Slide 3 */
 #slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
@@ -173,7 +173,9 @@ main {
 #slide-A .bcg {background-image:url('../img/kickstarter/about/bgdark.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
 #slide-A .hsContent h2{
-}
+    max-width: 100%;
+    margin: auto;
+}  
 
 /* Slide 3.3 */
 #slide-B .bcg {background-image:url('../img/kickstarter/about/5.jpg'); }
@@ -218,14 +220,15 @@ main {
 	.hsContent h2,
 	.copy h2 {
 		color: #ffffff;
-		font-size: 45px;
+		font-size: 65px;
 		line-height: 48px;
 		margin-bottom: 12px;
 	}
 	.hsContent p {
-		width: 400px;
-		margin: 0 auto;
-		color: #b2b2b2;
+		width: 80%;
+        margin: 0 auto;
+        font-size: 30px;
+        line-height: 1.5em;
 	}
 	.hsContent a {
 		color: #b2b2b2;
@@ -236,6 +239,9 @@ main {
 		padding: 3px 10px;
 	}
 
+#slide-w .hsContent h2 {
+    font-size: 45px;
+}
 
 
 

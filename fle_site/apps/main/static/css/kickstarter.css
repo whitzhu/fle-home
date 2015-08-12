@@ -120,8 +120,8 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-xl {
-  color: white;
-  background-color: rgb(138, 230, 92);
+  color: black;
+  background: rgb(138, 230, 92);
   border-color: rgb(138, 230, 92);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -129,8 +129,18 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 40px;
+  -webkit-transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
 }
-
+.btn-xl:hover {
+  background: #55C21E !important;
+  color: black !important;
+  -webkit-transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
+  -moz-box-shadow: inset 0 0 15px #000000;
+  -webkit-box-shadow: inset 0 0 15px #000000;
+  box-shadow: inset 0 0 15px #000000;
+}
 #sign-up {
   width: 100%;
 }
@@ -161,6 +171,7 @@ fieldset[disabled] .btn-primary.active {
   clear: none !important;
   float: left;
   width: 250px;
+  margin-left: -2px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-left-radius: 0;
@@ -200,10 +211,10 @@ fieldset[disabled] .btn-primary.active {
 }
 
 #mce-error-response{
-  color:red;
+  color: white;
 }
 #mce-success-response{
-  color:green;
+  color: white;
 }
 #mce-responses{
   /*width: 100%;*/
@@ -230,7 +241,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-  color: white;
+  color: black;
   background-color: rgb(138, 230, 92);
   border-color: rgb(138, 230, 92);
 }
@@ -307,7 +318,7 @@ header .intro-text .intro-heading {
   margin-bottom: 7%;
 }
 .not-parallax-section {
-  padding: 100px 0;
+  padding: 200px 0;
 }
 .header-shadow {
   z-index: 2;
@@ -339,19 +350,8 @@ header .intro-text .intro-heading {
   header .intro-text {
     padding: 140px 0 0 0;
   }
-  header .intro-text .intro-lead-in {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 40px;
-    margin: 0 auto;
-    position: relative;
-    top: -100px; 
-    z-index: 1;
-	}
   header .intro-text .intro-heading {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 55px;
@@ -507,25 +507,11 @@ section h3.section-subheading {
   font-size: 16px;
   margin: 0;
 }
-/*#portfolio * {
-  z-index: 2;
-}*/
-.ingredient span {
-  font-size: 25px;
-  position: relative;
-  top: 5px;
-  line-height: 2.1em;
+#parallax_1 {
+  width: 440px;
 }
-.ingredient-box div h4 {
-  text-align: center;  
-}
-.ingredient-box div i {
-  font-size: 70px;
-  color: #3f3f3f;
-}
-#second-box {
-  position: relative;
-  top: 15px;
+#parallax_2 {
+  width: 370px;
 }
 @media (min-width: 767px) {
   #portfolio .portfolio-item {
@@ -543,7 +529,7 @@ section h3.section-subheading {
   position: absolute;
   content: "";
   width: 2px;
-  background-color: #fed136;
+  background-color: white;
   left: 40px;
   margin-left: -1.5px;
 }
@@ -589,7 +575,7 @@ section h3.section-subheading {
   background-color: #fed136;
   color: white;
   border-radius: 100%;
-  border: 5px solid #fed136;
+  border: 7px solid white;
   text-align: center;
 }
 .timeline > li .timeline-image h4 {
@@ -624,6 +610,7 @@ section h3.section-subheading {
 }
 .timeline .timeline-heading h4.subheading {
   text-transform: uppercase;
+  font-size: 33px;
 }
 .timeline .timeline-body > p,
 .timeline .timeline-body > ul {
@@ -631,22 +618,11 @@ section h3.section-subheading {
   font-family: "Montserrat", "Helvetica Neue";
 }
 .timeline li div p a {
-  background: #fed136;
-  color: black;
-  border: 2px solid black;
-  padding: 5px 8px;
   font-weight: bold;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
 }
 .timeline li div p a:hover {
+  color: white;
   text-decoration: none;
-  background: black;
-  color: #fed136;
-  border: 2px solid black;
-  font-weight: bold;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
 }
 @media (min-width: 768px) {
   .timeline:before {
@@ -727,19 +703,45 @@ section h3.section-subheading {
   color: #fff;
 }
 #about .text-muted {
-  color:#fff;
-  font-weight:100;
+  color: #fff;
+  font-weight: 300;
   font-size:1.5em;
   line-height: 1.2;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 #about .timeline-individual-heading{
-  margin-top:2%;
-  font-size:2.5em;
-  font-weight: 100;
+  margin-top: 2%;
+  font-size: 2.5em;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.07em
 }
 #about .moreinfo{
   text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .timeline .timeline-heading h4 {
+    margin-top: -13px;
+    font-size: 1.7em;
+  }
+  .timeline .timeline-heading h4.subheading {
+    font-size: 21px;
+  }
+  .moreinfo {
+    margin-top: 13px;
+  }
+  #about .text-muted {
+    font-size: 1.2em;
+  }
+  #about .timeline-individual-heading {
+    font-size: 1.7em;
+  }
+  #about .section-heading {
+    font-size: 30px;
+  }
+  .not-parallax-section {
+    padding: 100px 0;
+  }
 }
 .team-member {
   text-align: center;
@@ -979,10 +981,15 @@ mark{
 }
 /* MAILCHIMP MODAL */
 .mailing_label {
-  color: grey;
+  color: white;
   position: relative;
-  top: 25px;
+  top: 32px;
+  font-size: 31px
 }
+.email_input_k::selection {
+  background: #55C21E;
+}
+
 /* BACK TO TOP BUTTON */
 .back-to-top {
     position: fixed;
