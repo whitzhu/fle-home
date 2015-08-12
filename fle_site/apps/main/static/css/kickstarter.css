@@ -372,7 +372,7 @@ header {
   -o-background-size: cover;
   text-align: center;
   color: white;
-  /*height: 100vh;*/
+  height: 100vh;
 }
 header .intro-text {
   height: 0;
@@ -403,7 +403,7 @@ header .intro-text .intro-heading {
   padding: 100px 0;
 }
 .header-shadow {
-  /*height: 70vh;*/
+  height: 70vh;
   z-index: 2;
   background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari5+ */
@@ -1080,32 +1080,32 @@ mark{
 }
 
 @media (max-device-aspect-ratio: 3/4) {
-  header {
-    height: calc(100vw * 1.333 - 9%);
+  #kickstarter-header {
+    height: calc(100vw * 1.333 - 9%) !important;
   }
   .header-shadow {
     height: calc(100vw * 1.333 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 2/3) {
-  header {
-    height: calc(100vw * 1.5 - 9%);
+  #kickstarter-header {
+    height: calc(100vw * 1.5 - 9%) !important;
   }
   .header-shadow {
     height: calc(100vw * 1.5 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 10/16) {
-  header {
-    height: calc(100vw * 1.6 - 9%);
+  #kickstarter-header {
+    height: calc(100vw * 1.6 - 9%) !important;
   }
   .header-shadow {
     height: calc(100vw * 1.6 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 9/16) {
-  header {
-    height: calc(100vw * 1.778 - 9%);
+  #kickstarter-header {
+    height: calc(100vw * 1.778 - 9%) !important;
   }
   .header-shadow {
     height: calc(100vw * 1.778 - 9%);
