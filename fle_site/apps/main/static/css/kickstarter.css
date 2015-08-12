@@ -1080,22 +1080,22 @@ mark{
 }
 
 @media (max-device-aspect-ratio: 3/4) {
-  .header-shadow {
+  header .header-shadow {
     height: calc(100vw * 1.333 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 2/3) {
-  .header-shadow {
+  header .header-shadow {
     height: calc(100vw * 1.5 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 10/16) {
-  .header-shadow {
+  header .header-shadow {
     height: calc(100vw * 1.6 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 9/16) {
-  .header-shadow {
+  header .header-shadow {
     height: calc(100vw * 1.778 - 9%);
   }
 }
