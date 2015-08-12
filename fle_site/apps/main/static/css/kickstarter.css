@@ -372,7 +372,7 @@ header {
   -o-background-size: cover;
   text-align: center;
   color: white;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 header .intro-text {
   height: 0;
@@ -1080,22 +1080,34 @@ mark{
 }
 
 @media (max-device-aspect-ratio: 3/4) {
-  header .header-shadow {
+  header {
+    height: calc(100vw * 1.333 - 9%);
+  }
+  .header-shadow {
     height: calc(100vw * 1.333 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 2/3) {
-  header .header-shadow {
+  header {
+    height: calc(100vw * 1.5 - 9%);
+  }
+  .header-shadow {
     height: calc(100vw * 1.5 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 10/16) {
-  header .header-shadow {
+  header {
+    height: calc(100vw * 1.6 - 9%);
+  }
+  .header-shadow {
     height: calc(100vw * 1.6 - 9%);
   }
 }
 @media (max-device-aspect-ratio: 9/16) {
-  header .header-shadow {
+  header {
+    height: calc(100vw * 1.778 - 9%);
+  }
+  .header-shadow {
     height: calc(100vw * 1.778 - 9%);
   }
 }
