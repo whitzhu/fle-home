@@ -1078,6 +1078,11 @@ mark{
     -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
     transition: border 0.3s, background 0.3s, color 0.3s;
 }
+/*#kickstarter-header {
+  -webkit-transition: height 999999s;
+  -moz-transition: height 999999s;
+  transition: height 999999s;
+}*/
 /*
 @media (max-device-aspect-ratio: 3/4) {
   #kickstarter-header {
