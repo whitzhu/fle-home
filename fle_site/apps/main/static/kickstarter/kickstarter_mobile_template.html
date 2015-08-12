@@ -4,5 +4,21 @@
         -moz-transition: height 999999s;
         transition: height 999999s;
     }
+    @media all and (orientation:portrait) {
+        header {
+            height: 100vh;
+        }
+        .header-shadow {
+            height: 70vh;
+        }
+    }
+    @media all and (orientation:landscape) {
+        header {
+            height: 200vh;
+        }
+        .header-shadow {
+            height: 140vh;
+        }
+    }
 </STYLE>
 <h4 style="color: white; font-size: 40px;">Hello world</h4>
