@@ -1,0 +1,68 @@
+{% load staticfiles %}
+
+<div class="container-fluid" id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-push-4 center-text">
+                &copy; 2015 Foundation for Learning Equality&nbsp;<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img id="cc-icon" src="{% static 'img/icons/cc-by-sa-4.0.png' %}" alt="Creative Commons Attribution 4.0 International License" title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"></a>
+            </div>
+
+            <div class="col-md-4 col-md-pull-4" id="help_links">
+                <a href="#" data-modal-toggle="contactModal" id="contact" class="modal-toggle">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="#" data-modal-toggle="subscribeModal" id="subscribe" class="modal-toggle">Subscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'jobs' %}">Jobs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="{% url 'internships' %}">Internships</a>
+            </div>
+            
+            <div class="col-md-4 center-text">
+                <ul class="list-icons">
+                    <li>
+                        <a href="https://www.facebook.com/learningequality" title="Visit us on Facebook!" target="_blank">
+                            <img class="media-link" src="{% static 'img/facebook.png' %}"/>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="fb-like" data-href="https://www.facebook.com/learningequality" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/LearnEQ" title="Visit us on Twitter!" target="_blank">
+                            <img class="media-link" src="{% static 'img/twitter.png' %}"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/LearnEQ" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @LearnEQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function triggerModal(elementHash) {
+        // given element ID intelligently trigger modals
+        var modalId = '#' + $(elementHash).attr("data-modal-toggle");
+        $(modalId).modal();
+        // remove hash when hidden
+        $(modalId).on('hidden.bs.modal', function (e) {
+            window.location.hash = '';
+        });
+    } 
+
+    $(function() {
+        // handle hash in URL on page load
+        var hash = window.location.hash;
+        if (hash) {
+            triggerModal(hash);
+        }
+
+        // handle toggle of modals on click
+        $('.modal-toggle').click(function(event) {
+            event.preventDefault();
+            window.location.hash = this.id;
+            triggerModal('#' + this.id);
+        });
+    });
+
+</script>
