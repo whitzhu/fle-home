@@ -347,8 +347,8 @@ top: 50vh;
 left: 50vw;
 min-width: 100vw;
 min-height: 100vh;
-width: auto;
-height: auto;
+/*width: auto;*/
+/*height: auto;*/
 z-index: 1;
 -webkit-transform: translateX(-50%) translateY(-50%);
 transform: translateX(-50%) translateY(-50%);
