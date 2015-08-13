@@ -359,6 +359,7 @@ video#bgvid {
   background-position: center center;
   margin: auto;
   min-height: 100%;
+  min-width: 100%;
 }
 
 @media (min-width: 768px) {
