@@ -343,8 +343,8 @@ header .intro-text .intro-heading {
 video#bgvid {
 position: absolute;
 margin-top: 20px;
-top: 50%;
-left: 50%;
+top: 50vh;
+left: 50vw;
 min-width: 100vw;
 min-height: 100vh;
 width: auto;
