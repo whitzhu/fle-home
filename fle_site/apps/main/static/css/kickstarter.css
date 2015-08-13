@@ -355,6 +355,7 @@ video#bgvid {
   /*right: 0;*/
   /*left: 50vw;
   transform: translateX(50vw);*/
+  background: url('../img/kickstarter/bgvid_poster.jpg') no-repeat;
   background-position: center center;
   margin: auto;
   min-height: 100%;
