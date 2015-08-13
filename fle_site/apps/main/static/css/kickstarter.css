@@ -345,12 +345,11 @@ header .intro-text .intro-heading {
   left: 0;
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden; 
+  overflow: hidden; 
 }
 video#bgvid {
-  margin-top: 20px;
   position: relative;
-  top: 0;
+  top: 20px;
   bottom: 0;
   /*right: 0;*/
   /*left: 50vw;

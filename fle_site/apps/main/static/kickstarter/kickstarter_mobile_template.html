@@ -25,6 +25,20 @@
         -moz-transition: height 999999s;
         transition: height 999999s;
     }
+    @media (min-aspect-ratio: 10/9) {
+      #bgvid {
+        /*height: 300%; top: -100%;*/
+        /* or height: 200%; top: -50%;
+           or height: 400%; top: -150%; */
+      }
+    }
+    @media (max-aspect-ratio: 10/9) {
+      #bgvid {
+        width: 300%; left: -100%;
+        /* or width: 200%; left: -50%;
+           or width: 400%; left: -150%; */
+      }
+    }
     #bgvid { 
         /*display: none; */
     }
@@ -33,28 +47,28 @@
     $(function() {
         var vid = document.getElementById("bgvid");
         vid.play();
+        var pauseButton = document.getElementById("vidpause");
+        function vidFade() {
+            vid.classList.add("stopfade");
+        }
+
+        vid.addEventListener('ended', function() {
+            // only functional if "loop" is removed
+            vid.pause();
+            // to capture IE10
+            vidFade();
+        });
+
+        pauseButton.addEventListener("click", function() {
+            vid.classList.toggle("stopfade");
+            if (vid.paused) {
+            vid.play();
+            pauseButton.innerHTML = "Pause";
+            } else {
+            vid.pause();
+            pauseButton.innerHTML = "Paused";
+            }
+        });
     });
-    // var pauseButton = document.getElementById("vidpause");
-    // function vidFade() {
-    //     vid.classList.add("stopfade");
-    // }
-
-    // vid.addEventListener('ended', function() {
-    //     // only functional if "loop" is removed
-    //     vid.pause();
-    //     // to capture IE10
-    //     vidFade();
-    // });
-
-    // pauseButton.addEventListener("click", function() {
-    //     vid.classList.toggle("stopfade");
-    //     if (vid.paused) {
-    //     vid.play();
-    //     pauseButton.innerHTML = "Pause";
-    //     } else {
-    //     vid.pause();
-    //     pauseButton.innerHTML = "Paused";
-    //     }
-    // });
 </script>
 <h4 style="color: white; font-size: 40px;">Hello world</h4>
