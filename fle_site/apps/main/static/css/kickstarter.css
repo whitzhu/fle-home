@@ -339,21 +339,22 @@ header .intro-text .intro-heading {
   top: 10px;
   z-index: 999;
 }
-
+.bgvid_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
 video#bgvid {
-position: absolute;
-margin-top: 20px;
-top: 50vh;
-left: 50vw;
-min-width: 100vw;
-min-height: 100vh;
-/*width: auto;*/
-/*height: auto;*/
-z-index: 1;
--webkit-transform: translateX(-50vw) translateY(-50vh);
-transform: translateX(-50vw) translateY(-50vh);
-/*background: url('../img/kickstarter/bgvid_poster.jpg') no-repeat;*/
-background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: -100vw;
+  margin: auto;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 @media (min-width: 768px) {
