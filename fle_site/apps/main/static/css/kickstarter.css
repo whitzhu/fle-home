@@ -348,6 +348,7 @@ header .intro-text .intro-heading {
   overflow-x: hidden; 
 }
 video#bgvid {
+  margin-top: 20px;
   position: relative;
   top: 0;
   bottom: 0;
