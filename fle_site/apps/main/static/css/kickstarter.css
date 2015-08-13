@@ -352,7 +352,7 @@ min-height: 100vh;
 z-index: 1;
 -webkit-transform: translateX(-50vw) translateY(-50vh);
 transform: translateX(-50vw) translateY(-50vh);
-/*background: url('../img/kickstarter/cover.jpg') no-repeat;*/
+/*background: url('../img/kickstarter/bgvid_poster.jpg') no-repeat;*/
 background-size: cover;
 }
 
