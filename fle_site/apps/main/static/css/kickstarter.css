@@ -205,11 +205,6 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-.mailing_label{
-  color:grey;
-  text-align: center;
-}
-
 #mce-error-response{
   color: white;
 }
@@ -277,18 +272,20 @@ fieldset[disabled] .btn-xl.active {
 
 #fle-navbar {
   padding: 0;
+  position: absolute;
+  width: 100vw;
 }
 
 /* HEADER */
 header {
-  background-image: url('../img/kickstarter/cover.jpg');
+  /*background-image: url('../img/kickstarter/cover.jpg');
   background-repeat: none;
   background-attachment: scroll;
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover;*/
   text-align: center;
   color: white;
 }
@@ -312,6 +309,7 @@ header .intro-text .intro-heading {
   line-height: 50px;
   /*margin-bottom: 50px;*/
   position: relative;
+  z-index: 3;
   /*bottom: 60px;*/
 }
 .kickstarter-about-title {
@@ -344,6 +342,7 @@ header .intro-text .intro-heading {
 
 video#bgvid {
 position: absolute;
+margin-top: 20px;
 top: 50%;
 left: 50%;
 min-width: 100%;
@@ -372,9 +371,8 @@ background-size: cover;
     font-size: 55px;
     line-height: 70px;
     margin: 0 auto;
-    z-index: 3;
     position: relative;
-    top: -110px;
+    /*top: -110px;*/
   }
   header .action-button{
     position: absolute;
@@ -399,7 +397,6 @@ background-size: cover;
     top: -90px;
   }
   header .intro-text .intro-heading {
-    top: -65px;
     line-height: 39px;
   }
   .header-shadow img {
@@ -996,10 +993,13 @@ mark{
 }
 /* MAILCHIMP MODAL */
 .mailing_label {
+  text-transform: none;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
+  text-align: center;
   position: relative;
-  top: 32px;
-  font-size: 31px
+  font-size: 31px;
+  font-weight: 100;
 }
 .email_input_k::selection {
   background: #55C21E;

@@ -18,3 +18,4 @@ venv/*
 fleSite/*
 Thumbs.db
 ENV/*
+virtual_fle_home/*
