@@ -334,12 +334,27 @@ header .intro-text .intro-heading {
   max-width: 85%;
   position: relative;
   right: 8%;
-  z-index: 0;
+  z-index: 2;
 }
 #header-mailchimp {
   position: relative;
   top: 10px;
   z-index: 999;
+}
+
+video#bgvid {
+position: absolute;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: 1;
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background: url(polina.jpg) no-repeat;
+background-size: cover;
 }
 
 @media (min-width: 768px) {
@@ -357,7 +372,7 @@ header .intro-text .intro-heading {
     font-size: 55px;
     line-height: 70px;
     margin: 0 auto;
-    z-index: 1;
+    z-index: 3;
     position: relative;
     top: -110px;
   }
