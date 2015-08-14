@@ -147,14 +147,14 @@ fieldset[disabled] .btn-primary.active {
 .e1 {
   width: 100%;
   float: left;
-  margin-left: -300px;
+  margin-left: -230px;
   transform: translateX(50%);
 }
 .email_input_k {
   outline: none;
   clear: none !important;
   float: left;
-  width: 350px;
+  width: 240px;
   background-color: white;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -163,22 +163,25 @@ fieldset[disabled] .btn-primary.active {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 18px;
-  padding: 20px 40px;
+  padding: 10px 10px;
+  text-align: center;
   box-shadow: none;
   border: 4px solid rgb(138, 230, 92) !important;
 }
 .email_submit_k {
   clear: none !important;
   float: left;
-  width: 250px;
+  width: 220px;
   margin-left: -2px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  padding: 10px;
   border: 4px solid rgb(138, 230, 92) !important;
 }
-@media (max-width: 650px) {
+
+@media (max-width: 500px) {
   .email_input_k {
     text-align: center;
     display: block;
@@ -197,11 +200,54 @@ fieldset[disabled] .btn-primary.active {
     width: 300px;
     margin-right: 10px;
     margin-left: 10px;
+    padding: 10px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
   }
   .e1 {
     margin-left: -160px;
+  }
+}
+
+@media (min-width: 700px) {
+  .email_input_k {
+    outline: none;
+    clear: none !important;
+    float: left;
+    width: 350px;
+    background-color: white;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 18px;
+    padding: 20px 40px;
+    box-shadow: none;
+    border: 4px solid rgb(138, 230, 92) !important;
+  }
+  .email_submit_k {
+    clear: none !important;
+    float: left;
+    width: 250px;
+    margin-left: -2px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 4px solid rgb(138, 230, 92) !important;
+    padding: 20px;
+  }
+  .e1 {
+    margin-left: -300px;
+  }
+}
+
+@media (max-width: 700px) {
+  .mailing_label {
+    font-size: 22px !important;
+    font-weight: 100;
   }
 }
 
@@ -418,18 +464,6 @@ video#bgvid {
   }
   #header-mailchimp {
     top: -8vw;
-  }
-}
-@media (max-height: 500px) and (max-width: 700px) {
-  .email_input_k {
-    margin-right: -1px;
-    width: 300px;
-  }
-  .email_input_k, .email_submit_k {
-    padding: 10px;
-  }
-  .e1 {
-    margin-top: 2vw;
   }
 }
 /* END HEADER */
@@ -1002,7 +1036,7 @@ mark{
   color: white;
   text-align: center;
   position: relative;
-  font-size: 31px;
+  font-size: 32px;
   font-weight: 100;
 }
 .email_input_k::selection {
@@ -1057,4 +1091,16 @@ mark{
     position: relative;
     top: 58vw;
   }
+}
+
+#bgvid-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-35px,-35px);
+  visibility: hidden;
 }

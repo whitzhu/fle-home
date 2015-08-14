@@ -4,7 +4,7 @@
             height: 100vh;
         }
         .header-shadow {
-            height: 70vh;
+            height: 85vh;
         }
     }
     @media all and (orientation:landscape) {
@@ -12,7 +12,7 @@
             height: 200vh;
         }
         .header-shadow {
-            height: 70vh;
+            height: 82vh;
         }
         .intro-heading{
             margin-top: -20px;
@@ -47,28 +47,13 @@
 <script>
     $(function() {
         var vid = document.getElementById("bgvid");
+        var vid_button = document.getElementById("bgvid-btn");
+        vid_button.style.visibility="visible";
         vid.play();
-        var pauseButton = document.getElementById("vidpause");
-        function vidFade() {
-            vid.classList.add("stopfade");
-        }
 
-        vid.addEventListener('ended', function() {
-            // only functional if "loop" is removed
-            vid.pause();
-            // to capture IE10
-            vidFade();
-        });
-
-        pauseButton.addEventListener("click", function() {
-            vid.classList.toggle("stopfade");
-            if (vid.paused) {
+        vid_button.addEventListener("click", function() {
             vid.play();
-            pauseButton.innerHTML = "Pause";
-            } else {
-            vid.pause();
-            pauseButton.innerHTML = "Paused";
-            }
+            vid_button.style.visibility="hidden";
         });
     });
 </script>
