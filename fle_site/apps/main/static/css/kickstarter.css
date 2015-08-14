@@ -420,7 +420,7 @@ video#bgvid {
     top: -8vw;
   }
 }
-@media (max-height: 500px) and (max-width: 700px) {
+/*@media (max-height: 500px) and (max-width: 700px) {
   .email_input_k {
     margin-right: -1px;
     width: 300px;
@@ -431,7 +431,7 @@ video#bgvid {
   .e1 {
     margin-top: 2vw;
   }
-}
+}*/
 /* END HEADER */
 
 
