@@ -209,7 +209,7 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-@media (min-width: 630px) {
+@media (min-width: 700px) {
   .email_input_k {
     outline: none;
     clear: none !important;
@@ -244,7 +244,7 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 700px) {
   .mailing_label {
     font-size: 22px !important;
     font-weight: 100;
