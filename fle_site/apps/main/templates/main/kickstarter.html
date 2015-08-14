@@ -48,6 +48,7 @@
     <!-- Parallax Section -->
     <div class='parallax_or_mobile'></div>
     <script type="text/javascript">
+    $(function() {
         var ua = navigator.userAgent,
         isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
         if (isMobileWebkit) {
@@ -61,6 +62,7 @@
                 });
             });
         }
+    });
     </script>
 
     <!-- Kolibri Features Section -->
