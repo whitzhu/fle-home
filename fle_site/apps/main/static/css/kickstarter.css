@@ -366,13 +366,8 @@ header .intro-text .intro-heading {
 }
 .header-shadow {
   z-index: 2;
-  background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari5+ */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9*/
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh !important;
 }
 .header-shadow img {
   max-width: 85%;
@@ -382,7 +377,7 @@ header .intro-text .intro-heading {
 }
 #header-mailchimp {
   position: relative;
-  top: 10px;
+  top: -245px;
   z-index: 999;
 }
 .bgvid_container{
@@ -435,7 +430,7 @@ video#bgvid {
 }
 @media (max-width: 1200px) {
   .header-shadow img {
-    top: -15vw;
+    top: -20vw;
   }
 }
 @media (max-width: 767px) {
@@ -444,15 +439,29 @@ video#bgvid {
   }
 }
 @media (max-width: 500px) {
-  #header-mailchimp {
-    top: -90px;
-  }
   header .intro-text .intro-heading {
     line-height: 39px;
   }
   .header-shadow img {
     top: -55px;
   }
+  .mailing_label {
+    font-size: 22px !important;
+    font-weight: normal !important;
+  }
+  section#contact .section-heading {
+    font-size: 33px !important;
+  }
+  section h2.section-heading {
+    font-size: 30px !important;
+  }
+  section h3.section-subheading {
+    font-size: 1.1em !important;
+    text-align: justify;
+  }
+}
+@media (max-height: 680px) {
+  #header-mailchimp: -8vw;
 }
 @media (max-height: 500px) {
   header .intro-text .intro-heading {
@@ -462,8 +471,9 @@ video#bgvid {
   .header-shadow img {
     top: -23vw;
   }
-  #header-mailchimp {
-    top: -8vw;
+  .mailing_label {
+    font-size: 22px !important;
+    font-weight: normal !important;
   }
 }
 /* END HEADER */
@@ -473,14 +483,14 @@ section {
   padding: 0;
 }
 section h2.section-heading {
-  font-size: 40px;
+  font-size: 50px;
   margin-top: 0;
   margin-bottom: 15px;
 }
 section h3.section-subheading {
   line-height: inherit;
-  font-size: 1.8em;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2em;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   text-transform: none;
   font-style: normal;
   font-weight: 100;
@@ -506,8 +516,8 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
-  max-width: 400px;
-  margin: 0 auto !important;
+  max-width: 500px;
+  margin: auto;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   background: rgba(254, 209, 54, 0.9);
@@ -538,24 +548,31 @@ section h3.section-subheading {
   margin: 0;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 500px;
   background-color: white;
   text-align: center;
-  padding: 25px;
+  padding: 15px 15px 35px 15px;
   cursor: pointer;
+  margin: auto;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
-  margin: 0;
-  font-size: 1.4em;
+  margin: 10px 0 0 0;
+  font-size: 1.3em;
   padding-bottom: 5px;
 }
 #portfolio .portfolio-item .portfolio-caption p {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: italic;
+  font-family: "Open Sans";
   font-size: 16px;
   margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption a {
+  font-style: normal;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: 25px;
+  font-size: 13px;
 }
 #parallax_1 {
   width: 440px;
@@ -563,9 +580,95 @@ section h3.section-subheading {
 #parallax_2 {
   width: 370px;
 }
-@media (min-width: 767px) {
-  #portfolio .portfolio-item {
-    /*margin: 0 0 30px;*/
+.barrier-title,
+.solution-title {
+  text-align: left;
+  width: 100%;
+  padding: 9px 14px;
+}
+.barrier-title span,
+.solution-title span {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+.barrier-title i,
+.barrier-title span,
+.solution-title i,
+.solution-title span {
+  color: white;
+  font-size: 17px;
+}
+.barrier-title {
+  background: #932E57;
+}
+.solution-title {
+  background: #4B3C60;
+}
+.portfolio-barrier-box,
+.portfolio-solution-box {
+  padding: 0 11px;
+}
+.portfolio-barrier-box p,
+.portfolio-solution-box p {
+  text-align: left;
+  line-height: 1.2em;
+  position: relative;
+  top: 15px;
+}
+.portfolio-caption .text-muted {
+  color: #3F3F3F;
+  font-style: normal !important;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif !important;
+  padding-bottom: 5px;
+  position: relative;
+  top: -7px;
+}
+
+/* FEATURES RIBBON */
+.barrier-title,
+.solution-title {
+  margin: 0;
+  margin-top: 5%;
+  position:relative;
+  left: -34px;
+  width: 230px;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
+        inset 0px 0px 20px rgba(0,0,0,0.1),
+        0px 1px 1px rgba(0,0,0,0.4);
+}
+.barrier-title:before,
+.solution-title:before {
+  left:-1.35em;
+  border-right-width: .75em;
+  border-left-color:transparent;
+}
+.barrier-title span:before,
+.solution-title span:before {
+  content:"";
+  bottom:-.5em;
+  position:absolute;
+  display:block;
+  border-style:solid;
+  border-color: #63122D transparent transparent transparent;
+  z-index:0;
+}
+.solution-title span:before {
+  border-color: #1E0B36 transparent transparent transparent;
+}
+.barrier-title span:before,
+.solution-title span:before {
+  left: 0;
+  border-width: .5em 0 0 .5em;
+}
+.solution-title {
+  margin-top: 8%;
+}
+
+@media (max-width: 767px) {
+  .portfolio-barrier-box {
+    margin-bottom: 25px;
+  }
+  .portfolio-caption:before {
+    display: none;
   }
 }
 .timeline {
@@ -792,6 +895,12 @@ section h3.section-subheading {
   .not-parallax-section {
     padding: 100px 0;
   }
+  .timeline li .timeline-image {
+    border: 4px solid white;
+  }
+  .showing {
+    text-align: center !important;
+  }
 }
 .team-member {
   text-align: center;
@@ -813,12 +922,7 @@ aside.clients img {
   margin: 50px auto;
 }
 section#contact {
-  /*background-color: #222222;
-  background-image: url('../img/kickstarter/map-image.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 90vh;*/
-  background-color: white;
+  background: #083435;
   margin-bottom: -60px;
 }
 section#contact .section-heading {
@@ -1025,7 +1129,6 @@ mark{
 }
 .colored-container {
   margin-bottom: 30px;
-  width: 100%;
   height: 100%;
   background-color: #ECECEC;
 }
@@ -1041,6 +1144,10 @@ mark{
 }
 .email_input_k::selection {
   background: #55C21E;
+}
+#footer-mailchimp {
+  position: relative;
+  top: 100px;
 }
 
 /* BACK TO TOP BUTTON */
