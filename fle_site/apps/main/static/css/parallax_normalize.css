@@ -198,7 +198,7 @@ hr {
  */
 
 mark {
-    background: #ff0;
+    background: transparent;
     color: #000;
 }
 
