@@ -377,7 +377,7 @@ header .intro-text .intro-heading {
 }
 #header-mailchimp {
   position: relative;
-  top: -245px;
+  top: -30vh;
   z-index: 999;
 }
 .bgvid_container{
@@ -445,10 +445,6 @@ video#bgvid {
   .header-shadow img {
     top: -55px;
   }
-  .mailing_label {
-    font-size: 22px !important;
-    font-weight: normal !important;
-  }
   section#contact .section-heading {
     font-size: 33px !important;
   }
@@ -470,10 +466,6 @@ video#bgvid {
   }
   .header-shadow img {
     top: -23vw;
-  }
-  .mailing_label {
-    font-size: 22px !important;
-    font-weight: normal !important;
   }
 }
 /* END HEADER */
@@ -507,6 +499,7 @@ section h3.section-subheading {
 }
 #portfolio {
   padding-top: 200px;
+  background-color: #ECECEC;
 }
 #portfolio .portfolio-item {
   /*margin: 0 0 15px;*/
@@ -1130,7 +1123,7 @@ mark{
 .colored-container {
   margin-bottom: 30px;
   height: 100%;
-  background-color: #ECECEC;
+  /*background-color: #ECECEC;*/
 }
 /* MAILCHIMP MODAL */
 .mailing_label {

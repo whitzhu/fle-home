@@ -9,7 +9,7 @@ tablet_1_btn.attr({fill: 'white'});
 tablet_1_in.attr({fill: 'white'});
 
 var tablet_1 = svg_pt.group(tablet_1_out, tablet_1_in, tablet_1_camera, tablet_1_btn);
-tablet_1.attr({transform: 't200, s2.2, r-90'});
+tablet_1.attr({transform: 't200, s2, r-90'});
 
 var gear_1_url = document.getElementById("gear_1").src;
 var gear_2_url = document.getElementById("gear_2").src;

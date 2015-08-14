@@ -6,7 +6,7 @@ var vv_2_url = document.getElementById("vv_2").src;//a hack to get the image url
 var vv_1 = svg_vv.image(vv_1_url, 60, -100, 700, 700);
 var vv_2 = svg_vv.image(vv_2_url, 60, -100, 700, 700);
 
-var moving_box = svg_vv.rect(0, -200, 400, 900).attr({id:'mv', fill: 'white', 'fill-opacity': 0.2, stroke: 'white', strokeWidth: 5});
+var moving_box = svg_vv.rect(0, -300, 400, 1100).attr({id:'mv', fill: 'white', 'fill-opacity': 0.2, stroke: 'white', strokeWidth: 5});
 
 var mask_1 = svg_vv.rect(-400, -200, 400, 800).attr({id:'mv', fill: '#fff'});
 var mask_2 = svg_vv.rect(400, -200, 400, 800).attr({id:'mv', fill: '#fff'});
