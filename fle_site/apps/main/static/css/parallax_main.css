@@ -287,12 +287,12 @@ main {
     border-radius: 3px;
     display:inline-block;
     color:#3E3E3F;
-    font-weight: 200 !important;
+    font-weight: 400;
     font-size:30px !important;
 
 }
 .bold{
-    font-weight:500 !important;
+    font-weight:700 !important;
     background: none;
     color:#3E3E3F;
 }
@@ -309,7 +309,7 @@ main {
 }
 .content-break {
     display: block;
-    font-family: "helvetica neue";
+    font-family: "Lato", sans-serif;
 }
 .content-intro{
     text-transform: uppercase;
@@ -350,7 +350,7 @@ main {
         padding: 0px 200px;
         font-size: 50px !important;
         font-weight: 500 !important;
-        font-family: "helvetica Neue";
+        font-family: "Lato", sans-serif;
         text-transform: uppercase;
     }
     .hsContent h2,
@@ -361,7 +361,7 @@ main {
         padding: 0px 200px;
         font-size: 30px;
         font-weight: 100;
-        font-family: "helvetica Neue";
+        font-family: "Lato", sans-serif;
         text-transform: initial;
         line-height: 1.5em;
     }
