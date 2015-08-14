@@ -244,6 +244,13 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
+@media (max-width: 630px) {
+  .mailing_label {
+    font-size: 22px !important;
+    font-weight: 100;
+  }
+}
+
 #mce-error-response{
   color: white;
 }
@@ -1029,7 +1036,7 @@ mark{
   color: white;
   text-align: center;
   position: relative;
-  font-size: 31px;
+  font-size: 32px;
   font-weight: 100;
 }
 .email_input_k::selection {
