@@ -27,7 +27,8 @@ section {
   min-width: 0;
 }
 #parallax_1 {
-  margin-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 #parallax_2 {
   margin-bottom: 10px;
@@ -116,76 +117,141 @@ textarea {
    Parallax Scroll
    ========================================================================== */
 body, html {
-	height: 100%;
-	min-height: 100%;
+    height: 100%;
+    min-height: 100%;
 }
 body {
-	
+    
 }
 .no-js {
-	padding-top: 106px;
+    padding-top: 106px;
 }
 h2 {
-	margin-top: 0;
+    margin-top: 0;
 }
 .loading {
-	background: url('../img/ico_loading.gif') no-repeat center center;
+    background: url('../img/ico_loading.gif') no-repeat center center;
 }
 .loaded section,
 .no-js section {
-	opacity: 1;
-	-webkit-transition: opacity 300ms ease-out;
-	-moz-transition: opacity 300ms ease-out;
-	transition: opacity 300ms ease-out;
+    opacity: 1;
+    -webkit-transition: opacity 300ms ease-out;
+    -moz-transition: opacity 300ms ease-out;
+    transition: opacity 300ms ease-out;
 }
 main {
-	overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+/*Mobile devices */
+
+.bcg {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+/* this aligns the content 150px up from the middle */
+
+.story-infographic {
+    margin-bottom: 40px;
+}
+.content-intro{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 0px 40px;
+    display: block;
+}
+
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+    .hsContent {
+        max-width: 80%;
+        margin: -150px auto 0 auto;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 8%;
+        text-align: center;
+        position: relative;
+        text-transform: lowercase;
+    }
+     .hsContent .short-h1 {
+        color: #fff;
+        font-size: 40px;
+        line-height: 30px;
+        margin-bottom: 12px;
+        font-weight: 200;
+    }
+       .hsContent h1{
+        color: #fff;
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: -40px;
+        font-weight: 200;
+    }
+    .hsContent h2  {
+        color: #fff;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 12px;
+        font-weight: 200;
+    }
+    .hsContent p {
+        color: #b2b2b2;
 }
 
 .bcg {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	height: 100%;
-	width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 /* Slide 1 */
 #slide-1 .bcg {background-image:url('../img/kickstarter/about/1.1.jpg')}
 
+
 /* Slide 2 */
 #slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
-#slide-w .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
-#slide-2 .hsContent h2{
-    font-size: 36px;
-    font-weight: 400;
-    max-width: 80%;
-    margin: auto;
-}
+
 /* Slide 3 */
+#slide-3{
+    height:400px;
+}
 #slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
 
 #slide-3 img{
-    width:220%;
+    width:200%;
 }
 
-/* Slide 3.2 */
-#slide-A .bcg {background-image:url('../img/kickstarter/about/bgdark.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
-#slide-A .hsContent h2{
-    max-width: 100%;
-    margin: auto;
-}  
+/* Slide A */
+#slide-A{
+    height:200px;
+}
+#slide-A .bcg {background-image:url('../img/kickstarter/about/bg3.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
-/* Slide 3.3 */
-#slide-B .bcg {background-image:url('../img/kickstarter/about/5.jpg'); }
+/* Slide w */
+#slide-w{
+    height:200px;
+}
+#slide-w .bcg {background-image:url('../img/kickstarter/about/bg_3.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
 /* Slide 4 */
 .curtainContainer {width: 100%; height: 100%; position: relative;}
 .curtainContainer .curtain {width: 300%; height: 1px; background-color: #000000; position: absolute; top: 25%; left: 0; opacity: 0}
 .curtainContainer .copy {position: absolute; bottom: 30%; left: 0; width: 100%; text-align: center;}
 
-#slide-4 .bcg {background-image:url('../img/kickstarter/about/p_last.jpg')}
+#slide-4{
+    height:400px;
+}
+#slide-4 .bcg {background-image:url('../img/kickstarter/about/collage.jpg')}
 
 /* Slide 5 */
 #slide-5 {position: relative;}
@@ -193,57 +259,161 @@ main {
 #slide-5 .bcg2 {background-image:url('../img/kickstarter/about/10.jpg'); position: fixed; bottom: 0; left: 0; opacity: 0; z-index: 1}
 #slide-5 .bcg3 {background: none; background-color: #010101; z-index: 2;  position: fixed; bottom: 0; left: 0; opacity: 0; z-index: 2}
 
+.bold{
+    font-weight: 700;
+    background: black;
+    padding: 3px 5px;
+    line-height: 1;
+    border-radius: 3px;
+    display:inline-block;
+    color:#fff;
+}
+
+#parallax_logo {
+    width:30%;
+}
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+#highlight {
+    background: rgba(255, 255, 255, 0.67);
+    padding: 30px 90px;
+    margin: -3px -5px;
+    line-height: 1;
+    border-radius: 3px;
+    display:inline-block;
+    color:#3E3E3F;
+    font-weight: 200 !important;
+    font-size:30px !important;
+
+}
+.bold{
+    font-weight:500 !important;
+    background: none;
+    color:#3E3E3F;
+}
+.hsContainer .plaxEl{
+    padding-top:15%;
+}
+.bcg{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.content-break {
+    display: block;
+    font-family: "helvetica neue";
+}
+.content-intro{
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 60px;
+    padding: 0px 40px;
+
+    display: block;
+}
 .hsContainer {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-	height: 310px;
-	overflow: hidden;
-	position: relative;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+    position: relative;
 }
 
 .hsContent {
-	max-width: 450px;
-	margin: -150px auto 0 auto;
-	display: table-cell;
-	vertical-align: middle;
-	color: #ebebeb;
-	padding: 0 8%;
-	text-align: center
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center;
 }
+    
     .copy h1 {
         color: #ffffff;
         font-size: 55px;
         line-height: 48px;
         margin-bottom: 50px;
     }
-	.hsContent h2,
-	.copy h2 {
-		color: #ffffff;
-		font-size: 65px;
-		line-height: 48px;
-		margin-bottom: 12px;
-	}
-	.hsContent p {
-		width: 80%;
+    .hsContent h1, .short-h1{
+        color: #ffffff;
+        line-height: 60px;
+        padding: 0px 200px;
+        font-size: 50px !important;
+        font-weight: 500 !important;
+        font-family: "helvetica Neue";
+        text-transform: uppercase;
+    }
+    .hsContent h2,
+    .copy h2 {
+        color: #ffffff;
+        line-height: 48px;
+        margin-bottom: 12px;
+        padding: 0px 200px;
+        font-size: 30px;
+        font-weight: 100;
+        font-family: "helvetica Neue";
+        text-transform: initial;
+        line-height: 1.5em;
+    }
+    .hsContent p {
+        width: 80%;
         margin: 0 auto;
         font-size: 30px;
         line-height: 1.5em;
-	}
-	.hsContent a {
-		color: #b2b2b2;
-		text-decoration: underline;
-	}
-	.bgBlack {
-		background-color: rgba(0,0,0,0.75);
-		padding: 3px 10px;
-	}
+    }
+    .hsContent a {
+        color: #b2b2b2;
+        text-decoration: underline;
+    }
+    .bgBlack {
+        background-color: rgba(0,0,0,0.75);
+        padding: 3px 10px;
+    }
 
-#slide-w .hsContent h2 {
-    font-size: 45px;
+    #parallax_1 {
+        margin-bottom: 10px;
+        margin-top: 0px;
+    }
+    #parallax_2 {
+      margin-bottom: 10px;
+    }
+    .story-infographic{
+        margin-top:80px;
+        margin-bottom: 80px;
+    }
+    #slide-2{
+        height:410px;
+    }
+    #slide-3, #slide-4 {
+        min-width: 768px;
+        height: 500px;
+    }
+    #slide-w, #slide-A{
+        height:310px;
+    }
+
+    #slide-w .hsContent h1{
+        line-height: 50px;
+    } 
+
+    #slide-4 .bcg {background-image:url('../img/kickstarter/about/final2.jpg')}
+    
+    #parallax_logo {
+    width:20%;
+    vertical-align: middle;
+    }
+
 }
-
-
 
 
 

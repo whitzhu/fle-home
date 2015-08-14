@@ -54,7 +54,9 @@
         if (isMobileWebkit) {
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
         }else{
+            $.getScript("{% static 'js/enquire.min.js' %}");
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}", function() {
+                // $(".parallax_or_mobile").load("{% static 'kickstarter/_kickstarter_portfolio.html' %}", function() {
                     $.getScript("{% static 'js/imagesloaded.js' %}", function() {
                         $.getScript("{% static 'js/skrollr.js' %}", function() {
                             $.getScript("{% static 'js/_main.js' %}");
@@ -125,11 +127,11 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <h2>Preconfigured Tablet</h2>
                             <p class="item-intro text-muted">An affordable Android tablet with enough power to run Kolibri smoothly</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/preconfig_tablet.jpg' %}" alt="">
                             <p class="center">We tested thoroughly on most affordable tablets to ensure when we start to order the tablet, our software will run snappily on it.</p>
                            <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
@@ -151,12 +153,12 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Content Curation</h2>
                             <p class="item-intro text-muted">A tool for sharing your knowledge with people in need</p>
-                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation_modal_img.png' %}" alt="">
+                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation.gif' %}" alt="">
                             <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Teachers and organizations have the freedom to combine content from various channels to create unique curriculum that caters to students’ specific needs. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
                             <p class="big"><mark>&#9733 Upload exclusively new content:  </mark>   There might be times when instructors have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, in order to share it with other instructors who may find it useful for their own students.</p>
                             <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Instructors also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p>
@@ -187,7 +189,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="my_col">
                         <div class="modal-body">
                             <h2>Peer to Peer Sync</h2>
                             <p class="item-intro text-muted">Discover new knowledge as you go, even without Internet connection</p>
