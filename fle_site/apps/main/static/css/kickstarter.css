@@ -120,7 +120,7 @@ fieldset[disabled] .btn-primary.active {
   background-color: white;
 }
 .btn-xl {
-  color: #2C6386;
+  color: #1a1a1a;
   background: rgb(138, 230, 92);
   border-color: rgb(138, 230, 92);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -129,17 +129,20 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 40px;
-  -webkit-transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
-  transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
+  -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
+  transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
 .btn-xl:hover {
-  background: #55C21E !important;
-  color: black !important;
-  -webkit-transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
-  transition: background 0.3s, color 0.3s, -moz-box-shadow 0.3s, -webkit-box-shadow 0.3s, box-shadow 0.3s;
-  /*-moz-box-shadow: inset 0 0 15px #000000;*/
-  /*-webkit-box-shadow: inset 0 0 15px #000000;*/
-  /*box-shadow: inset 0 0 15px #000000;*/
+  background: #459F19 !important;
+  border-color: #459F19 !important;
+  color: white !important;
+  -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
+  transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
+}
+.btn-xl:active {
+  -moz-box-shadow: inset 0 0 15px #000000;
+  -webkit-box-shadow: inset 0 0 15px #000000;
+  box-shadow: inset 0 0 15px #000000;
 }
 #sign-up {
   width: 100%;
@@ -172,7 +175,7 @@ fieldset[disabled] .btn-primary.active {
   clear: none !important;
   float: left;
   width: 220px;
-  margin-left: -2px;
+  margin-left: -1px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border-top-left-radius: 0;
@@ -231,7 +234,7 @@ fieldset[disabled] .btn-primary.active {
     clear: none !important;
     float: left;
     width: 250px;
-    margin-left: -2px;
+    margin-left: -1px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
@@ -324,14 +327,6 @@ fieldset[disabled] .btn-xl.active {
 
 /* HEADER */
 header {
-  /*background-image: url('../img/kickstarter/cover.jpg');
-  background-repeat: none;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;*/
   text-align: center;
   color: white;
 }
@@ -362,7 +357,7 @@ header .intro-text .intro-heading {
   margin-bottom: 7%;
 }
 .not-parallax-section {
-  padding: 200px 0;
+  padding: 100px 0;
 }
 .header-shadow {
   z-index: 2;
@@ -392,9 +387,6 @@ video#bgvid {
   position: relative;
   top: 20px;
   bottom: 0;
-  /*right: 0;*/
-  /*left: 50vw;
-  transform: translateX(50vw);*/
   background: url('../img/kickstarter/bgvid_poster.jpg') no-repeat;
   background-position: center center;
   margin: auto;
@@ -485,7 +477,6 @@ section {
 section h2.section-heading {
   font-size: 50px;
   margin-top: 0;
-  margin-bottom: 15px;
 }
 section h3.section-subheading {
   line-height: inherit;
@@ -610,7 +601,7 @@ section h3.section-subheading {
 .portfolio-barrier-box p,
 .portfolio-solution-box p {
   text-align: left;
-  line-height: 1.2em;
+  line-height: 1.6em;
   position: relative;
   top: 15px;
 }
@@ -630,7 +621,7 @@ section h3.section-subheading {
   margin-top: 5%;
   position:relative;
   left: -34px;
-  width: 230px;
+  width: 200px;
   box-shadow: inset 0px 1px 0px rgba(255,255,255,.3),
         inset 0px 0px 20px rgba(0,0,0,0.1),
         0px 1px 1px rgba(0,0,0,0.4);
@@ -662,6 +653,7 @@ section h3.section-subheading {
 .solution-title {
   margin-top: 8%;
 }
+/* END FEATURE RIBBONS */
 
 @media (max-width: 767px) {
   .portfolio-barrier-box {
@@ -854,6 +846,7 @@ section h3.section-subheading {
 }
 #about h2.section-heading{
   color: #fff;
+  padding-top: 50px;
 }
 #about .text-muted {
   color: #fff;
@@ -902,33 +895,31 @@ section h3.section-subheading {
     text-align: center !important;
   }
 }
-.team-member {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.team-member img {
-  margin: 0 auto;
-  border: 7px solid white;
-}
-.team-member h4 {
-  margin-top: 25px;
-  margin-bottom: 0;
-  text-transform: none;
-}
-.team-member p {
-  margin-top: 0;
-}
-aside.clients img {
-  margin: 50px auto;
-}
+
+/* LAST CALL TO ACTION */
 section#contact {
-  background: #083435;
-  margin-bottom: -60px;
+  background: url('../img/kickstarter/cover.jpg');
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-bottom: -44px;
+  padding: 0;
+  height: 100vh;
 }
 section#contact .section-heading {
-  color: rgb(138, 230, 92);
+  color: white;
+  margin-bottom: 10px;
 }
-
+section#contact #overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: black;
+  opacity: 0.5;
+  z-index: 0
+}
 section#contact .form-control:focus {
   border-color: #fed136;
   box-shadow: none;
@@ -937,6 +928,36 @@ section#contact .form-control:focus {
 section#contact .text-danger {
   color: #e74c3c;
 }
+#contact .text-center,
+#contact .text-muted {
+  position: relative;
+  top: 13vh;
+  z-index: 1;
+}
+#contact .text-muted {
+  margin-top: 20px;
+}
+section#contact .bridge-photo,
+section#contact .section-heading,
+#footer-mailchimp {
+  z-index: 1;
+}
+section#contact img {
+  max-width: 80%;
+  min-width: 300px;
+  position: relative;
+  top: 5vh;
+  z-index: 0;
+}
+@media (max-width: 767px) , (max-height: 640px) {
+  section#contact img {
+    display: none;
+  }
+  #footer-mailchimp {
+    bottom: -25vh !important;
+  }
+}
+
 footer {
   padding: 25px 0;
   text-align: center;
@@ -1135,7 +1156,7 @@ mark{
 /* MAILCHIMP MODAL */
 .mailing_label {
   text-transform: none;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: white;
   text-align: center;
   position: relative;
@@ -1147,36 +1168,36 @@ mark{
 }
 #footer-mailchimp {
   position: relative;
-  top: 100px;
+  bottom: -7vh;
 }
 
 /* BACK TO TOP BUTTON */
 .back-to-top {
-    position: fixed;
-    bottom: 0.5em;
-    right: 10px;
-    text-decoration: none;
-    color: #fed136;
-    background-color: #000000;
-    font-size: 20px;
-    display: none;
-    border: 4px solid black;
-    padding: 13px 0 0 16px;
-    display: none;
-    z-index: 999;
-    border-radius: 100%;
-    width: 60px;
-    height: 60px;
-    -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-    transition: border 0.3s, background 0.3s, color 0.3s;
+  position: fixed;
+  bottom: 0.5em;
+  right: 10px;
+  text-decoration: none;
+  color: #fed136;
+  background-color: #000000;
+  font-size: 20px;
+  display: none;
+  border: 4px solid black;
+  padding: 13px 0 0 16px;
+  display: none;
+  z-index: 999;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+  transition: border 0.3s, background 0.3s, color 0.3s;
 }
 
 .back-to-top:hover {    
-    background-color: #fed136;
-    color: black;
-    border: 4px solid black;
-    -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-    transition: border 0.3s, background 0.3s, color 0.3s;
+  background-color: #fed136;
+  color: black;
+  border: 4px solid black;
+  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
+  transition: border 0.3s, background 0.3s, color 0.3s;
 }
 
 /* Vectorized Video */
