@@ -420,18 +420,6 @@ video#bgvid {
     top: -8vw;
   }
 }
-/*@media (max-height: 500px) and (max-width: 700px) {
-  .email_input_k {
-    margin-right: -1px;
-    width: 300px;
-  }
-  .email_input_k, .email_submit_k {
-    padding: 10px;
-  }
-  .e1 {
-    margin-top: 2vw;
-  }
-}*/
 /* END HEADER */
 
 
@@ -1057,4 +1045,16 @@ mark{
     position: relative;
     top: 58vw;
   }
+}
+
+#bgvid-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-35px,-35px);
+  visibility: hidden;
 }
