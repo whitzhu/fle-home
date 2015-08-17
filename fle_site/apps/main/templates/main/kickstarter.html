@@ -54,7 +54,7 @@
         if (isMobileWebkit) {
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
         }else{
-            $.getScript("{% static 'js/enquire.min.js' %}");
+            // $.getScript("{% static 'js/enquire.min.js' %}");
             $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}", function() {
                 // $(".parallax_or_mobile").load("{% static 'kickstarter/_kickstarter_portfolio.html' %}", function() {
                     $.getScript("{% static 'js/imagesloaded.js' %}", function() {
