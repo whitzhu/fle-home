@@ -274,11 +274,6 @@ main {
 }
 
 
-
-
-/* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
 #highlight {
     background: rgba(255, 255, 255, 0.67);
     padding: 30px 90px;
@@ -291,6 +286,9 @@ main {
     font-size:30px !important;
 
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 .bold{
     font-weight:700 !important;
     background: none;
