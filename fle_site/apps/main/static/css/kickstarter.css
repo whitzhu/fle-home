@@ -1182,6 +1182,7 @@ mark{
 #footer-mailchimp {
   position: relative;
   bottom: -7vh;
+  margin-bottom: 50px;
 }
 
 /* BACK TO TOP BUTTON */
@@ -1247,11 +1248,19 @@ mark{
 }
 
 .social_btns {
-  margin-top: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #E6B8E6;
   /*position: relative;*/
 }
 .social_btns div{
   display:inline-block;
-  margin: 3vw;
   color: #8670A1;
+}
+.social_btns div:hover{
+  color: #FED136;
+}
+.space_taker {
+  width: 10vw;
+  max-width: 100px;
 }
