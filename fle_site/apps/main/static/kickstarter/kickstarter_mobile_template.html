@@ -134,6 +134,9 @@
         font-weight: 100;
         text-align: center;
     }
+    .social_btns div {
+        margin: 0;
+    }
 </STYLE>
 <script>
     $(function() {
@@ -149,15 +152,15 @@
         function mobile_resize(highlight, p_logo, bgvid_btn, contact){
             var screen_h = screen.height;
             $('#kickstarter-header').css('height', screen_h);
-            $('.header-shadow').css('height', screen_h);
+            $('.header-shadow').css('height', screen_h*0.6);
             $('.bgvid_container').css('height', screen_h);
             $("#p_2").css('height', screen_h*0.9);
             $("#highlight").css('top', screen_h*highlight);
             $("#p_4").css('height', screen_h);
             $("#p_logo").css('top', screen_h*p_logo);
             $("#bgvid-btn").css('top', screen_h*bgvid_btn);
-            $("#header-mailchimp").css('top', screen_h*-0.4);
-            $('section#contact').css('height', screen_h*contact);
+            // $("#header-mailchimp").css('top', screen_h*-0.4);
+            // $('section#contact').css('height', screen_h*contact);
             $('iframe#footer-mailchimp').css('bottom', screen_h*-0.1);
         }
 

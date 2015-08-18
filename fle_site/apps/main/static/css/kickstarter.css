@@ -908,7 +908,7 @@ section h3.section-subheading {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  background: url('../img/kickstarter/cover.jpg');
+  /*background: url('../img/kickstarter/cover.jpg');*/
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -916,7 +916,7 @@ section#contact {
   -o-background-size: cover;
   margin-bottom: -44px;
   padding: 0;
-  height: 93vh;
+  height: 100%;
 }
 section#contact .section-heading {
   color: white;
@@ -939,11 +939,13 @@ section#contact .text-danger {
 #contact .text-muted {
   margin-top: 20px;
   font-family: "Montserrat";
+  color: #8670A1;
 }
 section#contact .bridge-photo,
 section#contact .section-heading,
 #footer-mailchimp {
   z-index: 1;
+  color: #8670A1;
 }
 section#contact img {
   max-width: 80%;
@@ -955,9 +957,6 @@ section#contact img {
 @media (max-width: 767px) , (max-height: 640px) {
   section#contact img {
     display: none;
-  }
-  iframe#footer-mailchimp {
-    bottom: -25vh;
   }
 }
 
@@ -1165,7 +1164,7 @@ mark{
   position: relative;
   font-size: 21px;
   font-weight: 100;
-  /*top: 40px;*/
+  z-index: 3;
 }
 /*.mailing_label2 {
   font-family: "Open Sans";
@@ -1245,4 +1244,14 @@ mark{
   left: 50vw;
   transform: translate(-35px,-35px);
   visibility: hidden;
+}
+
+.social_btns {
+  margin-top: 100px;
+  /*position: relative;*/
+}
+.social_btns div{
+  display:inline-block;
+  margin: 3vw;
+  color: #8670A1;
 }

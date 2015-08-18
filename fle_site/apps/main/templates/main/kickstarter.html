@@ -36,6 +36,7 @@
             </div>
         </div>
         <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
+        <h2 class="mailing_label">STAY UPDATED FOR THE SEPTEMBER LAUNCH</h2>
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
             <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
@@ -91,9 +92,20 @@
             </div>
             <h3 class="mailing_label text-muted">JOIN OUR KICKSTARTER MAILING LIST!</h3>
             <br>
-            <div class="bridge-photo">
-                <img src="{% static 'img/kickstarter/bridge-photo.png' %}">
-            </div>
+
+            <center class="social_btns">
+                <!-- <div class="fb-like" data-href="https://www.facebook.com/learningequality" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div> -->
+                <!-- <a href="https://www.facebook.com/sharer/sharer.php?app_id=837442399601941&sdk=joey&u=https%3A%2F%2Fwww.facebook.com%2Flearningequality&display=popup&ref=plugin&src=share_button" target="_top">eee</a> -->
+
+                <a class="fb_share_btn" href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?app_id=837442399601941&sdk=joey&u=https%3A%2F%2Fwww.facebook.com%2Flearningequality&display=popup&ref=plugin&src=share_button');"><div><span class="fa-stack fa-4x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
+
+                <a class="twitter_follow_btn" href="JavaScript:newPopup('https://twitter.com/intent/follow?original_referer=https%3A%2F%2Flearningequality.org%2Fka-lite%2F&ref_src=twsrc%5Etfw&screen_name=LearnEQ&tw_p=followbutton');"><div><span class="fa-stack fa-4x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+
+                <a class="google_plus_btn" href="JavaScript:newPopup('https://twitter.com/LearnEQ');"><div><span class="fa-stack fa-4x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></div></a>
+
+                <!-- <a href="https://twitter.com/LearnEQ" class="twitter-follow-button" data-show-count="false" data-lang="en"></a> -->
+            </center>
+
             <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
                 <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
             </iframe>
@@ -260,6 +272,14 @@
     <script>
         new WOW().init();
 
+    </script>
+
+     <!-- Popup window code -->
+    <script type="text/javascript">
+        function newPopup(url) {
+            popupWindow = window.open(
+                url,'popUpWindow','height=500,width=600,left='+(window.screen.width/2-300)+'px,top='+(window.screen.height/2-250)+'px,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+        }
     </script>
 </div>
 
