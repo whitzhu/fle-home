@@ -667,6 +667,21 @@ section h3.section-subheading {
 }
 /* END FEATURE RIBBONS */
 
+@media (max-width: 991px) {
+  .portfolio-barrier-box,
+  .portfolio-solution-box {
+    position: relative;
+    top: 30px;
+    padding: 10px 0px;
+    right: 5px;
+  }
+  #portfolio .portfolio-item .portfolio-caption {
+    height: 100%;
+  }
+  .portfolio-solution-box p {
+    margin-bottom: 20px !important;
+  }
+}
 @media (max-width: 767px) {
   .portfolio-barrier-box {
     margin-bottom: 25px;
@@ -917,7 +932,7 @@ section h3.section-subheading {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  background: url('../img/kickstarter/cover.jpg');
+  /*background: url('../img/kickstarter/cover.jpg');*/
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -925,7 +940,7 @@ section#contact {
   -o-background-size: cover;
   margin-bottom: -44px;
   padding: 0;
-  height: 93vh;
+  height: 100%;
 }
 section#contact .section-heading {
   color: white;
@@ -948,11 +963,13 @@ section#contact .text-danger {
 #contact .text-muted {
   margin-top: 20px;
   font-family: "Montserrat";
+  color: #8670A1;
 }
 section#contact .bridge-photo,
 section#contact .section-heading,
 #footer-mailchimp {
   z-index: 1;
+  color: #8670A1;
 }
 section#contact img {
   max-width: 80%;
@@ -964,9 +981,6 @@ section#contact img {
 @media (max-width: 767px) , (max-height: 640px) {
   section#contact img {
     display: none;
-  }
-  iframe#footer-mailchimp {
-    bottom: -25vh;
   }
 }
 
@@ -1174,7 +1188,7 @@ mark{
   position: relative;
   font-size: 21px;
   font-weight: 100;
-  /*top: 40px;*/
+  z-index: 3;
 }
 /*.mailing_label2 {
   font-family: "Open Sans";
@@ -1192,6 +1206,7 @@ mark{
 #footer-mailchimp {
   position: relative;
   bottom: -7vh;
+  margin-bottom: 50px;
 }
 
 /* BACK TO TOP BUTTON */
@@ -1254,4 +1269,22 @@ mark{
   left: 50vw;
   transform: translate(-35px,-35px);
   visibility: hidden;
+}
+
+.social_btns {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #E6B8E6;
+  /*position: relative;*/
+}
+.social_btns div{
+  display:inline-block;
+  color: #8670A1;
+}
+.social_btns div:hover{
+  color: #FED136;
+}
+.space_taker {
+  width: 10vw;
+  max-width: 100px;
 }
