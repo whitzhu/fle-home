@@ -160,6 +160,7 @@ main {
     font-size: 20px;
     padding: 0px 40px;
     display: block;
+    font-family: "Montserrat";
 }
 
 .hsContainer {
@@ -307,14 +308,14 @@ main {
 }
 .content-break {
     display: block;
-    font-family: "Lato", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .content-intro{
     text-transform: uppercase;
     font-size: 50px;
     line-height: 60px;
     padding: 0px 40px;
-
+    font-family: "Montserrat";
     display: block;
 }
 .hsContainer {
@@ -348,7 +349,7 @@ main {
         padding: 0px 200px;
         font-size: 50px !important;
         font-weight: 500 !important;
-        font-family: "Lato", sans-serif;
+        font-family: "Montserrat", sans-serif;
         text-transform: uppercase;
     }
     .hsContent h2,
@@ -359,7 +360,7 @@ main {
         padding: 0px 200px;
         font-size: 30px;
         font-weight: 100;
-        font-family: "Lato", sans-serif;
+        font-family: "Open Sans", sans-serif;
         text-transform: initial;
         line-height: 1.5em;
     }

@@ -1,6 +1,6 @@
 body {
   overflow-x: hidden;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin: 0;
 }
 #footer {
@@ -62,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -79,7 +79,7 @@ h6 {
   color: white;
   background-color: #fed136;
   border-color: #fed136;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -123,7 +123,7 @@ fieldset[disabled] .btn-primary.active {
   color: #1a1a1a;
   background: rgb(138, 230, 92);
   border-color: rgb(138, 230, 92);
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
   border-radius: 3px;
@@ -159,7 +159,7 @@ fieldset[disabled] .btn-primary.active {
   float: left;
   width: 240px;
   background-color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-weight: 700;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -219,7 +219,7 @@ fieldset[disabled] .btn-primary.active {
     float: left;
     width: 350px;
     background-color: white;
-    font-family: "Lato", sans-serif;
+    font-family: "Open Sans";
     font-weight: 700;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -264,7 +264,7 @@ fieldset[disabled] .btn-primary.active {
   /*width: 100%;*/
   clear:both;
   text-align: center;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-weight: 100;
   font-size: 18px;
   margin-top: 100px;
@@ -336,14 +336,14 @@ header .intro-text {
   padding-bottom: 50px;
 }
 header .intro-text .intro-lead-in {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   font-style: italic;
   font-size: 25px;
   line-height: 22px;
   margin-bottom: 25px;
 }
 header .intro-text .intro-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 900;
   font-size: 55px;
@@ -353,6 +353,9 @@ header .intro-text .intro-heading {
   position: relative;
   z-index: 3;
   /*bottom: 60px;*/
+}
+.intro-heading span {
+  font-size: 50px;
 }
 .kickstarter-about-title {
   margin-bottom: 7%;
@@ -393,6 +396,18 @@ video#bgvid {
   min-height: 100%;
   min-width: 100%;
 }
+#to {
+  font-size: 29px;
+  position: relative;
+  left: 10px;
+  font-family: "Montserrat";
+}
+#bridge {
+  font-size: 82px;
+  font-family: "Montserrat";
+  position: relative;
+  top: 5px;
+}
 
 @media (min-width: 768px) {
   .header-shadow img {
@@ -403,10 +418,10 @@ video#bgvid {
     padding: 140px 0 0 0;
   }
   header .intro-text .intro-heading {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 55px;
+  font-size: 40px;
   line-height: 56px;
   text-shadow: -3px 3px #000000;
   /*margin-bottom: 50px;*/
@@ -475,7 +490,7 @@ section h2.section-heading {
 section h3.section-subheading {
   line-height: inherit;
   font-size: 1.2em;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: none;
   font-style: normal;
   font-weight: 300;
@@ -544,7 +559,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
   margin: 10px 0 0 0;
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding-bottom: 5px;
 }
 #portfolio .portfolio-item .portfolio-caption p {
@@ -574,7 +589,7 @@ section h3.section-subheading {
 }
 .barrier-title span,
 .solution-title span {
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat";
 }
 .barrier-title i,
 .barrier-title span,
@@ -603,7 +618,7 @@ section h3.section-subheading {
 .portfolio-caption .text-muted {
   color: #3F3F3F;
   font-style: normal !important;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   padding-bottom: 5px;
   position: relative;
   top: -7px;
@@ -755,7 +770,7 @@ section h3.section-subheading {
 .timeline .timeline-body > p,
 .timeline .timeline-body > ul {
   margin-bottom: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
 }
 .timeline li div p a {
   font-weight: bold;
@@ -848,12 +863,12 @@ section h3.section-subheading {
   font-weight: 300;
   font-size:1.5em;
   line-height: 1.2;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans';
 }
 #about .timeline-individual-heading{
   margin-top: 2%;
   font-size: 2.5em;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans';
   font-weight: 300;
   letter-spacing: -0.07em
 }
@@ -923,6 +938,7 @@ section#contact .text-danger {
 }
 #contact .text-muted {
   margin-top: 20px;
+  font-family: "Montserrat";
 }
 section#contact .bridge-photo,
 section#contact .section-heading,
@@ -951,14 +967,14 @@ footer {
 }
 footer span.copyright {
   line-height: 40px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   text-transform: none;
 }
 footer ul.quicklinks {
   margin-bottom: 0;
   line-height: 40px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   text-transform: uppercase;
   text-transform: none;
 }
@@ -1009,7 +1025,7 @@ ul.social-buttons li a:active {
 }
 .portfolio-modal .modal-content p.item-intro {
   margin: 20px 0 30px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   font-style: italic;
   font-size: 16px;
 }
@@ -1132,7 +1148,7 @@ mark{
   margin: 0;
   text-align: justify;
   font-size: 16px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   line-height: 1.4;
 }
 .colored-container {
@@ -1143,13 +1159,24 @@ mark{
 /* MAILCHIMP MODAL */
 .mailing_label {
   text-transform: none;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans";
   color: white;
   text-align: center;
   position: relative;
-  font-size: 32px;
+  font-size: 21px;
   font-weight: 100;
+  /*top: 40px;*/
 }
+/*.mailing_label2 {
+  font-family: "Open Sans";
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+  text-transform: none;
+  font-weight: 100;
+  top: 17px;
+}*/
 .email_input_k::selection {
   background: #55C21E;
 }

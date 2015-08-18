@@ -85,7 +85,7 @@ a{
 .kolibri-landing-detail div p {
 	font-size: 20px;
     position: relative;
-    max-width: 250px;
+    max-width: 260px;
     left: 20px;
     top: 10px;
     float: right;
@@ -95,6 +95,35 @@ a{
 	position: relative;
 	top: -10px;
 }
+#coming-soon {
+	position: relative;
+    top: -60px;
+    margin: auto;
+    text-align: center;
+    color: white;
+	font-size: 25px;
+}
+/*#kolibri-header:after {
+	content: "wow";
+	color: white;
+	position: relative;
+	bottom: 0;
+}
+#learnmore {
+	color: white;
+    border: 2px solid white;
+    border-radius: 100%;
+    width: 150px;
+    margin: auto;
+    height: 150px;
+    position: relative;
+
+    top: 75px;
+    z-index: 0;
+}
+#learnmore span {
+	color: white;
+}*/
 #kolibri-learn-button {
 	text-decoration: none;
 }
@@ -107,23 +136,25 @@ a{
     border-radius: 11px;
     letter-spacing: 0.05em;
     display: block;
-    width: 300px;
+    width: 250px;
     margin: 0 auto 50px auto;
     position: relative;
     top: -50px;
-    -webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
-    transition: border 0.5s, padding 0.5s, margin 0.5s;
+    left: 0;
+    -webkit-transition: border 0.3s, padding 0.3s, margin 0.3s, left 0.3s;
+    transition: border 0.3s, padding 0.3s, margin 0.3s, left 0.3s;
 }
 .kolibri-learnmore-button:hover {
-	border: 3px solid white;
-	padding: 13px 70px;
+	border: 2px solid white;
+	padding: 12px 72px;
 	margin: 0 auto 50px auto;
 	margin-top: -0.07%;
+	left: -2px;
 	background: transparent;
 	color: white;
 	text-decoration: none;
-	-webkit-transition: border 0.5s, padding 0.5s, margin 0.5s;
-	transition: border 0.5s, padding 0.5s, margin 0.5s;
+	-webkit-transition: border 0.3s, padding 0.3s, margin 0.3s, left 0.3s;
+	transition: border 0.3s, padding 0.3s, margin 0.3s, left 0.3s;
 }
 .kolibri-header-content {
 	display: block;
@@ -149,6 +180,7 @@ a{
 	background-size: cover;
 	padding-top:17%;
 	padding-bottom:12%;
+	min-height: 80vh;
 }
 
 
@@ -263,10 +295,6 @@ a{
 	}
 	.kolibri-landing-detail {
 		top: -150px;
-	}
-	.kolibri-learnmore-button {
-		position: relative;
-		top: -120px	;
 	}
 }
 @media (max-width: 991px) {
