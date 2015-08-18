@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.db import models
 
-from .models import RedirectRule, RedirectLogEntry
+from .models import RedirectRule, RedirectLogEntry, RedirectVariable
 
 
 class RedirectRuleAdmin(admin.ModelAdmin):
@@ -32,3 +32,10 @@ class RedirectLogEntryAdmin(admin.ModelAdmin):
     referrer.allow_tags = True
 
 admin.site.register(RedirectLogEntry, RedirectLogEntryAdmin)
+
+
+class RedirectVariableAdmin(admin.ModelAdmin):
+    list_display = ('name', 'value')
+    list_editable = ('value',)
+
+admin.site.register(RedirectVariable, RedirectVariableAdmin)

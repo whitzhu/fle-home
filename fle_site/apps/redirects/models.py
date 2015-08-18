@@ -44,6 +44,7 @@ class RedirectLogEntry(models.Model):
     referer = models.TextField(blank=True)
     user_agent = models.TextField(blank=True)
     user = models.ForeignKey(User, blank=True, null=True)
+    url = models.URLField(blank=True)
 
     class Meta:
         verbose_name_plural = "Redirect log entries"
@@ -63,3 +64,9 @@ class RedirectLogEntry(models.Model):
             if request.user.is_authenticated():
                 self.user = request.user
         super(RedirectLogEntry, self).save(*args, **kwargs)
+
+
+class RedirectVariable(models.Model):
+    name = models.CharField(max_length=50, primary_key=True)
+    value = models.CharField(max_length=150)
+
