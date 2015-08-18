@@ -271,7 +271,31 @@ main {
 }
 
 #parallax_logo {
-    width:30%;
+    width: 35%;
+    vertical-align: middle;
+    position: relative;
+    top: -25vh;
+}
+#kolibri-logo-label {
+    color: white;
+    position: relative;
+    vertical-align: middle;
+    top: -30vh;
+    font-family: "Open Sans";
+    letter-spacing: 0.02em;
+    font-weight: 100;
+    font-size: 90px;
+}
+#kolibri-one-liner {
+    font-size: 23px;
+    text-transform: none;
+    font-weight: 400;
+    max-width: 53%;
+    margin: auto;
+    position: relative;
+    line-height: 1.5em;
+    top: -30vh;
+    font-family: "Open Sans";
 }
 
 
@@ -312,8 +336,8 @@ main {
 }
 .content-intro{
     text-transform: uppercase;
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 55px;
+    line-height: 100px;
     padding: 0px 40px;
     font-family: "Montserrat";
     display: block;
@@ -345,7 +369,7 @@ main {
     }
     .hsContent h1, .short-h1{
         color: #ffffff;
-        line-height: 60px;
+        line-height: 45px;
         padding: 0px 200px;
         font-size: 50px !important;
         font-weight: 500 !important;
@@ -408,8 +432,11 @@ main {
     #slide-4 .bcg {background-image:url('../img/kickstarter/about/final2.jpg')}
     
     #parallax_logo {
-    width:20%;
-    vertical-align: middle;
+        width: 35%;
+        vertical-align: middle;
+        opacity: 0.8;
+        position: relative;
+        top: -25vh;
     }
 
 }

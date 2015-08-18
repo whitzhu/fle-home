@@ -403,7 +403,7 @@ video#bgvid {
   font-family: "Montserrat";
 }
 #bridge {
-  font-size: 82px;
+  font-size: 75px;
   font-family: "Montserrat";
   position: relative;
   top: 5px;
@@ -420,10 +420,10 @@ video#bgvid {
   header .intro-text .intro-heading {
   font-family: "Montserrat";
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 40px;
   line-height: 56px;
-  text-shadow: -3px 3px #000000;
+  text-shadow: -2px 2px #000000;
   /*margin-bottom: 50px;*/
   position: relative;
   z-index: 3;
@@ -861,8 +861,8 @@ section h3.section-subheading {
 #about .text-muted {
   color: #fff;
   font-weight: 300;
-  font-size:1.5em;
-  line-height: 1.2;
+  font-size: 1.3em;
+  line-height: 1.35;
   font-family: 'Open Sans';
 }
 #about .timeline-individual-heading{
