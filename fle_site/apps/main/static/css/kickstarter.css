@@ -494,7 +494,8 @@ section h3.section-subheading {
   text-transform: none;
   font-style: normal;
   font-weight: 300;
-  margin-bottom: 75px;
+  max-width: 750px;
+  margin: 0 auto 75px auto;
 }
 @media (min-width: 768px) {
   section {
@@ -549,16 +550,17 @@ section h3.section-subheading {
   margin: 0;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  max-width: 500px;
+  /*max-width: 500px;*/
   background-color: white;
   text-align: center;
   padding: 15px 15px 35px 15px;
   cursor: pointer;
   margin: auto;
+  height: 460px;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   font-size: 1.2em;
   padding-bottom: 5px;
 }
@@ -606,7 +608,7 @@ section h3.section-subheading {
 }
 .portfolio-barrier-box,
 .portfolio-solution-box {
-  padding: 0 11px;
+  padding: 10px 35px;
 }
 .portfolio-barrier-box p,
 .portfolio-solution-box p {
@@ -661,7 +663,7 @@ section h3.section-subheading {
   border-width: .5em 0 0 .5em;
 }
 .solution-title {
-  margin-top: 8%;
+  margin-top: 4%;
 }
 /* END FEATURE RIBBONS */
 
@@ -673,6 +675,7 @@ section h3.section-subheading {
     display: none;
   }
 }
+
 .timeline {
   list-style: none;
   padding: 0;
