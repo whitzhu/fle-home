@@ -3,9 +3,17 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
 }
+.modal {
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+}
+.modal-body {
+  padding: 0px 100px;
+}
 #footer {
-    position: relative;
-    bottom: 0;
+  position: relative;
+  bottom: 0;
 }
 .text-muted {
   color: #141414;
