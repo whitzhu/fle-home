@@ -494,7 +494,8 @@ section h3.section-subheading {
   text-transform: none;
   font-style: normal;
   font-weight: 300;
-  margin-bottom: 75px;
+  max-width: 750px;
+  margin: 0 auto 75px auto;
 }
 @media (min-width: 768px) {
   section {
@@ -549,16 +550,17 @@ section h3.section-subheading {
   margin: 0;
 }
 #portfolio .portfolio-item .portfolio-caption {
-  max-width: 500px;
+  /*max-width: 500px;*/
   background-color: white;
   text-align: center;
   padding: 15px 15px 35px 15px;
   cursor: pointer;
   margin: auto;
+  height: 460px;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
   font-size: 1.2em;
   padding-bottom: 5px;
 }
@@ -606,7 +608,7 @@ section h3.section-subheading {
 }
 .portfolio-barrier-box,
 .portfolio-solution-box {
-  padding: 0 11px;
+  padding: 10px 35px;
 }
 .portfolio-barrier-box p,
 .portfolio-solution-box p {
@@ -661,10 +663,25 @@ section h3.section-subheading {
   border-width: .5em 0 0 .5em;
 }
 .solution-title {
-  margin-top: 8%;
+  margin-top: 4%;
 }
 /* END FEATURE RIBBONS */
 
+@media (max-width: 991px) {
+  .portfolio-barrier-box,
+  .portfolio-solution-box {
+    position: relative;
+    top: 30px;
+    padding: 10px 0px;
+    right: 5px;
+  }
+  #portfolio .portfolio-item .portfolio-caption {
+    height: 100%;
+  }
+  .portfolio-solution-box p {
+    margin-bottom: 20px !important;
+  }
+}
 @media (max-width: 767px) {
   .portfolio-barrier-box {
     margin-bottom: 25px;
@@ -672,7 +689,11 @@ section h3.section-subheading {
   .portfolio-caption:before {
     display: none;
   }
+  #portfolio .portfolio-item .portfolio-caption {
+    height: 100%;
+  }
 }
+
 .timeline {
   list-style: none;
   padding: 0;
@@ -849,6 +870,9 @@ section h3.section-subheading {
   .timeline > li.timeline-inverted > .timeline-panel {
     padding: 0 100px 20px 20px;
   }
+}
+.ka-lite-header {
+  text-align: center;
 }
 #about {
   background: #8670A1;
@@ -1191,7 +1215,7 @@ mark{
   bottom: 0.5em;
   right: 10px;
   text-decoration: none;
-  color: #fed136;
+  color: #8ae65c;
   background-color: #000000;
   font-size: 20px;
   display: none;
@@ -1202,16 +1226,16 @@ mark{
   border-radius: 100%;
   width: 60px;
   height: 60px;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
+  -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
+  transition: border 0.2s, background 0.2s, color 0.2s;
 }
 
 .back-to-top:hover {    
-  background-color: #fed136;
+  background-color: #8ae65c;
   color: black;
   border: 4px solid black;
-  -webkit-transition: border 0.3s, background 0.3s, color 0.3s;
-  transition: border 0.3s, background 0.3s, color 0.3s;
+  -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
+  transition: border 0.2s, background 0.2s, color 0.2s;
 }
 
 /* Vectorized Video */
