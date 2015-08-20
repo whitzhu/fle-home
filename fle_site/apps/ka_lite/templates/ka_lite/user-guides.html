@@ -37,14 +37,27 @@
                                         <td class="col-xs-4">
                                             {{ g.title }}
                                         </td>
-                                        <td class="col-xs-4 center-text">
-                                            <a href="{% url 'user_guide_detail' g.slug %}"><span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
-                                        </td>
-                                        <td class="col-xs-4">
-                                            <a href="{{ g.get_download_url }}" class="pull-right">
-                                                <span class="glyphicon glyphicon-file"></span>&nbsp;PDF
-                                            </a>
-                                        </td>
+                                        {% if g.is_google_doc %}
+                                            <td class="col-xs-4 center-text">
+                                                <a href="{% url 'user_guide_detail' g.slug %}">
+                                                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+                                            </td>
+                                            <td class="col-xs-4">
+                                                <a href="{{ g.get_download_url }}" class="pull-right">
+                                                    <span class="glyphicon glyphicon-file"></span>&nbsp;PDF
+                                                </a>
+                                            </td>
+                                        {% else %}
+                                            <td class="col-xs-4 center-text">
+                                                <a href="{{ g.external_url }}">
+                                                <span class="glyphicon glyphicon-eye-open"></span>&nbsp;View Online</a>
+                                            </td>
+                                            <td class="col-xs-4">
+                                                <span class="pull-right unavailable">
+                                                    <s>&nbsp;PDF</s>
+                                                </span>
+                                            </td>
+                                        {% endif %}
                                     </tr>
                                 {% endfor %}
                             </tbody>

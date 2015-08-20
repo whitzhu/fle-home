@@ -1,0 +1,394 @@
+{% extends 'ka_lite/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Home{% endblock title %}
+
+{% block headcss %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock headcss %}
+
+{% block bodycontents %}
+
+<div class="container-fluid">
+
+	<div id="fle-header">
+<!-- ============= LANDING SCREEN ================ -->
+		<div class="row landing-screen">
+			<div class="container">
+				<div class="container col-xs-8 col-sm-8 col-md-9 col-lg-8 landing-box">
+					<span id="landing-header">HELPING MAKE UNIVERSAL EDUCATION A REALITY</span>
+					<span id="landing-description">We are bridging the global digital divide by bringing the online learning revolution offline.</span>
+				</div>
+				<div class="landing-buttons ">
+					<a href="#learn-more"><button type="button" class="btn btn-success">LEARN MORE</button></a>
+					<a href="#involved"><button type="button" class="nav btn btn-success">GET INVOLVED</button></a>
+				</div>
+			</div>
+		</div>
+
+<!-- ============= MISSION SCREEN ================ -->
+		<div class="row mission-screen">
+			<div id="learn-more" class="col-xs-10 col-sm-8 col-md-8 col-lg-5 mission-box">
+				<h2 class="mission-header darkblue">Our Mission</h2>
+				<h4 class="mission-state bold">At <a href="{% url 'mission' %}"><span class="lightblue">Learning Equality</span></a>, we are committed to enabling universal access to high quality open educational resources, and creating tools that empower communities to author and share their own content.</h4>
+				<a href="{% url 'mission' %}"><button type="submit" class="btn form-button btn-success" id="about-us">MORE ABOUT US</button></a>
+				<!--<h5 class="bold">Stay connected with our journey.</h5>
+
+				<form role="form">
+					<input type="email" class="form-control" id="exampleInputEmail" placeholder="me@email.com">
+					<button type="submit" class="btn form-button btn-success">SUBSCRIBE</button>
+				</form>-->
+
+			</div>
+		</div>
+	</div>
+
+<!-- ============= INNER NAV BAR ============= -->
+	<nav class="navbar navbar-default affix-top" id="fle-inner-nav" role="navigation" data-spy="affix" data-offset-top="625">
+	  <div class="container-fluid">
+	      <div class="container">
+	        <!-- Brand and toggle get grouped for better mobile display -->
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ka-inner-nav-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="le navbar-brand scroll-to-top" href="#"><!--<img src="{% static 'img/fle-logo.png' %}" alt="Logo">-->LEARNING EQUALITY</a>
+	        </div>
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	      <div class="collapse navbar-collapse" id="ka-inner-nav-collapse">
+	        <ul class="inner-nav nav navbar-nav navbar-right">
+	          <li>
+	              <a href="#divide">The Divide</a>
+	          </li>
+	          <li>
+	              <a href="#bridge">The Bridge</a>
+	          </li>
+	          <li>
+	              <a href="#impact">Our Impact</a>
+	          </li>
+	          <li>
+	          	  <a href="#involved">Get Involved</a>
+	          </li>
+	        </ul>
+	      </div><!-- /.navbar-collapse -->
+	    </div> <!-- /.container-2000x -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+<!-- ============= PROBLEM ================ -->
+	<div class="row divide-screen">
+		<div class="container-fluid">
+
+			<!-- ============= POVERTY ================ -->
+			<div class="title-banner divide-banner" id="divide">
+				<h1>THE DIVIDE</h1>
+				<span>Understand why universal education is our cause.</span>
+			</div>
+
+			<div class="poverty container col-xs-10 col-sm-12 col-md-12 col-lg-9">
+				<div id="poverty-intro">
+					<span class="bold">Poverty rates have greatly decreased over the past few decades. However, more than 1.5 billion people around the world are still afflicted by poverty.</span>
+				</div>
+					<img src="{% static 'img/cycle.png' %}" alt="Cycle of poverty">
+				<div id="believe-box">
+					<span class="bold left believe">WE BELIEVE</span>
+					<span id="cycle" class="left">Education is both the key to breaking the cycle of poverty and opening the door to human flourishing.</span>
+				</div>
+			</div>
+			<hr class="horizontal-divider">
+		
+
+			<!-- ============= CHLDREN ================ -->
+			<div class="container children col-xs-10 col-sm-12 col-md-12 col-lg-10">
+				<div class="blue-box bold">
+					<div class="child-box col-sm-5 col-md-5 col-lg-5">
+						<span class="child-number">357 MILLION</span>
+						<span class="child-exp">children are out of school. <span class="emph">Half of them never had the chance</span> to start their education. <br><span class="darkblue">_</span></span>
+					</div>
+					<div class="darkblue" id="plus">+</div>
+					<div class="child-box col-sm-5 col-md-5 col-lg-5">
+						<span class="child-number">250 MILLION</span>
+						<span class="child-exp">children are <span class="emph">in school but are not learning</span> because of poor teacher training and infrastructure, and lack of learning materials.</span>
+					</div>
+				</div>
+				<div class="child">
+					<div class="child-total">
+						<span class="bold or">That's</span>
+						<div>
+							<span class="child-number2 bold darkblue">607 MILLION, <span class="black or"><br>OR</span> 1 IN 3</span>
+							<span class="child-exp2 bold"><br>children in the world who lack access to a quality basic education.</span>
+						</div>
+					</div>
+					<div class="child-pic">
+						<img src="{% static 'img/children.png'%}" alt="One in three children cannot access basic education">
+					</div>
+				</div>
+			</div>
+			<hr class="horizontal-divider">
+
+
+			<!-- ============= THE DIVIDE ================ -->
+			<div class="divide container col-xs-10 col-sm-12 col-md-12 col-lg-9">
+				<div id="divide-intro">
+					<span class="bold">There are now more resources online than ever before for accessing high quality educational content for free in any subject.<br>However,</span>
+				</div>
+				<img src="{% static 'img/no-wifi.png' %}" alt="No Wifi">
+				<div id="divide-box">
+					<span class="bold left divide-number">4.3 BILLION<br></span>
+					<span id="disconnected" class="left bold">ARE DISCONNECTED</span>
+				</div>
+				<div id="divide-outro">
+					<span>This is the divide. The 60% of the world who could benefit the most from this tremendous opportunity lack the connectivity needed to access it.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- ============= THE BRIDGE ================ -->
+	<div class="row bridge-screen">
+		<div class="container-fluid">
+
+			<div class="title-banner bridge-banner" id="bridge">
+				<h1>THE BRIDGE</h1>
+				<p class="quote"><em>"Education is the most powerful weapon we can use to change the world."</em></p>
+				<p class="author"><br><em>- Nelson Mandela</em></p>
+			</div>
+			<div class="bridge container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="bridge-intro bold">
+					<span>A universal education means that anyone, anywhere -- online or offline -- can access it. We realized the potential emerging out of three converging trends:</span>
+				</div>
+				<div class="bridge-box bbox row">
+					<div class="cost-effective col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/cc.png'%}" alt="Creative Commons">
+						<h3 class="bold">Open Educational Resources</h3>
+						<p>More and more learning materials are being released under Creative Commons licenses, which allow them to be shared, used, and remixed freely, both online and offline.</p>
+					</div>
+					<div class="collaborate col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/low-cost.png'%}" alt="Cost Effective">
+						<h3 class="bold">Low Cost Computing</h3>
+						<p>The cost of hardware is decreasing much faster than the cost of Internet bandwidth; devices like the Raspberry Pi and low-end Android tablets open up computing to new segments of humanity.</p>
+					</div>
+					<div class="designed col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/sneakernet.png'%}" alt="Sneakernet">
+						<h3 class="bold">Sneakernet Sharing</h3>
+						<p>In the absence of Internet connectivity, content and software can be distributed through existing human networks, carried on USB sticks and other portable devices to be shared with others.</p>
+					</div>
+					<!--<button class="btn form-button btn-success">LEARN MORE</button>-->
+				</div>
+				<hr class="horizontal-divider">
+				<div class="bridge-intro bold">
+					<span>Leveraging these trends, we build and support educational tools that bridge the digital divide by being:</span>
+				</div>
+				<div class="bridge-box row">
+					<div class="cost-effective col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/flexible.png'%}" alt="Flexible and Lightweight">
+						<h3 class="bold">Flexible and Lightweight</h3>
+						<p>In order to enable access for as many people as possible, our tools are designed to run on a broad diversity of devices, ranging from old repurposed hardware, to a wide variety of new low-cost devices.</p>
+					</div>
+					<div class="collaborate col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/collaborate.png'%}" alt="Collaborate">
+						<h3 class="bold comm">Empowering for Communities</h3>
+						<p>Every person, community, or country knows its own needs and values best, and our role is to collaborate in supporting self-fulfilment, not to dictate solutions. We want to create tools to allow people to learn, teach, create, and share on their own terms.</p>
+					</div>
+					<div class="designed col-lg-4 col-md-4 col-sm-4">
+						<img src="{% static 'img/design.png'%}" alt="Designed for Everyone">
+						<h3 class="bold">Designed for Everyone</h3>
+						<p>Our tools aim to support diverse user needs, in both classrooms and informal learning environments. We work with our partners to understand and support the needs of contexts that range from orphanages, to schools, to prisons, to refugee camps, to homes.</p>
+					</div>
+					<!--<button class="btn form-button btn-success">LEARN MORE</button>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- ============= OUR IMPACT ================ -->
+	<div class="row impact-screen" id="impact">
+		<div class="container-fluid">
+
+			<div class="title-banner impact-banner">
+				<h1>OUR IMPACT</h1>
+				<p class="quote"><em>"The function of education is to teach one to think intensively and to think critically.<br>Intelligence plus character - that is the goal of true education."</em></p>
+				<p class="author"><em><br>- Martin Luther King Jr.</em></p>
+			</div>
+			<div class="impact-box container">
+				<div class="impact container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<img src="{% static 'img/ka-lite.png'%}" alt="KA Lite">
+					<div class="ka-lite col-lg-7 col-md-7 col-sm-7">
+						<h2><strong>An offline version of Khan Academy</strong></h2>
+						<p>Installed in more than 140 countries, used by hundreds of organizations, and deployed in schools, orphanages, refugee camps, community centers, and correctional facilities around the world.</p>
+						<a href="{% url 'ka_lite' %}"><button type="button" class="nav btn btn-success">LEARN MORE</button></a>
+					</div>
+					<div class="ka-lite-vid col-lg-5 col-md-5 col-sm-5">
+						<iframe width="560" height="315" src="//www.youtube.com/embed/nFlmmV90u8w?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container carousel-box">
+		<!-- ============= CAROUSEL ================ -->
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="7500">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		  	<div class="item active active-link">
+		      <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills"><img src="{% static 'img/washington.jpg' %}" id="carousel-img" alt="Washington"></a>
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills">Inspiring Confidence: A guest post from Edward J. Hills</a>
+		      </div>
+		      <div class="carousel-caption">
+		        <em>"Once Peninsula College implemented computers in the classroom and a program called Khan Academy Lite, it revolutionized the way I see education for myself..."</em> <a href="https://learningequality.org/blog/2013/inspiring-confidence-by-edward-j-hills"><br><strong>READ MORE</strong></a>
+		      </div>
+		    </div>
+		    <div class="item active-link">
+		      <a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"><img src="{% static 'img/philippines.jpg' %}" id="carousel-img" alt="Phillipines Disaster Relief"></a>
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/">KA Lite in Typhoon-Stricken Mangorocoro</a>
+		      </div>
+		      <div class="carousel-caption">
+		         <em>"KA Lite was a godsend in terms of all the materials that could be accessed and shared."</em><a href="https://learningequality.org/blog/2014/ka-lite-typhoon-stricken-mangorocoro/"><br><strong>READ MORE</strong></a>
+		      </div>
+		    </div>
+		    <div class="item active-link">
+		      <a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"><img src="{% static 'img/liberia.jpg' %}" id="carousel-img" alt="Liberia"></a>
+		      <div class="caption-title">
+		      	<a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/">Samuel Morris Scholars Program: An Unforgettable Impact</a>
+		      </div>
+		      <div class="carousel-caption">
+		         <em>"The initial teamwork and collaboration showed that the students were collectively engaged in the learning process, and willing to help one another as they embarked on this unforgettable learning opportunity..."</em><a href="https://learningequality.org/blog/2014/samuel-morris-scholars-program-unforgettable-impac/"><br><strong>READ MORE</strong></a>
+		      </div>
+		    </div>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		  
+		</div>
+		<!-- ============= END CAROUSEL ================ -->
+
+
+		<div class="blog-box" id="blog-box">
+			<a href="{% url 'blog' %}" class="blog"><div>
+				<h3>READ OUR BLOG</h3>
+			</div></a>
+			<a href="{% url 'press' %}" class="news"><div>
+	 			<h3>IN THE NEWS</h3>
+			</div></a>
+		</div>
+	</div>
+
+		<div class="container partners col-lg-12 col-md-12 col-sm-12">
+			<h3><strong>Our Partners and Sponsors</strong></h3>
+			<img src="{% static 'img/unicef.png' %}" alt="UNICEF">
+			<img src="{% static 'img/khan.png' %}" alt="Khan Academy">
+			<img src="{% static 'img/akanksha.png' %}" alt="Akanksha">
+			<img src="{% static 'img/idaho.gif' %}" alt="Idaho Department of Correction">
+			<img src="{% static 'img/hewlett.gif' %}" alt="Idaho Department of Correction">
+		</div>
+
+<!-- ============= GET INVOLVED ================ -->
+	<div class="row involved-screen">
+		<div class="container-fluid">
+
+			<div id="involved" class="title-banner involve-banner">
+				<h1>GET INVOLVED</h1>
+				<span>You can help us make universal education a reality.</span>
+			</div>
+			<div class="involved container">
+				<div class="container">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<img class="donate_backgroud_img" src="{% static 'img/donate_backgroud_img.png' %}">
+					</div>
+					<div class="donate col-lg-6 col-md-6 col-sm-6">
+						<h3><strong>Invest in a bright future</strong></h3>
+						<a href="{% url 'donate' %}"><button class="give btn form-button btn-success">DONATE</button></a>
+					</div>
+				</div>
+				<div class="container involve-links">
+					<div class="container">	
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<i id="deploymentIcon" class="fa fa-paper-plane fa-5x"></i>
+							<p>Join the team! Help us deploy world-changing tools.</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<img src="{% static 'img/github.png' %}" alt="GitHub">
+							<p>Help build world-changing tools! Check out our open-source repositories.</p>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<img src="{% static 'img/translate.png' %}" alt="Translate">
+							<p>Help make our tools available in more languages!</p>
+						</div>
+					</div>
+					<div class="container">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="{% url 'infographic' %}"><button class="btn form-button btn-success">DEPLOY</button> </a>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="https://github.com/learningequality"><button class="btn form-button btn-success">GITHUB</button></a>
+							<a href="{% url 'jobs' %}"><button class="btn form-button btn-success">JOBS</button></a>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<a href="https://github.com/learningequality/ka-lite/wiki/Internationalization:-Contributing-Translations"><button class="btn form-button btn-success">TRANSLATE</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- ============= FOOTER ================ -->
+
+</div>
+
+<script type="text/javascript">
+ //Scrollspy
+	$('body').scrollspy({ 
+    target: '#fle-inner-nav',
+    offset: 1000
+  });
+
+ //Dynamically set data offset on page load for inner nav
+  $(function(){
+    var headerHeight = $('#fle-navbar').outerHeight() + $('#fle-header').outerHeight() - $('#fle-inner-nav').height();
+    $('#fle-inner-nav').attr("data-offset-top", headerHeight);
+  });
+
+  // Class to scroll to top
+  $('.scroll-to-top').click(function(){
+    $('html, body').animate({scrollTop : 0}, 600);
+    return false;
+  });
+
+  //Smooth scroll
+  $('a').not('.scroll-to-top').not('.carousel-control').not('.left').not('.right').click(function(){
+    var bump = $("#fle-inner-nav").hasClass("affix-top") ? 90 : 0;
+    var $root = $('html, body');
+    $root.animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top - bump
+    }, 600);
+    return false;
+  });
+
+</script>
+
+{% endblock bodycontents %}

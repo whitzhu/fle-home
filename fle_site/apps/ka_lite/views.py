@@ -37,6 +37,10 @@ def map(request):
         "LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL,
     }
 
+@render_to("ka_lite/infographic.html")
+def infographic(request):
+    return {}
+
 @render_to("ka_lite/map_add.html")
 def map_add(request):
     """Render a form to add a new KA Lite deployment story."""
@@ -89,7 +93,7 @@ def user_guides(request):
 
 def get_user_resource(slug):
     if slug == "latest":
-        latest_version = UserResource.objects.all().aggregate(Max('version'))['version__max']
+        latest_version = UserResource.objects.filter(category='install_guide').aggregate(Max('version'))['version__max']
         return UserResource.objects.get(version=latest_version, category='install_guide')
     else:
         return UserResource.objects.get(slug=slug)
@@ -105,6 +109,8 @@ def user_guide_detail_embed(request, slug):
 def user_guide_detail(request, slug):
     """Render detail of user resource"""
     obj = get_user_resource(slug)
+    if not obj.is_google_doc:
+        return HttpResponseRedirect(obj.external_url)
     related_resources = UserResource.objects.filter(version=obj.version)
     general_resources = UserResource.objects.filter(version='')
     return {
