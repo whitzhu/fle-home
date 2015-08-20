@@ -176,13 +176,13 @@ main {
     }
      .hsContent .short-h1 {
         color: #fff;
-        font-size: 60px !important; 
+        font-size: 55px !important;
         line-height: 30px;
         margin-bottom: 12px;
-        font-weight: 700 !important;
+        font-weight: 100 !important;
     }
     .short-h1 {
-        margin-top:10%;
+        margin-top:7%;
     }
        .hsContent h1{
         color: #fff;
@@ -333,13 +333,13 @@ main {
     width: 35%;
     vertical-align: middle;
     position: relative;
-    top: -25vh;
+    top: -20vh;
 }
 #kolibri-logo-label {
     color: white;
     position: relative;
     vertical-align: middle;
-    top: -30vh;
+    top: -28vh;
     font-family: "Open Sans";
     letter-spacing: 0.02em;
     font-weight: 100;
@@ -353,7 +353,7 @@ main {
     margin: auto;
     position: relative;
     line-height: 1.5em;
-    top: -30vh;
+    top: -26vh;
     font-family: "Open Sans";
 }
 
@@ -378,7 +378,7 @@ main {
     margin: -3px -5px;
     line-height: 1;
     border-radius: 3px;
-    margin-top:8%;
+    margin-top:10%;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -471,14 +471,14 @@ main {
         padding: 3px 10px;
     }
     .story-infographic{
-        margin-top:80px;
-        margin-bottom: 80px;
+        margin-top:70px;
+        margin-bottom: 40px;
     }
     .story-infographic img{
        width:80%;
     }
     #slide-2{
-        height:550px;
+        height:500px;
     }
     #slide-3, #slide-4 {
         min-width: 768px;
