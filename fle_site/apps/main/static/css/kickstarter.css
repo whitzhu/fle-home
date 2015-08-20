@@ -492,7 +492,7 @@ section {
   padding: 0;
 }
 section h2.section-heading {
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 0;
 }
 section h3.section-subheading {
@@ -881,6 +881,15 @@ section h3.section-subheading {
 }
 .ka-lite-header {
   text-align: center;
+}
+.ka-lite-intro {
+  font-size: 26px;
+  margin: auto;
+  text-align: center;
+  font-family: Open Sans;
+  text-transform: none;
+  max-width: 70%;
+  position: relative;
 }
 #about {
   background: #8670A1;
@@ -1295,4 +1304,91 @@ mark{
 .space_taker {
   width: 10vw;
   max-width: 100px;
+}
+
+
+/* KA Lite Slider Override */
+#slider {
+  background: #C4D7E3;
+}
+.touch-carousel .carousel-inner>.item {
+  margin: auto;
+}
+.touch-carousel .carousel-indicators {
+  bottom: -10px;
+}
+.touch-carousel {
+  height: 44vh;
+  min-height: 300px;
+}
+.carousel-inner {
+  height: 300px;
+}
+.carousel-control {
+  background-image: none !important;
+}
+.carousel-control span {
+  color: #044E69;
+  border: 1px solid #044E69;
+  border-radius: 100%;
+  padding: 20px;
+}
+.carousel-inner .item img {
+  width: auto;
+  height: 250px;
+  position: relative;
+  top: 40px;
+  text-align: center;
+}
+.carousel-img {
+  text-align: center;
+}
+.carousel-detail-box {
+  max-width: 400px;
+  position: relative;
+  top: 90px;
+  left: 60px;
+  text-align: left;
+}
+.carousel-header {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 10px;
+}
+.carousel-detail {
+  text-align: left;
+}
+.carousel-indicators .active {
+  background-color: #044E69;
+}
+.carousel-indicators li {
+  border-color: #044E69;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  top: 35%;
+}
+.carousel-control.left {
+  left: 65px;
+}
+.carousel-control.right {
+  right: 35px;
+}
+@media (min-width: 768px) {
+  .touch-carousel .carousel-control {
+    display: -webkit-box !important;
+  }
+}
+@media (max-width: 990px) {
+  .carousel-inner .item img {
+    display: none;
+  }
+  .carousel-detail-box {
+    text-align: center;
+    margin: auto;
+    left: 0;
+  }
+  .carousel-control-left {
+    left: -15px;
 }

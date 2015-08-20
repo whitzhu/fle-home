@@ -7,6 +7,8 @@
 {% block headcss %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-touch-carousel.css' %}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -70,6 +72,67 @@
         }
     });
     </script>
+
+    <!-- KA Lite Slider -->
+    <section id="slider" class="not-parallax-section">
+        <h2 class="ka-lite-intro">Kolibri will expand on KA Lite's great features that have already benefitted thousands of learners</h2>
+
+        <div id="myCarousel" class="carousel slide row" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/kickstarter/portfolio/offline.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">No Internet Needed</span>
+                      <span class="carousel-detail">Mimics the online experience of saving, downloading, and sharing, all without an internet connection</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/ka-lite/exercise_overview.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">Over 7,000 Videos and Interactive Exercises</span>
+                      <span class="carousel-detail">A diverse collection that generates immediate feedback, step-by-step solutions, and works through a point system to encourage continued practice of material</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/kickstarter/portfolio/progress.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">Track Individual Learning Progress</span>
+                      <span class="carousel-detail">Access meaningful progress reports for an efficient and personal learning experience</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </section>
 
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
