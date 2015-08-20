@@ -26,13 +26,6 @@ Enjoy responsibly!
 section {
   min-width: 0;
 }
-#parallax_1 {
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-#parallax_2 {
-  margin-bottom: 10px;
-}
 
 html,
 button,
@@ -183,10 +176,13 @@ main {
     }
      .hsContent .short-h1 {
         color: #fff;
-        font-size: 40px;
+        font-size: 60px !important; 
         line-height: 30px;
         margin-bottom: 12px;
-        font-weight: 200;
+        font-weight: 700 !important;
+    }
+    .short-h1 {
+        margin-top:10%;
     }
        .hsContent h1{
         color: #fff;
@@ -221,15 +217,77 @@ main {
 /* Slide 2 */
 #slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
 
+
 /* Slide 3 */
 #slide-3{
-    height:400px;
-}
-#slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
+        height: 1000px !important;
+    }
+    #slide-3 .bcg {background-image:url('../img/kickstarter/about/deployment_map.jpg')}
 
-#slide-3 img{
-    width:200%;
+    #slide-3 .hsContainerbottom {
+        
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        height: 410px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #slide-3 .hsContainerbottom .hsContent{
+
+        max-width: 450px;
+        margin: -150px auto 0 auto;
+        display: table-cell;
+        vertical-align: middle;
+        color: #ebebeb;
+        padding: 0 8%;
+        text-align: center;
+    }
+
+    #slide-3 .hsContainerbottom .hsContent h1{
+        font-size: 50px;
+    }
+
+    /*#slide-3 .blackborder{
+        background: rgba(10, 10, 10, 0.86);
+        padding: 30px 90px;
+        margin: -3px -5px;
+    }*/
+    #slide-3 img{
+        width:50%;
+    }
+    #highlight2 #line img{
+        width:80%;
+        height:80%;
+        margin: 0;
+    }
+
+    #slide-3 .platforms{
+        color:#fff;
+        vertical-align: center;
+        font-size: 10px;
+        font-weight: 100;
+        padding: 0px 10%;
+        font-family: "Open Sans", sans-serif;
+    }
+    #slide-3 #highlight .highlight-content-2 h1{
+    margin:0 !important;
+    }
+  
+    #slide-3 .row{
+    margin-left: 100px;
+    }
+    #slide-3 .col-md-2 {
+    width: 14%;
+    }
+     
+
+.platforms img{
+    padding-top:10%;
 }
+
+
 
 
 /* Slide A */
@@ -268,6 +326,7 @@ main {
     border-radius: 3px;
     display:inline-block;
     color:#fff;
+    font-size: 60px;
 }
 
 #parallax_logo {
@@ -300,16 +359,26 @@ main {
 
 
 #highlight {
-    background: rgba(255, 255, 255, 0.67);
+    background: rgba(2, 2, 2, 0.58);
     padding: 30px 90px;
     margin: -3px -5px;
     line-height: 1;
     border-radius: 3px;
+}
+#highlight h1,#highlight2 h1{
     display:inline-block;
-    color:#3E3E3F;
+    color:#fff;
     font-weight: 400;
     font-size:30px !important;
+}
 
+#highlight2 {
+    background: rgba(2, 2, 2, 0.58);
+    padding: 30px 90px;
+    margin: -3px -5px;
+    line-height: 1;
+    border-radius: 3px;
+    margin-top:8%;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -317,10 +386,9 @@ main {
 .bold{
     font-weight:700 !important;
     background: none;
-    color:#3E3E3F;
 }
-.hsContainer .plaxEl{
-    padding-top:15%;
+.hsContainer .plaxEl, .hsContainerbottom{
+    padding-top:5%;
 }
 .bcg{
     background-position: center center;
@@ -370,7 +438,7 @@ main {
     .hsContent h1, .short-h1{
         color: #ffffff;
         line-height: 45px;
-        padding: 0px 200px;
+        padding: 0px 120px;
         font-size: 50px !important;
         font-weight: 500 !important;
         font-family: "Montserrat", sans-serif;
@@ -381,8 +449,8 @@ main {
         color: #ffffff;
         line-height: 48px;
         margin-bottom: 12px;
-        padding: 0px 200px;
-        font-size: 26px;
+        padding: 0px 140px;
+        font-size: 30px;
         font-weight: 100;
         font-family: "Open Sans", sans-serif;
         text-transform: initial;
@@ -402,20 +470,15 @@ main {
         background-color: rgba(0,0,0,0.75);
         padding: 3px 10px;
     }
-
-    #parallax_1 {
-        margin-bottom: 10px;
-        margin-top: 0px;
-    }
-    #parallax_2 {
-      margin-bottom: 10px;
-    }
     .story-infographic{
         margin-top:80px;
         margin-bottom: 80px;
     }
+    .story-infographic img{
+       width:80%;
+    }
     #slide-2{
-        height:410px;
+        height:550px;
     }
     #slide-3, #slide-4 {
         min-width: 768px;
