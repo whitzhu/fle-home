@@ -1263,6 +1263,7 @@ mark{
   font-size: 26px;
   font-weight: bold;
   z-index: 3;
+  line-height: 1.5em;
 }
 /*.mailing_label2 {
   font-family: "Open Sans";
