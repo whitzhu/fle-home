@@ -7,6 +7,8 @@
 {% block headcss %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-touch-carousel.css' %}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -34,11 +36,13 @@
     <header id="kickstarter-header">
         <div class="header-shadow row">
             <div class="intro-text">
-                <div class="intro-heading">A Kickstarter Campaign<span id="to">To</span><br><span id="bridge">Bridge the Divide</span></div>
+                <div class="intro-heading">A Kickstarter Campaign<span id="to">To</span><br><span id="bridge">Bridge the Divide</span>
+                    <!-- <div id="us"><span id="by">By</span><a href="{% url 'home' %}" target="_blank"> Learning Equality</a></div> -->
+                </div>
             </div>
         </div>
         <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
-        <h2 class="mailing_label">STAY UPDATED FOR THE SEPTEMBER LAUNCH</h2>
+        <h2 id="mail-top" class="mailing_label">Be the first to know about the September launch!</h2>
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
             <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
@@ -71,6 +75,67 @@
     });
     </script>
 
+    <!-- KA Lite Slider -->
+    <section id="slider" class="not-parallax-section">
+        <h2 class="ka-lite-intro">Kolibri will expand on features in KA Lite that have already benefitted thousands of learners</h2>
+
+        <div id="myCarousel" class="carousel slide row" data-ride="carousel" data-wrap="false" data-interval="false">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/kickstarter/portfolio/offline.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">No Internet Needed</span>
+                      <span class="carousel-detail">Mimics the online experience of saving, downloading, and sharing, all without access to the internet.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/ka-lite/exercise_overview.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">Over 7,000 Videos and Interactive Exercises</span>
+                      <span class="carousel-detail">A diverse collection of content from Khan Academy that generates immediate feedback, step-by-step solutions, and works through a point system to encourage continued practice of material</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <div class="col-md-6 carousel-img">
+                        <img src="{% static 'img/kickstarter/portfolio/progress.png' %}">
+                    </div>
+                    <div class="col-md-6 carousel-detail-box">
+                      <span class="carousel-header">Track Individual Learning Progress</span>
+                      <span class="carousel-detail">Access meaningful progress reports for a personalized and efficient learning experience</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+    </section>
+
     <!-- Kolibri Features Section -->
     <section id="portfolio" class="bg-light-gray not-parallax-section">
         {% include "main/partials/_kickstarter_pastwork.html" %}
@@ -99,7 +164,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">SEE HOW YOU CAN HELP BRIDGE THE DIVIDE</h2>
             </div>
-            <h3 class="mailing_label text-muted">JOIN OUR KICKSTARTER MAILING LIST!</h3>
+            <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE SEPTEMBER LAUNCH!</h3>
             <br>
 
             <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
@@ -164,7 +229,7 @@
                             <p class="big"><mark>&#9733 Upload exclusively new content:  </mark>   There might be times when instructors have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, in order to share it with other instructors who may find it useful for their own students.</p>
                             <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Instructors also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p>
                             <p class="big"><mark>&#9733 Integrate new and existing content:  </mark>   Kolibri also allows instructors to combine existing content with their own. If an organization like UNICEF knows from experience that certain math lessons are favored by students, and they have also noticed that some of their own original exercises are effective, they can create a new channel and combine their content with pre-existing content from another channel to optimize their curriculum.</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
@@ -190,7 +255,7 @@
                             <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
                             <p class="center">With the “device discovery” interface, devices can find and directly connect with each other over a local wi-fi network, allowing for easy content sharing and data updates.</p>
                            <!--  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p> -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
@@ -231,7 +296,7 @@
                             <br>
                             
                             <!-- <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p> -->
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
                 </div>
