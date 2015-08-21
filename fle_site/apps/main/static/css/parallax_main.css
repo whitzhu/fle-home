@@ -443,6 +443,8 @@ main {
         font-weight: 500 !important;
         font-family: "Montserrat", sans-serif;
         text-transform: uppercase;
+        position: relative;
+        top: -20px;
     }
     .hsContent h2,
     .copy h2 {
@@ -455,6 +457,8 @@ main {
         font-family: "Open Sans", sans-serif;
         text-transform: initial;
         line-height: 1.5em;
+        position: relative;
+        top: -25px;
     }
     .hsContent p {
         width: 80%;

@@ -195,7 +195,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 10px 10px;
   text-align: center;
   box-shadow: none;
-  border: 4px solid rgb(138, 230, 92) !important;
+  border: 3px solid rgb(138, 230, 92) !important;
 }
 .email_submit_k {
   clear: none !important;
@@ -207,7 +207,7 @@ fieldset[disabled] .btn-primary.active {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 10px;
-  border: 4px solid rgb(138, 230, 92) !important;
+  border: 3px solid rgb(138, 230, 92) !important;
 }
 
 @media (max-width: 500px) {
@@ -252,9 +252,9 @@ fieldset[disabled] .btn-primary.active {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     font-size: 18px;
-    padding: 20px 40px;
+    padding: 21px 40px;
     box-shadow: none;
-    border: 4px solid rgb(138, 230, 92) !important;
+    border: 3px solid rgb(138, 230, 92) !important;
   }
   .email_submit_k {
     clear: none !important;
@@ -265,8 +265,8 @@ fieldset[disabled] .btn-primary.active {
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border: 4px solid rgb(138, 230, 92) !important;
-    padding: 20px;
+    border: 3px solid rgb(138, 230, 92) !important;
+    padding: 21px;
   }
   .e1 {
     margin-left: -300px;
@@ -378,7 +378,7 @@ header .intro-text .intro-heading {
   font-weight: 900;
   font-size: 55px;
   line-height: 56px;
-  text-shadow: -3px 3px #000000;
+  text-shadow: -2px 2px #000000;
   /*margin-bottom: 50px;*/
   position: relative;
   z-index: 3;
@@ -437,6 +437,30 @@ video#bgvid {
   font-family: "Montserrat";
   position: relative;
   top: 5px;
+}
+#us {
+  font-size: 24px;
+  position: relative;
+  display: block;
+  font-family: "Montserrat";
+  top: 35px;
+}
+#us a {
+  color: white;
+  font-family: "Montserrat";
+}
+#us a:focus {
+  color: white;
+}
+#us a:hover,
+#us a:focus {
+  color: #3A7AA2;
+  text-decoration: none;
+  text-shadow: -1px 1px black;
+}
+#by {
+  font-size: 16px;
+  font-family: "Montserrat";
 }
 
 @media (min-width: 768px) {
@@ -636,6 +660,13 @@ section h3.section-subheading {
 .solution-title {
   background: #4B3C60;
 }
+.barrier-title i,
+.solution-title i {
+  margin: auto;
+}
+.barrier-title i {
+  margin-right: 5px;
+}
 .portfolio-barrier-box,
 .portfolio-solution-box {
   padding: 10px 35px;
@@ -649,7 +680,7 @@ section h3.section-subheading {
 }
 .portfolio-caption .text-muted {
   color: #3F3F3F;
-  font-style: normal !important;
+  font-style: italic !important;
   font-family: "Open Sans";
   padding-bottom: 5px;
   position: relative;
@@ -829,6 +860,9 @@ section h3.section-subheading {
 .timeline li div p a:hover {
   color: white;
   text-decoration: none;
+}
+.story a, .story a:hover, .story a:focus {
+  color: white;
 }
 @media (min-width: 768px) {
   .timeline:before {
@@ -1219,6 +1253,9 @@ mark{
   /*background-color: #ECECEC;*/
 }
 /* MAILCHIMP MODAL */
+#mail-top {
+  text-shadow: -2px 2px black;
+}
 .mailing_label {
   text-transform: none;
   font-family: "Open Sans";
@@ -1336,11 +1373,8 @@ mark{
 .touch-carousel .carousel-inner>.item {
   margin: auto;
 }
-.touch-carousel .carousel-indicators {
-  bottom: -10px;
-}
 .touch-carousel {
-  height: 44vh;
+  height: 50vh;
   min-height: 300px;
 }
 .carousel-inner {
@@ -1373,7 +1407,7 @@ mark{
   text-align: left;
 }
 .carousel-header {
-  font-size: 26px;
+  font-size: 31px;
   display: block;
   margin-bottom: 10px;
 }
@@ -1387,12 +1421,18 @@ mark{
   border-color: #044E69;
   text-shadow: 0 1px 2px rgba(0,0,0,0.6);
 }
-.carousel-control .glyphicon-chevron-left,
+.carousel-indicators {
+  bottom: -8vh;
+}
+.carousel-control .glyphicon-chevron-left{
+  left: 0;
+  top: 35%;
+}
 .carousel-control .glyphicon-chevron-right {
   top: 35%;
 }
 .carousel-control.left {
-  left: 65px;
+  left: 5%;
 }
 .carousel-control.right {
   right: 35px;

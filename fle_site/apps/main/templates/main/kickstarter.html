@@ -36,11 +36,13 @@
     <header id="kickstarter-header">
         <div class="header-shadow row">
             <div class="intro-text">
-                <div class="intro-heading">A Kickstarter Campaign<span id="to">To</span><br><span id="bridge">Bridge the Divide</span></div>
+                <div class="intro-heading">A Kickstarter Campaign<span id="to">To</span><br><span id="bridge">Bridge the Divide</span>
+                    <!-- <div id="us"><span id="by">By</span><a href="{% url 'home' %}" target="_blank"> Learning Equality</a></div> -->
+                </div>
             </div>
         </div>
         <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
-        <h2 class="mailing_label">Be the first to know about the September launch!</h2>
+        <h2 id="mail-top" class="mailing_label">Be the first to know about the September launch!</h2>
         <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
             <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
         </iframe>
@@ -75,9 +77,9 @@
 
     <!-- KA Lite Slider -->
     <section id="slider" class="not-parallax-section">
-        <h2 class="ka-lite-intro">Kolibri will expand on KA Lite's great features that have already benefitted thousands of learners</h2>
+        <h2 class="ka-lite-intro">Kolibri will expand on features in KA Lite that have already benefitted thousands of learners</h2>
 
-        <div id="myCarousel" class="carousel slide row" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide row" data-ride="carousel" data-wrap="false" data-interval="false">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -94,7 +96,7 @@
                     </div>
                     <div class="col-md-6 carousel-detail-box">
                       <span class="carousel-header">No Internet Needed</span>
-                      <span class="carousel-detail">Mimics the online experience of saving, downloading, and sharing, all without an internet connection</span>
+                      <span class="carousel-detail">Mimics the online experience of saving, downloading, and sharing, all without access to the internet.</span>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
                     </div>
                     <div class="col-md-6 carousel-detail-box">
                       <span class="carousel-header">Over 7,000 Videos and Interactive Exercises</span>
-                      <span class="carousel-detail">A diverse collection that generates immediate feedback, step-by-step solutions, and works through a point system to encourage continued practice of material</span>
+                      <span class="carousel-detail">A diverse collection of content from Khan Academy that generates immediate feedback, step-by-step solutions, and works through a point system to encourage continued practice of material</span>
                     </div>
                 </div>
             </div>
@@ -116,7 +118,7 @@
                     </div>
                     <div class="col-md-6 carousel-detail-box">
                       <span class="carousel-header">Track Individual Learning Progress</span>
-                      <span class="carousel-detail">Access meaningful progress reports for an efficient and personal learning experience</span>
+                      <span class="carousel-detail">Access meaningful progress reports for a personalized and efficient learning experience</span>
                     </div>
                 </div>
             </div>
@@ -167,7 +169,7 @@
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">SEE HOW YOU CAN HELP BRIDGE THE DIVIDE</h2>
             </div>
-            <h3 class="mailing_label text-muted">JOIN OUR KICKSTARTER MAILING LIST!</h3>
+            <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE SEPTEMBER LAUNCH!</h3>
             <br>
 
             <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
