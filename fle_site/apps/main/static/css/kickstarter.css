@@ -285,11 +285,10 @@ fieldset[disabled] .btn-primary.active {
   }
 }
 
-#mce-error-response{
-  color: white;
-}
-#mce-success-response{
-  color: white;
+#mce-success-response,
+#mce-error-response {
+  color: #474747;
+  font-size: 15px;
 }
 #mce-responses{
   /*width: 100%;*/
@@ -299,6 +298,9 @@ fieldset[disabled] .btn-primary.active {
   font-weight: 100;
   font-size: 18px;
   margin-top: 100px;
+}
+#mce-error-response a {
+  color: black;
 }
 
 .modal{
@@ -348,6 +350,10 @@ fieldset[disabled] .btn-xl.active {
   background-color: white;
 }
 
+.not-parallax-section {
+  padding: 100px 0;
+}
+
 /* NAV BAR */
 
 #fle-navbar {
@@ -358,52 +364,32 @@ fieldset[disabled] .btn-xl.active {
 
 /* HEADER */
 header {
-  text-align: center;
+  text-align: left;
   color: white;
 }
-header .intro-text {
-  height: 0;
-  padding-top: 90px;
-  padding-bottom: 50px;
+.intro-text {
+  position: relative;
+  top: 53vh;
+  left: 4%;
 }
-header .intro-text .intro-lead-in {
+.intro-heading {
   font-family: "Montserrat";
-  font-style: italic;
-  font-size: 25px;
-  line-height: 22px;
-  margin-bottom: 25px;
-}
-header .intro-text .intro-heading {
-  font-family: "Montserrat";
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 55px;
+  max-width: 1000px;
+  font-size: 70px;
   line-height: 56px;
-  text-shadow: -2px 2px #000000;
-  /*margin-bottom: 50px;*/
+  text-shadow: -2px 2px black;
   position: relative;
   z-index: 3;
-  /*bottom: 60px;*/
+  line-height: 1.2em;
 }
-.intro-heading span {
-  font-size: 50px;
-}
-.kickstarter-about-title {
-  margin-bottom: 7%;
-}
-.not-parallax-section {
-  padding: 100px 0;
-}
-.header-shadow {
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.4);
-  height: 100vh;
-}
-.header-shadow img {
-  max-width: 85%;
+.intro-heading2 {
+  color: white;
+  z-index: 5;
   position: relative;
-  right: 8%;
-  z-index: 2;
+  font-size: 30px;
+  font-family: "Open Sans";
+  top: 2vh;
+  text-shadow: -2px 2px black;
 }
 #header-mailchimp {
   position: relative;
@@ -427,111 +413,28 @@ video#bgvid {
   min-height: 100%;
   min-width: 100%;
 }
-#to {
-  font-size: 20px;
-  position: relative;
-  left: 10px;
-  font-family: "Montserrat";
-}
-#bridge {
-  font-size: 85px;
-  font-family: "Montserrat";
-  position: relative;
-  top: 32px;
-  line-height: 0.9em;
-}
-#us {
-  font-size: 24px;
-  position: relative;
-  display: block;
-  font-family: "Montserrat";
-  top: 35px;
-}
-#us a {
-  color: white;
-  font-family: "Montserrat";
-}
-#us a:focus {
-  color: white;
-}
-#us a:hover,
-#us a:focus {
-  color: #3A7AA2;
-  text-decoration: none;
-  text-shadow: -1px 1px black;
-}
-#by {
-  font-size: 16px;
-  font-family: "Montserrat";
-}
-
-@media (min-width: 768px) {
-  .header-shadow img {
-    min-width: 700px;
-    top: -285px;
+@media (max-width: 900px) {
+  .intro-heading {
+    font-size: 50px;
+    max-width: 750px;
   }
-  header .intro-text {
-    padding: 25vh 0 0 0;
-  }
-  header .intro-text .intro-heading {
-  font-family: "Montserrat";
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 33px;
-  line-height: 56px;
-  text-shadow: -2px 2px #000000;
-  /*margin-bottom: 50px;*/
-  position: relative;
-  z-index: 3;
-  /*bottom: 60px;*/
-  }
-  header .action-button{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 90vh;
-  }
-}
-@media (max-width: 1200px) {
-  .header-shadow img {
-    top: -20vw;
-  }
-}
-@media (max-width: 767px) {
-  .header-shadow img {
-    top: 0;
+  .intro-heading2 {
+    font-size: 25px;
   }
 }
 @media (max-width: 500px) {
-  header .intro-text .intro-heading {
-    line-height: 50px;
+  .intro-text {
+    top: 18vh;
   }
-  .header-shadow img {
-    top: -55px;
+  .intro-heading {
+    font-size: 38px;
   }
-  section#contact .section-heading {
-    font-size: 33px !important;
-  }
-  section h2.section-heading {
-    font-size: 30px !important;
-  }
-  section h3.section-subheading {
-    font-size: 1.1em !important;
-    text-align: justify;
+  .intro-heading2 {
+    font-size: 24px;
   }
 }
 @media (max-height: 680px) {
   #header-mailchimp: -8vw;
-}
-@media (max-height: 500px) {
-  header .intro-text .intro-heading {
-    font-size: 32px;
-    line-height: 41px;
-  }
-  .header-shadow img {
-    top: -23vw;
-  }
 }
 /* END HEADER */
 
@@ -552,6 +455,18 @@ section h3.section-subheading {
   font-weight: 300;
   max-width: 750px;
   margin: 0 auto 75px auto;
+}
+@media (max-width: 500px) {
+  section#contact .section-heading {
+    font-size: 33px !important;
+  }
+  section h2.section-heading {
+    font-size: 30px !important;
+  }
+  section h3.section-subheading {
+    font-size: 1.1em !important;
+    text-align: justify;
+  }
 }
 @media (min-width: 768px) {
   section {
@@ -607,7 +522,7 @@ section h3.section-subheading {
 }
 #portfolio .portfolio-item .portfolio-caption {
   /*max-width: 500px;*/
-  background-color: white;
+  /*background-color: white;*/
   text-align: center;
   padding: 15px 15px 35px 15px;
   cursor: pointer;
@@ -632,12 +547,6 @@ section h3.section-subheading {
   position: relative;
   top: 25px;
   font-size: 13px;
-}
-#parallax_1 {
-  width: 440px;
-}
-#parallax_2 {
-  width: 370px;
 }
 .barrier-title,
 .solution-title {
@@ -1255,6 +1164,8 @@ mark{
   /*background-color: #ECECEC;*/
 }
 /* MAILCHIMP MODAL */
+#iframe-wrapper {
+}
 .mailing_label {
   text-transform: none;
   font-family: "Open Sans";
@@ -1265,16 +1176,6 @@ mark{
   z-index: 3;
   line-height: 1.5em;
 }
-/*.mailing_label2 {
-  font-family: "Open Sans";
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  position: relative;
-  text-transform: none;
-  font-weight: 100;
-  top: 17px;
-}*/
 .email_input_k::selection {
   background: #55C21E;
 }
@@ -1362,94 +1263,4 @@ mark{
 .space_taker {
   width: 10vw;
   max-width: 100px;
-}
-
-
-/* KA Lite Slider Override */
-#slider {
-  background: #C4D7E3;
-}
-.touch-carousel .carousel-inner>.item {
-  margin: auto;
-}
-.touch-carousel {
-  height: 50vh;
-  min-height: 300px;
-}
-.carousel-inner {
-  height: 300px;
-}
-.carousel-control {
-  background-image: none !important;
-}
-.carousel-control span {
-  color: #044E69;
-  border: 1px solid #044E69;
-  border-radius: 100%;
-  padding: 20px;
-}
-.carousel-inner .item img {
-  width: auto;
-  height: 250px;
-  position: relative;
-  top: 40px;
-  text-align: center;
-}
-.carousel-img {
-  text-align: center;
-}
-.carousel-detail-box {
-  max-width: 400px;
-  position: relative;
-  top: 90px;
-  left: 60px;
-  text-align: left;
-}
-.carousel-header {
-  font-size: 31px;
-  display: block;
-  margin-bottom: 10px;
-}
-.carousel-detail {
-  text-align: left;
-}
-.carousel-indicators .active {
-  background-color: #044E69;
-}
-.carousel-indicators li {
-  border-color: #044E69;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-}
-.carousel-indicators {
-  bottom: -8vh;
-}
-.carousel-control .glyphicon-chevron-left{
-  left: 0;
-  top: 35%;
-}
-.carousel-control .glyphicon-chevron-right {
-  top: 35%;
-}
-.carousel-control.left {
-  left: 5%;
-}
-.carousel-control.right {
-  right: 35px;
-}
-@media (min-width: 768px) {
-  .touch-carousel .carousel-control {
-    display: -webkit-box !important;
-  }
-}
-@media (max-width: 990px) {
-  .carousel-inner .item img {
-    display: none;
-  }
-  .carousel-detail-box {
-    text-align: center;
-    margin: auto;
-    left: 0;
-  }
-  .carousel-control-left {
-    left: -15px;
 }
