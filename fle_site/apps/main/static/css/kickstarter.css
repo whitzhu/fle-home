@@ -147,8 +147,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   color: #1a1a1a;
-  background: rgb(138, 230, 92);
-  border-color: rgb(138, 230, 92);
+  background: #459F19;
+  border-color: #459F19;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -195,7 +195,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 10px 10px;
   text-align: center;
   box-shadow: none;
-  border: 3px solid rgb(138, 230, 92) !important;
+  border: 3px solid #459F19 !important;
 }
 .email_submit_k {
   clear: none !important;
@@ -207,7 +207,8 @@ fieldset[disabled] .btn-primary.active {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 10px;
-  border: 3px solid rgb(138, 230, 92) !important;
+  border: 3px solid #459F19 !important;
+  color: white;
 }
 
 @media (max-width: 500px) {
@@ -254,7 +255,7 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     padding: 21px 40px;
     box-shadow: none;
-    border: 3px solid rgb(138, 230, 92) !important;
+    border: 3px solid #459F19 !important;
   }
   .email_submit_k {
     clear: none !important;
@@ -265,7 +266,7 @@ fieldset[disabled] .btn-primary.active {
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border: 3px solid rgb(138, 230, 92) !important;
+    border: 3px solid #459F19 !important;
     padding: 21px;
   }
   .e1 {
@@ -316,8 +317,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: black;
-  background-color: rgb(138, 230, 92);
-  border-color: rgb(138, 230, 92);
+  background-color: #459F19;
+  border-color: #459F19;
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -427,16 +428,17 @@ video#bgvid {
   min-width: 100%;
 }
 #to {
-  font-size: 29px;
+  font-size: 20px;
   position: relative;
   left: 10px;
   font-family: "Montserrat";
 }
 #bridge {
-  font-size: 75px;
+  font-size: 85px;
   font-family: "Montserrat";
   position: relative;
-  top: 5px;
+  top: 32px;
+  line-height: 0.9em;
 }
 #us {
   font-size: 24px;
@@ -469,13 +471,13 @@ video#bgvid {
     top: -285px;
   }
   header .intro-text {
-    padding: 140px 0 0 0;
+    padding: 25vh 0 0 0;
   }
   header .intro-text .intro-heading {
   font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 33px;
   line-height: 56px;
   text-shadow: -2px 2px #000000;
   /*margin-bottom: 50px;*/
@@ -503,7 +505,7 @@ video#bgvid {
 }
 @media (max-width: 500px) {
   header .intro-text .intro-heading {
-    line-height: 39px;
+    line-height: 50px;
   }
   .header-shadow img {
     top: -55px;
@@ -1253,18 +1255,15 @@ mark{
   /*background-color: #ECECEC;*/
 }
 /* MAILCHIMP MODAL */
-#mail-top {
-  text-shadow: -2px 2px black;
-}
 .mailing_label {
   text-transform: none;
   font-family: "Open Sans";
-  color: white;
   text-align: center;
   position: relative;
-  font-size: 21px;
-  font-weight: 100;
+  font-size: 26px;
+  font-weight: bold;
   z-index: 3;
+  line-height: 1.5em;
 }
 /*.mailing_label2 {
   font-family: "Open Sans";

@@ -42,10 +42,7 @@
             </div>
         </div>
         <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
-        <h2 id="mail-top" class="mailing_label">Be the first to know about the September launch!</h2>
-        <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
-            <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
-        </iframe>
+        
         <div class="bgvid_container">
             <video autoplay loop poster="{% static 'img/kickstarter/bgvid_poster.jpg' %}" id="bgvid">
                 <source src="{% static 'img/kickstarter/video/background_video.mp4' %}" type="video/mp4">
@@ -77,6 +74,11 @@
 
     <!-- KA Lite Slider -->
     <section id="slider" class="not-parallax-section">
+        <h2 id="mail-top" class="mailing_label">A few minutes of your time can change a life forever.<br>Be the first to know about our Kickstarter launch in September!</h2>
+        <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
+            <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
+        </iframe>
+
         <h2 class="ka-lite-intro">Kolibri will expand on features in KA Lite that have already benefitted thousands of learners</h2>
 
         <div id="myCarousel" class="carousel slide row" data-ride="carousel" data-wrap="false" data-interval="false">
