@@ -215,7 +215,7 @@ main {
 
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('../img/kickstarter/about/bgdark2.jpg'); background-color: #010101; min-height: 310px; text-align: center}
+#slide-2 .bcg {background-image:url('../img/kickstarter/cover.png'); background-color: #010101; min-height: 310px; text-align: center}
 
 
 /* Slide 3 */
@@ -294,13 +294,13 @@ main {
 #slide-A{
     height:200px;
 }
-#slide-A .bcg {background-image:url('../img/kickstarter/about/bg3.jpg'); background-color: #010101; min-height: 310px; text-align: center}
+#slide-A .bcg {background-image:url('../img/kickstarter/cover.png'); background-color: #010101; min-height: 310px; text-align: center}
 
 /* Slide w */
 #slide-w{
     height:200px;
 }
-#slide-w .bcg {background-image:url('../img/kickstarter/about/bg_3.jpg'); background-color: #010101; min-height: 310px; text-align: center}
+#slide-w .bcg {background-image:url('../img/kickstarter/cover.png'); background-color: #010101; min-height: 310px; text-align: center}
 
 /* Slide 4 */
 .curtainContainer {width: 100%; height: 100%; position: relative;}

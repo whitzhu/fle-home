@@ -56,7 +56,7 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  color: #0099CC;
 }
 a:hover,
 a:focus,
@@ -147,8 +147,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   color: #1a1a1a;
-  background: #459F19;
-  border-color: #459F19;
+  background: #0099CC;
+  border-color: #0099CC;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -159,8 +159,8 @@ fieldset[disabled] .btn-primary.active {
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
 .btn-xl:hover {
-  background: #459F19 !important;
-  border-color: #459F19 !important;
+  background: #006B8F !important;
+  border-color: #006B8F !important;
   color: white !important;
   -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
@@ -195,7 +195,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 10px 10px;
   text-align: center;
   box-shadow: none;
-  border: 3px solid #459F19 !important;
+  border: 3px solid #0099CC !important;
 }
 .email_submit_k {
   clear: none !important;
@@ -207,7 +207,7 @@ fieldset[disabled] .btn-primary.active {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 10px;
-  border: 3px solid #459F19 !important;
+  border: 3px solid #0099CC !important;
   color: white;
 }
 
@@ -255,7 +255,7 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     padding: 21px 40px;
     box-shadow: none;
-    border: 3px solid #459F19 !important;
+    border: 3px solid #0099CC !important;
   }
   .email_submit_k {
     clear: none !important;
@@ -266,7 +266,7 @@ fieldset[disabled] .btn-primary.active {
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border: 3px solid #459F19 !important;
+    border: 3px solid #0099CC !important;
     padding: 21px;
   }
   .e1 {
@@ -317,8 +317,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: black;
-  background-color: #459F19;
-  border-color: #459F19;
+  background-color: #0099CC;
+  border-color: #0099CC;
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -578,7 +578,7 @@ section h3.section-subheading {
   margin: auto;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
-  background: rgba(254, 209, 54, 0.9);
+  background: rgba(0, 107, 143, 0.6);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -768,7 +768,7 @@ section h3.section-subheading {
   position: absolute;
   content: "";
   width: 2px;
-  background-color: white;
+  background-color: #8670A1;
   left: 40px;
   margin-left: -1.5px;
 }
@@ -814,7 +814,7 @@ section h3.section-subheading {
   background-color: #fed136;
   color: white;
   border-radius: 100%;
-  border: 7px solid white;
+  border: 7px solid #8670A1;
   text-align: center;
 }
 .timeline > li .timeline-image h4 {
@@ -860,7 +860,7 @@ section h3.section-subheading {
   font-weight: bold;
 }
 .timeline li div p a:hover {
-  color: white;
+  color: #006B8F;
   text-decoration: none;
 }
 .story a, .story a:hover, .story a:focus {
@@ -950,15 +950,17 @@ section h3.section-subheading {
   position: relative;
 }
 #about {
-  background: #8670A1;
-  color:#fff;
+  /*background: white;*/
+  /*background: url('../img/kickstarter/cover.png') repeat;
+  background-position: center center;*/
+  /*color:#fff;*/
 }
 #about h2.section-heading{
-  color: #fff;
+  /*color: #fff;*/
   padding-top: 50px;
 }
 #about .text-muted {
-  color: #fff;
+  /*color: #fff;*/
   font-weight: 300;
   font-size: 1.3em;
   line-height: 1.35;
@@ -1007,7 +1009,7 @@ section h3.section-subheading {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  /*background: url('../img/kickstarter/cover.jpg');*/
+  background: url('../img/kickstarter/nalanda-214.jpg');
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1016,6 +1018,7 @@ section#contact {
   margin-bottom: -44px;
   padding: 0;
   height: 100%;
+  min-height: 800px;
 }
 section#contact .section-heading {
   color: white;
@@ -1038,13 +1041,13 @@ section#contact .text-danger {
 #contact .text-muted {
   margin-top: 20px;
   font-family: "Montserrat";
-  color: #8670A1;
+  color: white;
 }
 section#contact .bridge-photo,
 section#contact .section-heading,
 #footer-mailchimp {
   z-index: 1;
-  color: #8670A1;
+  /*color: #8670A1;*/
 }
 section#contact img {
   max-width: 80%;
@@ -1213,25 +1216,25 @@ mark{
   width: 100%;
   height: 300px;
   margin-bottom: -5px;
-  background-color: #00E6B8;
+  /*background-color: #00E6B8;*/
 }
 #svg_content_curation {
   width: 100%;
   height: 300px;
   margin-bottom: -5px;
-  background-color: #8AE65C;
+  /*background-color: #8AE65C;*/
 }
 #svg_peer_to_peer {
   width: 100%;
   height: 300px;
   margin-bottom: -5px;
-  background-color: pink;
+  /*background-color: pink;*/
 }
 #svg_video_vectorization {
   width: 100%;
   height: 300px;
   margin-bottom: -5px;
-  background-color: #66CCFF;
+  /*background-color: #66CCFF;*/
 }
 .greenish {
   background-color: rgba(138, 230, 92, .2);
@@ -1279,9 +1282,21 @@ mark{
   background: #55C21E;
 }
 #footer-mailchimp {
-  position: relative;
   bottom: -7vh;
-  margin-bottom: 50px;
+  width: 320px;
+  height: 120px;
+}
+.foot_containor {
+  float: right;
+  margin-right: 15vw;
+  margin-top: 160px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 30px;
+}
+.lowcase {
+  text-transform: none !important;
 }
 
 /* BACK TO TOP BUTTON */
@@ -1346,28 +1361,54 @@ mark{
   visibility: hidden;
 }
 
+.ending_background {
+  background-size: cover !important;
+  background: url('../img/kickstarter/cover.png') no-repeat center center;
+  padding-bottom: 40px;
+  font-family: "Montserrat";
+  text-transform: uppercase;
+}
+.ending_background h2 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 40px;
+  padding-top: 40px;
+  font-weight: 700;
+}
+.ending_background h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .social_btns {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #E6B8E6;
+  /*padding-top: 30px;*/
+  /*padding-bottom: 30px;*/
+  /*float: right;*/
+  /*margin-right: 10vw;*/
+  /*background-color: #E6B8E6;*/
+  /*background-size: cover;*/
+  /*background-size: 100% 100%, auto;
+  background: url('../img/kickstarter/cover.png') no-repeat center center;*/
   /*position: relative;*/
 }
 .social_btns div{
   display:inline-block;
-  color: #8670A1;
+  color: #0099CC;
 }
 .social_btns div:hover{
-  color: #FED136;
+  color: #006B8F;
 }
 .space_taker {
-  width: 10vw;
+  width: 5vw;
   max-width: 100px;
 }
 
 
 /* KA Lite Slider Override */
 #slider {
-  background: #C4D7E3;
+  /*background: #C4D7E3;*/
 }
 .touch-carousel .carousel-inner>.item {
   margin: auto;
