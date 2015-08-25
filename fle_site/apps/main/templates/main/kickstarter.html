@@ -17,7 +17,6 @@
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <script src="{% static 'js/fabric.js' %}"></script>
@@ -36,9 +35,8 @@
     <header id="kickstarter-header">
         <div class="header-shadow row">
             <div class="intro-text">
-                <div class="intro-heading">A Kickstarter Campaign<span id="to">To</span><br><span id="bridge">Bridge the Divide</span>
-                    <!-- <div id="us"><span id="by">By</span><a href="{% url 'home' %}" target="_blank"> Learning Equality</a></div> -->
-                </div>
+                <div class="intro-heading">Kolibri: Open Source Education for the World</div>
+                <div class="intro-heading2">A Kickstarter Campaign by Learning Equality</div>
             </div>
         </div>
         <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
@@ -74,68 +72,13 @@
 
     <!-- KA Lite Slider -->
     <section id="slider" class="not-parallax-section">
-        <h2 id="mail-top" class="mailing_label">A few minutes of your time can change a life forever.<br>Be the first to know about our Kickstarter launch in September!</h2>
-        <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
-            <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
-        </iframe>
+        <h2 id="mail-top" class="mailing_label">A few minutes of your time can change a life forever.<br>Help us spread the word about our Kickstarter launch in October!</h2>
+        <div id="iframe-wrapper">
+            <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
+                <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
+            </iframe>
+        </div>        
 
-        <h2 class="ka-lite-intro">Kolibri will expand on features in KA Lite that have already benefitted thousands of learners</h2>
-
-        <div id="myCarousel" class="carousel slide row" data-ride="carousel" data-wrap="false" data-interval="false">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol>
-
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="container">
-                    <div class="col-md-6 carousel-img">
-                        <img src="{% static 'img/kickstarter/portfolio/offline.png' %}">
-                    </div>
-                    <div class="col-md-6 carousel-detail-box">
-                      <span class="carousel-header">No Internet Needed</span>
-                      <span class="carousel-detail">Mimics the online experience of saving, downloading, and sharing, all without access to the internet.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="container">
-                    <div class="col-md-6 carousel-img">
-                        <img src="{% static 'img/ka-lite/exercise_overview.png' %}">
-                    </div>
-                    <div class="col-md-6 carousel-detail-box">
-                      <span class="carousel-header">Over 7,000 Videos and Interactive Exercises</span>
-                      <span class="carousel-detail">A diverse collection of content from Khan Academy that generates immediate feedback, step-by-step solutions, and works through a point system to encourage continued practice of material</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="container">
-                    <div class="col-md-6 carousel-img">
-                        <img src="{% static 'img/kickstarter/portfolio/progress.png' %}">
-                    </div>
-                    <div class="col-md-6 carousel-detail-box">
-                      <span class="carousel-header">Track Individual Learning Progress</span>
-                      <span class="carousel-detail">Access meaningful progress reports for a personalized and efficient learning experience</span>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- Controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
     </section>
 
     <!-- Kolibri Features Section -->
@@ -181,7 +124,6 @@
     <a href="#kickstarter-header" class="back-to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 
     <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
 
     <!-- Portfolio Modal 0 -->
     <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
@@ -228,12 +170,12 @@
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
                             <h2>Content Curation</h2>
-                            <p class="item-intro text-muted">A tool for sharing your knowledge with people in need</p>
+                            <p class="item-intro text-muted">We’ll be working with organizations that produce high quality content to create custom channels to distribute their content, and regional organizations and governments to customize and align this content to local curricular standards to serve the needs of local learners.</p>
                             <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation.gif' %}" alt="">
-                            <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Teachers and organizations have the freedom to combine content from various channels to create unique curriculum that caters to students’ specific needs. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
-                            <p class="big"><mark>&#9733 Upload exclusively new content:  </mark>   There might be times when instructors have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, in order to share it with other instructors who may find it useful for their own students.</p>
-                            <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Instructors also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p>
-                            <p class="big"><mark>&#9733 Integrate new and existing content:  </mark>   Kolibri also allows instructors to combine existing content with their own. If an organization like UNICEF knows from experience that certain math lessons are favored by students, and they have also noticed that some of their own original exercises are effective, they can create a new channel and combine their content with pre-existing content from another channel to optimize their curriculum.</p>
+                            <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Kolibri will allow educational content producers and organizations to have the freedom to combine content from various channels to make a broad library of high quality and locally relevant educational content available to offline learners. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
+                            <p class="big"><mark>&#9733 Upload new content:  </mark>   There are times when these content producers have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, and then choose to make their new channel available to others who may find it useful for their own contexts.</p>
+                            <p class="big"><mark>&#9733 Integrate new and existing content:  </mark>   Kolibri will allow educational content producers and organizations to combine existing content with their own. If an organization like UNICEF knows from experience that certain math lessons are favored by students, and they have also noticed that some of their own original exercises are effective, they can create a new channel and combine their content with pre-existing content from another channel to optimize their curriculum.</p>
+                            <!-- <p class="big"><mark>&#9733 Alternatively, one can rearrange an existing channel:  </mark>   Content producers also have the ability to customize content that already exists in a channel. If they think that certain lessons in a channel may be too challenging for their students, for example, they can remove these lessons and present their students only with the material that is appropriate for them.</p> -->
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
                         </div>
                     </div>
