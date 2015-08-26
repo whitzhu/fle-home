@@ -70,7 +70,7 @@
     });
     </script>
 
-    <!-- KA Lite Slider -->
+    <!-- First Mailchimp -->
     <section id="slider" class="not-parallax-section">
         <div class="slider-overlay">
             <div id="iframe-wrapper">
@@ -84,13 +84,9 @@
 
     </section>
 
-    <!-- Kolibri Features Section -->
-    <section id="portfolio" class="bg-light-gray not-parallax-section">
-        {% include "main/partials/_kickstarter_pastwork.html" %}
-        <script src="{% static 'js/svg_preconfigure_tablet.js' %}"></script>
-        <script src="{% static 'js/svg_content_curation.js' %}"></script>
-        <script src="{% static 'js/svg_peer_to_peer.js' %}"></script>
-        <script src="{% static 'js/svg_video_vectorization.js' %}"></script>
+    <!-- Features Section: Tile Design -->
+    <section class="not-parallax-section">
+        {% include "main/partials/_kickstarter_features_tiledesign.html" %}
     </section>
 
     <!-- FLE History Section -->
@@ -268,9 +264,9 @@
             var offset = $("#parallax_or_mobile").height() * 3;
             $(window).scroll(function() {
                 if ($(this).scrollTop() > offset) {
-                    $('.back-to-top').fadeIn(500);
+                    $('.back-to-top').fadeIn(300);
                 } else {
-                    $('.back-to-top').fadeOut(500);
+                    $('.back-to-top').fadeOut(300);
                 }
             });
         });
