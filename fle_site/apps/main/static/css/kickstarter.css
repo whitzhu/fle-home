@@ -147,8 +147,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   color: #1a1a1a;
-  background: #0099CC;
-  border-color: #0099CC;
+  background: #c9302c;
+  border-color: #c9302c;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -159,8 +159,8 @@ fieldset[disabled] .btn-primary.active {
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
 .btn-xl:hover {
-  background: #006B8F !important;
-  border-color: #006B8F !important;
+  background: #A50606 !important;
+  border-color: #A50606 !important;
   color: white !important;
   -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
@@ -195,7 +195,7 @@ fieldset[disabled] .btn-primary.active {
   padding: 10px 10px;
   text-align: center;
   box-shadow: none;
-  border: 3px solid #0099CC !important;
+  border: 3px solid #fff !important;
 }
 .email_submit_k {
   clear: none !important;
@@ -207,83 +207,10 @@ fieldset[disabled] .btn-primary.active {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 10px;
-  border: 3px solid #0099CC !important;
+  border: 3px solid #c9302c !important;
   color: white;
 }
 
-@media (max-width: 500px) {
-  .email_input_k {
-    text-align: center;
-    display: block;
-    clear: both;
-    float: none;
-    width: 300px;
-    margin-right: 10px;
-    margin-left: 10px;
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 4px;
-  }
-  .email_submit_k {
-    display: block;
-    clear: both;
-    float: none;
-    width: 300px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 10px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
-  }
-  .e1 {
-    margin-left: -160px;
-  }
-}
-
-@media (min-width: 700px) {
-  .email_input_k {
-    outline: none;
-    clear: none !important;
-    float: left;
-    width: 350px;
-    background-color: white;
-    font-family: "Open Sans";
-    font-weight: 700;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    font-size: 18px;
-    padding: 21px 40px;
-    box-shadow: none;
-    border: 3px solid #0099CC !important;
-  }
-  .email_submit_k {
-    clear: none !important;
-    float: left;
-    width: 250px;
-    margin-left: -1px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border: 3px solid #0099CC !important;
-    padding: 21px;
-  }
-  .e1 {
-    margin-left: -300px;
-  }
-}
-
-@media (max-width: 700px) {
-  .mailing_label {
-    font-size: 22px !important;
-    font-weight: 100;
-  }
-  .tabelt_specs {
-    font-size: 24px;
-    padding: 20px;
-  }
-}
 
 #mce-success-response,
 #mce-error-response {
@@ -307,11 +234,8 @@ fieldset[disabled] .btn-primary.active {
   position: fixed;
 }
 
-@media (max-width: 800px){
-  #mce-responses{
-    margin-top: 180px;
-  }
-}
+
+
 
 .btn-xl:hover,
 .btn-xl:focus,
@@ -356,6 +280,8 @@ fieldset[disabled] .btn-xl.active {
 
 #slider{
   background: url('../img/kickstarter/slider.jpg') no-repeat;
+  background-size: cover;
+  height:75vh;
   color:#fff;
   text-align: left;
 }
@@ -363,7 +289,6 @@ fieldset[disabled] .btn-xl.active {
 .mailing_sidelabel{
   text-align: left;
   padding-left: 8%;
-  padding-right: 50%;
   padding-bottom:1%;
   text-transform: inherit;
   font-weight: 100;
@@ -1191,9 +1116,9 @@ mark{
 }
 /* MAILCHIMP MODAL */
 #iframe-wrapper {
-  padding-right: 53%;
+  padding-right: 50%;
   width: 100%;
-  padding-left: 1%;
+  padding-left: 6%;
 }
 .mailing_label {
   text-transform: none;
@@ -1224,6 +1149,138 @@ mark{
 }
 .lowcase {
   text-transform: none !important;
+}
+
+/* Media Query Max-Width 1152px */
+
+@media (max-width: 1152px) {
+  .mailing_toplabel {
+    margin-top:-50px;
+  }
+
+}
+
+/* Media Query Min-Width 700px */
+
+@media (min-width: 700px) {
+  .email_input_k {
+    outline: none;
+    clear: none !important;
+    float: left;
+    width: 350px;
+    background-color: white;
+    font-family: "Open Sans";
+    font-weight: 700;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 18px;
+    padding: 21px 40px;
+    box-shadow: none;
+    border: 3px solid #fff !important;
+  }
+  .email_submit_k {
+    clear: none !important;
+    float: left;
+    width: 250px;
+    margin-left: -1px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 3px solid #c9302c  !important;
+    padding: 21px;
+  }
+  .e1 {
+    margin-left: -300px;
+  }
+}
+
+
+/* Media Query Max-Width 800px */
+
+@media (max-width: 800px){
+  #mce-responses{
+    margin-top: 180px;
+  }
+
+  #iframe-wrapper {
+    padding-right: 25%;
+    width: 100%;
+    padding-left: 1%;
+  }
+  .mailing_toplabel {
+    margin-top:-50px;
+  }
+}
+
+/* Media Query Max-Width 700px */
+
+@media (max-width: 700px) {
+  .mailing_label {
+    font-size: 22px ;
+    font-weight: 100;
+  }
+  .tabelt_specs {
+    font-size: 24px;
+    padding: 20px;
+  }
+
+
+}
+
+
+/* Media Query Max-Width 500px */
+
+@media (max-width: 500px) {
+  #slider {
+    background-position: right;
+  }
+  .slider-overlay{
+    margin-top:-100px;
+    background-color: rgba(0,0,0,.3);
+  }
+  #iframe-wrapper {
+    padding: 0px 0px ;
+  }
+  .mailing_toplabel{
+    padding-top: 100px;
+    font-size: 1.9em ;
+  }
+  .mailing_sidelabel{
+    font-size: 25px ;
+    text-align: center;
+    padding: 10% 8%;
+    line-height: 1.5em;
+  }
+
+
+  .email_input_k {
+    text-align: center;
+    display: block;
+    clear: both;
+    float: none;
+    width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
+  }
+  .email_submit_k {
+    display: block;
+    clear: both;
+    float: none;
+    width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+  }
+  .e1 {
+    margin-left: -160px;
+  }
 }
 
 /* BACK TO TOP BUTTON */
