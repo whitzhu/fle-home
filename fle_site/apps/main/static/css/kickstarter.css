@@ -425,6 +425,8 @@ section h3.section-subheading {
   margin: 15px 0;
   text-transform: none;
 }
+
+/* Kolibri Features Version 1 */
 #portfolio {
   padding-top: 200px;
   background-color: #ECECEC;
@@ -613,6 +615,140 @@ section h3.section-subheading {
     height: 100%;
   }
 }
+/* End Kolibri Features Version 1 */
+
+
+/* Features -- Tile Design */
+.feature-intro {
+  margin-bottom: 7vh;
+}
+.feature-intro .col-md-3 p {
+  text-align: center;
+  font-size: 1em;
+}
+.kolibri-icon {
+  max-width: 30px;
+  height: auto;
+  margin: 1em 0;
+  position: relative;
+  left: -6px;
+}
+#tile-container {
+  height: 98vh;
+  min-height: 600px;
+  background: url('../img/kickstarter/portfolio/women2.jpg') no-repeat;
+  background-size: cover;
+}
+.feature-tile {
+  height: 49vh;
+  border: 2px solid white;
+  display: inline-block;
+  padding-top: 30px;
+  background: transparent;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover {
+  background: rgba(134, 112, 161, 0.6);
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover .feature-barrier div i,
+.feature-tile:hover .feature-barrier div h4,
+.feature-tile:hover .feature-solution div p, 
+.feature-tile:hover .feature-solution {
+  color: white;
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+}
+.feature-barrier {
+  height: 60%;
+}
+#no-internet {
+  background: url('../img/kickstarter/portfolio/no-internet.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover #no-internet {
+  background: url('../img/kickstarter/portfolio/no-internet-hover.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+#curate {
+  background: url('../img/kickstarter/portfolio/curate.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover #curate {
+  background: url('../img/kickstarter/portfolio/curate-hover.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+#vector {
+  background: url('../img/kickstarter/portfolio/vector.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover #vector {
+  background: url('../img/kickstarter/portfolio/vector-hover.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+#progress-report {
+  background: url('../img/kickstarter/portfolio/progress-report.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover #progress-report {
+  background: url('../img/kickstarter/portfolio/progress-report-hover.png') no-repeat center center;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-solution {
+  height: 40%;
+}
+.feature-solution-text p {
+  font-family: "Open Sans";
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0.4em 0.5em;
+  line-height: 1.2em;
+}
+.feature-barrier div i.fa,
+.feature-intro .col-md-3 p i.fa {
+  margin: 1em 0;
+  font-size: 25px;
+  color: #5F7C79;
+}
+.lock, .k{
+  margin: 0 !important;
+}
+.tile-row-container-1 .feature-tile {
+  border-top: none;
+}
+.tile-row-container-2 .feature-tile {
+  border-bottom: none;
+}
+.first-tile {
+  border-left: none;
+}
+.last-tile {
+  border-right: none;
+}
+.trigger-modal {
+  display: none;
+  text-align: center;
+  transition: display 0.3s;
+  -webkit-transition: display 0.3s;
+}
+.feature-tile:hover .feature-solution .trigger-modal {
+  display: block;
+  color: white;
+  transition: display 0.3s;
+  -webkit-transition: display 0.3s;
+}
+/* End Features -- Tile Design */
 
 .timeline {
   list-style: none;
@@ -668,7 +804,7 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #fed136;
+  background-color: #8670A1;
   color: white;
   border-radius: 100%;
   border: 7px solid #8670A1;
@@ -1035,11 +1171,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
   text-shadow: none;
-  background: #fed136;
+  background: #0099CC;
 }
 ::selection {
   text-shadow: none;
-  background: #fed136;
+  background: #0099CC;
 }
 img::selection {
   background: transparent;
@@ -1131,7 +1267,7 @@ mark{
   line-height: 1.5em;
 }
 .email_input_k::selection {
-  background: #55C21E;
+  background: #0099CC;
 }
 #footer-mailchimp {
   bottom: -7vh;
@@ -1289,7 +1425,7 @@ mark{
   bottom: 0.5em;
   right: 10px;
   text-decoration: none;
-  color: #8ae65c;
+  color: #0099CC;
   background-color: #000000;
   font-size: 20px;
   display: none;
@@ -1305,7 +1441,7 @@ mark{
 }
 
 .back-to-top:hover {    
-  background-color: #8ae65c;
+  background-color: #0099CC;
   color: black;
   border: 4px solid black;
   -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
@@ -1388,3 +1524,4 @@ mark{
   width: 5vw;
   max-width: 100px;
 }
+
