@@ -18,9 +18,6 @@ body {
 .text-muted {
   color: #141414;
 }
-.text-primary {
-  color: #fed136;
-}
 p.slim-text {
   width: 100%;
   font-size: 18px;
@@ -103,8 +100,6 @@ h6 {
 }
 .btn-primary {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -123,26 +118,7 @@ h6 {
 .open .dropdown-toggle.btn-primary {
   background-image: none;
 }
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  background-color: #fed136;
-  border-color: #fed136;
-}
 .btn-primary .badge {
-  color: #fed136;
   background-color: white;
 }
 .btn-xl {
@@ -251,26 +227,7 @@ fieldset[disabled] .btn-primary.active {
 .open .dropdown-toggle.btn-xl {
   background-image: none;
 }
-.btn-xl.disabled,
-.btn-xl[disabled],
-fieldset[disabled] .btn-xl,
-.btn-xl.disabled:hover,
-.btn-xl[disabled]:hover,
-fieldset[disabled] .btn-xl:hover,
-.btn-xl.disabled:focus,
-.btn-xl[disabled]:focus,
-fieldset[disabled] .btn-xl:focus,
-.btn-xl.disabled:active,
-.btn-xl[disabled]:active,
-fieldset[disabled] .btn-xl:active,
-.btn-xl.disabled.active,
-.btn-xl[disabled].active,
-fieldset[disabled] .btn-xl.active {
-  background-color: #fed136;
-  border-color: #fed136;
-}
 .btn-xl .badge {
-  color: #fed136;
   background-color: white;
 }
 
@@ -281,7 +238,7 @@ fieldset[disabled] .btn-xl.active {
 #slider{
   background: url('../img/kickstarter/slider.jpg') no-repeat;
   background-size: cover;
-  height:75vh;
+  height: 85vh;
   color:#fff;
   text-align: left;
 }
@@ -300,7 +257,10 @@ fieldset[disabled] .btn-xl.active {
   text-align: left;
   padding-left: 8%;
   font-size: 3.5em;
-
+  text-shadow: -2px 2px black;
+}
+#mailing_toplabel {
+  font-weight: normal;
 }
 /* NAV BAR */
 
@@ -391,7 +351,7 @@ section {
   padding: 0;
 }
 section h2.section-heading {
-  font-size: 40px;
+  font-size: 50px;
   margin-top: 0;
 }
 section h3.section-subheading {
@@ -656,53 +616,82 @@ section h3.section-subheading {
 .feature-tile:hover .feature-barrier div i,
 .feature-tile:hover .feature-barrier div h4,
 .feature-tile:hover .feature-solution div p, 
-.feature-tile:hover .feature-solution {
+.feature-tile:hover .feature-solution,
+.feature-tile:hover h4 {
   color: white;
   transition: color 0.3s;
   -webkit-transition: color 0.3s;
+  text-decoration: none;
+}
+.feature-tile h4, .feature-tile p {
+  color: #373837;
+}
+.feature-tile h4 {
+  text-align: center;
+  font-size: 25px;
 }
 .feature-barrier {
-  height: 60%;
+  height: 32%;
 }
 #no-internet {
   background: url('../img/kickstarter/portfolio/no-internet.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 .feature-tile:hover #no-internet {
   background: url('../img/kickstarter/portfolio/no-internet-hover.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 #curate {
   background: url('../img/kickstarter/portfolio/curate.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 .feature-tile:hover #curate {
   background: url('../img/kickstarter/portfolio/curate-hover.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+#out-of-box {
+  background: url('../img/kickstarter/portfolio/out-of-box.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #out-of-box {
+  background: url('../img/kickstarter/portfolio/out-of-box-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 #vector {
   background: url('../img/kickstarter/portfolio/vector.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 .feature-tile:hover #vector {
   background: url('../img/kickstarter/portfolio/vector-hover.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+#sync {
+  background: url('../img/kickstarter/portfolio/sync.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #sync {
+  background: url('../img/kickstarter/portfolio/sync-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 #progress-report {
   background: url('../img/kickstarter/portfolio/progress-report.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 .feature-tile:hover #progress-report {
   background: url('../img/kickstarter/portfolio/progress-report-hover.png') no-repeat center center;
-  transition: background 0.3s;
-  -webkit-transition: background 0.3s;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
 }
 .feature-solution {
   height: 40%;
@@ -710,7 +699,7 @@ section h3.section-subheading {
 .feature-solution-text p {
   font-family: "Open Sans";
   font-size: 24px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   text-align: center;
   margin: 0.4em 0.5em;
   line-height: 1.2em;
@@ -1018,7 +1007,6 @@ section#contact .section-heading {
   margin-bottom: 10px;
 }
 section#contact .form-control:focus {
-  border-color: #fed136;
   box-shadow: none;
 }
 
@@ -1088,11 +1076,6 @@ ul.social-buttons li a {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
-}
-ul.social-buttons li a:hover,
-ul.social-buttons li a:focus,
-ul.social-buttons li a:active {
-  background-color: #fed136;
 }
 .btn:focus,
 .btn:active,
@@ -1182,9 +1165,6 @@ img::selection {
 }
 img::-moz-selection {
   background: transparent;
-}
-body {
-  webkit-tap-highlight-color: #fed136;
 }
 mark{
   background-color: transparent;
