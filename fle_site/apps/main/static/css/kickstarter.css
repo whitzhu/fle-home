@@ -1502,22 +1502,25 @@ mark{
   font-weight: bold;
 }
 
-.social_btns {
-  /*padding-top: 30px;*/
-  /*padding-bottom: 30px;*/
-  /*float: right;*/
-  /*margin-right: 10vw;*/
-  /*background-color: #E6B8E6;*/
-  /*background-size: cover;*/
-  /*background-size: 100% 100%, auto;
-  background: url('../img/kickstarter/cover.png') no-repeat center center;*/
-  /*position: relative;*/
+.intro-social {
+  position: relative;
+  top: 4vh; 
 }
-.social_btns div{
+.intro-social .social_btns div {
+  color: rgba(255, 255, 255, 0.5);
+}
+.intro-social .social_btns div:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.social_btns {
+  z-index: 3;
+  position: relative;
+}
+.social_btns div {
   display:inline-block;
   color: #0099CC;
 }
-.social_btns div:hover{
+.social_btns div:hover {
   color: #006B8F;
 }
 .space_taker {
