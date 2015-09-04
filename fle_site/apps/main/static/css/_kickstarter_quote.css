@@ -58,11 +58,10 @@
   cursor: pointer;
 }
 #quote_video_btn:hover {
-  -ms-transform: rotate3d( 0, 0, 1, 0deg) !important;
+  /*-ms-transform: rotate3d( 0, 0, 1, 0deg) !important;
   -webkit-transform: rotate3d( 0, 0, 1, 0deg) !important;
-  transform: rotate3d( 0, 0, 1, 0deg) !important;
-  background: #00A67C;
-  /*background: url('../img/kickstarter/quote/audio-btn.png') no-repeat;*/
+  transform: rotate3d( 0, 0, 1, 0deg) !important;*/
+  background: #00A67C !important;
 }
 
 .quote_video_bg{
