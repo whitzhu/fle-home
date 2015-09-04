@@ -277,27 +277,28 @@ header {
 }
 .intro-text {
   position: relative;
-  top: 53vh;
+  top: 35vh;
   left: 4%;
 }
 .intro-heading {
   font-family: "Montserrat";
   max-width: 1000px;
-  font-size: 70px;
+  font-size: 100px;
   line-height: 56px;
-  text-shadow: -2px 2px black;
   position: relative;
   z-index: 3;
-  line-height: 1.2em;
+  text-align: right;
 }
 .intro-heading2 {
   color: white;
   z-index: 5;
   position: relative;
-  font-size: 30px;
+  font-size: 40px;
   font-family: "Open Sans";
-  top: 2vh;
-  text-shadow: -2px 2px black;
+  padding-right: 60px;
+  top: -3vh;
+  text-align: left;
+  left: -20px;
 }
 #header-mailchimp {
   position: relative;
@@ -1069,7 +1070,7 @@ ul.social-buttons li a {
   height: 40px;
   width: 40px;
   border-radius: 100%;
-  font-size: 20px;
+  font-size: 0px;
   line-height: 40px;
   color: white;
   outline: none;
@@ -1482,12 +1483,18 @@ mark{
   font-weight: bold;
 }
 
+#kickstarter-header{
+  background-size: cover;
+  background: url('../img/kickstarter/header-cover.jpg') ;
+}
+
 .intro-social {
   position: relative;
-  top: 4vh; 
+  top: 9vh;
+  text-align: right; 
 }
 .intro-social .social_btns div {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
 }
 .intro-social .social_btns div:hover {
   color: rgba(255, 255, 255, 1);
@@ -1495,6 +1502,7 @@ mark{
 .social_btns {
   z-index: 3;
   position: relative;
+  right: 5%;
 }
 .social_btns div {
   display:inline-block;
@@ -1503,8 +1511,39 @@ mark{
 .social_btns div:hover {
   color: #006B8F;
 }
+.fa-3x {
+    font-size: 2em !important;
+}
 .space_taker {
   width: 5vw;
   max-width: 100px;
 }
 
+.campaign-info{
+  padding-left: 5%;
+}
+
+#kickstarter{
+  width: 40%;
+  position: absolute;
+  z-index: 3;
+  top: 10vh;
+}
+.campaign-intro {
+  font-family: "Open Sans";
+  font-size: 25px;
+  line-height: 56px;
+  position: relative;
+  z-index: 3;
+  font-weight: 100;
+  top: 13vh;
+}
+
+.arrow-down {
+  position: relative;
+  text-align: center;
+  z-index: 3;
+  animation-duration: 2s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+}
