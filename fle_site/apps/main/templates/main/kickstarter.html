@@ -34,21 +34,45 @@
     <!-- Header -->
     <header id="kickstarter-header">
         <div class="header-shadow row">
-            <div class="intro-text">
-                <div class="intro-heading">Kolibri: Open Source Education for the World</div>
-                <div class="intro-heading2">A Kickstarter Campaign by Learning Equality</div>
-                <div class="intro-social">
+            <!---Kickstarter Campaign & Social Media Buttons-->
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="campaign-info">
+                            <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
+                            
+                            <div class = "campaign-intro">Campaigning this October</div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="intro-social">
                     {% include "main/partials/_kickstarter_social_btns.html" %}
+                    </div>
                 </div>
             </div>
+
+            <!---Kolibri Intro-->
+            <div class="intro-text">
+                <div class="container">               
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="intro-heading">Kolibri<span style="
+    font-weight: 100;
+">|</span> </div>
+                        </div>
+                        <div class="col-md-6">
+                             <div class="intro-heading2">The offline app for universal education</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-        <img id="bgvid-btn" src="{% static 'img/kickstarter/video/play-btn.png' %}">
-        
-        <div class="bgvid_container">
-            <video autoplay loop poster="{% static 'img/kickstarter/bgvid_poster.jpg' %}" id="bgvid">
-                <source src="{% static 'img/kickstarter/video/background_video.mp4' %}" type="video/mp4">
-            </video>
+        <!---Arrow Down-->
+        <div class="arrow-down">
+            <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
         </div>
+     
+
     </header>
 
     <!-- Parallax Section -->
