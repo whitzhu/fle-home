@@ -1,16 +1,83 @@
 {% load staticfiles %}
 
-<div class="container feature-intro">
+<div class="container-fluid" id="feature-container">
+	<div class="col-md-5 feature-space">
+		<div>
+			<img src="{% static 'img/kickstarter/about/kolibri.png' %}">
+		</div>
+		<span id="kolibri-name">Kolibri</span>
+		<div>
+			<span class="slogan">Learn.</span>
+			<span class="slogan">Create.</span>
+			<span class="slogan">Share.</span>
+		</div>
+	</div>
+	<div class="col-md-7" id="tile-container">
+		<div class="row top-row">
+			<a href="#portfolioModal0" data-toggle="modal">
+				<div class="col-md-6 feature-tile first-tile">
+					<h4>Preconfigured and<br>runs on anything</h4>
+					<div id="out-of-box" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						LEARN MORE
+					</div>
+				</div>
+			</a>
+			<a href="#portfolioModal3" data-toggle="modal">
+				<div class="col-md-6 feature-tile last-tile">
+					<h4>Innovative<br>"byte-size" videos</h4>
+					<div id="vector" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						LEARN MORE
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="row bottom-row">
+			<a href="#portfolioModal2" data-toggle="modal">
+				<div class="col-md-6 feature-tile first-tile">
+					<h4>Share content and<br>sync data seamlessly</h4>
+					<div id="sync" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						LEARN MORE
+					</div>
+				</div>
+			</a>
+			<a href="#portfolioModal0" data-toggle="modal">
+				<div class="col-md-6 feature-tile last-tile">
+					<h4>Learn at your<br>own pace</h4>
+					<div id="progress-report" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						LEARN MORE
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Feature tiles - Deprecated -->
+
+<!-- <div class="container feature-intro">
     <div class="col-lg-12 text-center">
         <h2 class="section-heading">WHAT'S POSSIBLE WITH KOLIBRI?</h2>
         <h3 class="section-subheading text-muted">We’ve been listening to our global network of users, and have planned our next stages of development to meet their most urgent needs.</h3>
     </div>
 </div>
 
-<div id="tile-container">
+<div >
 	<div class="row tile-row-container-1">
 		<a href="#portfolioModal0" data-toggle="modal">
-			<div class="feature-tile first-tile col-md-4 col-sm-4 col-xs-12">
+			<div class=" col-md-4 col-sm-4 col-xs-12">
 				<h4>Do everything completely offline</h4>
 				<div id="no-internet" class="row feature-barrier"></div>
 				<div class="row feature-solution">
@@ -34,7 +101,7 @@
 		<a href="#portfolioModal0" data-toggle="modal">
 			<div class="feature-tile last-tile col-md-4 col-sm-4 col-xs-12">
 				<h4>Do everything completely offline</h4>
-				<div id="out-of-box" class="row feature-barrier"></div>
+				<div class="row feature-barrier"></div>
 				<div class="row feature-solution">
 					<div class="col-md-12 col-sm-12 feature-solution-text">
 						<p>Ready to use out of the box on a pre-installed, low-cost, custom-made Android tablet.</p>
@@ -48,7 +115,7 @@
 
 	<div class="row tile-row-container-2">
 		<a href="#portfolioModal3" data-toggle="modal">
-			<div class="feature-tile first-tile col-md-4 col-sm-4 col-xs-12">
+			<div class=" col-md-4 col-sm-4 col-xs-12">
 				<h4>Do everything completely offline</h4>
 				<div id="vector" class="row feature-barrier"></div>
 				<div class="row feature-solution">
@@ -82,4 +149,4 @@
 		</a>
 	</div>
 
-</div>
+</div> -->

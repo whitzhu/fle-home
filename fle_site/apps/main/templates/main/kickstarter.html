@@ -30,7 +30,6 @@
 {% endblock footeroverride %}
 
 {% block bodycontents %}
-<div id="skrollr-body">
     <!-- Header -->
     <header id="kickstarter-header">
         <div class="header-shadow row">
@@ -76,7 +75,7 @@
     </header>
 
     <!-- Parallax Section -->
-    <div class='parallax_or_mobile'></div>
+    <!-- <div class='parallax_or_mobile'></div> -->
     <script type="text/javascript">
     $(function() {
         var ua = navigator.userAgent,
@@ -97,27 +96,22 @@
     });
     </script>
 
-    <!-- First Mailchimp -->
-    <section id="slider" class="not-parallax-section">
-        <div class="slider-overlay">
-            <div id="iframe-wrapper">
-                <h1 id="mailing_toplabel" class="mailing_toplabel">It's easy for you to make a difference</h1>
-                <h2 id="mail-top" class="mailing_sidelabel">A few moments of your time can provide someone with life-changing opportunity through education. Help us spread the word about our Kickstarter launch in October!</h2>
-                    <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
-                        <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
-                    </iframe>
-            </div>
-        </div>        
-
+    <!-- Below the fold version 1 -->
+    <section>
+        {% include "main/partials/_kickstarter_intro1.html" %}
     </section>
-
+    <!-- Below the fold version 2 -->
+<!--     <section>
+        {% include "main/partials/_kickstarter_intro2.html" %}
+    </section>
+ -->
     <!-- Features Section: Tile Design -->
-    <section class="not-parallax-section">
+    <section>
         {% include "main/partials/_kickstarter_features_tiledesign.html" %}
     </section>
 
     <!-- FLE Quote Section -->
-    <section id="fle_quote">
+    <section>
         {% include "main/partials/_kickstarter_quote.html" %}
     </section>
 
@@ -249,14 +243,16 @@
                     <div>
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Video Vectorization</h2>
-                            <p class="item-intro text-muted">Achieve a compression ratio no other algorithm comes close, but still with high quality.</p>
+                            <h2>"Byte-Size" Videos</h2>
+                            <p class="item-intro text-muted">We're using an innovative video compressor which converts the video elements you see into scalable vector objects.</p>
+                            <p>This is tech-talk for the idea that hundreds of gigabytes of videos can now be compressed into just a few megabytes.</p>
+                            <p>For people who only have access to lower-performing technology, this means they can download huge libraries of videos at a fraction of the time and space.</p>
                             <center>
                                 <canvas id="canvas" width="690" height="388" style="border:1px solid #000000"></canvas>
                             </center>
                             <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
                             <script src="{% static 'js/action updated.js' %}"></script>
-                            <mark id="mark">&#9757 Select the elements on the video with your mouse and change their position and size.<br>Try it while the video is playing!</mark>
+                            <mark id="mark">&#9757 Since this method allows videos to be composed of vectorized elements, you can select them on the video by clicking and dragging around them. You can change their position and size.<br>Try it while the video is playing!</mark>
                             <br>
                             <br>
                             <div id="button-wrapper">
@@ -318,6 +314,5 @@
                 url,'popUpWindow','height=500,width=600,left='+(window.screen.width/2-300)+'px,top='+(window.screen.height/2-250)+'px,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
         }
     </script>
-</div>
 
 {% endblock bodycontents %}
