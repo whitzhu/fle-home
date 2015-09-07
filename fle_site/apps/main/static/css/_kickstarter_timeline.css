@@ -1,0 +1,48 @@
+.timeline_container {
+  width: 100vw;
+  min-width: 800px;
+  height: 800px;
+}
+
+#timeline_canvas {
+  position: absolute;
+  width: 100vw;
+  height: 800px;
+  /*background-color: #EFEFEF;*/
+}
+
+.circles_container {
+  height: 100%;
+  display: block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.tl_img {
+  left: 20vw;
+  top: 50%;
+  transform: translate(0,-170px);
+  margin-left: 6vw;
+  display: inline-block;
+  float: left;
+  width: 140px;
+  position: relative;
+  border: 6px solid #8670A1;
+  box-shadow: 10px 10px 8px #666666;
+}
+#tl_img_1 {
+  margin-top: 200px;
+}
+#tl_img_2 {
+  margin-bottom: 200px;
+}
+#tl_img_3 {
+  margin-top: 200px;
+}
+#tl_img_4 {
+  margin-bottom: 200px;
+}
+
+.tl_text {
+  position: absolute;
+}
