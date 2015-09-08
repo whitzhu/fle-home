@@ -192,11 +192,13 @@ main {
         font-weight: 200;
     }
     .hsContent h2  {
-        color: #fff;
+        color: #333;
         font-size: 20px;
         line-height: 30px;
         margin-bottom: 12px;
-        font-weight: 200;
+        font-weight: 100;
+        font-family: "Open Sans", sans-serif;
+        text-transform: inherit;
     }
     .hsContent p {
         color: #b2b2b2;
@@ -381,8 +383,54 @@ main {
     margin-top:10%;
 }
 
+/* Slide-k */
+
+#slide-k .bcg{
+    height:500px;
+}
+
+    #slide-k .hsContainer{
+        top:5%;
+    }
+    #slide-k .hsContent h1,h2{
+    color:#333 !important;
+    padding:0% 25%; 
+    line-height: 50px;
+
+    }
+
+    #slide_logo{
+        width:30%;
+}
+
+/*slide-no-internet */
+
+#slide-k2 .bcg{
+    background-image:url('../img/kickstarter/cover.png'); 
+    min-height: 310px; 
+    text-align: center;
+}
+    #slide-k2 .hsContent h1{
+        font-weight: 400;
+        color: #fff;
+        margin-top: 15%;
+
+    }
+    #slide-k2 .hsContent h2{
+        color: #fff !important;
+        padding: 0% 5%;
+        margin-top: 10%;
+    }
+
+    #slide_tablet{
+        width:50%;
+        position: fixed;
+        top: 1vh;
+    }
+
+
 /* Medium devices (tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
 .bold{
     font-weight:700 !important;
     background: none;
@@ -507,7 +555,7 @@ main {
     }
 
 }
-
+*/
 
 
 
