@@ -134,8 +134,8 @@ h6 {
 }
 .btn-xl {
   color: #1a1a1a;
-  background: #c9302c;
-  border-color: #c9302c;
+  background: #14E06E;
+  border-color: #14E06E;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -146,8 +146,8 @@ h6 {
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
 .btn-xl:hover {
-  background: #A50606 !important;
-  border-color: #A50606 !important;
+  background: #14E06E !important;
+  border-color: #14E06E !important;
   color: white !important;
   -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
@@ -194,7 +194,7 @@ h6 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 10px;
-  border: 3px solid #c9302c !important;
+  border: 3px solid #14E06E !important;
   color: white;
 }
 
@@ -801,14 +801,14 @@ section h3.section-subheading {
 /* LAST CALL TO ACTION */
 section#contact {
   background: url('../img/kickstarter/nalanda-214.jpg');
-  background-position: center center;
+  background-position: center 30%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: -44px;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   min-height: 800px;
 }
 section#contact .section-heading {
@@ -838,13 +838,6 @@ section#contact .section-heading,
 #footer-mailchimp {
   z-index: 1;
   /*color: #8670A1;*/
-}
-section#contact img {
-  max-width: 80%;
-  min-width: 300px;
-  position: relative;
-  top: 5vh;
-  z-index: 0;
 }
 @media (max-width: 767px) , (max-height: 640px) {
   section#contact img {
@@ -908,12 +901,13 @@ ul.social-buttons li a {
 }
 .portfolio-modal .modal-content p {
   margin-bottom: 30px;
+  font-size: 20px;
 }
 .portfolio-modal .modal-content p.item-intro {
   margin: 20px 0 30px;
   font-family: "Open Sans";
   font-style: italic;
-  font-size: 16px;
+  font-size: 24px;
 }
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 30px;
@@ -923,12 +917,12 @@ ul.social-buttons li a {
   margin-bottom: 30px;
 }
 .portfolio-modal .close-modal {
-  position: absolute;
+  position: relative;
   width: 75px;
   height: 75px;
-  background-color: transparent;
-  top: 25px;
-  right: 25px;
+  top: -75px;
+  float: right;
+  right: 16px;
   cursor: pointer;
 }
 .portfolio-modal .close-modal:hover {
@@ -1065,15 +1059,37 @@ mark{
 }
 .foot_containor {
   float: right;
-  margin-right: 15vw;
-  margin-top: 160px;
+  margin-right: 8vw;
+  margin-top: 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  padding: 30px;
+  padding: 50px;
+}
+.foot_containor #footer-kolibri {
+  width: 230px;
+  margin-bottom: 25px;
+}
+.foot_containor #footer-kickstarter {
+  width: 400px;
+  display: block;
 }
 .lowcase {
   text-transform: none !important;
+  font-family: "Open Sans";
+  color: white;
+  font-size: 23px;
+  font-weight: normal;
+}
+#dreams {
+  text-align: center;
+  font-family: "Open Sans";
+  text-transform: none;
+  font-weight: normal;
+  font-size: 55px;
+  color: white;
+  padding: 70px 0 50px 0;
+  margin: 0 !important;
 }
 
 /* Media Query Max-Width 1152px */
@@ -1311,14 +1327,14 @@ mark{
 .social_btns {
   z-index: 3;
   position: relative;
-  right: 5%;
 }
 .social_btns div {
   display:inline-block;
-  color: #0099CC;
+  color: white;
+  opacity: 0.85;
 }
 .social_btns div:hover {
-  color: #006B8F;
+  opacity: 1;
 }
 .fa-3x {
     font-size: 2em !important;
