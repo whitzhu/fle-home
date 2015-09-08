@@ -30,7 +30,6 @@
 {% endblock footeroverride %}
 
 {% block bodycontents %}
-<div id="skrollr-body">
     <!-- Header -->
     <header id="kickstarter-header">
         <div class="header-shadow row">
@@ -40,7 +39,7 @@
                         <div class="campaign-info">
                             <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
                             
-                            <div class = "campaign-intro">Campaigning this October</div>
+                            <div class = "campaign-intro">Pre-order now for those in need</div>
                         </div>
                 </div>
                 <div class="col-md-6">
@@ -77,27 +76,22 @@
     <div class='parallax_or_mobile'></div>
     {% include "main/partials/_kickstarter_parallax.html" %}
 
-    <!-- First Mailchimp -->
-    <section id="slider" class="not-parallax-section">
-        <div class="slider-overlay">
-            <div id="iframe-wrapper">
-                <h1 class="mailing_toplabel">How You Can Help!</h1>
-                <h2 id="mail-top" class="mailing_sidelabel">A few minutes of your time can change a life forever. Help us spread the word about our Kickstarter launch in October!</h2>
-                    <iframe id="header-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="300">
-                        <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
-                    </iframe>
-            </div>
-        </div>        
-
+    <!-- Below the fold version 1 -->
+    <!-- <section>
+        {% include "main/partials/_kickstarter_intro1.html" %}
+    </section> -->
+    <!-- Below the fold version 2 -->
+    <section>
+        {% include "main/partials/_kickstarter_intro2.html" %}
     </section>
 
     <!-- Features Section: Tile Design -->
-    <section class="not-parallax-section">
+    <section>
         {% include "main/partials/_kickstarter_features_tiledesign.html" %}
     </section>
 
     <!-- FLE Quote Section -->
-    <section id="fle_quote">
+    <section>
         {% include "main/partials/_kickstarter_quote.html" %}
     </section>
 
@@ -110,13 +104,13 @@
     <!-- Contact Section -->
     <div class='ending_background'>
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading">SEE HOW YOU CAN HELP BRIDGE THE DIVIDE</h2>
+            <h2 class="section-heading">SEE HOW YOU CAN HELP BRIDGE THE DIGITAL DIVIDE</h2>
         </div>
-        <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE SEPTEMBER LAUNCH!</h3>
+        <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE OCTOBER LAUNCH!</h3>
     </div>
     <section id="contact" class="not-parallax-section">
         <div class="foot_containor">
-            <h3 class="lowcase">Spread the words</h3>
+            <h3 class="lowcase">Spread the word</h3>
             {% include "main/partials/_kickstarter_social_btns.html" %}
             <h3 class="lowcase">-- Or --</h3>
             <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
@@ -229,14 +223,16 @@
                     <div>
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Video Vectorization</h2>
-                            <p class="item-intro text-muted">Achieve a compression ratio no other algorithm comes close, but still with high quality.</p>
+                            <h2>"Byte-Size" Videos</h2>
+                            <p class="item-intro text-muted">We're using an innovative video compressor which converts the video elements you see into scalable vector objects.</p>
+                            <p>This is tech-talk for the idea that hundreds of gigabytes of videos can now be compressed into just a few megabytes.</p>
+                            <p>For people who only have access to lower-performing technology, this means they can download huge libraries of videos at a fraction of the time and space.</p>
                             <center>
                                 <canvas id="canvas" width="690" height="388" style="border:1px solid #000000"></canvas>
                             </center>
                             <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
                             <script src="{% static 'js/action updated.js' %}"></script>
-                            <mark id="mark">&#9757 Select the elements on the video with your mouse and change their position and size.<br>Try it while the video is playing!</mark>
+                            <mark id="mark">&#9757 Since this method allows videos to be composed of vectorized elements, you can select them on the video by clicking and dragging around them. You can change their position and size.<br>Try it while the video is playing!</mark>
                             <br>
                             <br>
                             <div id="button-wrapper">
@@ -298,6 +294,5 @@
                 url,'popUpWindow','height=500,width=600,left='+(window.screen.width/2-300)+'px,top='+(window.screen.height/2-250)+'px,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
         }
     </script>
-</div>
 
 {% endblock bodycontents %}
