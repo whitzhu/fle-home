@@ -7,9 +7,11 @@ $(function() {
 
     function slidingTablet(e) {
         if( window.pageYOffset > appear_pos &&  window.pageYOffset < disappear_pos) {
+            slide_tablet.css("visibility", "visible");
             slide_tablet.css("opacity", "1");
         }else{
             slide_tablet.css("opacity", "0");
+            slide_tablet.css("visibility", "hidden");
         }
     }
 });
