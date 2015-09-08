@@ -3,6 +3,17 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
 }
+
+.fle_title {
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+#purple_text {
+  font-size: 60px;
+  color: purple;
+}
+
 .modal {
   max-width: 80%;
   max-height: 80%;
