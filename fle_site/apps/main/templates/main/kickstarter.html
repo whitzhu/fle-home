@@ -109,15 +109,7 @@
         <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE OCTOBER LAUNCH!</h3>
     </div>
     <section id="contact" class="not-parallax-section">
-        <div class="foot_containor">
-            <h3 class="lowcase">Spread the word</h3>
-            {% include "main/partials/_kickstarter_social_btns.html" %}
-            <h3 class="lowcase">-- Or --</h3>
-            <iframe id="footer-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%" height="200">
-                <a href="partials/_kickstarter_mailchimp.html" target="_blank">Sign up!</a>
-            </iframe>
-        </div>
-            <!-- End mc_embed_signup -->
+        {% include "main/partials/_kickstarter_footer.html" %}
     </section>
 
     <a href="#kickstarter-header" class="back-to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
