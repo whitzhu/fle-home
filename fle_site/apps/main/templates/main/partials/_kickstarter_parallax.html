@@ -1,4 +1,5 @@
-<!-- {% load staticfil     -->
+{% load staticfiles %}
+
 <STYLE type="text/css">
     #kickstarter-header {
         height: 100vh;
@@ -7,8 +8,12 @@
         height: 70vh;
     }
 </STYLE>
-<link rel="stylesheet" href="/static/css/parallax_main.css">
+<link rel="stylesheet" href="/static/css/_kickstarter_parallax.css">
 <link rel="stylesheet" href="/static/css/parallax_normalize.css">
+
+{% static 'js/imagesloaded.js' %}
+{% static 'js/skrollr.js' %}
+{% static 'js/_main.js' %}
 
 <div id="parallax">
 
