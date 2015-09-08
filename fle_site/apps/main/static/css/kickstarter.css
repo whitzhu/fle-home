@@ -11,7 +11,7 @@ body {
 }
 #purple_text {
   font-size: 60px;
-  color: purple;
+  color: #8670A1;
 }
 
 .modal {
@@ -1298,6 +1298,7 @@ mark{
   margin-bottom: 10px;
   font-size: 40px;
   padding-top: 40px;
+  margin-top: 0;
   font-weight: 700;
 }
 .ending_background h3 {
