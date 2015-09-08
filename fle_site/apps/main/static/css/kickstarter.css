@@ -801,7 +801,7 @@ section h3.section-subheading {
 /* LAST CALL TO ACTION */
 section#contact {
   background: url('../img/kickstarter/nalanda-214.jpg');
-  background-position: top center;
+  background-position: center 30%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -901,12 +901,13 @@ ul.social-buttons li a {
 }
 .portfolio-modal .modal-content p {
   margin-bottom: 30px;
+  font-size: 20px;
 }
 .portfolio-modal .modal-content p.item-intro {
   margin: 20px 0 30px;
   font-family: "Open Sans";
   font-style: italic;
-  font-size: 16px;
+  font-size: 24px;
 }
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 30px;
@@ -916,12 +917,12 @@ ul.social-buttons li a {
   margin-bottom: 30px;
 }
 .portfolio-modal .close-modal {
-  position: absolute;
+  position: relative;
   width: 75px;
   height: 75px;
-  background-color: transparent;
-  top: 25px;
-  right: 25px;
+  top: -75px;
+  float: right;
+  right: 16px;
   cursor: pointer;
 }
 .portfolio-modal .close-modal:hover {
