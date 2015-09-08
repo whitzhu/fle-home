@@ -8,11 +8,13 @@ body {
   font-size: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
+  background-color: #E7E2EC;
 }
 #purple_text {
   font-size: 60px;
   color: #8670A1;
 }
+
 
 .modal {
   max-width: 80%;
@@ -1298,7 +1300,6 @@ mark{
   margin-bottom: 10px;
   font-size: 40px;
   padding-top: 40px;
-  margin-top: 0;
   font-weight: 700;
 }
 .ending_background h3 {
