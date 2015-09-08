@@ -75,25 +75,7 @@
 
     <!-- Original Parallax Section -->
     <div class='parallax_or_mobile'></div>
-    <script type="text/javascript">
-    $(function() {
-        var ua = navigator.userAgent,
-        isMobileWebkit = /WebKit/.test(ua) && /Mobile/.test(ua);
-        if (isMobileWebkit) {
-            $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_mobile_template.html' %}");
-        }else{
-            // $.getScript("{% static 'js/enquire.min.js' %}");
-            $(".parallax_or_mobile").load("{% static 'kickstarter/kickstarter_parallax_template.html' %}", function() {
-                // $(".parallax_or_mobile").load("{% static 'kickstarter/_kickstarter_portfolio.html' %}", function() {
-                    $.getScript("{% static 'js/imagesloaded.js' %}", function() {
-                        $.getScript("{% static 'js/skrollr.js' %}", function() {
-                            $.getScript("{% static 'js/_main.js' %}");
-                        });
-                });
-            });
-        }
-    });
-    </script>
+    {% include "main/partials/_kickstarter_parallax.html" %}
 
     <!-- First Mailchimp -->
     <section id="slider" class="not-parallax-section">
