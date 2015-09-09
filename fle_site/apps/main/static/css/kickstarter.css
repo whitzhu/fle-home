@@ -12,6 +12,17 @@ body {
   position: relative;
   z-index: 3;
 }
+.fle_title_img {
+  color: white;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #E7E2EC;
+  position: relative;
+  z-index: 3;
+  background: url('../img/kickstarter/cover.png') no-repeat;
+  background-size: cover;
+}
 .fle_title_bold {
   position: relative;
   left: 15vw;
