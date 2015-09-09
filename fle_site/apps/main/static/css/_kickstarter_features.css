@@ -1,0 +1,154 @@
+/* Vectorized Video */
+@media (max-width: 750px) {
+  #canvas, .upper-canvas, .canvas-container {
+    width: 100vw !important;
+    height: auto !important;
+  }
+  .vector-description {
+    padding: 0 25px !important;
+  }
+  .modal-body {
+    padding: 0 !important;
+  }
+  #button-wrapper {
+    margin-top: 58vw !important;
+  }
+  #mark {
+    position: relative;
+    top: 58vw;
+  }
+}
+
+
+#feature-container {
+  height: 98vh;
+  min-height: 600px;
+}
+
+#feature-container #tile-container {
+  padding: 0;
+  background: url('../img/kickstarter/portfolio/women2.jpg') no-repeat;
+  background-size: cover;
+}
+.feature-space div {
+  text-align: center;
+  position: relative;
+  top: 15vh;
+}
+.feature-space img {
+  width: 55%;
+}
+span#kolibri-name {
+  font-size: 70px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 16vh;
+  color: white;
+}
+span.slogan {
+  top: 8vh;
+  position: relative;
+  color: white;
+  font-size: 31px;
+  margin: 0 5px;
+}
+.feature-space {
+  background: #8670A1;
+  height: 98vh;
+}
+.feature-tile {
+  height: 49vh;
+  border: 3px solid #8670A1;
+  padding-top: 7%;
+  background: transparent;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.learn-more-modal {
+  text-align: center;
+  position: relative;
+  top: 16%;
+}
+.learn-more-modal {
+  font-weight: bold;
+  font-size: 20px;
+}
+.learn-more-modal:hover {
+  font-size: 21px;
+}
+.feature-tile:hover {
+  background: rgba(134, 112, 161, 0.6);
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+}
+.feature-tile:hover h4,
+.feature-tile:hover .learn-more-modal {
+  color: white;
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  text-decoration: none;
+}
+.feature-tile h4,
+.learn-more-modal {
+  color: #373837;
+}
+.feature-tile h4 {
+  text-align: center;
+  font-size: 28px;
+}
+.tile-image {
+  height: 40%;
+}
+.first-tile {
+  border-left: none;
+}
+.last-tile {
+  border-right: none;
+}
+.top-row .feature-tile {
+  border-top: none;
+}
+.bottom-row .feature-tile {
+  border-bottom: none;
+}
+#out-of-box {
+  background: url('../img/kickstarter/portfolio/out-of-box.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #out-of-box {
+  background: url('../img/kickstarter/portfolio/out-of-box-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+#progress-report {
+  background: url('../img/kickstarter/portfolio/progress-report.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #progress-report {
+  background: url('../img/kickstarter/portfolio/progress-report-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+#vector {
+  background: url('../img/kickstarter/portfolio/vector.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #vector {
+  background: url('../img/kickstarter/portfolio/vector-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+#sync {
+  background: url('../img/kickstarter/portfolio/sync.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
+.feature-tile:hover #sync {
+  background: url('../img/kickstarter/portfolio/sync-hover.png') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+}
