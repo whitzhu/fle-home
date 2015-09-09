@@ -53,9 +53,10 @@
   left: 70vw;
   transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
-  /*transform: translate(-45px,-45px);*/
-  visibility: hidden;
   cursor: pointer;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
 }
 #quote_video_btn:hover {
   /*-ms-transform: rotate3d( 0, 0, 1, 0deg) !important;
