@@ -1,4 +1,6 @@
 .how_container {
   padding-bottom: 20px;
   position: relative;
+  padding-top: 20px;
+  background-color: white;
 }
