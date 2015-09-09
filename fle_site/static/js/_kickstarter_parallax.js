@@ -1,7 +1,7 @@
 $(function() {
     var slide_tablet = $('#slide_tablet');
-    var appear_pos = $('#fle_intro').position().top - 200;
-    var disappear_pos = $('#fle_features').position().top;
+    var appear_pos = $('#fle_how').position().top - 200;
+    var disappear_pos = $('#fle_features').position().top + 300;
 
     window.addEventListener('scroll', slidingTablet, false);
 

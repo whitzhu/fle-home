@@ -10,6 +10,14 @@ body {
   padding-bottom: 40px;
   background-color: #E7E2EC;
 }
+.fle_title_bold {
+  position: relative;
+  left: 15vw;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: bolder;
+}
 #purple_text {
   font-size: 60px;
   color: #8670A1;
