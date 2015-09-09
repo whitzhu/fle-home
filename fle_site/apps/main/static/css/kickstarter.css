@@ -9,12 +9,33 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #E7E2EC;
+  position: relative;
+  z-index: 3;
+}
+.fle_title_bold {
+  position: relative;
+  left: 15vw;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: bolder;
 }
 #purple_text {
   font-size: 60px;
   color: #8670A1;
 }
-
+#fle_intro {
+  position: relative;
+  z-index: 3;
+}
+#fle_timeline {
+  position: relative;
+  z-index: 3;
+}
+section#contact {
+  position: relative;
+  z-index: 3;
+}
 
 .modal {
   max-width: 80%;
@@ -1313,6 +1334,8 @@ mark{
   background-size: cover;
   background: url('../img/kickstarter/header-cover.jpg') ;
   height: 100vh;
+  position: relative;
+  z-index: 3;
 }
 
 .intro-social {
