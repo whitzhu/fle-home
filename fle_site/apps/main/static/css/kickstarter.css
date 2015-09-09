@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url('../../../../static/fonts/Montserrat-Light.otf');
+}
+
 body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
@@ -6,11 +11,30 @@ body {
 
 .fle_title {
   font-size: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #E7E2EC;
+  padding: 90px 0;
+  background-color: #F5F5F5;
   position: relative;
   z-index: 3;
+}
+.fle_title img {
+  max-width: 300px;
+}
+.fle_title h2 {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 39px;
+}
+.fle_title h3 {
+  text-transform: none;
+  font-weight: normal;
+  position: relative;
+  top: -17px;
+}
+#fle_timeline .fle_title h1 {
+  font-weight: normal;
+  font-size: 40px;
+  text-transform: none;
+  margin-top: 50px;
 }
 .fle_title_img {
   color: white;
@@ -36,6 +60,14 @@ body {
   font-size: 55px;
   font-family: "Montserrat";
   font-weight: bold;
+}
+#next-gen {
+  font-size: 33px;
+  max-width: 1000px;
+}
+#kolibri-story {
+  max-width: 200px;
+  margin: 30px 0;
 }
 .fle_title p {
   font-family: "Montserrat";
@@ -654,7 +686,7 @@ mark{
   bottom: 0.5em;
   right: 10px;
   text-decoration: none;
-  color: #0099CC;
+  color: #8670A1;
   background-color: #000000;
   font-size: 20px;
   display: none;
@@ -670,7 +702,7 @@ mark{
 }
 
 .back-to-top:hover {    
-  background-color: #0099CC;
+  background-color: #8670A1;
   color: black;
   border: 4px solid black;
   -webkit-transition: border 0.2s, background 0.2s, color 0.2s;
@@ -815,13 +847,14 @@ mark{
   line-height: 140%;
   text-transform: initial;
   font-family: "Montserrat";
-
+  max-width: 600px;
+  margin: auto;
 }
 
 .below-fold2 h3{
   font-weight: 100;
   text-transform: initial;
-  font-family:  "Montserrat";
+  font-family:  "Montserrat-Light";
 }
 
 /* Problem Statment */
