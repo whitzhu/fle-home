@@ -4,3 +4,20 @@
   padding-top: 20px;
   background-color: white;
 }
+@keyframes myrotation {
+  animation-duration: 1s;
+  animation-name: flipInX;
+  animation-iteration-count: infinite;
+}
+.internet_cloud {
+  position: absolute;
+  z-index: 9999;
+  margin-top: 60px;
+  margin-left: -400px;
+}
+.option_text {
+  position: absolute;
+  z-index: 9999;
+  margin-top: 300px;
+  margin-left: -730px;
+}
