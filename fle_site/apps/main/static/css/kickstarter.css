@@ -7,12 +7,14 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   margin: 0;
+  /*background: white;*/
 }
 
 .fle_title {
   font-size: 40px;
   padding: 90px 0;
   background-color: #F5F5F5;
+  /*background-color: white;*/
   position: relative;
   z-index: 3;
 }
@@ -31,7 +33,6 @@ body {
   top: -17px;
 }
 #fle_timeline .fle_title h1 {
-  font-weight: normal;
   font-size: 40px;
   text-transform: none;
   margin-top: 50px;
@@ -368,6 +369,7 @@ section#contact .section-heading,
   /*color: #8670A1;*/
 }
 
+
 footer {
   padding: 25px 0;
   text-align: center;
@@ -439,11 +441,10 @@ ul.social-buttons li a {
 }
 .portfolio-modal .close-modal {
   position: relative;
-  width: 75px;
   height: 75px;
   top: -75px;
   float: right;
-  right: 16px;
+  left: -65px;
   cursor: pointer;
 }
 .portfolio-modal .close-modal:hover {
@@ -554,6 +555,9 @@ mark{
   bottom: -7vh;
   width: 320px;
   height: 120px;
+}
+#footer-mailchimp body {
+  background: transparent;
 }
 .foot_containor {
   float: right;
@@ -721,6 +725,7 @@ mark{
   position: relative;
   top: 9vh;
   text-align: right; 
+  right: 30px;
 }
 .intro-social .social_btns div {
   color: rgba(255, 255, 255, 0.8);

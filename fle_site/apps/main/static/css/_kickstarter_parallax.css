@@ -3,5 +3,6 @@
     right: 0;
     width: 40vw;
     position: fixed;
-    display: none;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
 }

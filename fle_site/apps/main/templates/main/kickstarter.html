@@ -108,25 +108,25 @@
         <center class="fle_title">
             <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}">
             <h2>Our First Generation Platform</h2>
-            <h3>Brought Khan Academy, one source of online education, to the offline world.</h3>
-            <h1>2 years. 2,000,000 people. 160+ countries.</h1>
+            <h3>Brought online education from Khan Academy to the offline world.</h3>
+            <h1 class="wow fadeInDown">2 years. 2,000,000 people. 160+ countries.</h1>
             <!-- Kolibri will be our next generation platform from <a id="be-part" href="{% url 'ka_lite' %}">KA Lite.</a> -->
         </center>
         {% include "main/partials/_kickstarter_timeline.html" %}
         <center class="fle_title">
             <h2>The Next Generation</h2>
             <img id="kolibri-story" src="{% static 'img/kickstarter/about/kolibri.png' %}">
-            <h3 id="next-gen">Kolibri will bring even more sources of great online educational content to the offline world.</h3>
+            <h3 id="next-gen" class="wow fadeInDown">Kolibri will bring even more sources of great online educational content to the offline world.</h3>
         </center>
     </section>
 
     <!-- FLE Quote Section -->
     <section id="fle_quote">
         {% include "main/partials/_kickstarter_quote.html" %}
-        <center class="fle_title_img">
+        <!-- <center class="fle_title_img">
             In just three years, KA Lite has given education to over 2,000,000<br>
             people in over 160 countries. Imagine what we can do with Kolibri.
-        </center>
+        </center> -->
     </section>
 
 
@@ -159,16 +159,7 @@
 
     <!-- Smooth scrolling and back to top button -->
     <script>
-        $(document).ready(function() {
-            var offset = $(".fle_title").height() + $('#fle_intro').height() + $('#kickstarter-header').height() + $('#how_it_works').height()/2;
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > offset) {
-                    $('#slide_tablet').fadeIn(700);
-                } else {
-                    $('#slide_tablet').fadeOut(700);
-                }
-            });
-        });
+        
         $(document).ready(function() {
             var offset = $("#parallax_or_mobile").height() * 3;
             $(window).scroll(function() {
