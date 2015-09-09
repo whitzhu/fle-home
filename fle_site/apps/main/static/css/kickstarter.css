@@ -1533,11 +1533,62 @@ span.slogan {
 
 
 /* Introduction to Kolibri Version 2 */
+
+
 .below-fold2 {
-  height: 80vh;
-  padding: 100px 0;
+  height: 70vh;
+  background: url('../img/kickstarter/fold2.png');
+  text-align: center;
+  background-size: cover;
 }
-.below-fold2 .col-md-12 img {
+
+#kolibri_logo{
+  padding-top:10%;
+  width: 40%;
+}
+
+/* Kolibri Statment */
+.kolibri-statement{
+  padding:0% 12%;
+}
+
+.below-fold2 h1{
+  font-weight: 400;
+  text-transform: initial;
+
+}
+
+.below-fold2 h2{
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 140%;
+  text-transform: initial;
+  font-family: "Montserrat";
+
+}
+
+.below-fold2 h3{
+  font-weight: 100;
+  text-transform: initial;
+  font-family:  "Montserrat";
+}
+
+/* Problem Statment */
+.problem-statement{
+  padding: 5% 0%;
+}
+
+.top-box{
+  padding: 7% 0%;
+  animation-delay: 0.5s;
+
+}
+
+.bottom-box{
+  padding: 7% 0%;
+  animation-delay: 0.5s;
+}
+/*.below-fold2 .col-md-12 img {
   max-width: 300px;
 }
 .below-fold2 .col-md-12 {
@@ -1552,4 +1603,4 @@ span.slogan {
 }
 .below-fold2 .col-md-4 span {
   font-size: 25px;
-}
+}*/
