@@ -27,7 +27,7 @@
 
 #feature-container #tile-container {
   padding: 0;
-  background: url('../img/kickstarter/portfolio/women2.jpg') no-repeat;
+  background-color: #fff;
   background-size: cover;
 }
 .feature-space div {
@@ -60,7 +60,7 @@ span.slogan {
 .feature-tile {
   height: 49vh;
   border: 3px solid #8670A1;
-  padding-top: 7%;
+  padding-top: 5%;
   background: transparent;
   transition: background 0.3s;
   -webkit-transition: background 0.3s;
@@ -71,7 +71,7 @@ span.slogan {
   top: 16%;
 }
 .learn-more-modal {
-  font-weight: bold;
+  font-weight: 100;
   font-size: 20px;
 }
 .learn-more-modal:hover {
@@ -92,10 +92,12 @@ span.slogan {
 .feature-tile h4,
 .learn-more-modal {
   color: #373837;
+
 }
 .feature-tile h4 {
   text-align: center;
   font-size: 28px;
+
 }
 .tile-image {
   height: 40%;
