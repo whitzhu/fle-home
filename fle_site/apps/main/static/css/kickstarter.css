@@ -539,6 +539,12 @@ mark{
   height: 100%;
   /*background-color: #ECECEC;*/
 }
+
+/* Features Section: Tile Design */
+#fle_features{
+  background-color: #fff;
+}
+
 /* MAILCHIMP MODAL */
 #iframe-wrapper {
   padding-right: 50%;
