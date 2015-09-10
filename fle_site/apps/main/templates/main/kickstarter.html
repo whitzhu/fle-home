@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script> -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:100,400,700' rel='stylesheet' type='text/css'>
     <!-- <script src="{% static 'js/modernizr-2.7.1.min.js' %}"></script> -->
     <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css" rel="stylesheet"> -->
 {% endblock headcss %}
@@ -73,10 +73,6 @@
     <!-- Parallax Section -->
     {% include "main/partials/_kickstarter_parallax.html" %}
 
-    <!-- Below the fold version 1 -->
-    <!-- <section id="fle_intro">
-        {% include "main/partials/_kickstarter_intro1.html" %}
-    </section> -->
     <!-- Below the fold version 2 -->
     <section id="fle_intro">
         {% include "main/partials/_kickstarter_intro2.html" %}
@@ -86,7 +82,7 @@
     <section id="fle_how">
         <center class="fle_title">
             <h1>HOW IT WORKS</h1>
-            <p>Kolibri will reach the billions who are disconnected by using existing low-cost technology and human networks.</p>
+            <p>Kolibri will reach the billions who are disconnected, by using existing low-cost technology and human networks.</p>
         </center>
         {% include "main/partials/_kickstarter_how.html" %}
     </section>
@@ -110,18 +106,27 @@
     <!-- FLE History Section -->
     <section id="fle_timeline">
         <center class="fle_title">
-            Kolibri will be our next generation platform from <a id="be-part" href="{% url 'ka_lite' %}">KA Lite.</a>
+            <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}">
+            <h2>Our First Generation Platform</h2>
+            <h3>Brought online education from Khan Academy to the offline world.</h3>
+            <h1 class="wow fadeInDown">2 years. 2,000,000 people. 160+ countries.</h1>
+            <!-- Kolibri will be our next generation platform from <a id="be-part" href="{% url 'ka_lite' %}">KA Lite.</a> -->
         </center>
         {% include "main/partials/_kickstarter_timeline.html" %}
+        <center class="fle_title">
+            <h2>The Next Generation</h2>
+            <img id="kolibri-story" src="{% static 'img/kickstarter/about/kolibri.png' %}">
+            <h3 id="next-gen" class="wow fadeInDown">Kolibri will bring even more sources of great online educational content to the offline world.</h3>
+        </center>
     </section>
 
     <!-- FLE Quote Section -->
     <section id="fle_quote">
         {% include "main/partials/_kickstarter_quote.html" %}
-        <center class="fle_title_img">
+        <!-- <center class="fle_title_img">
             In just three years, KA Lite has given education to over 2,000,000<br>
             people in over 160 countries. Imagine what we can do with Kolibri.
-        </center>
+        </center> -->
     </section>
 
 
@@ -154,6 +159,7 @@
 
     <!-- Smooth scrolling and back to top button -->
     <script>
+        
         $(document).ready(function() {
             var offset = $("#parallax_or_mobile").height() * 3;
             $(window).scroll(function() {
