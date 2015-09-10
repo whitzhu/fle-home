@@ -145,12 +145,19 @@ h6 {
 .img-centered {
   margin: 0 auto;
 }
-.tabelt_specs {
+
+/* Preconfirgured Tablet */
+
+.tablet-text{
+  margin: 0% 8%;
+}
+
+.tablet_specs {
   color: white;
   font-family: "Montserrat";
-  font-style: italic;
   font-size: 35px;
   position: relative;
+  text-align: left;
   margin-bottom: 40px;
   background: url('../img/kickstarter/portfolio/preconfig_tablet.jpg') no-repeat;
   background-position: center center;
@@ -160,9 +167,9 @@ h6 {
 }
 .specs {
   background: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 50px 100px;
 }
+
 .bg-light-gray {
   background-color: #f7f7f7;
 }
@@ -532,6 +539,12 @@ mark{
   height: 100%;
   /*background-color: #ECECEC;*/
 }
+
+/* Features Section: Tile Design */
+#fle_features{
+  background-color: #fff;
+}
+
 /* MAILCHIMP MODAL */
 #iframe-wrapper {
   padding-right: 50%;
