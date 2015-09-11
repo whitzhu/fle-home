@@ -727,9 +727,11 @@ mark{
 }
 
 #kickstarter-header{
+  
+  background: url('../img/kickstarter/header-cover.png') no-repeat ;
   background-size: cover;
-  background: url('../img/kickstarter/header-cover.jpg') ;
   height: 100vh;
+  width: 100%;
   position: relative;
   z-index: 3;
 }
