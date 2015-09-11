@@ -23,6 +23,9 @@ body {
   position: relative;
   top: -10px;
 }
+.wow img {
+  margin: 0 30px;
+}
 .fle_title h2 {
   text-transform: none;
   font-weight: normal;
@@ -160,14 +163,15 @@ h6 {
 .tablet_specs {
   color: white;
   font-family: "Montserrat";
-  font-size: 35px;
+  font-size: 30px;
   position: relative;
   text-align: left;
-  margin-bottom: 40px;
+  margin: 0 auto;
   background: url('../img/kickstarter/portfolio/preconfig_tablet.jpg') no-repeat;
   background-position: center center;
   min-height: 522px;
   min-width: 100px;
+  max-width: 600px;
   padding: 100px;
 }
 .specs {
@@ -341,8 +345,8 @@ header {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  background: url('../img/kickstarter/nalanda-214-min.jpg');
-  background-position: center 30%;
+  background: url('../img/kickstarter/cambodia.png');
+  background-position: left top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -431,18 +435,23 @@ ul.social-buttons li a {
   text-align: center;
 }
 .portfolio-modal .modal-content h2 {
-  margin-bottom: 15px;
+  margin-bottom: 45px;
   font-size: 2.5em;
 }
 .portfolio-modal .modal-content p {
   margin-bottom: 30px;
   font-size: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6em;
 }
 .portfolio-modal .modal-content p.item-intro {
-  margin: 20px 0 30px;
+  margin: 30px auto;
   font-family: "Open Sans";
-  font-style: italic;
-  font-size: 24px;
+  font-size: 26px;
+  text-align: left;
+  line-height: 1.45em;
 }
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 30px;
@@ -488,6 +497,13 @@ ul.social-buttons li a {
 .portfolio-modal .modal-backdrop {
   opacity: 0;
   display: none;
+}
+#try-it {
+  margin: 50px 0 20px 0;
+}
+.modal-body img {
+  max-width: 600px;
+  margin: 30px auto;
 }
 ::-moz-selection {
   text-shadow: none;
@@ -579,8 +595,7 @@ mark{
 }
 .foot_containor {
   float: right;
-  margin-right: 8vw;
-  margin-top: 20px;
+  margin-right: 3vw;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
@@ -603,10 +618,10 @@ mark{
 }
 #dreams {
   text-align: center;
-  font-family: "Open Sans";
+  font-family: "Montserrat";
   text-transform: none;
   font-weight: normal;
-  font-size: 55px;
+  font-size: 60px;
   color: white;
   padding: 70px 0 50px 0;
   margin: 0 !important;
