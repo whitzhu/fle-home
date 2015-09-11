@@ -19,7 +19,9 @@ body {
   z-index: 3;
 }
 .fle_title img {
-  max-width: 300px;
+  max-width: 200px;
+  position: relative;
+  top: -10px;
 }
 .fle_title h2 {
   text-transform: none;
@@ -33,9 +35,9 @@ body {
   top: -17px;
 }
 #fle_timeline .fle_title h1 {
-  font-size: 40px;
+  font-size: 47px;
   text-transform: none;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .fle_title_img {
   color: white;
@@ -50,7 +52,7 @@ body {
 }
 .fle_title_bold {
   position: relative;
-  left: 15vw;
+  left: 10vw;
   font-size: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -101,6 +103,9 @@ p.slim-text {
   font-size: 18px;
   font-weight: 500;
   font-size: 26px;
+}
+.slim-text a:hover {
+  color: #125A6D;
 }
 p {
   font-size: 14px;
@@ -777,7 +782,7 @@ mark{
   top: 10vh;
 }
 .campaign-intro {
-  font-family: "Open Sans";
+  font-family: "Montserrat-Light";
   font-size: 25px;
   line-height: 56px;
   position: relative;
@@ -794,6 +799,10 @@ mark{
   animation-duration: 2s;
   animation-name: bounce;
   animation-iteration-count: infinite;
+  width: 80px;
+  height: 40px;
+  display: block;
+  margin: auto;
 }
 
 /* Introduction to Kolibri Version 1 */
