@@ -100,7 +100,7 @@ span.slogan {
 
 }
 .tile-image {
-  height: 40%;
+  height: 50%;
 }
 .first-tile {
   border-left: none;
@@ -154,5 +154,9 @@ span.slogan {
   transition: background 0.2s;
   -webkit-transition: background 0.2s;
 }
-
-
+.modal-dialog {
+  max-width: 950px;
+}
+.modal-body button {
+  margin-top: 30px;
+}

@@ -37,7 +37,7 @@
                         <div class="campaign-info">
                             <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
                             
-                            <div class = "campaign-intro">Pre-order now for those in need</div>
+                            <div class = "campaign-intro">Campaigning this October</div>
                         </div>
                 </div>
                 <div class="col-md-6">
@@ -63,9 +63,11 @@
             </div>
         </div>
         <!---Arrow Down-->
-        <div class="arrow-down">
-            <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
-        </div>
+        <a id="down-arrow" href="#fle_intro">
+            <div class="arrow-down">
+                <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
+            </div>
+        </a>
      
 
     </header>
@@ -81,7 +83,7 @@
     <!-- FLE how it works -->
     <section id="fle_how">
         <center class="fle_title">
-            <h1>HOW IT WORKS</h1>
+            <h1>HOW IT WILL WORK</h1>
             <p>Kolibri will reach the billions who are disconnected, by using existing low-cost technology and human networks.</p>
         </center>
         {% include "main/partials/_kickstarter_how.html" %}
@@ -105,40 +107,25 @@
     <!-- FLE History Section -->
     <section id="fle_timeline">
         <center class="fle_title">
-            <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}">
-            <h2>Our First Generation Platform</h2>
-            <h3>Brought online education from Khan Academy to the offline world.</h3>
-            <h1 class="wow fadeInDown"> <img src="{% static 'img/kickstarter/KA Lite/KA-Year.png' %}">
+            <h1>WHO ARE WE?</h1>
+            <h2>We're the team that built <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}"></h2>
+            <h3>Which brought online education from Khan Academy to the offline world.</h3>
+            <h1 class="wow fadeInDown"> 
+                <img src="{% static 'img/kickstarter/KA Lite/KA-Year.png' %}">
                 <img id="ka-year" src="{% static 'img/kickstarter/KA Lite/KA-people.png' %}">
                 <img src="{% static 'img/kickstarter/KA Lite/KA-160.png' %}">
                 </h1>
-            <!-- Kolibri will be our next generation platform from <a id="be-part" href="{% url 'ka_lite' %}">KA Lite.</a> -->
         </center>
         {% include "main/partials/_kickstarter_timeline.html" %}
-        <center class="fle_title">
-            <h2>The Next Generation</h2>
-            <img id="kolibri-story" src="{% static 'img/kickstarter/about/kolibri.png' %}">
-            <h3 id="next-gen" class="wow fadeInDown">Kolibri will bring even more sources of great online educational content to the offline world.</h3>
-        </center>
     </section>
 
     <!-- FLE Quote Section -->
     <section id="fle_quote">
         {% include "main/partials/_kickstarter_quote.html" %}
-        <!-- <center class="fle_title_img">
-            In just three years, KA Lite has given education to over 2,000,000<br>
-            people in over 160 countries. Imagine what we can do with Kolibri.
-        </center> -->
     </section>
 
 
     <!-- Contact Section -->
-<!--     <div class='ending_background'>
-        <div class="col-lg-12 text-center">
-            <h2 class="section-heading">SEE HOW YOU CAN HELP BRIDGE THE DIGITAL DIVIDE</h2>
-        </div>
-        <h3 class="mailing_label text-muted">BE THE FIRST TO KNOW ABOUT THE OCTOBER LAUNCH!</h3>
-    </div> -->
     <section id="contact" class="not-parallax-section">
         {% include "main/partials/_kickstarter_footer.html" %}
     </section>
@@ -173,10 +160,21 @@
             });
         });
         $('.back-to-top').click(function() {
-            var $root = $('html, body');
-            $root.animate({
+            $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 1500);
+            return false;
+        });
+        $('#be-part').click(function() {
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 1500);
+            return false;
+        });
+        $('#down-arrow').click(function() {
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 900);
             return false;
         });
     </script>
