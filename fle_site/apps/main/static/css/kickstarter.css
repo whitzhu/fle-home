@@ -894,9 +894,8 @@ mark{
 .use-image{
   width:50%;
   text-align: center;
-  vertical-align: bottom;
+  vertical-align: center;
 }
-
 
 /* Problem Statment */
 .problem-statement{
