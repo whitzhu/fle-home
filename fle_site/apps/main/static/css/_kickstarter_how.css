@@ -1,29 +1,70 @@
-.how_container {
-  padding-bottom: 20px;
-  position: relative;
-  padding-top: 20px;
-  background-color: #f5f5f5;
+#how-container {
+  height: 100vh;
+  min-height: 770px;
+  font-family: "Montserrat-Light";
+  color: white;
 }
-.text_cloud {
-  margin-top: -170px;
-  margin-left: -400px;
-  animation-delay: 0.5s;
+#how-image {
+  background: url('../img/kickstarter/how_it_works/nalanda-how.jpg') no-repeat;
+  background-size: cover;
+  height: 100%;
 }
-.option_line {
-  margin-top: 200px;
-  margin-left: -720px;
-  animation-delay: 0.5s;
+#how-image .row {
+  height: 50%;
 }
-
-/*.internet_cloud {
-  position: absolute;
-  z-index: 9999;
-  margin-top: 60px;
-  margin-left: -400px;
+#how-image .row div {
+  margin-top: 70px;
+  padding: 15px 30px 25px 30px;
+  border-radius: 7px;
 }
-.option_text {
-  position: absolute;
-  z-index: 9999;
-  margin-top: 300px;
-  margin-left: -730px;
-}*/
+#how-image .row div h2 {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 29px;
+}
+#how-image .row div p {
+  font-size: 18px;
+  font-family: "Montserrat-Light";
+  line-height: 1.33em;
+}
+.how-explanation {
+  background: #8670A1;
+  height: 100%;
+}
+.no-internet-intro,
+.tools-intro {
+  background: rgba(134, 112, 161, 0.7);
+}
+.how-explanation h2 {
+  font-weight: normal;
+  font-size: 27px;
+}
+.how-explanation hr {
+  width: 70%;
+  border-width: 3px;
+  color: white;
+  text-align: center;
+}
+#steps {
+  width: 85%;
+  margin: auto;
+  display: block;
+}
+#steps div h3 {
+  text-transform: none;
+  font-size: 22px;
+  font-weight: normal;
+}
+#steps div p {
+  font-size: 16px;
+  line-height: 1.3em;
+  font-family: "Montserrat-Light";
+}
+#steps div img {
+  display: block;
+  margin: auto;
+  max-height: 100px;
+}
+.how-step {
+  margin: 7% 0;
+}
