@@ -1,12 +1,41 @@
 {% load staticfiles %}
 
 <link rel="stylesheet" href="{% static 'css/_kickstarter_how.css' %}">
-<!-- <script src="{% static 'js/_kickstarter_how.js' %}"></script> -->
 
-<center class="how_container">
-    <img class="how_it_works" src="/static/img/kickstarter/how_it_works/how-kolibri-works.png">
-    <img class="text_cloud wow fadeInRight" src="/static/img/kickstarter/how_it_works/text_cloud.png">
-    <img class="option_line wow fadeIn" src="/static/img/kickstarter/how_it_works/option_line.png">
-    <!-- <img class="internet_cloud" src="/static/img/kickstarter/how_it_works/internet_cloud.png"> -->
-    <!-- <img class="option_text" src="/static/img/kickstarter/how_it_works/option_text.png"> -->
-</center>
+<div id="how-container" class="row">
+	<div id="how-image" class="col-md-8">
+		<div class="row">
+			<div class="no-internet-intro col-md-5 col-md-offset-6">
+				<h2>No Internet Needed</h2>
+				<p>Low cost devices installed with Kolibri enable learners to engage with a vast library of educational content, totally offline.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="tools-intro col-md-5 col-md-offset-1">
+				<h2>Tools to Support Effective Learning</h2>
+				<p>Interactive exercises with real-time feedback and guidance for both students and teachers, enabling self-paced and collaborative learning.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4 how-explanation">
+		<center><h2>HOW DOES KOLIBRI REACH THE DISCONNECTED?</h2></center>
+		<hr>
+		<div id="steps">
+			<div class="how-step">
+				<h3>1. "Seeding" a Device</h3>
+				<p>Kolibri installers, updates, and content can be downloaded once to a device in an area that has an Internet connection</p>
+				<img src="{% static 'img/kickstarter/how_it_works/step-1.png' %}">
+			</div>
+			<div class="how-step">
+				<h3>2. Peer-to-Peer Distribution</h3>
+				<p>That "seeded" device can then share new content and updates with other devices over an offline local network.</p>
+				<img src="{% static 'img/kickstarter/how_it_works/step-2.png' %}">
+			</div>
+			<div class="how-step">
+				<h3>3. Last Mile via "Sneakernet"</h3>
+				<p>To reach the most remote communities, a device can be carried by foot to share installers, updates, and content.</p>
+				<img src="{% static 'img/kickstarter/how_it_works/step-3.png' %}">
+			</div>
+		</div>
+	</div>
+</div>
