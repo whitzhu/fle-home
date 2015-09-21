@@ -16,7 +16,8 @@ class Command(NoArgsCommand):
             os.makedirs(user_resource_path)
 
         for res in UserResource.objects.all():
-            url = res.get_google_download_url()
-            path = res.get_download_path()
-            path, msg = urllib.urlretrieve(url, path)
-            self.stdout.write("Downloaded %s to %s\n\n" % (url, path))
+            if res.is_google_doc:
+                url = res.get_google_download_url()
+                path = res.get_download_path()
+                path, msg = urllib.urlretrieve(url, path)
+                self.stdout.write("Downloaded %s to %s\n\n" % (url, path))

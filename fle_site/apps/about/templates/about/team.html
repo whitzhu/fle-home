@@ -29,7 +29,7 @@ $(document).ready(function() {
         <div class="row">
         {% for person in team_members %}
             <div class="col-md-3">
-                <a href="javascript:$('#{{ person.slug }}').modal('toggle');">
+                <a onclick="javascript:$('#{{ person.slug }}').modal('toggle');">
                     <img class="img-thumbnail team-img-overlay" src="{{ MEDIA_URL }}{{ person.picture }}">
                 </a>
                 <h3>
@@ -55,7 +55,7 @@ $(document).ready(function() {
         <div class="row">
         {% for person in team_members %}
             <div class="col-sm-4">
-                <a href="javascript:$('#{{ person.slug }}').modal('toggle');">
+                <a onclick="javascript:$('#{{ person.slug }}').modal('toggle');">
                     <img class="img-thumbnail team-img-overlay" src="{{ MEDIA_URL }}{{ person.picture }}">
                 </a>
                 <h3>
@@ -93,7 +93,7 @@ $(document).ready(function() {
         <div class="row">
         {% for person in alumni %}
             <div class="col-md-3">
-                <a href="javascript:$('#{{ person.slug }}').modal('toggle');">
+                <a onclick="javascript:$('#{{ person.slug }}').modal('toggle');">
                     <img class="img-thumbnail team-img-overlay" src="{{ MEDIA_URL }}{{ person.picture }}">
                 </a>
                 <h3>
@@ -119,7 +119,7 @@ $(document).ready(function() {
         <div class="row">
         {% for person in alumni %}
             <div class="col-sm-4">
-                <a href="javascript:$('#{{ person.slug }}').modal('toggle');">
+                <a onclick="javascript:$('#{{ person.slug }}').modal('toggle');">
                     <img class="img-thumbnail team-img-overlay" src="{{ MEDIA_URL }}{{ person.picture }}">
                 </a>
                 <h3>

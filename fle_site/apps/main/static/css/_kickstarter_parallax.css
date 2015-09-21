@@ -1,0 +1,8 @@
+#slide_tablet {
+    top: 130px;
+    right: 0;
+    width: 40vw;
+    position: fixed;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+}

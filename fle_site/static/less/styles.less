@@ -7,6 +7,14 @@
 // ** Base
 // --------------------
 
+i.fa {
+    margin-right: 8px;
+}
+
+.text-center a {
+    margin: 3% 2%;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -93,6 +101,9 @@ a {
     b.caret {
         border-top-color: @white;
         border-bottom-color: @white;
+    }
+    .brand-container {
+        margin: 0 3.5% 0 2.5%;
     }
     .fle-logo {
         font-size: 20px;
@@ -283,7 +294,8 @@ a {
 // --------------------------------------------------
 
 .icon,a.icon:before{
-  font-family: 'Mono Social Icons Font';
+  // font-family: 'Mono Social Icons Font';
+  font-family: Open Sans, @sanserif;
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   -ms-text-rendering: optimizeLegibility;
@@ -306,6 +318,10 @@ a.icon:before {
 
 #blog-container {
     padding: 30px;
+
+    html, span, a, p, h1, h2 , h3, h4, h5, h6, li, dt, dd {
+        font-family: Andada;
+    }
     #main-post-panel{
         margin-top: 25px;
     }
@@ -315,6 +331,31 @@ a.icon:before {
     }
     .breadcrumb {
         background-color: #E6E6E6;
+    }
+    #article-content{
+        margin: 0 10%;
+        line-height: 1.8em;
+    }
+    
+    .quote
+    {
+        font-family: Andada;
+        text-align: left;
+        font-style: italic;
+        font-size: 2em;
+        border-left: 1px solid;
+        margin: 15px 10px;
+        padding-left: 15px;
+    }
+
+    .post-image{
+        text-align: center;
+    }
+
+    .author
+    {
+        font-family: Andada;
+        text-align: right;
     }
 }
 
@@ -336,6 +377,7 @@ a.icon:before {
         }
     }
 }
+
 #post-numbers {
     p {
         font-size: 13px;

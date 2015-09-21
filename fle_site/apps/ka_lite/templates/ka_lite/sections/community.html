@@ -99,7 +99,7 @@
 				<h2>Donate</h2>
 				<p>As a non-profit organization, we rely on donations from people like you. Thanks for your support!</p>
 				<p>
-					<a href="{% url 'give' %}" class="btn btn-primary visible-xs">Donate</a>
+					<a href="{% url 'donate' %}" class="btn btn-primary visible-xs">Donate</a>
 				</p>
 			</div>
 		</div>
@@ -118,7 +118,7 @@
 			</div>
 			<div class="col-sm-4">
 				<p>
-					<a href="{% url 'give' %}" class="btn btn-primary">Donate</a>
+					<a href="{% url 'donate' %}" class="btn btn-primary">Donate</a>
 				</p>
 			</div>
 		</div>
@@ -179,6 +179,7 @@
 							<h3 class="overlay-text">Are you using KA Lite?</br><small class="overlay-text">If so, please tell us about it, and upload pictures!</small></h3>
 						<a href ="{% url 'map_add' %}" class="btn btn-primary btn-large" target="_blank">Share your Story</a>
 						<a href ="{% url 'map' %}" class="btn btn-primary btn-large" target="_blank">View the Map</a>
+						<a href ="{% url 'infographic' %}" class="btn btn-primary btn-large" target="_blank">Deploy KA Lite</a>
 					</div>
 				</div>
 			</div> <!-- End desktops and above --> 

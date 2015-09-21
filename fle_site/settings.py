@@ -7,7 +7,7 @@ try:
     import local_settings
 except ImportError:
     local_settings = {}
-
+                                    
 def localor(setting_name, default_val):
     """Returns local_settings version if it exists (and is non-empty), otherwise uses default value"""
     return hasattr(local_settings, setting_name) and getattr(local_settings, setting_name) or default_val
@@ -133,6 +133,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.request',
     'fle_site.apps.main.custom_context_processors.debug',
+    'django.contrib.messages.context_processors.messages',
 )
 
 INSTALLED_APPS = (
@@ -144,7 +145,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.humanize',
-    'django.contrib.redirects',
     'django_extensions',
     'fack',
     'south',
@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     'fle_site.apps.main',
     'fle_site.apps.about',
     'fle_site.apps.ka_lite',
+    'fle_site.apps.redirects',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -198,3 +199,8 @@ CACHES = {
         "LOCATION": '/tmp/file_resubmit/'
     },
 }
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+STRIPE_SECRET_API_KEY = getattr(local_settings, "STRIPE_SECRET_API_KEY", "")
+STRIPE_PUBLISHABLE_API_KEY = getattr(local_settings, "STRIPE_PUBLISHABLE_API_KEY", "")
