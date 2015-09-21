@@ -290,8 +290,7 @@ header {
 }
 .intro-text {
   position: relative;
-  top: 35vh;
-  left: 4%;
+  top: 33vh;
 }
 .intro-heading {
   font-family: "Montserrat";
@@ -791,6 +790,14 @@ mark{
 .campaign-info{
   padding-left: 5%;
 }
+#campaign-intro {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  top: 5px;
+  font-family: "Montserrat-Light";
+}
 
 #kickstarter{
   width: 40%;
@@ -800,12 +807,12 @@ mark{
 }
 .campaign-intro {
   font-family: "Montserrat-Light";
-  font-size: 25px;
+  font-size: 19px;
   line-height: 56px;
   position: relative;
   z-index: 3;
   font-weight: 100;
-  top: 13vh;
+  top: 9vh;
 }
 
 .arrow-down {
