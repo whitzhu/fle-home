@@ -70,49 +70,25 @@
 }
 
 #how-1 {
-  background: url('../img/kickstarter/how_it_works/how1.png') no-repeat center center;
-  transition: background 0.2s;
-  -webkit-transition: background 0.2s;
-  height:100px;
-  background-size: 50%;
-}
-
-#how-1:hover {
   background: url('../img/kickstarter/how_it_works/how1.gif') no-repeat center center;
   transition: background 0.2s;
   -webkit-transition: background 0.2s;
-  height:100px;
+  height: 100px;
   background-size: 50%;
 }
 
 #how-2 {
-  background: url('../img/kickstarter/how_it_works/how2.png') no-repeat center center;
-  transition: background 0.2s;
-  -webkit-transition: background 0.2s;
-  height:100px;
-  background-size: 50%;
-}
-
-#how-2:hover {
   background: url('../img/kickstarter/how_it_works/how2.gif') no-repeat center center;
   transition: background 0.2s;
   -webkit-transition: background 0.2s;
-  height:100px;
+  height: 100px;
   background-size: 50%;
 }
 
 #how-3 {
-  background: url('../img/kickstarter/how_it_works/how3.png') no-repeat center center;
-  transition: background 0.2s;
-  -webkit-transition: background 0.2s;
-  height:100px;
-  background-size: 70%;
-}
-
-#how-3:hover {
   background: url('../img/kickstarter/how_it_works/how3.gif') no-repeat center center;
   transition: background 0.2s;
   -webkit-transition: background 0.2s;
-  height:100px;
+  height: 120px;
   background-size: 70%;
 }
