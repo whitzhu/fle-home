@@ -208,7 +208,7 @@
         function drawLegend(map) {
             var legend = document.createElement('div');
             legend.setAttribute('id', 'legend-container');
-            legend.innerHTML = "<div class='legend-row'><img id='deployment-icon' src='{% static 'img/ka-lite/icons/ranger_station.png' %}' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div class='legend-row'><img id='installation-icon' src='https://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
+            legend.innerHTML = "<div class='legend-row' title='The green houses on the map are partners that have shared stories and photos about their deployments of KA Lite; click on them to learn more'><img id='deployment-icon' src='{% static 'img/ka-lite/icons/ranger_station.png' %}' alt='KA Lite Deployment' /><span id='deployment-text'>&nbsp;Deployment</span></div><div title='The red pins on the map are locations of known installations of KA Lite, based on IP address' class='legend-row'><img id='installation-icon' src='https://maps.google.com/mapfiles/marker.png' alt='KA Lite Installation' /><span id='installation-text'>&nbsp;Installation</span></div>";
             map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
         }
 
