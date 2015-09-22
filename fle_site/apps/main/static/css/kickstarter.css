@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Montserrat-Light";
-  src: url('../../../../static/fonts/Montserrat-Light.otf');
+  src: url('../fonts/Montserrat-Light.otf');
 }
 
 body {
