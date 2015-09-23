@@ -953,5 +953,7 @@ mark{
   font-size: 25px;
 }*/
 
-
+#mce-success-response {
+  color: white;
+}
 
