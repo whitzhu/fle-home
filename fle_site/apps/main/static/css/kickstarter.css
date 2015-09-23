@@ -238,14 +238,14 @@ h6 {
 .e1 {
   width: 300px;
   float: left;
-  margin-left: -125px;
+  margin-left: -154px;
   transform: translateX(50%);
 }
 .email_input_k {
   outline: none;
   clear: none !important;
   float: left;
-  width: 240px;
+  width: 300px;
   background-color: white;
   font-family: "Open Sans";
   font-weight: 700;
@@ -258,8 +258,7 @@ h6 {
 .email_submit_k {
   clear: none !important;
   float: left;
-  width: 220px;
-  margin-left: -1px;
+  width: 300px;
   padding: 10px;
   border: 3px solid #14E06E !important;
   color: white;
@@ -624,7 +623,7 @@ mark{
     outline: none;
     clear: none !important;
     float: left;
-    width: 250px;
+    width: 300px;
     background-color: white;
     font-family: "Open Sans";
     font-weight: 700;
@@ -636,8 +635,7 @@ mark{
   .email_submit_k {
     clear: none !important;
     float: left;
-    width: 250px;
-    margin-left: -1px;
+    width: 300px;
     border: 3px solid #14E06E  !important;
     padding: 21px;
   }
@@ -688,8 +686,6 @@ mark{
     margin-right: 10px;
     margin-left: 10px;
     padding: 10px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 4px;
   }
 
 }
@@ -749,7 +745,7 @@ mark{
 .social_btns {
   z-index: 3;
   position: relative;
-  margin-top: 180px;
+  /*margin-top: 180px;*/
 }
 .social_btns div {
   display:inline-block;
@@ -758,6 +754,9 @@ mark{
 }
 .social_btns div:hover {
   opacity: 1;
+}
+#footer-social-btns {
+  margin-top: 180px;
 }
 .fa-3x {
     font-size: 2em !important;
