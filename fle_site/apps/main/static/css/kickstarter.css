@@ -236,9 +236,9 @@ h6 {
   width: 100%;
 }
 .e1 {
-  width: 100%;
+  width: 300px;
   float: left;
-  margin-left: -230px;
+  margin-left: -125px;
   transform: translateX(50%);
 }
 .email_input_k {
@@ -249,10 +249,6 @@ h6 {
   background-color: white;
   font-family: "Open Sans";
   font-weight: 700;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   font-size: 18px;
   padding: 10px 10px;
   text-align: center;
@@ -264,10 +260,6 @@ h6 {
   float: left;
   width: 220px;
   margin-left: -1px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   padding: 10px;
   border: 3px solid #14E06E !important;
   color: white;
@@ -632,14 +624,10 @@ mark{
     outline: none;
     clear: none !important;
     float: left;
-    width: 350px;
+    width: 250px;
     background-color: white;
     font-family: "Open Sans";
     font-weight: 700;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
     font-size: 18px;
     padding: 21px 40px;
     box-shadow: none;
@@ -650,15 +638,8 @@ mark{
     float: left;
     width: 250px;
     margin-left: -1px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border: 3px solid #c9302c  !important;
+    border: 3px solid #14E06E  !important;
     padding: 21px;
-  }
-  .e1 {
-    margin-left: -300px;
   }
 }
 
@@ -710,9 +691,7 @@ mark{
     border-top-right-radius: 0;
     border-bottom-left-radius: 4px;
   }
-  .e1 {
-    margin-left: -160px;
-  }
+
 }
 
 /* BACK TO TOP BUTTON */
@@ -770,6 +749,7 @@ mark{
 .social_btns {
   z-index: 3;
   position: relative;
+  margin-top: 180px;
 }
 .social_btns div {
   display:inline-block;
@@ -953,7 +933,8 @@ mark{
   font-size: 25px;
 }*/
 
-#mce-success-response {
+#mce-success-response,
+#mce-error-response {
   color: white;
 }
 
