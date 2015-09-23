@@ -7,7 +7,6 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  /*background: white;*/
 }
 
 .fle_title {
@@ -16,7 +15,7 @@ body {
   background-color: #F5F5F5;
   /*background-color: white;*/
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 .fle_title img {
   max-width: 200px;
@@ -82,15 +81,15 @@ body {
 }
 #fle_intro {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 #fle_timeline {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 section#contact {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 
@@ -290,7 +289,7 @@ header {
 }
 .intro-text {
   position: relative;
-  top: 33vh;
+  top: 23vh;
 }
 .intro-heading {
   font-family: "Montserrat";
@@ -298,12 +297,12 @@ header {
   font-size: 100px;
   line-height: 56px;
   position: relative;
-  z-index: 3;
+  z-index: -1;
   text-align: right;
 }
 .intro-heading2 {
   color: white;
-  z-index: 5;
+  z-index: -1;
   position: relative;
   font-size: 40px;
   font-family: "Open Sans";
@@ -753,6 +752,7 @@ mark{
   width: 100%;
   position: relative;
   z-index: 3;
+  margin-top: 50px;
 }
 
 .intro-social {
@@ -787,6 +787,20 @@ mark{
   max-width: 100px;
 }
 
+.sharing-message {
+  background: white;
+  border: 5px solid #C580E5;
+  border-radius: 10px;
+  font-size: 25px;
+  height: auto;
+  margin: auto;
+  color: #434343;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-family: "Montserrat-Light";
+}
 .campaign-info{
   padding-left: 5%;
 }
@@ -819,7 +833,7 @@ mark{
   position: relative;
   text-align: center;
   z-index: 3;
-  top: 53vh;
+  top: 38vh;
   animation-duration: 2s;
   animation-name: bounce;
   animation-iteration-count: infinite;
@@ -828,43 +842,6 @@ mark{
   display: block;
   margin: auto;
 }
-
-/* Introduction to Kolibri Version 1 */
-.below-fold {
-  background: #8670A1;
-  height: 60vh;
-}
-.problem-statement .col-md-6 {
-  text-align: center;
-  padding-top: 3%;
-}
-.problem-statement img {
-  min-height: 116px;
-  max-height: 150px;
-  height: 14vh;
-}
-.solution-statement {
-  padding: 3% 0;
-}
-.solution-statement img {
-  max-width: 300px;
-}
-.solution-statement .col-md-6 {
-  max-width: 820px;
-  color: white;
-  padding: 2% 0 0 3%;
-}
-.what-is-it {
-  font-size: 47px;
-}
-.who-its-for {
-  font-size: 25px;
-}
-.emphasis {
-  font-size: 30px;
-  font-weight: bold;
-}
-
 
 /* Introduction to Kolibri Version 2 */
 
@@ -942,6 +919,11 @@ mark{
 .bottom-box{
   padding: 10% 0%;
   animation-delay: 0.5s;
+}
+
+.top-box img,
+.bottom-box img {
+  max-width: 450px;
 }
 
 .shift-down{
