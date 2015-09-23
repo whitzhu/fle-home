@@ -1,5 +1,6 @@
 {% load staticfiles %}
-<div class="container-fluid" id="footer">
+
+<div class="container-fluid main-footer" id="footer">
     <div class="banner_container">
         <div class="corner_banner">
             <img class="banner_img" src="{% static 'img/corner_banner.png' %}">
@@ -14,11 +15,10 @@
                         <div style="position: absolute; right: -5000px;"><input type="text" name="b_023b9af05922dfc7f47a4fffb_d56041116d" tabindex="-1" value=""></div>
                     </form>
                 </div>
-               <!--  <div id="mce-responses" class="clear">
-                    <div class="response" id="mce-error-response" style="display:none"></div>
-                    <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>  -->
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+                </script>
+                <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+                </script>
                 <!--End mc_embed_signup-->
             </div>
         </div>
@@ -60,6 +60,7 @@
     </div>
 </div>
 
+<script src="{% static 'js/corner-banner.js' %}" type="text/javascript"></script>
 <script>
 
     function triggerModal(elementHash) {

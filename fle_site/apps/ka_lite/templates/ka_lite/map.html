@@ -22,6 +22,8 @@
         #title-container {
             padding: 10px;
             color: #666;
+            position: relative;
+            left: 20px !important;
         }
         #logo-text {
             position: relative;
@@ -304,10 +306,10 @@
             // Create map 
             $("#map_canvas").height($(window).height());
             var map = new google.maps.Map(document.getElementById('map_canvas'), {
-                mapTypeId: google.maps.MapTypeId.HYBRID,
+                // mapTypeId: google.maps.MapTypeId.HYBRID,
                 mapTypeControl: false,
                 panControl: false,
-                zoomControl: true,
+                zoomControl: false,
                 streetViewControl: false
             });
 

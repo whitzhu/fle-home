@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" href="{% static 'css/_kickstarter_timeline.css' %}">
+<script src="{% static 'js/_kickstarter_timeline.js' %}"></script>
+
+<div class="timeline_container">
+    <canvas id="timeline_canvas" width='1000px' height='800px'>
+        Your browser does not support the canvas element.
+    </canvas>
+    <div class="circles_container">
+        <img class="img-circle tl_img" id="tl_img_1" src="{% static 'img/kickstarter/timeline/tl_img_1.png' %}" alt="">
+        <img class="img-circle tl_img" id="tl_img_2" src="{% static 'img/kickstarter/timeline/tl_img_2.png' %}" alt="">
+        <img class="img-circle tl_img" id="tl_img_3" src="{% static 'img/kickstarter/timeline/tl_img_3.png' %}" alt="">
+        <img class="img-circle tl_img" id="tl_img_4" src="{% static 'img/kickstarter/timeline/tl_img_4.png' %}" alt="">
+        <div class="tl_text" id="tl_text_1">
+            <h4 class="timeline-individual-heading">DEC 2012</h4>
+            <p class="text-muted">THE KICKOFF</p>
+            <p class="text-pain">KA Lite is released as open source<br>
+            software and becomes available for<br>
+            installation.</p>
+            <a href="{% url 'ka_lite' %}" target="_blank">Learn more</a>
+        </div>
+        <div class="tl_text" id="tl_text_2">
+            <h4 class="timeline-individual-heading">APRIL 2013</h4>
+            <p class="text-muted">AN ORGANIZATION IS BORN</p>
+            <p class="text-pain"><a href="{% url 'home' %}">Learning Equality</a> is established, with a<br>mission to provide wider access to<br>open educational resources and opportunities.</p>
+            <a href="{% url 'home' %}" target="_blank">More about us</a>
+        </div>
+        <div class="tl_text" id="tl_text_3">
+            <h4 class="timeline-individual-heading">2013 - 2015</h4>
+            <p class="text-muted">KA LITE REACHES 160+ COUNTRIES</p>
+            <p class="text-pain">See our <a href="{% url 'map' %}" target="_blank">interactive world map</a> of deployments<br>and installations, and discover impactful<br>stories from people around the world.</p>
+            <a href="{% url 'blog' %}" target="_blank">Find stories</a>
+        </div>
+        <div class="tl_text" id="tl_text_4">
+            <h4 class="timeline-individual-heading">OCT 2015</h4>
+            <p class="text-muted">KICKSTARTER CAMPAIGN</p>
+            <p class="text-pain">Kolibri will bring even more sources<br>of great online educational content <br>to the offline world.<br></p>
+            <a id="be-part" href="#contact"><h4>Be Part Of Our Story!</h4></a>
+        </div>
+    </div>
+</div>
