@@ -334,7 +334,7 @@ header {
 
 /* LAST CALL TO ACTION */
 section#contact {
-  background: url('../img/kickstarter/cambodia.png');
+  background: url('../img/kickstarter/cambodia.jpg');
   background-position: left top;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -721,7 +721,7 @@ mark{
 
 #kickstarter-header{
   
-  background: url('../img/kickstarter/header-cover.png') no-repeat ;
+  background: url('../img/kickstarter/header-cover.jpg') no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100%;
