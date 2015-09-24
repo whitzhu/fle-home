@@ -40,11 +40,11 @@
                 <div class="col-md-6">
                     <div class="intro-social">
                         <div class="social_btns">
-                            <a class="fb_share_btn" href="JavaScript:newPopup('https://www.facebook.com/sharer/sharer.php?app_id=837442399601941&sdk=joey&u=https%3A%2F%2Fwww.facebook.com%2Flearningequality&display=popup&ref=plugin&src=share_button');"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
+                            <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
                             <!-- <div class="space_taker"></div> -->
-                            <a class="twitter_follow_btn" href="https://twitter.com/intent/tweet?screen_name=LearnEQ"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+                            <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative educational technology to help bridge the digital divide http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
                             <!-- <div class="space_taker"></div> -->
-                            <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title="><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
+                            <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
                         </div>
                     </div>
                 </div>
@@ -75,6 +75,12 @@
      
 
     </header>
+
+    <!-- sticky sign up bar -->
+    <div class="sticky-signup affix">
+
+    </div> 
+
     <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
     <img id="slide_tablet" src="/static/img/kickstarter/tablet-min.png">
 
@@ -86,7 +92,7 @@
     <!-- FLE how it works -->
     <section id="fle_how">
         <center class="fle_title">
-            <h1>HOW IT WILL WORK</h1>
+            <h1>HOW WILL IT WORK?</h1>
         </center>
         {% include "main/partials/_kickstarter_how.html" %}
     </section>
@@ -95,7 +101,7 @@
     <section id="fle_features">
         <br><br><br><br><br><br>
         <div class="fle_title_bold">
-            Curated Educational Content<br><!-- "one-size-fits-all". -->
+            Curated Educational Content<br>
             <p class="slim-text">
                 Education is not "one-size fits all".
                 <br><br>
@@ -111,7 +117,7 @@
         <center class="fle_title">
             <h1>WHO ARE WE?</h1>
             <h2>We're the team that built <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}"></h2>
-            <h3>Which brought online education from Khan Academy to the offline world.</h3>
+            <h3>which has been bringing online education from Khan Academy to the offline world.</h3>
             <h1 class="wow fadeInDown"> 
                 <img src="{% static 'img/kickstarter/KA-Lite/KA-year.png' %}">
                 <img id="ka-year" src="{% static 'img/kickstarter/KA-Lite/KA-people.png' %}">
@@ -176,6 +182,7 @@
             }, 900);
             return false;
         });
+
     </script>
 
 {% endblock bodycontents %}

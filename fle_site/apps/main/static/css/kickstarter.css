@@ -12,8 +12,8 @@ body {
 .fle_title {
   font-size: 40px;
   padding: 90px 0;
-  background-color: #F5F5F5;
-  /*background-color: white;*/
+/*  background-color: #F5F5F5;*/
+  background-color: white;
   position: relative;
   z-index: 2;
 }
@@ -214,7 +214,7 @@ h6 {
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
-  border-radius: 3px;
+  border-radius: 0px;
   font-size: 18px;
   padding: 20px 40px;
   -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
@@ -236,10 +236,11 @@ h6 {
   width: 100%;
 }
 .e1 {
-  width: 300px;
-  float: left;
-  margin-left: -154px;
-  transform: translateX(50%);
+  max-width: 750px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  left: 15px;
 }
 .email_input_k {
   outline: none;
@@ -583,16 +584,17 @@ mark{
   background: transparent;
 }
 .foot_containor {
-  float: right;
-  margin-right: 3vw;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  padding: 50px;
+  position: relative;
 }
-.foot_containor #footer-kolibri {
-  width: 230px;
-  margin-bottom: 25px;
+#footer-logo {
+  text-align: center;
+}
+#footer-kolibri {
+  width: 300px;
+  position: relative;
+  top: 60px;
 }
 .foot_containor #footer-kickstarter {
   width: 400px;
@@ -602,8 +604,11 @@ mark{
   text-transform: none !important;
   font-family: "Open Sans";
   color: white;
-  font-size: 23px;
+  font-size: 32px;
   font-weight: normal;
+  text-align: center;
+  line-height: 1.3em;
+  margin-top: 100px;
 }
 #dreams {
   text-align: center;
@@ -612,7 +617,7 @@ mark{
   font-weight: normal;
   font-size: 60px;
   color: white;
-  padding: 70px 0 50px 0;
+  padding: 70px 0 0 0;
   margin: 0 !important;
 }
 
@@ -623,7 +628,7 @@ mark{
     outline: none;
     clear: none !important;
     float: left;
-    width: 300px;
+    width: 400px;
     background-color: white;
     font-family: "Open Sans";
     font-weight: 700;
@@ -631,6 +636,7 @@ mark{
     padding: 21px 40px;
     box-shadow: none;
     border: 3px solid #fff !important;
+    text-align: left;
   }
   .email_submit_k {
     clear: none !important;
@@ -745,7 +751,6 @@ mark{
 .social_btns {
   z-index: 3;
   position: relative;
-  /*margin-top: 180px;*/
 }
 .social_btns div {
   display:inline-block;
@@ -756,7 +761,22 @@ mark{
   opacity: 1;
 }
 #footer-social-btns {
-  margin-top: 180px;
+  margin: 0px 0 20px 0;
+}
+#mce-responses {
+  width: 320px;
+  margin: auto;
+  font-size: 15px;
+  font-family: "Montserrat-Light";
+  position: relative;
+  top: 5px;
+}
+#mce-responses a {
+  color: white;
+  text-decoration: underline;
+}
+#mce-responses a:hover {
+  color: #86a9cf;
 }
 .fa-3x {
     font-size: 2em !important;
@@ -902,7 +922,7 @@ mark{
 
 .top-box img,
 .bottom-box img {
-  max-width: 450px;
+  max-width: 400px;
 }
 
 .shift-down{
@@ -915,25 +935,14 @@ mark{
   top: 5px;
   left: 24px;
 }
-/*.below-fold2 .col-md-12 img {
-  max-width: 300px;
-}
-.below-fold2 .col-md-12 {
-  text-align: center;
-}
-.below-fold2 .col-md-12 p {
-  font-size: 75px;
-  color: #8670A1;
-}
-.below-fold2 .col-md-4 {
-  text-align: center;
-}
-.below-fold2 .col-md-4 span {
-  font-size: 25px;
-}*/
 
 #mce-success-response,
 #mce-error-response {
   color: white;
 }
 
+
+/* Media queries for Safari browser, which cannot use vh or vw */
+@media all and (min-width: 680px) {
+
+}
