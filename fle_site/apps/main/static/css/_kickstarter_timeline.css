@@ -1,0 +1,68 @@
+.timeline_container {
+  width: 100vw;
+  min-width: 800px;
+  height: 800px;
+  background-color: white;
+}
+
+#timeline_canvas {
+  position: absolute;
+  width: 100vw;
+  height: 800px;
+  /*background-color: #EFEFEF;*/
+}
+
+.circles_container {
+  height: 100%;
+  display: block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.tl_img {
+  left: 20vw;
+  top: 50%;
+  transform: translate(0,-170px);
+  margin-left: 6vw;
+  display: inline-block;
+  float: left;
+  width: 140px;
+  position: relative;
+  border: 6px solid #8670A1;
+  box-shadow: 10px 10px 8px #666666;
+}
+#tl_img_1 {
+  margin-top: 200px;
+}
+#tl_img_2 {
+  margin-bottom: 200px;
+}
+#tl_img_3 {
+  margin-top: 200px;
+}
+#tl_img_4 {
+  margin-bottom: 200px;
+}
+
+.tl_text {
+  position: absolute;
+}
+.tl_text a:hover {
+  color: #125A6D;
+}
+
+h4.timeline-individual-heading {
+  font-size: 32px;
+  font-family: "Montserrat-Light";
+  font-weight: normal;
+  margin-top: -5px;
+}
+.tl_text .text-muted {
+  font-size: 25px;
+  font-family: Montserrat;
+  font-weight: bold;
+  margin-top: -18px;
+}
+p.text-pain {
+  font-size: 18px;
+}

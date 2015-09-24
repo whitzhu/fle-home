@@ -7,7 +7,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">{{ d.title }} <small>{% if request.user.is_staff %}(<a href="{% url 'admin:ka_lite_deploymentstory_change' d.id %}" target="_blank">edit</a>){% endif %}<br/>{{ d.deployment_location }} - Since: {{ d.start_date|date:"F j, Y"}}</small></h4>
+        <h4 class="modal-title">{{ d.title }} <small>{% if request.user.is_staff %}(<a href="{% url 'admin:ka_lite_deploymentstory_change' d.id %}" target="_blank">edit</a>){% endif %}<br/>{{ d.deployment_location }}{% if d.start_date %} - Since: {{ d.start_date|date:"F j, Y"}}{% endif %}</small></h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -20,6 +20,12 @@
                 <strong>Deploying Organization:</strong> {{ d.linked_org_name|safe }}&nbsp;{% if d.organization_location %}based in {{ d.organization_location }}{% endif %}
               {% endif %}
             </p>
+            {% if d.testimonials %}
+            <p>
+              <strong>Testimonials:</strong>
+              {{ d.testimonials|safe }}
+            </p>
+            {% endif %}
           </div>
         </div>
         {# Extra deployment info #}
@@ -43,7 +49,7 @@
                   (running <strong>{{ d.server_os }}</strong>)
                 {% endif %}"
               {% else %}
-               class="no-ino-popover" data-content="No device information available for this deployment"
+               class="no-info-popover" data-content="No device information available for this deployment"
               {% endif %} data-toggle="popover" src="{% static 'img/ka-lite/icons/glyphicons-display.png' %}" alt="KA Lite server information for this deployment">
           </div>
           {# Deployment info #}
