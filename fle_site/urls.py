@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.base import TemplateView, RedirectView
 
 import fle_site.apps.about.urls
@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
     url(r'^r/', include(fle_site.apps.redirects.urls)),
     url(r'^homepage/', lambda request: HttpResponseRedirect(reverse('ka_lite'))),
+    url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /kolibri/", mimetype="text/plain"))
 )
 
 # static files (images, css, javascript, etc.)
