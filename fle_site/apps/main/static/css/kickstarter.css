@@ -3,6 +3,11 @@
   src: url('../fonts/Montserrat-Light.otf');
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
 body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
@@ -54,7 +59,7 @@ body {
 }
 .fle_title_bold {
   position: relative;
-  left: 10vw;
+  left: 10%;
   font-size: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -84,10 +89,6 @@ body {
   z-index: 2;
 }
 #fle_timeline {
-  position: relative;
-  z-index: 2;
-}
-section#contact {
   position: relative;
   z-index: 2;
 }
@@ -132,12 +133,6 @@ a.active {
 }
 a {
   color: #0099CC;
-}
-a:hover,
-a:focus,
-a:active,
-a.active {
-  color: #fec503;
 }
 h1,
 h2,
@@ -196,7 +191,6 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #fec503;
   border-color: #f6bf01;
 }
 .btn-primary:active,
@@ -271,7 +265,7 @@ h6 {
 #fle-navbar {
   padding: 0;
   position: absolute;
-  width: 100vw;
+  width: 100%;
 }
 
 /* HEADER */
@@ -281,7 +275,7 @@ header {
 }
 .intro-text {
   position: relative;
-  top: 23vh;
+  top: 23%;
 }
 .intro-heading {
   font-family: "Montserrat";
@@ -299,7 +293,7 @@ header {
   font-size: 40px;
   font-family: "Open Sans";
   padding-right: 60px;
-  top: -3vh;
+  top: -26px;
   text-align: left;
   left: -20px;
 }
@@ -328,9 +322,6 @@ header {
     font-size: 24px;
   }
 }
-@media (max-height: 680px) {
-  #header-mailchimp: -8vw;
-}
 
 
 /* LAST CALL TO ACTION */
@@ -341,10 +332,11 @@ section#contact {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: -44px;
+  margin-bottom: -60px;
   padding: 0;
   height: 100vh;
   min-height: 800px;
+  position: relative;
 }
 section#contact .section-heading {
   color: white;
@@ -728,12 +720,17 @@ mark{
 #kickstarter-header{
   
   background: url('../img/kickstarter/header-cover.jpg') no-repeat;
+  -webkit-background-size: cover;
   background-size: cover;
   height: 100vh;
+  min-height: 700px;
   width: 100%;
   position: relative;
   z-index: 3;
   margin-top: 50px;
+}
+#kickstarter-header .header-shadow {
+  height: 100%;
 }
 
 .intro-social {
@@ -832,14 +829,19 @@ mark{
   position: relative;
   text-align: center;
   z-index: 3;
-  top: 38vh;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
   animation-duration: 2s;
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
   animation-name: bounce;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   width: 80px;
   height: 40px;
   display: block;
-  margin: auto;
+  margin: 100px auto 0 auto;
 }
 
 /* Introduction to Kolibri Version 2 */

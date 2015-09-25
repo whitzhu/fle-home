@@ -25,13 +25,14 @@ $(function() {
         context.lineTo(tl_img_1.offset().left + 70, 500);
         context.lineTo(tl_img_2.offset().left + 70, 300);
         context.lineTo(tl_img_3.offset().left + 70, 500);
+        context.lineTo(tl_img_4.offset().left + 70, 300);
         context.strokeStyle = '#8670A1';
         context.lineWidth = 6;
         context.stroke();
 
-        context.setLineDash([10, 10]);
-        context.lineTo(tl_img_4.offset().left + 70, 300);
-        context.stroke();
+        // context.setLineDash([10, 10]);
+        // context.lineTo(tl_img_4.offset().left + 70, 300);
+        // context.stroke();
 
         context.font = "bold 68px sans-serif";
         // context.translate(canvas.width / 2, canvas.height / 2);
@@ -39,9 +40,9 @@ $(function() {
         context.fillStyle = '#8670A1';
         context.fillText("TIMELINE", 100, 0);
 
-        tl_text_1.offset({top: tl_img_1.offset().top + 150, left: tl_img_1.offset().left});
+        tl_text_1.offset({top: tl_img_1.offset().top + 180, left: tl_img_1.offset().left});
         tl_text_2.offset({top: tl_img_2.offset().top - 190, left: tl_img_2.offset().left});
-        tl_text_3.offset({top: tl_img_3.offset().top + 150, left: tl_img_3.offset().left});
+        tl_text_3.offset({top: tl_img_3.offset().top + 180, left: tl_img_3.offset().left});
         tl_text_4.offset({top: tl_img_4.offset().top - 190, left: tl_img_4.offset().left});
     }
 

@@ -42,7 +42,7 @@
                         <div class="social_btns">
                             <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
                             <!-- <div class="space_taker"></div> -->
-                            <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative educational technology to help bridge the digital divide http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+                            <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative #EdTech to help bridge the #DigitalDivide. Learn more about their new platform, #Kolibri http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
                             <!-- <div class="space_taker"></div> -->
                             <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
                         </div>
@@ -63,15 +63,15 @@
                         <div id="campaign-intro">Launching a crowdfunding campaign this October</div>
                     </div>
                 </div>
+                <a id="down-arrow" href="#fle_intro">
+                    <div class="arrow-down">
+                        <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
+                    </div>
+                </a>
                 
             </div>
         </div>
         <!---Arrow Down-->
-        <a id="down-arrow" href="#fle_intro">
-            <div class="arrow-down">
-                <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
-            </div>
-        </a>
      
 
     </header>
@@ -184,5 +184,6 @@
         });
 
     </script>
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
 
 {% endblock bodycontents %}

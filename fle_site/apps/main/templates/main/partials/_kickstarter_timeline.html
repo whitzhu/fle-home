@@ -8,10 +8,18 @@
         Your browser does not support the canvas element.
     </canvas>
     <div class="circles_container">
-        <img class="img-circle tl_img" id="tl_img_1" src="{% static 'img/kickstarter/timeline/tl_img_1.png' %}" alt="">
-        <img class="img-circle tl_img" id="tl_img_2" src="{% static 'img/kickstarter/timeline/tl_img_2.png' %}" alt="">
-        <img class="img-circle tl_img" id="tl_img_3" src="{% static 'img/kickstarter/timeline/tl_img_3.png' %}" alt="">
-        <img class="img-circle tl_img" id="tl_img_4" src="{% static 'img/kickstarter/timeline/tl_img_4.png' %}" alt="">
+        <div class="img-circle tl_img tl_img_top">
+            <img class="img-circle" id="tl_img_1" src="{% static 'img/kickstarter/timeline/tl_img_1.png' %}" alt="">
+        </div>
+        <div class="img-circle tl_img tl_img_bottom">
+            <img class="img-circle" id="tl_img_2" src="{% static 'img/kickstarter/timeline/tl_img_2.png' %}" alt="">
+        </div>
+        <div class="img-circle tl_img tl_img_top">
+            <img class="img-circle" id="tl_img_3" src="{% static 'img/kickstarter/timeline/tl_img_3.png' %}" alt="">
+        </div>
+        <div class="img-circle tl_img tl_img_bottom">
+            <img class="img-circle" id="tl_img_4" src="{% static 'img/kickstarter/timeline/tl_img_4.png' %}" alt="">
+        </div>
         <div class="tl_text" id="tl_text_1">
             <h4 class="timeline-individual-heading">DEC 2012</h4>
             <p class="text-muted">THE KICKOFF</p>
