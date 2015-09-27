@@ -93,6 +93,39 @@ body {
   z-index: 2;
 }
 
+/* Sticky Signup Form */
+.affix-top {
+  height: 70px;
+  width: 100%;
+  background: #53435B;
+  z-index: 999999;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+}
+.sticky-signup span {
+  color: white;
+  font-size: 25px;
+  font-family: "Montserrat-Light";
+  position: relative;
+  top: 19px;
+  left: 5%;
+}
+.affix {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999999;
+  background: #53435B;
+  height: 70px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+#sticky-mailchimp {
+  width: 600px;
+  right: 50px;
+  float: right;
+  position: relative;
+  top: 10px;
+}
 
 #footer {
   position: relative;
@@ -203,8 +236,8 @@ h6 {
 }
 .btn-xl {
   color: #1a1a1a;
-  background: #14E06E;
-  border-color: #14E06E;
+  background: #CB99C5;
+  border-color: #CB99C5;
   font-family: "Open Sans";
   text-transform: uppercase;
   font-weight: 700;
@@ -215,9 +248,9 @@ h6 {
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
 .btn-xl:hover {
-  background: #14E06E !important;
-  border-color: #14E06E !important;
-  color: white !important;
+  background: #CB99C5 !important;
+  border-color: #CB99C5 !important;
+  color: #2A2A2A !important;
   -webkit-transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
   transition: background 0.1s, color 0.1s, -moz-box-shadow 0.1s, -webkit-box-shadow 0.1s, box-shadow 0.1s, border-color 0.1s;
 }
@@ -228,6 +261,10 @@ h6 {
 }
 #sign-up {
   width: 100%;
+  -moz-top: -17px;
+}
+#mc-embedded-subscribe-form {
+  margin-bottom: 0px;
 }
 .e1 {
   max-width: 750px;
@@ -245,18 +282,21 @@ h6 {
   font-family: "Open Sans";
   font-weight: 700;
   font-size: 18px;
-  padding: 10px 10px;
-  text-align: center;
+  padding: 10px 25px;
   box-shadow: none;
   border: 3px solid #fff !important;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .email_submit_k {
   clear: none !important;
   float: left;
-  width: 300px;
-  padding: 10px;
-  border: 3px solid #14E06E !important;
+  /*width: 300px;*/
+  padding: 10 25px;
+  border: 3px solid #CB99C5 !important;
   color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 
@@ -587,6 +627,7 @@ mark{
   width: 300px;
   position: relative;
   top: 60px;
+  opacity: 0.7;
 }
 .foot_containor #footer-kickstarter {
   width: 400px;
@@ -625,17 +666,22 @@ mark{
     font-family: "Open Sans";
     font-weight: 700;
     font-size: 18px;
-    padding: 21px 40px;
+    padding: 15px 40px;
     box-shadow: none;
     border: 3px solid #fff !important;
     text-align: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   .email_submit_k {
     clear: none !important;
     float: left;
     width: 300px;
-    border: 3px solid #14E06E  !important;
-    padding: 21px;
+    border: 3px solid #CB99C5  !important;
+    padding: 15px 21px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #2A2A2A;
   }
 }
 
@@ -761,12 +807,14 @@ mark{
   margin: 0px 0 20px 0;
 }
 #mce-responses {
-  width: 320px;
+  max-width: 600px;
+  width: 80%;
   margin: auto;
   font-size: 15px;
   font-family: "Montserrat-Light";
   position: relative;
   top: 5px;
+  text-align: center;
 }
 #mce-responses a {
   color: white;
@@ -849,7 +897,8 @@ mark{
 
 .below-fold2 {
   height: 80vh;
-  background: url('../img/kickstarter/fold2.png');
+  min-height: 628px;
+  background: white;
   text-align: center;
   background-size: cover;
 }
@@ -857,6 +906,8 @@ mark{
 #kolibri_logo{
   padding-top:8%;
   width: 30%;
+  margin-top: 30px;
+  opacity: 0.9;
 }
 
 /* Kolibri Statment */
@@ -909,6 +960,7 @@ mark{
 /* Problem Statment */
 .problem-statement{
   padding: 5% 0%;
+  background: #8D69A3;
 }
 
 .top-box{
@@ -925,6 +977,7 @@ mark{
 .top-box img,
 .bottom-box img {
   max-width: 400px;
+  margin-top: 20px;
 }
 
 .shift-down{
@@ -941,10 +994,4 @@ mark{
 #mce-success-response,
 #mce-error-response {
   color: white;
-}
-
-
-/* Media queries for Safari browser, which cannot use vh or vw */
-@media all and (min-width: 680px) {
-
 }

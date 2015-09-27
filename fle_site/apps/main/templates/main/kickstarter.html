@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
     <!-- Custom Fonts -->
@@ -77,8 +78,11 @@
     </header>
 
     <!-- sticky sign up bar -->
-    <div class="sticky-signup affix">
-
+    <div class="sticky-signup" data-spy="affix" data-offset-top="200">
+        <span>Find out when we launch our ________ campaign!</span>
+        <iframe id="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
+        <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
+        </iframe>
     </div> 
 
     <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
@@ -182,6 +186,11 @@
             }, 900);
             return false;
         });
+
+        // Determines when sticky signup bar becomes... sticky
+        $(function(){
+            $('.sticky-signup').attr("data-offset-top", $('#fle-navbar').outerHeight() + $('#kickstarter-header').outerHeight());
+          });
 
     </script>
     <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
