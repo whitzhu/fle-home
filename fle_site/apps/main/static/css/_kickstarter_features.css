@@ -21,8 +21,7 @@
 
 
 #feature-container {
-  height: 98vh;
-  min-height: 730px;
+  height: 750px;
 }
 
 #feature-container #tile-container {
@@ -55,7 +54,8 @@ span.slogan {
 }
 .feature-space {
   background: #8670A1;
-  height: 750px;
+  min-height: 750px;
+  height: 100%;
 }
 .feature-tile {
   min-height: 375px;

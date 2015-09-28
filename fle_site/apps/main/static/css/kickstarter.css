@@ -121,10 +121,10 @@ body {
 }
 #sticky-mailchimp {
   width: 600px;
-  right: 50px;
+  right: -4%;
   float: right;
   position: relative;
-  top: 10px;
+  top: 18%;
 }
 
 #footer {
@@ -294,7 +294,7 @@ h6 {
   /*width: 300px;*/
   padding: 10 25px;
   border: 3px solid #CB99C5 !important;
-  color: white;
+  color: #2a2a2a;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -377,6 +377,8 @@ section#contact {
   height: 100vh;
   min-height: 800px;
   position: relative;
+  top: -20px;
+  z-index: 5;
 }
 section#contact .section-heading {
   color: white;
