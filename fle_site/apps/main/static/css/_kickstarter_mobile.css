@@ -12,7 +12,7 @@
 	}
 	#sticky-mailchimp {
 		width: 550px;
-	    right: -8%;
+	    /*right: -8%;*/
 	    float: right;
 	    position: relative;
 	    top: 18%;

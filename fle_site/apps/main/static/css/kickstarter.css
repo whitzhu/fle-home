@@ -59,12 +59,13 @@ body {
 }
 .fle_title_bold {
   position: relative;
-  left: 10%;
+  margin-left: 10%;
   font-size: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
   font-weight: bolder;
   font-family: "Montserrat";
+  width: 50vw;
 }
 .fle_title h1 {
   font-size: 55px;
@@ -121,7 +122,6 @@ body {
 }
 #sticky-mailchimp {
   width: 600px;
-  right: -4%;
   float: right;
   position: relative;
   top: 18%;
