@@ -20,6 +20,12 @@ body {
   -o-transform:translateZ(1px);
   transform:translateZ(1px);
 }
+.sticky-signup {
+  -webkit-transform:translateZ(2px);
+  -moz-transform:translateZ(2px);
+  -o-transform:translateZ(2px);
+  transform:translateZ(2px);
+}
 
 .fle_title {
   font-size: 40px;
