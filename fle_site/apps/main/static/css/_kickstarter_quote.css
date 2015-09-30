@@ -86,4 +86,8 @@
 video#quote_video {
   width: 100%;
   position: relative;
+  -webkit-transform:translateZ(2px);
+  -moz-transform:translateZ(2px);
+  -o-transform:translateZ(2px);
+  transform:translateZ(2px);
 }
