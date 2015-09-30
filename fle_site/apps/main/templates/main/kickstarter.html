@@ -9,6 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_features.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_how.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_quote.css' %}">
+    <link rel="stylesheet" href="{% static 'css/_kickstarter_mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
     <!-- Custom Fonts -->
@@ -23,166 +27,200 @@
 
 {% block bodycontents %}
     <!-- Header -->
-    <header id="kickstarter-header">
-        <div class="header-shadow row">
-            <div class="sharing-message">
-                Note: This site is not yet public; please do not share before October 12.
-            </div>
-            <!---Kickstarter Campaign & Social Media Buttons-->
-            <div class="row">
-                <div class="col-md-6">
-                        <!-- <div class="campaign-info">
-                            <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
-                            
-                            <div class="campaign-intro">Campaigning this October</div>
-                        </div> -->
+    <div id="body">
+        <header id="kickstarter-header">
+            <div class="header-shadow row">
+                <div class="sharing-message">
+                    Note: This site is not yet public; please do not share before October 12.
                 </div>
-                <div class="col-md-6">
-                    <div class="intro-social">
-                        <div class="social_btns">
-                            <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
-                            <!-- <div class="space_taker"></div> -->
-                            <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative educational technology to help bridge the digital divide http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
-                            <!-- <div class="space_taker"></div> -->
-                            <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
+                <!---Kickstarter Campaign & Social Media Buttons-->
+                <div class="row">
+                    <div class="col-md-6">
+                            <!-- <div class="campaign-info">
+                                <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
+                                
+                                <div class="campaign-intro">Campaigning this October</div>
+                            </div> -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="intro-social">
+                            <div class="social_btns">
+                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
+                                <!-- <div class="space_taker"></div> -->
+                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+                                <!-- <div class="space_taker"></div> -->
+                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!---Kolibri Intro-->
-            <div class="intro-text">
-                <div class="container">               
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="intro-heading">Kolibri<span style="font-weight: 100;">|</span> </div>
+                <!---Kolibri Intro-->
+                <div class="intro-text">
+                    <div class="container">               
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="intro-heading">Kolibri<span class="hidden-xs" style="font-weight: 100;">|</span> </div>
+                            </div>
+                            <div class="col-md-6">
+                                 <div class="intro-heading2">The offline app for universal education</div>
+                            </div>
+                            <div id="campaign-intro">Launching a crowdfunding campaign this October</div>
                         </div>
-                        <div class="col-md-6">
-                             <div class="intro-heading2">The offline app for universal education</div>
-                        </div>
-                        <div id="campaign-intro">Launching a crowdfunding campaign this October</div>
                     </div>
+                    <a id="down-arrow" href="#fle_intro">
+                        <div class="arrow-down">
+                            <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
+                        </div>
+                    </a>
+                    
                 </div>
-                
             </div>
-        </div>
-        <!---Arrow Down-->
-        <a id="down-arrow" href="#fle_intro">
-            <div class="arrow-down">
-                <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
+            <!---Arrow Down-->
+         
+
+        </header>
+
+        <!-- sticky sign up bar -->
+        <div class="sticky-signup" data-spy="affix" data-offset-top="200">
+            <span>Find out when we launch our ________ campaign!</span>
+            <iframe id="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
+            <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
+            </iframe>
+        </div> 
+
+        <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
+        <img id="slide_tablet" src="/static/img/kickstarter/tablet-min.png">
+
+        <!-- Below the fold version 2 -->
+        <section id="fle_intro" class="row">
+            {% include "main/partials/_kickstarter_intro2.html" %}
+        </section>
+
+        <!-- FLE how it works -->
+        <section id="fle_how" class="row">
+            <center class="fle_title">
+                <h1>HOW WILL IT WORK?</h1>
+            </center>
+            {% include "main/partials/_kickstarter_how.html" %}
+        </section>
+
+        <!-- Features Section: Tile Design -->
+        <section id="fle_features" class="row">
+            <br><br><br><br><br><br>
+            <div class="fle_title_bold">
+                Curated Educational Content<br>
+                <p class="slim-text">
+                    Education is not "one-size fits all".
+                    <br><br>
+                    <a href="#portfolioModal1" data-toggle="modal">Learn more</a>
+                </p>
             </div>
-        </a>
-     
+            <br><br><br><br><br><br>
+            {% include "main/partials/_kickstarter_features_tiledesign.html" %}
+        </section>
 
-    </header>
+        <!-- FLE History Section -->
+        <section id="fle_timeline" class="row">
+            <center class="fle_title">
+                <h1>WHO ARE WE?</h1>
+                <h2>We're the team that built <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}"></h2>
+                <h3>which has been bringing online education from Khan Academy to the offline world.</h3>
+                <h1 class="wow fadeInDown"> 
+                    <img src="{% static 'img/kickstarter/KA-Lite/KA-year.png' %}">
+                    <img id="ka-year" src="{% static 'img/kickstarter/KA-Lite/KA-people.png' %}">
+                    <img src="{% static 'img/kickstarter/KA-Lite/KA-160.png' %}">
+                    </h1>
+            </center>
 
-    <!-- sticky sign up bar -->
-    <div class="sticky-signup affix">
+            <div id="desktop-timeline"></div>
+            
+        </section>
 
-    </div> 
-
-    <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
-    <img id="slide_tablet" src="/static/img/kickstarter/tablet-min.png">
-
-    <!-- Below the fold version 2 -->
-    <section id="fle_intro">
-        {% include "main/partials/_kickstarter_intro2.html" %}
-    </section>
-
-    <!-- FLE how it works -->
-    <section id="fle_how">
-        <center class="fle_title">
-            <h1>HOW WILL IT WORK?</h1>
-        </center>
-        {% include "main/partials/_kickstarter_how.html" %}
-    </section>
-
-    <!-- Features Section: Tile Design -->
-    <section id="fle_features">
-        <br><br><br><br><br><br>
-        <div class="fle_title_bold">
-            Curated Educational Content<br>
-            <p class="slim-text">
-                Education is not "one-size fits all".
-                <br><br>
-                <a href="#portfolioModal1" data-toggle="modal">Learn more</a>
-            </p>
-        </div>
-        <br><br><br><br><br><br>
-        {% include "main/partials/_kickstarter_features_tiledesign.html" %}
-    </section>
-
-    <!-- FLE History Section -->
-    <section id="fle_timeline">
-        <center class="fle_title">
-            <h1>WHO ARE WE?</h1>
-            <h2>We're the team that built <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}"></h2>
-            <h3>which has been bringing online education from Khan Academy to the offline world.</h3>
-            <h1 class="wow fadeInDown"> 
-                <img src="{% static 'img/kickstarter/KA-Lite/KA-year.png' %}">
-                <img id="ka-year" src="{% static 'img/kickstarter/KA-Lite/KA-people.png' %}">
-                <img src="{% static 'img/kickstarter/KA-Lite/KA-160.png' %}">
-                </h1>
-        </center>
-        {% include "main/partials/_kickstarter_timeline.html" %}
-    </section>
-
-    <!-- FLE Quote Section -->
-    <section id="fle_quote">
-        {% include "main/partials/_kickstarter_quote.html" %}
-    </section>
+        <!-- FLE Quote Section -->
+        <section id="fle_quote" class="hidden-xs">
+            {% include "main/partials/_kickstarter_quote.html" %}
+        </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact" class="not-parallax-section">
-        {% include "main/partials/_kickstarter_footer.html" %}
-    </section>
+        <!-- Contact Section -->
+        <section id="contact" class="not-parallax-section">
+            {% include "main/partials/_kickstarter_footer.html" %}
+        </section>
 
-    <a href="#kickstarter-header" class="back-to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+        <a href="#kickstarter-header" class="back-to-top"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <!-- Contact Form JavaScript -->
-    <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script> 
+        <!-- Plugin JavaScript -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!-- Contact Form JavaScript -->
+        <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script> 
 
-    <!-- WOW Scrolling JavaScript -->
-    <script src="{% static 'js/wow.js' %}"></script>
-    <script>
-        new WOW().init();
-    </script>
+        <!-- WOW Scrolling JavaScript -->
+        <script src="{% static 'js/wow.js' %}"></script>
+        <script>
+            new WOW().init();
+        </script>
 
-    <!-- Smooth scrolling and back to top button -->
-    <script>
-        $(document).ready(function() {
-            var offset = $("#parallax_or_mobile").height() * 3;
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > offset) {
-                    $('.back-to-top').fadeIn(300);
-                } else {
-                    $('.back-to-top').fadeOut(300);
-                }
+        <!-- Smooth scrolling and back to top button -->
+        <script>
+            $(document).ready(function() {
+                var offset = $("#parallax_or_mobile").height() * 3;
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > offset) {
+                        $('.back-to-top').fadeIn(300);
+                    } else {
+                        $('.back-to-top').fadeOut(300);
+                    }
+                });
             });
-        });
-        $('.back-to-top').click(function() {
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 1500);
-            return false;
-        });
-        $('#be-part').click(function() {
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 1500);
-            return false;
-        });
-        $('#down-arrow').click(function() {
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 900);
-            return false;
-        });
+            $('.back-to-top').click(function() {
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1500);
+                return false;
+            });
+            $('#be-part').click(function() {
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 1500);
+                return false;
+            });
+            $('#down-arrow').click(function() {
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 900);
+                return false;
+            });
 
-    </script>
+            // Determines when sticky signup bar becomes... sticky
+            $(function() {
+                $('.sticky-signup').attr("data-offset-top", $('#fle-navbar').outerHeight() + $('#kickstarter-header').outerHeight());
+            });
+
+            // Checks whether device is mobile or desktop and applies appropriate html file
+            $(function() {
+                var isMobileWebkit = /WebKit/.test(navigator.userAgent) && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobileWebkit) {
+                    // load mobile template for timeline
+                    $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
+                } else {
+                    // load desktop timeline and set min-width of body
+                    $("#body").css({ "min-width": "1050px"});
+                    $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                    // set styles of bottom iframe on desktop
+                    $('iframe').load( function() {
+                        $('#header-mailchimp').contents().find("head")
+                          .append($("<style type='text/css'>  .email_input_k{width:400px;}  </style>"));
+                    });
+                };
+            });
+                    
+
+
+
+        </script>
+        <link rel="stylesheet" href="{% static 'css/_kickstarter_parallax.css' %}">
+    </body>
 
 {% endblock bodycontents %}

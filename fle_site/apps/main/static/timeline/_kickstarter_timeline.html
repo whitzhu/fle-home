@@ -1,6 +1,98 @@
-<!-- {% load staticfiles %}
+<style type="text/css">
+    .timeline_container {
+  width: 100%;
+  min-width: 800px;
+  height: 850px;
+  background-color: white;
+}
 
-<link rel="stylesheet" href="../css/_kickstarter_timeline.css">
+#timeline_canvas {
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  /*background-color: #EFEFEF;*/
+}
+
+.circles_container {
+  height: 100%;
+  display: block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.tl_img {
+  left: 20%;
+  top: 50%;
+  -webkit-transform: translate(0,-170px);
+  transform: translate(0,-170px);
+  margin-left: 6%;
+  display: inline-block;
+  float: left;
+  width: auto;
+  position: relative;
+  border: 6px solid #8670A1;
+  box-shadow: 10px 10px 8px #666666;
+  -webkit-border-radius: 50%;
+  margin-top: 200px;
+}
+.tl_img img {
+  width: 140px;
+  height: auto;
+}
+.tl_img_top {
+  margin-top: 200px;
+}
+.tl_img_bottom {
+  top: 22%;
+}
+
+.tl_text {
+  position: absolute;
+}
+.tl_text a:hover {
+  color: #125A6D;
+}
+
+h4.timeline-individual-heading {
+  font-size: 32px;
+  font-family: "Montserrat-Light";
+  font-weight: normal;
+  margin-top: -5px;
+}
+.tl_text .text-muted {
+  font-size: 25px;
+  font-family: Montserrat;
+  font-weight: bold;
+  margin-top: -18px;
+}
+p.text-pain {
+  font-size: 18px;
+  max-width: 400px;
+}
+#tl_text_2, #tl_text_4 {
+  top: 0 !important;
+}
+
+@media screen and (max-width: 1281px) {
+  p.text-pain {
+    font-size: 15px;
+  }
+  #fle_timeline .fle_title h1 {
+    font-size: 55px;
+  }
+  h4.timeline-individual-heading {
+    font-size: 28px;
+  }
+  #fle_timeline .fle_title h1 {
+    font-size: 50px;
+  }
+  .tl_text .text-muted {
+    font-size: 20px;
+    margin-top: -8px;
+    line-height: 1.3em;
+  }
+}
+</style>
 
 
 <div class="timeline_container">
@@ -9,42 +101,39 @@
     </canvas>
     <div class="circles_container">
         <div class="img-circle tl_img tl_img_top">
-            <img class="img-circle" id="tl_img_1" src="{% static 'img/kickstarter/timeline/tl_img_1.png' %}" alt="">
+            <img class="img-circle" id="tl_img_1" src="/static/img/kickstarter/timeline/tl_img_1.png" alt="">
         </div>
         <div class="img-circle tl_img tl_img_bottom">
-            <img class="img-circle" id="tl_img_2" src="{% static 'img/kickstarter/timeline/tl_img_2.png' %}" alt="">
+            <img class="img-circle" id="tl_img_2" src="/static/img/kickstarter/timeline/tl_img_2.png" alt="">
         </div>
         <div class="img-circle tl_img tl_img_top">
-            <img class="img-circle" id="tl_img_3" src="{% static 'img/kickstarter/timeline/tl_img_3.png' %}" alt="">
+            <img class="img-circle" id="tl_img_3" src="/static/img/kickstarter/timeline/tl_img_3.png" alt="">
         </div>
         <div class="img-circle tl_img tl_img_bottom">
-            <img class="img-circle" id="tl_img_4" src="{% static 'img/kickstarter/timeline/tl_img_4.png' %}" alt="">
+            <img class="img-circle" id="tl_img_4" src="/static/img/kickstarter/timeline/tl_img_4.png" alt="">
         </div>
         <div class="tl_text" id="tl_text_1">
             <h4 class="timeline-individual-heading">DEC 2012</h4>
             <p class="text-muted">THE KICKOFF</p>
-            <p class="text-pain">KA Lite is released as open source<br>
-            software and becomes available for<br>
-            installation.</p>
-            <a href="{% url 'ka_lite' %}" target="_blank">Learn more</a>
+            <p class="text-pain">KA Lite is released as open source software and becomes available for installation.</p>
+            <a href="https://learningequality.org/ka-lite" target="_blank">Learn more</a>
         </div>
         <div class="tl_text" id="tl_text_2">
             <h4 class="timeline-individual-heading">APRIL 2013</h4>
             <p class="text-muted">AN ORGANIZATION IS BORN</p>
-            <p class="text-pain"><a href="{% url 'home' %}">Learning Equality</a> is established, with a<br>mission to provide wider access to<br>open educational resources and opportunities.</p>
-            <a href="{% url 'home' %}" target="_blank">More about us</a>
+            <p class="text-pain"><a href="https://learningequality.org" target="_blank">Learning Equality</a> is established, with a mission to provide wider access to open educational resources and opportunities.</p>
+            <a href="https://learningequality.org" target="_blank">More about us</a>
         </div>
         <div class="tl_text" id="tl_text_3">
             <h4 class="timeline-individual-heading">2013 - 2015</h4>
             <p class="text-muted">KA LITE REACHES 160+ COUNTRIES</p>
-            <p class="text-pain">See our <a href="{% url 'map' %}" target="_blank">interactive world map</a> of deployments<br>and installations, and discover impactful<br>stories from people around the world.</p>
-            <a href="{% url 'blog' %}" target="_blank">Find stories</a>
+            <p class="text-pain">See our <a href="https://learningequality.org/ka-lite/map" target="_blank">interactive world map</a> of deployments and installations, and discover impactful stories from people around the world.</p>
+            <a href="https://learningequality.org/blog" target="_blank">Find stories</a>
         </div>
         <div class="tl_text" id="tl_text_4">
             <h4 class="timeline-individual-heading">OCT 2015</h4>
             <p class="text-muted">CROWDFUNDING CAMPAIGN</p>
-            <p class="text-pain">Kolibri will bring even more sources<br>of great online educational content <br>to the offline world.<br></p>
-            <a id="be-part" href="#contact"><h4>Be Part Of Our Story!</h4></a>
+            <p class="text-pain">Kolibri will bring even more sources of great online educational content to the offline world.</p>
         </div>
     </div>
 </div>
@@ -107,4 +196,4 @@
         return theta;
     }
 });
-</script> -->
+</script>
