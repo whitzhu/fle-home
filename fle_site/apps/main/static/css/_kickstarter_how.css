@@ -1,5 +1,10 @@
+#fle_how {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
 #how-container {
-  height: 100vh;
+  /*height: 100vh;*/
   min-height: 838px;
   font-family: "Montserrat-Light";
   color: white;
@@ -7,6 +12,7 @@
 #how-image {
   background: url('../img/kickstarter/how_it_works/nalanda-how.jpg') no-repeat;
   background-size: cover;
+  background-position: center center;
   min-height: 838px;
   height: 100%;
 }

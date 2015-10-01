@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   margin: 0;
+  -webkit-backface-visibility: visible;
 }
 
 #fle_quote, #fle_timeline, #feature-container, #fle_how, #fle_intro, #kickstarter-header {
@@ -27,9 +28,13 @@ body {
   transform:translateZ(2px);
 }
 
+#fle_intro {
+  position: relative;
+  background: white;
+}
 .fle_title {
   font-size: 40px;
-  padding: 90px 0;
+  padding: 90px 5%;
 /*  background-color: #F5F5F5;*/
   background-color: white;
   position: relative;
@@ -54,6 +59,13 @@ body {
   position: relative;
   top: -17px;
 }
+#fle_timeline {
+  display: block;
+  overflow: auto;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
 #fle_timeline .fle_title h1 {
   font-size: 47px;
   text-transform: none;
@@ -72,10 +84,8 @@ body {
 }
 .fle_title_bold {
   position: relative;
-  margin-left: 10%;
   font-size: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 0 40px 10%;
   font-weight: bolder;
   font-family: "Montserrat";
   width: 50vw;
@@ -98,16 +108,15 @@ body {
   font-size: 30px;
   max-width: 1000px;
 }
-#fle_intro {
-  position: relative;
-  z-index: 2;
-}
 #fle_timeline {
   position: relative;
   z-index: 2;
 }
 
 /* Sticky Signup Form */
+.sticky-signup {
+  background: #53435B;
+}
 .affix-top {
   height: 70px;
   width: 100%;
@@ -133,8 +142,8 @@ body {
   height: 70px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
 }
-#sticky-mailchimp {
-  width: 600px;
+.sticky-mailchimp {
+  width: 500px;
   float: right;
   position: relative;
   top: 18%;
@@ -276,6 +285,12 @@ h6 {
   width: 100%;
   -moz-top: -17px;
 }
+.sticky-mailchimp {
+  width: 450px;
+  float: right;
+  position: relative;
+  margin-top: -27px;
+}
 #mc-embedded-subscribe-form {
   margin-bottom: 0px;
 }
@@ -311,7 +326,9 @@ h6 {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
+.placeholder{
+  text-align: center;
+}
 
 /* NAV BAR */
 
@@ -339,6 +356,9 @@ header {
   z-index: -1;
   text-align: right;
 }
+span.hidden-xs.hidden-sm {
+  display: inline !important;
+}
 .intro-heading2 {
   color: white;
   z-index: -1;
@@ -353,6 +373,7 @@ header {
 #header-mailchimp {
   position: relative;
   z-index: 999;
+  width: 320px;
 }
 
 @media (max-width: 900px) {
@@ -601,6 +622,8 @@ mark{
 /* Features Section: Tile Design */
 #fle_features{
   background-color: #fff;
+  display: block;
+  overflow: visible;
 }
 
 /* MAILCHIMP MODAL */
@@ -676,7 +699,7 @@ mark{
     outline: none;
     clear: none !important;
     float: left;
-    width: 400px;
+    /*width: 400px;*/
     background-color: white;
     font-family: "Open Sans";
     font-weight: 700;
@@ -827,9 +850,9 @@ mark{
 }
 #mce-responses {
   max-width: 600px;
-  width: 80%;
+  width: 350px;
   margin: auto;
-  font-size: 15px;
+  font-size: 13px;
   font-family: "Montserrat-Light";
   position: relative;
   top: 5px;
@@ -930,9 +953,6 @@ mark{
 }
 
 /* Kolibri Statment */
-.kolibri-statement{
-  padding:0% 5%;
-}
 
 .below-fold2 h1{
   font-weight: 400;
@@ -960,6 +980,7 @@ mark{
 
 .use-cases{
   margin-top:7% !important;
+  background: white;
 }
 
 .use-cases p{
@@ -1004,7 +1025,7 @@ mark{
   top: 11px;
 }
 
-.shift-down2{
+.shift-down2{ 
   position: relative;
   top: 5px;
   left: 24px;
@@ -1013,4 +1034,49 @@ mark{
 #mce-success-response,
 #mce-error-response {
   color: white;
+}
+
+#slide_tablet {
+    top: 130px;
+    right: 0;
+    width: 40%;
+    position: fixed;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+}
+@media screen and (min-width: 450px) {
+  .email_input_k {
+      outline: none;
+      clear: none !important;
+      float: left;
+      width: 220px;
+      background-color: white;
+      font-family: "Open Sans";
+      font-weight: 700;
+      font-size: 15px;
+      padding: 15px 40px;
+      box-shadow: none;
+      border: 3px solid #fff !important;
+      text-align: left;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: 0px;
+    }
+    .email_submit_k {
+      clear: none !important;
+      float: left;
+      width: 200px;
+      border: 3px solid #CB99C5  !important;
+      padding: 15px 21px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      color: #2A2A2A;
+    }
+    .e1 {
+      left: 0;
+      max-width: 500px;
+    }
+    .e1 input {
+      margin: 0;
+    }
 }

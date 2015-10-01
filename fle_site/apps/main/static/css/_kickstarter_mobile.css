@@ -10,17 +10,20 @@
 		top: 22px;
 		left: 3%;
 	}
-	#sticky-mailchimp {
-		width: 550px;
-	    /*right: -8%;*/
-	    float: right;
-	    position: relative;
-	    top: 18%;
+	.sticky-mailchimp {
+		/*width: 991px;*/
+		right: -25%;
+		float: right;
+		position: relative;
+		margin-top: -21px;
 	}
-	.email_input_k {
+	/*.email_input_k {
 		width: 220px;
 		font-size: 15px;
 	}
+	.email_submit_k {
+		width: 200px;
+	}*/
 	.btn-xl, #steps div p,
 	#how-image .row div p {
 		font-size: 15px;
@@ -39,7 +42,7 @@
 		font-size: 20px;
 	}
 	#how-1, #how-2, #how-3 {
-		height: 90px;
+		height: 100px;
 	}
 	.feature-tile {
 		padding-top: 4%;
@@ -57,15 +60,52 @@
 }
 
 @media screen and (max-width: 1060px) {
-	#sticky-mailchimp {
+	.sticky-mailchimp {
 		top: -20%;
+		right: 0;
 	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 990px) {
+	.sticky-signup2 {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 990px) {
 	#slide_tablet,
 	.sticky-signup {
 		display: none;
+	}
+	#dreams, .fle_title h1,
+	#fle_timeline .fle_title h1 {
+		font-size: 40px;
+	}
+	.sticky-signup2 {
+		text-align: center;
+		background: #53435B;
+		padding-top: 20px;
+		position: relative;
+		z-index: 99999;
+	}
+	.sticky-signup2 span {
+		font-size: 15px;
+		top: 10px;
+		text-align: center;
+		left: 0;
+		color: white;
+	}
+	.iframe-holder {
+		position: relative;
+		margin: auto;
+		text-align: center;
+		top: 25px;
+		width: 320px;
+	}
+	.sticky-mailchimp {
+		float: none;
+	    right: 0;
+	    width: 300px;
 	}
 	.social_btns, .intro-heading,
 	.intro-heading2 {
@@ -77,6 +117,9 @@
 	}
 	.intro-heading {
 		font-size: 50px;
+	}
+	span.hidden-xs.hidden-sm {
+		display: none !important;
 	}
 	.intro-text {
 		top: 8%;
@@ -103,7 +146,7 @@
 	}
 	.top-box img, .bottom-box img {
 		margin: 0;
-		max-width: 250px;
+		max-width: 225px;
 	}
 	#kolibri_logo {
 		width: 70%;
@@ -136,9 +179,17 @@
 	#how-image .row {
 		height: 40%;
 	}
+	#how-image .row div {
+		margin-top: 50px;
+		border-radius: 0px;
+	}
 	.how-explanation h2 {
 		margin-top: 0;
 		padding-top: 20px;
+	}
+	#how-1, #how-2, #how-3 {
+		height: 160px;
+    	background-size: 320px;
 	}
 	.wow img {
 		margin: 0;
@@ -146,5 +197,121 @@
 	.fle_title img {
 		max-width: 150px;
 		width: 30%;
+	}
+	.fle_title_bold {
+		text-align: center;
+		padding: 0;
+		width: 100%;
+		margin: 0;
+	}
+	.fle_title_bold .fle_title_h2 {
+		font-size: 40px;
+	}
+	p.slim-text {
+		max-width: 200px;
+		margin: 30px auto 0 auto;
+	}
+	span.slogan {
+		font-size: 23px;
+		top: 10px;
+	}
+	.feature-space {
+		min-height: 200px;
+		padding: 40px 0;
+	}
+	#feature-container {
+		min-height: 750px;
+		display: block;
+		overflow: auto;
+		height: auto;
+	}
+	.feature-space img {
+		margin-top: 0;
+	}
+	.feature-tile {
+		display: block;
+		border-right: none;
+		border-left: none;
+		border-top: none;
+		border-bottom: 2px solid #8670A1 !important;
+	}
+	.portfolio-modal .close-modal .lr,
+	.portfolio-modal .close-modal .lr .rl,
+	.portfolio-modal .close-modal {
+		height: 30px !important;
+	}
+	.modal-dialog {
+		width: 90% !important;
+	}
+	p.item-intro {
+		font-size: 18px !important;
+	}
+	.portfolio-modal .modal-content p {
+		font-size: 15px !important;
+	}
+	.portfolio-modal .modal-content h2 {
+		font-size: 1.5em;
+	}
+
+	img.img-responsive.img-centered,
+	.canvas-container,
+	#canvas, .upper-canvas {
+		width: 100% !important;
+	}
+	.my_col {
+		position: relative;
+		top: -50px;
+	}
+	.fle_title h3 {
+		top: 0;
+	}
+	.fle_title h2 img {
+		max-width: 175px;
+		width: 45%;
+		position: relative;
+		top: 0;
+	}
+	.canvas-container {
+		width: 100% !important;
+	}
+	#button-wrapper {
+		margin-top: 50% !important;
+	}
+	#desktop-timeline {
+		padding: 10px 0 30px 0;
+	}
+	#contact {
+		height: auto !important;
+		display: block;
+		overflow: auto;
+	}
+	.e1 {
+		left: 0;
+		max-width: 455px;
+	}
+	#contact {
+		background-position: center center !important;
+	}
+}
+
+@media screen and (min-width: 1725px) {
+	.sticky-mailchimp {
+		right: -18%;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	#mc-embedded-subscribe {
+	    width: 300px;
+	    border-top-right-radius: 0;
+	    border-bottom-left-radius: 10px;
+	    margin: auto;
+	}
+	#mce-EMAIL {
+		width: 300px;
+		margin: auto;
+    	border-top-right-radius: 10px;
+    	border-bottom-left-radius: 0px;
+    	text-align: center !important;
 	}
 }
