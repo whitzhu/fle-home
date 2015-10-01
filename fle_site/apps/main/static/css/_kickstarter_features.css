@@ -21,7 +21,11 @@
 
 
 #feature-container {
-  height: 750px;
+  height: 755px;
+  display: block;
+  overflow: visible;
+  background: white;
+  position: relative;
 }
 
 #feature-container #tile-container {
@@ -36,6 +40,7 @@
 }
 .feature-space img {
   width: 55%;
+  margin-top: 22%;
 }
 span#kolibri-name {
   font-size: 70px;
@@ -55,7 +60,7 @@ span.slogan {
 .feature-space {
   background: #8670A1;
   min-height: 750px;
-  height: 100%;
+  /*height: 100%;*/
 }
 .feature-tile {
   min-height: 375px;
