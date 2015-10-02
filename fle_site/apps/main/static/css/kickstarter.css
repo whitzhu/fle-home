@@ -83,12 +83,17 @@ body {
   background-size: cover;
 }
 .fle_title_bold {
+  cursor: pointer;
+  color: #424242;
   position: relative;
   font-size: 40px;
   padding: 40px 0 40px 10%;
   font-weight: bolder;
   font-family: "Montserrat";
   width: 50vw;
+}
+a:hover {
+  text-decoration: none !important;
 }
 .fle_title h1 {
   font-size: 55px;
@@ -317,6 +322,7 @@ h6 {
 }
 .email_submit_k {
   clear: none !important;
+  cursor: pointer;
   float: left;
   /*width: 300px;*/
   padding: 10 25px;
