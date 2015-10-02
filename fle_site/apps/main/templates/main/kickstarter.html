@@ -231,6 +231,11 @@
                             $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
                         }
                     });
+                if ( $('body').width() < 1170 ) {
+                    $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
+                    } else {
+                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                    }
                 };
 
                 // Set height of how-image to be the height of the section with infographics, only on bigger screens 
