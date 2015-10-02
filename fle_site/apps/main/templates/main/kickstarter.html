@@ -45,11 +45,11 @@
                     <div class="col-md-6">
                         <div class="intro-social">
                             <div class="social_btns">
-                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
+                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div class="fb_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
                                 <!-- <div class="space_taker"></div> -->
-                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div class="tw_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
                                 <!-- <div class="space_taker"></div> -->
-                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
+                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div class="reddit_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
                             </div>
                         </div>
                     </div>
@@ -253,6 +253,29 @@
 
 
 
+        </script>
+
+        <!-- Google Analyticas tracking -->
+        <script>
+            $(function() {
+                $('a[href$="#portfolioModal0"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_0');});
+                $('a[href$="#portfolioModal1"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_1');});
+                $('a[href$="#portfolioModal2"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_2');});
+                $('a[href$="#portfolioModal3"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_3');});
+                $('a[href$="#portfolioModal4"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_4');});
+
+                $('#quote_video_btn').click(function(){ga('send', 'event', 'click', 'quote_video_btn');});
+
+                $('.fb_btn_1').click(function(){ga('send', 'event', 'click', 'fb_btn_1');});
+                $('.tw_btn_1').click(function(){ga('send', 'event', 'click', 'tw_btn_1');});
+                $('.reddit_btn_1').click(function(){ga('send', 'event', 'click', 'reddit_btn_1');});
+                $('.fb_btn_2').click(function(){ga('send', 'event', 'click', 'fb_btn_2');});
+                $('.tw_btn_2').click(function(){ga('send', 'event', 'click', 'tw_btn_2');});
+                $('.reddit_btn_2').click(function(){ga('send', 'event', 'click', 'reddit_btn_2');});
+
+                $('.sticky-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'click', 'sticky-mailchimp');});
+                $('#header-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'click', 'bottom-mailchimp');});
+            });
         </script>
     </body>
 
