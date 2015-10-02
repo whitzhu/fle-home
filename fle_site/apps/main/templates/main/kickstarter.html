@@ -224,6 +224,13 @@
                         $('#header-mailchimp').contents().find("head")
                           .append($("<style type='text/css'>  .email_input_k{width:400px;}  </style>"));
                     });
+                    $(window).resize(function() {
+                        if ( $('body').width() < 1170 ) {
+                            $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
+                        } else {
+                            $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                        }
+                    });
                 };
 
                 // Set height of how-image to be the height of the section with infographics, only on bigger screens 
@@ -234,11 +241,6 @@
 
                 //load mobile timeline html template when desktop screen size is less than 1000px
                 $(window).resize(function() {
-                    if ( $('body').width() < 1170 ) {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
-                    } else {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
-                    }
                     // Set height of how-image to be the height of the section with infographics, only on bigger screens 
                     if ( $('body').width() > 990 ) {
                         var how_height = $(".how-explanation").height();
