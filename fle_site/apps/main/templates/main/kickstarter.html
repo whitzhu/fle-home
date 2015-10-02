@@ -65,7 +65,7 @@
                             <div class="col-md-6">
                                  <div class="intro-heading2">The offline app for universal education</div>
                             </div>
-                            <div id="campaign-intro">Launching a crowdfunding campaign this October</div>
+                            <div id="campaign-intro">Launching an Indiegogo campaign this October</div>
                         </div>
                     </div>
                     <a id="down-arrow" href="#fle_intro">
@@ -84,7 +84,7 @@
         <!-- sticky sign up bar -->
         <!-- desktop version -->
         <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Find out when we launch our ________ campaign!</span>
+            <span>Find out when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -93,7 +93,7 @@
         </div> 
         <!-- small screen version -->
         <div class="sticky-signup2" data-offset-top="200">
-            <span>Find out when we launch our ________ campaign!</span>
+            <span>Find out when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp2" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -119,14 +119,14 @@
         <!-- Features Section: Tile Design -->
         <section id="fle_features" class="row">
             <br><br><br><br><br><br>
-            <div class="fle_title_bold">
+            <a href="#portfolioModal1" data-toggle="modal"><div class="fle_title_bold">
                 Curated Educational Content<br>
                 <p class="slim-text">
                     Education is not "one-size fits all"
                     <br><br>
-                    <a href="#portfolioModal1" data-toggle="modal">Learn more</a>
+                    <span>Learn more</span>
                 </p>
-            </div>
+            </div></a>
             <br><br><br><br><br><br>
             {% include "main/partials/_kickstarter_features_tiledesign.html" %}
         </section>
@@ -224,29 +224,35 @@
                         $('#header-mailchimp').contents().find("head")
                           .append($("<style type='text/css'>  .email_input_k{width:400px;}  </style>"));
                     });
+                    $(window).resize(function() {
+                        if ( $('body').width() < 1170 ) {
+                            $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
+                        } else {
+                            $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                        }
+                    });
+                if ( $('body').width() < 1170 ) {
+                    $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
+                    } else {
+                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                    }
                 };
 
-                // load mobile timeline html template when desktop screen size is less than 1000px
-                $(window).resize(function() {
-                    if ( $('body').width() < 1170 && $('body').width() > 990 ) {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
-                    } else {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
+                // Set height of how-image to be the height of the section with infographics, only on bigger screens 
+                    if ( $('body').width() > 990 ) {
+                        var how_height = $(".how-explanation").height();
+                        document.getElementById('how-image').style.height = how_height+'px';
                     }
-                    // Set height of how-image to be the height of the section with infographics
-                    var how_height = $(".how-explanation").height();
-                    document.getElementById('how-image').style.height = how_height+'px';
+
+                //load mobile timeline html template when desktop screen size is less than 1000px
+                $(window).resize(function() {
+                    // Set height of how-image to be the height of the section with infographics, only on bigger screens 
+                    if ( $('body').width() > 990 ) {
+                        var how_height = $(".how-explanation").height();
+                        document.getElementById('how-image').style.height = how_height+'px';
+                    }
                     
                 });
-                if ( $('body').width() < 1170 && $('body').width() > 990 ) {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline_mobile.html' %}");
-                    } else {
-                        $("#desktop-timeline").load("{% static 'timeline/_kickstarter_timeline.html' %}");
-                    }
-                    // Set height of how-image to be the height of the section with infographics
-                var how_height = $(".how-explanation").height();
-                console.log(how_height);
-                document.getElementById('how-image').style.height = how_height+'px';
             });
             
                     
