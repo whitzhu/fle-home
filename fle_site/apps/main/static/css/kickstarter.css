@@ -314,7 +314,6 @@ h6 {
   box-shadow: none;
   border: 3px solid #fff !important;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 .email_submit_k {
   clear: none !important;
@@ -757,7 +756,6 @@ mark{
     width: 300px;
     margin-right: 10px;
     margin-left: 10px;
-    border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
   .email_submit_k {

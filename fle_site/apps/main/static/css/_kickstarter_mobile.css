@@ -12,7 +12,7 @@
 	}
 	.sticky-mailchimp {
 		/*width: 991px;*/
-		right: -25%;
+		/*right: -25%;*/
 		float: right;
 		position: relative;
 		margin-top: -21px;
@@ -89,7 +89,7 @@
 		z-index: 99999;
 	}
 	.sticky-signup2 span {
-		font-size: 15px;
+		font-size: 20px;
 		top: 10px;
 		text-align: center;
 		left: 0;
@@ -189,7 +189,7 @@
 	}
 	#how-1, #how-2, #how-3 {
 		height: 160px;
-    	background-size: 320px;
+    	background-size: 250px;
 	}
 	.wow img {
 		margin: 0;
@@ -252,7 +252,21 @@
 	.portfolio-modal .modal-content h2 {
 		font-size: 1.5em;
 	}
-
+	.portfolio-modal .close-modal {
+		left: -35px;
+	}
+	.modal-backdrop {
+		-webkit-transform:translateZ(2px);
+		-moz-transform:translateZ(2px);
+		-o-transform:translateZ(2px);
+		transform:translateZ(2px);
+	}
+	.portfolio-modal {
+		-webkit-transform:translateZ(5px);
+		-moz-transform:translateZ(5px);
+		-o-transform:translateZ(5px);
+		transform:translateZ(5px);
+	}
 	img.img-responsive.img-centered,
 	.canvas-container,
 	#canvas, .upper-canvas {
@@ -294,12 +308,6 @@
 	}
 }
 
-@media screen and (min-width: 1725px) {
-	.sticky-mailchimp {
-		right: -18%;
-	}
-}
-
 @media screen and (max-width: 325px) {
 	#mc-embedded-subscribe {
 	    width: 300px;
@@ -311,7 +319,6 @@
 		width: 300px;
 		margin: auto;
     	border-top-right-radius: 10px;
-    	border-bottom-left-radius: 0px;
     	text-align: center !important;
 	}
 }
