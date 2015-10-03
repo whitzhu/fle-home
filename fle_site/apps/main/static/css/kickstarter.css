@@ -15,6 +15,10 @@ body {
   -webkit-backface-visibility: visible;
 }
 
+iframe.sticky-mailchimp {
+  height: 60px;
+}
+
 #fle_quote, #fle_timeline, #feature-container, #fle_how, #fle_intro, #kickstarter-header {
   -webkit-transform:translateZ(1px);
   -moz-transform:translateZ(1px);
