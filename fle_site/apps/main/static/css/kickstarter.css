@@ -406,7 +406,7 @@ span.hidden-xs.hidden-sm {
 /* LAST CALL TO ACTION */
 section#contact {
   background: url('../img/kickstarter/cambodia.jpg');
-  background-position: left top;
+  background-position: left 10%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -669,7 +669,7 @@ mark{
 #footer-kolibri {
   width: 300px;
   position: relative;
-  top: 60px;
+  top: 30px;
   opacity: 0.7;
 }
 .foot_containor #footer-kickstarter {
@@ -684,7 +684,7 @@ mark{
   font-weight: normal;
   text-align: center;
   line-height: 1.3em;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 #dreams {
   text-align: center;
