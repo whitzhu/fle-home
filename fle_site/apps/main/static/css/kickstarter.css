@@ -83,12 +83,17 @@ body {
   background-size: cover;
 }
 .fle_title_bold {
+  cursor: pointer;
+  color: #424242;
   position: relative;
   font-size: 40px;
   padding: 40px 0 40px 10%;
   font-weight: bolder;
   font-family: "Montserrat";
   width: 50vw;
+}
+a:hover {
+  text-decoration: none !important;
 }
 .fle_title h1 {
   font-size: 55px;
@@ -314,10 +319,10 @@ h6 {
   box-shadow: none;
   border: 3px solid #fff !important;
   border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 .email_submit_k {
   clear: none !important;
+  cursor: pointer;
   float: left;
   /*width: 300px;*/
   padding: 10 25px;
@@ -757,7 +762,6 @@ mark{
     width: 300px;
     margin-right: 10px;
     margin-left: 10px;
-    border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
   .email_submit_k {
