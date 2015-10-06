@@ -3,6 +3,7 @@ import logging
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from models import Article, Tag
+from ckeditor.widgets import CKEditorWidget
 
 log = logging.getLogger('articles.forms')
 
@@ -22,6 +23,8 @@ def tag(name):
     return t
 
 class ArticleAdminForm(forms.ModelForm):
+
+    content = forms.CharField(widget=CKEditorWidget())
 
     def __init__(self, *args, **kwargs):
         """Sets the list of tags to be a string"""

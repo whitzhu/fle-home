@@ -154,8 +154,10 @@ INSTALLED_APPS = (
     'fle_site.apps.about',
     'fle_site.apps.ka_lite',
     'fle_site.apps.redirects',
+    'ckeditor',
 )
 
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
