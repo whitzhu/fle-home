@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^ka-lite/', include(fle_site.apps.ka_lite.urls)),
     url(r'^r/', include(fle_site.apps.redirects.urls)),
     url(r'^homepage/', lambda request: HttpResponseRedirect(reverse('ka_lite'))),
-    url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /kolibri/", mimetype="text/plain")),
+    # url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /kolibri/", mimetype="text/plain")),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 )
 
