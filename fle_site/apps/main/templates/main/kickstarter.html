@@ -84,7 +84,7 @@
         <!-- sticky sign up bar -->
         <!-- desktop version -->
         <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Find out when we launch our Indiegogo campaign!</span>
+            <span>Be the first to know when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -93,7 +93,7 @@
         </div> 
         <!-- small screen version -->
         <div class="sticky-signup2" data-offset-top="200">
-            <span>Find out when we launch our Indiegogo campaign!</span>
+            <span>Be the first to know when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp2" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -261,26 +261,27 @@
 
         </script>
 
-        <!-- Google Analyticas tracking -->
+        <!-- Google Analytics tracking -->
         <script>
             $(function() {
-                $('a[href$="#portfolioModal0"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_0');});
-                $('a[href$="#portfolioModal1"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_1');});
-                $('a[href$="#portfolioModal2"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_2');});
-                $('a[href$="#portfolioModal3"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_3');});
-                $('a[href$="#portfolioModal4"]').click(function(){ga('send', 'event', 'click', 'k_feature_modal_4');});
+                $('a[href$="#portfolioModal0"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'runs-on-anything');});
+                $('a[href$="#portfolioModal1"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'content-curation');});
+                $('a[href$="#portfolioModal2"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'share-and-sync');});
+                $('a[href$="#portfolioModal3"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'byte-size-videos');});
+                $('a[href$="#portfolioModal4"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'learn-at-own-pace');});
 
-                $('#quote_video_btn').click(function(){ga('send', 'event', 'click', 'quote_video_btn');});
+                $('#quote_video_btn').click(function(){ga('send', 'event', 'crowdfunding', 'play', 'quote-video');});
 
-                $('.fb_btn_1').click(function(){ga('send', 'event', 'click', 'fb_btn_1');});
-                $('.tw_btn_1').click(function(){ga('send', 'event', 'click', 'tw_btn_1');});
-                $('.reddit_btn_1').click(function(){ga('send', 'event', 'click', 'reddit_btn_1');});
-                $('.fb_btn_2').click(function(){ga('send', 'event', 'click', 'fb_btn_2');});
-                $('.tw_btn_2').click(function(){ga('send', 'event', 'click', 'tw_btn_2');});
-                $('.reddit_btn_2').click(function(){ga('send', 'event', 'click', 'reddit_btn_2');});
+                $('.fb_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'facebook-1');});
+                $('.tw_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'twitter-1');});
+                $('.reddit_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'reddit-1');});
+                $('.fb_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'facebook-2');});
+                $('.tw_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'twitter-2');});
+                $('.reddit_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'reddit-2');});
 
-                $('.sticky-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'click', 'sticky-mailchimp');});
-                $('#header-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'click', 'bottom-mailchimp');});
+                $('.sticky-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp').contents().find(".email_input_k").val(), 1);});
+                $('.sticky-mailchimp2').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp2').contents().find(".email_input_k").val(), 1);});
+                $('#header-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_bottom', $('#header-mailchimp').contents().find(".email_input_k").val(), 1);});
             });
         </script>
     </body>
