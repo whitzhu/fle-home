@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic import TemplateView, RedirectView
 
-from .views import process_donation
+from .views import process_donation, file_upload
 
 urlpatterns = patterns(__package__ + '.views',
 	url(r'^$', TemplateView.as_view(template_name='main/homepage.html'), name='home'),
@@ -14,4 +14,5 @@ urlpatterns = patterns(__package__ + '.views',
     url(r'^donate/process/$', process_donation, name='process_donation'),
     url(r'^directions/$', TemplateView.as_view(template_name='main/directions.html'), name='directions'),
     url(r'^mailchimp/$', TemplateView.as_view(template_name='main/partials/_kickstarter_mailchimp.html'), name='mailchimp'),
+    url(r'^fileupload/$', file_upload, name='file_upload'),
 )
