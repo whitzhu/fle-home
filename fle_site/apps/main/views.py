@@ -8,6 +8,9 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseServerError, HttpResponseRedirect, HttpResponseNotAllowed
 from django.template.loader import render_to_string
 from django.template import RequestContext
+from django.contrib.auth.decorators import login_required
+from django.core.files.storage import get_storage_class
+from django.views.decorators.csrf import csrf_exempt
 
 from annoying.decorators import render_to
 
@@ -77,3 +80,17 @@ def handler_500(request):
 
 def handler_404(request):
     return HttpResponseServerError(render_to_string("main/404.html", {}, context_instance=RequestContext(request)))
+
+
+@login_required
+@csrf_exempt
+def file_upload(request):
+    if request.method == 'POST':
+        storage_class = get_storage_class()()
+        file_object = request.FILES.values()[0]
+        filename = storage_class.save(None, file_object)
+        return HttpResponse(json.dumps({
+            "uploaded": 1,
+            "fileName": filename,
+            "url": settings.MEDIA_URL + "/" + filename,
+        }))
