@@ -45,11 +45,11 @@
                     <div class="col-md-6">
                         <div class="intro-social">
                             <div class="social_btns">
-                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
+                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div class="fb_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
                                 <!-- <div class="space_taker"></div> -->
-                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
+                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div class="tw_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
                                 <!-- <div class="space_taker"></div> -->
-                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
+                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div class="reddit_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
         <!-- sticky sign up bar -->
         <!-- desktop version -->
         <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Find out when we launch our Indiegogo campaign!</span>
+            <span>Be the first to know when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -93,7 +93,7 @@
         </div> 
         <!-- small screen version -->
         <div class="sticky-signup2" data-offset-top="200">
-            <span>Find out when we launch our Indiegogo campaign!</span>
+            <span>Be the first to know when we launch our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp2" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -259,6 +259,30 @@
 
 
 
+        </script>
+
+        <!-- Google Analytics tracking -->
+        <script>
+            $(function() {
+                $('a[href$="#portfolioModal0"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'runs-on-anything');});
+                $('a[href$="#portfolioModal1"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'content-curation');});
+                $('a[href$="#portfolioModal2"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'share-and-sync');});
+                $('a[href$="#portfolioModal3"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'byte-size-videos');});
+                $('a[href$="#portfolioModal4"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'learn-at-own-pace');});
+
+                $('#quote_video_btn').click(function(){ga('send', 'event', 'crowdfunding', 'play', 'quote-video');});
+
+                $('.fb_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'facebook-1');});
+                $('.tw_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'twitter-1');});
+                $('.reddit_btn_1').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'reddit-1');});
+                $('.fb_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'facebook-2');});
+                $('.tw_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'twitter-2');});
+                $('.reddit_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'reddit-2');});
+
+                $('.sticky-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp').contents().find(".email_input_k").val(), 1);});
+                $('.sticky-mailchimp2').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp2').contents().find(".email_input_k").val(), 1);});
+                $('#header-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_bottom', $('#header-mailchimp').contents().find(".email_input_k").val(), 1);});
+            });
         </script>
     </body>
 
