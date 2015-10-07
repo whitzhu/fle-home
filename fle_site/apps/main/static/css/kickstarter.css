@@ -125,6 +125,12 @@ a:hover {
 /* Sticky Signup Form */
 .sticky-signup {
   background: #53435B;
+  height: 70px;
+  width: 100%;
+  background: #53435B;
+  z-index: 999999;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
 }
 .affix-top {
   height: 70px;
@@ -410,7 +416,7 @@ span.hidden-xs.hidden-sm {
 /* LAST CALL TO ACTION */
 section#contact {
   background: url('../img/kickstarter/cambodia.jpg');
-  background-position: left top;
+  background-position: left 10%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -673,7 +679,7 @@ mark{
 #footer-kolibri {
   width: 300px;
   position: relative;
-  top: 60px;
+  top: 30px;
   opacity: 0.7;
 }
 .foot_containor #footer-kickstarter {
@@ -688,7 +694,7 @@ mark{
   font-weight: normal;
   text-align: center;
   line-height: 1.3em;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 #dreams {
   text-align: center;
@@ -822,16 +828,15 @@ mark{
   min-height: 700px;
   width: 100%;
   position: relative;
-  z-index: 3;
-  margin-top: 50px;
-}
+  z-index: 1;
+} 
 #kickstarter-header .header-shadow {
   height: 100%;
 }
 
 .intro-social {
   position: relative;
-  top: 9vh;
+  margin-top: 10%;
   text-align: right; 
   right: 30px;
 }
@@ -858,7 +863,7 @@ mark{
 }
 #mce-responses {
   max-width: 600px;
-  width: 350px;
+  width: 320px;
   margin: auto;
   font-size: 13px;
   font-family: "Montserrat-Light";
