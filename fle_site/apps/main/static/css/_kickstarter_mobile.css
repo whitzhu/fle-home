@@ -6,7 +6,7 @@
 		max-width: 300px;
 	}
 	.sticky-signup span {
-		font-size: 20px;
+		font-size: 16px;
 		top: 22px;
 		left: 3%;
 	}
@@ -15,7 +15,7 @@
 		/*right: -25%;*/
 		float: right;
 		position: relative;
-		margin-top: -21px;
+		margin-top: -14px;
 	}
 	/*.email_input_k {
 		width: 220px;
