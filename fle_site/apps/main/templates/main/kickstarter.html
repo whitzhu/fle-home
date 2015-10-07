@@ -30,9 +30,6 @@
     <div id="body">
         <header id="kickstarter-header">
             <div class="header-shadow row">
-                <div class="sharing-message">
-                    Note: This site is not yet public; please do not share before October 12.
-                </div>
                 <!---Kickstarter Campaign & Social Media Buttons-->
                 <div class="row">
                     <div class="col-md-6">
@@ -209,7 +206,7 @@
             });
 
 
-            // Checks whether device is mobile or desktop and applies appropriate html file
+            // Checks whether device is mobile or desktop and applies appropriate html file and styles
             $(function() {
                 var isMobileWebkit = /WebKit/.test(navigator.userAgent) && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 if (isMobileWebkit) {
@@ -251,8 +248,8 @@
                         var how_height = $(".how-explanation").height();
                         document.getElementById('how-image').style.height = how_height+'px';
                     }
-                    
                 });
+
             });
             
                     
