@@ -824,8 +824,8 @@ mark{
   min-height: 700px;
   width: 100%;
   position: relative;
-  z-index: 3;
-}
+  z-index: 1;
+} 
 #kickstarter-header .header-shadow {
   height: 100%;
 }
