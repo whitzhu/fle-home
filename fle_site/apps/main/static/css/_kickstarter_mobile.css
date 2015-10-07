@@ -323,3 +323,31 @@
     	text-align: center !important;
 	}
 }
+
+@media screen and (max-width: 700px) {
+	.countdown {
+		zoom: 0.8;
+		-webkit-transform: 0.8;
+		-moz-transform: 0.8;
+	}
+}
+@media screen and (max-width: 550px) {
+	.countdown {
+		zoom: 0.6;
+		-webkit-transform: 0.6;
+		-moz-transform: 0.6;
+	}
+	.flip-clock-wrapper ul li a div div.inn {
+		font-size: 45px;
+	}
+}
+@media screen and (max-width: 450px) {
+	.countdown {
+		zoom: 0.4;
+		-webkit-transform: 0.4;
+		-moz-transform: 0.4;
+	}
+	.flip-clock-label {
+		display: none;
+	}
+}

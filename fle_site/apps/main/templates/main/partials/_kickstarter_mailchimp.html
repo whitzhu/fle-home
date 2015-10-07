@@ -46,14 +46,12 @@
 
 
         document.getElementById("mc-embedded-subscribe").onclick = function() {
-            console.log("submit button clicked");
             if ( validateEmail($("#mce-EMAIL").val()) ) {
-                console.log("email is validated");
                 document.getElementById("mc-embedded-subscribe").value = "Thanks! Check your\ninbox to confirm";
                 document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-                } else {
-                    document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
-                    document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-                }
+            } else {
+                document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
+                document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
+            }
         };
 </script>
