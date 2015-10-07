@@ -30,9 +30,6 @@
     <div id="body">
         <header id="kickstarter-header">
             <div class="header-shadow row">
-                <div class="sharing-message">
-                    Note: This site is not yet public; please do not share before October 12.
-                </div>
                 <!---Kickstarter Campaign & Social Media Buttons-->
                 <div class="row">
                     <div class="col-md-6">
@@ -65,7 +62,7 @@
                             <div class="col-md-6">
                                  <div class="intro-heading2">The offline app for universal education</div>
                             </div>
-                            <div id="campaign-intro">Launching an Indiegogo campaign this October</div>
+                            <div id="campaign-intro">Launching an Indiegogo campaign next Friday, October 16</div>
                         </div>
                     </div>
                     <a id="down-arrow" href="#fle_intro">
@@ -84,7 +81,7 @@
         <!-- sticky sign up bar -->
         <!-- desktop version -->
         <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Be the first to know when we launch our Indiegogo campaign!</span>
+            <span>Get the first update for our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -93,7 +90,7 @@
         </div> 
         <!-- small screen version -->
         <div class="sticky-signup2" data-offset-top="200">
-            <span>Be the first to know when we launch our Indiegogo campaign!</span>
+            <span>Get the first update for our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp2" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -209,7 +206,7 @@
             });
 
 
-            // Checks whether device is mobile or desktop and applies appropriate html file
+            // Checks whether device is mobile or desktop and applies appropriate html file and styles
             $(function() {
                 var isMobileWebkit = /WebKit/.test(navigator.userAgent) && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
                 if (isMobileWebkit) {
@@ -251,8 +248,8 @@
                         var how_height = $(".how-explanation").height();
                         document.getElementById('how-image').style.height = how_height+'px';
                     }
-                    
                 });
+
             });
             
                     
