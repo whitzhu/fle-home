@@ -35,7 +35,7 @@
   line-height: 1.33em;
 }
 .how-explanation {
-  background: #8670A1;
+  background: url('../img/kickstarter/how_it_works/purple-background.gif') repeat;
   height: 100%;
   min-height: 838px;
 }
