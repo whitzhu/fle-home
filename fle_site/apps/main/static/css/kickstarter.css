@@ -19,6 +19,11 @@ iframe.sticky-mailchimp {
   height: 60px;
 }
 
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 #fle_quote, #fle_timeline, #feature-container, #fle_how, #fle_intro, #kickstarter-header {
   -webkit-transform:translateZ(1px);
   -moz-transform:translateZ(1px);
