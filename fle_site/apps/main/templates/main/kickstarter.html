@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/flipclock.css' %}">
     <link rel="stylesheet" href="{% static 'css/kickstarter.css' %}">
     <link rel="stylesheet" href="{% static 'css/_kickstarter_features.css' %}">
     <link rel="stylesheet" href="{% static 'css/_kickstarter_how.css' %}">
@@ -22,6 +23,18 @@
     <style>
         #indiegogo_text {
             display: none;
+        }
+        #fle-navbar {
+        -webkit-transform: translateZ(7px);
+           -moz-transform: translateZ(7px);
+             -o-transform: translateZ(7px);
+                transform: translateZ(7px);
+        }
+        .sticky-signup {
+        -webkit-transform: translateZ(7px);
+           -moz-transform: translateZ(7px);
+             -o-transform: translateZ(7px);
+                transform: translateZ(7px);
         }
     </style>
 {% endblock headcss %}
@@ -68,6 +81,7 @@
                                  <div class="intro-heading2">The offline app for universal education</div>
                             </div>
                             <div id="campaign-intro">Indiegogo campaign launching next Friday, October 16!</div>
+                            <div class="countdown"></div>
                         </div>
                     </div>
                     <a id="down-arrow" href="#fle_intro">
@@ -86,7 +100,7 @@
         <!-- sticky sign up bar -->
         <!-- desktop version -->
         <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Be the first to know when the Indiegogo campaign launches!</span>
+            <span>Get the first updates for our Indiegogo campaign!</span>
             <div class="iframe-holder">
                 <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
                     <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
@@ -170,6 +184,7 @@
         <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script>
         <!-- WOW Scrolling JavaScript -->
         <script src="{% static 'js/wow.js' %}"></script>
+        <script src="{% static 'js/flipclock.min.js' %}"></script>
         <script>
             new WOW().init();
         </script>
@@ -210,6 +225,16 @@
                 $('.sticky-signup').attr("data-offset-top", $('#fle-navbar').outerHeight() + $('#kickstarter-header').outerHeight());
             });
 
+            // Adds a countdown timer to release day
+            FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+            var opts = {
+                clockFace: 'DailyCounter',
+                countdown: true,
+                language: 'Custom'
+            };  
+            var countdown = 1445014800 - ((new Date().getTime())/1000); // from: 10/16/2015 10:00 am -0700
+            countdown = Math.max(1, countdown);
+            $('.countdown').FlipClock(countdown, opts);
 
             // Checks whether device is mobile or desktop and applies appropriate html file and styles
             $(function() {

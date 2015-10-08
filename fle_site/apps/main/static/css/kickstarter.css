@@ -19,6 +19,11 @@ iframe.sticky-mailchimp {
   height: 60px;
 }
 
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 #fle_quote, #fle_timeline, #feature-container, #fle_how, #fle_intro, #kickstarter-header {
   -webkit-transform:translateZ(1px);
   -moz-transform:translateZ(1px);
@@ -121,6 +126,18 @@ a:hover {
   position: relative;
   z-index: 2;
 }
+.countdown {
+  width: 630px;
+  margin: 80px auto 0 auto;
+}
+.flip-clock-label {
+  font-size: 20px;
+  color: white !important;
+  left: 45px;
+  margin: auto;
+  font-family: "Montserrat-Light";
+}
+
 
 /* Sticky Signup Form */
 .sticky-signup {
@@ -571,6 +588,18 @@ ul.social-buttons li a {
   opacity: 0;
   display: none;
 }
+.modal-backdrop {
+  -webkit-transform:translateZ(2px);
+  -moz-transform:translateZ(2px);
+  -o-transform:translateZ(2px);
+  transform:translateZ(2px);
+}
+.portfolio-modal {
+  -webkit-transform:translateZ(5px);
+  -moz-transform:translateZ(5px);
+  -o-transform:translateZ(5px);
+  transform:translateZ(5px);
+}
 #try-it {
   margin: 50px 0 20px 0;
 }
@@ -944,7 +973,7 @@ mark{
   width: 80px;
   height: 40px;
   display: block;
-  margin: 100px auto 0 auto;
+  margin: 50px auto 0 auto;
 }
 
 /* Introduction to Kolibri Version 2 */

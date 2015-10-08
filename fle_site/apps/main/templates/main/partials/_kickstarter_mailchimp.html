@@ -6,6 +6,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <script src="{% static 'js/jquery-1.10.2.min.js' %}" type="text/javascript" ></script>
 
+
 <div id="sign-up">
     <div id="mc_embed_signup">
         <form action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=2cff471b25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -46,14 +47,12 @@
 
 
         document.getElementById("mc-embedded-subscribe").onclick = function() {
-            console.log("submit button clicked");
             if ( validateEmail($("#mce-EMAIL").val()) ) {
-                console.log("email is validated");
                 document.getElementById("mc-embedded-subscribe").value = "Thanks! Check your\ninbox to confirm";
                 document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-                } else {
-                    document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
-                    document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-                }
+            } else {
+                document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
+                document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
+            }
         };
 </script>
