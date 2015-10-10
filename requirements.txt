@@ -17,3 +17,5 @@ sqlparse==0.1.11
 wsgiref==0.1.2
 stripe
 django-ckeditor
+httplib2
+feedparser

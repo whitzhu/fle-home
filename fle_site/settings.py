@@ -15,6 +15,11 @@ def localor(setting_name, default_val):
 DEBUG          = getattr(local_settings, "DEBUG", False)
 TEMPLATE_DEBUG = getattr(local_settings, "TEMPLATE_DEBUG", DEBUG)
 
+#retrieve Constantcontact info from local_settings
+CONSTANT_CONTACT_API_KEY = getattr(local_settings, "CONSTANT_CONTACT_API_KEY", 'api-key-not-found')
+CONSTANT_CONTACT_USER_NAME = getattr(local_settings, "CONSTANT_CONTACT_USER_NAME", 'user-name-not-found')
+CONSTANT_CONTACT_PASSWORD = getattr(local_settings, "CONSTANT_CONTACT_PASSWORD", 'password-not-found')
+
 ADMINS = (
     # ('Dylan', 'dylan@learningequality.org'),
 )

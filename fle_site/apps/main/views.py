@@ -13,7 +13,7 @@ from django.core.files.storage import get_storage_class
 from django.views.decorators.csrf import csrf_exempt
 
 from annoying.decorators import render_to
-
+from fle_site.apps.main.python_constantcontact import cc
 
 class JsonResponse(HttpResponse):
     """Wrapper class for generating a HTTP response with JSON data"""
@@ -27,6 +27,16 @@ class JsonResponse(HttpResponse):
 def map(request): 
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
+@csrf_exempt
+def constatncontact_email(request):
+    if request.method == "POST":
+        api = cc.Api(api_key=settings.CONSTANT_CONTACT_API_KEY, username=settings.CONSTANT_CONTACT_USER_NAME, password=settings.CONSTANT_CONTACT_PASSWORD)
+        # should return a 201 CREATED response status code
+        response, body = api.create_contact(request.POST['email'], [2,3])
+
+        print "ccccccc ", response
+
+        return HttpResponse('')
 
 def process_donation(request):
 
