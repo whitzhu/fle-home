@@ -33,13 +33,10 @@
                 type: "POST",
                 data: {email: email_input},
                 success:function(response){
-                    console.log("SSSSS", email_input); 
                     document.getElementById("mc-embedded-subscribe").value = "Success! \nThank You!";
                     document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
                 },
-                // complete:function(){ console.log("CCCC"); },
                 error:function (xhr, textStatus, thrownError){
-                    console.log("EEEE");
                     document.getElementById("mc-embedded-subscribe").value = "Error! \nPlease try again";
                     document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
                 }

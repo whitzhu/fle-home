@@ -34,8 +34,6 @@ def constatncontact_email(request):
         # should return a 201 CREATED response status code
         response, body = api.create_contact(request.POST['email'], [2,3])
 
-        print "ccccccc ", response
-
         return HttpResponse('')
 
 def process_donation(request):
