@@ -71,6 +71,17 @@ a {
 // --------------------
 // ** Navbar
 // --------------------
+#le-logo {
+    height: 35px;
+    margin-right: 5px;
+    margin-top: -3px;
+    @media (max-width: 997px) {
+            height: 25px;
+        }
+        @media (max-width: 432px) {
+            height: 20px;
+        }
+}
 
 #fle-navbar {
     background-color: @blue;
@@ -106,18 +117,23 @@ a {
         margin: 0 3.5% 0 2.5%;
     }
     .fle-logo {
+        height: 1px;
         font-size: 20px;
         letter-spacing: 1px;
         font-family: @logo_font;
         font-weight: 700;
+        position: relative;
+        margin-top: -6px;
         .logo-font-thin {
             font-weight: 100;
         }
         @media (max-width: 997px) {
             font-size: 15px;
+            margin-top: -2px;
         }
         @media (max-width: 432px) {
             font-size: 10px;
+            margin-top: 0;
         }
     }
 }
