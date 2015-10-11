@@ -9,7 +9,7 @@ from .views import process_donation, file_upload, cc_indiegogo_signup
 urlpatterns = patterns(__package__ + '.views',
     url(r'^$', TemplateView.as_view(template_name='main/homepage.html'), name='home'),
     url(r'^kolibri/', lambda request: HttpResponseRedirect(reverse('indiegogo'))),
-    url(r'^cc_indiegogo_signup/', 'cc_indiegogo_signup', name='submit_email'),
+    url(r'^cc_indiegogo_signup/$', 'cc_indiegogo_signup', name='cc_indiegogo_signup'),
     url(r'^indiegogo/$', TemplateView.as_view(template_name='main/kickstarter.html'), name='indiegogo'),
     url(r'^map/$', RedirectView.as_view(url=reverse_lazy('map'))),
     url(r'^give/$', RedirectView.as_view(url=reverse_lazy('donate')), name='give'),

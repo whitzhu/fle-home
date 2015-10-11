@@ -33,7 +33,7 @@
         if ( validateEmail(email_input) ) {
             //send the email to Django end point to let python_constantcontact handles email adding.
             $.ajax({
-                url: "../cc_indiegogo_signup/",
+                url: "{% url 'cc_indiegogo_signup' %}",
                 type: "POST",
                 data: {email: email_input},
                 success:function(response){
