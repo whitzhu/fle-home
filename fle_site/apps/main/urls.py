@@ -4,12 +4,12 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic import TemplateView, RedirectView
 from django.http import HttpResponseRedirect
 
-from .views import process_donation, file_upload, constatncontact_email
+from .views import process_donation, file_upload, cc_indiegogo_signup
 
 urlpatterns = patterns(__package__ + '.views',
     url(r'^$', TemplateView.as_view(template_name='main/homepage.html'), name='home'),
     url(r'^kolibri/', lambda request: HttpResponseRedirect(reverse('indiegogo'))),
-    url(r'^constatncontact_email/', 'constatncontact_email', name='submit_email'),
+    url(r'^cc_indiegogo_signup/', 'cc_indiegogo_signup', name='submit_email'),
     url(r'^indiegogo/$', TemplateView.as_view(template_name='main/kickstarter.html'), name='indiegogo'),
     url(r'^map/$', RedirectView.as_view(url=reverse_lazy('map'))),
     url(r'^give/$', RedirectView.as_view(url=reverse_lazy('donate')), name='give'),

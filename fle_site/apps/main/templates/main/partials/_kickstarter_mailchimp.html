@@ -24,26 +24,38 @@
         return re.test(email);
     }
 
-    document.getElementById("mc-embedded-subscribe").onclick = function() {
+    $("#mc-embedded-subscribe").click(function() {
         var email_input = $("#mce-EMAIL").val();
+        var email_btn = $("#mc-embedded-subscribe");
+        email_btn.val("one moment...");
+        email_btn.css('padding', '15px 21px');
+
         if ( validateEmail(email_input) ) {
             //send the email to Django end point to let python_constantcontact handles email adding.
             $.ajax({
-                url: "../constatncontact_email/",
+                url: "../cc_indiegogo_signup/",
                 type: "POST",
                 data: {email: email_input},
                 success:function(response){
-                    document.getElementById("mc-embedded-subscribe").value = "Success! \nThank You!";
-                    document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
+                    if(response == '201') {
+                        email_btn.val("Success! \nThank You!");
+                        email_btn.css('padding', '5px 21px');
+                    }else if(response.indexOf("is already a contact") > -1){
+                        email_btn.val("This email is \nalready registered!");
+                        email_btn.css('padding', '5px 21px');
+                    }else{
+                        email_btn.val("Error! \nPlease try again");
+                        email_btn.css('padding', '5px 21px');
+                    }
                 },
                 error:function (xhr, textStatus, thrownError){
-                    document.getElementById("mc-embedded-subscribe").value = "Error! \nPlease try again";
-                    document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
+                    email_btn.val("Error! \nPlease try again");
+                    email_btn.css('padding', '5px 21px');
                 }
             });
         } else {
-            document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
-            document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
+            email_btn.val("Sorry! Email invalid\nPlease try again");
+            email_btn.css('padding', '5px 21px');
         }
-    };
+    });
 </script>

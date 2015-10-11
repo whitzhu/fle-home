@@ -28,13 +28,16 @@ def map(request):
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
 @csrf_exempt
-def constatncontact_email(request):
+def cc_indiegogo_signup(request):
     if request.method == "POST":
         api = cc.Api(api_key=settings.CONSTANT_CONTACT_API_KEY, username=settings.CONSTANT_CONTACT_USER_NAME, password=settings.CONSTANT_CONTACT_PASSWORD)
-        # should return a 201 CREATED response status code
-        response, body = api.create_contact(request.POST['email'], [2,3])
+        #list id for "General Interest" is 1045986784
+        try:
+            response, body = api.create_contact(request.POST['email'], [1045986784])
+        except:
+            return HttpResponse(sys.exc_info()[1])
 
-        return HttpResponse('')
+        return HttpResponse(response.status)
 
 def process_donation(request):
 
