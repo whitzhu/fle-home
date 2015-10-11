@@ -40,7 +40,7 @@
                     if(response == '201') {
                         email_btn.val("Success! \nThank You!");
                         email_btn.css('padding', '5px 21px');
-                    }else if(response.indexOf("is already a contact") > -1){
+                    }else if(response == 'http.status.email_address.conflict'){
                         email_btn.val("This email is \nalready registered!");
                         email_btn.css('padding', '5px 21px');
                     }else{

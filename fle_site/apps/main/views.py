@@ -13,7 +13,7 @@ from django.core.files.storage import get_storage_class
 from django.views.decorators.csrf import csrf_exempt
 
 from annoying.decorators import render_to
-from fle_site.apps.main.python_constantcontact import cc
+from constantcontact import ConstantContact, Contact
 
 class JsonResponse(HttpResponse):
     """Wrapper class for generating a HTTP response with JSON data"""
@@ -30,14 +30,16 @@ def map(request):
 @csrf_exempt
 def cc_indiegogo_signup(request):
     if request.method == "POST":
-        api = cc.Api(api_key=settings.CONSTANT_CONTACT_API_KEY, username=settings.CONSTANT_CONTACT_USER_NAME, password=settings.CONSTANT_CONTACT_PASSWORD)
-        #list id for "General Interest" is 1045986784
-        try:
-            response, body = api.create_contact(request.POST['email'], [1045986784])
-        except:
-            return HttpResponse(sys.exc_info()[1])
+        constantcontact = ConstantContact(settings.CONSTANT_CONTACT_API_KEY, settings.CONSTANT_CONTACT_ACCESS_TOKEN, settings.CONSTANT_CONTACT_API_URL)
+        contact = Contact()
+        contact.add_list_id(settings.CONSTANT_CONTACT_LIST_ID)
+        contact.set_email_address(request.POST['email'])
+        response = constantcontact.post_contacts(contact)
 
-        return HttpResponse(response.status)
+        if response.has_key('error_key'):
+            return HttpResponse(response['error_key'])
+        else:
+            return HttpResponse('201')
 
 def process_donation(request):
 

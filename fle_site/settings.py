@@ -17,8 +17,9 @@ TEMPLATE_DEBUG = getattr(local_settings, "TEMPLATE_DEBUG", DEBUG)
 
 #retrieve Constantcontact info from local_settings
 CONSTANT_CONTACT_API_KEY = getattr(local_settings, "CONSTANT_CONTACT_API_KEY", 'api-key-not-found')
-CONSTANT_CONTACT_USER_NAME = getattr(local_settings, "CONSTANT_CONTACT_USER_NAME", 'user-name-not-found')
-CONSTANT_CONTACT_PASSWORD = getattr(local_settings, "CONSTANT_CONTACT_PASSWORD", 'password-not-found')
+CONSTANT_CONTACT_ACCESS_TOKEN = getattr(local_settings, "CONSTANT_CONTACT_ACCESS_TOKEN", 'access-token-not-found')
+CONSTANT_CONTACT_API_URL = getattr(local_settings, "CONSTANT_CONTACT_API_URL", 'api-url-not-found')
+CONSTANT_CONTACT_LIST_ID = getattr(local_settings, "CONSTANT_CONTACT_LIST_ID", 'list-id-not-found')
 
 ADMINS = (
     # ('Dylan', 'dylan@learningequality.org'),
