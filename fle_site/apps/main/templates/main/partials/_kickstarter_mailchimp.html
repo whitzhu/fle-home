@@ -17,7 +17,9 @@
 </div>
 
 <script type='text/javascript'>
-
+    $(function() {
+        $("#mc-embedded-subscribe").height($("#mce-EMAIL").height()); //fix styling for firefox
+    });
 
     function validateEmail(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
