@@ -13,7 +13,7 @@ from django.core.files.storage import get_storage_class
 from django.views.decorators.csrf import csrf_exempt
 
 from annoying.decorators import render_to
-
+from constantcontact import ConstantContact, Contact
 
 class JsonResponse(HttpResponse):
     """Wrapper class for generating a HTTP response with JSON data"""
@@ -27,6 +27,19 @@ class JsonResponse(HttpResponse):
 def map(request): 
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
+@csrf_exempt
+def cc_indiegogo_signup(request):
+    if request.method == "POST":
+        constantcontact = ConstantContact(settings.CONSTANT_CONTACT_API_KEY, settings.CONSTANT_CONTACT_ACCESS_TOKEN, settings.CONSTANT_CONTACT_API_URL)
+        contact = Contact()
+        contact.add_list_id(settings.CONSTANT_CONTACT_LIST_ID)
+        contact.set_email_address(request.POST['email'])
+        response = constantcontact.post_contacts(contact)
+
+        if response.has_key('error_key'):
+            return HttpResponse(response['error_key'])
+        else:
+            return HttpResponse('201')
 
 def process_donation(request):
 

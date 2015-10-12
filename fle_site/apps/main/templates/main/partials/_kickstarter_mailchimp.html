@@ -9,54 +9,55 @@
 
 <div id="sign-up">
     <div id="mc_embed_signup">
-        <form action="//learningequality.us6.list-manage.com/subscribe/post?u=023b9af05922dfc7f47a4fffb&amp;id=2cff471b25" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div class="e1">
                 <input type="email" value="" name="EMAIL" class="required email email_input_k" id="mce-EMAIL" placeholder="Email Address">
                 <input type="submit" value="MAKE A DIFFERENCE" name="subscribe" id="mc-embedded-subscribe" class="btn btn-xl email_submit_k">
             </div>
-            <div style="position: absolute; left: -5000px;">
-                <input type="text" name="b_023b9af05922dfc7f47a4fffb_2cff471b25" tabindex="-1" value="">
-            </div>
-        </form>
-    </div>
-    <div id="mce-responses" class="clear" style="display:none">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
-    </div>
-    
+    </div>    
 </div>
 
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
 <script type='text/javascript'>
     $(function() {
         $("#mc-embedded-subscribe").height($("#mce-EMAIL").height()); //fix styling for firefox
     });
-    
-    (function($) {
-        window.fnames = new Array(); 
-        window.ftypes = new Array();
-        fnames[0]='EMAIL';
-        ftypes[0]='email';
-        fnames[1]='FNAME';
-        ftypes[1]='text';
-        fnames[2]='LNAME';
-        ftypes[2]='text';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
 
-        function validateEmail(email) {
-            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-            return re.test(email);
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+
+    $("#mc-embedded-subscribe").click(function() {
+        var email_input = $("#mce-EMAIL").val();
+        var email_btn = $("#mc-embedded-subscribe");
+        email_btn.val("one moment...");
+        email_btn.css('padding', '15px 21px');
+
+        if ( validateEmail(email_input) ) {
+            //send the email to Django end point to let python_constantcontact handles email adding.
+            $.ajax({
+                url: "{% url 'cc_indiegogo_signup' %}",
+                type: "POST",
+                data: {email: email_input},
+                success:function(response){
+                    if(response == '201') {
+                        email_btn.val("Success! \nThank You!");
+                        email_btn.css('padding', '5px 21px');
+                    }else if(response == 'http.status.email_address.conflict'){
+                        email_btn.val("This email is \nalready registered!");
+                        email_btn.css('padding', '5px 21px');
+                    }else{
+                        email_btn.val("Error! \nPlease try again");
+                        email_btn.css('padding', '5px 21px');
+                    }
+                },
+                error:function (xhr, textStatus, thrownError){
+                    email_btn.val("Error! \nPlease try again");
+                    email_btn.css('padding', '5px 21px');
+                }
+            });
+        } else {
+            email_btn.val("Sorry! Email invalid\nPlease try again");
+            email_btn.css('padding', '5px 21px');
         }
-
-
-        document.getElementById("mc-embedded-subscribe").onclick = function() {
-            if ( validateEmail($("#mce-EMAIL").val()) ) {
-                document.getElementById("mc-embedded-subscribe").value = "Thanks! Check your\ninbox to confirm";
-                document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-            } else {
-                document.getElementById("mc-embedded-subscribe").value = "Sorry! Email invalid\nPlease try again";
-                document.getElementById("mc-embedded-subscribe").style.padding = "5px 21px";
-            }
-        };
+    });
 </script>
