@@ -933,7 +933,16 @@ mark{
 .campaign-info{
   padding-left: 5%;
 }
-#campaign-intro {
+#campaign-intro-1 {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  top: -50px;
+  font-family: "Montserrat-Light";
+  color: #EB1377;
+}
+#campaign-intro-2 {
   margin: auto;
   position: relative;
   text-align: center;
@@ -941,7 +950,6 @@ mark{
   top: 5px;
   font-family: "Montserrat-Light";
 }
-
 #kickstarter{
   width: 40%;
   position: absolute;
