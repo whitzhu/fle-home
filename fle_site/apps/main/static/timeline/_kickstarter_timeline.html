@@ -139,7 +139,7 @@ p.text-pain {
 </div>
 
 <script type="text/javascript">
-    $(function() {
+  $(function() {
     var timeline_canvas = document.getElementById("timeline_canvas");
     timeline_canvas.height = 800;
     var context = timeline_canvas.getContext('2d');
@@ -156,7 +156,7 @@ p.text-pain {
     $(window).on('resize', function (event) {
         zigzag_line();
     });
-    zigzag_line();
+    setTimeout(function() { zigzag_line(); }, 700);
 
     function zigzag_line() {
         timeline_canvas.width  = $(window).width();
@@ -195,5 +195,5 @@ p.text-pain {
         //if (theta < 0) theta = 360 + theta; // range [0, 360)
         return theta;
     }
-});
+  });
 </script>
