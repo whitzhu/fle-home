@@ -127,6 +127,9 @@ a:hover {
   z-index: 2;
 }
 .countdown {
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
   width: 630px;
   margin: 80px auto 0 auto;
 }
