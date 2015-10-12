@@ -943,7 +943,7 @@ mark{
   font-size: 26px;
   top: -50px;
   font-family: "Montserrat-Light";
-  color: #EB1377;
+  color: white;
 }
 #campaign-intro-2 {
   margin: auto;
@@ -952,6 +952,7 @@ mark{
   font-size: 26px;
   top: 5px;
   font-family: "Montserrat-Light";
+  color: #FFCC00;
 }
 #kickstarter{
   width: 40%;
