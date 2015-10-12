@@ -127,6 +127,9 @@ a:hover {
   z-index: 2;
 }
 .countdown {
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
   width: 630px;
   margin: 80px auto 0 auto;
 }
@@ -933,15 +936,24 @@ mark{
 .campaign-info{
   padding-left: 5%;
 }
-#campaign-intro {
+#campaign-intro-1 {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  font-size: 26px;
+  top: -50px;
+  font-family: "Montserrat-Light";
+  color: white;
+}
+#campaign-intro-2 {
   margin: auto;
   position: relative;
   text-align: center;
   font-size: 26px;
   top: 5px;
   font-family: "Montserrat-Light";
+  color: #FFCC00;
 }
-
 #kickstarter{
   width: 40%;
   position: absolute;
@@ -1089,6 +1101,7 @@ mark{
 }
 @media screen and (min-width: 450px) {
   .email_input_k {
+      text-align: center !important;
       outline: none;
       clear: none !important;
       float: left;
@@ -1097,7 +1110,7 @@ mark{
       font-family: "Open Sans";
       font-weight: 700;
       font-size: 15px;
-      padding: 15px 40px;
+      padding: 15px 10px;
       box-shadow: none;
       border: 3px solid #fff !important;
       text-align: left;

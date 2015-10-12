@@ -18,7 +18,9 @@
 
 <script type='text/javascript'>
     $(function() {
-        $("#mc-embedded-subscribe").height($("#mce-EMAIL").height()); //fix styling for firefox
+        setTimeout(function() {
+            $("#mc-embedded-subscribe").height($("#mce-EMAIL").height()); //fix styling for firefox
+        }, 1000);
     });
 
     function validateEmail(email) {
