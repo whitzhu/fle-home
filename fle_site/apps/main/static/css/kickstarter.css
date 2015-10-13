@@ -362,6 +362,12 @@ h6 {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+.email_submit_k::-moz-focus-inner {
+  border: 0;
+}
+.email_input_k::-moz-focus-inner {
+  border: 0;
+}
 .placeholder{
   text-align: center;
 }
