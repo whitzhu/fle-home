@@ -17,12 +17,6 @@
 </div>
 
 <script type='text/javascript'>
-    $(function() {
-        setTimeout(function() {
-            $("#mc-embedded-subscribe").height($("#mce-EMAIL").height()); //fix styling for firefox
-        }, 1000);
-    });
-
     function validateEmail(email) {
         var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         return re.test(email);
