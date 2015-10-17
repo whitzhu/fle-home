@@ -905,17 +905,18 @@ div.comm-btns.row {
 }
 
 //indiegogo
-#campaign-intro-2 {
-    text-align: center;
-    font-size: 26px;
+#igg_btn {
+    margin-top: 50px;
+    font-size: 40px;
     font-family: "Montserrat-Light";
     color: #FFCC00;
-    background-color: white;
-}
-#igg_btn {
-    background-color: white;
-    border-radius: 30px;
+    background-color: #53435B;
+    border-radius: 20px;
     border: 2px solid #FFCC00;
+    padding: 20px 50px;
+}
+#igg_btn:hover {
+    background-color: #EB1377;
 }
 #indiegogo {
     background-color: #8670A1 !important;
@@ -927,7 +928,14 @@ div.comm-btns.row {
     background-color: #FFCC00 !important;
     color: #8670A1 !important;
 }
-#indiegogo_text_box {
+#indiegogo_life {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    height: 50px;
+    cursor: pointer;
+}
+/*#indiegogo_text_box {
     border-radius: 30px;
     border: 2px solid #FFCC00;
     padding: 0px 10px 5px;
@@ -939,13 +947,25 @@ div.comm-btns.row {
 #indiegogo_text_box:hover {
     background-color: #FFCC00;
     color: #53435B;
-}
-/*@media (max-width: 380px) {
-    #indiegogo_text_box {
-        position: relative;
-        top: 10px;
-    }
 }*/
+@media (max-width: 840px) {
+    #igg_btn {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    #indiegogo_life {
+        height: 40px;
+    }
+}
+@media (max-width: 440px) {
+    #igg_btn {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+    #indiegogo_life {
+        height: 20px;
+    }
+}
 #indiegogo_text {
     text-align: center;
     float: right;
