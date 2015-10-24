@@ -227,7 +227,7 @@
         function drawTitleBar(map) {
             var titleContainer = document.createElement('h2');
             titleContainer.setAttribute('id', 'title-container');
-            var bannerContent = "<a href='{% url 'ka_lite' %}' target='_blank'><img id='ka-lite-logo' src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' class='img-responsive banner-logo'></a> by <a href='{% url 'mission' %}' target='_blank'><img id='fle-logo' src='{% static 'img/fle-prov-logo-small.png' %}' alt='The Foundation for Learning Equality logo' class='img-responsive banner-logo'/></a>";
+            var bannerContent = "<a href='{% url 'ka_lite' %}' target='_blank'><img id='ka-lite-logo' src='{% static 'img/ka-lite/ka-lite-logo-horizontal.png' %}' alt='KA Lite' class='img-responsive banner-logo'></a> by <a href='{% url 'mission' %}' target='_blank'><img id='fle-logo' src='{% static 'img/fle-prov-logo-small.png' %}' alt='Learning Equality logo' class='img-responsive banner-logo'/></a>";
             titleContainer.innerHTML = bannerContent;
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(titleContainer);
         }
