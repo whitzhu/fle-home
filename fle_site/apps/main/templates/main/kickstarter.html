@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/_kickstarter_quote.css' %}">
     <link rel="stylesheet" href="{% static 'css/_kickstarter_mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/igg_integration.css' %}">
 
     <!-- Custom Fonts -->
 
@@ -55,39 +56,26 @@
     <div id="body">
         <header id="kickstarter-header">
             <div class="header-shadow row">
-                <!---Kickstarter Campaign & Social Media Buttons-->
-                <div class="row">
-                    <div class="col-md-6">
-                            <!-- <div class="campaign-info">
-                                <img id="kickstarter" src="{% static 'img/kickstarter/kickstarter-logo.png' %}">
-                                
-                                <div class="campaign-intro">Campaigning this October</div>
-                            </div> -->
-                    </div>
-                    <div class="col-md-6">
-                        <div class="intro-social">
-                            <div class="social_btns">
-                                <a class="fe_share_btn" href="https://www.facebook.com/sharer/sharer.php?u=learningequality.org/kolibri" target="_blank"><div class="fb_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></div></a>
-                                <!-- <div class="space_taker"></div> -->
-                                <a class="twitter_follow_btn" href="http://twitter.com/home?status=@LearnEQ is using innovative %23EdTech to help bridge the %23DigitalDivide. Learn more about their new platform, %23Kolibri http://bit.ly/1QAUOuV" target="_blank"><div class="tw_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></div></a>
-                                <!-- <div class="space_taker"></div> -->
-                                <a class="reddit_submit_btn" href="http://www.reddit.com/submit?url=https://learningequality.org/kolibri&amp;title=" target="_blank"><div class="reddit_btn_1"><span class="fa-stack fa-3x"><i class="fa fa-circle-thin fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x"></i></span></div></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!---Kolibri Intro-->
                 <div class="intro-text">
                     <div class="container">               
                         <div class="row">
-                            <div id="campaign-intro-1">Announcing our next-generation platform</div>
+                            <!-- <div id="campaign-intro-1">Announcing our next-generation platform</div> -->
+                            <center>
+                                <img id="accouncing-banner" src="{% static 'img/kickstarter/accouncing-banner.png' %}">
+                            </center>
+                            <div id="intro_container">
                             <div class="col-md-6">
-                                <div class="intro-heading">Kolibri<span class="hidden-xs hidden-sm" style="font-weight: 100;">|</span> </div>
+                                <div class="intro-heading">Kolibri<span class="hidden-xs hidden-sm" style="font-weight: 100; top:-10px; position: relative">|</span> </div>
                             </div>
                             <div class="col-md-6">
-                                 <div class="intro-heading2">The offline app for universal education</div>
+                                 <div class="intro-heading2">The offline app for<br>universal education</div>
                             </div>
+                            </div>
+                            <center>
+                                <iframe id="k_video" src="https://player.vimeo.com/video/142683815" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <!-- <iframe src="https://player.vimeo.com/video/142683815" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                            </center>
                             <center><a class="btn" id="igg_btn" href="https://learningequality.org/r/indiegogo-redirect">Back our Kolibri Campaign on <img id="indiegogo_generosity" alt="Indiegogo" src="{% static 'img/kickstarter/indiegogo_generosity.png' %}"></a></center>
                             <!-- <div class="countdown"></div> -->
                             <br><br>
