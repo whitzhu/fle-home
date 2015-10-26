@@ -95,24 +95,7 @@
         </header>
 
         <!-- sticky sign up bar -->
-        <!-- desktop version -->
-        <div class="sticky-signup" data-spy="affix" data-offset-top="200">
-            <span>Sign up for updates on the campaign</span>
-            <div class="iframe-holder">
-                <iframe class="sticky-mailchimp" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
-                    <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
-                </iframe>
-            </div>
-        </div> 
-        <!-- small screen version -->
-        <div class="sticky-signup2" data-offset-top="200">
-            <span>Sign up for updates on the campaign</span>
-            <div class="iframe-holder">
-                <iframe class="sticky-mailchimp2" src="{% url 'mailchimp' %}" frameborder="0" width="100%">
-                    <a href="partials/_kickstarter_mailchimp.html" target="_blank"></a>
-                </iframe>
-            </div>
-        </div> 
+        {% include "main/partials/_sticky_bar.html" %} 
 
         <img id="slide_tablet" src="/static/img/kickstarter/tablet-min.png">
 

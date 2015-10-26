@@ -142,49 +142,6 @@ a:hover {
 }
 
 
-/* Sticky Signup Form */
-.sticky-signup {
-  background: #53435B;
-  height: 70px;
-  width: 100%;
-  background: #53435B;
-  z-index: 999999;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
-  position: relative;
-}
-.affix-top {
-  height: 70px;
-  width: 100%;
-  background: #53435B;
-  z-index: 999999;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
-  position: absolute;
-  margin-top: -70px;
-}
-.sticky-signup span {
-  color: white;
-  font-size: 25px;
-  font-family: "Montserrat-Light";
-  position: relative;
-  top: 19px;
-  left: 5%;
-}
-.affix {
-  top: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 9999999;
-  background: #53435B;
-  height: 70px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
-}
-.sticky-mailchimp {
-  width: 500px;
-  float: right;
-  position: relative;
-  top: 18%;
-}
-
 #footer {
   position: relative;
   bottom: 0;

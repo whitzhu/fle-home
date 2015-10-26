@@ -1,0 +1,127 @@
+{% load staticfiles %}
+<!-- desktop version -->
+<div class="sticky-signup" data-spy="affix" data-offset-top="200">
+    <div id="igg_progress">
+        <div id="progress_outer">
+            <div id="progress_text_1"><strong>14%</strong> funded</div>
+            <div id="talkbubble">$71,394</div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width:14%"></div>
+            </div>
+            <div id="progress_text_2"><strong>$500K</strong> goal</div>
+        </div>
+    </div>
+
+    <div class="donor_carousel">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2000" id="myCarousel">
+              <div class="carousel-inner">
+                <div class="item active" id="e1">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e2">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e3">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e4">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e5">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e6">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e7">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e8">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e8">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+                <div class="item" id="e8">
+                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
+                </div>
+              </div>
+              <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
+            </div>
+        </div>
+
+    </div>
+</div> 
+
+<!-- small screen version -->
+<div class="sticky-signup2" data-offset-top="200">
+    <span>Sign up for updates on the campaign</span>
+    <div class="donor_carousel">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('.carousel[data-type="multi"] .item').each(function(){
+            var next = $(this).next();
+            // console.log("NNEE: ", next.attr('id'));
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+            for (var i=0;i<6;i++) {
+                next=next.next();
+                if (!next.length) {
+                    next = $(this).siblings(':first');
+                }
+                var clone_next = next.children(':first-child').clone();
+
+                if (i == 0){
+                    clone_next.css({
+                         '-webkit-transform' : 'scale(1.5)',
+                            '-moz-transform' : 'scale(1.5)',
+                             '-ms-transform' : 'scale(1.5)',
+                              '-o-transform' : 'scale(1.5)',
+                                 'transform' : 'scale(1.5)'
+                    });
+                }
+                else if(i == 1){
+                    clone_next.css({
+                         '-webkit-transform' : 'scale(2)',
+                            '-moz-transform' : 'scale(2)',
+                             '-ms-transform' : 'scale(2)',
+                              '-o-transform' : 'scale(2)',
+                                 'transform' : 'scale(2)'
+                    });
+                }else if(i == 2){
+                    clone_next.css({
+                         '-webkit-transform' : 'scale(2.5)',
+                            '-moz-transform' : 'scale(2.5)',
+                             '-ms-transform' : 'scale(2.5)',
+                              '-o-transform' : 'scale(2.5)',
+                                 'transform' : 'scale(2.5)'
+                    });
+                }else if(i == 3){
+                    clone_next.css({
+                         '-webkit-transform' : 'scale(2)',
+                            '-moz-transform' : 'scale(2)',
+                             '-ms-transform' : 'scale(2)',
+                              '-o-transform' : 'scale(2)',
+                                 'transform' : 'scale(2)'
+                    });
+                }else if(i == 4){
+                    clone_next.css({
+                         '-webkit-transform' : 'scale(1.5)',
+                            '-moz-transform' : 'scale(1.5)',
+                             '-ms-transform' : 'scale(1.5)',
+                              '-o-transform' : 'scale(1.5)',
+                                 'transform' : 'scale(1.5)'
+                    });
+                }
+                clone_next.appendTo($(this));
+            }
+        });
+    });
+</script>
