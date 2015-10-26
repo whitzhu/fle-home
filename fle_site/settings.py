@@ -39,6 +39,10 @@ LOCATIONS_JSONP_URL = getattr(local_settings, "LOCATIONS_JSONP_URL", "https://ka
 
 INDIEGOGO_API_DATA_LOCATION = getattr(local_settings, "INDIEGOGO_API_DATA_LOCATION", PROJECT_PATH)
 
+INDIEGOGO_SUMMARY_URL = getattr(local_settings, "INDIEGOGO_SUMMARY_URL", "")
+
+INDIEGOGO_CONTRIBUTORS_URL = getattr(local_settings, "INDIEGOGO_CONTRIBUTORS_URL", "")
+
 DATABASES = localor("DATABASES", {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.

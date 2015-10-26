@@ -18,3 +18,4 @@ wsgiref==0.1.2
 stripe
 django-ckeditor
 constantcontact==0.3.1
+requests
