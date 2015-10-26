@@ -1,4 +1,5 @@
 {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/igg_integration.css' %}">
 <!-- desktop version -->
 <div class="sticky-signup" data-spy="affix" data-offset-top="200">
     <div id="igg_progress">
@@ -12,48 +13,17 @@
         </div>
     </div>
 
-    <div class="donor_carousel">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2000" id="myCarousel">
-              <div class="carousel-inner">
-                <div class="item active" id="e1">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e2">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e3">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e4">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e5">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e6">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e7">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e8">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e8">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-                <div class="item" id="e8">
-                  <div class="col-md-1 col-sm-6 col-xs-12"><a href="#"><img src="{% static 'img/kickstarter/donor_icon.png' %}" class="img-responsive"></a></div>
-                </div>
-              </div>
-              <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-              <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> -->
-            </div>
-        </div>
-
+    <div id="donor_carousel">
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
     </div>
 </div> 
+
 
 <!-- small screen version -->
 <div class="sticky-signup2" data-offset-top="200">
@@ -64,64 +34,75 @@
 </div>
 
 <script type="text/javascript">
-    $(function() {
-        $('.carousel[data-type="multi"] .item').each(function(){
-            var next = $(this).next();
-            // console.log("NNEE: ", next.attr('id'));
-            if (!next.length) {
-                next = $(this).siblings(':first');
-            }
-            for (var i=0;i<6;i++) {
-                next=next.next();
-                if (!next.length) {
-                    next = $(this).siblings(':first');
-                }
-                var clone_next = next.children(':first-child').clone();
+    $(document).ready(function() {
+        function move_carousel() {
 
-                if (i == 0){
-                    clone_next.css({
-                         '-webkit-transform' : 'scale(1.5)',
-                            '-moz-transform' : 'scale(1.5)',
-                             '-ms-transform' : 'scale(1.5)',
-                              '-o-transform' : 'scale(1.5)',
-                                 'transform' : 'scale(1.5)'
-                    });
+        }
+
+        function update_carousel_item() {
+
+        }
+
+        // have to be odd number of items in the carousel
+        function init_carousel(carousel_items, num_items) {
+            var i = 0;
+            var center_index = Math.floor(num_items/2);
+            carousel_items.each(function(index) {
+                //initialize position
+                $(this).css("left", i);
+
+                //initialize item size
+                if(index < center_index){
+                    i += 40;
+                    var height = (index+1)*10 + "px";
+                    $(this).css({"height": height});
+                    $(this).children().eq(1).html("");
+                }else if(index == center_index){
+                    $(this).css({"height": height, "width": 200});
+                    $(this).children().eq(1).html("<div class='gold'>$55</div>David Johanson");
+                    i += $(this).children().eq(1).width() + 60;
                 }
-                else if(i == 1){
-                    clone_next.css({
-                         '-webkit-transform' : 'scale(2)',
-                            '-moz-transform' : 'scale(2)',
-                             '-ms-transform' : 'scale(2)',
-                              '-o-transform' : 'scale(2)',
-                                 'transform' : 'scale(2)'
-                    });
-                }else if(i == 2){
-                    clone_next.css({
-                         '-webkit-transform' : 'scale(2.5)',
-                            '-moz-transform' : 'scale(2.5)',
-                             '-ms-transform' : 'scale(2.5)',
-                              '-o-transform' : 'scale(2.5)',
-                                 'transform' : 'scale(2.5)'
-                    });
-                }else if(i == 3){
-                    clone_next.css({
-                         '-webkit-transform' : 'scale(2)',
-                            '-moz-transform' : 'scale(2)',
-                             '-ms-transform' : 'scale(2)',
-                              '-o-transform' : 'scale(2)',
-                                 'transform' : 'scale(2)'
-                    });
-                }else if(i == 4){
-                    clone_next.css({
-                         '-webkit-transform' : 'scale(1.5)',
-                            '-moz-transform' : 'scale(1.5)',
-                             '-ms-transform' : 'scale(1.5)',
-                              '-o-transform' : 'scale(1.5)',
-                                 'transform' : 'scale(1.5)'
-                    });
+                else if(index > center_index){
+                    i += 40;
+                    var height = (num_items - index)*10 + "px";
+                    $(this).css({"height": height});
+                    $(this).children().eq(1).html("");
                 }
-                clone_next.appendTo($(this));
+            });
+        }
+
+
+        var tracker = 1;
+        var n_el = 0;
+        function move_carousel(elem, left) {
+            n_el++;
+            if(tracker > 7){
+                tracker = 1;
             }
-        });
+            var cur_move_dist = $("#donor_carousel div:nth-child(" + tracker + ")").width();
+            if(n_el > 6){
+                tracker++;
+                n_el = 0;
+            }
+            elem.animate({ left: (parseInt(left)-cur_move_dist) }, 3000, function () {
+              window.verticalScroller($(this));
+            });
+        }
+
+        window.verticalScroller = function(elem) {
+            var left = parseInt(elem.css("left"));
+            var item_width = elem.width();
+            // console.log("elieli: ", item_width);
+            var temp = -1 * item_width;
+            if(left < temp) {
+                var d = new Date();
+                left = $('#donor_carousel').width();
+                // $elem.html("eli"+d.getSeconds());
+                elem.css("left", left);
+            }
+            // move_carousel(elem, left);
+        }
+
+        init_carousel($("#donor_carousel > div"), 7);
     });
 </script>
