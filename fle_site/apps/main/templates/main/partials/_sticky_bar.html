@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/igg_integration.css' %}">
+<!-- desktop version -->
+<div class="sticky-signup" data-spy="affix" data-offset-top="200">
+    <div id="igg_progress">
+        <div id="progress_outer">
+            <div id="progress_text_1"><strong>14%</strong> funded</div>
+            <div id="talkbubble">$71,394</div>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width:14%"></div>
+            </div>
+            <div id="progress_text_2"><strong>$500K</strong> goal</div>
+        </div>
+    </div>
+
+    <div id="donor_carousel">
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+        <div class="inner_item"><img class="donor_icon" src="{% static 'img/kickstarter/donor_icon.png' %}"><div class="donor_info"></div></div>
+    </div>
+</div> 
+
+
+<!-- small screen version -->
+<div class="sticky-signup2" data-offset-top="200">
+    <span>Sign up for updates on the campaign</span>
+    <div class="donor_carousel">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        function move_carousel() {
+
+        }
+
+        function update_carousel_item() {
+
+        }
+
+        // have to be odd number of items in the carousel
+        function init_carousel(carousel_items, num_items) {
+            var i = 0;
+            var center_index = Math.floor(num_items/2);
+            carousel_items.each(function(index) {
+                //initialize position
+                $(this).css("left", i);
+
+                //initialize item size
+                if(index < center_index){
+                    i += 40;
+                    var height = (index+1)*10 + "px";
+                    $(this).css({"height": height});
+                    $(this).children().eq(1).html("");
+                }else if(index == center_index){
+                    $(this).css({"height": height, "width": 200});
+                    $(this).children().eq(1).html("<div class='gold'>$55</div>David Johanson");
+                    i += $(this).children().eq(1).width() + 60;
+                }
+                else if(index > center_index){
+                    i += 40;
+                    var height = (num_items - index)*10 + "px";
+                    $(this).css({"height": height});
+                    $(this).children().eq(1).html("");
+                }
+            });
+        }
+
+
+        var tracker = 1;
+        var n_el = 0;
+        function move_carousel(elem, left) {
+            n_el++;
+            if(tracker > 7){
+                tracker = 1;
+            }
+            var cur_move_dist = $("#donor_carousel div:nth-child(" + tracker + ")").width();
+            if(n_el > 6){
+                tracker++;
+                n_el = 0;
+            }
+            elem.animate({ left: (parseInt(left)-cur_move_dist) }, 3000, function () {
+              window.verticalScroller($(this));
+            });
+        }
+
+        window.verticalScroller = function(elem) {
+            var left = parseInt(elem.css("left"));
+            var item_width = elem.width();
+            // console.log("elieli: ", item_width);
+            var temp = -1 * item_width;
+            if(left < temp) {
+                var d = new Date();
+                left = $('#donor_carousel').width();
+                // $elem.html("eli"+d.getSeconds());
+                elem.css("left", left);
+            }
+            // move_carousel(elem, left);
+        }
+
+        init_carousel($("#donor_carousel > div"), 7);
+    });
+</script>

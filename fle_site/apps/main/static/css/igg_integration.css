@@ -1,0 +1,160 @@
+/* Sticky Signup Form */
+.sticky-signup {
+  background: #53435B;
+  height: 70px;
+  width: 100%;
+  background: #53435B;
+  z-index: 999999;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+}
+.affix-top {
+  height: 70px;
+  width: 100%;
+  background: #53435B;
+  z-index: 999999;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  margin-top: -70px;
+}
+.sticky-signup span {
+  color: white;
+  font-size: 25px;
+  font-family: "Montserrat-Light";
+  position: relative;
+  top: 19px;
+  left: 5%;
+}
+.affix {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999999;
+  background: #53435B;
+  height: 70px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.sticky-mailchimp {
+  width: 500px;
+  float: right;
+  position: relative;
+  top: 18%;
+}
+
+/*--end--*/
+
+#k_video {
+	width: 1000px;
+	height: 561px;
+}
+
+.progress {
+	background-color: #53435B;
+	display: inline-block;
+    width: 360px;
+    border-radius: 50px;
+}
+.progress-bar {
+	color: #53435B;
+	background-color: #FFCC00;
+	/*border-radius: 50px;*/
+}
+#talkbubble {
+	color: white;
+   	width: 80px;
+   	height: 20px;
+   	background: #5CB8E6;
+   	position: absolute;
+   	-moz-border-radius:    50px;
+   	-webkit-border-radius: 50px;
+   	border-radius:         50px;
+    padding-left: 14px;
+    top: 3px;
+    left: 148px;
+}
+#talkbubble:before {
+   	content: "";
+   	position: absolute;
+   	right: 34px;
+   	top: 20px;
+   	width: 0;
+   	height: 0;
+   	border-right: 6px solid transparent;
+   	border-top: 12px solid #5CB8E6;
+   	border-left: 6px solid transparent;
+}
+
+#igg_progress {
+	width: 600px;
+	display: inline-block;
+	float: left;
+}
+
+#progress_outer {
+	background-color: #8175A0;
+	margin-top: 10px;
+    margin-left: 30px;
+    height: 50px;
+    padding-top: 15px;
+    border-radius: 50px;
+}
+
+#progress_text_1 {
+	color: white;
+	display: inline-block;
+	position: relative;
+    top: -25px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+#progress_text_2 {
+	color: white;
+	display: inline-block;
+	position: relative;
+    top: -25px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+#donor_carousel {
+	position: absolute;
+    width:400px;
+    height: 52px;
+    /*border: 1px solid red;*/
+    /*overflow: hidden;*/
+    /*float: right;*/
+    right: 0;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.inner_item {
+	bottom: 0;
+	position: absolute;
+	display: inline-block;
+	height: inherit;
+	/*margin-right: 10px; */
+}
+
+.donor_icon {
+	display: inline-block;
+	float: left;
+	height: inherit;
+	-webkit-transition: height .5s; 
+  	-moz-transition: height .5s; 
+  	-ms-transition: height .5s; 
+  	-o-transition: height .5s; 
+  	transition: height .5s;
+}
+.donor_info {
+	color: white;
+	display: inline-block;
+	/*float: left;*/
+	margin-left: 5px;
+	position: absolute;
+	bottom: 0;
+}
+.gold {
+	font-weight: bold;
+	color: #FFCC00;
+}
