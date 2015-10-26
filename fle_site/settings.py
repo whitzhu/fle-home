@@ -37,6 +37,8 @@ PROJECT_PATH = os.path.dirname(os.path.realpath(__file__))
 
 LOCATIONS_JSONP_URL = getattr(local_settings, "LOCATIONS_JSONP_URL", "https://kalite.learningequality.org/media/locations/locations.jsonp")
 
+INDIEGOGO_API_DATA_LOCATION = getattr(local_settings, "INDIEGOGO_API_DATA_LOCATION", PROJECT_PATH)
+
 DATABASES = localor("DATABASES", {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
