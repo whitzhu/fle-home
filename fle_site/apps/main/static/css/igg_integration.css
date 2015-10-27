@@ -121,7 +121,7 @@
     width:400px;
     height: 52px;
     /*border: 1px solid red;*/
-    /*overflow: hidden;*/
+    overflow: hidden;
     /*float: right;*/
     right: 0;
     margin-right: 30px;
@@ -133,6 +133,11 @@
 	position: absolute;
 	display: inline-block;
 	height: inherit;
+	-webkit-transition: all 1.5s; 
+  	-moz-transition: all 1.5s; 
+  	-ms-transition: all 1.5s; 
+  	-o-transition: all 1.5s; 
+  	transition: all 1.5s;
 	/*margin-right: 10px; */
 }
 
@@ -140,19 +145,22 @@
 	display: inline-block;
 	float: left;
 	height: inherit;
-	-webkit-transition: height .5s; 
-  	-moz-transition: height .5s; 
-  	-ms-transition: height .5s; 
-  	-o-transition: height .5s; 
-  	transition: height .5s;
 }
 .donor_info {
 	color: white;
 	display: inline-block;
+	/*white-space: pre; */
 	/*float: left;*/
 	margin-left: 5px;
-	position: absolute;
+	position: relative;
 	bottom: 0;
+	max-width: 130px;
+	max-height: 50px;
+	line-height: 18px;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 .gold {
 	font-weight: bold;
