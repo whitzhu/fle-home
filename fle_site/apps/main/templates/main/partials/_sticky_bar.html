@@ -62,10 +62,12 @@
 
         init_carousel($(".inner_item"), 7);
         // setTimeout(move_carousel, 2000, $(".inner_item"));
-        setInterval(move_carousel, 3000, $(".inner_item"));
+        var all_carousel_items = $(".inner_item");
+        setInterval(move_carousel, 4000, all_carousel_items);
     });
 
     var gap = 0;
+    var g = 0;
     function update_carousel_item(elem, donation, donor){
         var carousel_pos = elem.data('carousel_pos');
 
@@ -75,23 +77,25 @@
         }else if(carousel_pos == 1){
             elem.data("carousel_pos", 0);
             elem.css({"height": 10});
-            elem.translate3d({x:gap-120, y:0, z:0}, 1000, "ease");
+            g = gap - 120;
+            elem.translate3d({x:g, y:0, z:0}, 1000, "ease");
         }else if(carousel_pos == 2){
             elem.data("carousel_pos", 1);
             elem.css({"height": 20});
-            elem.translate3d({x:gap-80, y:0, z:0}, 1000, "ease");
+            g = gap - 80;
+            elem.translate3d({x:g, y:0, z:0}, 1000, "ease");
         }else if(carousel_pos == 3){
             elem.data("carousel_pos", 2);
             elem.css({"height": 30});
             elem.children('.donor_info').css({"opacity": 0});
-            elem.translate3d({x:gap-40, y:0, z:0}, 1000, "ease");
+            g = gap - 40;
+            elem.translate3d({x:g, y:0, z:0}, 1000, "ease");
         }else if(carousel_pos == 4){   //this going to be the active item
+            elem.data("carousel_pos", 3);
             var d_info = elem.children('.donor_info');
-            d_info.html("<div class='gold'>$"+donation+"</div>"+donor);
+            d_info.html("<div class='gold'>"+donation+"</div>"+donor);
             d_info.css({"opacity": 1});
             gap = 310 - d_info.width() - 60;
-    // console.log("EEEE:::::", gap);
-            elem.data("carousel_pos", 3);
             elem.css({"height": 50});
             elem.translate3d({x:gap, y:0, z:0}, 1000, "ease");
         }else if(carousel_pos == 5){
@@ -109,6 +113,10 @@
             elem.data("carousel_pos", 7);
             elem.translate3d({x:450, y:0, z:0}, 1000, "ease");
         }
+
+        if (g < 5){
+console.log("EEEE:::::", g);
+        }
     }
 
     function move_carousel(carousel_items) {
@@ -118,7 +126,7 @@
             contributor_index = 0;
         }
         if(all_contributors){
-            donation = (all_contributors[contributor_index].amount == null ? "Private" : all_contributors[contributor_index].amount);
+            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
             // donation = all_contributors[contributor_index].amount;
             donor = all_contributors[contributor_index].by;
         }
@@ -175,13 +183,13 @@
         var donation = 50;
         var donor = "Anonymous";
         if(all_contributors){
-            donation = all_contributors[contributor_index].amount;
+            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
             donor = all_contributors[contributor_index].by;
         }
         contributor_index++;
 
         var d_info = $(carousel_items[3]).children('.donor_info');
-        d_info.html("<div class='gold'>$"+donation+"</div>"+donor);
+        d_info.html("<div class='gold'>"+donation+"</div>"+donor);
         d_info.css({"opacity": 1});
         var init_gap = 310 - d_info.width() - 60;
 
