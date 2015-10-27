@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 import stripe
 
@@ -26,6 +27,43 @@ class JsonResponse(HttpResponse):
 @render_to("main/map.html")
 def map(request): 
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
+
+
+@render_to("main/kickstarter.html")
+def kolibri(request):
+    """
+    summary_info contains the following information:
+        collected_funds - total collected
+        goal - collection goal
+        contributions_count - number of contributors
+        latest_contributions - a list of the 4 most recent contributors
+
+    all_contributors contains a list of all contributors
+
+    both latest_contributions and all_contributors items have the following properties:
+        by - name of contributor
+        created_at - timestamp of donation
+        amount - amount of donation (if private, this will be None)
+    """
+    try:
+        summary_info = json.load(open(os.path.join(settings.INDIEGOGO_API_DATA_LOCATION, "summary.json"), "r"))
+    except IOError:
+        summary_info = {
+            "collected_funds": None,
+            "goal": None,
+            "contributions_count": None,
+            "latest_contributions": [],
+        }
+    try:
+        all_contributors = json.load(open(os.path.join(settings.INDIEGOGO_API_DATA_LOCATION, "all_contributors.json"), "r"))
+    except IOError:
+        all_contributors = []
+
+    return {
+        "summary_info": json.dumps(summary_info),
+        "all_contributors": json.dumps(all_contributors)
+    }
+
 
 @csrf_exempt
 def cc_indiegogo_signup(request):

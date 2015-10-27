@@ -73,8 +73,7 @@
 }
 
 @media screen and (max-width: 990px) {
-	#slide_tablet,
-	.sticky-signup {
+	#slide_tablet {
 		display: none;
 	}
 	#dreams, .fle_title h1,
