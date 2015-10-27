@@ -184,3 +184,17 @@
 	font-weight: bold;
 	color: #FFCC00;
 }
+
+@media screen and (max-width: 990px) {
+	#igg_progress {
+		width: 620px;
+		zoom: 0.6;
+		float: none;
+	}
+	.sticky-signup {
+		height: 40px;
+	}
+	#donor_carousel {
+		display: none;
+	}
+}
