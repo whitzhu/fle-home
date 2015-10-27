@@ -60,8 +60,8 @@ def kolibri(request):
         all_contributors = []
 
     return {
-        "summary_info": summary_info,
-        "all_contributors": all_contributors,
+        "summary_info": json.dumps(summary_info),
+        "all_contributors": json.dumps(all_contributors)
     }
 
 
