@@ -123,7 +123,15 @@
 
     var donation = 50;
     var donor = "Anonymous";
+    var temp_summary_json;
     function move_carousel(carousel_items) {
+        //there we check see if new donation occured every time the carousel is moved
+        temp_summary_json = JSON.parse( '{{ summary_info|safe }}' );
+        if(temp_summary_json.collected_funds != summary_json.collected_funds){
+            all_contributors = JSON.parse( '{{ all_contributors|safe }}' );
+            summary_json = temp_summary_json;
+        }
+
         if(contributor_index+1 == all_contributors.length){
             contributor_index = 0;
         }
