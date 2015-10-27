@@ -60,7 +60,7 @@
 // - - - - - - - - - donor carousel - - - - - - - - - - - - - -
 
 
-        init_carousel($(".inner_item"), 7);
+        init_carousel($(".inner_item"));
         // setTimeout(move_carousel, 2000, $(".inner_item"));
         var all_carousel_items = $(".inner_item");
         setInterval(move_carousel, 4000, all_carousel_items);
@@ -68,8 +68,14 @@
 
     var gap = 0;
     var g = 0;
+    var pre_fit;
+    var carousel_pos;
     function update_carousel_item(elem, donation, donor){
-        var carousel_pos = elem.data('carousel_pos');
+        carousel_pos = elem.data('carousel_pos');
+
+        pre_fit = $($(".inner_item")[7]).children('.donor_info');
+        pre_fit.html("<div class='gold'>"+donation+"</div>"+donor);
+        gap = 310 - pre_fit.width() - 60;
 
         if(carousel_pos == 0){
             elem.data("carousel_pos", 8);
@@ -95,7 +101,7 @@
             var d_info = elem.children('.donor_info');
             d_info.html("<div class='gold'>"+donation+"</div>"+donor);
             d_info.css({"opacity": 1});
-            gap = 310 - d_info.width() - 60;
+            // gap = 310 - d_info.width() - 60;
             elem.css({"height": 50});
             elem.translate3d({x:gap, y:0, z:0}, 1000, "ease");
         }else if(carousel_pos == 5){
@@ -113,15 +119,11 @@
             elem.data("carousel_pos", 7);
             elem.translate3d({x:450, y:0, z:0}, 1000, "ease");
         }
-
-        if (g < 5){
-console.log("EEEE:::::", g);
-        }
     }
 
+    var donation = 50;
+    var donor = "Anonymous";
     function move_carousel(carousel_items) {
-        var donation = 50;
-        var donor = "Anonymous";
         if(contributor_index+1 == all_contributors.length){
             contributor_index = 0;
         }
@@ -150,6 +152,7 @@ console.log("EEEE:::::", g);
         return values[5];
     }
 
+    //this is a custom jquery function for convenient access of hardware accelerate trnaslate3d
     ;(function($) {
         var delay = 0;
         $.fn.translate3d = function(translations, speed, easing, complete) {
@@ -179,9 +182,7 @@ console.log("EEEE:::::", g);
     })(jQuery);
 
     // have to be odd number of items in the carousel
-    function init_carousel(carousel_items, num_items) {
-        var donation = 50;
-        var donor = "Anonymous";
+    function init_carousel(carousel_items) {
         if(all_contributors){
             donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
             donor = all_contributors[contributor_index].by;
