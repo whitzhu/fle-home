@@ -58,7 +58,7 @@
             <div class="header-shadow row">
                 <!---Kolibri Intro-->
                 <div class="intro-text">
-                    <div class="container">               
+                    <div class="container">
                         <div class="row">
                             <!-- <div id="campaign-intro-1">Announcing our next-generation platform</div> -->
                             <center>
@@ -73,10 +73,10 @@
                             </div>
                             </div>
                             <center>
-                                <iframe id="k_video" src="https://player.vimeo.com/video/143710663" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <iframe id="k_video" src="https://player.vimeo.com/video/143710663?api=1&player_id=k_video" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                 <!-- <iframe src="https://player.vimeo.com/video/142683815" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
                             </center>
-                            <center><a class="btn" id="igg_btn" href="https://learningequality.org/r/indiegogo-redirect">Back our Kolibri Campaign on <img id="indiegogo_generosity" alt="Indiegogo" src="{% static 'img/kickstarter/indiegogo_generosity.png' %}"></a></center>
+                            <center><a class="btn" id="igg_btn" href="https://learningequality.org/r/generosity-donate-top" target="_blank">Back our Kolibri Campaign on <img id="indiegogo_generosity" alt="Indiegogo" src="{% static 'img/kickstarter/indiegogo_generosity.png' %}"></a></center>
                             <!-- <div class="countdown"></div> -->
                             <br><br>
                         </div>
@@ -86,16 +86,16 @@
                             <img id="header-btn" src="{% static 'img/kickstarter/arrow.png' %}">
                         </div>
                     </a> -->
-                    
+
                 </div>
             </div>
             <!---Arrow Down-->
-         
+
 
         </header>
 
         <!-- sticky sign up bar -->
-        {% include "main/partials/_sticky_bar.html" %} 
+        {% include "main/partials/_sticky_bar.html" %}
 
         <img id="slide_tablet" src="/static/img/kickstarter/tablet-min.png">
 
@@ -133,7 +133,7 @@
                 <h1>WHO ARE WE?</h1>
                 <h2>We're the team that built <img src="{% static 'img/kickstarter/timeline/ka-lite-logo.png' %}"></h2>
                 <h3>which has been bringing online education from Khan Academy to the offline world.</h3>
-                <h1 class="wow fadeInDown"> 
+                <h1 class="wow fadeInDown">
                     <img src="{% static 'img/kickstarter/KA-Lite/KA-year.png' %}">
                     <img id="ka-year" src="{% static 'img/kickstarter/KA-Lite/KA-people.png' %}">
                     <img src="{% static 'img/kickstarter/KA-Lite/KA-160.png' %}">
@@ -141,7 +141,7 @@
             </center>
 
             <div id="desktop-timeline"></div>
-            
+
         </section>
 
         <!-- FLE Quote Section -->
@@ -159,7 +159,7 @@
 
 
         <!-- Plugin JavaScript -->
-        
+
         <!-- Contact Form JavaScript -->
         <script src="{% static 'js/jqBootstrapValidation.js' %}" type="text/javascript"></script>
         <!-- WOW Scrolling JavaScript -->
@@ -211,7 +211,7 @@
                 clockFace: 'DailyCounter',
                 countdown: true,
                 language: 'Custom'
-            };  
+            };
             var countdown = 1445014800 - ((new Date().getTime())/1000); // from: 10/16/2015 10:00 am -0700
             countdown = Math.max(1, countdown);
             $('.countdown').FlipClock(countdown, opts);
@@ -245,7 +245,7 @@
                     }
                 };
 
-                // Set height of how-image to be the height of the section with infographics, only on bigger screens 
+                // Set height of how-image to be the height of the section with infographics, only on bigger screens
                     if ( $('body').width() > 990 ) {
                         var how_height = $(".how-explanation").height();
                         document.getElementById('how-image').style.height = how_height+'px';
@@ -253,7 +253,7 @@
 
                 //load mobile timeline html template when desktop screen size is less than 1000px
                 $(window).resize(function() {
-                    // Set height of how-image to be the height of the section with infographics, only on bigger screens 
+                    // Set height of how-image to be the height of the section with infographics, only on bigger screens
                     if ( $('body').width() > 990 ) {
                         var how_height = $(".how-explanation").height();
                         document.getElementById('how-image').style.height = how_height+'px';
@@ -261,15 +261,21 @@
                 });
 
             });
-            
-                    
+
+
 
 
 
         </script>
 
+        <!-- // <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script> -->
+
         <!-- Google Analytics tracking -->
         <script>
+
+            // Froogaloop library for controlling Vimeo
+            var Froogaloop=function(){function e(a){return new e.fn.init(a)}function g(a,c,b){if(!b.contentWindow.postMessage)return!1;a=JSON.stringify({method:a,value:c});b.contentWindow.postMessage(a,h)}function l(a){var c,b;try{c=JSON.parse(a.data),b=c.event||c.method}catch(e){}"ready"!=b||k||(k=!0);if(!/^https?:\/\/player.vimeo.com/.test(a.origin))return!1;"*"===h&&(h=a.origin);a=c.value;var m=c.data,f=""===f?null:c.player_id;c=f?d[f][b]:d[b];b=[];if(!c)return!1;void 0!==a&&b.push(a);m&&b.push(m);f&&b.push(f);return 0<b.length?c.apply(null,b):c.call()}function n(a,c,b){b?(d[b]||(d[b]={}),d[b][a]=c):d[a]=c}var d={},k=!1,h="*";e.fn=e.prototype={element:null,init:function(a){"string"===typeof a&&(a=document.getElementById(a));this.element=a;return this},api:function(a,c){if(!this.element||!a)return!1;var b=this.element,d=""!==b.id?b.id:null,e=c&&c.constructor&&c.call&&c.apply?null:c,f=c&&c.constructor&&c.call&&c.apply?c:null;f&&n(a,f,d);g(a,e,b);return this},addEvent:function(a,c){if(!this.element)return!1;var b=this.element,d=""!==b.id?b.id:null;n(a,c,d);"ready"!=a?g("addEventListener",a,b):"ready"==a&&k&&c.call(null,d);return this},removeEvent:function(a){if(!this.element)return!1;var c=this.element,b=""!==c.id?c.id:null;a:{if(b&&d[b]){if(!d[b][a]){b=!1;break a}d[b][a]=null}else{if(!d[a]){b=!1;break a}d[a]=null}b=!0}"ready"!=a&&b&&g("removeEventListener",a,c)}};e.fn.init.prototype=e.fn;window.addEventListener?window.addEventListener("message",l,!1):window.attachEvent("onmessage",l);return window.Froogaloop=window.$f=e}();
+
             $(function() {
                 $('a[href$="#portfolioModal0"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'runs-on-anything');});
                 $('a[href$="#portfolioModal1"]').click(function(){ga('send', 'event', 'crowdfunding', 'click_modal', 'content-curation');});
@@ -286,9 +292,34 @@
                 $('.tw_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'twitter-2');});
                 $('.reddit_btn_2').click(function(){ga('send', 'event', 'crowdfunding', 'share', 'reddit-2');});
 
+                $('#igg_btn').click(function(){ga('send', 'event', 'crowdfunding', 'click_donate', 'top');});
+                $('#join_campaign').click(function(){ga('send', 'event', 'crowdfunding', 'click_donate', 'bottom');});
+                $('#readmore_campaign').click(function(){ga('send', 'event', 'crowdfunding', 'click_readmore', 'bottom');});
+
                 $('.sticky-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp').contents().find(".email_input_k").val(), 1);});
                 $('.sticky-mailchimp2').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_sticky', $('.sticky-mailchimp2').contents().find(".email_input_k").val(), 1);});
                 $('#header-mailchimp').contents().find("#mc-embedded-subscribe").click(function(){ga('send', 'event', 'crowdfunding', 'signup_bottom', $('#header-mailchimp').contents().find(".email_input_k").val(), 1);});
+
+                var player = $f($("#k_video")[0]);
+                // When the player is ready, add listeners for pause, finish, and playProgress
+                player.addEvent('ready', function() {
+                    player.addEvent('pause', _.once(onPause));
+                    player.addEvent('finish', _.once(onFinish));
+                    player.addEvent('playProgress', _.once(onPlay));
+                });
+
+                function onPause(id) {
+                    ga('send', 'event', 'crowdfunding', 'video', 'pause');
+                }
+
+                function onFinish(id) {
+                    ga('send', 'event', 'crowdfunding', 'video', 'finish');
+                }
+
+                function onPlay(data, id) {
+                    ga('send', 'event', 'crowdfunding', 'video', 'play');
+                }
+
             });
         </script>
     </body>
