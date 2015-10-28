@@ -823,8 +823,8 @@ mark{
   background: url('../img/kickstarter/header-cover.jpg') no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 100vh;
-  min-height: 700px;
+  height: 90vh;
+  min-height: 600px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -927,7 +927,7 @@ mark{
   color: white;
 }
 #accouncing-banner {
-  top: -40px;
+  top: -20px;
   position: relative;
   width: 600px;
 }
