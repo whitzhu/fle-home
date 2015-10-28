@@ -348,6 +348,7 @@ header {
 }
 #intro_container {
   margin-left: 50px;
+  margin-top: 90px;
 }
 .intro-heading {
   font-family: "Montserrat";
@@ -824,8 +825,6 @@ mark{
   background: url('../img/kickstarter/header-cover.jpg') no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 90vh;
-  min-height: 740px;
   width: 100%;
   position: relative;
   z-index: 1;
