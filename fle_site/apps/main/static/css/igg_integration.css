@@ -44,62 +44,49 @@
 /*--end--*/
 
 
-.progress {
-	background-color: #53435B;
-	display: inline-block;
-    width: 345px;
-    border-radius: 50px;
-}
 .progress-bar {
 	color: #53435B;
 	background-color: #FFCC00;
 	/*border-radius: 50px;*/
-	-webkit-transition: all 2.5s; 
-  	-moz-transition: all 2.5s; 
-  	-ms-transition: all 2.5s; 
-  	-o-transition: all 2.5s; 
-  	transition: all 2.5s;
-  	-webkit-transition-delay: 2500ms;
-    -moz-transition-delay: 2500ms;
-    -o-transition-delay: 2500ms;
-  	transition-delay: 2500ms;
+	-webkit-transition: all 1.5s; 
+	-moz-transition: all 1.5s; 
+	-ms-transition: all 1.5s; 
+	-o-transition: all 1.5s; 
+	transition: all 1.5s;
 }
 #talkbubble {
 	color: white;
-   	width: 80px;
-   	height: 20px;
-   	background: #5CB8E6;
-   	position: absolute;
-   	-moz-border-radius:    50px;
-   	-webkit-border-radius: 50px;
-   	border-radius:         50px;
-    padding-left: 14px;
-    top: 3px;
-    left: 98px;
-    -webkit-transition: all 2.5s; 
-  	-moz-transition: all 2.5s; 
-  	-ms-transition: all 2.5s; 
-  	-o-transition: all 2.5s; 
-  	transition: all 2.5s;
-  	-webkit-transition-delay: 2500ms;
-    -moz-transition-delay: 2500ms;
-    -o-transition-delay: 2500ms;
-  	transition-delay: 2500ms;
+ 	width: 80px;
+ 	height: 20px;
+ 	background: #5CB8E6;
+ 	position: absolute;
+ 	-moz-border-radius:    50px;
+ 	-webkit-border-radius: 50px;
+ 	border-radius:         50px;
+  padding-left: 14px;
+  top: 3px;
+  left: 98px;
+  -webkit-transition: all 1.5s; 
+	-moz-transition: all 1.5s; 
+	-ms-transition: all 1.5s; 
+	-o-transition: all 1.5s; 
+	transition: all 1.5s;
 }
 #talkbubble:before {
-   	content: "";
-   	position: absolute;
-   	right: 34px;
-   	top: 20px;
-   	width: 0;
-   	height: 0;
-   	border-right: 6px solid transparent;
-   	border-top: 12px solid #5CB8E6;
-   	border-left: 6px solid transparent;
+ 	content: "";
+ 	position: absolute;
+ 	right: 34px;
+ 	top: 20px;
+ 	width: 0;
+ 	height: 0;
+ 	border-right: 6px solid transparent;
+ 	border-top: 12px solid #5CB8E6;
+ 	border-left: 6px solid transparent;
 }
 
 #igg_progress {
-	width: 600px;
+	width: 45vw;
+  margin-left: 30px;
 	display: inline-block;
 	float: left;
 }
@@ -107,39 +94,55 @@
 #progress_outer {
 	background-color: #8175A0;
 	margin-top: 10px;
-    margin-left: 30px;
-    height: 50px;
-    padding-top: 15px;
-    border-radius: 50px;
+  height: 50px;
+  padding-top: 15px;
+  border-radius: 50px;
+  display: block;
+  width: auto;
 }
-
+.progress {
+  background-color: #53435B;
+  display: inline-block;
+  border-radius: 50px;
+  display: inline-block;
+  width: 50%;
+}
 #progress_text_1 {
 	color: white;
 	display: inline-block;
 	position: relative;
-    top: -25px;
-    padding-left: 15px;
-    padding-right: 10px;
+  top: -21px;
+  padding-left: 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 20%;
 }
 #progress_text_2 {
 	color: white;
 	display: inline-block;
 	position: relative;
-    top: -25px;
-    padding-left: 10px;
-    padding-right: 15px;
+  top: -21px;
+  padding-right: 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 20%;
 }
 
 #donor_carousel {
 	position: absolute;
-    width:400px;
-    height: 52px;
-    /*border: 1px solid red;*/
-    overflow: hidden;
-    /*float: right;*/
-    right: 0;
-    margin-right: 30px;
-    margin-top: 10px;
+  width:400px;
+  height: 52px;
+  overflow: hidden;
+  /*float: right;*/
+  right: 0;
+  margin-right: 30px;
+  margin-top: 10px;
 }
 
 .inner_item {
@@ -148,10 +151,10 @@
 	display: inline-block;
 	height: inherit;
 	-webkit-transition: all 1.5s; 
-  	-moz-transition: all 1.5s; 
-  	-ms-transition: all 1.5s; 
-  	-o-transition: all 1.5s; 
-  	transition: all 1.5s;
+	-moz-transition: all 1.5s; 
+	-ms-transition: all 1.5s; 
+	-o-transition: all 1.5s; 
+	transition: all 1.5s;
 	/*margin-right: 10px; */
 }
 
@@ -173,26 +176,64 @@
 	line-height: 18px;
 	opacity: 0;
 	-webkit-transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .gold {
 	font-weight: bold;
 	color: #FFCC00;
 }
 
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  /*padding-top: 25px;*/
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Make video and funding tracker */
 
-@media screen and (min-height: 600px) {
-  #k_video {
-    width: 488px;
-    height: 269px;
+@media screen and (max-width: 590px) {
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .intro-text {
+    top: 11%;
+  }
+  #indiegogo_generosity {
+    height: 14px;
   }
 }
-@media screen and (min-height: 780px) {
-  #k_video {
-    width: 719px;
-    height: 399px;
+@media screen and (height: 768px) { /*target ipad*/
+  .intro-text {
+    top: 12%;
+  }
+  .intro-heading {
+    font-size: 50px;
+    top: -13px;
+  }
+  .intro-heading2 {
+    font-size: 20px;
+  }
+  #accouncing-banner {
+    width: 400px;
+  }
+  #igg_btn {
+    margin-top: -30px;
+    font-size: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .videoWrapper {
+    top: -40px;
   }
 }
 @media screen and (max-width: 990px) {
@@ -203,46 +244,29 @@
   #intro_container {
     margin-left: 0;
   }
-  #igg_progress {
-    width: 620px;
-    zoom: 0.9;
-    float: none;
-  }
-  .sticky-signup {
-    height: 60px;
-  }
   #donor_carousel {
     display: none;
+  }
+  #igg_progress {
+    width: 90%;
+    margin-left: 5%;
+    display: inline-block;
   }
   .intro-heading2 {
     font-size: 20px;
     margin-bottom: 25px;
   }
 }
-@media screen and (max-width: 590px) {
-  #k_video {
-    width: 300px;
-    height: 178px;
+@media screen and (min-width: 990px) {
+  .videoWrapper iframe {
+    top: 18%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
   }
-  .intro-text {
-    top: 11%;
+}
+@media screen and (min-width: 1200px) {
+  #donor_carousel {
+    margin-right: 10vw;
   }
-  #igg_progress {
-    zoom: 0.5;
-  }
-  .sticky-signup {
-    height: 40px;
-  }
-  #indiegogo_generosity {
-    height: 14px;
-  }
-  #progress_outer {
-    margin-left: 5px;
-  }
-  #progress_text_1,
-  #progress_text_2 {
-    font-size: 7px;
-    display: inline-block !important;
-  }
-
 }
