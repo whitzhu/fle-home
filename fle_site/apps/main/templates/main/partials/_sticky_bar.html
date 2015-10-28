@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<link rel="stylesheet" href="{% static 'css/igg_integration.css' %}">
+<link rel="stylesheet" href="{% static 'css/igg_integration.css' %}?asdfghjkl">
 <!-- desktop version -->
 <div class="sticky-signup">
     <div id="igg_progress">
@@ -144,7 +144,7 @@
             contributor_index = 0;
         }
         if(all_contributors){
-            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
+            donation = (all_contributors[contributor_index].amount == null ? "&nbsp;" : '$'+all_contributors[contributor_index].amount);
             // donation = all_contributors[contributor_index].amount;
             donor = all_contributors[contributor_index].by;
         }
@@ -200,7 +200,7 @@
     // have to be odd number of items in the carousel
     function init_carousel(carousel_items) {
         if(all_contributors){
-            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
+            donation = (all_contributors[contributor_index].amount == null ? "&nbsp;" : '$'+all_contributors[contributor_index].amount);
             donor = all_contributors[contributor_index].by;
         }
         contributor_index++;
