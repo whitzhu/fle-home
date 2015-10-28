@@ -4,10 +4,10 @@
 <div class="sticky-signup" data-offset-top="200">
     <div id="igg_progress">
         <div id="progress_outer">
-            <div id="progress_text_1"><strong>1%</strong> funded</div>
-            <div id="talkbubble">$1</div>
+            <div id="progress_text_1"><strong>0%</strong> funded</div>
+            <div id="talkbubble">$0</div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width:1%"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
             </div>
             <div id="progress_text_2"><strong>$500K</strong> goal</div>
         </div>
@@ -45,17 +45,12 @@
     $(function() {
         var collected_funds = summary_json.collected_funds;
         if(collected_funds){
-            var funded_percent = Math.round(collected_funds*100/500000);
-            $('#progress_text_1').children('strong').html(funded_percent+'%');
-            $('.progress-bar').width(funded_percent+'%');
-
-            $('#talkbubble').html('$'+collected_funds);
-            var talkbubble_start = 98;
-            var talkbubble_end = 458;
-            var talkbubble_mov = (talkbubble_end - talkbubble_start)*funded_percent/100 + talkbubble_start;
-            $('#talkbubble').css("left" , talkbubble_mov);
+            update_igg_progress_bar(collected_funds);
         }
 
+        $( window ).resize(function() {
+            update_igg_progress_bar(collected_funds);
+        });
 
 // - - - - - - - - - donor carousel - - - - - - - - - - - - - -
 
@@ -65,6 +60,19 @@
         var all_carousel_items = $(".inner_item");
         setInterval(move_carousel, 4000, all_carousel_items);
     });
+
+    function update_igg_progress_bar(money){
+        var funded_percent = Math.round(money*100/500000);
+        $('#progress_text_1').children('strong').html(funded_percent+'%');
+        $('.progress-bar').width(funded_percent+'%');
+        $('#talkbubble').html('$'+money);
+
+        var progressbar_left = $('.progress').offset().left;
+        var progressbar_width = $('.progress').width();
+        var cur_progress_x = progressbar_left + progressbar_width*funded_percent/100;
+        var talkbubble_mov = cur_progress_x - $('#talkbubble').outerWidth()/2;
+        $('#talkbubble').css("left" , talkbubble_mov);
+    }
 
     var gap = 0;
     var g = 0;
@@ -136,7 +144,7 @@
             contributor_index = 0;
         }
         if(all_contributors){
-            donation = (all_contributors[contributor_index].amount == null ? "" : '$'+all_contributors[contributor_index].amount);
+            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
             // donation = all_contributors[contributor_index].amount;
             donor = all_contributors[contributor_index].by;
         }
@@ -192,7 +200,7 @@
     // have to be odd number of items in the carousel
     function init_carousel(carousel_items) {
         if(all_contributors){
-            donation = (all_contributors[contributor_index].amount == null ? "&nbsp;" : '$'+all_contributors[contributor_index].amount);
+            donation = (all_contributors[contributor_index].amount == null ? "Private" : '$'+all_contributors[contributor_index].amount);
             donor = all_contributors[contributor_index].by;
         }
         contributor_index++;
