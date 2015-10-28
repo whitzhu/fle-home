@@ -16,3 +16,5 @@ static/css/*
 fle_site/media/user_resources/*
 Thumbs.db
 venv/*
+all_contributors.json
+summary.json

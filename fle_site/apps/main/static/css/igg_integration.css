@@ -43,10 +43,6 @@
 
 /*--end--*/
 
-#k_video {
-	width: 1000px;
-	height: 561px;
-}
 
 .progress {
 	background-color: #53435B;
@@ -185,16 +181,68 @@
 	color: #FFCC00;
 }
 
+/* Make video and funding tracker */
+
+@media screen and (min-height: 600px) {
+  #k_video {
+    width: 488px;
+    height: 269px;
+  }
+}
+@media screen and (min-height: 780px) {
+  #k_video {
+    width: 719px;
+    height: 399px;
+  }
+}
 @media screen and (max-width: 990px) {
-	#igg_progress {
-		width: 620px;
-		zoom: 0.6;
-		float: none;
-	}
-	.sticky-signup {
-		height: 40px;
-	}
-	#donor_carousel {
-		display: none;
-	}
+  #accouncing-banner {
+    top: 10px;
+    width: 80%;
+  }
+  #intro_container {
+    margin-left: 0;
+  }
+  #igg_progress {
+    width: 620px;
+    zoom: 0.9;
+    float: none;
+  }
+  .sticky-signup {
+    height: 60px;
+  }
+  #donor_carousel {
+    display: none;
+  }
+  .intro-heading2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 590px) {
+  #k_video {
+    width: 300px;
+    height: 178px;
+  }
+  .intro-text {
+    top: 11%;
+  }
+  #igg_progress {
+    zoom: 0.5;
+  }
+  .sticky-signup {
+    height: 40px;
+  }
+  #indiegogo_generosity {
+    height: 14px;
+  }
+  #progress_outer {
+    margin-left: 5px;
+  }
+  #progress_text_1,
+  #progress_text_2 {
+    font-size: 7px;
+    display: inline-block !important;
+  }
+
 }
