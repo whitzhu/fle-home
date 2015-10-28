@@ -858,8 +858,9 @@ mark{
 .social_btns div:hover {
   opacity: 1;
 }
+
 #join_campaign {
-  color:#FFCC00; 
+  color: #FFCC00;
   font-size:30px;
   font-weight: 100;
   background-color: #8670A1;
@@ -871,6 +872,21 @@ mark{
   background-color: #FFCC00;
   color:#8670A1; 
 }
+
+#readmore_campaign {
+  color: #FFCC00;
+  font-size:30px;
+  font-weight: 100;
+  background-color: #7E7D8A;
+  padding: 10px 30px;
+  border-radius: 15px;
+  border: 5px solid #FFCC00;
+}
+#readmore_campaign:hover {
+  background-color: #FFCC00;
+  color: #8670A1;
+}
+
 
 #footer-social-btns {
   margin: 0px 0 20px 0;
