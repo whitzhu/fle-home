@@ -73,6 +73,7 @@ body {
 	right: 0;
     width: 32%;
     max-width: 180px;
+    transition: opacity 0.3s;
 }
 .banner_container {
 	position: relative;
