@@ -65,7 +65,7 @@
  	border-radius:         50px;
   padding-left: 14px;
   top: 3px;
-  left: 98px;
+  margin-left: -40px;
   -webkit-transition: all 1.5s; 
 	-moz-transition: all 1.5s; 
 	-ms-transition: all 1.5s; 
