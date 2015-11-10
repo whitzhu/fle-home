@@ -5,11 +5,11 @@
     <div id="igg_progress">
         <div id="progress_outer">
             <div id="progress_text_1"><strong>0%</strong> funded</div>
-            <div id="talkbubble">$0</div>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                <div id="talkbubble">$0</div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
             </div>
-            <div id="progress_text_2"><strong>$500K</strong> goal</div>
+            <div id="progress_text_2"><strong>$250K</strong> goal</div>
         </div>
     </div>
 
@@ -62,16 +62,12 @@
     });
 
     function update_igg_progress_bar(money){
-        var funded_percent = Math.round(money*100/500000);
+        var funded_percent = Math.round(money*100/250000);
         $('#progress_text_1').children('strong').html(funded_percent+'%');
         $('.progress-bar').width(funded_percent+'%');
         $('#talkbubble').html('$'+money);
 
-        var progressbar_left = $('.progress').offset().left;
-        var progressbar_width = $('.progress').width();
-        var cur_progress_x = progressbar_left + progressbar_width*funded_percent/100;
-        var talkbubble_mov = cur_progress_x - $('#talkbubble').outerWidth()/2;
-        $('#talkbubble').css("left" , talkbubble_mov);
+        $('#talkbubble').css("margin-left" , $('.progress').width()*funded_percent/100 - 40);
     }
 
     var gap = 0;
