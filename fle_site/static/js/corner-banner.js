@@ -93,7 +93,6 @@ function slide_banner(options) {
 
 function checkOffset(d_height, b_height) {
     var cur_banner_offset = $('.corner_banner').offset().top + b_height;
-    console.log("EEEEE: ",d_height - cur_banner_offset);
     if(d_height - cur_banner_offset < 140){
         $('.corner_banner').css({'opacity': '0'});
     }else{

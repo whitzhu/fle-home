@@ -48,11 +48,13 @@
 	color: #53435B;
 	background-color: #FFCC00;
 	/*border-radius: 50px;*/
-	-webkit-transition: all 1.5s; 
-	-moz-transition: all 1.5s; 
-	-ms-transition: all 1.5s; 
-	-o-transition: all 1.5s; 
-	transition: all 1.5s;
+	-webkit-transition: all 1.5s ease-out; 
+	-moz-transition: all 1.5s ease-out; 
+	-ms-transition: all 1.5s ease-out; 
+	-o-transition: all 1.5s ease-out; 
+	transition: all 1.5s ease-out;
+  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
+  transition-delay: 1.5s;
 }
 #talkbubble {
 	color: white;
@@ -66,11 +68,13 @@
   padding-left: 14px;
   top: 3px;
   margin-left: -40px;
-  -webkit-transition: all 1.5s; 
-	-moz-transition: all 1.5s; 
-	-ms-transition: all 1.5s; 
-	-o-transition: all 1.5s; 
-	transition: all 1.5s;
+  -webkit-transition: all 1.5s ease-out; 
+	-moz-transition: all 1.5s ease-out; 
+	-ms-transition: all 1.5s ease-out; 
+	-o-transition: all 1.5s ease-out; 
+	transition: all 1.5s ease-out;
+  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
+  transition-delay: 1.5s;
 }
 #talkbubble:before {
  	content: "";

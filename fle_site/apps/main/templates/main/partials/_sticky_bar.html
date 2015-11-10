@@ -45,6 +45,13 @@
     $(function() {
         var collected_funds = summary_json.collected_funds;
         if(collected_funds){
+            var progress_percent = $('#progress_text_1').children('strong');
+            var talkbubble = $('#talkbubble');
+            setTimeout(function(){
+                animate_percentage(progress_percent, Math.round(collected_funds*100/250000), 1500);
+                animate_money(talkbubble, collected_funds, 1500);
+            }, 1500);
+
             update_igg_progress_bar(collected_funds);
         }
 
@@ -61,12 +68,41 @@
         setInterval(move_carousel, 4000, all_carousel_items);
     });
 
+    function animate_percentage(element, percent, duration){
+        $({percentage: 0}).stop(true).animate({percentage: percent}, {
+            duration : duration,
+            easing: 'easeOutExpo',
+            step: function () {
+                var percentageVal = Math.round(this.percentage);
+                
+                element.text(percentageVal + '%');
+            }
+        }).promise().done(function () {
+            // hard set the value after animation is done to be
+            // sure the value is correct
+            element.text(percent + '%');
+        });
+    }
+
+    function animate_money(element, money, duration){
+        $({percentage: 0}).stop(true).animate({percentage: money}, {
+            duration : duration,
+            easing: 'easeOutExpo',
+            step: function () {
+                var percentageVal = Math.round(this.percentage);
+                
+                element.text('$' + percentageVal);
+            }
+        }).promise().done(function () {
+            // hard set the value after animation is done to be
+            // sure the value is correct
+            element.text('$' + money);
+        });
+    }
+
     function update_igg_progress_bar(money){
         var funded_percent = Math.round(money*100/250000);
-        $('#progress_text_1').children('strong').html(funded_percent+'%');
         $('.progress-bar').width(funded_percent+'%');
-        $('#talkbubble').html('$'+money);
-
         $('#talkbubble').css("margin-left" , $('.progress').width()*funded_percent/100 - 40);
     }
 
