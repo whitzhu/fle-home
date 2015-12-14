@@ -30,30 +30,26 @@
                     <h3>and help 4.5 BILLION people access a free education</h3>
                 </div>
 
-                <p>Learning Equality is a recently formed nonprofit that builds and supports <a href="https://github.com/learningequality/">open-source</a> educational software designed to increase learning opportunities for communities with limited or no access to the Internet. We do this work because we believe deeply in the transformative power that learning can have on people’s lives, and are passionate about social justice and breaking down the barriers that prevent many people from reaching their full potential and living empowered lives.</p>
+                <p>Learning Equality is a young nonprofit that builds and supports <a href="https://github.com/learningequality/">open-source</a> educational software designed to increase learning opportunities for communities with limited or no access to the Internet. We do this work because we believe deeply in the transformative power that learning can have on people's lives, and are passionate about social justice and breaking down the barriers that prevent many people from reaching their full potential and living empowered lives.</p>
 
-                <p>We started out as a group of students volunteering on the open-source KA Lite project, an offline version of Khan Academy, which we first announced publicly in December of 2012. An enthusiastic global response led to a flood of requests for support, features, and partnerships, and we soon realized we needed to establish a solid foundation to support the project and the longer-term vision, so we incorporated as a nonprofit in April of 2013. We have been fortunate enough to raise some funding to support our continued work, and now have 3 full-time employees, as well as a number of contractors and interns, alongside a community of volunteers and open-source contributors. We are leasing space in the Qualcomm Institute Innovation Space on the UC San Diego campus, and collaborate closely with researchers and students across the campus.</p>
+                <p>We started out as a group of students volunteering on the open-source <a href="https://learningequality.org/ka-lite/">KA Lite</a> project, an offline version of Khan Academy, which we first announced publicly in December of 2012. An enthusiastic global response led to a flood of requests for support, features, and partnerships, and we soon realized we needed to establish a solid foundation to support the project and the longer-term vision, so we incorporated as a nonprofit in April of 2013. We have been fortunate enough to raise some funding to support our continued work, and now have 7 full-time employees, as well as a number of contractors and interns, alongside a community of volunteers and open-source contributors. We are leasing space in the Qualcomm Institute Innovation Space on the UC San Diego campus, and collaborate closely with researchers and students across the campus.</p>
                 
-                <p>We’re now looking to grow our core team by hiring someone who will help us to drive our mission and projects forward, playing a strong collaborative and leadership role in both the development process and in the organization as a whole. We have a lot we want to accomplish, and want to continue building a positive, dynamic, and diverse team to help ensure our vision flourishes.</p>
-
-<!--                 <p>
-                    <a href="{% url 'map' %}">
-                        <img src="{% static 'img/install_map.png' %}" title="Making the earth a pincushion for KA Lite installs" alt="A map of known KA Lite installations" class="img-thumbnail">
-                    </a>
-                </p> -->
+                <p>We’re now looking to grow our core team by hiring people who are aligned with our <a href="https://learningequality.org/about/values/">core values</a>, and who will help us to drive our mission and projects forward, playing a strong collaborative and leadership role in their areas of focus. We have a lot we want to accomplish, and want to continue building a positive, dynamic, and diverse team to help ensure our vision flourishes.</p>
+                
                 <h3>Our plans</h3>
 
-                <p>KA Lite has now been installed <a href="https://learningequality.org/ka-lite/map/">thousands of times in over 140 countries</a>, in contexts as varied as low-income schools in India, orphanages in Cameroon, prisons across the United States, refugee programs in Lebanon, and First Nations community centers in northern Canada. We plan to continue developing KA Lite, adding features and improving the user experience, and supporting deployments around the world.</p>
+                <p>KA Lite has now been installed <a href="https://learningequality.org/ka-lite/map/">thousands of times in over 160 countries</a>, in contexts as varied as low-income schools in India, orphanages in Cameroon, prisons across the United States, refugee programs in Lebanon, and First Nations community centers in northern Canada. We continue supporting and improving KA Lite, and enabling deployments around the world.</p>
 
-                <p>Next up, we are preparing for the development of a platform, building upon the KA Lite codebase, that will empower users to create, curate, share, and learn from diverse forms of openly licensed content, in both online and offline environments. This will involve building tools for authoring videos and exercises, an app ecosystem for embedding and distributing HTML5 educational bundles, features for discovering and communicating with other devices peer-to-peer over a local network, interfaces and web-based visualizations for exploring student data, and systems for motivating, engaging, and guiding learners.</p>
+                <p>At the same time, we're in the midst of developing of a new platform, <a href="https://learningequality.org/kolibri/">Kolibri</a>, building upon the KA Lite codebase, that will empower users to create, curate, share, and learn from diverse forms of openly licensed content, in both online and offline environments. This will involve building tools for authoring videos and exercises, an app ecosystem for embedding and distributing HTML5 educational bundles, features for discovering and communicating with other devices peer-to-peer over a local network, interfaces and web-based visualizations for exploring student data, and systems for motivating, engaging, and guiding learners.</p>
 
-                <h3>Here are the positions we are looking for:</h3>
+                <h3>We are currently recruiting for the following positions:</h3>
 
                 {% for j in jobs %}
                     {% if j.active %}
                         <div class="well" id="{{ j.slug }}">
                             <h4><strong>{{ j.title }}</strong></h4>
                             {{ j.description }}
+                            <br/>
                             <p><a class="btn btn-primary btn-large fle-btn" href="{{ j.apply_url }}">Apply now!</a></p>
                         </div>
                     {% endif %}
