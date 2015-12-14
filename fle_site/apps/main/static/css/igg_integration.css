@@ -46,8 +46,10 @@
 
 .progress-bar {
 	color: #53435B;
-	background-color: #FFCC00;
-	/*border-radius: 50px;*/
+	background-color: #FF7258;
+  float: right;
+	border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 	-webkit-transition: all 1.5s ease-out; 
 	-moz-transition: all 1.5s ease-out; 
 	-ms-transition: all 1.5s ease-out; 
@@ -58,7 +60,7 @@
 }
 #talkbubble {
 	color: white;
- 	width: 80px;
+ 	width: 120px;
  	height: 20px;
  	background: #5CB8E6;
  	position: absolute;
@@ -66,8 +68,9 @@
  	-webkit-border-radius: 50px;
  	border-radius:         50px;
   padding-left: 14px;
-  top: 3px;
-  margin-left: -40px;
+  top: -22px;
+  margin-right: -60px;
+  right: 0;
   -webkit-transition: all 1.5s ease-out; 
 	-moz-transition: all 1.5s ease-out; 
 	-ms-transition: all 1.5s ease-out; 
@@ -79,7 +82,7 @@
 #talkbubble:before {
  	content: "";
  	position: absolute;
- 	right: 34px;
+ 	right: 54px;
  	top: 20px;
  	width: 0;
  	height: 0;
@@ -105,7 +108,9 @@
   width: auto;
 }
 .progress {
-  background-color: #53435B;
+  position: relative;
+  overflow: visible;
+  background-color: #FFCC00;
   display: inline-block;
   border-radius: 50px;
   display: inline-block;
