@@ -53,14 +53,12 @@
 	-ms-transition: all 1.5s ease-out; 
 	-o-transition: all 1.5s ease-out; 
 	transition: all 1.5s ease-out;
-  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
-  transition-delay: 1.5s;
 }
 #origin_progress_bar {
-  background-color: #00cc66;
+  background-color: #FFCC00;
 }
 #stretch_progress_bar {
-  background-color: #FFCC00;
+  background-color: #ffea99;
 }
 
 .talkbubble {
@@ -80,8 +78,6 @@
 	-ms-transition: all 1.5s ease-out; 
 	-o-transition: all 1.5s ease-out; 
 	transition: all 1.5s ease-out;
-  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
-  transition-delay: 1.5s;
 }
 .talkbubble:before {
  	content: "";
