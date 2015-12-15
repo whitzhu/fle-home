@@ -4,12 +4,14 @@
 <div class="sticky-signup">
     <div id="igg_progress">
         <div id="progress_outer">
-            <div id="progress_text_1"><strong>100%</strong> funded</div>
+            <div id="progress_text_1"><strong>0%</strong> funded</div>
             <div class="progress">
-                <div id="talkbubble">Goal $250,000</div>
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                <div class="talkbubble" id="origin_goal">Goal Reached</div>
+                <div class="talkbubble" id="stretch_goal">$0</div>
+                <div class="progress-bar" id="origin_progress_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                <div class="progress-bar" id="stretch_progress_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
             </div>
-            <div id="progress_text_2"><strong>$250000</strong> donated</div>
+            <div id="progress_text_2"><strong>$550K</strong> Stretch Goal</div>
         </div>
     </div>
 
@@ -47,12 +49,12 @@
         var collected_funds = 508303;
         if(collected_funds){
             var progress_percent = $('#progress_text_1').children('strong');
-            // var talkbubble = $('#talkbubble');
-            var progress_text_2 = $('#progress_text_2');
+            var stretch_goal = $('#stretch_goal');
+            // var origin_goal = $('#origin_goal');
             setTimeout(function(){
-                animate_percentage(progress_percent, Math.round(collected_funds*100/250000), 1500);
-                // animate_money(talkbubble, 250000, 1500);
-                animate_money(progress_text_2, collected_funds, 1500);
+                animate_percentage(progress_percent, 0, 100, 1500);
+                animate_money(stretch_goal, 0, 250000, 1500);
+                // animate_money(origin_goal, 250000, 1500);
             }, 1500);
 
             update_igg_progress_bar(collected_funds);
@@ -71,8 +73,8 @@
         setInterval(move_carousel, 4000, all_carousel_items);
     });
 
-    function animate_percentage(element, percent, duration){
-        $({percentage: 100}).stop(true).animate({percentage: percent}, {
+    function animate_percentage(element, start, percent, duration){
+        $({percentage: start}).stop(true).animate({percentage: percent}, {
             duration : duration,
             easing: 'easeOutExpo',
             step: function () {
@@ -87,27 +89,37 @@
         });
     }
 
-    function animate_money(element, money, duration){
-        $({percentage: 250000}).stop(true).animate({percentage: money}, {
+    function animate_money(element, start, money, duration){
+        $({percentage: start}).stop(true).animate({percentage: money}, {
             duration : duration,
             easing: 'easeOutExpo',
             step: function () {
                 var percentageVal = Math.round(this.percentage);
                 
-                element.text('$' + percentageVal + ' donated');
+                element.text('$' + percentageVal);
             }
         }).promise().done(function () {
             // hard set the value after animation is done to be
             // sure the value is correct
-            element.text('$' + money + ' donated');
+            element.text('$' + money);
         });
     }
 
     function update_igg_progress_bar(money){
-        // var funded_percent = Math.round(money*100/250000);
-        var funded_percent = Math.round(250000/money*100);
-        $('.progress-bar').width(funded_percent+'%');
-        $('#talkbubble').css("margin-right" , $('.progress').width()*funded_percent/100 - 60);
+        var funded_percent = Math.round(money*100/550000);
+        var original_goal_percent = Math.round(25000000/550000);
+        // $('#stretch_progress_bar').width(funded_percent+'%');
+        $('#origin_progress_bar').width(original_goal_percent+'%');
+        $('#origin_goal').css("margin-left" , $('.progress').width()*original_goal_percent/100 - 55);
+        $('#stretch_goal').css("margin-left" , $('.progress').width()*original_goal_percent/100 - 55);
+        setTimeout(function(){
+            $('#stretch_progress_bar').width(funded_percent-original_goal_percent+'%');
+            $('#stretch_goal').css("margin-left" , $('.progress').width()*funded_percent/100 - 55);
+            setTimeout(function(){
+                animate_percentage($('#progress_text_1').children('strong'), 100, Math.round(money*100/250000), 1500);
+                animate_money($('#stretch_goal'), 250000, money, 1500);
+            }, 1500);
+        }, 4000);
     }
 
     var gap = 0;
