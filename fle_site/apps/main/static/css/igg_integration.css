@@ -53,39 +53,48 @@
 	-ms-transition: all 1.5s ease-out; 
 	-o-transition: all 1.5s ease-out; 
 	transition: all 1.5s ease-out;
-  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
-  transition-delay: 1.5s;
 }
-#talkbubble {
+#origin_progress_bar {
+  background-color: #FFCC00;
+}
+#stretch_progress_bar {
+  background-color: #ffea99;
+}
+
+.talkbubble {
 	color: white;
- 	width: 80px;
+ 	width: 110px;
  	height: 20px;
  	background: #5CB8E6;
  	position: absolute;
  	-moz-border-radius:    50px;
  	-webkit-border-radius: 50px;
  	border-radius:         50px;
-  padding-left: 14px;
+  text-align: center;
   top: 3px;
-  margin-left: -40px;
+  margin-left: -55px;
   -webkit-transition: all 1.5s ease-out; 
 	-moz-transition: all 1.5s ease-out; 
 	-ms-transition: all 1.5s ease-out; 
 	-o-transition: all 1.5s ease-out; 
 	transition: all 1.5s ease-out;
-  -webkit-transition-delay: 1.5s; /* Chrome, Safari, Opera */
-  transition-delay: 1.5s;
 }
-#talkbubble:before {
+.talkbubble:before {
  	content: "";
  	position: absolute;
- 	right: 34px;
+ 	right: 49px;
  	top: 20px;
  	width: 0;
  	height: 0;
  	border-right: 6px solid transparent;
  	border-top: 12px solid #5CB8E6;
  	border-left: 6px solid transparent;
+}
+#origin_goal {
+  background: #FF7259;
+}
+#origin_goal.talkbubble:before {
+  border-top: 12px solid #FF7259;
 }
 
 #igg_progress {
