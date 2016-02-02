@@ -13,6 +13,7 @@ class DeploymentStoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title", "deployment_city")}
     list_display = ("contact_name", "title", "deployment_city", "deployment_country", "start_date", "number_of_photos", "published", "view_link")
     list_filter = ("published", "deployment_country", "start_date")
+    save_as = True
 
     def queryset(self, request):
         qs = super(DeploymentStoryAdmin, self).queryset(request)
