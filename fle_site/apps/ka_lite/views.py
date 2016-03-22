@@ -92,15 +92,14 @@ def user_guides(request):
     }
 
 def get_user_resource(slug):
-    if slug == "latest":
-        latest_version = UserResource.objects.filter(category='install_guide').aggregate(Max('version'))['version__max']
-        return UserResource.objects.get(version=latest_version, category='install_guide')
-    else:
-        return UserResource.objects.get(slug=slug)
+    return UserResource.objects.get(slug=slug)
 
 def user_guide_detail_embed(request, slug):
     """Render embedded HTML for user resource"""
-    obj = get_user_resource(slug)
+    try:
+        obj = get_user_resource(slug)
+    except UserResource.DoesNotExist:
+        return HttpResponseRedirect("https://learningequality.org/docs/")
     source = urllib2.urlopen(obj.get_google_embed_url()).read()
     source = re.sub('<a class="(\w+)" href="(http|/)', '<a class="\g<1>" target="_blank" href="\g<2>', source)
     return HttpResponse(source)
@@ -108,7 +107,10 @@ def user_guide_detail_embed(request, slug):
 @render_to("ka_lite/user-guide-detail.html")
 def user_guide_detail(request, slug):
     """Render detail of user resource"""
-    obj = get_user_resource(slug)
+    try:
+        obj = get_user_resource(slug)
+    except UserResource.DoesNotExist:
+        return HttpResponseRedirect("https://learningequality.org/docs/")
     if not obj.is_google_doc:
         return HttpResponseRedirect(obj.external_url)
     related_resources = UserResource.objects.filter(version=obj.version)
