@@ -13,7 +13,7 @@ $(document).ready(
     //Click stores value of preset $20, $50, $100 is stored 
     $(".btn-amount-number").click(function(){
      var amount = $(this).attr("value");
-     //alert(amount); Check if button value is saved to var amount
+     console.log(amount);
     });
   
     $(".btn-amount-number").click(function(){
@@ -25,13 +25,13 @@ $(document).ready(
       if (  $(".active").val() == "custom"){
         amount = $("#InputAmount").val();
         if (amount.match(/^\d+$/)){
-        //  alert(amount); Check if value is saved to var amount
+          console.log(amount);
         }else{
-          alert("Please enter a valid amount!");
+          alert("Please Enter Valid Number");
         }  
       }else{
         amount = $(".active").val();
-      //  alert(amount); Check if value is saved to var amount
+        alert(amount); 
       }      
       
     });
