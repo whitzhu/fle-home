@@ -29,7 +29,7 @@ p{
   margin-bottom: 10px;
   width: 100%;
 }
-.btn-amount{
+.btn-amount, .btn-amount:hover{
   border: 2px solid #69C4EE;
   background-color:#F5F5F5;
   color: #69C4EE;
@@ -37,10 +37,6 @@ p{
   height: 50px;
 }
 
-.btn-amount:hover{
-  background-color:#69C4EE;
-  color: #F5F5F5;
-}
 
 .btn-amount:focus , .btn-amount.active, .btn-active{
   background-color:#69C4EE;
