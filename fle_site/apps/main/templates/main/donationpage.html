@@ -1,0 +1,63 @@
+{% extends base_template %}
+
+{% load staticfiles %}
+
+{% block title %}Donate{% endblock title %}
+
+{% block donate_nav %}selected{% endblock donate_nav %}
+
+{% block headcss %}
+<link rel="stylesheet" href="{% static 'css/donationpage.css' %}">
+{{ block.super }}
+{% endblock headcss %}
+
+{% block headjs %}
+{{ block.super }}
+{% endblock headjs %}
+
+{% block bodycontents %}
+
+<div class="container text-center">
+  
+	<div class="donation-interface">
+		<h1>Give the Gift of Education</h1>
+		<h2> 100% of your donation goes towards supporting learners </h2>
+
+		<div class="form-group">
+	  
+		    <div class="btn-group btn-group-lg btn-amount-group" role="group" aria-lable="...">
+			    <button type="button" class="btn btn-amount btn-amount-number">$20</button>
+			    <button type="button" class="btn btn-amount btn-amount-number" >$50</button>
+			    <button type="button" class="btn btn-amount btn-amount-number">$100</button>
+			    <button type="button" id="other" class="btn btn-amount">Other</button>
+		  	</div>
+	    
+    		<div id="input-amount">
+      			<div class="input-group">
+		        	<div class="input-group-addon">$</div>
+		        	<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+		        	<div class="input-group-addon">USD</div>
+      			</div>  
+    		</div>
+    
+    	</div>  
+	    
+		<div class="checkbox">
+		  <label><input type="checkbox" value="monthly">Monthly Recurring Gift</label>
+		</div>
+
+		<button type="button" class="btn btn-give"><span class="btn-text">Give By Card</span></button>
+		<button type="button" class="btn btn-give"><span class="btn-text">Paypal</span></button>
+  </div>
+  
+  <div class="funding-stats"> 
+    <img src="blob:https%3A//drive.google.com/8bc44380-4ab4-49d2-8cc3-54906d2bad75">  
+    <h1>100% of your donation goes towards supporting learners</h1>
+  </div>
+</div>
+
+
+
+
+
+{% endblock bodycontents %}
