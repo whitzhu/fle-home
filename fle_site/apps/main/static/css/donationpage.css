@@ -1,41 +1,51 @@
+/*Type*/
+
 h1{
   color: #69C4EE;
-  margin: 20 0 10 0px;
+ 
 }
 
 h2{
-	font-size:100%;
+	font-size:1em;
+	padding: 0 10px;
+	margin: 20px 0px 30px 0px;
+	line-height: 1.5em;
 }
+
 p{
   margin-bottom: 20px;
 }
 
+
+
+/*Donation Interface */
+
 .donation-interface{
-  padding: 60px 20px 100px 20px;
+  padding: 50px 20px 100px 20px;
   display: block;
 }
 
 .btn-amount-group{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
 }
 .btn-amount{
   border: 2px solid #69C4EE;
-  background-color:#fff;
+  background-color:#F5F5F5;
   color: #69C4EE;
   width: 25%;
+  height: 50px;
 }
 
 .btn-amount:hover{
   background-color:#69C4EE;
-  color: #fff;
+  color: #F5F5F5;
 }
 
 .btn-amount:focus , .btn-amount.active, .btn-active{
   background-color:#69C4EE;
-  color: #fff;
+  color: #F5F5F5;
 }
-
 
 .btn-give{
   background-color:#69C4EE;
@@ -45,7 +55,7 @@ p{
 }
 
 .btn-text{
-  color: #fff;
+  color: #F5F5F5;
   font-size: 20px;
 }
 
@@ -60,7 +70,7 @@ p{
 }
 .input-group-addon, .form-control{
   border: 2px solid #69C4EE;
-  background-color:#fff;
+  background-color:#F5F5F5;
   color: #69C4EE;
   width: 10%;
   height: 64px;
@@ -68,8 +78,9 @@ p{
 
 .form-control{
   color: #69C4EE;
-  font-size: 40px;
+  font-size: 30px;
 }
+
 
 .funding-stats{
   padding: 60px 20px; 

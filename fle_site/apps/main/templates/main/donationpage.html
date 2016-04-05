@@ -13,6 +13,8 @@
 
 {% block headjs %}
 {{ block.super }}
+<script src="{% static 'js/donationpage.js' %}" type="text/javascript" ></script>
+<script>
 {% endblock headjs %}
 
 {% block bodycontents %}
@@ -24,7 +26,6 @@
 		<h2> 100% of your donation goes towards supporting learners </h2>
 
 		<div class="form-group">
-	  
 		    <div class="btn-group btn-group-lg btn-amount-group" role="group" aria-lable="...">
 			    <button type="button" class="btn btn-amount btn-amount-number">$20</button>
 			    <button type="button" class="btn btn-amount btn-amount-number" >$50</button>
@@ -39,7 +40,6 @@
 		        	<div class="input-group-addon">USD</div>
       			</div>  
     		</div>
-    
     	</div>  
 	    
 		<div class="checkbox">
