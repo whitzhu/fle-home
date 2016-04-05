@@ -24,18 +24,18 @@
 		<h1>Give the Gift of Education</h1>
 		<h2> 100% of your donation goes towards supporting learners </h2>
 
-		<div class="form-group">
-		    <div class="btn-group btn-group-lg btn-amount-group" role="group" aria-lable="...">
-			    <button type="button" class="btn btn-amount btn-amount-number">$20</button>
-			    <button type="button" class="btn btn-amount btn-amount-number" >$50</button>
-			    <button type="button" class="btn btn-amount btn-amount-number">$100</button>
-			    <button type="button" id="other" class="btn btn-amount">Other</button>
+		<div class="form-group" id="donate-form">
+		    <div class="btn-group btn-group-lg btn-amount-group" role="group">
+			    <button type="button" class="btn btn-amount btn-amount-number" value="20">$20</button>
+			    <button type="button" class="btn btn-amount btn-amount-number" value="50" >$50</button>
+			    <button type="button" class="btn btn-amount btn-amount-number" value="100" >$100</button>
+			    <button type="button" id="other-amount" class="btn btn-amount" value="custom" >Other</button>
 		  	</div>
 	    
     		<div id="input-amount">
       			<div class="input-group">
 		        	<div class="input-group-addon">$</div>
-		        	<input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+		        	<input type="text" class="form-control" id="InputAmount" placeholder="Enter amount here...">
 		        	<div class="input-group-addon">USD</div>
       			</div>  
     		</div>
@@ -45,8 +45,8 @@
 		  <label><input type="checkbox" value="monthly">Monthly Recurring Gift</label>
 		</div>
 
-		<button type="button" class="btn btn-give"><span class="btn-text">Give By Card</span></button>
-		<button type="button" class="btn btn-give"><span class="btn-text">Paypal</span></button>
+		<button type="button" class="btn btn-give" id="btn-card"><span class="btn-text">Give By Card</span></button>
+		<button type="button" class="btn btn-give" id="btn-paypal"><span class="btn-text">Paypal</span></button>
   </div>
   
   <div class="funding-stats"> 
