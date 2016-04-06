@@ -74,9 +74,12 @@ p{
 
 .form-control{
   color: #69C4EE;
-  font-size: 30px;
+  font-size: 20px;
 }
 
+.checkbox{
+  padding: 0% 25%;
+}
 
 .funding-stats{
   padding: 60px 20px; 
