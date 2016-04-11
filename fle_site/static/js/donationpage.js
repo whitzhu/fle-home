@@ -74,11 +74,24 @@ $(document).ready(
     $(window).on('popstate', function() {
       handler.close();
     });
-
-
 });
 
+//Circle Progress bar
+window.onload = function onLoad() {
 
-  
+var circle = new ProgressBar.Circle('#circle-stats', {
+    color: '#69C4EE',
+    strokeWidth: 3,
+ 
+    text: { value:'100% Guarantee'}
+});
+
+circle.animate(0.7, function() {
+    circle.animate(1);
+})
+
+
+}
+
  
   
