@@ -13,4 +13,5 @@ urlpatterns = patterns(__package__ + '.views',
     url(r'^donate/process/$', process_donation, name='process_donation'),
     url(r'^directions/$', TemplateView.as_view(template_name='main/directions.html'), name='directions'),
     url(r'^donationpage/$', TemplateView.as_view(template_name='main/donationpage.html'), name='donationpage'),
+    url(r'^testing_stripe/$', TemplateView.as_view(template_name='main/testing_stripe.html'), name='testing_stripe'),
 )

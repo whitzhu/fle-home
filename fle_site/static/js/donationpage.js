@@ -43,11 +43,9 @@ $(document).ready(
       locale: 'auto',
       token: function(data) {
 
-                _.extend(data, $("#donate-form").serializeObject());
-
                 $.ajax({
                     method: "POST",
-                    url: "{% url 'process_donation' %}",
+                    url: "/donate/process/",
                     data: JSON.stringify(data),
                     dataType: "json",
                     contentType: "application/json",

@@ -153,6 +153,8 @@ INSTALLED_APPS = (
     'fle_site.apps.main',
     'fle_site.apps.about',
     'fle_site.apps.ka_lite',
+
+    'django.contrib.redirects',
     'fle_site.apps.redirects',
 )
 

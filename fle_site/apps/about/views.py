@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-import settings
+from django.conf import settings
 
 from annoying.decorators import render_to
 
