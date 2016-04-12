@@ -21,21 +21,22 @@ $(document).ready(
       $("#input-amount").hide();
     });
 
-    $("#btn-card").click(function(){
+    // $("#btn-card").click(function(){
       
-      if (  $(".active").val() == "custom"){
-        amount = $("#InputAmount").val();
-        if (amount.match(/^\d+$/)){
-          console.log(amount);
-        }else{
-          alert("Please Enter Valid Number");
-        }  
-      }else{
-        amount = $(".active").val();
-        console.log(amount);
-      }       
-  });
+    //   if (  $(".active").val() == "custom"){
+    //     amount = $("#InputAmount").val();
+    //     if (amount.match(/^\d+$/)){
+    //       console.log(amount);
+    //     }else{
+    //       alert("Please Enter Valid Number");
+    //     }  
+    //   }else{
+    //     amount = $(".active").val();
+    //     console.log(amount);
+    //   }       
+  // });
 
+    //Stripe
     var handler = StripeCheckout.configure({
       key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
       image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
@@ -61,13 +62,37 @@ $(document).ready(
 
     $('#btn-card').on('click', function(e) {
       // Open Checkout with further options
-      handler.open({
+      
+      if (  $(".active").val() == "custom"){
+        amount = $("#InputAmount").val();
+        if (amount.match(/^\d+$/)){
+          console.log(amount);
+
+          handler.open({
+          name: 'Learning Equality',
+          description: 'Donation',
+          amount: amount*100,
+          panelLabel: "Give",
+          });
+          e.preventDefault();
+
+        }else{
+          alert("Please Enter Valid Number");
+        }  
+      }else{
+        amount = $(".active").val();
+        console.log(amount);
+
+        handler.open({
         name: 'Learning Equality',
         description: 'Donation',
         amount: amount*100,
         panelLabel: "Give",
-      });
-      e.preventDefault();
+        });
+        e.preventDefault();
+      } 
+
+
     });
 
     // Close Checkout on page navigation
