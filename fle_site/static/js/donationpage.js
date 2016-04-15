@@ -101,22 +101,12 @@ $(function(){
 
 });
 
-
-
-
-    
-
-
-
-
 //Circle Progress bar
 $(function(){
-
-
     window.onload = function onLoad() {
 
     var circle = new ProgressBar.Circle('#circle-stats', {
-        color: '#69C4EE',
+        color: '#FFFFFF',
         strokeWidth: 3,
      
         text: { value:'100% Guarantee'}

@@ -5,15 +5,18 @@ h1{
 }
 
 h2{
-  color: #69C4EE;
+  color: #FFFFFF;
   font-size:1.5em;
+  line-height: 32px;
+  margin: 40px 0px 10px 0px;
 }
 
 h3{
-	font-size:1em;
+	font-size:1.2em;
 	padding: 0 10px;
 	margin: 20px 0px 30px 0px;
 	line-height: 1.5em;
+  color:#696969;
 }
 
 p{
@@ -28,9 +31,8 @@ p{
 .donation{
 
     background: #FFF url( ../img/Donation_Interface_bg_mobile.jpg ) center bottom no-repeat;
-    background-size: 110%;
+    background-size: cover;
     background-position-y: 30px;
-
 }
 .donation-interface{
   padding: 50px 20px 250px 20px;
@@ -89,20 +91,265 @@ p{
   font-size: 20px;
 }
 
+/*Checkbox*/
+
 .checkbox{
-  padding: 0% 25%;
+  padding: 0% 5%;
 }
+
+
+input[type="checkbox"]{
+  display:none;
+}
+
+input[type="checkbox"] + label  {
+  color: #696969;
+  font-size: 1.05em;
+  vertical-align: bottom;
+}
+
+input[type="checkbox"] + label span #check{
+  display:none;
+}
+
+input[type="checkbox"] + label span {
+  display: inline-block;
+  width:20px;
+  height:20px;
+  border: 3px solid #69C4EE;
+  border-radius: 4px;
+  background-color: none;
+  margin-right:3%;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + label span {
+  display: inline-block;
+  width:20px;
+  height:20px;
+  border: 3px solid #69C4EE;
+  background: #69C4EE;
+  border-radius: 4px;
+  background-color: none;
+  margin-right:3%;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + label span #check{
+  display: inline-block;
+}
+
 
 
 /*Guarantee Section*/
 .guarantee{
-  padding: 60px 20px; 
+  padding: 20% 20px; 
   text-align: center;
+  background: #69C4EE;
 }
 
-#circle-stats{
+.guarantee #circle-stats{
   width:250px;
   font-size: 32px;
   display:block;
   margin:auto;
 }
+
+.guarantee .text-container{
+  padding: 0 5%;
+}
+
+
+/*Trust*/
+.trust{
+  padding: 60px 20px; 
+/*  background:#FFFFFF;*/
+  vertical-align: middle;
+}
+.trust .img-responsive{
+  margin:auto;
+  padding: 10% 0 20% 0%;
+}
+.trust #nonprofit_icon{
+  width:55%;
+}
+.trust #guidestar_icon{
+  width:50%;
+}
+
+
+
+/*Mobile*/
+@media screen and (min-width: 480px) {
+
+  /*Donation Interface*/
+  .donation-interface {
+    padding: 50px 20px 70% 20px;
+    display: block;
+  }
+  .donation-interface h1{
+    padding-top:20px;
+  }
+  
+  /*BG Image*/
+  .donation{
+    background-position-y: 0px;
+  }
+  .btn-amount-group {
+    margin-bottom: 10px;
+    width: 90%;
+  }
+
+  /*Trust Icons*/
+  .trust #nonprofit_icon{
+   width:240px
+  }
+}
+
+@media screen and (min-width: 565px) {
+  .donation-interface {
+    padding-top:15%;
+  }
+
+  .guarantee .text-container {
+    padding: 0 15%;
+  }  
+}
+
+/*Tablets*/
+@media screen and (min-width: 720px) {
+  .donation{
+      background: #FFF url( ../img/Donation_Interface_bg_tablet_min.jpg) center bottom no-repeat;
+      background-size: cover;
+      background-position-y: 0px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .donation{
+    background-position-y:-50px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .donation{
+    background-position-y:-100px;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .donation{
+    background-position-y:-180px;
+  }
+}
+
+@media screen and (min-width: 922px) {
+  .donation{
+    background-position-y:-250px;
+  }
+}
+
+/*Mid*/
+@media screen and (min-width: 992px) {
+  .donation-interface {
+    padding-top:10%;
+    padding-bottom: 60%;
+  }
+
+
+  /*Trust Icons*/
+  .trust #nonprofit_icon{
+   width:180px
+  }
+  .trust #guidestart_icon{
+   margin-top:10%;
+  }
+
+}
+
+/*Lg*/
+@media screen and (min-width: 1200px) {
+  .donation-interface{
+    padding-top:20%;
+    padding-bottom:30%;
+  }
+
+  .donation{
+    background: #FFF url( ../img/Donation_Interface_BG_desktop.jpg) center bottom no-repeat;
+    background-size: cover;
+    width:100%
+    margin-top:10px;
+  }
+  /*Donation Panel*/
+  .donation-panel{
+    padding:10% 5%;
+    background-color:rgba(255,255,255,0.9);
+    border-radius:4px;
+    -moz-box-shadow:1px 1px 50px rgba(0,0,0,0.3);
+    -webkit-box-shadow:1px 1px 50pxrgba(0,0,0,0.3);
+    box-shadow:1px 1px 50px rgba(0,0,0,0.3);
+  }
+
+  .donation-interface h1{
+    padding-top:0;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+    .donation{
+    background-size: initial center;
+    width:100%;
+    background-position-y:-50px;
+  }
+}
+
+@media screen and (min-width: 1450px) { 
+  .donation-interface{
+    padding-top:20%;
+    padding-bottom:50%;
+  }  
+  .donation{
+    background-position-y:-80px;
+  }
+}
+
+@media screen and (min-width: 1550px) { 
+  .donation-interface{
+    padding-top:20%;
+    padding-bottom:65%;
+  }  
+  .donation{
+    background-size: initial center;
+    width:100%;
+    background-position-y:-50px;
+  }
+}
+
+@media screen and (min-width: 1650px) { 
+  .donation-interface{
+    padding-top:20%;
+    padding-bottom:75%;
+    margin-left:10%;
+  }  
+  .donation{
+    background-size: initial center;
+    width:100%;
+    background-position-y:-50px;
+  }
+}
+
+@media screen and (min-width: 1750px) { 
+  .donation-interface{
+    padding-top:20%;
+    padding-bottom:85%;
+  }  
+  .donation{
+    background-size: initial center;
+    width:100%;
+    background-position-y:-150px;
+  }
+}
+
+
