@@ -21,6 +21,8 @@
 {% block bodycontents %}
 <div class="donation">
 <div class="container text-center">
+
+	<!--Donation Interface -->
 	<div class="donation-interface">
 		<h1>Give the Gift of Education</h1>
 		<h3> 100% of your donation goes towards supporting learners </h3>
@@ -42,8 +44,16 @@
     		</div>
     	</div>  
 	    
+	    <!--Checkbox -->
 		<div class="checkbox">
-		 		 <label><input type="checkbox" value="monthly">Monthly Recurring Gift</label>
+		 		 <input type="checkbox" id="monthly-checkbox" name="monthly-giving" value="monthly"> 
+		 		 <label for="monthly-checkbox">
+			 		 <span>
+			 		 	<svg id="check" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.59 13.41" width="18px" width="18
+			 		 	px" fill="#FFFFFF"><title>ic_check_black_24px</title><path d="M9,16.17L4.83,12,3.41,13.41,9,19,21,7,19.59,5.59Z" transform="translate(-4.41 -7.5)"/></svg>	
+			 		 </span>
+		 		 	Monthly Recurring Gift
+		 		 </label>
 		</div>
 
 		<button type="button" class="btn btn-give" id="btn-card"><span class="btn-text">Give By Card</span></button>
@@ -52,12 +62,17 @@
 </div>
 </div>
   
-  <div class="guarantee"> 
-
-   <div id="circle-stats"></div>
-
-    <h2>100% of your donation goes towards supporting learners</h2>
+ 	<!--100% Guarantee -->
+ 	<div class="guarantee"> 
+		<div id="circle-stats"></div>
+		<div class="text-container">
+			<h2>100% of your donation goes towards supporting learners</h2>
+		</div>
   </div>
+
+
+  <!--Trust Badges  -->
+
 </div>
 
 
