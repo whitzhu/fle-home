@@ -2,7 +2,7 @@
 //Donation Interface  
 $(function() {
 
-  //Other input field slides down
+  //"Other"input field slides down
   $("#other-amount").click(function() {
     $("#input-amount").slideDown();
   });
@@ -20,7 +20,7 @@ $(function() {
 
   //Hides the other input box when $20, $50, $100 is selected
   $(".btn-amount-number").click(function(){
-    $("#input-amount").hide();
+    $("#input-amount").slideUp();
   });
 
 });
@@ -102,29 +102,6 @@ $(function(){
 });
 
 
-// Waypoint for Progress Bar
-
-
-
-//Circle Progress bar
-// $(function(){
-//     window.onload = function onLoad() {
-
-//     var circle = new ProgressBar.Circle('#circle-stats', {
-//         color: '#FFFFFF',
-//         strokeWidth: 3,
-     
-//         text: { value:'100% Guarantee'}
-//     });
-
-//     circle.animate(0.7, function() {
-//         circle.animate(1);
-//     });
-//     }
-// });
-
-
-
 $(function(){ 
   var times = 0;
   
@@ -154,13 +131,13 @@ $(function(){
         if (value === 0) {
           circle.setText('');
         } else {
-          circle.setText(value + "<html style='font-size: 14px' > % <br> Guarantee</html>" );
+          circle.setText(value + "<html>% <br> Guarantee</html>" );
         }
       }
     });
 
     bar.text.style.position = 'relative';
-    bar.text.style.top = '-120px';
+    bar.text.style.top = '-129px';
 
     bar.animate(1.0);  // Number from 0.0 to 1.0
     }

@@ -161,6 +161,12 @@ input[type="checkbox"]:checked + label span #check{
   display:block;
   margin:auto;
 }
+.progressbar-text{
+  color:#FFFFFF !important;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
 /*Text Container*/
 .guarantee .text-container{
   padding: 0% 5%;
@@ -176,14 +182,6 @@ input[type="checkbox"]:checked + label span #check{
 
 
 
-.progressbar-text{
-/*  position: relative !important;*/
-  color:#FFFFFF !important;
-/*  left:0% !important;
-  margin: 0% 10% !important;
-  transform: translate(0, -200%)!important;*/
-}
-
 /*Guarantee Modal*/
 .guarantee_modal_container{
   background-color:#FFFFFF;
@@ -192,31 +190,27 @@ input[type="checkbox"]:checked + label span #check{
   width: 100%;
   margin-top: 30%;
 }
-
  button.close{
   padding: 10px 20px !important;
 }
-
 .guarantee_modal_content{
   padding:5% 10%;
   vertical-align: middle;
   text-align: center;
 }
-
 #guarantee_modal h1{
   margin:5% 0;
 }
-
 #guarantee_modal p{
   color:#69C4EE;
   font-size:16px;
 }
 
 
+
 /*Trust*/
 .trust{
-  padding: 60px 20px; 
-/*  background:#FFFFFF;*/
+  padding: 60px; 
   vertical-align: middle;
 }
 .trust .img-responsive{
