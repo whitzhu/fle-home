@@ -15,7 +15,8 @@
 {{ block.super }}
 <script src="{% static 'js/donationpage.js' %}" type="text/javascript" ></script>
 <script src="{% static 'js/progressbar.min.js' %}" type="text/javascript" ></script>
-<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="https://checkout.stripe.com/checkout.js" type="text/javascript" ></script>
+<script src="{% static 'js/waypoints.min.js' %}" type="text/javascript" ></script>
 {% endblock headjs %}
 
 {% block bodycontents %}
@@ -71,12 +72,28 @@
   
 <!--100% Guarantee -->
 <div class="guarantee"> 
-	<div id="circle-stats"></div>
+	<div class="guarantee_circle_container">
+		<div id="circle-stats"></div>
+	</div>
 	<div class="text-container">
 		<h2>100% of your donation goes towards supporting learners</h2>
+		<span class="learn_link" data-toggle="modal" data-target="#guarantee_modal">LEARN MORE</span>
 	</div>
 </div>
 
+
+<!--Guarantee Molal -->
+<div id="guarantee_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="guarantee_modal_container">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<div class="guarantee_modal_content">
+				<h1>100%. Nothing Less</h1>
+				<p>100% public donation goes directly towards education programs. Our operational expenses are supported by foundations, grants, and private donors. Every penny of your donation is helping a learner in need!</p>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!--Trust Badges  -->
 <div class="trust">

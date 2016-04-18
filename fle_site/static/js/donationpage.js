@@ -101,24 +101,88 @@ $(function(){
 
 });
 
+
+// Waypoint for Progress Bar
+
+
+
 //Circle Progress bar
-$(function(){
-    window.onload = function onLoad() {
+// $(function(){
+//     window.onload = function onLoad() {
 
-    var circle = new ProgressBar.Circle('#circle-stats', {
-        color: '#FFFFFF',
-        strokeWidth: 3,
+//     var circle = new ProgressBar.Circle('#circle-stats', {
+//         color: '#FFFFFF',
+//         strokeWidth: 3,
      
-        text: { value:'100% Guarantee'}
+//         text: { value:'100% Guarantee'}
+//     });
+
+//     circle.animate(0.7, function() {
+//         circle.animate(1);
+//     });
+//     }
+// });
+
+
+
+$(function(){ 
+  var times = 0;
+  
+  $('.guarantee').waypoint(function(direction){ 
+
+    if (direction === 'down' && times == 0){
+
+    //   var circle = new ProgressBar.Circle('#circle-stats', {
+    //     color: '#FFFFFF',
+    //     strokeWidth: 3,
+     
+    //     text: { value:'100% Guarantee'}
+    // });
+
+    // circle.animate(1, function() {
+    //     circle.animate(1);
+    // });
+  
+    var bar = new ProgressBar.Circle('#circle-stats', {
+      color: '#FFFFFF',
+      // This has to be the same size as the maximum width to
+      // prevent clipping
+      strokeWidth: 4,
+      trailWidth: 0,
+      easing: 'easeInOut',
+      duration: 1400,
+      text: {
+        autoStyleContainer: false
+      },
+      from: { color: '#FFFFFF', width: 0 },
+      to: { color: '#FFFFFF', width: 4 },
+      // Set default step function for all animate calls
+      step: function(state, circle) {
+        circle.path.setAttribute('stroke', state.color);
+        circle.path.setAttribute('stroke-width', state.width);
+
+        var value = Math.round(circle.value() * 100);
+        if (value === 0) {
+          circle.setText('');
+        } else {
+          circle.setText(value + "<html style='font-size: 14px' > % <br> Guarantee</html>" );
+        }
+      }
     });
 
-    circle.animate(0.7, function() {
-        circle.animate(1);
-    });
+    // bar.text.style.fontSize = '3rem';
+    bar.text.style.position = 'relative';
+    // bar.text.style.transform = ' translate(0, -200%)';
+    bar.text.style.top = '-120px';
+    // bar.text.style.left = '0';
+    // bar.text.style.margin = '0% 10%';
+    bar.animate(1.0);  // Number from 0.0 to 1.0
     }
+
+    times =+ 1;
+  }, {
+    offset: '60%' 
+  })
 });
-
-
-
  
   
