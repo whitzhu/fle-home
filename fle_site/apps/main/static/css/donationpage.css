@@ -149,33 +149,32 @@ input[type="checkbox"]:checked + label span #check{
   text-align: center;
   background: #69C4EE;
 }
-
+/*Circular Progress Bar*/
+.guarantee_circle_container{
+  width:80%;
+  height: 250px;
+  margin:auto;
+}
 .guarantee #circle-stats{
   width:250px;
   font-size: 32px;
   display:block;
   margin:auto;
 }
-
+/*Text Container*/
 .guarantee .text-container{
   padding: 0% 5%;
 }
-
 .guarantee .text-container h2{
-  margin-bottom:5%;
+  margin:5% 0%;
 }
-
 .learn_link{
   color:white;
   text-decoration: underline;
   cursor: pointer;
 }
 
-.guarantee_circle_container{
-  width:80%;
-  height: 250px;
-  margin:auto;
-}
+
 
 .progressbar-text{
 /*  position: relative !important;*/

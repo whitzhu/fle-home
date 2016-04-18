@@ -132,17 +132,6 @@ $(function(){
 
     if (direction === 'down' && times == 0){
 
-    //   var circle = new ProgressBar.Circle('#circle-stats', {
-    //     color: '#FFFFFF',
-    //     strokeWidth: 3,
-     
-    //     text: { value:'100% Guarantee'}
-    // });
-
-    // circle.animate(1, function() {
-    //     circle.animate(1);
-    // });
-  
     var bar = new ProgressBar.Circle('#circle-stats', {
       color: '#FFFFFF',
       // This has to be the same size as the maximum width to
@@ -170,12 +159,9 @@ $(function(){
       }
     });
 
-    // bar.text.style.fontSize = '3rem';
     bar.text.style.position = 'relative';
-    // bar.text.style.transform = ' translate(0, -200%)';
     bar.text.style.top = '-120px';
-    // bar.text.style.left = '0';
-    // bar.text.style.margin = '0% 10%';
+
     bar.animate(1.0);  // Number from 0.0 to 1.0
     }
 
