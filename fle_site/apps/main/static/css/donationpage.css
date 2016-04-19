@@ -217,34 +217,36 @@ input[type="checkbox"]:checked + label span #check{
 
 
 /*Thankyou*/
-.give_image img{
-  width: 100%;
-/*  float: left;*/
-}
-
+/*Left Image Div*/
 .give_image{
   padding:0;
 }
-
+.give_image img{
+  width: 100%;
+}
+/*Right Content Div*/
 .give_thankyou_content{
+  text-align: justify;
+  padding: 10% 12% 10% 12%;
+  color: #696969;
+}
+.give_thankyou_content h1{
   text-align: center;
+  margin-bottom: 10%;
 }
-.give_thankyou_content{
-  padding: 5% 10%;
-}
-#give_thankyou h1{
-  padding: 5% 0%;
-}
-#give_thankyou h2{
+.give_thankyou_content p{
   color:#696969;
+  line-height: 32px;
 }
-#give_thankyou p{
-  color:#696969;
+.give_thankyou_content .give_receipt{
+  color:#A5A5A5;
+  font-size:12px;
+  padding:10% 0%;
+  line-height: 28px;
 }
-
-
-
-
+.give_thankyou_content .give_next{
+  padding:5%;
+}
 
 
 /*Media Query*/
