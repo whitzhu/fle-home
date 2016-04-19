@@ -248,7 +248,15 @@ input[type="checkbox"]:checked + label span #check{
   padding:5%;
 }
 
+.give_share{
+  padding:10%;
+  margin:10%;
+}
 
+.twitter-share-button{
+  display: block;
+  margin: auto;
+}
 /*Media Query*/
 
 /*Mobile*/
