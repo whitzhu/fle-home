@@ -222,14 +222,16 @@ input[type="checkbox"]:checked + label span #check{
 /*  float: left;*/
 }
 
-#give_thankyou .col-md-5{
+.give_image{
   padding:0;
 }
 
 .give_thankyou_content{
   text-align: center;
 }
-
+.give_thankyou_content{
+  padding: 5% 10%;
+}
 #give_thankyou h1{
   padding: 5% 0%;
 }
