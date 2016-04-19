@@ -17,19 +17,20 @@ $(function() {
     input_field.focus(); //cursor goes to text-field
 
     //Setting payment buttons to disable 
-    if (amount.length == 0 ){
-      btn_card.prop('disabled',true);
-      btn_paypal.prop('disabled',true);
-    }
+    // if (amount.length == 0 ){
+    //   btn_card.prop('disabled',true);
+    //   btn_paypal.prop('disabled',true);
+    // }
 
     input_field.keyup(function(){
       if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) ){
         btn_card.prop('disabled',false);
         btn_paypal.prop('disabled',false);
-        $('.alert').hide();
+        $('.alert-text').hide();
       }else{
         btn_card.prop('disabled',true);
         btn_paypal.prop('disabled',true);
+        $('.alert-text').show();
       }
     });
   });
@@ -48,7 +49,7 @@ $(function() {
   //Hides the other input box when $20, $50, $100 is selected
   $(".btn-amount-number").click(function(){
     $("#input-amount").slideUp();
-    $('.alert').hide();
+    $('.alert-text').hide();
     btn_card.prop('disabled',false);
     btn_paypal.prop('disabled',false);
   });
@@ -117,7 +118,7 @@ $(function(){
         });
         e.preventDefault();
       }else{
-        $('.alert').show();
+        $('.alert-text').show();
       }  
     }else{
       amount = $(".active").val();

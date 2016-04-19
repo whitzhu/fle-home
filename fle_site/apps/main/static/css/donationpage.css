@@ -94,8 +94,9 @@ p{
   border-left:none;
 }
 
-.alert{
+.alert-text{
   color:red;
+  margin-top: 2%;
   display: none;
 }
 /*Checkbox*/
