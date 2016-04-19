@@ -27,6 +27,9 @@ p{
 
 /*Donation Interface */
 
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+  background-color: #A5A5A5;
+}
 
 .donation{
 
@@ -86,6 +89,15 @@ p{
   font-size: 20px;
 }
 
+.input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child), .input-group .form-control:not(:first-child):not(:last-child){
+  border-right:none;
+  border-left:none;
+}
+
+.alert{
+  color:red;
+  display: none;
+}
 /*Checkbox*/
 
 .checkbox{

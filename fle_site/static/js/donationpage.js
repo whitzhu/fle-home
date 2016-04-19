@@ -1,10 +1,37 @@
 
 //Donation Interface  
 $(function() {
+  var btn_card = $('#btn-card');
+  var btn_paypal = $('#btn-paypal')
+  var input_field = $('#InputAmount');
+
+
 
   //"Other"input field slides down
   $("#other-amount").click(function() {
     $("#input-amount").slideDown();
+
+    var amount;
+    amount = input_field.val();
+
+    input_field.focus(); //cursor goes to text-field
+
+    //Setting payment buttons to disable 
+    if (amount.length == 0 ){
+      btn_card.prop('disabled',true);
+      btn_paypal.prop('disabled',true);
+    }
+
+    input_field.keyup(function(){
+      if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) ){
+        btn_card.prop('disabled',false);
+        btn_paypal.prop('disabled',false);
+        $('.alert').hide();
+      }else{
+        btn_card.prop('disabled',true);
+        btn_paypal.prop('disabled',true);
+      }
+    });
   });
 
   //Click of donation-amount buttons toggle button-pressed effect
@@ -21,14 +48,27 @@ $(function() {
   //Hides the other input box when $20, $50, $100 is selected
   $(".btn-amount-number").click(function(){
     $("#input-amount").slideUp();
+    $('.alert').hide();
+    btn_card.prop('disabled',false);
+    btn_paypal.prop('disabled',false);
   });
 
 });
+
+
+
+
+
+
+
+
 
 //Stripe  
 $(function(){ 
 
   var MonthlyGiving = false;
+  var btn_card = $('#btn-card');
+  var input_field = $('#InputAmount');
   
   //Stripe Integration
   var handler = StripeCheckout.configure({
@@ -54,8 +94,8 @@ $(function(){
 
 
 
-  //Checkout process when 'Pay by Card' is selected
-  $('#btn-card').on('click', function(e) {
+  //'Pay by Card' is clicked
+  btn_card.on('click', function(e) {
 
     //Check for monthly giving
     if (  $('#monthly-checkbox').prop('checked') ){
@@ -65,7 +105,7 @@ $(function(){
     
     if (  $(".active").val() == "custom"){
       amount = $("#InputAmount").val();
-      if (amount.match(/^\d+$/)){
+      if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
         console.log(amount);
         console.log(MonthlyGiving);
 
@@ -77,10 +117,11 @@ $(function(){
         });
         e.preventDefault();
       }else{
-        alert("Please Enter Valid Number");
+        $('.alert').show();
       }  
     }else{
       amount = $(".active").val();
+      
       console.log(amount);
       console.log(MonthlyGiving);
 
@@ -94,12 +135,27 @@ $(function(){
     } 
   });
 
+  //Keyboard "enter" button is used for text-field input
+  input_field.keypress(function(e){
+      if (e.which == 13){
+        btn_card.click();
+      }
+  });
+
   // Close Checkout on page navigation
   $(window).on('popstate', function() {
     handler.close();
   });
-
 });
+
+
+
+
+
+
+
+
+
 
 
 $(function(){ 
