@@ -353,17 +353,16 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background: #FFF url( ../img/Donation_Interface_BG_desktop.jpg) center bottom no-repeat;
     background-size: cover;
-    width:100%
-    margin-top:10px;
+    height:85vh;
   }
   /*Donation Panel*/
   .donation-panel{
-    padding:10% 5%;
+    padding:2% 5%;
     background-color:rgba(255,255,255,0.9);
     border-radius:4px;
     box-shadow:1px 1px 50px rgba(0,0,0,0.3);
     -moz-box-shadow:1px 1px 50px rgba(0,0,0,0.3);
-    -webkit-box-shadow:1px 1px 50pxrgba(0,0,0,0.3);
+    -webkit-box-shadow:1px 1px 50px rgba(0,0,0,0.3);
   }
 
   .donation-interface h1{
@@ -375,7 +374,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-100px;
   }
 }
 
@@ -385,7 +384,7 @@ input[type="checkbox"]:checked + label span #check{
     padding-bottom:50%;
   }  
   .donation{
-    background-position-y:-80px;
+    background-position-y:-180px;
   }
 }
 
@@ -397,7 +396,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-280px;
   }
 }
 
@@ -410,7 +409,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-300px;
   }
 }
 
@@ -422,7 +421,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-150px;
+    background-position-y:-300px;
   }
 }
 

@@ -186,7 +186,6 @@ $(function(){
       if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
         
         $(this).monthlyGiving();
-
         
       }else{
         $('.alert-text').show();
