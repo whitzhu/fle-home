@@ -68,7 +68,7 @@ $(function(){
 
     //Stripe Integration
     var handler = StripeCheckout.configure({
-        key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+        key: STRIPE_PUBLISHABLE_API_KEY,
         image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
         locale: 'auto',
         token: function(data) {
