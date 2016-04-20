@@ -80,7 +80,7 @@ p{
 .input-group-addon, .form-control{
   border: 2px solid #69C4EE;
   background-color:#FFFFFF;
-  color: #69C4EE;
+  color: #CCC;
   width: 10%;
   height: 64px;
 }

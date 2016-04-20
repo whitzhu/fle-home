@@ -23,7 +23,7 @@ $(function() {
     // }
 
     input_field.keyup(function(){
-      if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) ){
+      if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
         btn_card.prop('disabled',false);
         btn_paypal.prop('disabled',false);
         $('.alert-text').hide();
@@ -106,7 +106,7 @@ $(function(){
     
     if (  $(".active").val() == "custom"){
       amount = $("#InputAmount").val();
-      if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
+      if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
         console.log(amount);
         console.log(MonthlyGiving);
 
