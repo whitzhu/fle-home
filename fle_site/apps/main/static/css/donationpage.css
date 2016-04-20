@@ -66,6 +66,10 @@ p{
   height: 64px;
   margin: 10px;
 }
+.btn-give:focus{
+  background-color: #48ABD9;
+  outline:none;
+}
 .btn-text{
   color: #FFFFFF;
   font-size: 20px;
@@ -98,6 +102,11 @@ p{
   color:red;
   margin-top: 2%;
   display: none;
+}
+
+.loader{
+  padding-left: 10px;
+  display:none;
 }
 /*Checkbox*/
 

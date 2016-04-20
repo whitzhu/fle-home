@@ -151,10 +151,52 @@ $(function(){
 
 
 
+//Paypal Integration
+$(function(){ 
 
+  $('#btn-paypal').click(function(){
 
+    $('button[data-loading-text]')
+    .on('click', function () {
+        var btn = $(this)
+        btn.button('loading')
+        setTimeout(function () {
+            btn.button('reset')
+        }, 3000)
+    });
 
+   $.fn.monthlyGiving = function(){
+    if ( $('#monthly-checkbox').prop('checked') ){
+      $('input:hidden[name=a3]').val(amount);
+      $('#paypal_monthly').submit();
+      $('.loader').show();
+      $(this).css('background-color','#48ABD9')
+    }else{
+      $('input:hidden[name=amount]').val(amount);
+      $('#paypal_once').submit();
+      $('.loader').show();
+      $(this).css('background-color','#48ABD9'); 
+    }
+    console.log('monthlygiving func')
+   };
 
+//Check for monthly giving
+    if (  $(".active").val() == "custom"){
+     var amount = $("#InputAmount").val();
+      if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
+        
+        $(this).monthlyGiving();
+
+        
+      }else{
+        $('.alert-text').show();
+      }  
+    }else{
+      amount = $(".active").val();
+      $(this).monthlyGiving();
+    } 
+   });
+});
 
 
 
