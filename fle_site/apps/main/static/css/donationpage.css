@@ -374,7 +374,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-100px;
+    background-position-y:-40px;
   }
 }
 
@@ -384,7 +384,7 @@ input[type="checkbox"]:checked + label span #check{
     padding-bottom:50%;
   }  
   .donation{
-    background-position-y:-180px;
+    background-position-y:-140px;
   }
 }
 
@@ -396,7 +396,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-280px;
+    background-position-y:-200px;
   }
 }
 
@@ -409,7 +409,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-300px;
+    background-position-y:-270px;
   }
 }
 
