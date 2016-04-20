@@ -45,6 +45,9 @@ def process_donation(request):
 
     # Get the credit card details submitted by the form
     token = data["id"]
+    amount = int(data['amount'])
+    monthly = data['recurring']
+    email = data['email']
 
     metadata = {}
     metadata.update(data)
@@ -55,18 +58,26 @@ def process_donation(request):
 
     # Create the charge on Stripe's servers - this will charge the user's card
     try:
-        charge = stripe.Charge.create(
-            amount=data["amount"], # amount in cents, again
-            currency=data.get("currency") or "usd",
-            source=token,
-            metadata=metadata,
-        )
+        if monthly:
+            charge = stripe.Customer.create(
+                source=token,
+                quantity=amount,
+                plan='le_donation_monthly_1',
+                email=email,
+                metadata=metadata,
+            )
+        else:
+            charge = stripe.Charge.create(
+                amount=amount, # amount in cents, again
+                currency=data.get("currency") or "usd",
+                source=token,
+                metadata=metadata,
+            )
 
         return JsonResponse({"status": "success", "message": "Thank you for your generous donation! We appreciate your support for our mission of promoting equal opportunities for learners around the world!"})
 
     except Exception, e:
-
-        return JsonResponse({"status": "error", "message": "There was an error processing your donation payment ('%s'). Please try again." % e})
+        raise
 
 
 def handler_500(request):
