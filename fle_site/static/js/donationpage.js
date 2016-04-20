@@ -71,6 +71,7 @@ $(function(){
         key: STRIPE_PUBLISHABLE_API_KEY,
         image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
         locale: 'auto',
+        zipCode: true,
         token: function(data) {
 
             // add in some data we need on the backend for recurring billing
