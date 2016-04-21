@@ -137,12 +137,17 @@ $(function(){
                 contentType: "application/json",
                 beforeSend: function(xhr, settings) {
                     xhr.setRequestHeader("X-CSRFToken", data.csrfmiddlewaretoken);
+                },
+                success: function(){
+                    window.location.replace("/donationpage_thankyou");
                 }
             }).then(function(response) {
                 show_message(response.status, response.message, "transaction-message");
+
             });
         }
     });
+
 
 
     //'Pay by Card' is clicked
