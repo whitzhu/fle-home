@@ -2,52 +2,52 @@
 //Donation Interface
 
 monthlyGiving = false;  // global var, needed by the AJAX post to the backend for charging
-amount = 0
+amount = 0;
 
 $(function() {
     var btn_card = $('#btn-card');
     var btn_paypal = $('#btn-paypal')
     var input_field = $('#InputAmount');
 
-  //"Other"input field slides down
-  $("#other-amount").click(function() {
-    $("#input-amount").slideDown(); //input fild slides down
-      
-      input_field.focus(); //cursor goes to text-field
-      amount = input_field.val();
+    //"Other"input field slides down
+    $("#other-amount").click(function() {
+        $("#input-amount").slideDown(); //input fild slides down
+        
+        input_field.focus(); //cursor goes to text-field
+        amount = input_field.val();
 
-      //Setting payment buttons to disable when input is invalid
-      input_field.keyup(function(){
-        if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
-            btn_card.prop('disabled',false);
-            btn_paypal.prop('disabled',false);
-            $('.alert-text').hide();
-        }else{
-            btn_card.prop('disabled',true);
-            btn_paypal.prop('disabled',true);
-            $('.alert-text').show();
-        }
+        //Setting payment buttons to disable when input is invalid
+        input_field.keyup(function(){
+            if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
+                btn_card.prop('disabled',false);
+                btn_paypal.prop('disabled',false);
+                $('.alert-text').hide();
+            }else{
+                btn_card.prop('disabled',true);
+                btn_paypal.prop('disabled',true);
+                $('.alert-text').show();
+            }
+        });
     });
-  });
 
-  //Click of donation-amount buttons toggle button-pressed effect
-  $(".btn-amount").click(function(){
-   $(this).toggleClass('active').siblings().removeClass("active");
-  });
+    //Click of donation-amount buttons toggle button-pressed effect
+    $(".btn-amount").click(function(){
+        $(this).toggleClass('active').siblings().removeClass("active");
+    });
 
-  //Click stores value of preset $20, $50, $100 is stored 
-  $(".btn-amount-number").click(function(){
-   var amount = $(this).attr("value");
-   console.log(amount);
-  });
+    //Click stores value of preset $20, $50, $100 is stored 
+    $(".btn-amount-number").click(function(){
+        var amount = $(this).attr("value");
+        console.log(amount);
+    });
 
-  //Hides the other input box when $20, $50, $100 is selected
-  $(".btn-amount-number").click(function(){
-    $("#input-amount").slideUp();
-    $('.alert-text').hide();
-    btn_card.prop('disabled',false);
-    btn_paypal.prop('disabled',false);
-  });
+    //Hides the other input box when $20, $50, $100 is selected
+    $(".btn-amount-number").click(function(){
+        $("#input-amount").slideUp();
+        $('.alert-text').hide();
+        btn_card.prop('disabled',false);
+        btn_paypal.prop('disabled',false);
+    });
 
 });
 
@@ -56,130 +56,131 @@ $(function() {
 //Paypal Integration
 $(function(){ 
 
-  $('#btn-paypal').click(function(){
+    $('#btn-paypal').click(function(){
 
-    $('button[data-loading-text]')
-    .on('click', function () {
-        var btn = $(this)
-        btn.button('loading')
-        setTimeout(function () {
-            btn.button('reset')
-        }, 3000)
+        $('button[data-loading-text]')
+            .on('click', function () {
+                var btn = $(this)
+                btn.button('loading')
+                setTimeout(function () {
+                    btn.button('reset')
+                }, 3000)
+            });
+
+        $.fn.monthlyGiving = function(){
+            if ( $('#monthly-checkbox').prop('checked') ){
+                $('input:hidden[name=a3]').val(amount);
+                $('#paypal_monthly').submit();
+                $('.loader').show();
+                $(this).css('background-color','#48ABD9')
+            }else{
+                $('input:hidden[name=amount]').val(amount);
+                $('#paypal_once').submit();
+                $('.loader').show();
+                $(this).css('background-color','#48ABD9'); 
+            }
+            console.log('monthlygiving func')
+        };
+
+        //Check for monthly giving
+        if (  $(".active").val() == "custom"){
+            var amount = $("#InputAmount").val();
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
+                
+                $(this).monthlyGiving();
+                
+            }else{
+                $('.alert-text').show();
+            }  
+        }else{
+            amount = $(".active").val();
+            $(this).monthlyGiving();
+        } 
     });
-
-   $.fn.monthlyGiving = function(){
-    if ( $('#monthly-checkbox').prop('checked') ){
-      $('input:hidden[name=a3]').val(amount);
-      $('#paypal_monthly').submit();
-      $('.loader').show();
-      $(this).css('background-color','#48ABD9')
-    }else{
-      $('input:hidden[name=amount]').val(amount);
-      $('#paypal_once').submit();
-      $('.loader').show();
-      $(this).css('background-color','#48ABD9'); 
-    }
-    console.log('monthlygiving func')
-   };
-
-//Check for monthly giving
-    if (  $(".active").val() == "custom"){
-     var amount = $("#InputAmount").val();
-      if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
-        
-        $(this).monthlyGiving();
-        
-      }else{
-        $('.alert-text').show();
-      }  
-    }else{
-      amount = $(".active").val();
-      $(this).monthlyGiving();
-    } 
-   });
 });
 
 //Stripe
 $(function(){
 
-  var btn_card = $('#btn-card');
-  var input_field = $('#InputAmount');
+    var btn_card = $('#btn-card');
+    var input_field = $('#InputAmount');
 
-  //Stripe Integration
-  var handler = StripeCheckout.configure({
-       key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-       image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
-       locale: 'auto',
-       token: function(data) {
+    //Stripe Integration
+    var handler = StripeCheckout.configure({
+        key: STRIPE_PUBLISHABLE_API_KEY ,
+        image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
+        locale: 'auto',
+        zipCode: true,
+        token: function(data) {
 
-           // add in some data we need on the backend for recurring billing
-           data.amount = amount;
-           data.recurring = monthlyGiving;
+            // add in some data we need on the backend for recurring billing
+            data.amount = amount;
+            data.recurring = monthlyGiving;
 
-           $.ajax({
-               method: "POST",
-               url: "/donate/process/",
-               data: JSON.stringify(data),
-               dataType: "json",
-               contentType: "application/json",
-               beforeSend: function(xhr, settings) {
-                   xhr.setRequestHeader("X-CSRFToken", data.csrfmiddlewaretoken);
-               }
-           }).then(function(response) {
-               show_message(response.status, response.message, "transaction-message");
-           });
-       }
-  });
-
-
-  //'Pay by Card' is clicked
-  btn_card.on('click', function(e) {
-
-      //Check for monthly giving
-      if (  $('#monthly-checkbox').prop('checked') ){
-          monthlyGiving = true;
-          console.log('Monthy Giving');  //Check if monthly payment is selected
-      }
+            $.ajax({
+                method: "POST",
+                url: "/donate/process/",
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json",
+                beforeSend: function(xhr, settings) {
+                    xhr.setRequestHeader("X-CSRFToken", data.csrfmiddlewaretoken);
+                }
+            }).then(function(response) {
+                show_message(response.status, response.message, "transaction-message");
+            });
+        }
+    });
 
 
-      if (  $(".active").val() == "custom"){  //Check if 'other' input field is active
-          amount = $("#InputAmount").val();
-          if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){ // Check if 'input' is valid
+    //'Pay by Card' is clicked
+    btn_card.on('click', function(e) {
 
-              handler.open({ 
-                  name: 'Learning Equality',
-                  description: 'Donation',
-                  amount: amount*100,
-                  panelLabel: "Give",
-              });
-              e.preventDefault();
-          }else{
-              $('.alert-text').show(); 
-          }
-      }else{ //If 'other' is not active
-          amount = $(".active").val(); 
+        //Check for monthly giving
+        if (  $('#monthly-checkbox').prop('checked') ){
+            monthlyGiving = true;
+            console.log('Monthy Giving');  //Check if monthly payment is selected
+        }
 
-          handler.open({
-              name: 'Learning Equality',
-              description: 'Donation',
-              amount: amount*100,
-              panelLabel: "Give",
-          });
-          e.preventDefault();
-      }
-  });
 
-  //Keyboard "enter" button is used for text-field input
-  input_field.keypress(function(e){
-      if (e.which == 13){
-          btn_card.click();
-      }
-  });
+        if (  $(".active").val() == "custom"){  //Check if 'other' input field is active
+            amount = $("#InputAmount").val();
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){ // Check if 'input' is valid
 
-  // Close Checkout on page navigation
-  $(window).on('popstate', function() {
-      handler.close();
-  });
+                handler.open({ 
+                    name: 'Learning Equality',
+                    description: 'Donation',
+                    amount: amount*100,
+                    panelLabel: "Give",
+                });
+                e.preventDefault();
+            }else{
+                $('.alert-text').show(); 
+            }
+        }else{ //If 'other' is not active
+            amount = $(".active").val(); 
+
+            handler.open({
+                name: 'Learning Equality',
+                description: 'Donation',
+                amount: amount*100,
+                panelLabel: "Give",
+            });
+            e.preventDefault();
+        }
+    });
+
+    //Keyboard "enter" button is used for text-field input
+    input_field.keypress(function(e){
+        if (e.which == 13){
+            btn_card.click();
+        }
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+        handler.close();
+    });
 });
 
 
