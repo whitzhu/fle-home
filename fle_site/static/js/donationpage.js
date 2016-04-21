@@ -10,23 +10,37 @@ $(function() {
     var input_field = $('#InputAmount');
 
     //"Other"input field slides down
+
+
+
     $("#other-amount").click(function() {
         $("#input-amount").slideDown(); //input fild slides down
         
         input_field.focus(); //cursor goes to text-field
-        amount = input_field.val();
 
         //Setting payment buttons to disable when input is invalid
         input_field.keyup(function(){
-            if ($(this).val().length != 0 && $(this).val().match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/)){
-                btn_card.prop('disabled',false);
-                btn_paypal.prop('disabled',false);
-                $('.alert-text').hide();
+            amount = input_field.val();
+
+            if (amount.length !=0) {
+                if (amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount < 60000){
+                    btn_card.prop('disabled',false);
+                    btn_paypal.prop('disabled',false);
+                    $('.alert-text').hide();
+                    console.log("hide text box error");
+                }else{
+                    btn_card.prop('disabled',true);
+                    btn_paypal.prop('disabled',true);
+                    $('.alert-text').show();
+                    console.log("Show text box error. This is the amount " + amount + "This is the this value" + $(this).val());
+                }
             }else{
                 btn_card.prop('disabled',true);
                 btn_paypal.prop('disabled',true);
                 $('.alert-text').show();
+                console.log("Show text box error. This is the amount " + amount + "This is the this value" + $(this).val());
             }
+
         });
     });
 
@@ -145,7 +159,7 @@ $(function(){
 
         if (  $(".active").val() == "custom"){  //Check if 'other' input field is active
             amount = $("#InputAmount").val();
-            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){ // Check if 'input' is valid
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0 && amount < 60000){ // Check if 'input' is valid
 
                 handler.open({ 
                     name: 'Learning Equality',
@@ -170,12 +184,12 @@ $(function(){
         }
     });
 
-    //Keyboard "enter" button is used for text-field input
-    input_field.keypress(function(e){
-        if (e.which == 13){
-            btn_card.click();
-        }
-    });
+    // //Keyboard "enter" button is used for text-field input
+    // input_field.keypress(function(e){
+    //     if (e.which == 13){
+    //         btn_card.click();
+    //     }
+    // });
 
     // Close Checkout on page navigation
     $(window).on('popstate', function() {
