@@ -38,7 +38,6 @@ $(function() {
     //Click stores value of preset $20, $50, $100 is stored 
     $(".btn-amount-number").click(function(){
         var amount = $(this).attr("value");
-        console.log(amount);
     });
 
     //Hides the other input box when $20, $50, $100 is selected
@@ -79,7 +78,6 @@ $(function(){
                 $('.loader').show();
                 $(this).css('background-color','#48ABD9'); 
             }
-            console.log('monthlygiving func')
         };
 
         //Check for monthly giving
@@ -135,11 +133,13 @@ $(function(){
 
     //'Pay by Card' is clicked
     btn_card.on('click', function(e) {
+        
+        var give = "Give";
 
         //Check for monthly giving
         if (  $('#monthly-checkbox').prop('checked') ){
             monthlyGiving = true;
-            console.log('Monthy Giving');  //Check if monthly payment is selected
+            give = "Give monthly";
         }
 
 
@@ -151,7 +151,7 @@ $(function(){
                     name: 'Learning Equality',
                     description: 'Donation',
                     amount: amount*100,
-                    panelLabel: "Give",
+                    panelLabel: give,
                 });
                 e.preventDefault();
             }else{
@@ -164,7 +164,7 @@ $(function(){
                 name: 'Learning Equality',
                 description: 'Donation',
                 amount: amount*100,
-                panelLabel: "Give",
+                panelLabel: give,
             });
             e.preventDefault();
         }
