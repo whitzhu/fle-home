@@ -13,6 +13,9 @@
 
 {% block headjs %}
 {{ block.super }}
+<script type="text/javascript">
+ STRIPE_PUBLISHABLE_API_KEY = "{{ STRIPE_PUBLISHABLE_API_KEY }}"
+</script>
 <script src="{% static 'js/donationpage.js' %}" type="text/javascript" ></script>
 <script src="{% static 'js/progressbar.min.js' %}" type="text/javascript" ></script>
 <script src="https://checkout.stripe.com/checkout.js" type="text/javascript" ></script>
@@ -42,10 +45,12 @@
 				    		<div id="input-amount">
 				      			<div class="input-group">
 						        	<div class="input-group-addon">$</div>
-						        	<input type="text" class="form-control" id="InputAmount" placeholder="Enter amount here...">
+						        	<input type="number" class="form-control" id="InputAmount" placeholder="Enter amount here..." min="1"  max="50000"step="1">
 						        	<div class="input-group-addon">USD</div>
 				      			</div>  
 				    		</div>
+
+				    		<div class="alert-text">Please specify amount between $1 & $60,000</div>
 				    	</div>  
 					    
 					    <!--Checkbox -->
@@ -62,7 +67,37 @@
 
 						<!--Payment Options -->
 						<button type="button" class="btn btn-give" id="btn-card"><span class="btn-text">Give By Card</span></button>
-						<button type="button" class="btn btn-give" id="btn-paypal"><span class="btn-text">Paypal</span></button>
+						<button type="button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order" class="btn btn-give" id="btn-paypal"><span class="btn-text">Paypal</span><img class="loader" src="{%static 'img/loader.gif' %}"></button>
+
+
+						<!--Paypal One Time dGiving -->
+						<form id="paypal_once" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_donations">
+							<input type="hidden" name="business" value="payment@learningequality.org">
+							<input type="hidden" name="lc" value="US">
+							<input type="hidden" name="item_name" value="Learning Equality One-Time Giving">
+							<input type="hidden" name="amount" value="50.00">
+							<input type="hidden" name="currency_code" value="USD">
+							<input type="hidden" name="no_note" value="0">
+							<input type="hidden" name="bn" value="PP-DonationsBF:logo_paypal_106x27.png:NonHostedGuest">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+
+						<!--Paypal Monthly Giving -->
+						<form id="paypal_monthly" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_xclick-subscriptions">
+							<input type="hidden" name="business" value="payment@learningequality.org">
+							<input type="hidden" name="lc" value="US">
+							<input type="hidden" name="item_name" value="Learning Equality Monthly Giving">
+							<input type="hidden" name="no_note" value="1">
+							<input type="hidden" name="src" value="1">
+							<input type="hidden" name="a3" value="50.00">
+							<input type="hidden" name="p3" value="1">
+							<input type="hidden" name="t3" value="M">
+							<input type="hidden" name="currency_code" value="USD">
+							<input type="hidden" name="bn" value="PP-SubscriptionsBF:le-logo.svg:NonHostedGuest">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
 					</div>
 			  	</div>	
 			 </div>

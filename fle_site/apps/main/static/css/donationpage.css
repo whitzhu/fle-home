@@ -26,6 +26,10 @@ p{
 
 
 /*Donation Interface */
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+  background-color: #A5A5A5;
+}
+
 .donation{
   background: #FFF url( ../img/Donation_Interface_bg_mobile.jpg ) center bottom no-repeat;
   background-size: cover;
@@ -35,10 +39,13 @@ p{
   padding: 50px 20px 250px 20px;
   display: block;
 }
-
 .btn-amount-group{
   margin-bottom: 10px;
   width: 100%;
+}
+.btn-group .btn{
+  padding: 0;
+  text-align: center;
 }
 .btn-amount, .btn-amount:hover{
   border: 2px solid #69C4EE;
@@ -47,46 +54,58 @@ p{
   width: 25%;
   height: 50px;
 }
-
 .btn-amount:focus , .btn-amount.active, .btn-active{
   background-color:#69C4EE;
   color: #FFFFFF;
 }
-
 .btn-give{
   background-color:#69C4EE;
   width: 90%;
   height: 64px;
   margin: 10px;
 }
-
+.btn-give:focus{
+  background-color: #48ABD9;
+  outline:none;
+}
 .btn-text{
   color: #FFFFFF;
   font-size: 20px;
 }
-
 #input-amount{
   display:none;
 }
-
 .input-group{
   width: 100%;
   height: 64px;
-
 }
 .input-group-addon, .form-control{
   border: 2px solid #69C4EE;
   background-color:#FFFFFF;
-  color: #69C4EE;
+  color: #CCC;
   width: 10%;
   height: 64px;
 }
-
 .form-control{
   color: #69C4EE;
   font-size: 20px;
 }
 
+.input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child), .input-group .form-control:not(:first-child):not(:last-child){
+  border-right:none;
+  border-left:none;
+}
+
+.alert-text{
+  color:#fa575d;
+  margin-top: 2%;
+  display: none;
+}
+
+.loader{
+  padding-left: 10px;
+  display:none;
+}
 
 
 /*Checkbox*/
@@ -364,17 +383,16 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background: #FFF url( ../img/Donation_Interface_BG_desktop.jpg) center bottom no-repeat;
     background-size: cover;
-    width:100%
-    margin-top:10px;
+    height:85vh;
   }
   /*Donation Panel*/
   .donation-panel{
-    padding:10% 5%;
+    padding:2% 5%;
     background-color:rgba(255,255,255,0.9);
     border-radius:4px;
     box-shadow:1px 1px 50px rgba(0,0,0,0.3);
     -moz-box-shadow:1px 1px 50px rgba(0,0,0,0.3);
-    -webkit-box-shadow:1px 1px 50pxrgba(0,0,0,0.3);
+    -webkit-box-shadow:1px 1px 50px rgba(0,0,0,0.3);
   }
 
   .donation-interface h1{
@@ -386,7 +404,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-40px;
   }
 }
 
@@ -396,7 +414,7 @@ input[type="checkbox"]:checked + label span #check{
     padding-bottom:50%;
   }  
   .donation{
-    background-position-y:-80px;
+    background-position-y:-140px;
   }
 }
 
@@ -408,7 +426,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-200px;
   }
 }
 
@@ -421,7 +439,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-50px;
+    background-position-y:-270px;
   }
 }
 
@@ -433,7 +451,7 @@ input[type="checkbox"]:checked + label span #check{
   .donation{
     background-size: initial center;
     width:100%;
-    background-position-y:-150px;
+    background-position-y:-300px;
   }
 }
 
