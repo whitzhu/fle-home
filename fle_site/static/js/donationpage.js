@@ -120,7 +120,7 @@ $(function(){
     //Stripe Integration
     var handler = StripeCheckout.configure({
         key: STRIPE_PUBLISHABLE_API_KEY ,
-        image: 'https://s3.amazonaws.com/stripe-uploads/acct_102ejd27dVLKpIVBmerchant-icon-141490-FLE-globe-only-logo.png' ,
+        image: 'https://learningequality.org/static/img/le-logo.svg' ,
         locale: 'auto',
         zipCode: true,
         token: function(data) {
