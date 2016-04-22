@@ -236,6 +236,32 @@ input[type="checkbox"]:checked + label span #check{
 
 
 /*Thankyou*/
+
+/*thank you content*/
+
+
+.thankyou_content{
+  background-color:#69C4EE;
+  padding: 10%;
+  text-align: center;
+}
+.thankyou_badge{
+  width:50%;
+}
+
+.thankyou_content h1{
+  font-size:4em;
+  color:#FFFFFF;
+}
+.thankyou_content h2{
+  font-size:1.2em;
+}
+.thankyou_content p{
+  color:#FFFFFF;
+  text-align: justify;
+}
+
+
 /*Left Image Div*/
 .give_image{
   padding:0;
@@ -243,29 +269,68 @@ input[type="checkbox"]:checked + label span #check{
 .give_image img{
   width: 100%;
 }
-/*Right Content Div*/
-.give_thankyou_content{
-  text-align: justify;
-  padding: 10% 12% 10% 12%;
-  color: #696969;
+
+
+/*Right Image Div */
+.give_thankyou_stories{
+  padding:0px;
 }
-.give_thankyou_content h1{
-  text-align: center;
-  margin-bottom: 10%;
+
+.give_thankyou_stories h1{
+  font-size:2em;
 }
-.give_thankyou_content p{
-  color:#696969;
-  line-height: 32px;
+
+.give_thankyou_stories p{
+  color:#FFFFFF;
 }
-.give_thankyou_content .give_receipt{
-  color:#A5A5A5;
-  font-size:12px;
-  padding:10% 0%;
-  line-height: 28px;
+
+.give_thankyou_stories h1:hover , p:hover{
+  color:#FFFFFF;
+  font-weight: 700;  
 }
-.give_thankyou_content .give_next{
-  padding:5%;
+
+.story_1{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url( ../img/Tanzania.png );
+  background-size: cover;
+  padding: 0;
+  height: 300px;
+  overflow: hidden;
 }
+.story_1 .story_link{
+  position: absolute;
+  top:40%;
+  padding:0% 20%;
+}
+
+.story_1 a:hover{
+  text-decoration: none;
+}
+
+.story_2{
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url( ../img/Butaw_Liberia.jpg );
+  background-size: cover;
+  padding: 0;
+  height: 300px;
+  overflow: hidden;
+}
+.story_2 .story_link{
+  position: absolute;
+  top:55%;
+  padding:0% 20%;
+}
+.story_2 a:hover{
+  text-decoration: none;
+}
+
+
+
+
 
 .give_share{
   padding:10%;
@@ -276,6 +341,11 @@ input[type="checkbox"]:checked + label span #check{
   display: block;
   margin: auto;
 }
+
+
+
+
+
 /*Media Query*/
 
 /*Mobile*/
