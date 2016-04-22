@@ -23,7 +23,7 @@ $(function() {
             amount = input_field.val();
 
             if (amount.length !=0) {
-                if (amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount < 60000){
+                if (amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount < 50000){
                     btn_card.prop('disabled',false);
                     btn_paypal.prop('disabled',false);
                     $('.alert-text').hide();
@@ -164,7 +164,7 @@ $(function(){
 
         if (  $(".active").val() == "custom"){  //Check if 'other' input field is active
             amount = $("#InputAmount").val();
-            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0 && amount < 60000){ // Check if 'input' is valid
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0 && amount < 50000){ // Check if 'input' is valid
 
                 handler.open({ 
                     name: 'Learning Equality',
