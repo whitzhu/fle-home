@@ -23,7 +23,28 @@ p{
   margin-bottom: 20px;
 }
 
+/*Donation*/
 
+.donation{
+  position: relative;
+}
+.caption{
+  font-size:0.9em;
+  position:absolute;
+  right:0;
+  bottom:0;
+  padding: 0% 2%;
+}
+
+.caption a{
+  color:rgba(255,255,255,0.5);
+  display: block;
+  margin: 5% 0% 5% 0%;
+}
+
+.caption a:hover , .caption a:active{
+  text-decoration: none;
+}
 
 /*Donation Interface */
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn{
