@@ -23,11 +23,16 @@ p{
   margin-bottom: 20px;
 }
 
+hr{
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
 body{
   margin-bottom:15%;
 }
 
-/*Donation*/
+/* =============== Donation Section | Donation Page=============== */
 
 .donation{
   position: relative;
@@ -54,7 +59,7 @@ body{
   text-decoration: none;
 }
 
-/*Donation Interface */
+/* ===============Donation Interface | Donation Page=============== */
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn{
   background-color: #A5A5A5;
 }
@@ -124,20 +129,33 @@ body{
   border-right:none;
   border-left:none;
 }
-
 .alert-text{
   color:#fa575d;
   margin-top: 2%;
   display: none;
 }
-
 .loader{
   padding-left: 10px;
   display:none;
 }
+#paypal_monthly , #paypal_once{
+  height:0px;
+}
+.give_check{
+  margin: 5% 0;
+}
+.give_check_text{
+  color:#69C4EE;
+  font-size: 1.05em;
+  text-decoration: underline;
+}
+.give_check a:hover{
+  font-weight:700;
+  color:#69C4EE;
+}
 
 
-/*Checkbox*/
+/* ===============Checkbox| Donation Page=============== */
 .checkbox{
   padding: 0% 5%;
 }
@@ -181,7 +199,7 @@ input[type="checkbox"]:checked + label span #check{
 
 
 
-/*Guarantee Section*/
+/* ===============Garantee Section | Donation Page=============== */
 .guarantee{
   padding: 10% 20px; 
   text-align: center;
@@ -219,34 +237,7 @@ input[type="checkbox"]:checked + label span #check{
 }
 
 
-
-/*Guarantee Modal*/
-.guarantee_modal_container{
-  background-color:#FFFFFF;
-  border-radius: 4px;
-  height: 60%;
-  width: 100%;
-  margin-top: 30%;
-}
- button.close{
-  padding: 10px 20px !important;
-}
-.guarantee_modal_content{
-  padding:5% 10%;
-  vertical-align: middle;
-  text-align: center;
-}
-#guarantee_modal h1{
-  margin:5% 0;
-}
-#guarantee_modal p{
-  color:#69C4EE;
-  font-size:16px;
-}
-
-
-
-/*Trust*/
+/* ===============Trust Section | Donation Page=============== */
 .trust{
   padding: 60px; 
   vertical-align: middle;
@@ -264,13 +255,56 @@ input[type="checkbox"]:checked + label span #check{
   position: relative;
 }
 
+/* ===============Modals | Donation Page =============== */
+.guarantee_modal_container , .check_modal_container{
+  background-color:#FFFFFF;
+  border-radius: 4px;
+  height: 60%;
+  width: 100%;
+  margin-top: 30%;
+}
+ button.close{
+  padding: 10px 20px !important;
+}
+.guarantee_modal_content , .check_modal_content{
+  padding:5% 10%;
+  vertical-align: middle;
+  text-align: center;
+}
+.give_check_img {
+  width:40%;
+}
+/*Type*/
+#guarantee_modal h1{
+  margin:5% 0;
+}
+#guarantee_modal p{
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color:#69C4EE;
+}
+#check_modal{
+  text-align: justify;
+}
+#check_modal p{
+  color:#696969;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+#check_modal .address{
+  color:#69C4EE;
+  font-size:1.3em;
+  text-align: center;
+  font-weight:700;
+  margin-bottom: 5%;
+}
+#check_modal .email{
+  color:#69C4EE;
+}
 
-
-/*Thankyou*/
+/* ===============DonationPage_Thankyou.html | Thank You Page=============== */
 
 /*thank you content*/
-
-
 .thankyou_content{
   background-color:#69C4EE;
   padding: 10%;
@@ -365,7 +399,7 @@ input[type="checkbox"]:checked + label span #check{
 
 
 
-/*Media Query*/
+/* ===============Meida Queries=============== */
 
 /*Mobile*/
 @media screen and (min-width: 480px) {

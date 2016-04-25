@@ -74,23 +74,24 @@
 						<button type="button" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order" class="btn btn-give" id="btn-paypal"><span class="btn-text">Paypal</span><img class="loader" src="{%static 'img/loader.gif' %}"></button>
 
 
-						<!--Paypal One Time dGiving -->
+						<!--Paypal One Time Giving -->
 						<form id="paypal_once" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_donations">
-							<input type="hidden" name="business" value="payment@learningequality.org">
+							<input type="hidden" name="business" value="payments@learningequality.org">
 							<input type="hidden" name="lc" value="US">
 							<input type="hidden" name="item_name" value="Learning Equality One-Time Giving">
 							<input type="hidden" name="amount" value="50.00">
 							<input type="hidden" name="currency_code" value="USD">
 							<input type="hidden" name="no_note" value="0">
-							<input type="hidden" name="bn" value="PP-DonationsBF:logo_paypal_106x27.png:NonHostedGuest">
+							<input type="hidden" name="bn" value="PP-DonationsBF:paypal_logo.gif:NonHostedGuest">
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						</form>
+
 
 						<!--Paypal Monthly Giving -->
 						<form id="paypal_monthly" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions">
-							<input type="hidden" name="business" value="payment@learningequality.org">
+							<input type="hidden" name="business" value="payments@learningequality.org">
 							<input type="hidden" name="lc" value="US">
 							<input type="hidden" name="item_name" value="Learning Equality Monthly Giving">
 							<input type="hidden" name="no_note" value="1">
@@ -102,6 +103,11 @@
 							<input type="hidden" name="bn" value="PP-SubscriptionsBF:le-logo.svg:NonHostedGuest">
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						</form>
+					
+						<!--Give by Check -->
+						<div class="give_check">
+							<span class="give_check_text" data-toggle="modal" data-target="#check_modal">Give by Check</span>
+						</div>
 					</div>
 			  	</div>	
 			 </div>
@@ -121,19 +127,6 @@
 </div>
 
 
-<!--Guarantee Molal -->
-<div id="guarantee_modal" class="modal fade" role="dialog">
-	<div class="modal-dialog">
-		<div class="guarantee_modal_container">
-			<button type="button" class="close" data-dismiss="modal">&times;</button>
-			<div class="guarantee_modal_content">
-				<h1>100%. Nothing Less</h1>
-				<p>100% public donation goes directly towards education programs. Our operational expenses are supported by foundations, grants, and private donors. Every penny of your donation is helping a learner in need!</p>
-			</div>
-		</div>
-	</div>
-</div>
-
 <!--Trust Badges  -->
 <div class="trust">
 	<div class="container">
@@ -143,6 +136,39 @@
 			</div>
 			<div class="col-xs-12 col-s-12 col-md-6 .col-lg-6">
 				<a href="http://www.guidestar.org/profile/46-2676188"><img class="img-responsive" id="guidestar_icon" src="{%static 'img/guidstar_sliver.png' %}" alt="Learning Equality Guidestar" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!---=================Modals | Donation Page====================-->
+
+<!--Give by Check Modal -->
+<div id="check_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="check_modal_container">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<div class="check_modal_content">
+				<img class="give_check_img" src="{%static 'img/give_check.svg' %} " alt="Give by check">
+				<h1>Give by Check</h1>
+				<p>You can make checks payable to <strong>"Foundation for Learning Equality"</strong> and send them, along with your name and email address, to:</p>
+				<span class="address">Foundation for Learning Equality <br>9700 Gilman Dr. PMB 323<br> La Jolla, CA 92093</span>
+				<br>
+				<hr>
+				<p>If you have any questions, please don't hesitate to email our team: <a href="mailto:gifts@learningequality.org"><span class="email">gifts@learningequality.org </span></a><p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Guarantee Modal -->
+<div id="guarantee_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<div class="guarantee_modal_container">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<div class="guarantee_modal_content">
+				<h1>100% impact. 0% overhead.</h1>
+				<p>All of your donation goes directly towards our education programs. Our basic operating expenses are independently covered by foundation grants, which means every penny of your donation goes towards increasing opportunities for learners in need!</p>
 			</div>
 		</div>
 	</div>
