@@ -9,6 +9,8 @@ node_modules/
 *.sublime-workspace
 *.sqlite*
 local_settings.py
+devsettings.py
+devsettings.pyc
 local_settings_secrets.py
 ips.txt
 GeoLiteCity.dat
