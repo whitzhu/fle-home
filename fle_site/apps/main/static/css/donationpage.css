@@ -23,6 +23,10 @@ p{
   margin-bottom: 20px;
 }
 
+body{
+  margin-bottom:15%;
+}
+
 /*Donation*/
 
 .donation{
@@ -38,11 +42,15 @@ p{
 
 .caption a{
   color:rgba(255,255,255,0.5);
-  display: block;
+  display: inline-block;
   margin: 5% 0% 5% 0%;
+  padding:2em;
+  margin:-1.5em;
+  z-index: 1;
+  position: relative;
 }
 
-.caption a:hover , .caption a:active{
+.caption a:hover , .caption a:active , .caption a:focus{
   text-decoration: none;
 }
 
@@ -300,6 +308,7 @@ input[type="checkbox"]:checked + label span #check{
 }
 .give_thankyou_stories h1{
   font-size:2em;
+  font-weight: 700;
 }
 .give_thankyou_stories p{
   color:#FFFFFF;
@@ -332,8 +341,8 @@ input[type="checkbox"]:checked + label span #check{
 }
 .story_2{
   background: linear-gradient(
-      rgba(0, 0, 0, 0.45), 
-      rgba(0, 0, 0, 0.45)
+      rgba(0, 0, 0, 0.55), 
+      rgba(0, 0, 0, 0.55)
     ), url( ../img/Butaw_Liberia.jpg );
 }
 .story_2 .story_link{
@@ -393,6 +402,9 @@ input[type="checkbox"]:checked + label span #check{
 
 
 @media screen and (min-width: 565px) {
+  body{
+    margin-bottom:10%;
+  }
   .donation-interface {
     padding-top:15%;
   }
@@ -412,6 +424,10 @@ input[type="checkbox"]:checked + label span #check{
 
 /*Tablet*/
 @media screen and (min-width: 720px) {
+  body{
+  margin-bottom:8%;
+  }
+
   .donation{
       background: #FFF url( ../img/Donation_Interface_bg_tablet_min.jpg) center bottom no-repeat;
       background-size: cover;
@@ -430,17 +446,6 @@ input[type="checkbox"]:checked + label span #check{
   }
 }
 
-@media screen and (min-width: 770px) {
-  .donation{
-    background-position-y:-50px;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .donation{
-    background-position-y:-100px;
-  }
-}
 
 @media screen and (min-width: 870px) {
   .donation{
@@ -459,11 +464,13 @@ input[type="checkbox"]:checked + label span #check{
 
 /*Mid-size*/
 @media screen and (min-width: 992px) {
+  body{
+    margin-bottom:5.2%;
+  } 
   .donation-interface {
     padding-top:10%;
     padding-bottom: 60%;
   }
-
   .donation{
     background-position-y:-250px;
   }
@@ -490,6 +497,9 @@ input[type="checkbox"]:checked + label span #check{
   }
 
   /*Thank You Page*/
+  .thankyou_badge{
+    width:30%;
+  }
   .give_image img{
     height: 600px;
   }
@@ -514,8 +524,17 @@ input[type="checkbox"]:checked + label span #check{
   }
 }
 
+@media screen and (min-width: 1130px) {
+  body{
+    margin-bottom:4.8%;
+  } 
+}
+
 /*Large Screens*/
 @media screen and (min-width: 1200px) {
+  body{
+    margin-bottom:2.5%;
+  }
   .donation-interface{
     padding-top:20%;
     padding-bottom:30%;
@@ -557,6 +576,9 @@ input[type="checkbox"]:checked + label span #check{
 }
 
 @media screen and (min-width: 1450px) { 
+  body{
+    margin-bottom:2.2%;
+  }
   .donation-interface{
     padding-top:20%;
     padding-bottom:50%;
@@ -567,10 +589,10 @@ input[type="checkbox"]:checked + label span #check{
 
   /*Thank You Page*/
   .give_image img{
-    height: 840px;
+    height: 880px;
   }
    .give_thankyou_stories .story{
-    height:420px;
+    height:440px;
   }
   .give_thankyou_stories h1{
     font-weight: 700;
@@ -599,6 +621,9 @@ input[type="checkbox"]:checked + label span #check{
 }
 
 @media screen and (min-width: 1650px) { 
+  body{
+    margin-bottom:2%;
+  }
   .donation-interface{
     padding-top:20%;
     padding-bottom:75%;
@@ -639,5 +664,21 @@ input[type="checkbox"]:checked + label span #check{
     height:500px;
   }
 }
+
+
+@media screen and (min-width: 1800px) { 
+  body{
+    margin-bottom:1.9%;
+  }
+
+  /*Thank You Page*/
+  .give_image img{
+    height: 1100px;
+  }
+   .give_thankyou_stories .story{
+    height:550px;
+  }
+}
+
 
 
