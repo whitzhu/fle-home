@@ -322,9 +322,16 @@ input[type="checkbox"]:checked + label span #check{
   color:#FFFFFF;
   font-size:1.2em;
 }
+
 .thankyou_content p{
   text-align: justify;
 }
+
+.thankyou_content p:hover{
+  font-weight:100;
+  color:#FFFFFF;
+}
+
 
 
 /*Left Image Div*/
@@ -343,12 +350,13 @@ input[type="checkbox"]:checked + label span #check{
 .give_thankyou_stories h1{
   font-size:2em;
   font-weight: 700;
+  color:#FFFFFF;
 }
 .give_thankyou_stories p{
   color:#FFFFFF;
 }
 .give_thankyou_stories h1:hover , p:hover{
-  color:#FFFFFF;
+  color:#69C4EE;
   font-weight: 700;  
 }
 .give_thankyou_stories a:hover{
@@ -361,28 +369,22 @@ input[type="checkbox"]:checked + label span #check{
   overflow: hidden;
   background-size: cover;
 }
-
+.story_link{
+  position: absolute;
+  top:40%;
+  padding: 0% 5% 0 5%;
+}
 .story_1{
   background: linear-gradient(
       rgba(0, 0, 0, 0.45), 
       rgba(0, 0, 0, 0.45)
     ), url( ../img/Tanzania.png );
 }
-.story_1 .story_link{
-  position: absolute;
-  top:40%;
-  padding:0% 20% 0 15%;
-}
 .story_2{
   background: linear-gradient(
       rgba(0, 0, 0, 0.55), 
       rgba(0, 0, 0, 0.55)
     ), url( ../img/Butaw_Liberia.jpg );
-}
-.story_2 .story_link{
-  position: absolute;
-  top:40%;
-  padding:0% 20% 0 15%;
 }
 
 .give_share{
@@ -469,8 +471,13 @@ input[type="checkbox"]:checked + label span #check{
   }
 
   /*Thank You Page*/
+  .give_share{
+    margin-top:10%;
+    padding-top:0%;
+  }
   .thankyou_content h2,p{
-    font-size:1.7em;
+    font-size: 1.4em;
+    line-height: 1.7em;
   }
   .give_thankyou_stories .story{
     height:550px;
@@ -486,9 +493,16 @@ input[type="checkbox"]:checked + label span #check{
     background-position-y:-180px;
   }
 
-   /*Thank You Page*/
+  /*Thank You Page*/
+  .thankyou_badge{
+    width:40%;
+   }
+  .thankyou_content{
+    padding: 10% 15%; 
+   }
   .thankyou_content h2,p{
-    font-size:2em;
+    font-size: 1.5em;
+    line-height: 1.7em; 
   }
   .give_thankyou_stories .story{
     height:650px;
@@ -541,7 +555,7 @@ input[type="checkbox"]:checked + label span #check{
     padding: 10% 20% 5% 20%;
   }
   .thankyou_content h2,p{
-    font-size:1.8em;
+    font-size:1.5em;
   }
   .give_share{
     padding: 5% 0;
@@ -602,10 +616,13 @@ input[type="checkbox"]:checked + label span #check{
 
   /*Thank You Page*/
   .give_image img{
-    height: 760px;
+    height: 780px;
   }
    .give_thankyou_stories .story{
-    height:380px;
+    height:390px;
+  }
+  .story_link {
+    top: 55%;
   }
 }
 
@@ -622,10 +639,13 @@ input[type="checkbox"]:checked + label span #check{
   }
 
   /*Thank You Page*/
+  .thankyou_content{
+    padding: 10% 25%; 
+  }
   .give_image img{
     height: 880px;
   }
-   .give_thankyou_stories .story{
+  .give_thankyou_stories .story{
     height:440px;
   }
   .give_thankyou_stories h1{
@@ -669,6 +689,9 @@ input[type="checkbox"]:checked + label span #check{
     background-position-y:-270px;
   }
    /*Thank You Page*/
+  .thankyou_content{
+    padding: 10% 30%; 
+  }
   .give_image img{
     height: 980px;
   }
@@ -676,7 +699,7 @@ input[type="checkbox"]:checked + label span #check{
     height:490px;
   }
   .give_thankyou_stories h1{
-    font-size:3em;
+    font-size:2.5em;
   }
 }
 
@@ -696,6 +719,9 @@ input[type="checkbox"]:checked + label span #check{
   }
    .give_thankyou_stories .story{
     height:500px;
+  }
+  .story_link{
+    top: 70%;
   }
 }
 
