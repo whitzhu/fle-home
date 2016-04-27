@@ -40,7 +40,7 @@ body{
 .caption{
   font-size:0.9em;
   position:absolute;
-  right:0;
+  left:0;
   bottom:0;
   padding: 0% 2%;
 }
@@ -48,9 +48,9 @@ body{
 .caption a{
   color:rgba(255,255,255,0.5);
   display: inline-block;
-  margin: 5% 0% 5% 0%;
-  padding:2em;
-  margin:-1.5em;
+  margin: 5% 0% 10% 0%;
+  padding:1em;
+  margin: 0em -1em;
   z-index: 1;
   position: relative;
 }
@@ -275,7 +275,7 @@ input[type="checkbox"]:checked + label span #check{
   border-radius: 4px;
   height: 60%;
   width: 100%;
-  margin-top: 30%;
+  margin-top: 10%;
 }
  button.close{
   padding: 10px 20px !important;
@@ -635,12 +635,12 @@ input[type="checkbox"]:checked + label span #check{
     margin-bottom:2.5%;
   }
   .donation-interface{
-    padding: 20% 5% 30% 5%;
+    padding: 10% 5% 30% 5%;
   }
   .donation{
     background: #FFF url( ../img/Donation_Interface_BG_desktop.jpg) center bottom no-repeat;
     background-size: cover;
-    height:85vh;
+    height:95vh;
   }
 
   .trust #guidestar_icon {
