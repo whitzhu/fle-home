@@ -32,6 +32,10 @@
         margin-top: 35px;
     }
 
+    #igg_btn {
+        margin-top: 20px;
+    }
+
 </style>
 {% endblock headcss %}
 
@@ -54,7 +58,7 @@
         var x_button = '<a class="close" data-dismiss="alert" href="#">&times;</a>';
 
         if (msg_class === "error") {
-            msg_class = "danger"
+            msg_class = "danger";
         }
 
         var msg_html = "<div class='alert alert-" + msg_class + "'";
@@ -157,7 +161,17 @@
                 Everything that we build is made available under an open license, free of charge, so we rely on grants and donations in order to support the <a href="{% url 'team' %}" target="_blank">team</a> that makes <a href="{% url 'map' %}" target="_blank">all this possible</a>. The Foundation for Learning Equality is a registered 501(c)(3) nonprofit organization, so donations can be treated as tax-deductible contributions, and we can send you a tax receipt by email or mail as requested.
             </p>
 
-            <h3>Donate by Credit Card or Bitcoin</h3>
+            <h2>Contribute to our Campaign</h2>
+
+            <b>We are in the midst of an ambitious crowdfunding campaign, and need your urgent support! The best place to donate right now is at:</b>
+
+            <a class="btn" id="igg_btn" href="https://learningequality.org/r/indiegogo-redirect">Back our Campaign on <img id="indiegogo_generosity" alt="Indiegogo" src="{% static 'img/kickstarter/indiegogo_generosity.png' %}"></a>
+
+            <br/><br/>
+
+            <h2>Other donation methods</h2>
+
+<!--             <h3>Donate by Credit Card or Bitcoin</h3>
 
             <form id="donate-form">
                 {% csrf_token %}
@@ -173,7 +187,7 @@
                 <button class="donate-button btn btn-success" data-amount="custom">Donate other:</button>
                 <input type="text" class="amount-custom" placeholder=" Enter amount here...">
 
-            </form>
+            </form> -->
 
             <h3>Donate through Paypal</h3>
 

@@ -100,7 +100,7 @@ body{
   background-color:#69C4EE;
   color: #FFFFFF;
 }
-.btn-give{
+.btn-give , .btn-give:visited{
   background-color:#69C4EE;
   width: 90%;
   height: 64px;
@@ -109,6 +109,9 @@ body{
 .btn-give:focus{
   background-color: #48ABD9;
   outline:none;
+}
+.btn-give:hover{
+  background-color: #7CCDF3;
 }
 .btn-text{
   color: #FFFFFF;
@@ -159,6 +162,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 5% 0;
 }
 .give_check_text{
+  cursor: pointer;
   color:#69C4EE;
   font-size: 1.05em;
   text-decoration: underline;
