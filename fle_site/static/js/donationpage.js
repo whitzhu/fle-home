@@ -1,6 +1,5 @@
 
 //Donation Interface
-
 monthlyGiving = false;  // global var, needed by the AJAX post to the backend for charging
 amount = 0;
 
@@ -10,9 +9,6 @@ $(function() {
     var input_field = $('#InputAmount');
 
     //"Other"input field slides down
-
-
-
     $("#other-amount").click(function() {
         $("#input-amount").slideDown(); //input fild slides down
         
@@ -23,7 +19,7 @@ $(function() {
             amount = input_field.val();
 
             if (amount.length !=0) {
-                if (amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount < 50000){
+                if (amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount <= 50000){
                     btn_card.prop('disabled',false);
                     btn_paypal.prop('disabled',false);
                     $('.alert-text').hide();
@@ -64,52 +60,6 @@ $(function() {
 
 });
 
-
-
-//Paypal Integration
-$(function(){ 
-
-    $('#btn-paypal').click(function(){
-
-        $('button[data-loading-text]')
-            .on('click', function () {
-                var btn = $(this)
-                btn.button('loading')
-                setTimeout(function () {
-                    btn.button('reset')
-                }, 3000)
-            });
-
-        $.fn.monthlyGiving = function(){
-            if ( $('#monthly-checkbox').prop('checked') ){
-                $('input:hidden[name=a3]').val(amount);
-                $('#paypal_monthly').submit();
-                $('.loader').show();
-                $(this).css('background-color','#48ABD9')
-            }else{
-                $('input:hidden[name=amount]').val(amount);
-                $('#paypal_once').submit();
-                $('.loader').show();
-                $(this).css('background-color','#48ABD9'); 
-            }
-        };
-
-        //Check for monthly giving
-        if (  $(".active").val() == "custom"){
-            var amount = $("#InputAmount").val();
-            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
-                
-                $(this).monthlyGiving();
-                
-            }else{
-                $('.alert-text').show();
-            }  
-        }else{
-            amount = $(".active").val();
-            $(this).monthlyGiving();
-        } 
-    });
-});
 
 //Stripe
 $(function(){
@@ -164,7 +114,7 @@ $(function(){
 
         if (  $(".active").val() == "custom"){  //Check if 'other' input field is active
             amount = $("#InputAmount").val();
-            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0 && amount < 50000){ // Check if 'input' is valid
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0 && amount <= 50000){ // Check if 'input' is valid
 
                 handler.open({ 
                     name: 'Learning Equality',
@@ -189,12 +139,12 @@ $(function(){
         }
     });
 
-    // //Keyboard "enter" button is used for text-field input
-    // input_field.keypress(function(e){
-    //     if (e.which == 13){
-    //         btn_card.click();
-    //     }
-    // });
+    //Keyboard "enter" button is used for text-field input
+    input_field.keypress(function(e){
+        if (e.which == 13){
+            btn_card.click();
+        }
+    });
 
     // Close Checkout on page navigation
     $(window).on('popstate', function() {
@@ -202,6 +152,52 @@ $(function(){
     });
 });
 
+
+
+//Paypal Integration
+$(function(){ 
+
+    $('#btn-paypal').click(function(){
+
+        $('button[data-loading-text]')
+            .on('click', function () {
+                var btn = $(this)
+                btn.button('loading')
+                setTimeout(function () {
+                    btn.button('reset')
+                }, 3000)
+            });
+
+        $.fn.monthlyGiving = function(){
+            if ( $('#monthly-checkbox').prop('checked') ){
+                $('input:hidden[name=a3]').val(amount);
+                $('#paypal_monthly').submit();
+                $('.loader').show();
+                $(this).css('background-color','#48ABD9')
+            }else{
+                $('input:hidden[name=amount]').val(amount);
+                $('#paypal_once').submit();
+                $('.loader').show();
+                $(this).css('background-color','#48ABD9'); 
+            }
+        };
+
+        //Check for monthly giving
+        if (  $(".active").val() == "custom"){
+            var amount = $("#InputAmount").val();
+            if (amount.length != 0 && amount.match(/(?=.)^\$?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?(\.[0-9]{1,2})?$/) && amount != 0){
+                
+                $(this).monthlyGiving();
+                
+            }else{
+                $('.alert-text').show();
+            }  
+        }else{
+            amount = $(".active").val();
+            $(this).monthlyGiving();
+        } 
+    });
+});
 
 //Progress cirlce animation
 $(function(){
