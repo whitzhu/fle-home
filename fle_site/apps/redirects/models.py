@@ -1,4 +1,5 @@
 import datetime
+import re
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -9,6 +10,16 @@ def get_request_ip(request):
     return request.META.get("HTTP_X_FORWARDED_FOR") \
         or request.META.get("REMOTE_ADDR") \
         or request.META.get("HTTP_X_REAL_IP")  # set by some proxies
+
+
+VARIABLE_REGEX = re.compile("%([A-Za-z0-9_]+)%")
+
+def _replace_variable(matchobj):
+    var_name = matchobj.group(1)
+    try:
+        return RedirectVariable.objects.get(name__iexact=var_name).value
+    except RedirectVariable.DoesNotExist:
+        return matchobj.group(0)
 
 
 class RedirectRule(models.Model):
@@ -36,6 +47,15 @@ class RedirectRule(models.Model):
     def __unicode__(self):
         return u"[%s] %s -> %s" % ("x" if self.enabled else " ", self.slug, self.url)
 
+    def get_url(self):
+        return re.sub(VARIABLE_REGEX, _replace_variable, self.url)
+
+    def clean(self, *args, **kwargs):
+        url = self.get_url()
+        unmatched_vars = VARIABLE_REGEX.findall(url)
+        if unmatched_vars:
+            raise ValidationError("No RedirectVariable found for the following variables: %s" % ", ".join(unmatched_vars))
+
 
 class RedirectLogEntry(models.Model):
     rule = models.ForeignKey(RedirectRule)
@@ -44,6 +64,7 @@ class RedirectLogEntry(models.Model):
     referer = models.TextField(blank=True)
     user_agent = models.TextField(blank=True)
     user = models.ForeignKey(User, blank=True, null=True)
+    url = models.URLField(blank=True)
 
     class Meta:
         verbose_name_plural = "Redirect log entries"
@@ -63,3 +84,8 @@ class RedirectLogEntry(models.Model):
             if request.user.is_authenticated():
                 self.user = request.user
         super(RedirectLogEntry, self).save(*args, **kwargs)
+
+
+class RedirectVariable(models.Model):
+    name = models.CharField(max_length=50, primary_key=True)
+    value = models.CharField(max_length=150)

@@ -1,3 +1,6 @@
+body {
+	overflow-x: hidden;
+}
 .email_submit {
 	clear: none;
 	float: left;
@@ -52,23 +55,25 @@
     border: 4px solid #3989CA;
     z-index: 9998;
     float: right;
-    right: -100%;
+    right: -500%;
     bottom: 0;
 }
 .banner_img {
 	position: relative;
-	width: 32%;
-	float: right;
+	width: 100%;
+	float: left;
     max-width: 180px;
     z-index: 9999;
     right: 0;
     cursor:pointer;
 }
 .corner_banner {
-	overflow: hidden;
 	position: fixed;
 	bottom: 0;
-    width: 100%;
+	right: 0;
+    width: 32%;
+    max-width: 180px;
+    transition: opacity 0.3s;
 }
 .banner_container {
 	position: relative;

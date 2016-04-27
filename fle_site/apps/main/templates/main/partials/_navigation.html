@@ -13,11 +13,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand fle-logo" href="{% url 'home' %}"><span><img id="le-logo" alt="Learning Equality" src=" {% static 'img/le-logo.svg'%}"></span>LEARNING EQUALITY</a>
+          <a class="navbar-brand fle-logo" href="{% url 'home' %}"><span><img id="le-logo" alt="Learning Equality" src="{% static 'img/le-logo.svg' %}"></span>LEARNING EQUALITY</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="fle-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li id='list_indiegogo'>
+              <a id="indiegogo" href="{% url 'indiegogo' %}"> &nbsp Kolibri &nbsp </a>
+          </li>
           <li>
               <a href="{% url 'ka_lite' %}">KA Lite</a>
           </li>
@@ -39,3 +42,7 @@
     </div> <!-- /.container-2000x -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<a href="https://learningequality.org/r/indiegogo-banner-redirect">
+  <p id="indiegogo_text">We need your support on our Indiegogo Campaign; <span id="inner_indiegogo_text">Learn More! </span><span><img id="indiegogo_badge" alt="Indiegogo" src="{% static 'img/kickstarter/indiegogo_generosity.png' %}"></span></p>
+</a>

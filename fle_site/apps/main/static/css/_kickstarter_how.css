@@ -1,0 +1,102 @@
+#fle_how {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+#how-container {
+  /*height: 100vh;*/
+  min-height: 838px;
+  font-family: "Montserrat-Light";
+  color: white;
+}
+#how-image {
+  background: url('../img/kickstarter/how_it_works/nalanda-how.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 838px;
+  height: 100%;
+}
+#how-image .row {
+  height: 50%;
+}
+#how-image .row div {
+  margin-top: 70px;
+  padding: 15px 30px 25px 30px;
+  border-radius: 7px;
+}
+#how-image .row div h2 {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 29px;
+}
+#how-image .row div p {
+  font-size: 18px;
+  font-family: "Montserrat-Light";
+  line-height: 1.33em;
+}
+.how-explanation {
+  background: url('../img/kickstarter/how_it_works/purple-background.gif') repeat;
+  height: 100%;
+  min-height: 838px;
+}
+.no-internet-intro,
+.tools-intro {
+  background: rgba(134, 112, 161, 0.7);
+}
+.how-explanation h2 {
+  font-weight: normal;
+  font-size: 27px;
+}
+.how-explanation hr {
+  width: 70%;
+  border-width: 3px;
+  color: white;
+  text-align: center;
+}
+#steps {
+  width: 85%;
+  margin: auto;
+  display: block;
+}
+#steps div h3 {
+  text-transform: none;
+  font-size: 22px;
+  font-weight: normal;
+}
+#steps div p {
+  font-size: 16px;
+  line-height: 1.3em;
+  font-family: "Montserrat-Light";
+}
+#steps div img {
+  display: block;
+  margin: auto;
+  max-height: 100px;
+}
+.how-step {
+  margin: 6% 0;
+}
+
+#how-1 {
+  background: url('../img/kickstarter/how_it_works/how1.gif') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  height: 114px;
+  background-size: 50%;
+}
+
+#how-2 {
+  background: url('../img/kickstarter/how_it_works/how2.gif') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  height: 115px;
+  background-size: 50%;
+}
+
+#how-3 {
+  background: url('../img/kickstarter/how_it_works/how3.gif') no-repeat center center;
+  transition: background 0.2s;
+  -webkit-transition: background 0.2s;
+  height: 131px;
+  background-size: 70%;
+}

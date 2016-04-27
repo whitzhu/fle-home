@@ -1,0 +1,352 @@
+/* Mobile and Responsive Styles */
+
+@media screen and (max-width: 1281px) {
+	.top-box img,
+	.bottom-box img {
+		max-width: 300px;
+	}
+	.sticky-signup span {
+		font-size: 16px;
+		top: 22px;
+		left: 3%;
+	}
+	.sticky-mailchimp {
+		/*width: 991px;*/
+		/*right: -25%;*/
+		float: right;
+		position: relative;
+		margin-top: -14px;
+	}
+	/*.email_input_k {
+		width: 220px;
+		font-size: 15px;
+	}
+	.email_submit_k {
+		width: 200px;
+	}*/
+	.btn-xl, #steps div p,
+	#how-image .row div p {
+		font-size: 15px;
+	}
+	.below-fold2 {
+		min-height: 528px;
+		height: 50vh;
+	}
+	.fle_title_bold,
+	.fle_title h2 {
+		font-size: 35px;
+	}
+	#steps div h3,
+	#the_quote_2,
+	.fle_title h3 {
+		font-size: 20px;
+	}
+	#how-1, #how-2, #how-3 {
+		height: 100px;
+	}
+	.feature-tile {
+		padding-top: 4%;
+	}
+	.feature-tile h4,
+	.quote_1, .lowcase,
+	#how-image .row div h2,
+	p.slim-text {
+		font-size: 24px;
+	}
+	#dreams, .fle_title h1,
+	#fle_timeline .fle_title h1 {
+		font-size: 50px;
+	}
+}
+
+@media screen and (max-width: 1060px) {
+	.sticky-mailchimp {
+		top: -20%;
+		right: 0;
+	}
+}
+
+@media screen and (min-width: 990px) {
+	.sticky-signup2 {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	#slide_tablet {
+		display: none;
+	}
+	#dreams, .fle_title h1,
+	#fle_timeline .fle_title h1 {
+		font-size: 40px;
+	}
+	.sticky-signup2 {
+		text-align: center;
+		background: #53435B;
+		padding-top: 20px;
+		position: relative;
+		z-index: 99999;
+	}
+	.sticky-signup2 span {
+		font-size: 20px;
+		top: 10px;
+		text-align: center;
+		left: 0;
+		color: white;
+	}
+	.iframe-holder {
+		position: relative;
+		margin: auto;
+		text-align: center;
+		top: 25px;
+		width: 320px;
+	}
+	.sticky-mailchimp {
+		float: none;
+	    right: 0;
+	    width: 300px;
+	}
+	.social_btns, .intro-heading,
+	.intro-heading2 {
+		text-align: center;
+	}
+	#fle_intro {
+		background: white;
+		height: 850px;
+	}
+	.intro-heading {
+		font-size: 50px;
+	}
+	span.hidden-xs.hidden-sm {
+		display: none !important;
+	}
+	.intro-text {
+		top: 8%;
+	}
+	.intro-social {
+		right: 0;
+		margin-top: 21%;
+	}
+	.intro-heading2 {
+		padding-right: 0;
+		left: 0;
+		top: 10px;
+		font-size: 28px;
+	}
+	#campaign-intro {
+		font-size: 20px;
+		margin-top: 50px;
+	}
+	.arrow-down{
+		margin-top: 50px;
+	}
+	.top-box,
+	.bottom-box {
+		padding: 2% 0;
+	}
+	.top-box img, .bottom-box img {
+		margin: 0;
+		max-width: 225px;
+	}
+	#kolibri_logo {
+		width: 70%;
+		max-width: 250px;
+		margin-bottom: 30px;
+	}
+	.below-fold2 h2 {
+		font-size: 20px;
+	}
+	.shift-down2 {
+		top: 0;
+		left: 0;
+	}
+	.use-image {
+		height: 60px;
+		width: auto;
+	}
+	.fle_title {
+		padding: 30px 0;
+		top: -5px;
+	}
+	.no-internet-intro, .tools-intro {
+		background: rgba(134, 112, 161, 0.8);
+	}
+	#how-image {
+		min-height: 600px;
+		height: 70%;
+		background-position: center bottom;
+	}
+	#how-image .row {
+		height: 40%;
+	}
+	#how-image .row div {
+		margin-top: 50px;
+		border-radius: 0px;
+	}
+	.how-explanation h2 {
+		margin-top: 0;
+		padding-top: 20px;
+	}
+	#how-1, #how-2, #how-3 {
+		height: 160px;
+    	background-size: 250px;
+	}
+	.wow img {
+		margin: 0;
+	}
+	.fle_title img {
+		max-width: 150px;
+		width: 30%;
+	}
+	.fle_title_bold {
+		text-align: center;
+		padding: 0;
+		width: 100%;
+		margin: 0;
+	}
+	.fle_title_bold .fle_title_h2 {
+		font-size: 40px;
+	}
+	p.slim-text {
+		max-width: 200px;
+		margin: 30px auto 0 auto;
+	}
+	span.slogan {
+		font-size: 23px;
+		top: 10px;
+	}
+	.feature-space {
+		min-height: 200px;
+		padding: 40px 0;
+	}
+	#feature-container {
+		min-height: 750px;
+		display: block;
+		overflow: auto;
+		height: auto;
+	}
+	.feature-space img {
+		margin-top: 0;
+	}
+	.feature-tile {
+		display: block;
+		border-right: none;
+		border-left: none;
+		border-top: none;
+		border-bottom: 2px solid #8670A1 !important;
+	}
+	.portfolio-modal .close-modal .lr,
+	.portfolio-modal .close-modal .lr .rl,
+	.portfolio-modal .close-modal {
+		height: 30px !important;
+	}
+	.modal-dialog {
+		width: 90% !important;
+	}
+	p.item-intro {
+		font-size: 18px !important;
+	}
+	.portfolio-modal .modal-content p {
+		font-size: 15px !important;
+	}
+	.portfolio-modal .modal-content h2 {
+		font-size: 1.5em;
+	}
+	.portfolio-modal .close-modal {
+		left: -35px;
+	}
+	.modal-backdrop {
+		-webkit-transform:translateZ(2px);
+		-moz-transform:translateZ(2px);
+		-o-transform:translateZ(2px);
+		transform:translateZ(2px);
+	}
+	.portfolio-modal {
+		-webkit-transform:translateZ(5px);
+		-moz-transform:translateZ(5px);
+		-o-transform:translateZ(5px);
+		transform:translateZ(5px);
+	}
+	img.img-responsive.img-centered,
+	.canvas-container,
+	#canvas, .upper-canvas {
+		width: 100% !important;
+	}
+	.my_col {
+		position: relative;
+		top: -50px;
+	}
+	.fle_title h3 {
+		top: 0;
+	}
+	.fle_title h2 img {
+		max-width: 175px;
+		width: 45%;
+		position: relative;
+		top: 0;
+	}
+	.canvas-container {
+		width: 100% !important;
+	}
+	#button-wrapper {
+		margin-top: 50% !important;
+	}
+	#desktop-timeline {
+		padding: 10px 0 30px 0;
+	}
+	#contact {
+		height: auto !important;
+		display: block;
+		overflow: auto;
+	}
+	.e1 {
+		left: 0;
+		max-width: 455px;
+	}
+	#contact {
+		background-position: center center !important;
+	}
+}
+
+@media screen and (max-width: 325px) {
+	#mc-embedded-subscribe {
+	    width: 300px;
+	    border-top-right-radius: 0;
+	    border-bottom-left-radius: 10px;
+	    margin: auto;
+	}
+	#mce-EMAIL {
+		width: 300px;
+		margin: auto;
+    	border-top-right-radius: 10px;
+    	text-align: center !important;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.countdown {
+		zoom: 0.8;
+		-webkit-transform: 0.8;
+		-moz-transform: 0.8;
+	}
+}
+@media screen and (max-width: 550px) {
+	.countdown {
+		zoom: 0.6;
+		-webkit-transform: 0.6;
+		-moz-transform: 0.6;
+	}
+	.flip-clock-wrapper ul li a div div.inn {
+		font-size: 45px;
+	}
+}
+@media screen and (max-width: 450px) {
+	.countdown {
+		zoom: 0.4;
+		-webkit-transform: 0.4;
+		-moz-transform: 0.4;
+	}
+	.flip-clock-label {
+		display: none;
+	}
+}
