@@ -75,7 +75,7 @@
 
 
 						<!--Paypal One Time Giving -->
-						<form id="paypal_once" target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<form id="paypal_once" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_donations">
 							<input type="hidden" name="business" value="payments@learningequality.org">
 							<input type="hidden" name="lc" value="US">
@@ -89,7 +89,7 @@
 
 
 						<!--Paypal Monthly Giving -->
-						<form id="paypal_monthly" target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<form id="paypal_monthly" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_xclick-subscriptions">
 							<input type="hidden" name="business" value="payments@learningequality.org">
 							<input type="hidden" name="lc" value="US">
@@ -132,10 +132,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-s-12 col-md-6 .col-lg-6">
-				<img class="img-responsive" id="nonprofit_icon" src="{%static 'img/501(C)3.svg' %}" alt="Learning Equality 501(c)3" />
+				<a href="{%static 'doc/learning_equality_irs_determination_letter.pdf' %}" target="_blank">
+					<img class="img-responsive" id="nonprofit_icon" src="{%static 'img/501(C)3.svg' %}" alt="Learning Equality 501(c)3" />
+				</a>
 			</div>
 			<div class="col-xs-12 col-s-12 col-md-6 .col-lg-6">
-				<a href="http://www.guidestar.org/profile/46-2676188"><img class="img-responsive" id="guidestar_icon" src="{%static 'img/guidstar_sliver.png' %}" alt="Learning Equality Guidestar" /></a>
+				<a href="http://www.guidestar.org/profile/46-2676188" target="_blank"><img class="img-responsive" id="guidestar_icon" src="{%static 'img/guidstar_sliver.png' %}" alt="Learning Equality Guidestar" /></a>
 			</div>
 		</div>
 	</div>

@@ -70,7 +70,7 @@ $(function(){
     //Stripe Integration
     var handler = StripeCheckout.configure({
         key: STRIPE_PUBLISHABLE_API_KEY ,
-        image: 'https://learningequality.org/static/img/le-logo.svg' ,
+        image: '/static/img/le_logo.png' ,
         locale: 'auto',
         zipCode: true,
         token: function(data) {

@@ -29,8 +29,6 @@ class JsonResponse(HttpResponse):
 def map(request): 
     return {"LOCATIONS_JSONP_URL": settings.LOCATIONS_JSONP_URL}
 
-
-
 @csrf_exempt
 
 @render_to("main/kickstarter.html")

@@ -168,8 +168,6 @@ INSTALLED_APPS = (
 
     'django.contrib.redirects',
     'fle_site.apps.redirects',
-    'ckeditor',
-    'ckeditor_uploader',
 )
 
 CKEDITOR_UPLOAD_PATH = '/fileupload/'

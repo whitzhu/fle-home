@@ -24,7 +24,6 @@ urlpatterns = patterns('',
     url(r'^homepage/', lambda request: HttpResponseRedirect(reverse('ka_lite'))),
     # url(r'^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /kolibri/", mimetype="text/plain")),
     url(r'^robots.txt$', lambda r: HttpResponse("", mimetype="text/plain")),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 )
 
 # static files (images, css, javascript, etc.)
