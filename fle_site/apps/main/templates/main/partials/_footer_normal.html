@@ -1,17 +1,19 @@
 {% load staticfiles %}
+
 <div class="container-fluid" id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-push-4 center-text">
-                &copy; 2016 Learning Equality&nbsp;<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img id="cc-icon" src="{% static 'img/icons/cc-by-sa-4.0.png' %}" alt="Creative Commons Attribution 4.0 International License" title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"></a>
+                &copy; 2016 Foundation for Learning Equality&nbsp;<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img id="cc-icon" src="{% static 'img/icons/cc-by-sa-4.0.png' %}" alt="Creative Commons Attribution 4.0 International License" title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License"></a>
             </div>
 
             <div class="col-md-4 col-md-pull-4" id="help_links">
-                <a href="#" data-modal-toggle="contactModal" id="contact" class="modal-toggle">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <!-- <a href="#" data-modal-toggle="contactModal" id="contact" class="modal-toggle">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+                <a href="#" data-toggle="modal" data-target="#contactModal" id="contact" class="modal-toggle">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <!-- <a href="#" data-modal-toggle="subscribeModal" id="subscribe" class="modal-toggle">Subscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
                 <a href="{% url 'jobs' %}">Jobs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="{% url 'internships' %}">Internships</a>
             </div>
-            
             <div class="col-md-4 center-text">
                 <ul class="list-icons">
                     <li>
@@ -32,11 +34,19 @@
                     </li>
                 </ul>
             </div>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
+    $('#contactModal').bind('hidden.bs.modal', function () {
+      $("html").css("margin-right", "0px");
+    });
+    $('#contactModal').bind('show.bs.modal', function () {
+      $("html").css("margin-right", "-15px");
+    });
 
     function triggerModal(elementHash) {
         // given element ID intelligently trigger modals

@@ -1,0 +1,235 @@
+{% load staticfiles %}
+
+
+<script src="{% static 'js/fabric.js' %}"></script>
+<script src="{% static 'js/data.js' %}"></script>
+
+<div class="container-fluid" id="feature-container">
+	<div class="col-md-5 feature-space">
+		<div>
+			<img src="{% static 'img/kickstarter/about/kolibri.png' %}">
+		</div>
+		<span id="kolibri-name">Kolibri</span>
+		<div>
+			<span class="slogan">Learn.</span>
+			<span class="slogan">Create.</span>
+			<span class="slogan">Share.</span>
+		</div>
+	</div>
+	<div class="col-md-7" id="tile-container">
+		<div class="row top-row">
+			<a href="#portfolioModal0" data-toggle="modal">
+				<div class="col-md-6 feature-tile first-tile">
+					<h4>Runs on<br>Anything</h4>
+					<div id="out-of-box" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						Learn More 
+					</div>
+				</div>
+			</a>
+			<a href="#portfolioModal3" data-toggle="modal">
+				<div class="col-md-6 feature-tile last-tile">
+					<h4>Innovative<br>"Byte-Size" Videos</h4>
+					<div id="vector" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						Learn More 
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="row bottom-row">
+			<a href="#portfolioModal2" data-toggle="modal">
+				<div class="col-md-6 feature-tile first-tile">
+					<h4>Share Content &<br>Sync Data Seamlessly</h4>
+					<div id="sync" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						Learn More 
+					</div>
+				</div>
+			</a>
+			<a href="#portfolioModal4" data-toggle="modal">
+				<div class="col-md-6 feature-tile last-tile">
+					<h4>Learn at Your<br>Own Pace</h4>
+					<div id="progress-report" class="row tile-image"></div>
+					<div class="row learn-more-modal">
+						Learn More 
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+    <!-- Portfolio Modals -->
+
+    <!-- Preconfigured Modal -->
+    <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="close-modal" data-dismiss="modal">
+	                <div class="lr">
+	                    <div class="rl">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div class="my_col">
+	                        <div class="modal-body">
+	                            <h2>Preconfigured Tablet</h2>
+	                            <p class="item-intro text-muted">This campaign will enable us to build low-cost, customized Android tablets that are pre-installed and optimized to present educational content from Kolibri.</p>
+	                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/tablet.gif' %}" alt="">
+	                            <p class="tablet-text">Why Android? 
+	                            	<br>
+	                            	<br>
+	                            	When we designed our first-generation platform, KA Lite, we aimed for it to run on as many devices and operating systems as possible, to enable broad usage. However, while Android tablets could be used as client devices, they still required a nearby server (e.g. a Raspberry Pi) in order to access KA Lite.
+	                            	<br>
+	                            	<br>
+	                            </p>
+	                            	<img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/box-tablet-composition2.png' %}" alt="">
+	                            <p class="tablet-text">
+	                            	The cost of Android tablets is plummeting, and they can serve as an ideal deployment platform -- we will be building Kolibri so that it will run standalone as an Android app, while still running on Windows, Linux and OSX.
+	                            </p>
+	                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Feature</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+
+    <!-- Portfolio Modal 1 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="close-modal" data-dismiss="modal">
+	                <div class="lr">
+	                    <div class="rl">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div class="my_col">
+	                        <div class="modal-body">
+	                            <!-- Project Details Go Here -->
+	                            <h2>Content Curation</h2>
+	                            <p class="item-intro text-muted">We're building a prototype of a tool that will allow organizations to upload and curate their own educational content. Anyone can bundle and distribute their content into custom created channels, allowing communities to align content with local curricular standards to best serve the needs of their learners.</p>
+	                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/content_curation.gif' %}" alt="">
+	                            <p class="big"><mark>&#9733 Remix existing channels:  </mark>   Kolibri will allow educational content producers and organizations to have the freedom to combine content from various channels to make a broad library of high quality and locally relevant educational content available to offline learners. For example, an instructor could create a new channel by combining math content from the Khan Academy channel and geography content from the OpenStax channel, allowing them to easily integrate a variety of learning material to customize their curriculum.</p>
+	                            <p class="big"><mark>&#9733 Upload new content:  </mark>   There are times when these content producers have come up with their own learning material that they have found works effectively. When this happens, they can upload their content to Kolibri, and then choose to make their new channel available to others who may find it useful for their own contexts.</p>
+	                            <p class="big"><mark>&#9733 Integrate new and existing content:  </mark>   Kolibri will allow educational content producers and organizations to combine existing content with their own. If an organization like UNICEF knows from experience that certain math lessons are favored by students, and they have also noticed that some of their own original exercises are effective, they can create a new channel and combine their content with pre-existing content from another channel to optimize their curriculum.</p>
+	                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+
+    <!-- Portfolio Modal 2 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="close-modal" data-dismiss="modal">
+	                <div class="lr">
+	                    <div class="rl">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div class="my_col">
+	                        <div class="modal-body">
+	                            <h2>Syncing and Sharing</h2>
+	                            <img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/peer_to_peer_modal_img.png' %}" alt="">
+	                            <p class="center">Devices installed with Kolibri can find and directly connect with each other over a local wi-fi network, allowing for easy content sharing and data updates.</p>
+	                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+
+    <!-- Portfolio Modal 3 -->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="close-modal" data-dismiss="modal">
+	                <div class="lr">
+	                    <div class="rl">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div>
+	                        <div class="modal-body">
+	                            <!-- Project Details Go Here -->
+	                            <h2>"Byte-Size" Videos</h2>
+	                            <p class="item-intro text-muted">We're using an innovative video compressor which converts the video elements you see into scalable vector objects.</p>
+
+								<img class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/vector.gif'  %}" alt="Compress 200MB Video down to 1MB without lossing quality">
+
+	                            <p>This is tech-talk for the idea that a 250MB video can now be compressed into just a single megabyte, while retaining most of the original quality. This reduces the time and cost needed to download a large set of videos, and allows a large amount of content to be stored on a small, low-cost device.</p>
+	                            <br>
+	                            <p>Select elements on the video by clicking and dragging your mouse around them. You can change their position and size!</p>
+	                            <br>
+	                            <center>
+	                                <canvas id="canvas" width="690" height="388" style="border:1px solid #000000"></canvas>
+	                            </center>
+	                            <img id="vec_bg_img" src="{% static 'img/kickstarter/portfolio/5.png' %}" style="display:none"><!-- a hack to get the image url -->
+	                            <script src="{% static 'js/action updated.js' %}"></script>
+	                            <br>
+	                            <br>
+	                            <div id="button-wrapper">
+	                                <button class="btn play-btn" onclick="startAnimation()">PLAY</button>
+	                                <button class="btn btn-primary" onclick="restartAnimation()">Restart</button>
+	                                <button class="btn btn-primary" onclick="pauseAnimation()">Pause</button>
+	                            </div>
+	                            <br>
+	                            <br>
+	                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    	<div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	            <div class="close-modal" data-dismiss="modal">
+	                <div class="lr">
+	                    <div class="rl">
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div class="my_col">
+	                        <div class="modal-body">
+	                            <!-- Project Details Go Here -->
+	                            <h2>Self-Paced Learning</h2>
+	                            <p class="item-intro text-muted">Track educational growth for individuals and groups of learners accurately and easily, even in informal educational contexts.</p>
+	                            <p>Kolibri will be installed with evaluation tools such as "coach reports," customized quizzes and exercises, and a recommendation tool that displays useful and relevant content that is based on how a learner engages with their content.</p>
+	                            <img id="paced-learning" class="img-responsive img-centered" src="{% static 'img/kickstarter/portfolio/coach-reports.png' %}" alt="Coach Reports">
+	                            <p class="big"><mark>&#9733 Coach Reports:  </mark>   These are detailed progress reports that measure factors such as time taken to complete exercises, records on which questions have been answered correctly or incorrectly, and provide a picture on overall progress through a specific set of exercises and lessons.</p>
+	                            <p class="big"><mark>&#9733 Customized Quizzes and Exercises:  </mark>   Question sets and exercises can be created in Kolibri in multiple choice and free response format. This customized evaluation tool will help learners practice what they've learned and show what they know, while staying aligned with the goals and standards of their local curriculum.</p>
+	                            <p class="big"><mark>&#9733 Content Recommendation:  </mark>   Kolibri will recommend educational content to a learner based on the types of content and exercises they have previously engaged with.</p>
+	                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </div>

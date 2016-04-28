@@ -71,6 +71,17 @@ a {
 // --------------------
 // ** Navbar
 // --------------------
+#le-logo {
+    height: 35px;
+    margin-right: 5px;
+    margin-top: -3px;
+    @media (max-width: 997px) {
+            height: 25px;
+        }
+        @media (max-width: 432px) {
+            height: 20px;
+        }
+}
 
 #fle-navbar {
     background-color: @blue;
@@ -102,22 +113,27 @@ a {
         border-top-color: @white;
         border-bottom-color: @white;
     }
-    .brand-container{
+    .brand-container {
         margin: 0 3.5% 0 2.5%;
     }
     .fle-logo {
+        height: 1px;
         font-size: 20px;
         letter-spacing: 1px;
         font-family: @logo_font;
         font-weight: 700;
+        position: relative;
+        margin-top: -6px;
         .logo-font-thin {
             font-weight: 100;
         }
         @media (max-width: 997px) {
             font-size: 15px;
+            margin-top: -2px;
         }
         @media (max-width: 432px) {
             font-size: 10px;
+            margin-top: 0;
         }
     }
     #le-logo{
@@ -910,9 +926,14 @@ div.comm-btns.row {
 }
 #indiegogo {
     /*background-color: #8670A1 !important;*/
+    color: #53435B;
     /*border-radius: 5px;*/
     /*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
     /*color: #EB1377 !important;*/
+}
+#indiegogo:hover {
+    background-color: #FFCC00 !important;
+    color: #8670A1 !important;
 }
 #indiegogo_generosity {
     margin-top: 15px;
